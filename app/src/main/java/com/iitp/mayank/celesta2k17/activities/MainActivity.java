@@ -57,6 +57,13 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
+        int tabIcons[] = {R.drawable.ic_home_black_24dp,
+                                    R.drawable.ic_stars_black_24dp,
+                                    R.drawable.ic_videocam_black_24dp,
+                                    R.drawable.ic_poll_black_24dp};
+
+        for(int i = 0;i < mPageFragmentAdapter.getCount();i++)
+            tabLayout.getTabAt(i).setIcon(tabIcons[i]);
         /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -42,4 +42,9 @@ public class PageFragmentAdapter extends FragmentPagerAdapter {
     {
         return 4;
     }
+
+    @Override
+    public CharSequence getPageTitle(int position) {
+        return null;
+    }
 }
