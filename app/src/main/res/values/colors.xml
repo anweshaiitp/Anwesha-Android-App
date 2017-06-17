@@ -3,4 +3,13 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="colorMyProfile">#08f723</color>
+    <color name="colorEvents">#0810f7</color>
+    <color name="colorSchedule">#f708eb</color>
+    <color name="colorTeam">#f70818</color>
+    <color name="colorSponsors">#090a09</color>
+    <color name="colorAbout">#f7db08</color>
+    <color name="colorGallery">#08f7bb</color>
+    <color name="colorSocial">#d308f7</color>
 </resources>
