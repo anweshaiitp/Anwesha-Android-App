@@ -19,6 +19,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".activities.MyProfile"
+            android:label="@string/my_profile">
+        </activity>
     </application>
 
 </manifest>
