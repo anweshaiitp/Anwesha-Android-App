@@ -1,6 +1,6 @@
 package com.iitp.mayank.celesta2k17.fragments;
 
-import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.iitp.mayank.celesta2k17.R;
+import com.iitp.mayank.celesta2k17.activities.MyProfile;
 import com.iitp.mayank.celesta2k17.adapters.EventsAdapter;
 
 /**

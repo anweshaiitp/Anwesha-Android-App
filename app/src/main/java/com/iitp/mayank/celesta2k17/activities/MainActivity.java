@@ -1,5 +1,6 @@
 package com.iitp.mayank.celesta2k17.activities;
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -102,4 +103,11 @@ public class MainActivity extends AppCompatActivity {
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
      */
+
+    // Go to myProfile Activity
+    public void toMyProfile(View view)
+    {
+        Intent intent = new Intent(this, MyProfile.class);
+        startActivity(intent);
+    }
 }
