@@ -59,9 +59,9 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(mViewPager);
 
         int tabIcons[] = {R.drawable.ic_home_white_24dp,
-                                    R.drawable.ic_stars_black_24dp,
-                                    R.drawable.ic_videocam_black_24dp,
-                                    R.drawable.ic_poll_black_24dp};
+                                    R.drawable.ic_stars_white_24dp,
+                                    R.drawable.ic_videocam_white_24dp,
+                                    R.drawable.ic_poll_white_24dp};
 
         for(int i = 0;i < mPageFragmentAdapter.getCount();i++)
             tabLayout.getTabAt(i).setIcon(tabIcons[i]);
