@@ -6,7 +6,7 @@
 <LinearLayout
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    >
+    android:background="?attr/colorPrimaryDark" >
 
     <android.support.v4.view.ViewPager
         android:id="@+id/events_pager"
@@ -77,11 +77,13 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
             android:layout_marginTop="23dp"/>
+
         <TextView
+            android:id="@+id/textView"
             style="@style/home_tabs_textview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/team"/>
+            android:text="@string/team" />
     </LinearLayout>
 
     <LinearLayout

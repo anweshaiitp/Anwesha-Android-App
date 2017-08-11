@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
-        int tabIcons[] = {R.drawable.ic_home_black_24dp,
+        int tabIcons[] = {R.drawable.ic_home_white_24dp,
                                     R.drawable.ic_stars_black_24dp,
                                     R.drawable.ic_videocam_black_24dp,
                                     R.drawable.ic_poll_black_24dp};

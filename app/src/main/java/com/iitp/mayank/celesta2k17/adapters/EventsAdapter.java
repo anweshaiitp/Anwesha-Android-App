@@ -15,7 +15,7 @@ import com.iitp.mayank.celesta2k17.R;
 
 public class EventsAdapter extends PagerAdapter {
     Context context;
-     int events[] = {R.drawable.ic_home_black_24dp,
+     int events[] = {R.drawable.ic_home_white_24dp,
                     R.drawable.ic_poll_black_24dp};
 
     public EventsAdapter(Context context){
