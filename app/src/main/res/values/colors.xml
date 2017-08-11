@@ -4,12 +4,12 @@
     <color name="colorPrimaryDark">#151519 </color>
     <color name="colorAccent">#41f4d9</color>
 
-    <color name="colorMyProfile">#08f723</color>
-    <color name="colorEvents">#0810f7</color>
-    <color name="colorSchedule">#f708eb</color>
-    <color name="colorTeam">#f70818</color>
-    <color name="colorSponsors">#090a09</color>
-    <color name="colorAbout">#f7db08</color>
-    <color name="colorGallery">#08f7bb</color>
-    <color name="colorSocial">#d308f7</color>
+    <color name="colorMyProfile">#673AB7</color>
+    <color name="colorEvents">#3F51B5</color>
+    <color name="colorSchedule">#E91E63</color>
+    <color name="colorTeam">#009688</color>
+    <color name="colorSponsors">#03A9F4</color>
+    <color name="colorAbout">#CDDC39</color>
+    <color name="colorGallery">#FFC107</color>
+    <color name="colorSocial">#F44336</color>
 </resources>
