@@ -12,4 +12,6 @@
     <color name="colorAbout">#33691E</color>
     <color name="colorGallery">#FFC107</color>
     <color name="colorSocial">#F44336</color>
+
+    <color name="cardHeaderBackgroundEvents">#FF5722</color>
 </resources>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array
+        name="array_event_headers">
+        <item>NJACK</item>
+        <item>Sparkonics</item>
+    </string-array>
+
+    <string-array
+        name="array_event_text">
+        <item>Not Just Another Computer Club</item>
+        <item>Filler 2</item>
+    </string-array>
+
+    <string-array
+        name="array_event_intent">
+        <item>X</item>
+        <item>Y</item>
+    </string-array>
+</resources>
