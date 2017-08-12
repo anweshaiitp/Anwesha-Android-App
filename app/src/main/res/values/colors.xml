@@ -2,6 +2,7 @@
 <resources>
     <color name="colorPrimary">#1B202B </color>
     <color name="colorPrimaryDark">#151519 </color>
+    <color name="colorPrimaryLight">#eeeeee</color>
     <color name="colorAccent">#212121</color>
 
     <color name="colorMyProfile">#673AB7</color>
@@ -12,6 +13,6 @@
     <color name="colorAbout">#33691E</color>
     <color name="colorGallery">#FFC107</color>
     <color name="colorSocial">#F44336</color>
-
-    <color name="cardHeaderBackgroundEvents">#FF5722</color>
+    <color name="cardHeaderBackgroundEvents">#bdbdbd</color>
+    <color name="cardBackgroundEvents">#000000</color>
 </resources>
