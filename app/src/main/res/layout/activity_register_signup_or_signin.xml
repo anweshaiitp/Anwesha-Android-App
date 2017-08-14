@@ -4,37 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/colorPrimaryDark"
-    android:orientation="vertical">
-    <!--<RelativeLayout-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent"-->
-    <!--android:id="@+id/notSignedIn">-->
-    <!--<Button-->
-    <!--android:id="@+id/button_signup"-->
-    <!--android:layout_width="150sp"-->
-    <!--android:layout_height="48sp"-->
-    <!--android:text="@string/SignUp"-->
-    <!--android:textSize="20sp"-->
-    <!--android:background="@color/colorSignUp"-->
-    <!--android:layout_marginTop="177dp"-->
-    <!--android:layout_alignParentTop="true"-->
-    <!--android:layout_centerHorizontal="true" />-->
-    <!--<Button-->
-    <!--android:id="@+id/button_signin"-->
-    <!--android:layout_width="150sp"-->
-    <!--android:layout_height="48sp"-->
-    <!--android:layout_below="@id/button_signup"-->
-    <!--android:layout_centerHorizontal="true"-->
-    <!--android:text="@string/SignIn"-->
-    <!--android:textSize="20sp"-->
-    <!--android:background="@color/colorSignIn"-->
-    <!--android:layout_marginTop="16dp"/>-->
-
-
-    <!--</RelativeLayout>-->
+    android:orientation="vertical"
+    android:id="@+id/signedIn">
 
     <RelativeLayout
-        android:id="@+id/signedIn"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -186,7 +160,7 @@
 
     </LinearLayout>
 
-    <View
+    <view
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginLeft="16sp"
@@ -194,7 +168,7 @@
         android:layout_marginTop="10dp"
         android:background="#fff">
 
-    </View>
+    </view>
 
     <LinearLayout
         android:layout_width="match_parent"
