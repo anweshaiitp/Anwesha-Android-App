@@ -12,9 +12,6 @@ import com.iitp.mayank.celesta2k17.data.EventsData;
 
 import java.util.ArrayList;
 
-/**
- * Created by mayank on 12/8/17.
- */
 
 public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecyclerViewAdapter.EventViewHolder>
 {
