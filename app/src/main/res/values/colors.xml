@@ -7,7 +7,7 @@
     <color name="colorSignUp">#1de9b6</color>
 
     <color name="colorPrimaryLight">#eeeeee</color>
-    <color name="colorAccent">#212121</color>
+    <color name="colorAccent">#9E9E9E</color>
 
 
     <color name="colorMyProfile">#673AB7</color>
@@ -20,4 +20,6 @@
     <color name="colorSocial">#F44336</color>
     <color name="cardHeaderBackgroundEvents">#bdbdbd</color>
     <color name="cardBackgroundEvents">#000000</color>
+    <color name="fab_background">#212121</color>
 </resources>
+

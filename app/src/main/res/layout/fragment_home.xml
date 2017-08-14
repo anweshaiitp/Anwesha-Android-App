@@ -191,5 +191,6 @@
         android:layout_alignParentRight="true"
         android:layout_gravity="bottom|right"
         android:layout_margin="16dp"
+        android:backgroundTint="@color/fab_background"
         android:src="@drawable/ic_map_white_24dp" />
 </RelativeLayout>
