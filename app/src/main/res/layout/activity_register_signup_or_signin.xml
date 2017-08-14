@@ -1,34 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.iitp.mayank.celesta2k17.activities.MyProfile">
+    android:background="?attr/colorPrimaryDark"
+    >
+ <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:id="@+id/notSignedIn">-->
+        <!--<Button-->
+            <!--android:id="@+id/button_signup"-->
+            <!--android:layout_width="150sp"-->
+            <!--android:layout_height="48sp"-->
+            <!--android:text="@string/SignUp"-->
+            <!--android:textSize="20sp"-->
+            <!--android:background="@color/colorSignUp"-->
+            <!--android:layout_marginTop="177dp"-->
+            <!--android:layout_alignParentTop="true"-->
+            <!--android:layout_centerHorizontal="true" />-->
+        <!--<Button-->
+            <!--android:id="@+id/button_signin"-->
+            <!--android:layout_width="150sp"-->
+            <!--android:layout_height="48sp"-->
+            <!--android:layout_below="@id/button_signup"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:text="@string/SignIn"-->
+            <!--android:textSize="20sp"-->
+            <!--android:background="@color/colorSignIn"-->
+            <!--android:layout_marginTop="16dp"/>-->
 
 
-    <RelativeLayout
+<!--</RelativeLayout>-->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center">
-        <Button
-            android:id="@+id/button_signup"
-            android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/signedIn"
+        android:orientation="vertical">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="255dp"
+        android:src="@drawable/ic_account_box_white_48dp"
+        android:scaleType="centerCrop"
+        android:background="@android:color/holo_blue_dark"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="100dp"
-            android:text="@string/SignUp"
-            android:textSize="20sp"
-            android:background="#f58c02"/>
-        <Button
-            android:id="@+id/button_signin"
-            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="16sp">
+
+            <TextView
+                android:id="@+id/summary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="#fff"
+                android:text="Name"
+                />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/button_signup"
-            android:layout_centerHorizontal="true"
-            android:text="@string/SignIn"
-            android:textSize="20sp"
-            android:background="#15fa04"
-            android:layout_marginTop="16dp"/>
-    </RelativeLayout>
+            android:fontFamily="sans-serif"
+
+            android:textColor="#fff"
+            android:textSize="22sp"
+            android:text="Manish Kumar"/>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
 </LinearLayout>

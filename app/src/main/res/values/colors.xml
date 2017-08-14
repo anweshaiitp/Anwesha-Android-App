@@ -3,7 +3,8 @@
     <color name="colorPrimary">#1B202B </color>
     <color name="colorPrimaryDark">#151519 </color>
     <color name="colorAccent">#41f4d9</color>
-
+    <color name="colorSignIn">#00bfa5</color>
+    <color name="colorSignUp">#1de9b6</color>
     <color name="colorMyProfile">#673AB7</color>
     <color name="colorEvents">#3F51B5</color>
     <color name="colorSchedule">#E91E63</color>
