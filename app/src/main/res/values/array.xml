@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array
+        name="array_event_headers">
+        <item>NJACK</item>
+        <item>Sparkonics</item>
+        <item>SAE</item>
+        <item>SCME</item>
+        <item>SCME</item>
+        <item>SCME</item>
+    </string-array>
+
+    <string-array
+        name="array_event_text">
+        <item>Not Just Another Computer Club</item>
+        <item>The Electrical Engineering Club</item>
+        <item>Society of Automobile Engineers</item>
+        <item>Society of Mechanical Engineers</item>
+        <item>The Electrical Engineering Club</item>
+        <item>The Electrical Engineering Club</item>
+    </string-array>
+
+    <string-array
+        name="array_event_intent">
+        <item>X</item>
+        <item>Y</item>
+        <item>Y</item>
+        <item>Y</item>
+        <item>Y</item>
+        <item>Y</item>
+    </string-array>
+</resources>

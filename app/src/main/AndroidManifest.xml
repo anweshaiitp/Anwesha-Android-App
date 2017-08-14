@@ -15,15 +15,14 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".activities.MyProfile"
-            android:label="@string/my_profile">
-        </activity>
+            android:label="@string/my_profile" />
+        <activity android:name=".activities.EventsActivity"
+            android:label="@string/events" />
     </application>
 
 </manifest>
