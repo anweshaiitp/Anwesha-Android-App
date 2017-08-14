@@ -58,6 +58,7 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
         eventsData.setImageId(images.getResourceId(position , -1));
 
         dataList.add(eventsData);
+
         holder.textViewHeader.setText(eventHeader[position]);
         holder.textViewData.setText(eventText[position]);
         holder.imageView.setImageResource(images.getResourceId(position , -1));

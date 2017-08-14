@@ -9,9 +9,6 @@ import android.widget.ImageView;
 
 import com.iitp.mayank.celesta2k17.R;
 
-/**
- * Created by mayank on 17/6/17.
- */
 
 public class EventsAdapter extends PagerAdapter {
     Context context;
