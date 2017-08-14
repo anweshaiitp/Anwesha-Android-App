@@ -34,7 +34,7 @@ public class EventsActivity extends AppCompatActivity implements EventsRecyclerV
         android.support.v7.app.ActionBar bar = getSupportActionBar();
         bar.setBackgroundDrawable(new ColorDrawable(ContextCompat.getColor(this, R.color.colorEvents)));
 
-        eventsRecyclerViewAdapter = new EventsRecyclerViewAdapter(this , resources.getStringArray(R.array.array_event_headers ),
+        eventsRecyclerViewAdapter = new EventsRecyclerViewAdapter(getApplicationContext() ,this , resources.getStringArray(R.array.array_event_headers ),
                                                                   resources.getStringArray(R.array.array_event_text) ,
                                                                   resources.getStringArray(R.array.array_event_intent),
                                                                   resources.obtainTypedArray(R.array.array_event_images));

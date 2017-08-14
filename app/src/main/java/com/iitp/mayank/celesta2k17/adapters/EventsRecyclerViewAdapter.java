@@ -1,5 +1,6 @@
 package com.iitp.mayank.celesta2k17.adapters;
 
+import android.app.Fragment;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.v7.widget.RecyclerView;
@@ -9,7 +10,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.iitp.mayank.celesta2k17.R;
+import com.iitp.mayank.celesta2k17.activities.EventsActivity;
 import com.iitp.mayank.celesta2k17.data.EventsData;
 
 import java.util.ArrayList;
@@ -22,16 +25,18 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
     String eventText[];
     String intent[];
     TypedArray images;
+    Context context;
 
     private final ListCardClick mOnClickListener;
 
-    public EventsRecyclerViewAdapter(ListCardClick listCardClick , String eventHeader[], String eventText[] ,String intent[] ,TypedArray img)
+    public EventsRecyclerViewAdapter(Context context ,ListCardClick listCardClick , String eventHeader[], String eventText[] ,String intent[] ,TypedArray img)
     {
         this.eventHeader = eventHeader;
         this.eventText = eventText;
         this.intent = intent;
         mOnClickListener = listCardClick;
         images = img;
+        this.context = context;
     }
 
     public interface ListCardClick
@@ -61,7 +66,8 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
 
         holder.textViewHeader.setText(eventHeader[position]);
         holder.textViewData.setText(eventText[position]);
-        holder.imageView.setImageResource(images.getResourceId(position , -1));
+        Glide.with(context).clear(holder.imageView);
+        Glide.with(context).load(eventsData.getImageId()).into(holder.imageView);
     }
 
     @Override
