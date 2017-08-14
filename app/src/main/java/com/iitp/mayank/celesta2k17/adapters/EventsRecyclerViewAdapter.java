@@ -1,10 +1,12 @@
 package com.iitp.mayank.celesta2k17.adapters;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.iitp.mayank.celesta2k17.R;
@@ -19,15 +21,17 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
     String eventHeader[];
     String eventText[];
     String intent[];
+    TypedArray images;
 
     private final ListCardClick mOnClickListener;
 
-    public EventsRecyclerViewAdapter(ListCardClick listCardClick , String eventHeader[], String eventText[] ,String intent[])
+    public EventsRecyclerViewAdapter(ListCardClick listCardClick , String eventHeader[], String eventText[] ,String intent[] ,TypedArray img)
     {
         this.eventHeader = eventHeader;
         this.eventText = eventText;
         this.intent = intent;
         mOnClickListener = listCardClick;
+        images = img;
     }
 
     public interface ListCardClick
@@ -51,10 +55,12 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
         eventsData.setHeader(eventHeader[position]);
         eventsData.setText(eventText[position]);
         eventsData.setIntentClass(intent[position]);
+        eventsData.setImageId(images.getResourceId(position , -1));
 
         dataList.add(eventsData);
         holder.textViewHeader.setText(eventHeader[position]);
         holder.textViewData.setText(eventText[position]);
+        holder.imageView.setImageResource(images.getResourceId(position , -1));
     }
 
     @Override
@@ -66,10 +72,12 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
     {
         TextView textViewHeader;
         TextView textViewData;
+        ImageView imageView;
         public EventViewHolder(View itemView) {
             super(itemView);
             textViewHeader = (TextView)itemView.findViewById(R.id.card_header);
             textViewData = (TextView)itemView.findViewById(R.id.card_text);
+            imageView = (ImageView)itemView.findViewById(R.id.card_cardimage);
             itemView.setOnClickListener(this);
         }
 

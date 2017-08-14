@@ -6,18 +6,18 @@
         <item>Sparkonics</item>
         <item>SAE</item>
         <item>SCME</item>
-        <item>SCME</item>
-        <item>SCME</item>
+        <item>ACE</item>
+        <item>Threshold</item>
     </string-array>
 
     <string-array
         name="array_event_text">
-        <item>Not Just Another Computer Club</item>
+        <item>Not Just Another Computer Klub</item>
         <item>The Electrical Engineering Club</item>
         <item>Society of Automobile Engineers</item>
-        <item>Society of Mechanical Engineers</item>
-        <item>The Electrical Engineering Club</item>
-        <item>The Electrical Engineering Club</item>
+        <item>Student Council of Mechanical Engineers</item>
+        <item>Association of Civil Engineers</item>
+        <item>The Chemical Engineering Club</item>
     </string-array>
 
     <string-array
@@ -29,4 +29,13 @@
         <item>Y</item>
         <item>Y</item>
     </string-array>
+
+    <integer-array name="array_event_images">
+        <item>@drawable/njack</item>
+        <item>@drawable/sparkonics</item>
+        <item>@drawable/sae</item>
+        <item>@drawable/scme</item>
+        <item>@drawable/ace</item>
+        <item>@drawable/threshold</item>
+    </integer-array>
 </resources>

@@ -36,7 +36,8 @@ public class EventsActivity extends AppCompatActivity implements EventsRecyclerV
 
         eventsRecyclerViewAdapter = new EventsRecyclerViewAdapter(this , resources.getStringArray(R.array.array_event_headers ),
                                                                   resources.getStringArray(R.array.array_event_text) ,
-                                                                  resources.getStringArray(R.array.array_event_intent));
+                                                                  resources.getStringArray(R.array.array_event_intent),
+                                                                  resources.obtainTypedArray(R.array.array_event_images));
         recyclerView.setAdapter(eventsRecyclerViewAdapter);
     }
 
