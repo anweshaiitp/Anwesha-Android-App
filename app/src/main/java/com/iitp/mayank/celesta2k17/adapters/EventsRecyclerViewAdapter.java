@@ -1,6 +1,5 @@
 package com.iitp.mayank.celesta2k17.adapters;
 
-import android.app.Fragment;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.v7.widget.RecyclerView;
@@ -12,7 +11,6 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.iitp.mayank.celesta2k17.R;
-import com.iitp.mayank.celesta2k17.activities.EventsActivity;
 import com.iitp.mayank.celesta2k17.data.EventsData;
 
 import java.util.ArrayList;

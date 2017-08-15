@@ -6,24 +6,38 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:largeHeap="true">
+        android:theme="@style/AppTheme">
         <activity
             android:name=".activities.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".activities.MyProfile"
             android:label="@string/my_profile" />
-        <activity android:name=".activities.EventsActivity"
+        <activity
+            android:name=".activities.EventsActivity"
             android:label="@string/events" />
+        <activity android:name=".activities.NjackEvents"
+            android:label="@string/NJACK_Events"/>
+        <activity android:name=".activities.SparkonicsEvents"
+            android:label="@string/Sparkonics_Events"/>
+        <activity android:name=".activities.ScmeEvents"
+            android:label="@string/SCME_Events"/>
+        <activity android:name=".activities.SaeEvents"
+            android:label="@string/SAE_Events"/>
+        <activity android:name=".activities.ThresholdEvents"
+            android:label="@string/Threshold_Events"/>
+        <activity android:name=".activities.AceEvents"
+            android:label="@string/ACE_Events"/>
     </application>
 
 </manifest>

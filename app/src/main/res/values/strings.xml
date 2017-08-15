@@ -12,4 +12,10 @@
     <string name="social">Social</string>
     <string name="SignUp">Sign Up</string>
     <string name="SignIn">Sign In</string>
+    <string name="NJACK_Events">NJACK Events</string>
+    <string name="ACE_Events">ACE Events</string>
+    <string name="SAE_Events">SAE Events</string>
+    <string name="SCME_Events">SCME Events</string>
+    <string name="Sparkonics_Events">Sparkonics Events</string>
+    <string name="Threshold_Events">Threshold Events</string>
 </resources>

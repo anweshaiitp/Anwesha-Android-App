@@ -22,12 +22,12 @@
 
     <string-array
         name="array_event_intent">
-        <item>X</item>
-        <item>Y</item>
-        <item>Y</item>
-        <item>Y</item>
-        <item>Y</item>
-        <item>Y</item>
+        <item>com.iitp.mayank.celesta2k17.activities.NjackEvents</item>
+        <item>com.iitp.mayank.celesta2k17.activities.SparkonicsEvents</item>
+        <item>com.iitp.mayank.celesta2k17.activities.SaeEvents</item>
+        <item>com.iitp.mayank.celesta2k17.activities.ScmeEvents</item>
+        <item>com.iitp.mayank.celesta2k17.activities.AceEvents</item>
+        <item>com.iitp.mayank.celesta2k17.activities.ThresholdEvents</item>
     </string-array>
 
     <integer-array name="array_event_images">
@@ -37,5 +37,245 @@
         <item>@drawable/scme</item>
         <item>@drawable/ace</item>
         <item>@drawable/threshold</item>
+    </integer-array>
+
+    <!--NJACK Events-->
+    <string-array
+        name="array_njack_event_headers">
+        <item>Event 1</item>
+        <item>Event 2</item>
+        <item>Event 3</item>
+        <item>Event 4</item>
+        <item>Event 5</item>
+        <item>Event 6</item>
+    </string-array>
+
+    <string-array
+        name="array_njack_event_text">
+        <item>Des 1</item>
+        <item>Des 1</item>
+        <item>Des 1</item>
+        <item>Des 1</item>
+        <item>Des 1</item>
+        <item>Des 1</item>
+    </string-array>
+
+    <string-array
+        name="array_njack_event_intent">
+        <item>X</item>
+        <item>Y</item>
+        <item>Y</item>
+        <item>Y</item>
+        <item>Y</item>
+        <item>Y</item>
+    </string-array>
+
+    <integer-array name="array_njack_event_images">
+        <item>@drawable/ic_home_white_24dp</item>
+        <item>@drawable/ic_home_white_24dp</item>
+        <item>@drawable/ic_home_white_24dp</item>
+        <item>@drawable/ic_home_white_24dp</item>
+        <item>@drawable/ic_home_white_24dp</item>
+        <item>@drawable/ic_home_white_24dp</item>
+    </integer-array>
+
+    <!--Sparkonics Events-->
+    <string-array
+        name="array_sparkonics_event_headers">
+        <item>Event 1</item>
+        <item>Event 2</item>
+        <item>Event 3</item>
+        <item>Event 4</item>
+        <item>Event 5</item>
+        <item>Event 6</item>
+    </string-array>
+
+    <string-array
+        name="array_sparkonics_event_text">
+        <item>Des 1</item>
+        <item>Des 1</item>
+        <item>Des 1</item>
+        <item>Des 1</item>
+        <item>Des 1</item>
+        <item>Des 1</item>
+    </string-array>
+
+    <string-array
+        name="array_sparkonics_event_intent">
+        <item>X</item>
+        <item>Y</item>
+        <item>Y</item>
+        <item>Y</item>
+        <item>Y</item>
+        <item>Y</item>
+    </string-array>
+
+    <integer-array name="array_sparkonics_event_images">
+        <item>@drawable/ic_home_white_24dp</item>
+        <item>@drawable/ic_home_white_24dp</item>
+        <item>@drawable/ic_home_white_24dp</item>
+        <item>@drawable/ic_home_white_24dp</item>
+        <item>@drawable/ic_home_white_24dp</item>
+        <item>@drawable/ic_home_white_24dp</item>
+    </integer-array>
+
+    <!--SAE Events-->
+    <string-array
+        name="array_sae_event_headers">
+        <item>Event 1</item>
+        <item>Event 2</item>
+        <item>Event 3</item>
+        <item>Event 4</item>
+        <item>Event 5</item>
+        <item>Event 6</item>
+    </string-array>
+
+    <string-array
+        name="array_sae_event_text">
+        <item>Des 1</item>
+        <item>Des 1</item>
+        <item>Des 1</item>
+        <item>Des 1</item>
+        <item>Des 1</item>
+        <item>Des 1</item>
+    </string-array>
+
+    <string-array
+        name="array_sae_event_intent">
+        <item>X</item>
+        <item>Y</item>
+        <item>Y</item>
+        <item>Y</item>
+        <item>Y</item>
+        <item>Y</item>
+    </string-array>
+
+    <integer-array name="array_sae_event_images">
+        <item>@drawable/ic_home_white_24dp</item>
+        <item>@drawable/ic_home_white_24dp</item>
+        <item>@drawable/ic_home_white_24dp</item>
+        <item>@drawable/ic_home_white_24dp</item>
+        <item>@drawable/ic_home_white_24dp</item>
+        <item>@drawable/ic_home_white_24dp</item>
+    </integer-array>
+
+    <!--SCME Events-->
+    <string-array
+        name="array_scme_event_headers">
+        <item>Event 1</item>
+        <item>Event 2</item>
+        <item>Event 3</item>
+        <item>Event 4</item>
+        <item>Event 5</item>
+        <item>Event 6</item>
+    </string-array>
+
+    <string-array
+        name="array_scme_event_text">
+        <item>Des 1</item>
+        <item>Des 1</item>
+        <item>Des 1</item>
+        <item>Des 1</item>
+        <item>Des 1</item>
+        <item>Des 1</item>
+    </string-array>
+
+    <string-array
+        name="array_scme_event_intent">
+        <item>X</item>
+        <item>Y</item>
+        <item>Y</item>
+        <item>Y</item>
+        <item>Y</item>
+        <item>Y</item>
+    </string-array>
+
+    <integer-array name="array_scme_event_images">
+        <item>@drawable/ic_home_white_24dp</item>
+        <item>@drawable/ic_home_white_24dp</item>
+        <item>@drawable/ic_home_white_24dp</item>
+        <item>@drawable/ic_home_white_24dp</item>
+        <item>@drawable/ic_home_white_24dp</item>
+        <item>@drawable/ic_home_white_24dp</item>
+    </integer-array>
+
+    <!--Threshold Events-->
+    <string-array
+        name="array_threshold_event_headers">
+        <item>Event 1</item>
+        <item>Event 2</item>
+        <item>Event 3</item>
+        <item>Event 4</item>
+        <item>Event 5</item>
+        <item>Event 6</item>
+    </string-array>
+
+    <string-array
+        name="array_threshold_event_text">
+        <item>Des 1</item>
+        <item>Des 1</item>
+        <item>Des 1</item>
+        <item>Des 1</item>
+        <item>Des 1</item>
+        <item>Des 1</item>
+    </string-array>
+
+    <string-array
+        name="array_threshold_event_intent">
+        <item>X</item>
+        <item>Y</item>
+        <item>Y</item>
+        <item>Y</item>
+        <item>Y</item>
+        <item>Y</item>
+    </string-array>
+
+    <integer-array name="array_threshold_event_images">
+        <item>@drawable/ic_home_white_24dp</item>
+        <item>@drawable/ic_home_white_24dp</item>
+        <item>@drawable/ic_home_white_24dp</item>
+        <item>@drawable/ic_home_white_24dp</item>
+        <item>@drawable/ic_home_white_24dp</item>
+        <item>@drawable/ic_home_white_24dp</item>
+    </integer-array>
+
+    <!--ACE Events-->
+    <string-array
+        name="array_ace_event_headers">
+        <item>Event 1</item>
+        <item>Event 2</item>
+        <item>Event 3</item>
+        <item>Event 4</item>
+        <item>Event 5</item>
+        <item>Event 6</item>
+    </string-array>
+
+    <string-array
+        name="array_ace_event_text">
+        <item>Des 1</item>
+        <item>Des 1</item>
+        <item>Des 1</item>
+        <item>Des 1</item>
+        <item>Des 1</item>
+        <item>Des 1</item>
+    </string-array>
+
+    <string-array
+        name="array_ace_event_intent">
+        <item>X</item>
+        <item>Y</item>
+        <item>Y</item>
+        <item>Y</item>
+        <item>Y</item>
+        <item>Y</item>
+    </string-array>
+
+    <integer-array name="array_ace_event_images">
+        <item>@drawable/ic_home_white_24dp</item>
+        <item>@drawable/ic_home_white_24dp</item>
+        <item>@drawable/ic_home_white_24dp</item>
+        <item>@drawable/ic_home_white_24dp</item>
+        <item>@drawable/ic_home_white_24dp</item>
+        <item>@drawable/ic_home_white_24dp</item>
     </integer-array>
 </resources>
