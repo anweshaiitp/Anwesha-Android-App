@@ -3,6 +3,7 @@ package com.iitp.mayank.celesta2k17.adapters;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.v7.widget.RecyclerView;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -63,7 +64,13 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
         dataList.add(eventsData);
 
         holder.textViewHeader.setText(eventHeader[position]);
-        holder.textViewData.setText(eventText[position]);
+        if(!eventText[position].equals("-1"))
+            holder.textViewData.setText(eventText[position]);
+        else
+        {
+            holder.textViewData.setVisibility(View.GONE);
+            holder.textViewHeader.setTextSize(TypedValue.COMPLEX_UNIT_SP , 16);
+        }
         Glide.with(context).clear(holder.imageView);
         Glide.with(context).load(eventsData.getImageId()).into(holder.imageView);
     }
