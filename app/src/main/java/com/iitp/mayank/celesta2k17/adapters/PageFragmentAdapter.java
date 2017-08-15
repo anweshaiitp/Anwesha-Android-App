@@ -1,6 +1,5 @@
 package com.iitp.mayank.celesta2k17.adapters;
 
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
