@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "626363216910",
+    "firebase_url": "https://celesta2k17.firebaseio.com",
+    "project_id": "celesta2k17",
+    "storage_bucket": "celesta2k17.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:626363216910:android:14a0c0a9acdeb491",
+        "android_client_info": {
+          "package_name": "com.iitp.mayank.celesta2k17"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "626363216910-vm0fdrk24k3q829lrbgaqhi0g9j9gql5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.iitp.mayank.celesta2k17",
+            "certificate_hash": "abe998ab0a2a7ea81930f3a01400f576dbcd4ea8"
+          }
+        },
+        {
+          "client_id": "626363216910-lrunt96p32eudcbgnbs8rmqf9vqu2ppq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2HxTy0t1qyEWYuPakTRVR9g6By-1fK8k"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "626363216910-lrunt96p32eudcbgnbs8rmqf9vqu2ppq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
