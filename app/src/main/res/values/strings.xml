@@ -18,4 +18,9 @@
     <string name="SCME_Events">SCME Events</string>
     <string name="Sparkonics_Events">Sparkonics Events</string>
     <string name="Threshold_Events">Threshold Events</string>
+    <string name="login_status">login_status</string>
+    <string name="full_name">full_name</string>
+    <string name="id">id</string>
+    <string name="college_name">college_name</string>
+    <string name="event_participated">event_participated</string>
 </resources>
