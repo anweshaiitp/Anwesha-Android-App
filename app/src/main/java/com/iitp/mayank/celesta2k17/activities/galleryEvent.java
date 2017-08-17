@@ -1,5 +1,6 @@
 package com.iitp.mayank.celesta2k17.activities;
 
+import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,16 +23,19 @@ import com.iitp.mayank.celesta2k17.data.GalleryPics;
 import java.io.File;
 import java.util.ArrayList;
 
+import static android.R.attr.data;
+
 public class galleryEvent extends AppCompatActivity {
 
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference mUrlDatabaseReference;
     ArrayList<GalleryPics> mpicUrl = new ArrayList<GalleryPics>();
     private ChildEventListener mChildEventListener;
-    private  FirebaseStorage mStorage ;
+    private FirebaseStorage mStorage;
 
     private StorageReference mStorageReference;
-    private File localFile ;
+    private File localFile;
+    private boolean fileDirectory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,21 +47,20 @@ public class galleryEvent extends AppCompatActivity {
         //getting reference to message part of the app
         mUrlDatabaseReference = mFirebaseDatabase.getReference().child("Url");
         //creating an instance of Firebase storage
-        mStorage= FirebaseStorage.getInstance();
+        mStorage = FirebaseStorage.getInstance();
 
         // Create a storage reference from our app
-       mStorageReference= mStorage.getReference();
+        mStorageReference = mStorage.getReference();
 
         //create a local file
         try {
-            localFile = File.createTempFile("Celesta", "images");
-            Toast.makeText(getApplicationContext(),localFile.getAbsolutePath(),Toast.LENGTH_LONG).show();
-            Log.e("Fooooo",localFile.getAbsolutePath());
-        }
-        catch ( Exception e )
-        {
-            Toast.makeText(getApplicationContext(),"Can't create file ",Toast.LENGTH_LONG).show();
-            Log.e("sdsddsd",e.getMessage()) ;
+            localFile = new File(Environment.getDataDirectory().getAbsolutePath() + File.separator + "Images");
+            if (!localFile.exists())
+                localFile.mkdir();
+
+
+        } catch (Exception e) {
+
         }
 
 
@@ -67,16 +70,15 @@ public class galleryEvent extends AppCompatActivity {
                 GalleryPics galleryPics = dataSnapshot.getValue(GalleryPics.class);
                 // adding the url to data list
                 mpicUrl.add(galleryPics);
-                Toast.makeText(getApplicationContext(),mpicUrl.get(0).getmPhotoUrl().trim(),Toast.LENGTH_LONG).show();
+
 
                 StorageReference islandRef = mStorageReference.child(mpicUrl.get(0).getmPhotoUrl());
-
 
 
                 islandRef.getFile(localFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
                     @Override
                     public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
-                        Toast.makeText(getApplicationContext(),"Wohoooo",Toast.LENGTH_LONG).show();
+
 
                         // Local temp file has been created
                     }
@@ -84,13 +86,11 @@ public class galleryEvent extends AppCompatActivity {
                     @Override
                     public void onFailure(@NonNull Exception exception) {
 
-                        Toast.makeText(getApplicationContext(),"Not Wohoooo",Toast.LENGTH_LONG).show();
+
 
                         // Handle any errors
                     }
                 });
-
-
 
 
             }
