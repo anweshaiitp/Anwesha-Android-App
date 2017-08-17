@@ -22,31 +22,86 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".activities.MyProfile"
-            android:label="@string/my_profile" />
+
         <activity
             android:name=".activities.EventsActivity"
-            android:label="@string/events" />
+            android:label="@string/events">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.MainActivity" />
+        </activity>
+
+
+        <activity
+            android:name=".activities.MyProfile"
+            android:label="@string/my_profile">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.MainActivity" />
+        </activity>
+
+
+        <activity android:name=".activities.galleryEvent"
+               android:label="@string/gallery">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.MainActivity" />
+        </activity>
+
+
         <activity
             android:name=".activities.NjackEvents"
-            android:label="@string/NJACK_Events" />
+            android:label="@string/NJACK_Events">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.EventsActivity" />
+        </activity>
+
+
         <activity
             android:name=".activities.SparkonicsEvents"
-            android:label="@string/Sparkonics_Events" />
+            android:label="@string/Sparkonics_Events">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.EventsActivity" />
+        </activity>
+
+
         <activity
             android:name=".activities.ScmeEvents"
-            android:label="@string/SCME_Events" />
+            android:label="@string/SCME_Events">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.EventsActivity" />
+        </activity>
+
+
         <activity
             android:name=".activities.SaeEvents"
-            android:label="@string/SAE_Events" />
+            android:label="@string/SAE_Events">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.EventsActivity" />
+        </activity>
+
+
         <activity
             android:name=".activities.ThresholdEvents"
-            android:label="@string/Threshold_Events" />
+            android:label="@string/Threshold_Events">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.EventsActivity" />
+        </activity>
+
         <activity
             android:name=".activities.AceEvents"
-            android:label="@string/ACE_Events" />
-        <activity android:name=".activities.galleryEvent"></activity>
+            android:label="@string/ACE_Events">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.EventsActivity" />
+        </activity>
+
     </application>
 
 </manifest>

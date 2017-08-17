@@ -2,10 +2,10 @@ package com.iitp.mayank.celesta2k17.activities;
 
 import android.content.res.Resources;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Window;
 
@@ -23,8 +23,8 @@ public class SparkonicsEvents extends AppCompatActivity implements EventsRecycle
         setContentView(R.layout.activity_njack);
 
         recyclerView = (RecyclerView)findViewById(R.id.rv_events);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(linearLayoutManager);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this , 2);
+        recyclerView.setLayoutManager(gridLayoutManager);
 
         recyclerView.setHasFixedSize(true);
         Resources resources = getResources();
