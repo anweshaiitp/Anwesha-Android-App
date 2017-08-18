@@ -16,6 +16,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -38,6 +39,7 @@ public class galleryEvent extends AppCompatActivity {
     private StorageReference mStorageReference;
     private File localFile;
 
+    final  private  String LOG_TAG=getClass().toString() ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,23 +92,23 @@ public class galleryEvent extends AppCompatActivity {
                 mpicUrl.add(galleryPics);
 
 
-                StorageReference islandRef = mStorageReference.child(mpicUrl.get(0).getmPhotoUrl());
-
-
-                islandRef.getFile(localFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
-                    @Override
-                    public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
-
-                        Toast.makeText(getApplicationContext(), " succcess", Toast.LENGTH_LONG).show();
-                        // Local temp file has been created
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception exception) {
-
-                        // Handle any errors
-                    }
-                });
+//                StorageReference islandRef = mStorageReference.child(mpicUrl.get(0).getmPhotoUrl());
+//
+//
+//                islandRef.getFile(localFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+//                    @Override
+//                    public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+//
+//                        Toast.makeText(getApplicationContext(), " succcess", Toast.LENGTH_LONG).show();
+//                        // Local temp file has been created
+//                    }
+//                }).addOnFailureListener(new OnFailureListener() {
+//                    @Override
+//                    public void onFailure(@NonNull Exception exception) {
+//
+//                        // Handle any errors
+//                    }
+//                });
 
 
             }
@@ -134,6 +136,22 @@ public class galleryEvent extends AppCompatActivity {
         };
 
         mUrlDatabaseReference.addChildEventListener(mChildEventListener);
+
+        //to notify when all the previous dataSnapshot is downloaded
+        mUrlDatabaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                Toast.makeText(getApplicationContext(),""+mpicUrl.size() ,Toast.LENGTH_LONG).show();
+                Log.e(LOG_TAG,""+mpicUrl.size()) ;
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.e(LOG_TAG,databaseError.toString()) ;
+            }
+        });
+
 
 
     }

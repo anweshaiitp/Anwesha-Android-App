@@ -7,13 +7,15 @@ package com.iitp.mayank.celesta2k17.data;
 public class GalleryPics {
 
     private String mPhotoUrl;
+    private  String mPicName ;
 // making an empty constructor so that it can't be instantizied
     public GalleryPics() {
     }
 // to set the photo url
-    public GalleryPics(String url) {
+    public GalleryPics(String url ,String picName) {
 
         mPhotoUrl = url;
+        mPicName=picName;
     }
 
     //returns the photo url
@@ -21,5 +23,9 @@ public class GalleryPics {
         return mPhotoUrl;
     }
 
+    // returns the pic name
+    public String getmPicName() {
+        return mPicName;
+    }
 
 }
