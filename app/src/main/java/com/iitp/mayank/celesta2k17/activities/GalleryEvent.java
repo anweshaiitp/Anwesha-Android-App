@@ -129,7 +129,7 @@ public class GalleryEvent extends AppCompatActivity {
 
                     // try creating a local file with the image name
                     try {
-                        // create a new file in that directory with this name
+                         // create a new file in that directory with this name
                         /**
                          * @param directory accepts the directory where you want to save the file
                          * @param #name accepts the name of the file
