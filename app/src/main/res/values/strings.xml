@@ -23,4 +23,11 @@
     <string name="id">id</string>
     <string name="college_name">college_name</string>
     <string name="event_participated">event_participated</string>
+    <string name="first_name_hint">First Name</string>
+    <string name="last_name_hint">Last Name</string>
+    <string name="college_hint">College</string>
+    <string name="email_id_hint">Email ID</string>
+    <string name="password_hint">Password</string>
+    <string name="confirm_password_hint">Confirm Password</string>
+    <string name="register_button">REGISTER</string>
 </resources>

@@ -40,7 +40,7 @@
                 android:value=".activities.MainActivity" />
         </activity>
         <activity
-            android:name=".activities.galleryEvent"
+            android:name=".activities.GalleryEvent"
             android:label="@string/gallery">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -88,8 +88,12 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.EventsActivity" />
         </activity>
-        <activity android:name=".activities.SignInActivity" />
-        <activity android:name=".activities.RegisterActivity"></activity>
+        <activity
+            android:name=".activities.SignInActivity"
+            android:label="@string/SignIn"/>
+        <activity
+            android:name=".activities.RegisterActivity"
+            android:label="@string/SignUp" />
     </application>
 
 </manifest>
