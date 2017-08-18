@@ -30,4 +30,8 @@
     <string name="password_hint">Password</string>
     <string name="confirm_password_hint">Confirm Password</string>
     <string name="register_button">REGISTER</string>
+    <string name="error_invalid_email">Invalid Email!</string>
+    <string name="invalid_password_length">Length should be more than 5 characters</string>
+    <string name="error_password_match">Passwords don\'t match</string>
+    <string name="error_empty_field">Empty Field</string>
 </resources>

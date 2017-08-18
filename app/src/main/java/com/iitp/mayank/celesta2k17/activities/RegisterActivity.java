@@ -78,18 +78,18 @@ public class RegisterActivity extends AppCompatActivity {
         mConfirmPassword = confirmPasswordWrapper.getEditText().getText().toString();
 
         if(!validateEmail(mEmail)) {
-            emailIDWrapper.setError("Invalid Email!");
+            emailIDWrapper.setError(getString(R.string.error_invalid_email));
             return false;
         }
         if(!validPassword(mPassword))
         {
-            passwordWrapper.setError("Length should be more than 5 characters");
+            passwordWrapper.setError(getString(R.string.invalid_password_length));
             return false;
         }
         if(!matchingPassword(mPassword , mConfirmPassword))
         {
-            passwordWrapper.setError("Passwords dont match");
-            confirmPasswordWrapper.setError("Passwords dont match");
+            passwordWrapper.setError(getString(R.string.error_password_match));
+            confirmPasswordWrapper.setError(getString(R.string.error_password_match));
             return false;
         }
         return true;
@@ -116,32 +116,32 @@ public class RegisterActivity extends AppCompatActivity {
         if(TextUtils.isEmpty(firstNameWrapper.getEditText().getText().toString()))
         {
             flag = true;
-            firstNameWrapper.setError("Empty Field");
+            firstNameWrapper.setError(getString(R.string.error_empty_field));
         }
         if(TextUtils.isEmpty(lastNameWrapper.getEditText().getText().toString()))
         {
             flag = true;
-            lastNameWrapper.setError("Empty field");
+            lastNameWrapper.setError(getString(R.string.error_empty_field));
         }
         if(TextUtils.isEmpty(collegeNameWrapper.getEditText().getText().toString()))
         {
             flag = true;
-            collegeNameWrapper.setError("Empty field");
+            collegeNameWrapper.setError(getString(R.string.error_empty_field));
         }
         if(TextUtils.isEmpty(emailIDWrapper.getEditText().getText().toString()))
         {
             flag = true;
-            emailIDWrapper.setError("Empty field");
+            emailIDWrapper.setError(getString(R.string.error_empty_field));
         }
         if(TextUtils.isEmpty(passwordWrapper.getEditText().getText().toString()))
         {
             flag = true;
-            passwordWrapper.setError("Empty field");
+            passwordWrapper.setError(getString(R.string.error_empty_field));
         }
         if(TextUtils.isEmpty(confirmPasswordWrapper.getEditText().getText().toString()))
         {
             flag = true;
-            confirmPasswordWrapper.setError("Empty field");
+            confirmPasswordWrapper.setError(getString(R.string.error_empty_field));
         }
 
         return flag;
