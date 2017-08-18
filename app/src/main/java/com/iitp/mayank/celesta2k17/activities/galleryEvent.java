@@ -46,8 +46,10 @@ public class galleryEvent extends AppCompatActivity {
 
         // this is the main accessing point of the data base
         mFirebaseDatabase = FirebaseDatabase.getInstance();
+
         //getting reference to message part of the app
         mUrlDatabaseReference = mFirebaseDatabase.getReference().child("Url");
+
         //creating an instance of Firebase storage
         mStorage = FirebaseStorage.getInstance();
 
@@ -55,13 +57,20 @@ public class galleryEvent extends AppCompatActivity {
         mStorageReference = mStorage.getReference();
 
 
-        //
-        ContextWrapper cw = new ContextWrapper(getApplicationContext());
+        //get the context where app data is saved
+        ContextWrapper contextWrapper = new ContextWrapper(getApplicationContext());
 
-        File directory = cw.getDir("images", Context.MODE_PRIVATE);
 
-        //create a local file
+        //creates  if needed, a new directory in which the application can place custom images data  files
+        File directory = contextWrapper.getDir("images", Context.MODE_PRIVATE);
+
+        // error handling while creating the local file
         try {
+            // create a new file in that directory with this name
+            /**
+             * @param directory accepts the directory where you want to save the file
+             * @param #name accepts the name of the file
+             * */
 
             localFile = new File(directory, "sae.jpg");
 
@@ -70,6 +79,8 @@ public class galleryEvent extends AppCompatActivity {
 
         }
 
+
+        // adding a listener attached to the firebase to sync with any changes made with the firebase
 
         mChildEventListener = new ChildEventListener() {
             @Override
