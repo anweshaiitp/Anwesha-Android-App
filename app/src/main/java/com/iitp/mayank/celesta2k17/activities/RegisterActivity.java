@@ -21,6 +21,9 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.iitp.mayank.celesta2k17.R;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -56,7 +59,7 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        mUrl = "https://celesta.tameesh.in/register";
+        mUrl = getString(R.string.register_url);
         mQueue = Volley.newRequestQueue(this);
         buttonRegister = (Button) findViewById(R.id.button_register);
         firstNameWrapper = (TextInputLayout) findViewById(R.id.first_name_wrapper);
@@ -65,7 +68,7 @@ public class RegisterActivity extends AppCompatActivity {
         emailIDWrapper = (TextInputLayout) findViewById(R.id.email_id_wrapper);
         passwordWrapper = (TextInputLayout) findViewById(R.id.password_wrapper);
         confirmPasswordWrapper = (TextInputLayout) findViewById(R.id.confirm_password_wrapper);
-        mobileNoWrapper = (TextInputLayout) findViewById(R.id.mobile_no_wrapper );
+        mobileNoWrapper = (TextInputLayout) findViewById(R.id.mobile_no_wrapper);
 
         setHints();
         buttonRegister.setOnClickListener(new View.OnClickListener() {
@@ -80,6 +83,23 @@ public class RegisterActivity extends AppCompatActivity {
                                 @Override
                                 public void onResponse(String response) {
                                     Log.v("Response:", response);
+                                    try {
+                                        JSONObject jsonObject = new JSONObject(response);
+                                        int status = Integer.parseInt(jsonObject.getString(getString(R.string.JSON_status)));
+
+                                        switch (status) {
+                                            case 200:
+                                                Toast.makeText(getApplicationContext(), R.string.message_registration_success, Toast.LENGTH_LONG).show();
+                                                finish();
+                                                break;
+                                            case 409:
+                                                Toast.makeText(getApplicationContext(), R.string.message_registration_duplicate, Toast.LENGTH_LONG).show();
+                                                finish();
+                                                break;
+                                        }
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    }
                                 }
                             },
                             new Response.ErrorListener() {
@@ -92,20 +112,21 @@ public class RegisterActivity extends AppCompatActivity {
                     ) {
                         @Override
                         protected Map<String, String> getParams() throws AuthFailureError {
-                            Map<String , String> params = new HashMap<>();
-                            params.put("name" , mName);
-                            params.put("college" , mCollege);
-                            params.put("emailid" , mEmail);
-                            params.put("password" , mPassword);
-                            params.put("mobile" , mMobile);
+                            Map<String, String> params = new HashMap<>();
+                            params.put(getString(R.string.register_param_name), mName);
+                            params.put(getString(R.string.register_param_college), mCollege);
+                            params.put(getString(R.string.register_param_emailid), mEmail);
+                            params.put(getString(R.string.register_param_password), mPassword);
+                            params.put(getString(R.string.register_param_mobile), mMobile);
+                            params.put(getString(R.string.register_param_apiKey), getString(R.string.api_key));
 
                             return params;
                         }
 
                         @Override
                         public Map<String, String> getHeaders() throws AuthFailureError {
-                            Map<String , String> headers = new HashMap<>();
-                            headers.put("Accept","application/json");
+                            Map<String, String> headers = new HashMap<>();
+                            headers.put("Accept", "application/json");
                             return headers;
                         }
                     };
@@ -143,9 +164,8 @@ public class RegisterActivity extends AppCompatActivity {
             passwordWrapper.setError(getString(R.string.invalid_password_length));
             return false;
         }
-        if(!validMobile(mMobile))
-        {
-            mobileNoWrapper.setError("Invalid Mobile No.");
+        if (!validMobile(mMobile)) {
+            mobileNoWrapper.setError(getString(R.string.error_invalid_mobile_no));
             return false;
         }
         if (!matchingPassword(mPassword, mConfirmPassword)) {
@@ -157,7 +177,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private boolean validMobile(String mMobile) {
-        if(mMobile.length() != 10)
+        if (mMobile.length() != 10)
             return false;
         return true;
     }
