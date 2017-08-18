@@ -10,15 +10,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.iitp.mayank.celesta2k17.R;
 import com.iitp.mayank.celesta2k17.activities.EventsActivity;
-import com.iitp.mayank.celesta2k17.activities.MyProfile;
-import com.iitp.mayank.celesta2k17.activities.galleryEvent;
+import com.iitp.mayank.celesta2k17.activities.GalleryEvent;
 import com.iitp.mayank.celesta2k17.adapters.EventsAdapter;
-
-import static com.iitp.mayank.celesta2k17.R.string.gallery;
 
 /**
  * Created by mayank on 26/5/17.
@@ -60,7 +56,7 @@ public class HomePage extends android.support.v4.app.Fragment {
         galleryLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(rootView.getContext() , galleryEvent.class);
+                Intent intent = new Intent(rootView.getContext() , GalleryEvent.class);
                 startActivity(intent);
 
 

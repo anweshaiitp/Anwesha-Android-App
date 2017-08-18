@@ -32,7 +32,7 @@ import java.util.Random;
 
 import static android.R.attr.data;
 
-public class galleryEvent extends AppCompatActivity {
+public class GalleryEvent extends AppCompatActivity {
 
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference mUrlDatabaseReference;

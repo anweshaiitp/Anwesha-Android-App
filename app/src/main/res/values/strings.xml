@@ -18,4 +18,21 @@
     <string name="SCME_Events">SCME Events</string>
     <string name="Sparkonics_Events">Sparkonics Events</string>
     <string name="Threshold_Events">Threshold Events</string>
+    <string name="login_status">login_status</string>
+    <string name="full_name">full_name</string>
+    <string name="id">id</string>
+    <string name="college_name">college_name</string>
+    <string name="event_participated">event_participated</string>
+    <string name="first_name_hint">First Name</string>
+    <string name="last_name_hint">Last Name</string>
+    <string name="college_hint">College</string>
+    <string name="email_id_hint">Email ID</string>
+    <string name="password_hint">Password</string>
+    <string name="confirm_password_hint">Confirm Password</string>
+    <string name="register_button">REGISTER</string>
+    <string name="error_invalid_email">Invalid Email!</string>
+    <string name="invalid_password_length">Length should be more than 5 characters</string>
+    <string name="error_password_match">Passwords don\'t match</string>
+    <string name="error_empty_field">Empty Field</string>
+    <string name="mobile_no_hint">Mobile No.</string>
 </resources>
