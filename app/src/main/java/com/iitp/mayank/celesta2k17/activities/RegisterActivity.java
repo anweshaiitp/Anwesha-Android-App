@@ -1,14 +1,28 @@
 package com.iitp.mayank.celesta2k17.activities;
 
+import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.NetworkResponse;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonRequest;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.iitp.mayank.celesta2k17.R;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -21,12 +35,17 @@ public class RegisterActivity extends AppCompatActivity {
     TextInputLayout emailIDWrapper;
     TextInputLayout passwordWrapper;
     TextInputLayout confirmPasswordWrapper;
+    TextInputLayout mobileNoWrapper;
 
     String mName;
     String mCollege;
     String mEmail;
     String mPassword;
     String mConfirmPassword;
+    String mMobile;
+
+    RequestQueue mQueue;
+    private String mUrl;
 
     private static final String EMAIL_PATTERN = "^[a-zA-Z0-9#_~!$&'()*+,;=:.\"(),:;<>@\\[\\]\\\\]+@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*$";
     private Pattern pattern = Pattern.compile(EMAIL_PATTERN);
@@ -37,6 +56,8 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        mUrl = "https://celesta.tameesh.in/register";
+        mQueue = Volley.newRequestQueue(this);
         buttonRegister = (Button) findViewById(R.id.button_register);
         firstNameWrapper = (TextInputLayout) findViewById(R.id.first_name_wrapper);
         lastNameWrapper = (TextInputLayout) findViewById(R.id.last_name_wrapper);
@@ -44,6 +65,7 @@ public class RegisterActivity extends AppCompatActivity {
         emailIDWrapper = (TextInputLayout) findViewById(R.id.email_id_wrapper);
         passwordWrapper = (TextInputLayout) findViewById(R.id.password_wrapper);
         confirmPasswordWrapper = (TextInputLayout) findViewById(R.id.confirm_password_wrapper);
+        mobileNoWrapper = (TextInputLayout) findViewById(R.id.mobile_no_wrapper );
 
         setHints();
         buttonRegister.setOnClickListener(new View.OnClickListener() {
@@ -51,9 +73,43 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View v) {
                 clearErrors();
                 boolean b = validateInputs();
-                if(b)
-                {
+                if (b) {
                     //Code for sending the details
+                    StringRequest stringRequest = new StringRequest(Request.Method.POST, mUrl,
+                            new Response.Listener<String>() {
+                                @Override
+                                public void onResponse(String response) {
+                                    Log.v("Response:", response);
+                                }
+                            },
+                            new Response.ErrorListener() {
+                                @Override
+                                public void onErrorResponse(VolleyError error) {
+                                    Log.v("Error : ", error.toString());
+                                    error.printStackTrace();
+                                }
+                            }
+                    ) {
+                        @Override
+                        protected Map<String, String> getParams() throws AuthFailureError {
+                            Map<String , String> params = new HashMap<>();
+                            params.put("name" , mName);
+                            params.put("college" , mCollege);
+                            params.put("emailid" , mEmail);
+                            params.put("password" , mPassword);
+                            params.put("mobile" , mMobile);
+
+                            return params;
+                        }
+
+                        @Override
+                        public Map<String, String> getHeaders() throws AuthFailureError {
+                            Map<String , String> headers = new HashMap<>();
+                            headers.put("Accept","application/json");
+                            return headers;
+                        }
+                    };
+                    mQueue.add(stringRequest);
                 }
             }
         });
@@ -66,28 +122,33 @@ public class RegisterActivity extends AppCompatActivity {
         emailIDWrapper.setErrorEnabled(false);
         passwordWrapper.setErrorEnabled(false);
         confirmPasswordWrapper.setErrorEnabled(false);
+        mobileNoWrapper.setErrorEnabled(false);
     }
 
     private boolean validateInputs() {
-        if(isAnyFieldEmpty())
+        if (isAnyFieldEmpty())
             return false;
         mName = firstNameWrapper.getEditText().getText().toString() + " " + lastNameWrapper.getEditText().getText().toString();
         mCollege = collegeNameWrapper.getEditText().getText().toString();
         mEmail = emailIDWrapper.getEditText().getText().toString();
         mPassword = passwordWrapper.getEditText().getText().toString();
         mConfirmPassword = confirmPasswordWrapper.getEditText().getText().toString();
+        mMobile = mobileNoWrapper.getEditText().getText().toString();
 
-        if(!validateEmail(mEmail)) {
+        if (!validateEmail(mEmail)) {
             emailIDWrapper.setError(getString(R.string.error_invalid_email));
             return false;
         }
-        if(!validPassword(mPassword))
-        {
+        if (!validPassword(mPassword)) {
             passwordWrapper.setError(getString(R.string.invalid_password_length));
             return false;
         }
-        if(!matchingPassword(mPassword , mConfirmPassword))
+        if(!validMobile(mMobile))
         {
+            mobileNoWrapper.setError("Invalid Mobile No.");
+            return false;
+        }
+        if (!matchingPassword(mPassword, mConfirmPassword)) {
             passwordWrapper.setError(getString(R.string.error_password_match));
             confirmPasswordWrapper.setError(getString(R.string.error_password_match));
             return false;
@@ -95,14 +156,20 @@ public class RegisterActivity extends AppCompatActivity {
         return true;
     }
 
+    private boolean validMobile(String mMobile) {
+        if(mMobile.length() != 10)
+            return false;
+        return true;
+    }
+
     private boolean validPassword(String password) {
-        if(password.length() > 5)
+        if (password.length() > 5)
             return true;
         else
             return false;
     }
 
-    private boolean matchingPassword(String password , String confirmPassword) {
+    private boolean matchingPassword(String password, String confirmPassword) {
         return password.equals(confirmPassword);
     }
 
@@ -113,35 +180,33 @@ public class RegisterActivity extends AppCompatActivity {
 
     private boolean isAnyFieldEmpty() {
         boolean flag = false;
-        if(TextUtils.isEmpty(firstNameWrapper.getEditText().getText().toString()))
-        {
+        if (TextUtils.isEmpty(firstNameWrapper.getEditText().getText().toString())) {
             flag = true;
             firstNameWrapper.setError(getString(R.string.error_empty_field));
         }
-        if(TextUtils.isEmpty(lastNameWrapper.getEditText().getText().toString()))
-        {
+        if (TextUtils.isEmpty(lastNameWrapper.getEditText().getText().toString())) {
             flag = true;
             lastNameWrapper.setError(getString(R.string.error_empty_field));
         }
-        if(TextUtils.isEmpty(collegeNameWrapper.getEditText().getText().toString()))
-        {
+        if (TextUtils.isEmpty(collegeNameWrapper.getEditText().getText().toString())) {
             flag = true;
             collegeNameWrapper.setError(getString(R.string.error_empty_field));
         }
-        if(TextUtils.isEmpty(emailIDWrapper.getEditText().getText().toString()))
-        {
+        if (TextUtils.isEmpty(emailIDWrapper.getEditText().getText().toString())) {
             flag = true;
             emailIDWrapper.setError(getString(R.string.error_empty_field));
         }
-        if(TextUtils.isEmpty(passwordWrapper.getEditText().getText().toString()))
-        {
+        if (TextUtils.isEmpty(passwordWrapper.getEditText().getText().toString())) {
             flag = true;
             passwordWrapper.setError(getString(R.string.error_empty_field));
         }
-        if(TextUtils.isEmpty(confirmPasswordWrapper.getEditText().getText().toString()))
-        {
+        if (TextUtils.isEmpty(confirmPasswordWrapper.getEditText().getText().toString())) {
             flag = true;
             confirmPasswordWrapper.setError(getString(R.string.error_empty_field));
+        }
+        if (TextUtils.isEmpty(mobileNoWrapper.getEditText().getText().toString())) {
+            flag = true;
+            mobileNoWrapper.setError(getString(R.string.error_empty_field));
         }
 
         return flag;
@@ -154,5 +219,6 @@ public class RegisterActivity extends AppCompatActivity {
         emailIDWrapper.setHint(getString(R.string.email_id_hint));
         passwordWrapper.setHint(getString(R.string.password_hint));
         confirmPasswordWrapper.setHint(getString(R.string.confirm_password_hint));
+        mobileNoWrapper.setHint(getString(R.string.mobile_no_hint));
     }
 }

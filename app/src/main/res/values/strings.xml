@@ -34,4 +34,5 @@
     <string name="invalid_password_length">Length should be more than 5 characters</string>
     <string name="error_password_match">Passwords don\'t match</string>
     <string name="error_empty_field">Empty Field</string>
+    <string name="mobile_no_hint">Mobile No.</string>
 </resources>
