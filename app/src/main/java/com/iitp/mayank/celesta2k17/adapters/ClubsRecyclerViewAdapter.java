@@ -17,7 +17,7 @@ import com.iitp.mayank.celesta2k17.data.ClubsData;
 import java.util.ArrayList;
 
 
-public class ClubsRecyclerViewAdapter extends RecyclerView.Adapter<ClubsRecyclerViewAdapter.EventViewHolder>
+public class ClubsRecyclerViewAdapter extends RecyclerView.Adapter<ClubsRecyclerViewAdapter.ClubsViewHolder>
 {
     private final ListCardClick mOnClickListener;
     ArrayList<ClubsData> dataList = new ArrayList<>();
@@ -38,17 +38,17 @@ public class ClubsRecyclerViewAdapter extends RecyclerView.Adapter<ClubsRecycler
     }
 
     @Override
-    public EventViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ClubsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         LayoutInflater layoutInflater = LayoutInflater.from(context);
         boolean attachToParent = false;
         View view = layoutInflater.inflate(R.layout.card_view , parent , attachToParent);
-        EventViewHolder eventViewHolder = new EventViewHolder(view);
-        return eventViewHolder;
+        ClubsViewHolder clubsViewHolder = new ClubsViewHolder(view);
+        return clubsViewHolder;
     }
 
     @Override
-    public void onBindViewHolder(EventViewHolder holder, int position) {
+    public void onBindViewHolder(ClubsViewHolder holder, int position) {
         ClubsData clubsData = new ClubsData();
         clubsData.setHeader(eventHeader[position]);
         clubsData.setText(eventText[position]);
@@ -78,12 +78,13 @@ public class ClubsRecyclerViewAdapter extends RecyclerView.Adapter<ClubsRecycler
         void onListClick(String intent) throws ClassNotFoundException;
     }
 
-    class EventViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
+    class ClubsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
     {
         TextView textViewHeader;
         TextView textViewData;
         ImageView imageView;
-        public EventViewHolder(View itemView) {
+
+        public ClubsViewHolder(View itemView) {
             super(itemView);
             textViewHeader = (TextView)itemView.findViewById(R.id.card_header);
             textViewData = (TextView)itemView.findViewById(R.id.card_text);

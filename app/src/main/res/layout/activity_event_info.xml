@@ -32,5 +32,13 @@
             android:layout_marginTop="16dp"
             android:textAppearance="@android:style/TextAppearance.Holo.Large"
             tools:text="Lorem ipsum dolor sit amet untes gungslla goog oo gaa lossly roemsid dsfaks slal skdlfkan" />
+
+        <TextView
+            android:id="@+id/event_date_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@android:style/TextAppearance.Material.Headline"
+            tools:text="7th Aug, 10:30 pm,\nTutorial Block - Room no. 107" />
+
     </LinearLayout>
 </ScrollView>
