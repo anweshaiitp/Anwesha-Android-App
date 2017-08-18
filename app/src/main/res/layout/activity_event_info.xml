@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.iitp.mayank.celesta2k17.activities.EventInfoActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/event_info_imageview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            tools:src="@drawable/ace" />
+
+        <TextView
+            android:id="@+id/event_info_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@android:style/TextAppearance.Material.Headline"
+            tools:text="NJATH" />
+
+        <TextView
+            android:id="@+id/event_info_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textAppearance="@android:style/TextAppearance.Holo.Large"
+            tools:text="Lorem ipsum dolor sit amet untes gungslla goog oo gaa lossly roemsid dsfaks slal skdlfkan" />
+    </LinearLayout>
+</ScrollView>

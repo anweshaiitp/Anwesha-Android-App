@@ -12,23 +12,22 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.iitp.mayank.celesta2k17.R;
-import com.iitp.mayank.celesta2k17.data.EventsData;
+import com.iitp.mayank.celesta2k17.data.ClubsData;
 
 import java.util.ArrayList;
 
 
-public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecyclerViewAdapter.EventViewHolder>
+public class ClubsRecyclerViewAdapter extends RecyclerView.Adapter<ClubsRecyclerViewAdapter.EventViewHolder>
 {
-    ArrayList<EventsData> dataList = new ArrayList<>();
+    private final ListCardClick mOnClickListener;
+    ArrayList<ClubsData> dataList = new ArrayList<>();
     String eventHeader[];
     String eventText[];
     String intent[];
     TypedArray images;
     Context context;
 
-    private final ListCardClick mOnClickListener;
-
-    public EventsRecyclerViewAdapter(Context context ,ListCardClick listCardClick , String eventHeader[], String eventText[] ,String intent[] ,TypedArray img)
+    public ClubsRecyclerViewAdapter(Context context, ListCardClick listCardClick, String eventHeader[], String eventText[], String intent[], TypedArray img)
     {
         this.eventHeader = eventHeader;
         this.eventText = eventText;
@@ -36,11 +35,6 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
         mOnClickListener = listCardClick;
         images = img;
         this.context = context;
-    }
-
-    public interface ListCardClick
-    {
-        void onListClick(String intent) throws ClassNotFoundException;
     }
 
     @Override
@@ -55,13 +49,13 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
 
     @Override
     public void onBindViewHolder(EventViewHolder holder, int position) {
-        EventsData eventsData = new EventsData();
-        eventsData.setHeader(eventHeader[position]);
-        eventsData.setText(eventText[position]);
-        eventsData.setIntentClass(intent[position]);
-        eventsData.setImageId(images.getResourceId(position , -1));
+        ClubsData clubsData = new ClubsData();
+        clubsData.setHeader(eventHeader[position]);
+        clubsData.setText(eventText[position]);
+        clubsData.setIntentClass(intent[position]);
+        clubsData.setImageId(images.getResourceId(position, -1));
 
-        dataList.add(eventsData);
+        dataList.add(clubsData);
 
         holder.textViewHeader.setText(eventHeader[position]);
         if(!eventText[position].equals("-1"))
@@ -72,12 +66,16 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
             holder.textViewHeader.setTextSize(TypedValue.COMPLEX_UNIT_SP , 16);
         }
         Glide.with(context).clear(holder.imageView);
-        Glide.with(context).load(eventsData.getImageId()).into(holder.imageView);
+        Glide.with(context).load(clubsData.getImageId()).into(holder.imageView);
     }
 
     @Override
     public int getItemCount() {
         return eventHeader.length;
+    }
+
+    public interface ListCardClick {
+        void onListClick(String intent) throws ClassNotFoundException;
     }
 
     class EventViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
