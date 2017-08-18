@@ -1,5 +1,7 @@
 package com.iitp.mayank.celesta2k17.activities;
 
+import android.content.Context;
+import android.content.ContextWrapper;
 import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -35,7 +37,7 @@ public class galleryEvent extends AppCompatActivity {
 
     private StorageReference mStorageReference;
     private File localFile;
-    private boolean fileDirectory;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,11 +54,16 @@ public class galleryEvent extends AppCompatActivity {
         // Create a storage reference from our app
         mStorageReference = mStorage.getReference();
 
+
+        //
+        ContextWrapper cw = new ContextWrapper(getApplicationContext());
+
+        File directory = cw.getDir("images", Context.MODE_PRIVATE);
+
         //create a local file
         try {
-            localFile = new File(Environment.getDataDirectory().getAbsolutePath() + File.separator + "Images");
-            if (!localFile.exists())
-                localFile.mkdir();
+
+            localFile = new File(directory, "sae.jpg");
 
 
         } catch (Exception e) {
@@ -79,14 +86,12 @@ public class galleryEvent extends AppCompatActivity {
                     @Override
                     public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
 
-
+                        Toast.makeText(getApplicationContext(), " succcess", Toast.LENGTH_LONG).show();
                         // Local temp file has been created
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception exception) {
-
-
 
                         // Handle any errors
                     }
