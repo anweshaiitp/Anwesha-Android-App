@@ -104,8 +104,8 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             }
-            selectedImageView.setTransitionName("");
-            selectedTextViewHeader.setTransitionName("");
+//            selectedImageView.setTransitionName("");
+//            selectedTextViewHeader.setTransitionName("");
         }
     }
 }
