@@ -34,7 +34,7 @@ public class ThresholdEvents extends AppCompatActivity implements ClubsRecyclerV
 
         clubsRecyclerViewAdapter = new ClubsRecyclerViewAdapter(getApplicationContext(), this, resources.getStringArray(R.array.array_threshold_event_headers),
                 resources.getStringArray(R.array.array_threshold_event_text) ,
-                resources.getStringArray(R.array.array_threshold_event_intent),
+                resources.getStringArray(R.array.array_threshold_event_date_time),
                 resources.obtainTypedArray(R.array.array_threshold_event_images));
         recyclerView.setAdapter(clubsRecyclerViewAdapter);
     }

@@ -32,6 +32,8 @@ public class EventInfoActivity extends AppCompatActivity {
         ((TextView) findViewById(R.id.event_info_name)).setText(header);
         if (imageId != -1)
             ((ImageView) findViewById(R.id.event_info_imageview)).setImageResource(imageId);
+        if (text == "-1")
+            text = "No Information Available";
         ((TextView) findViewById(R.id.event_info_textview)).setText(text);
         ((TextView) findViewById(R.id.event_date_time)).setText(dateTime);
         ((TextView) findViewById(R.id.event_venue)).setText(venue);

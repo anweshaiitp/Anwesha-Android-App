@@ -34,7 +34,7 @@ public class ScmeEvents extends AppCompatActivity implements ClubsRecyclerViewAd
 
         clubsRecyclerViewAdapter = new ClubsRecyclerViewAdapter(getApplicationContext(), this, resources.getStringArray(R.array.array_scme_event_headers),
                 resources.getStringArray(R.array.array_scme_event_text) ,
-                resources.getStringArray(R.array.array_scme_event_intent),
+                resources.getStringArray(R.array.array_scme_event_date_time),
                 resources.obtainTypedArray(R.array.array_scme_event_images));
         recyclerView.setAdapter(clubsRecyclerViewAdapter);
     }

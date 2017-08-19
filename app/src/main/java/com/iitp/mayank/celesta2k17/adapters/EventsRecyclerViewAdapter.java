@@ -59,12 +59,12 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
         dataList.add(eventsData);
 
         holder.textViewHeader.setText(eventHeader[position]);
-        if (!eventText[position].equals("-1"))
-            holder.textViewData.setText(eventText[position]);
-        else {
+//        if (!eventText[position].equals("-1"))
+//            holder.textViewData.setText(eventText[position]);
+//        else {
             holder.textViewData.setVisibility(View.GONE);
             holder.textViewHeader.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
-        }
+//        }
         Glide.with(context).clear(holder.imageView);
         Glide.with(context).load(eventsData.getImageId()).into(holder.imageView);
     }
@@ -75,7 +75,7 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
     }
 
     public interface ListCardClick {
-        void onListClick(EventsData eventsData) throws ClassNotFoundException;
+        void onListClick(EventsData eventsData, View view) throws ClassNotFoundException;
     }
 
     class EventViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -94,11 +94,18 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
         @Override
         public void onClick(View v) {
             int position = getAdapterPosition();
+            ImageView selectedImageView = (ImageView) v.findViewById(R.id.card_cardimage);
+            TextView selectedTextViewHeader = (TextView) itemView.findViewById(R.id.card_header);
+            // TextView selectedTextViewData = (TextView) itemView.findViewById(R.id.card_text);
+            selectedImageView.setTransitionName("event_image_view_transition");
+            selectedTextViewHeader.setTransitionName("event_text_header_transition");
             try {
-                mOnClickListener.onListClick(dataList.get(position));
+                mOnClickListener.onListClick(dataList.get(position), v);
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             }
+            selectedImageView.setTransitionName("");
+            selectedTextViewHeader.setTransitionName("");
         }
     }
 }

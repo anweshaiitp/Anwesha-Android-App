@@ -34,7 +34,7 @@ public class SparkonicsEvents extends AppCompatActivity implements ClubsRecycler
 
         clubsRecyclerViewAdapter = new ClubsRecyclerViewAdapter(getApplicationContext(), this, resources.getStringArray(R.array.array_sparkonics_event_headers),
                 resources.getStringArray(R.array.array_sparkonics_event_text) ,
-                resources.getStringArray(R.array.array_sparkonics_event_intent),
+                resources.getStringArray(R.array.array_sparkonics_event_date_time),
                 resources.obtainTypedArray(R.array.array_sparkonics_event_images));
         recyclerView.setAdapter(clubsRecyclerViewAdapter);
     }

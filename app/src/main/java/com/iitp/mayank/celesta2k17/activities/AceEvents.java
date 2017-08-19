@@ -34,7 +34,7 @@ public class AceEvents extends AppCompatActivity implements ClubsRecyclerViewAda
 
         clubsRecyclerViewAdapter = new ClubsRecyclerViewAdapter(getApplicationContext(), this, resources.getStringArray(R.array.array_ace_event_headers),
                 resources.getStringArray(R.array.array_ace_event_text) ,
-                resources.getStringArray(R.array.array_ace_event_intent),
+                resources.getStringArray(R.array.array_ace_event_date_time),
                 resources.obtainTypedArray(R.array.array_ace_event_images));
         recyclerView.setAdapter(clubsRecyclerViewAdapter);
     }

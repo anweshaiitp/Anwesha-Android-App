@@ -52,7 +52,7 @@
 
     <string-array
         name="array_njack_event_text">
-        <item>-1</item>
+        <item>Lorem ipsum dolor sit amet untes gungslla goog oo gaa lossly roemsid dsfaks slal skdlfkan1</item>
         <item>-1</item>
         <item>-1</item>
         <item>-1</item>
@@ -60,9 +60,17 @@
         <item>-1</item>
     </string-array>
 
-    <string-array
-        name="array_njack_event_intent">
-        <item>X</item>
+    <string-array name="array_njack_event_date_time">
+        <item>7th Aug, 10:30 pm</item>
+        <item>Y</item>
+        <item>Y</item>
+        <item>Y</item>
+        <item>Y</item>
+        <item>Y</item>
+    </string-array>
+
+    <string-array name="array_njack_event_venue">
+        <item>Tutorial Block - Room No. 107</item>
         <item>Y</item>
         <item>Y</item>
         <item>Y</item>
@@ -71,7 +79,7 @@
     </string-array>
 
     <integer-array name="array_njack_event_images">
-        <item>@drawable/ic_home_white_24dp</item>
+        <item>@drawable/ace</item>
         <item>@drawable/ic_home_white_24dp</item>
         <item>@drawable/ic_home_white_24dp</item>
         <item>@drawable/ic_home_white_24dp</item>
@@ -100,8 +108,7 @@
         <item>-1</item>
     </string-array>
 
-    <string-array
-        name="array_sparkonics_event_intent">
+    <string-array name="array_sparkonics_event_date_time">
         <item>X</item>
         <item>Y</item>
         <item>Y</item>
@@ -118,6 +125,16 @@
         <item>@drawable/ic_home_white_24dp</item>
         <item>@drawable/ic_home_white_24dp</item>
     </integer-array>
+
+    <string-array name="array_sparkonics_event_venue">
+        <item>Tutorial Block - Room No. 107</item>
+        <item>Y</item>
+        <item>Y</item>
+        <item>Y</item>
+        <item>Y</item>
+        <item>Y</item>
+    </string-array>
+
 
     <!--SAE Events-->
     <string-array
@@ -140,8 +157,7 @@
         <item>-1</item>
     </string-array>
 
-    <string-array
-        name="array_sae_event_intent">
+    <string-array name="array_sae_event_date_time">
         <item>X</item>
         <item>Y</item>
         <item>Y</item>
@@ -158,6 +174,16 @@
         <item>@drawable/ic_home_white_24dp</item>
         <item>@drawable/ic_home_white_24dp</item>
     </integer-array>
+
+    <string-array name="array_sae_event_venue">
+        <item>Tutorial Block - Room No. 107</item>
+        <item>Y</item>
+        <item>Y</item>
+        <item>Y</item>
+        <item>Y</item>
+        <item>Y</item>
+    </string-array>
+
 
     <!--SCME Events-->
     <string-array
@@ -180,8 +206,7 @@
         <item>-1</item>
     </string-array>
 
-    <string-array
-        name="array_scme_event_intent">
+    <string-array name="array_scme_event_date_time">
         <item>X</item>
         <item>Y</item>
         <item>Y</item>
@@ -198,6 +223,15 @@
         <item>@drawable/ic_home_white_24dp</item>
         <item>@drawable/ic_home_white_24dp</item>
     </integer-array>
+
+    <string-array name="array_scme_event_venue">
+        <item>Tutorial Block - Room No. 107</item>
+        <item>Y</item>
+        <item>Y</item>
+        <item>Y</item>
+        <item>Y</item>
+        <item>Y</item>
+    </string-array>
 
     <!--Threshold Events-->
     <string-array
@@ -220,8 +254,7 @@
         <item>-1</item>
     </string-array>
 
-    <string-array
-        name="array_threshold_event_intent">
+    <string-array name="array_threshold_event_date_time">
         <item>X</item>
         <item>Y</item>
         <item>Y</item>
@@ -238,6 +271,15 @@
         <item>@drawable/ic_home_white_24dp</item>
         <item>@drawable/ic_home_white_24dp</item>
     </integer-array>
+
+    <string-array name="array_threshold_event_venue">
+        <item>Tutorial Block - Room No. 107</item>
+        <item>Y</item>
+        <item>Y</item>
+        <item>Y</item>
+        <item>Y</item>
+        <item>Y</item>
+    </string-array>
 
     <!--ACE Events-->
     <string-array
@@ -260,8 +302,7 @@
         <item>-1</item>
     </string-array>
 
-    <string-array
-        name="array_ace_event_intent">
+    <string-array name="array_ace_event_date_time">
         <item>X</item>
         <item>Y</item>
         <item>Y</item>
@@ -278,4 +319,15 @@
         <item>@drawable/ic_home_white_24dp</item>
         <item>@drawable/ic_home_white_24dp</item>
     </integer-array>
+
+    <string-array name="array_ace_event_venue">
+        <item>Tutorial Block - Room No. 107</item>
+        <item>Y</item>
+        <item>Y</item>
+        <item>Y</item>
+        <item>Y</item>
+        <item>Y</item>
+    </string-array>
+
+
 </resources>
