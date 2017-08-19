@@ -38,7 +38,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="@android:style/TextAppearance.Material.Headline"
-            tools:text="7th Aug, 10:30 pm,\nTutorial Block - Room no. 107" />
+            tools:text="7th Aug, 10:30 pm" />
+
+        <TextView
+            android:id="@+id/event_venue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@android:style/TextAppearance.Material.Headline"
+            tools:text="Tutorial Block - Room no. 107" />
 
     </LinearLayout>
 </ScrollView>

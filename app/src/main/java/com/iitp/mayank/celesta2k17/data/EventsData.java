@@ -8,12 +8,21 @@ public class EventsData {
     private String header;
     private String text;
     private String dateTime;
+    private String venue;
     private int imageId;
 
     public EventsData()
 
     {
 
+    }
+
+    public String getVenue() {
+        return venue;
+    }
+
+    public void setVenue(String venue) {
+        this.venue = venue;
     }
 
     public int getImageId() {

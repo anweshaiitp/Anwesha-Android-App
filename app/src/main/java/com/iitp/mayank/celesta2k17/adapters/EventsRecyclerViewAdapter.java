@@ -23,13 +23,15 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
     String eventHeader[];
     String eventText[];
     String dateTime[];
+    String venue[];
     TypedArray images;
     Context context;
 
-    public EventsRecyclerViewAdapter(Context context, ListCardClick listCardClick, String eventHeader[], String eventText[], String dateTime[], TypedArray img) {
+    public EventsRecyclerViewAdapter(Context context, ListCardClick listCardClick, String eventHeader[], String eventText[], String dateTime[], String venue[], TypedArray img) {
         this.eventHeader = eventHeader;
         this.eventText = eventText;
         this.dateTime = dateTime;
+        this.venue = venue;
         mOnClickListener = listCardClick;
         images = img;
         this.context = context;
@@ -51,6 +53,7 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
         eventsData.setHeader(eventHeader[position]);
         eventsData.setText(eventText[position]);
         eventsData.setDateTime(dateTime[position]);
+        eventsData.setVenue(venue[position]);
         eventsData.setImageId(images.getResourceId(position, -1));
 
         dataList.add(eventsData);

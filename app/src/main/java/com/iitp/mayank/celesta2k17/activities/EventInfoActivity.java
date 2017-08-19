@@ -12,6 +12,7 @@ import static com.iitp.mayank.celesta2k17.activities.NjackEvents.EXTRA_DATE_TIME
 import static com.iitp.mayank.celesta2k17.activities.NjackEvents.EXTRA_HEADER;
 import static com.iitp.mayank.celesta2k17.activities.NjackEvents.EXTRA_IMAGE_ID;
 import static com.iitp.mayank.celesta2k17.activities.NjackEvents.EXTRA_TEXT;
+import static com.iitp.mayank.celesta2k17.activities.NjackEvents.EXTRA_VENUE;
 
 public class EventInfoActivity extends AppCompatActivity {
 
@@ -25,6 +26,7 @@ public class EventInfoActivity extends AppCompatActivity {
         String header = intent.getStringExtra(EXTRA_HEADER);
         String text = intent.getStringExtra(EXTRA_TEXT);
         String dateTime = intent.getStringExtra(EXTRA_DATE_TIME);
+        String venue = intent.getStringExtra(EXTRA_VENUE);
         int imageId = intent.getIntExtra(EXTRA_IMAGE_ID, -1);
 
         ((TextView) findViewById(R.id.event_info_name)).setText(header);
@@ -32,6 +34,7 @@ public class EventInfoActivity extends AppCompatActivity {
             ((ImageView) findViewById(R.id.event_info_imageview)).setImageResource(imageId);
         ((TextView) findViewById(R.id.event_info_textview)).setText(text);
         ((TextView) findViewById(R.id.event_date_time)).setText(dateTime);
+        ((TextView) findViewById(R.id.event_venue)).setText(venue);
 
     }
 }

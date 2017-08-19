@@ -16,7 +16,12 @@ import com.iitp.mayank.celesta2k17.data.EventsData;
 
 public class NjackEvents extends AppCompatActivity implements EventsRecyclerViewAdapter.ListCardClick {
 
-    public static final String EXTRA_HEADER = "Header", EXTRA_TEXT = "Text", EXTRA_DATE_TIME = "DateTime", EXTRA_IMAGE_ID = "ImageId";
+    public static final String EXTRA_HEADER = "Header",
+            EXTRA_TEXT = "Text",
+            EXTRA_VENUE = "Venuw",
+            EXTRA_DATE_TIME = "DateTime",
+            EXTRA_IMAGE_ID = "ImageId";
+    
     RecyclerView recyclerView;
     EventsRecyclerViewAdapter eventsRecyclerViewAdapter;
     @Override
@@ -38,6 +43,7 @@ public class NjackEvents extends AppCompatActivity implements EventsRecyclerView
         eventsRecyclerViewAdapter = new EventsRecyclerViewAdapter(getApplicationContext(), this, resources.getStringArray(R.array.array_njack_event_headers),
                 resources.getStringArray(R.array.array_njack_event_text) ,
                 resources.getStringArray(R.array.array_njack_event_intent),
+                resources.getStringArray(R.array.array_njack_event_intent),
                 resources.obtainTypedArray(R.array.array_njack_event_images));
         recyclerView.setAdapter(eventsRecyclerViewAdapter);
     }
@@ -48,6 +54,7 @@ public class NjackEvents extends AppCompatActivity implements EventsRecyclerView
         intentNew.putExtra(EXTRA_HEADER, eventsData.getHeader());
         intentNew.putExtra(EXTRA_TEXT, eventsData.getText());
         intentNew.putExtra(EXTRA_DATE_TIME, eventsData.getDateTime());
+        intentNew.putExtra(EXTRA_VENUE, eventsData.getVenue());
         intentNew.putExtra(EXTRA_IMAGE_ID, eventsData.getImageId());
         startActivity(intentNew);
     }
