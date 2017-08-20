@@ -6,12 +6,15 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.ViewPager;
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
 import com.iitp.mayank.celesta2k17.R;
+import com.iitp.mayank.celesta2k17.activities.AboutActivity;
 import com.iitp.mayank.celesta2k17.activities.EventsActivity;
 import com.iitp.mayank.celesta2k17.activities.GalleryEvent;
 import com.iitp.mayank.celesta2k17.adapters.EventsAdapter;
@@ -24,6 +27,7 @@ public class HomePage extends android.support.v4.app.Fragment {
 
     LinearLayout eventsLinearLayout;
     LinearLayout galleryLinearLayout ;
+    LinearLayout aboutFrameLayout ;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -63,6 +67,14 @@ public class HomePage extends android.support.v4.app.Fragment {
             }
         });
 
+        aboutFrameLayout=(LinearLayout)rootView.findViewById(R.id.about) ;
+        aboutFrameLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(rootView.getContext(), AboutActivity.class) ;
+                startActivity(intent);
+            }
+        });
 
         return rootView;
     }

@@ -25,9 +25,10 @@ import com.google.firebase.storage.StorageReference;
 import com.iitp.mayank.celesta2k17.R;
 import com.iitp.mayank.celesta2k17.data.GalleryPics;
 
+
 import java.io.File;
 import java.util.ArrayList;
-import java.util.List;
+
 import java.util.Random;
 
 import static android.R.attr.data;
@@ -162,6 +163,9 @@ public class GalleryEvent extends AppCompatActivity {
                     });
                     ++loop;
                 }
+
+
+
 
 
             }

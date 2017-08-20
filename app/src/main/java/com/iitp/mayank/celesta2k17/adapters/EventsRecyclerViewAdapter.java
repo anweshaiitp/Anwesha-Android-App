@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.iitp.mayank.celesta2k17.R;
 import com.iitp.mayank.celesta2k17.data.EventsData;
+import com.iitp.mayank.celesta2k17.data.GalleryPics;
 
 import java.util.ArrayList;
 
@@ -66,6 +67,7 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
             holder.textViewHeader.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
 //        }
         Glide.with(context).clear(holder.imageView);
+
         Glide.with(context).load(eventsData.getImageId()).into(holder.imageView);
     }
 
