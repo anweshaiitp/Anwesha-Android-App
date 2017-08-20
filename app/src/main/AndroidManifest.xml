@@ -98,10 +98,18 @@
 
         <activity
             android:name=".activities.SignInActivity"
-            android:label="@string/SignIn" />
+            android:label="@string/SignIn">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.MyProfile" />
+        </activity>
         <activity
             android:name=".activities.RegisterActivity"
-            android:label="@string/SignUp" />
+            android:label="@string/SignUp">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.MyProfile" />
+        </activity>
         <activity android:name=".activities.EventInfoActivity"></activity>
     </application>
 
