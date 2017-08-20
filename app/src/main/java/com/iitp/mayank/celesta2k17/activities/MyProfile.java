@@ -21,6 +21,10 @@ public class MyProfile extends AppCompatActivity
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setView();
+    }
+
+    private void setView() {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         if(!sharedPreferences.getBoolean(getString(R.string.login_status) , false))
         {
@@ -61,5 +65,11 @@ public class MyProfile extends AppCompatActivity
             collegeTextView.setText(sharedPreferences.getString(getString(R.string.college_name) , "IIT Patna"));
             eventTextView.setText(sharedPreferences.getString(getString(R.string.event_participated) , "NJATH"));
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        setView();
     }
 }
