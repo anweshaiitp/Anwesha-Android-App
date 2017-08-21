@@ -6,6 +6,8 @@ import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -23,12 +25,12 @@ import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.iitp.mayank.celesta2k17.R;
+import com.iitp.mayank.celesta2k17.adapters.GalleryRecylerViewAdapter;
 import com.iitp.mayank.celesta2k17.data.GalleryPics;
-
 
 import java.io.File;
 import java.util.ArrayList;
-
+import java.util.List;
 import java.util.Random;
 
 import static android.R.attr.data;
@@ -47,6 +49,7 @@ public class GalleryEvent extends AppCompatActivity {
     private ArrayList<FileDownloadTask> tasks = new ArrayList<FileDownloadTask>();
     Random rand = new Random();
 
+    RecyclerView imageRecyclerView;
     final private String LOG_TAG = getClass().toString();
 
 
@@ -54,6 +57,13 @@ public class GalleryEvent extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gallery_event);
+
+        imageRecyclerView = (RecyclerView) findViewById(R.id.galleryRecyclerView);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this , 3);
+        imageRecyclerView.setLayoutManager(gridLayoutManager);
+
+
+        imageRecyclerView.setHasFixedSize(true);
 
         // this is the main accessing point of the data base
         mFirebaseDatabase = FirebaseDatabase.getInstance();
@@ -109,72 +119,72 @@ public class GalleryEvent extends AppCompatActivity {
             }
         };
 
+        GalleryRecylerViewAdapter galleryRecylerViewAdapter = new GalleryRecylerViewAdapter(this , mpicUrl);
+        imageRecyclerView.setAdapter(galleryRecylerViewAdapter);
+
         // adding a event listener to sync with the firebase
         mUrlDatabaseReference.addChildEventListener(mChildEventListener);
 
 
         //to notify when all the previous dataSnapshot is downloaded
-        mUrlDatabaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
+//        mUrlDatabaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//
+//
+//                Log.e(LOG_TAG, "" + mpicUrl.size());
+//                // iterate on the array list
+//
+//
+//                int loop = 0;
 
-
-                Log.e(LOG_TAG, "" + mpicUrl.size());
-                // iterate on the array list
-
-
-                int loop = 0;
-
-                for (GalleryPics galleryPics : mpicUrl) {
-
+//                for (GalleryPics galleryPics : mpicUrl) {
+//
 
                     // try creating a local file with the image name
-                    try {
-                         // create a new file in that directory with this name
-                        /**
-                         * @param directory accepts the directory where you want to save the file
-                         * @param #name accepts the name of the file
-                         * */
+//                    try {
+//                         // create a new file in that directory with this name
+//                        /**
+//                         * @param directory accepts the directory where you want to save the file
+//                         * @param #name accepts the name of the file
+//                         * */
+//
+//                        localFile = new File(directory, galleryPics.getmPicName());
+//                        Toast.makeText(getApplicationContext(), localFile.getAbsolutePath(), Toast.LENGTH_SHORT).show();
+//                    } catch (Exception e) {
+//
+//                        Log.e(LOG_TAG, e.getMessage());
+//                    }
 
-                        localFile = new File(directory, galleryPics.getmPicName());
-                        Toast.makeText(getApplicationContext(), localFile.getAbsolutePath(), Toast.LENGTH_SHORT).show();
-                    } catch (Exception e) {
-
-                        Log.e(LOG_TAG, e.getMessage());
-                    }
-
-
-                    islandRef = mStorageReference.child(galleryPics.getmPhotoUrl());
-
-                    tasks.add(islandRef.getFile(localFile));
-                    tasks.get(loop).addOnCompleteListener(new OnCompleteListener<FileDownloadTask.TaskSnapshot>() {
-                        @Override
-                        public void onComplete(@NonNull Task<FileDownloadTask.TaskSnapshot> task) {
-                            Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
-                            Log.e(LOG_TAG, "successssssssssssssssssssssssssssssssssssssssssssss" + rand.nextInt(100));
-                        }
-                    });
-
-                    tasks.get(loop).addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Log.e(LOG_TAG, "failllllllllllllllllllese" + e.getMessage());
-                        }
-                    });
-                    ++loop;
-                }
-
-
-
-
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Log.e(LOG_TAG, databaseError.toString());
-            }
-        });
+//
+//                    islandRef = mStorageReference.child(galleryPics.getmPhotoUrl());
+//
+//                    tasks.add(islandRef.getFile(localFile));
+//                    tasks.get(loop).addOnCompleteListener(new OnCompleteListener<FileDownloadTask.TaskSnapshot>() {
+//                        @Override
+//                        public void onComplete(@NonNull Task<FileDownloadTask.TaskSnapshot> task) {
+//                            Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
+//                            Log.e(LOG_TAG, "successssssssssssssssssssssssssssssssssssssssssssss" + rand.nextInt(100));
+//                        }
+//                    });
+//
+//                    tasks.get(loop).addOnFailureListener(new OnFailureListener() {
+//                        @Override
+//                        public void onFailure(@NonNull Exception e) {
+//                            Log.e(LOG_TAG, "failllllllllllllllllllese" + e.getMessage());
+//                        }
+//                    });
+//                    ++loop;
+//                }
+//
+//
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//                Log.e(LOG_TAG, databaseError.toString());
+//            }
+//        });
 
 
     }
