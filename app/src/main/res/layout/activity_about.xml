@@ -45,7 +45,7 @@
                 android:lineSpacingExtra="4sp"
                 android:text="@string/lorelEpsum"
                 android:textColor="@color/colorPrimaryLight"
-                android:textSize="17sp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -76,7 +76,7 @@
                 android:lineSpacingExtra="4sp"
                 android:text="@string/lorelEpsum"
                 android:textColor="@color/colorPrimaryLight"
-                android:textSize="17sp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -107,7 +107,7 @@
                 android:lineSpacingExtra="4sp"
                 android:text="@string/lorelEpsum"
                 android:textColor="@color/colorPrimaryLight"
-                android:textSize="17sp"
+                android:textSize="18sp"
                 android:layout_marginBottom="16sp"/>
 
 
