@@ -79,7 +79,7 @@
     </string-array>
 
     <integer-array name="array_njack_event_images">
-        <item>@drawable/ace</item>
+        <item>@drawable/njack</item>
         <item>@drawable/ic_home_white_24dp</item>
         <item>@drawable/ic_home_white_24dp</item>
         <item>@drawable/ic_home_white_24dp</item>
