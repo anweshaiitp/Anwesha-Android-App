@@ -118,7 +118,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.MyProfile" />
         </activity>
-        <activity android:name=".activities.EventInfoActivity" />
         <activity
             android:name=".activities.ScheduleActivity"
             android:label="@string/title_activity_schedule"
