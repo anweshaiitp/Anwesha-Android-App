@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,7 @@ import com.iitp.mayank.celesta2k17.R;
 import com.iitp.mayank.celesta2k17.activities.AboutActivity;
 import com.iitp.mayank.celesta2k17.activities.EventsActivity;
 import com.iitp.mayank.celesta2k17.activities.GalleryEvent;
+import com.iitp.mayank.celesta2k17.activities.ScheduleActivity;
 import com.iitp.mayank.celesta2k17.activities.TeamActivity;
 import com.iitp.mayank.celesta2k17.adapters.EventsAdapter;
 
@@ -27,8 +29,9 @@ import com.iitp.mayank.celesta2k17.adapters.EventsAdapter;
 public class HomePage extends android.support.v4.app.Fragment {
 
     LinearLayout eventsLinearLayout;
-    LinearLayout galleryLinearLayout ;
-    LinearLayout aboutFrameLayout ;
+    LinearLayout galleryLinearLayout;
+    LinearLayout aboutFrameLayout;
+    LinearLayout scheduleLinearLayout;
     LinearLayout teamLinearLayout ;
     @Nullable
     @Override
@@ -52,28 +55,37 @@ public class HomePage extends android.support.v4.app.Fragment {
         eventsLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(rootView.getContext() , EventsActivity.class);
+                Intent intent = new Intent(rootView.getContext(), EventsActivity.class);
                 startActivity(intent);
 
             }
         });
 
-        galleryLinearLayout=(LinearLayout)rootView.findViewById(R.id.gallery) ;
+        galleryLinearLayout = (LinearLayout) rootView.findViewById(R.id.gallery);
         galleryLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(rootView.getContext() , GalleryEvent.class);
+                Intent intent = new Intent(rootView.getContext(), GalleryEvent.class);
                 startActivity(intent);
 
 
             }
         });
 
-        aboutFrameLayout=(LinearLayout)rootView.findViewById(R.id.about) ;
+        aboutFrameLayout = (LinearLayout) rootView.findViewById(R.id.about);
         aboutFrameLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(rootView.getContext(), AboutActivity.class) ;
+                Intent intent = new Intent(rootView.getContext(), AboutActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        scheduleLinearLayout = (LinearLayout) rootView.findViewById(R.id.schedule);
+        scheduleLinearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(rootView.getContext(), ScheduleActivity.class);
                 startActivity(intent);
             }
         });

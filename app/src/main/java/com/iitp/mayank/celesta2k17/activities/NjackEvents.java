@@ -65,11 +65,11 @@ public class NjackEvents extends AppCompatActivity implements EventsRecyclerView
                 makeSceneTransitionAnimation(this, p1, p2);
 
         Intent intentNew = new Intent(this, Class.forName("com.iitp.mayank.celesta2k17.activities.EventInfoActivity"));
-        intentNew.putExtra(EXTRA_HEADER, eventsData.getHeader());
-        intentNew.putExtra(EXTRA_TEXT, eventsData.getText());
-        intentNew.putExtra(EXTRA_DATE_TIME, eventsData.getDateTime());
-        intentNew.putExtra(EXTRA_VENUE, eventsData.getVenue());
-        intentNew.putExtra(EXTRA_IMAGE_ID, eventsData.getImageId());
+        intentNew.putExtra(EventInfoActivity.EXTRA_HEADER, eventsData.getHeader());
+        intentNew.putExtra(EventInfoActivity.EXTRA_TEXT, eventsData.getText());
+        intentNew.putExtra(EventInfoActivity.EXTRA_DATE_TIME, eventsData.getDateTime());
+        intentNew.putExtra(EventInfoActivity.EXTRA_VENUE, eventsData.getVenue());
+        intentNew.putExtra(EventInfoActivity.EXTRA_IMAGE_ID, eventsData.getImageId());
         startActivity(intentNew, options.toBundle());
     }
 }

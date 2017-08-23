@@ -79,7 +79,7 @@
     </string-array>
 
     <integer-array name="array_njack_event_images">
-        <item>@drawable/njack</item>
+        <item>@drawable/ace</item>
         <item>@drawable/ic_home_white_24dp</item>
         <item>@drawable/ic_home_white_24dp</item>
         <item>@drawable/ic_home_white_24dp</item>
@@ -329,6 +329,16 @@
         <item>Y</item>
     </string-array>
 
+    <!--Schedule Day 1-->
+    <!--Event header array-->
+    <string-array name="array_day1_event_header">
+        <item>Event 1</item>
+        <item>Event 2</item>
+        <item>Event 3</item>
+        <item>Event 4</item>
+        <item>Event 5</item>
+        <item>Event 6</item>
+    </string-array>
     <string-array name="array_name_view">
         <item>Parth</item>
         <item>Manish</item>
@@ -363,4 +373,53 @@
         <item>PublicRelation</item>
     </string-array>
 
+    <!--Event text array-->
+    <string-array name="array_day1_event_text">
+        <item>Text 1</item>
+        <item>Text 2</item>
+        <item>Text 3</item>
+        <item>Text 4</item>
+        <item>Text 5</item>
+        <item>Text 6</item>
+    </string-array>
+
+    <!--Image ID array-->
+    <string-array name="array_day1_event_image">
+        <item>@drawable/ace</item>
+        <item>@drawable/ic_home_white_24dp</item>
+        <item>@drawable/ic_home_white_24dp</item>
+        <item>@drawable/ic_home_white_24dp</item>
+        <item>@drawable/ic_home_white_24dp</item>
+        <item>@drawable/ic_home_white_24dp</item>
+    </string-array>
+
+    <!--Location Array-->
+    <string-array name="array_day1_event_location">
+        <item>R 107</item>
+        <item>R 107</item>
+        <item>R 107</item>
+        <item>R 107</item>
+        <item>R 107</item>
+        <item>R 107</item>
+    </string-array>
+
+    <!--Date Array-->
+    <string-array name="array_day1_event_dates">
+        <item>24–07–2017</item>
+        <item>24–07–2017</item>
+        <item>24–07–2017</item>
+        <item>24–07–2017</item>
+        <item>24–07–2017</item>
+        <item>24–07–2017</item>
+    </string-array>
+
+    <!--Time Array-->
+    <string-array name="array_day1_event_time">
+        <item>10am to 12pm</item>
+        <item>10am to 12pm</item>
+        <item>10am to 12pm</item>
+        <item>10am to 12pm</item>
+        <item>10am to 12pm</item>
+        <item>10am to 12pm</item>
+    </string-array>
 </resources>

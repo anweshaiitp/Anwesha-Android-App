@@ -118,6 +118,16 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.MyProfile" />
         </activity>
+        <activity android:name=".activities.EventInfoActivity" />
+        <activity
+            android:name=".activities.ScheduleActivity"
+            android:label="@string/title_activity_schedule"
+            android:parentActivityName=".activities.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.iitp.mayank.celesta2k17.activities.MainActivity" />
+        </activity>
         <activity
             android:name=".activities.EventInfoActivity"
             android:theme="@style/AppTheme.NoActionBar">

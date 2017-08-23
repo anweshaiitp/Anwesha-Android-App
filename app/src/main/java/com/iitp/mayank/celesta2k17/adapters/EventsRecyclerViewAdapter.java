@@ -91,23 +91,18 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
             textViewData = (TextView) itemView.findViewById(R.id.card_text);
             imageView = (ImageView) itemView.findViewById(R.id.card_cardimage);
             itemView.setOnClickListener(this);
+            imageView.setTransitionName("event_image_view_transition");
+            textViewHeader.setTransitionName("event_text_header_transition");
         }
 
         @Override
         public void onClick(View v) {
             int position = getAdapterPosition();
-            ImageView selectedImageView = (ImageView) v.findViewById(R.id.card_cardimage);
-            TextView selectedTextViewHeader = (TextView) itemView.findViewById(R.id.card_header);
-            // TextView selectedTextViewData = (TextView) itemView.findViewById(R.id.card_text);
-            selectedImageView.setTransitionName("event_image_view_transition");
-            selectedTextViewHeader.setTransitionName("event_text_header_transition");
             try {
                 mOnClickListener.onListClick(dataList.get(position), v);
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             }
-//            selectedImageView.setTransitionName("");
-//            selectedTextViewHeader.setTransitionName("");
         }
     }
 }
