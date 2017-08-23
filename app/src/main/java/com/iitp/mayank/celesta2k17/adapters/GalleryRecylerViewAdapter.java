@@ -61,7 +61,9 @@ public class GalleryRecylerViewAdapter extends RecyclerView.Adapter<GalleryRecyl
     }
 
     // this class is used to cache the view when OncreateView inflates a view and toss this view to this constructor
-    class galleryViewHolder extends RecyclerView.ViewHolder { //getting a image view to cache the data
+    class galleryViewHolder extends RecyclerView.ViewHolder {
+
+        //getting a image view to cache the data
         ImageView imageView;
 
         public galleryViewHolder(View itemView) {

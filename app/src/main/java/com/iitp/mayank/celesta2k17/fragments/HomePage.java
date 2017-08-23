@@ -17,6 +17,7 @@ import com.iitp.mayank.celesta2k17.R;
 import com.iitp.mayank.celesta2k17.activities.AboutActivity;
 import com.iitp.mayank.celesta2k17.activities.EventsActivity;
 import com.iitp.mayank.celesta2k17.activities.GalleryEvent;
+import com.iitp.mayank.celesta2k17.activities.TeamActivity;
 import com.iitp.mayank.celesta2k17.adapters.EventsAdapter;
 
 /**
@@ -28,6 +29,7 @@ public class HomePage extends android.support.v4.app.Fragment {
     LinearLayout eventsLinearLayout;
     LinearLayout galleryLinearLayout ;
     LinearLayout aboutFrameLayout ;
+    LinearLayout teamLinearLayout ;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -76,6 +78,15 @@ public class HomePage extends android.support.v4.app.Fragment {
             }
         });
 
+        teamLinearLayout=(LinearLayout)rootView.findViewById(R.id.team) ;
+        teamLinearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent( rootView.getContext(), TeamActivity.class) ;
+                startActivity(intent);
+
+            }
+        });
         return rootView;
     }
 }

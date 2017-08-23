@@ -329,5 +329,38 @@
         <item>Y</item>
     </string-array>
 
+    <string-array name="array_name_view">
+        <item>Parth</item>
+        <item>Manish</item>
+        <item>Mayank</item>
+        <item>Mukuntha</item>
+        <item>Parth</item>
+        <item>Manish</item>
+        <item>Mayank</item>
+        <item>Mukuntha</item>
+
+    </string-array>
+
+    <string-array name="array_team_number_view">
+        <item>3432232323</item>
+        <item>3432232323</item>
+        <item>3432232323</item>
+        <item>3432231113</item>
+        <item>343223232</item>
+        <item>343223232</item>
+        <item>3431232323</item>
+        <item>3432232323</item>
+    </string-array>
+
+    <string-array name="array_por_view">
+        <item>MediaAndPublicRelation</item>
+        <item>Aidjskjsdms</item>
+        <item>MediaPublicRelation</item>
+        <item>PublicRelation</item>
+        <item>MediaAndPublicRelation</item>
+        <item>Aidjskjsdms</item>
+        <item>MediaPublicRelation</item>
+        <item>PublicRelation</item>
+    </string-array>
 
 </resources>
