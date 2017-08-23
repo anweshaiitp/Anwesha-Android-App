@@ -118,7 +118,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.MyProfile" />
         </activity>
-        <activity android:name=".activities.EventInfoActivity"></activity>
+        <activity
+            android:name=".activities.EventInfoActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
     </application>
 
 </manifest>
