@@ -9,13 +9,13 @@ import android.widget.TextView;
 
 import com.iitp.mayank.celesta2k17.R;
 
-import static com.iitp.mayank.celesta2k17.activities.NjackEvents.EXTRA_DATE_TIME;
-import static com.iitp.mayank.celesta2k17.activities.NjackEvents.EXTRA_HEADER;
-import static com.iitp.mayank.celesta2k17.activities.NjackEvents.EXTRA_IMAGE_ID;
-import static com.iitp.mayank.celesta2k17.activities.NjackEvents.EXTRA_TEXT;
-import static com.iitp.mayank.celesta2k17.activities.NjackEvents.EXTRA_VENUE;
-
 public class EventInfoActivity extends AppCompatActivity {
+
+    public static final String EXTRA_HEADER = "Header",
+            EXTRA_TEXT = "Text",
+            EXTRA_VENUE = "Venue",
+            EXTRA_DATE_TIME = "DateTime",
+            EXTRA_IMAGE_ID = "ImageId";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

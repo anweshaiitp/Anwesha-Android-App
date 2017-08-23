@@ -19,13 +19,13 @@ import com.iitp.mayank.celesta2k17.R;
 import com.iitp.mayank.celesta2k17.adapters.EventsRecyclerViewAdapter;
 import com.iitp.mayank.celesta2k17.data.EventsData;
 
-public class NjackEvents extends AppCompatActivity implements EventsRecyclerViewAdapter.ListCardClick {
+import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_DATE_TIME;
+import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_HEADER;
+import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_IMAGE_ID;
+import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_TEXT;
+import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_VENUE;
 
-    public static final String EXTRA_HEADER = "Header",
-            EXTRA_TEXT = "Text",
-            EXTRA_VENUE = "Venue",
-            EXTRA_DATE_TIME = "DateTime",
-            EXTRA_IMAGE_ID = "ImageId";
+public class NjackEvents extends AppCompatActivity implements EventsRecyclerViewAdapter.ListCardClick {
 
     RecyclerView recyclerView;
     EventsRecyclerViewAdapter eventsRecyclerViewAdapter;
