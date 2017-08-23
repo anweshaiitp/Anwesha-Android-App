@@ -119,11 +119,30 @@ public class GalleryEvent extends AppCompatActivity {
             }
         };
 
-        GalleryRecylerViewAdapter galleryRecylerViewAdapter = new GalleryRecylerViewAdapter(this , mpicUrl);
-        imageRecyclerView.setAdapter(galleryRecylerViewAdapter);
 
         // adding a event listener to sync with the firebase
         mUrlDatabaseReference.addChildEventListener(mChildEventListener);
+
+        //loading the data when the files are downloaded
+        mUrlDatabaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                GalleryRecylerViewAdapter galleryRecylerViewAdapter = new GalleryRecylerViewAdapter(getApplicationContext() , mpicUrl);
+                imageRecyclerView.setAdapter(galleryRecylerViewAdapter);
+
+                for ( GalleryPics galleryPics:mpicUrl)
+                {
+                    Log.e(LOG_TAG,galleryPics.getmPhotoUrl());
+                }
+
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
 
 
         //to notify when all the previous dataSnapshot is downloaded

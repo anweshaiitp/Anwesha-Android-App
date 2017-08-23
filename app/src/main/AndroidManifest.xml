@@ -97,6 +97,14 @@
         </activity>
 
         <activity
+            android:name=".activities.TeamActivity"
+            android:label="@string/team">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.EventsActivity" />
+        </activity>
+
+        <activity
             android:name=".activities.SignInActivity"
             android:label="@string/SignIn">
             <meta-data

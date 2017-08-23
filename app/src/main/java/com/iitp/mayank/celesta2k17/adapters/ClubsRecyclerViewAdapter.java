@@ -47,7 +47,7 @@ public class ClubsRecyclerViewAdapter extends RecyclerView.Adapter<ClubsRecycler
         return clubsViewHolder;
     }
 
-    @Override
+             @Override
     public void onBindViewHolder(ClubsViewHolder holder, int position) {
         ClubsData clubsData = new ClubsData();
         clubsData.setHeader(eventHeader[position]);
@@ -58,6 +58,7 @@ public class ClubsRecyclerViewAdapter extends RecyclerView.Adapter<ClubsRecycler
         dataList.add(clubsData);
 
         holder.textViewHeader.setText(eventHeader[position]);
+
         if(!eventText[position].equals("-1"))
             holder.textViewData.setText(eventText[position]);
         else
