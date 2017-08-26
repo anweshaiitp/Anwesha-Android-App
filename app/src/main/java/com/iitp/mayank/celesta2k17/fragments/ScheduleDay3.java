@@ -29,7 +29,7 @@ public class ScheduleDay3 extends android.support.v4.app.Fragment implements Sch
         final View rootView = inflater.inflate(R.layout.fragment_schedule_day3, container, false);
 
         recyclerView = (RecyclerView) rootView.findViewById(R.id.rv_schedule_day3);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
 
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setHasFixedSize(true);
@@ -42,7 +42,7 @@ public class ScheduleDay3 extends android.support.v4.app.Fragment implements Sch
                 resources.getStringArray(R.array.array_day1_event_text),
                 resources.getStringArray(R.array.array_day1_event_time),
                 resources.getStringArray(R.array.array_day1_event_dates),
-                resources.getStringArray(R.array.array_ace_event_venue),
+                resources.getStringArray(R.array.array_day1_event_location),
                 resources.obtainTypedArray(R.array.array_day1_event_image));
         recyclerView.setAdapter(scheduleRecyclerView);
         return rootView;
