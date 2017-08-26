@@ -51,7 +51,7 @@
                 android:value=".activities.MainActivity" />
         </activity>
         <activity
-            android:name=".activities.GalleryEvent"
+            android:name=".activities.GalleryActivity"
             android:label="@string/gallery">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

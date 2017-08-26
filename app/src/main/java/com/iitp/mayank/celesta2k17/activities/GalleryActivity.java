@@ -35,7 +35,7 @@ import java.util.Random;
 
 import static android.R.attr.data;
 
-public class GalleryEvent extends AppCompatActivity {
+public class GalleryActivity extends AppCompatActivity {
 
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference mUrlDatabaseReference;
@@ -146,64 +146,64 @@ public class GalleryEvent extends AppCompatActivity {
 
 
         //to notify when all the previous dataSnapshot is downloaded
-//        mUrlDatabaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//
-//
-//                Log.e(LOG_TAG, "" + mpicUrl.size());
-//                // iterate on the array list
-//
-//
-//                int loop = 0;
+        mUrlDatabaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
 
-//                for (GalleryPics galleryPics : mpicUrl) {
-//
 
-                    // try creating a local file with the image name
-//                    try {
-//                         // create a new file in that directory with this name
-//                        /**
-//                         * @param directory accepts the directory where you want to save the file
-//                         * @param #name accepts the name of the file
-//                         * */
-//
-//                        localFile = new File(directory, galleryPics.getmPicName());
-//                        Toast.makeText(getApplicationContext(), localFile.getAbsolutePath(), Toast.LENGTH_SHORT).show();
-//                    } catch (Exception e) {
-//
-//                        Log.e(LOG_TAG, e.getMessage());
-//                    }
+                Log.e(LOG_TAG, "" + mpicUrl.size());
+                // iterate on the array list
 
-//
-//                    islandRef = mStorageReference.child(galleryPics.getmPhotoUrl());
-//
-//                    tasks.add(islandRef.getFile(localFile));
-//                    tasks.get(loop).addOnCompleteListener(new OnCompleteListener<FileDownloadTask.TaskSnapshot>() {
-//                        @Override
-//                        public void onComplete(@NonNull Task<FileDownloadTask.TaskSnapshot> task) {
-//                            Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
-//                            Log.e(LOG_TAG, "successssssssssssssssssssssssssssssssssssssssssssss" + rand.nextInt(100));
-//                        }
-//                    });
-//
-//                    tasks.get(loop).addOnFailureListener(new OnFailureListener() {
-//                        @Override
-//                        public void onFailure(@NonNull Exception e) {
-//                            Log.e(LOG_TAG, "failllllllllllllllllllese" + e.getMessage());
-//                        }
-//                    });
-//                    ++loop;
-//                }
-//
-//
-//            }
-//
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//                Log.e(LOG_TAG, databaseError.toString());
-//            }
-//        });
+
+                int loop = 0;
+
+                for (GalleryPics galleryPics : mpicUrl) {
+
+
+                     //try creating a local file with the image name
+                    try {
+                         // create a new file in that directory with this name
+                        /**
+                         * @param directory accepts the directory where you want to save the file
+                         * @param #name accepts the name of the file
+                         * */
+
+                        localFile = new File(directory, galleryPics.getmPicName());
+                        Toast.makeText(getApplicationContext(), localFile.getAbsolutePath(), Toast.LENGTH_SHORT).show();
+                    } catch (Exception e) {
+
+                        Log.e(LOG_TAG, e.getMessage());
+                    }
+
+
+                    islandRef = mStorageReference.child(galleryPics.getmPhotoUrl());
+
+                    tasks.add(islandRef.getFile(localFile));
+                    tasks.get(loop).addOnCompleteListener(new OnCompleteListener<FileDownloadTask.TaskSnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<FileDownloadTask.TaskSnapshot> task) {
+                            Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
+                            Log.e(LOG_TAG, "successssssssssssssssssssssssssssssssssssssssssssss" + rand.nextInt(100));
+                        }
+                    });
+
+                    tasks.get(loop).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Log.e(LOG_TAG, "failllllllllllllllllllese" + e.getMessage());
+                        }
+                    });
+                    ++loop;
+                }
+
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.e(LOG_TAG, databaseError.toString());
+            }
+        });
 
 
     }

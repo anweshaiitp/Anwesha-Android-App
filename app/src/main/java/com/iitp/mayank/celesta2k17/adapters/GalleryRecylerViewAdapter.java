@@ -9,9 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.iitp.mayank.celesta2k17.R;
-import com.iitp.mayank.celesta2k17.activities.GalleryEvent;
 import com.iitp.mayank.celesta2k17.data.GalleryPics;
 
 import java.util.ArrayList;
