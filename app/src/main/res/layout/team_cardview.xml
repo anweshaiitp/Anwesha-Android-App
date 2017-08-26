@@ -13,8 +13,9 @@
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
+        android:clickable="true"
         android:layout_marginTop="8dp"
-        app:cardBackgroundColor="@color/colorSignUp"
+        android:foreground="?android:attr/selectableItemBackground"
         app:cardCornerRadius="10dp"
         app:cardElevation="12dp">
 
