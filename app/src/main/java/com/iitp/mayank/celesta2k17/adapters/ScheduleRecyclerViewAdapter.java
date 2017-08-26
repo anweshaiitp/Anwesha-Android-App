@@ -42,7 +42,7 @@ public class ScheduleRecyclerViewAdapter extends RecyclerView.Adapter<ScheduleRe
     }
 
     public interface ListCardClick {
-        void onListClick(EventsData eventsData, View view);
+        void onListClick(EventsData eventsData, View view) throws ClassNotFoundException;
     }
 
     @Override
@@ -65,6 +65,7 @@ public class ScheduleRecyclerViewAdapter extends RecyclerView.Adapter<ScheduleRe
         eventsData.setHeader(eventHeader[position]);
         eventsData.setText(eventText[position]);
         eventsData.setVenue(venue[position]);
+        eventsData.setImageId(images.getResourceId(position , -1));
         eventsData.setDateTime(date[position] + " \nTime:" + time[position]);
 
         dataList.add(eventsData);
@@ -91,7 +92,11 @@ public class ScheduleRecyclerViewAdapter extends RecyclerView.Adapter<ScheduleRe
         @Override
         public void onClick(View v) {
             int position = getAdapterPosition();
-            mOnClickListener.onListClick(dataList.get(position), v);
+            try {
+                mOnClickListener.onListClick(dataList.get(position), v);
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
