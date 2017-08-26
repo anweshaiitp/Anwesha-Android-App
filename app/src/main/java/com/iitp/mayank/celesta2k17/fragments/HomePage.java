@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 
 import com.iitp.mayank.celesta2k17.R;
 import com.iitp.mayank.celesta2k17.activities.AboutActivity;
+import com.iitp.mayank.celesta2k17.activities.DevelopersActivity;
 import com.iitp.mayank.celesta2k17.activities.EventsActivity;
 import com.iitp.mayank.celesta2k17.activities.GalleryActivity;
 import com.iitp.mayank.celesta2k17.activities.ScheduleActivity;
@@ -30,6 +31,7 @@ public class HomePage extends android.support.v4.app.Fragment {
     LinearLayout aboutFrameLayout;
     LinearLayout scheduleLinearLayout;
     LinearLayout teamLinearLayout ;
+    LinearLayout devLinearLayout;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -83,6 +85,15 @@ public class HomePage extends android.support.v4.app.Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(rootView.getContext(), ScheduleActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        devLinearLayout = (LinearLayout) rootView.findViewById(R.id.developers);
+        devLinearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(rootView.getContext(), DevelopersActivity.class);
                 startActivity(intent);
             }
         });
