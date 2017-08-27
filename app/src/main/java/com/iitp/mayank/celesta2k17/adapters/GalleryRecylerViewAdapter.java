@@ -12,7 +12,9 @@ import com.bumptech.glide.Glide;
 import com.iitp.mayank.celesta2k17.R;
 import com.iitp.mayank.celesta2k17.data.GalleryPics;
 
+import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Created by manish on 16/8/17.
@@ -20,13 +22,13 @@ import java.util.ArrayList;
 
 public class GalleryRecylerViewAdapter extends RecyclerView.Adapter<GalleryRecylerViewAdapter.galleryViewHolder> {
 
-    ArrayList<GalleryPics> galleryPics = new ArrayList<>();
+    File images[];
     Context context;
-    public GalleryRecylerViewAdapter(Context context , ArrayList<GalleryPics> galleryPics)
+    public GalleryRecylerViewAdapter(Context context , File file[])
     {
         this.context = context;
-        this.galleryPics = galleryPics;
-        Log.v("TAGAGAGAAG" , galleryPics.toString());
+        this.images = file;
+        Log.v("TAGAGAGAAG" , Arrays.toString(file));
     }
 
     @Override
@@ -48,14 +50,15 @@ public class GalleryRecylerViewAdapter extends RecyclerView.Adapter<GalleryRecyl
 
     @Override
     public void onBindViewHolder(galleryViewHolder holder, int position) {
+        Glide.with(context).clear(holder.imageView);
         Glide.with(context)
-                .load(galleryPics.get(position))
+                .load(images[position])
                 .into(holder.imageView);
     }
 
     @Override
     public int getItemCount() {
-        return galleryPics.size();
+        return images.length;
     }
 
     // this class is used to cache the view when OncreateView inflates a view and toss this view to this constructor
@@ -69,8 +72,5 @@ public class GalleryRecylerViewAdapter extends RecyclerView.Adapter<GalleryRecyl
             imageView = (ImageView) itemView.findViewById(R.id.galleryImageItem);
 
         }
-
     }
-
-
 }

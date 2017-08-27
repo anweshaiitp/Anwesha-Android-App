@@ -59,154 +59,17 @@ public class GalleryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_gallery_event);
 
         imageRecyclerView = (RecyclerView) findViewById(R.id.galleryRecyclerView);
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(this , 3);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this , 2);
         imageRecyclerView.setLayoutManager(gridLayoutManager);
 
-
+        ContextWrapper contextWrapper = new ContextWrapper(getApplicationContext());
         imageRecyclerView.setHasFixedSize(true);
 
-        // this is the main accessing point of the data base
-        mFirebaseDatabase = FirebaseDatabase.getInstance();
+        File directory = contextWrapper.getDir("images_thumbnails", Context.MODE_PRIVATE);
+        File images[] = directory.listFiles();
 
-        //getting reference to message part of the app
-        mUrlDatabaseReference = mFirebaseDatabase.getReference().child("Url");
-
-        //creating an instance of Firebase storage
-        mStorage = FirebaseStorage.getInstance();
-
-        // Create a storage reference from our app
-        mStorageReference = mStorage.getReference();
-
-
-        //get the context where app data is saved
-        ContextWrapper contextWrapper = new ContextWrapper(getApplicationContext());
-
-
-        //creates  if needed, a new directory in which the application can place custom images data  files
-        final File directory = contextWrapper.getDir("images", Context.MODE_PRIVATE);
-
-
-        // adding a listener attached to the firebase to sync with any changes made with the firebase
-
-        mChildEventListener = new ChildEventListener() {
-            @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                GalleryPics galleryPics = dataSnapshot.getValue(GalleryPics.class);
-                // adding the url to data list
-                mpicUrl.add(galleryPics);
-
-            }
-
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-
-            }
-
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        };
-
-
-        // adding a event listener to sync with the firebase
-        mUrlDatabaseReference.addChildEventListener(mChildEventListener);
-
-        //loading the data when the files are downloaded
-        mUrlDatabaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                GalleryRecylerViewAdapter galleryRecylerViewAdapter = new GalleryRecylerViewAdapter(getApplicationContext() , mpicUrl);
-                imageRecyclerView.setAdapter(galleryRecylerViewAdapter);
-
-                for ( GalleryPics galleryPics:mpicUrl)
-                {
-                    Log.e(LOG_TAG,galleryPics.getmPhotoUrl());
-                }
-
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-
-
-        //to notify when all the previous dataSnapshot is downloaded
-        mUrlDatabaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-
-
-                Log.e(LOG_TAG, "" + mpicUrl.size());
-                // iterate on the array list
-
-
-                int loop = 0;
-
-                for (GalleryPics galleryPics : mpicUrl) {
-
-
-                     //try creating a local file with the image name
-                    try {
-                         // create a new file in that directory with this name
-                        /**
-                         * @param directory accepts the directory where you want to save the file
-                         * @param #name accepts the name of the file
-                         * */
-
-                        localFile = new File(directory, galleryPics.getmPicName());
-                        Toast.makeText(getApplicationContext(), localFile.getAbsolutePath(), Toast.LENGTH_SHORT).show();
-                    } catch (Exception e) {
-
-                        Log.e(LOG_TAG, e.getMessage());
-                    }
-
-
-                    islandRef = mStorageReference.child(galleryPics.getmPhotoUrl());
-
-                    tasks.add(islandRef.getFile(localFile));
-                    tasks.get(loop).addOnCompleteListener(new OnCompleteListener<FileDownloadTask.TaskSnapshot>() {
-                        @Override
-                        public void onComplete(@NonNull Task<FileDownloadTask.TaskSnapshot> task) {
-                            Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
-                            Log.e(LOG_TAG, "successssssssssssssssssssssssssssssssssssssssssssss" + rand.nextInt(100));
-                        }
-                    });
-
-                    tasks.get(loop).addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Log.e(LOG_TAG, "failllllllllllllllllllese" + e.getMessage());
-                        }
-                    });
-                    ++loop;
-                }
-
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Log.e(LOG_TAG, databaseError.toString());
-            }
-        });
-
-
+        GalleryRecylerViewAdapter galleryRecylerViewAdapter = new GalleryRecylerViewAdapter(this , images);
+        imageRecyclerView.setAdapter(galleryRecylerViewAdapter);
     }
-
 }
 

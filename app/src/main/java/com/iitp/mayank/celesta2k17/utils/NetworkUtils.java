@@ -66,7 +66,7 @@ public class NetworkUtils {
             ContextWrapper contextWrapper = new ContextWrapper(c);
 
             //creates  if needed, a new directory in which the application can place custom images data  files
-            final File directory = contextWrapper.getDir("images", Context.MODE_PRIVATE);
+            final File directory = contextWrapper.getDir("images_thumbnails", Context.MODE_PRIVATE);
 
 
             // adding a listener attached to the firebase to sync with any changes made with the firebase
