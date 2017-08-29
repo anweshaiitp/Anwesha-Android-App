@@ -15,7 +15,6 @@ import com.iitp.mayank.celesta2k17.R;
 import com.iitp.mayank.celesta2k17.activities.AboutActivity;
 import com.iitp.mayank.celesta2k17.activities.DevelopersActivity;
 import com.iitp.mayank.celesta2k17.activities.EventsActivity;
-import com.iitp.mayank.celesta2k17.activities.GalleryActivity;
 import com.iitp.mayank.celesta2k17.activities.ScheduleActivity;
 import com.iitp.mayank.celesta2k17.activities.TeamActivity;
 import com.iitp.mayank.celesta2k17.adapters.EventsAdapter;
@@ -27,7 +26,7 @@ import com.iitp.mayank.celesta2k17.adapters.EventsAdapter;
 public class HomePage extends android.support.v4.app.Fragment {
 
     LinearLayout eventsLinearLayout;
-    LinearLayout galleryLinearLayout;
+//    LinearLayout galleryLinearLayout;
     LinearLayout aboutFrameLayout;
     LinearLayout scheduleLinearLayout;
     LinearLayout teamLinearLayout ;
@@ -60,16 +59,16 @@ public class HomePage extends android.support.v4.app.Fragment {
             }
         });
 
-        galleryLinearLayout = (LinearLayout) rootView.findViewById(R.id.gallery);
-        galleryLinearLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(rootView.getContext(), GalleryActivity.class);
-                startActivity(intent);
-
-
-            }
-        });
+//        galleryLinearLayout = (LinearLayout) rootView.findViewById(R.id.gallery);
+//        galleryLinearLayout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(rootView.getContext(), GalleryFragment.class);
+//                startActivity(intent);
+//
+//
+//            }
+//        });
 
         aboutFrameLayout = (LinearLayout) rootView.findViewById(R.id.about);
         aboutFrameLayout.setOnClickListener(new View.OnClickListener() {

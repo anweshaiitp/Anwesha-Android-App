@@ -45,13 +45,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.MainActivity" />
         </activity>
-        <activity
-            android:name=".activities.GalleryActivity"
-            android:label="@string/gallery">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.MainActivity" />
-        </activity>
+        <!--<activity-->
+            <!--android:name=".fragments.GalleryFragment"-->
+            <!--android:label="@string/gallery">-->
+            <!--<meta-data-->
+                <!--android:name="android.support.PARENT_ACTIVITY"-->
+                <!--android:value=".activities.MainActivity" />-->
+        <!--</activity>-->
         <activity
             android:name=".activities.NjackEvents"
             android:label="@string/NJACK_Events">

@@ -1,24 +1,15 @@
 package com.iitp.mayank.celesta2k17.activities;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.os.Bundle;
-import android.view.LayoutInflater;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-
-import android.widget.TextView;
 
 import com.iitp.mayank.celesta2k17.R;
 import com.iitp.mayank.celesta2k17.adapters.PageFragmentAdapter;
@@ -60,8 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
         int tabIcons[] = {R.drawable.ic_home_white_24dp,
                                     R.drawable.ic_stars_white_24dp,
-                                    R.drawable.ic_videocam_white_24dp,
-                                    R.drawable.ic_poll_white_24dp};
+                                    R.drawable.ic_photo_library_white_24dp};
 
         for(int i = 0;i < mPageFragmentAdapter.getCount();i++)
             tabLayout.getTabAt(i).setIcon(tabIcons[i]);
