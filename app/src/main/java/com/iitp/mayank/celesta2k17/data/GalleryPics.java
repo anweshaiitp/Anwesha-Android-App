@@ -8,7 +8,7 @@ public class GalleryPics {
 
     private String mPhotoUrl;
     private  String mPicName ;
-// making an empty constructor so that it can't be instantizied
+// making an empty constructor for firebase
     public GalleryPics() {
     }
 // to set the photo url

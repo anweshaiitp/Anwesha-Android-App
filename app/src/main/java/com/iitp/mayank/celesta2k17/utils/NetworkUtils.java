@@ -43,12 +43,10 @@ public class NetworkUtils {
 
     final private String LOG_TAG = getClass().toString();
 
-    public boolean downloadImages(ContextWrapper c , Context context)
-    {
-        if(!hasNetwork(context))
+    public boolean downloadImages(ContextWrapper c, Context context) {
+        if (!hasNetwork(context))
             return false;
-        else
-        {
+        else {
             // this is the main accessing point of the data base
             mFirebaseDatabase = FirebaseDatabase.getInstance();
 
@@ -106,25 +104,6 @@ public class NetworkUtils {
             // adding a event listener to sync with the firebase
             mUrlDatabaseReference.addChildEventListener(mChildEventListener);
 
-            //loading the data when the files are downloaded
-            mUrlDatabaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
-
-                    for ( GalleryPics galleryPics:mpicUrl)
-                    {
-                        Log.e(LOG_TAG,galleryPics.getmPhotoUrl());
-                    }
-
-
-                }
-
-                @Override
-                public void onCancelled(DatabaseError databaseError) {
-
-                }
-            });
-
 
             //to notify when all the previous dataSnapshot is downloaded
             mUrlDatabaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -135,11 +114,8 @@ public class NetworkUtils {
                     Log.e(LOG_TAG, "" + mpicUrl.size());
                     // iterate on the array list
 
-
                     int loop = 0;
-
                     for (GalleryPics galleryPics : mpicUrl) {
-
 
                         //try creating a local file with the image name
                         try {
@@ -176,8 +152,6 @@ public class NetworkUtils {
                         });
                         ++loop;
                     }
-
-
                 }
 
                 @Override
@@ -185,7 +159,6 @@ public class NetworkUtils {
                     Log.e(LOG_TAG, databaseError.toString());
                 }
             });
-
 
         }
         return true;
