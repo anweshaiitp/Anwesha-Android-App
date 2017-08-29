@@ -74,6 +74,7 @@ public class HighlightsPage extends android.support.v4.app.Fragment {
         mhighlightsDatabaseReference.addChildEventListener(mchildEventListener);
 
 
+
         return rootView;
     }
 }
