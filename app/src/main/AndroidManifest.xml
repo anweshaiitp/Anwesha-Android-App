@@ -133,8 +133,17 @@
         </activity>
         <activity
             android:name=".activities.EventInfoActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".activities.DevelopersActivity"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity android:name=".activities.DevelopersActivity"
+                    android:parentActivityName=".activities.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.iitp.mayank.celesta2k17.activities.MainActivity"
+                />
+
+        </activity>
     </application>
 
 </manifest>
