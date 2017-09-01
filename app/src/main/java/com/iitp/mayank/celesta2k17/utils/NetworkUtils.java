@@ -20,6 +20,7 @@ import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.iitp.mayank.celesta2k17.data.GalleryPics;
+import com.iitp.mayank.celesta2k17.data.HighlightsData;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -36,16 +37,18 @@ public class NetworkUtils {
     private ChildEventListener mChildEventListener;
     private FirebaseStorage mStorage;
     private ArrayList<FileDownloadTask> tasks = new ArrayList<FileDownloadTask>();
-
+    private  ArrayList<HighlightsData> highlightsDatas= new ArrayList<>();
+    private DatabaseReference mhighlightsDatabaseReference;
     private StorageReference mStorageReference;
     private File localFile;
     private StorageReference islandRef;
-
+    int loop = 0;
     final private String LOG_TAG = getClass().toString();
 
     public boolean downloadImages(ContextWrapper c, Context context) {
         if (!hasNetwork(context))
             return false;
+
         else {
             // this is the main accessing point of the data base
             mFirebaseDatabase = FirebaseDatabase.getInstance();
@@ -100,39 +103,31 @@ public class NetworkUtils {
                 }
             };
 
-
             // adding a event listener to sync with the firebase
             mUrlDatabaseReference.addChildEventListener(mChildEventListener);
-
 
             //to notify when all the previous dataSnapshot is downloaded
             mUrlDatabaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
 
-
-                    Log.e(LOG_TAG, "" + mpicUrl.size());
                     // iterate on the array list
+                    // create a new file in that directory with this name
+                    /**
+                     * @param directory accepts the directory where you want to save the file
+                     * @param #name accepts the name of the file
+                     * */
 
-                    int loop = 0;
                     for (GalleryPics galleryPics : mpicUrl) {
 
                         //try creating a local file with the image name
                         try {
-                            // create a new file in that directory with this name
-                            /**
-                             * @param directory accepts the directory where you want to save the file
-                             * @param #name accepts the name of the file
-                             * */
-
                             localFile = new File(directory, galleryPics.getmPicName());
 //                            Toast.makeText(getApplicationContext(), localFile.getAbsolutePath(), Toast.LENGTH_SHORT).show();
                         } catch (Exception e) {
 
                             Log.e(LOG_TAG, e.getMessage());
                         }
-
-
                         islandRef = mStorageReference.child(galleryPics.getmPhotoUrl());
 
                         tasks.add(islandRef.getFile(localFile));
@@ -140,14 +135,13 @@ public class NetworkUtils {
                             @Override
                             public void onComplete(@NonNull Task<FileDownloadTask.TaskSnapshot> task) {
 //                                Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
-                                Log.e(LOG_TAG, "successssssssssssssssssssssssssssssssssssssssssssss");
+
                             }
                         });
-
                         tasks.get(loop).addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                Log.e(LOG_TAG, "failllllllllllllllllllese" + e.getMessage());
+                                Log.e(LOG_TAG,  e.getMessage());
                             }
                         });
                         ++loop;
@@ -164,7 +158,44 @@ public class NetworkUtils {
         return true;
     }
 
-    boolean hasNetwork(Context context) {
+    //to extract the data from the  firebase
+    public  ArrayList<HighlightsData> extractHighlights( ContextWrapper c, Context context )
+    {
+        // this return false if there is no interet connection
+        if (!hasNetwork(context))
+        {  return null; }
+        else
+        {
+            //opens connection with the database
+            mFirebaseDatabase=FirebaseDatabase.getInstance() ;
+            //getting reference of the child
+            mhighlightsDatabaseReference=mFirebaseDatabase.getReference("Highlights");
+
+            //to download the previously added data in the string
+            mhighlightsDatabaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    // reference to the object of the class where we should add the data
+                    HighlightsData highlightsData = dataSnapshot.getValue(HighlightsData.class);
+                    //adding the data to the array list
+                    highlightsDatas.add(highlightsData);
+
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                    //printing the stack trace
+                    Log.e( LOG_TAG ,databaseError.getMessage()) ;
+                }
+            });
+
+        }
+
+        return  highlightsDatas ;
+
+    }
+
+    private  boolean hasNetwork(Context context) {
         ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
         return activeNetworkInfo != null && activeNetworkInfo.isConnected();

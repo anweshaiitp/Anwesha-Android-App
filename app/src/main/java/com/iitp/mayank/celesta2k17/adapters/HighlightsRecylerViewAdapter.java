@@ -6,12 +6,24 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.iitp.mayank.celesta2k17.R;
+import com.iitp.mayank.celesta2k17.data.HighlightsData;
+
+import java.util.ArrayList;
 
 /**
  * Created by manish on 30/8/17.
  */
 
 public class HighlightsRecylerViewAdapter extends RecyclerView.Adapter<HighlightsRecylerViewAdapter.HighlightsViewHolder> {
+
+        ArrayList<HighlightsData> highlights = new ArrayList<>() ;
+
+    //to set the values tossed from network splash background task
+    public HighlightsRecylerViewAdapter ( ArrayList<HighlightsData>  highlights)
+    {
+        this.highlights=highlights ;
+    }
+
 
 
     @Override
@@ -21,7 +33,7 @@ public class HighlightsRecylerViewAdapter extends RecyclerView.Adapter<Highlight
 
     @Override
     public int getItemCount() {
-        return 0;
+        return highlights.size();
     }
 
     @Override

@@ -22,57 +22,13 @@ import java.util.ArrayList;
 
 public class HighlightsPage extends android.support.v4.app.Fragment {
 
-    private FirebaseDatabase mfirebaseDatabase ;
-    ArrayList<HighlightsData> mData = new ArrayList<>() ;
-    private DatabaseReference mhighlightsDatabaseReference;
-    private String LOG_TAG=getClass().toString() ;
-    private ChildEventListener mchildEventListener ;
 
+    private String LOG_TAG = getClass().toString();
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_highlights,container,false);
-
-        //opens connection with the database
-        mfirebaseDatabase=FirebaseDatabase.getInstance() ;
-        //getting reference of the child
-        mhighlightsDatabaseReference=mfirebaseDatabase.getReference("Highlights");
-
-        //defining an event listener
-        mchildEventListener= new ChildEventListener() {
-            @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-
-                HighlightsData highlightsData =dataSnapshot.getValue(HighlightsData.class);
-                mData.add(highlightsData);
-
-            }
-
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        };
-
-        //adding an event listeners
-        mhighlightsDatabaseReference.addChildEventListener(mchildEventListener);
-
+        View rootView = inflater.inflate(R.layout.fragment_highlights, container, false);
 
 
         return rootView;
