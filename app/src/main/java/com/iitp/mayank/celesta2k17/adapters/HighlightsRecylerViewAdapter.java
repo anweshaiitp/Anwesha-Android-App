@@ -1,6 +1,8 @@
 package com.iitp.mayank.celesta2k17.adapters;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -28,7 +30,16 @@ public class HighlightsRecylerViewAdapter extends RecyclerView.Adapter<Highlight
 
     @Override
     public HighlightsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return null;
+
+        Context context = parent.getContext() ;
+
+        LayoutInflater layoutInflater = LayoutInflater.from(context) ;
+        View view = layoutInflater.inflate(R.layout.highlights_card_view,parent,false);
+        //tossing the view for caching
+        HighlightsViewHolder highlightsViewHolder = new HighlightsViewHolder(view) ;
+
+        return  highlightsViewHolder ;
+
     }
 
     @Override
@@ -39,7 +50,7 @@ public class HighlightsRecylerViewAdapter extends RecyclerView.Adapter<Highlight
     @Override
     public void onBindViewHolder(HighlightsViewHolder holder, int position) {
 
-
+        holder.content.setText(highlights.get(position).getmHighlights());
     }
 
     //making a view holder to cache the value of the view
@@ -47,15 +58,10 @@ public class HighlightsRecylerViewAdapter extends RecyclerView.Adapter<Highlight
         TextView header;
         TextView content;
 
-
         public HighlightsViewHolder(View itemView) {
             super(itemView);
             header = (TextView) itemView.findViewById(R.id.highlightsheader);
             content = (TextView) itemView.findViewById(R.id.highlightscontent);
-
-
         }
-
     }
-
 }

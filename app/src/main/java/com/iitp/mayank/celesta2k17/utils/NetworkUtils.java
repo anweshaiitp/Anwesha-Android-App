@@ -21,6 +21,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.iitp.mayank.celesta2k17.data.GalleryPics;
 import com.iitp.mayank.celesta2k17.data.HighlightsData;
+import com.iitp.mayank.celesta2k17.fragments.HighlightsPage;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -44,6 +45,7 @@ public class NetworkUtils {
     private StorageReference islandRef;
     int loop = 0;
     final private String LOG_TAG = getClass().toString();
+    private ChildEventListener mhighlightsChildeventlistener;
 
     public boolean downloadImages(ContextWrapper c, Context context) {
         if (!hasNetwork(context))
@@ -159,39 +161,69 @@ public class NetworkUtils {
     }
 
     //to extract the data from the  firebase
-    public  ArrayList<HighlightsData> extractHighlights( ContextWrapper c, Context context )
+    public  boolean extractHighlights( ContextWrapper c, Context context )
     {
         // this return false if there is no interet connection
         if (!hasNetwork(context))
-        {  return null; }
+        {  return false; }
         else
         {
             //opens connection with the database
             mFirebaseDatabase=FirebaseDatabase.getInstance() ;
             //getting reference of the child
-            mhighlightsDatabaseReference=mFirebaseDatabase.getReference("Highlights");
+            mhighlightsDatabaseReference=mFirebaseDatabase.getReference().child("Highlights");
+
+            mhighlightsChildeventlistener= new ChildEventListener() {
+                @Override
+                public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+
+                    // reference to the object of the class where we should add the data
+                    HighlightsData highlightsData = dataSnapshot.getValue(HighlightsData.class);
+                    //adding the data to the array list
+                    highlightsDatas.add(highlightsData);
+                    Log.e(LOG_TAG,"this is addddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd");
+                }
+
+                @Override
+                public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+                }
+
+                @Override
+                public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+                }
+
+                @Override
+                public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            };
+            mhighlightsDatabaseReference.addChildEventListener(mhighlightsChildeventlistener);
 
             //to download the previously added data in the string
             mhighlightsDatabaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
-                    // reference to the object of the class where we should add the data
-                    HighlightsData highlightsData = dataSnapshot.getValue(HighlightsData.class);
-                    //adding the data to the array list
-                    highlightsDatas.add(highlightsData);
+
+                    HighlightsPage.setArray(highlightsDatas);
 
                 }
 
                 @Override
                 public void onCancelled(DatabaseError databaseError) {
                     //printing the stack trace
-                    Log.e( LOG_TAG ,databaseError.getMessage()) ;
                 }
             });
 
         }
 
-        return  highlightsDatas ;
+        return  true;
 
     }
 

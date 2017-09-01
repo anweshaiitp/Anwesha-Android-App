@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.iitp.mayank.celesta2k17.R;
 import com.iitp.mayank.celesta2k17.adapters.HighlightsRecylerViewAdapter;
 import com.iitp.mayank.celesta2k17.data.HighlightsData;
+import com.iitp.mayank.celesta2k17.fragments.HighlightsPage;
 import com.iitp.mayank.celesta2k17.utils.NetworkUtils;
 
 import java.util.ArrayList;
@@ -41,6 +42,8 @@ public class SplashActivity extends Activity {
 
         DownloadImagesAysncTask downloadImage = new DownloadImagesAysncTask();
         downloadImage.execute(new ContextWrapper(getApplicationContext()), this);
+        fetchHighlihtsAsynctask fetchHighlihtsAsynctaskwork = new fetchHighlihtsAsynctask();
+        fetchHighlihtsAsynctaskwork.execute( new ContextWrapper(getApplicationContext()),this);
     }
 
     // to trigger download task in background thread
@@ -67,7 +70,7 @@ public class SplashActivity extends Activity {
     }
 
     //to trigger download task for extracting highlights
-    private  class fetchHighlihtsAsynctask extends  AsyncTask< Object , Void , ArrayList<HighlightsData> >
+    private  class fetchHighlihtsAsynctask extends  AsyncTask< Object , Void , Boolean >
     {
         @Override
         protected void onPreExecute() {
@@ -75,22 +78,18 @@ public class SplashActivity extends Activity {
         }
 
         @Override
-        protected ArrayList<HighlightsData> doInBackground(Object... params) {
+        protected Boolean doInBackground(Object... params) {
             return  new NetworkUtils().extractHighlights((ContextWrapper) params[0] , (Context)params[1] ) ;
         }
 
         @Override
-        protected void onPostExecute(ArrayList<HighlightsData> highlightsDatas) {
+        protected void onPostExecute(Boolean value ) {
             //if the data is not uploaded
-            if( highlightsDatas != null )
+            if( value ==false )
             {
-                //populate the recycler view adapter with this data
-                HighlightsRecylerViewAdapter highlightsRecylerViewAdapter = new HighlightsRecylerViewAdapter(highlightsDatas);
+                Log.e(SplashActivity.class.getName(),"Can't fetch the data highlights ");
             }
-            else
-            {
-                Log.e(SplashActivity.class.getName()," Error while fetching highlights ") ;
-            }
+
 
         }
     }

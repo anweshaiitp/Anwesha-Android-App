@@ -26,17 +26,6 @@ import java.util.Random;
 
 public class GalleryFragment extends android.support.v4.app.Fragment {
 
-    private FirebaseDatabase mFirebaseDatabase;
-    private DatabaseReference mUrlDatabaseReference;
-    ArrayList<GalleryPics> mpicUrl = new ArrayList<GalleryPics>();
-    private ChildEventListener mChildEventListener;
-    private FirebaseStorage mStorage;
-
-    private StorageReference mStorageReference;
-    private File localFile;
-    private StorageReference islandRef;
-    private ArrayList<FileDownloadTask> tasks = new ArrayList<FileDownloadTask>();
-    Random rand = new Random();
 
     RecyclerView imageRecyclerView;
     final private String LOG_TAG = getClass().toString();
