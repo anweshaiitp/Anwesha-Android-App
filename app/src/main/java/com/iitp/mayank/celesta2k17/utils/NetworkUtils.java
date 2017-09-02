@@ -26,6 +26,7 @@ import com.iitp.mayank.celesta2k17.fragments.HighlightsPage;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.StringTokenizer;
@@ -223,12 +224,12 @@ public class NetworkUtils {
                     }
                     File highlightsFile = new File(directory , "highlight.txt");
                     try {
-                        FileWriter fileWriter = new FileWriter(highlightsFile , false);
+                        PrintWriter printWriter = new PrintWriter(highlightsFile);
                         for(String txt : data)
                         {
-                            fileWriter.write(txt);
+                            printWriter.println(txt);
                         }
-                        fileWriter.close();
+                        printWriter.close();
                     } catch (IOException e) {
                         e.printStackTrace();
                     }

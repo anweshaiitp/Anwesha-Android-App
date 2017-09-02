@@ -13,12 +13,12 @@ import android.view.ViewGroup;
 import com.iitp.mayank.celesta2k17.R;
 import com.iitp.mayank.celesta2k17.adapters.HighlightsRecylerViewAdapter;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Scanner;
 import java.util.StringTokenizer;
 
 /**
@@ -57,15 +57,15 @@ public class HighlightsPage extends android.support.v4.app.Fragment {
         File file = new File(directory , "highlight.txt");
         try {
             FileReader fileReader = new FileReader(file);
-            Scanner readScanner = new Scanner(fileReader);
-            int i = 0;
-            while(readScanner.hasNext())
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            String x;
+            while((x = bufferedReader.readLine()) != null)
             {
-                StringTokenizer stringTokenizer = new StringTokenizer(readScanner.nextLine() , "::");
+                StringTokenizer stringTokenizer = new StringTokenizer(x , ":-");
                 header.add(stringTokenizer.nextToken());
                 details.add(stringTokenizer.nextToken());
             }
-            readScanner.close();
+            bufferedReader.close();
             fileReader.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
