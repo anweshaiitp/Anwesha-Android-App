@@ -221,9 +221,9 @@ public class NetworkUtils {
                     {
                         data.add(h.getmHighlights());
                     }
-                    File highlishtsFile = new File(directory , "highlight.txt");
+                    File highlightsFile = new File(directory , "highlight.txt");
                     try {
-                        FileWriter fileWriter = new FileWriter(highlishtsFile , false);
+                        FileWriter fileWriter = new FileWriter(highlightsFile , false);
                         for(String txt : data)
                         {
                             fileWriter.write(txt);
