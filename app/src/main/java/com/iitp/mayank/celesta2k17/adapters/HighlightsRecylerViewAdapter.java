@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.iitp.mayank.celesta2k17.R;
-import com.iitp.mayank.celesta2k17.data.HighlightsData;
 
 import java.util.ArrayList;
 
@@ -18,12 +17,15 @@ import java.util.ArrayList;
 
 public class HighlightsRecylerViewAdapter extends RecyclerView.Adapter<HighlightsRecylerViewAdapter.HighlightsViewHolder> {
 
-        ArrayList<HighlightsData> highlights = new ArrayList<>() ;
-
+    Context context;
+    ArrayList<String> header;
+    ArrayList<String> details;
     //to set the values tossed from network splash background task
-    public HighlightsRecylerViewAdapter ( ArrayList<HighlightsData>  highlights)
+    public HighlightsRecylerViewAdapter (Context context , ArrayList<String> header , ArrayList<String> details)
     {
-        this.highlights=highlights ;
+        this.context = context;
+        this.header = header;
+        this.details = details;
     }
 
 
@@ -44,13 +46,13 @@ public class HighlightsRecylerViewAdapter extends RecyclerView.Adapter<Highlight
 
     @Override
     public int getItemCount() {
-        return highlights.size();
+        return header.size();
     }
 
     @Override
     public void onBindViewHolder(HighlightsViewHolder holder, int position) {
-
-        holder.content.setText(highlights.get(position).getmHighlights());
+        holder.header.setText(header.get(position));
+        holder.content.setText(details.get(position));
     }
 
     //making a view holder to cache the value of the view
