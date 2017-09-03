@@ -1,7 +1,9 @@
 package com.iitp.mayank.celesta2k17.activities;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
@@ -18,7 +20,7 @@ import com.iitp.mayank.celesta2k17.adapters.TeamRecylerViewAdapter;
  * Created by manish on 22/8/17.
  */
 
-public class TeamActivity extends AppCompatActivity {
+public class TeamActivity extends AppCompatActivity implements TeamRecylerViewAdapter.PhoneCLick {
 
     RecyclerView recyclerView;
     TeamRecylerViewAdapter teamRecylerViewAdapter;
@@ -42,6 +44,7 @@ public class TeamActivity extends AppCompatActivity {
         bar.setBackgroundDrawable(new ColorDrawable(ContextCompat.getColor(this, R.color.colorPrimaryDark)));
         //populating the array with the data
         teamRecylerViewAdapter = new TeamRecylerViewAdapter(getApplicationContext(),
+                                this,
                                 resources.getStringArray(R.array.array_name_view),
                                 resources.getStringArray(R.array.array_por_view),
                                 resources.getStringArray(R.array.array_team_number_view));
@@ -49,5 +52,12 @@ public class TeamActivity extends AppCompatActivity {
         //setting adapter on the recyler view
         recyclerView.setAdapter(teamRecylerViewAdapter);
 
+    }
+
+    @Override
+    public void onPhoneClick(String phone) {
+        Intent intent = new Intent(Intent.ACTION_DIAL);
+        intent.setData(Uri.parse("tel:" + phone));
+        startActivity(intent);
     }
 }

@@ -166,8 +166,9 @@ public class NetworkUtils {
     }
 
     //to extract the data from the  firebase
-    public  boolean extractHighlights( ContextWrapper contextWrapper, Context context )
+    public  boolean extractHighlights(ContextWrapper contextWrapper, Context context )
     {
+        Log.v("ASASAS","AA");
         // this return false if there is no interet connection
         if (!hasNetwork(context))
         {  return false; }

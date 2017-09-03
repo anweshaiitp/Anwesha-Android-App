@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/colorPrimaryDark"
     android:orientation="vertical">
 
@@ -50,8 +51,8 @@
                     android:id="@+id/team_nameTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="16sp"
-                    android:layout_marginTop="32sp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="32dp"
                     android:fontFamily="sans-serif"
                     android:text="@string/ACE_Events"
                     android:textColor="@color/colorPrimaryLight"
@@ -61,29 +62,29 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
                     android:orientation="horizontal">
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12sp"
-                        android:layout_marginLeft="16sp"
+                        android:layout_marginLeft="16dp"
                         android:src="@drawable/ic_contact_phone_white_24dp" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/team_phoneTextView"
-                        android:text="#XX9991245546XX"
-                        android:textColor="@color/colorPrimaryLight"
-                        android:layout_marginTop="16sp"
-                        android:layout_marginLeft="16sp"/>
+                        tools:text="9991245546"
+                        android:layout_gravity="center_vertical"
+                        android:textColor="@android:color/holo_blue_light"
+                        android:layout_marginLeft="8dp"/>
                 </LinearLayout>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12sp"
-                    android:layout_marginLeft="16sp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginLeft="16dp"
                     android:textColor="@color/colorPrimaryLight"
                     android:text="I am ##### "/>
 
@@ -99,9 +100,9 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@color/colorSignIn"
-            android:layout_marginTop="16sp"
-            android:layout_marginLeft="12sp"
-            android:layout_marginRight="12sp">
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp">
 
         </View>
 
@@ -109,8 +110,8 @@
                 android:id="@+id/team_porTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16sp"
-                android:layout_marginTop="12sp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="12dp"
                 android:fontFamily="sans-serif-medium"
                 android:text="Media and Public relations "
                 android:textAlignment="center"
