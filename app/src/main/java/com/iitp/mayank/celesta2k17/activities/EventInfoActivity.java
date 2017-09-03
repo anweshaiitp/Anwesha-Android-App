@@ -1,9 +1,12 @@
 package com.iitp.mayank.celesta2k17.activities;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -24,9 +27,9 @@ public class EventInfoActivity extends AppCompatActivity {
 
         // Get the Intent that started this activity and extract the strings needed
         Intent intent = getIntent();
-        String header = intent.getStringExtra(EXTRA_HEADER);
+        final String header = intent.getStringExtra(EXTRA_HEADER);
         String text = intent.getStringExtra(EXTRA_TEXT);
-        String dateTime = intent.getStringExtra(EXTRA_DATE_TIME);
+        final String dateTime = intent.getStringExtra(EXTRA_DATE_TIME);
         String venue = intent.getStringExtra(EXTRA_VENUE);
         int imageId = intent.getIntExtra(EXTRA_IMAGE_ID, -1);
 
@@ -35,9 +38,28 @@ public class EventInfoActivity extends AppCompatActivity {
             ((ImageView) findViewById(R.id.event_info_imageview)).setImageResource(imageId);
         if (text == "-1")
             text = "No Information Available";
+        final String finalText = text;
         ((TextView) findViewById(R.id.event_info_textview)).setText(text);
         ((TextView) findViewById(R.id.event_date_time)).setText(dateTime);
         ((TextView) findViewById(R.id.event_venue)).setText(venue);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab_share_event);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Resources resources = getResources();
+                String shareString = (String) resources.getText(R.string.share_message) + "\n"
+                        + (String) resources.getText(R.string.name) + ": " + header + "\n"
+                        + (String) resources.getText(R.string.date_time) + ": " + dateTime + "\n"
+                        + finalText;
+                Intent shareIntent = new Intent();
+                shareIntent.setAction(Intent.ACTION_SEND);
+                shareIntent.putExtra(Intent.EXTRA_TEXT, shareString);
+                shareIntent.setType("text/plain");
+                startActivity(Intent.createChooser(shareIntent, resources.getText(R.string.share_to)));
+            }
+        });
+
 
     }
 
