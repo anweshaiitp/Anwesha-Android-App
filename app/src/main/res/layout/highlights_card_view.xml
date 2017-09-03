@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/colorPrimary"
     android:orientation="vertical">
 
     <android.support.v7.widget.CardView
@@ -14,36 +13,43 @@
         android:layout_marginTop="12dp"
         android:background="@color/colorPrimary"
         app:cardCornerRadius="0dp"
-        app:cardElevation="18dp">
+        app:cardElevation="16dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/colorPrimaryDark"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorPrimaryLight"
+                android:layout_marginLeft="4dp"
                 android:fontFamily="sans-serif-medium"
                 android:lineSpacingExtra="4sp"
                 android:textAllCaps="true"
                 android:textAppearance="@android:style/TextAppearance.Material.Headline"
                 android:text="@string/NJACK_Events"
-                android:textColor="@android:color/background_dark"
-                android:textSize="20sp"
+                android:textColor="@color/colorSignUp"
+                android:textSize="16sp"
                 android:padding="4dp"
                 android:id="@+id/highlightsheader"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@color/colorSignIn"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/cardview_dark_background"
                 android:fontFamily="sans-serif-light"
                 android:lineSpacingExtra="4sp"
                 android:textColor="@android:color/background_light"
-                android:textSize="16sp"
-                android:padding="6dp"
+                android:textSize="14sp"
+                android:padding="4dp"
+                android:layout_marginLeft="4dp"
                 android:id="@+id/highlightscontent"
                 android:text="This was a whole new level of race foe jkdjfd dfjdidfd fdf dd fdkfdjfkdjfdfdfd fdfd fdfdfdfldfjdlfjdldjfdlfdjdljdldjdlfjddldjf "/>
         </LinearLayout>
