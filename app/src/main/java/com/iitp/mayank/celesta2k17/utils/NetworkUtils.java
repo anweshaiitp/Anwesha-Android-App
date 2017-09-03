@@ -24,7 +24,12 @@ import com.iitp.mayank.celesta2k17.data.HighlightsData;
 import com.iitp.mayank.celesta2k17.fragments.HighlightsPage;
 
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.StringTokenizer;
 
 /**
  * Created by mayank on 26/8/17.
@@ -161,13 +166,16 @@ public class NetworkUtils {
     }
 
     //to extract the data from the  firebase
-    public  boolean extractHighlights( ContextWrapper c, Context context )
+    public  boolean extractHighlights(ContextWrapper contextWrapper, Context context )
     {
+        Log.v("ASASAS","AA");
         // this return false if there is no interet connection
         if (!hasNetwork(context))
         {  return false; }
         else
         {
+            final File directory = contextWrapper.getDir("highlights", Context.MODE_PRIVATE);
+
             //opens connection with the database
             mFirebaseDatabase=FirebaseDatabase.getInstance() ;
             //getting reference of the child
@@ -181,7 +189,7 @@ public class NetworkUtils {
                     HighlightsData highlightsData = dataSnapshot.getValue(HighlightsData.class);
                     //adding the data to the array list
                     highlightsDatas.add(highlightsData);
-                    Log.e(LOG_TAG,"this is addddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd");
+//                    Log.e(LOG_TAG,"this is addddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd");
                 }
 
                 @Override
@@ -210,9 +218,22 @@ public class NetworkUtils {
             mhighlightsDatabaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
-
-                    HighlightsPage.setArray(highlightsDatas);
-
+                    ArrayList<String> data = new ArrayList<>();
+                    for(HighlightsData h : highlightsDatas)
+                    {
+                        data.add(h.getmHighlights());
+                    }
+                    File highlightsFile = new File(directory , "highlight.txt");
+                    try {
+                        PrintWriter printWriter = new PrintWriter(highlightsFile);
+                        for(String txt : data)
+                        {
+                            printWriter.println(txt);
+                        }
+                        printWriter.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
 
                 @Override
@@ -222,9 +243,7 @@ public class NetworkUtils {
             });
 
         }
-
         return  true;
-
     }
 
     private  boolean hasNetwork(Context context) {

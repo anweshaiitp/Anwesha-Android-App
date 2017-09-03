@@ -11,12 +11,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.iitp.mayank.celesta2k17.R;
-import com.iitp.mayank.celesta2k17.adapters.HighlightsRecylerViewAdapter;
-import com.iitp.mayank.celesta2k17.data.HighlightsData;
-import com.iitp.mayank.celesta2k17.fragments.HighlightsPage;
 import com.iitp.mayank.celesta2k17.utils.NetworkUtils;
-
-import java.util.ArrayList;
 
 /**
  * Created by manish on 26/8/17.
@@ -79,7 +74,7 @@ public class SplashActivity extends Activity {
 
         @Override
         protected Boolean doInBackground(Object... params) {
-            return  new NetworkUtils().extractHighlights((ContextWrapper) params[0] , (Context)params[1] ) ;
+            return  new NetworkUtils().extractHighlights((ContextWrapper) params[0] , (Context)params[1]) ;
         }
 
         @Override
@@ -89,11 +84,7 @@ public class SplashActivity extends Activity {
             {
                 Log.e(SplashActivity.class.getName(),"Can't fetch the data highlights ");
             }
-
-
         }
     }
-
-
 }
 
