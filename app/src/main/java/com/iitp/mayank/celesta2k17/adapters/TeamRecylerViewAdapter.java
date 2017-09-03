@@ -18,29 +18,29 @@ import java.util.ArrayList;
  */
 
 public class TeamRecylerViewAdapter extends RecyclerView.Adapter<TeamRecylerViewAdapter.TeamViewHolder> {
-
-
     private String Name[] ;
     private String POR[] ;
     private  String PhoneNumber[] ;
-     Context context ;
-//    ArrayList<TeamData> teamDataArrayList;
+     Context context;
+    private PhoneCLick phoneCLickListener;
 
     //setting a contructor to set the values of parameters inside the class
-    public TeamRecylerViewAdapter (Context context ,String NameValue[],String PORvalue[] ,String PhoneNumber[])
+    public TeamRecylerViewAdapter (Context context , PhoneCLick phoneCLickListener ,String NameValue[],String PORvalue[] ,String PhoneNumber[])
     {
-        Name=NameValue ;
-        POR=PORvalue ;
+        Name=NameValue;
+        POR=PORvalue;
         this.context=context ;
-        this.PhoneNumber=PhoneNumber ;
+        this.PhoneNumber=PhoneNumber;
+        this.phoneCLickListener = phoneCLickListener;
 
     }
 
+    public interface PhoneCLick{
+        void onPhoneClick(String phone);
+    }
 // when a new view is created in the recylerView
     @Override
     public TeamViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-
-
         Context context=parent.getContext() ;
         LayoutInflater layoutInflater = LayoutInflater.from(context);
         boolean attachToParent = false;
@@ -58,23 +58,10 @@ public class TeamRecylerViewAdapter extends RecyclerView.Adapter<TeamRecylerView
 
     @Override
     public void onBindViewHolder(TeamViewHolder holder, int position) {
-//        TeamData teamData = new TeamData() ;
-//
-//        //populating the data
-//        teamData.setmName(Name[position]);
-//        teamData.setMphoneNumber(PhoneNumber[position]);
-//        teamData.setmPor(POR[position]);
-
-        //adding to the arrayList
-//        teamDataArrayList.add(teamData);
-//
-
         //binding view with the data
         holder.phoneNumberTextView.setText(PhoneNumber[position]);
         holder.nameTextView.setText(Name[position]);
         holder.porTextView.setText(POR[position]);
-
-
     }
 
 
@@ -84,7 +71,7 @@ public class TeamRecylerViewAdapter extends RecyclerView.Adapter<TeamRecylerView
     }
 
     //view holder to cache the Views
-    class TeamViewHolder extends RecyclerView.ViewHolder
+    class TeamViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
     {
         TextView porTextView ;
         TextView nameTextView ;
@@ -92,18 +79,19 @@ public class TeamRecylerViewAdapter extends RecyclerView.Adapter<TeamRecylerView
         ImageView picImageView ;
 
 //caching the view on the listeners
-        public TeamViewHolder(View itemView )
+        public TeamViewHolder(View itemView)
         {
             super(itemView) ;
-
             porTextView=(TextView)itemView.findViewById(R.id.team_porTextView);
             nameTextView=(TextView)itemView.findViewById(R.id.team_nameTextView) ;
             phoneNumberTextView=(TextView)itemView.findViewById(R.id.team_phoneTextView);
             picImageView=(ImageView)itemView.findViewById(R.id.team_imageNameView);
+            phoneNumberTextView.setOnClickListener(this);
+        }
 
-
+        @Override
+        public void onClick(View v) {
+            phoneCLickListener.onPhoneClick(phoneNumberTextView.getText().toString());
         }
     }
-
-
 }
