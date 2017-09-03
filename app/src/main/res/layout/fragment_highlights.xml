@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/colorPrimary">
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/highlightsRecylerView"
+    android:background="?attr/colorPrimary"
+    android:orientation="vertical">
+
+    <android.support.v4.widget.SwipeRefreshLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:isScrollContainer="true" />
+        android:id="@+id/swiperefresh_highlights">
 
-
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/highlightsRecylerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:isScrollContainer="true" />
+    </android.support.v4.widget.SwipeRefreshLayout>
 </LinearLayout>
