@@ -73,4 +73,5 @@ public class GalleryRecylerViewAdapter extends RecyclerView.Adapter<GalleryRecyl
 
         }
     }
+
 }
