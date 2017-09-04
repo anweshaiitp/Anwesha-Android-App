@@ -1,70 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.iitp.mayank.celesta2k17.activities.EventInfoActivity">
+    android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/event_info_imageview"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:scaleType="centerCrop"
-        android:transitionName="event_image_view_transition"
-        tools:src="@drawable/njack" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.iitp.mayank.celesta2k17.activities.EventInfoActivity"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
 
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_margin="10dp"
-        android:layout_weight="1"
-        android:elevation="20dp">
-
-        <RelativeLayout
+        <ImageView
+            android:id="@+id/event_info_imageview"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="20dp">
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:scaleType="centerCrop"
+            android:transitionName="event_image_view_transition"
+            tools:src="@drawable/njack" />
 
-            <TextView
-                android:id="@+id/event_info_name"
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:textAppearance="@android:style/TextAppearance.Material.Headline"
-                android:transitionName="event_text_header_transition"
-                tools:text="NJATH" />
+                android:layout_height="0dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:elevation="20dp">
 
-            <TextView
-                android:id="@+id/event_date_time"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/event_info_name"
-                android:fontFamily="sans-serif-light"
-                android:textAppearance="@android:style/TextAppearance.Material.Headline"
-                tools:text="7th Aug, 10:30 pm" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="20dp">
 
-            <TextView
-                android:id="@+id/event_venue"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/event_date_time"
-                android:fontFamily="sans-serif-light"
-                android:textAppearance="@android:style/TextAppearance.Material.Headline"
-                tools:text="Tutorial Block - Room no. 107" />
+                    <TextView
+                        android:id="@+id/event_info_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:textAppearance="@android:style/TextAppearance.Material.Headline"
+                        android:textSize="20sp"
+                        android:transitionName="event_text_header_transition"
+                        tools:text="NJATH" />
 
-            <TextView
-                android:id="@+id/event_info_textview"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/event_venue"
-                android:layout_marginTop="16dp"
-                android:fontFamily="sans-serif-light"
-                android:textAppearance="@android:style/TextAppearance.Holo.Large"
-                tools:text="Lorem ipsum dolor sit amet untes gungslla goog oo gaa lossly roemsid dsfaks slal skdlfkan" />
+                    <TextView
+                        android:id="@+id/event_date_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/event_info_name"
+                        android:fontFamily="sans-serif-light"
+                        android:textAppearance="@android:style/TextAppearance.Material.Headline"
+                        android:textSize="20sp"
+                        tools:text="7th Aug, 10:30 pm" />
 
-        </RelativeLayout>
-    </android.support.v7.widget.CardView>
-</LinearLayout>
+                    <TextView
+                        android:id="@+id/event_venue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/event_date_time"
+                        android:fontFamily="sans-serif-light"
+                        android:textAppearance="@android:style/TextAppearance.Material.Headline"
+                        android:textSize="20sp"
+                        tools:text="Tutorial Block - Room no. 107" />
+
+                    <TextView
+                        android:id="@+id/event_info_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/event_venue"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="sans-serif-light"
+                        android:textAppearance="@android:style/TextAppearance.Holo.Medium"
+                        tools:text="Lorem ipsum dolor sit amet untes gungslla goog oo gaa lossly roemsid dsfaks slal skdlfkan" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+        </ScrollView>
+    </LinearLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_share_event"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="016dp"
+        tools:backgroundTint="@color/colorDevelopers"
+        android:src="@drawable/ic_share_white_24dp" />
+</RelativeLayout>

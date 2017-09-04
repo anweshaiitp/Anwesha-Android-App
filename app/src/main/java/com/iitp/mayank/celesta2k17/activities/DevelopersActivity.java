@@ -19,7 +19,7 @@ public class DevelopersActivity extends AppCompatActivity {
         ImageView github_muks = (ImageView) findViewById(R.id.github_muks);
         ImageView github_mayank = (ImageView) findViewById(R.id.github_mayank);
         ImageView github_manish = (ImageView) findViewById(R.id.github_manish);
-        ImageView fb_muks = (ImageView) findViewById(R.id.github_muks);
+        ImageView fb_muks = (ImageView) findViewById(R.id.fb_muks);
         ImageView fb_mayank = (ImageView) findViewById(R.id.fb_mayank);
         ImageView fb_manish = (ImageView) findViewById(R.id.fb_manish);
 

@@ -43,7 +43,7 @@
                 android:layout_marginTop="16sp"
                 android:fontFamily="sans-serif"
                 android:lineSpacingExtra="4sp"
-                android:text="@string/lorelEpsum"
+                android:text="@string/LoremIpsum"
                 android:textColor="@color/colorPrimaryLight"
                 android:textSize="18sp" />
 
@@ -74,7 +74,7 @@
                 android:layout_marginTop="16sp"
                 android:fontFamily="sans-serif"
                 android:lineSpacingExtra="4sp"
-                android:text="@string/lorelEpsum"
+                android:text="@string/LoremIpsum"
                 android:textColor="@color/colorPrimaryLight"
                 android:textSize="18sp" />
 
@@ -105,7 +105,7 @@
                 android:layout_marginTop="16sp"
                 android:fontFamily="sans-serif"
                 android:lineSpacingExtra="4sp"
-                android:text="@string/lorelEpsum"
+                android:text="@string/LoremIpsum"
                 android:textColor="@color/colorPrimaryLight"
                 android:textSize="18sp"
                 android:layout_marginBottom="16sp"/>
