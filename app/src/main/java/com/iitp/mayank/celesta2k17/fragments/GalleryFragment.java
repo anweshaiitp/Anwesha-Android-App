@@ -20,6 +20,7 @@ import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.iitp.mayank.celesta2k17.R;
+import com.iitp.mayank.celesta2k17.activities.ImageLauncher;
 import com.iitp.mayank.celesta2k17.adapters.GalleryRecylerViewAdapter;
 import com.iitp.mayank.celesta2k17.data.GalleryPics;
 import com.iitp.mayank.celesta2k17.listeners.RecylerItemListener;
@@ -37,7 +38,7 @@ public class GalleryFragment extends android.support.v4.app.Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_gallery, container , false);
+        View rootView = inflater.inflate(R.layout.fragment_gallery, container, false);
 
         ContextWrapper contextWrapper = new ContextWrapper(rootView.getContext());
         File directory = contextWrapper.getDir("images_thumbnails", Context.MODE_PRIVATE);
@@ -49,12 +50,10 @@ public class GalleryFragment extends android.support.v4.app.Fragment {
                     @Override
                     public void onItemClick(View view, int position) {
 
-                        Intent intent = new Intent();
-                        intent.setAction(Intent.ACTION_VIEW);
-                        Uri uri=Uri.parse("file://"+images[position].getAbsolutePath());
-                        intent.setDataAndType(uri,"image/*");
-                        startActivity(intent);
-                        Toast.makeText(getContext(),"Wohhooooo "+images[position].getAbsolutePath(),Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(getActivity(), ImageLauncher.class);
+                        intent.putExtra("imageV", images[position]);
+                        getActivity().startActivity(intent);
+
                     }
 
                     @Override
@@ -63,13 +62,13 @@ public class GalleryFragment extends android.support.v4.app.Fragment {
                     }
                 }
         ));
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(rootView.getContext() , 2);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(rootView.getContext(), 2);
         imageRecyclerView.setLayoutManager(gridLayoutManager);
 
 
         imageRecyclerView.setHasFixedSize(true);
 
-        GalleryRecylerViewAdapter galleryRecylerViewAdapter = new GalleryRecylerViewAdapter(rootView.getContext() , images);
+        GalleryRecylerViewAdapter galleryRecylerViewAdapter = new GalleryRecylerViewAdapter(rootView.getContext(), images);
         imageRecyclerView.setAdapter(galleryRecylerViewAdapter);
 
         return rootView;
