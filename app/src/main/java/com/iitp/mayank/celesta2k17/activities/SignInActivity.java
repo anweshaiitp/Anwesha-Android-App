@@ -86,7 +86,7 @@ public class SignInActivity extends AppCompatActivity {
                                                 sharedPreferences.putString(getString(R.string.full_name) , name);
                                                 sharedPreferences.putString(getString(R.string.id) , userID + "");
                                                 sharedPreferences.putString(getString(R.string.college_name) , college);
-                                                sharedPreferences.putString(getString(R.string.event_participated) , events);
+//                                                sharedPreferences.putString(getString(R.string.event_participated) , events);
                                                 sharedPreferences.apply();
                                                 finish();
                                                 break;

@@ -99,6 +99,7 @@ public class HighlightsPage extends android.support.v4.app.Fragment {
             if(aBoolean)
             {
                 clearData();
+                highlightsRecylerViewAdapter.notifyDataSetChanged();
                 setData();
                 highlightsRecylerViewAdapter.notifyDataSetChanged();
                 Toast.makeText(getContext(), "Highlights updated successfully", Toast.LENGTH_SHORT).show();
