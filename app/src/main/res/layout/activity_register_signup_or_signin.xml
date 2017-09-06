@@ -45,10 +45,10 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:paddingTop="35dp"
-                android:text="MS"
+                tools:text="MS"
                 android:textAlignment="center"
                 android:textColor="#fff"
-                android:textSize="28dp" />
+                android:textSize="28sp" />
         </RelativeLayout>
 
     </RelativeLayout>
