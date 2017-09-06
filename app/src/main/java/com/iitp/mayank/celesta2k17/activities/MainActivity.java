@@ -1,7 +1,9 @@
 package com.iitp.mayank.celesta2k17.activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -10,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.iitp.mayank.celesta2k17.R;
 import com.iitp.mayank.celesta2k17.adapters.PageFragmentAdapter;
@@ -73,8 +76,11 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if (id == R.id.action_log_out) {
+            SharedPreferences.Editor sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this).edit();
+            sharedPreferences.putBoolean(getString(R.string.login_status) , false);
+            sharedPreferences.apply();
+            Toast.makeText(this, "Logged Out Successfully", Toast.LENGTH_SHORT).show();
         }
 
         return super.onOptionsItemSelected(item);

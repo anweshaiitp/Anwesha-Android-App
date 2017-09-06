@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.iitp.mayank.celesta2k17.activities.MainActivity">
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_log_out"
         android:orderInCategory="100"
-        android:title="REFRESH"
+        android:title="Log Out"
         app:showAsAction="never" />
 </menu>
