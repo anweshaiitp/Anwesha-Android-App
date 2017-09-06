@@ -25,7 +25,7 @@ public class ImageLauncher extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.imageview);
-        
+
 
         picture = (File) getIntent().getExtras().get("imageV");
 
