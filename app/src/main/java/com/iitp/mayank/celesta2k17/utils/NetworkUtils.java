@@ -49,6 +49,7 @@ public class NetworkUtils {
     private File localFile;
     private StorageReference islandRef;
     int loop = 0;
+    GalleryPics galleryPics ;
     final private String LOG_TAG = getClass().toString();
     private ChildEventListener mhighlightsChildeventlistener;
 
@@ -82,32 +83,27 @@ public class NetworkUtils {
             mChildEventListener = new ChildEventListener() {
                 @Override
                 public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                    GalleryPics galleryPics = dataSnapshot.getValue(GalleryPics.class);
+                    galleryPics = dataSnapshot.getValue(GalleryPics.class);
                     // adding the url to data list
                     mpicUrl.add(galleryPics);
 
                 }
 
                 @Override
-                public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-
-                }
+                public void onChildChanged(DataSnapshot dataSnapshot, String s) {}
 
                 @Override
                 public void onChildRemoved(DataSnapshot dataSnapshot) {
-
+                    mpicUrl.clear();
+                     galleryPics=dataSnapshot.getValue(GalleryPics.class);
+                    mpicUrl.add(galleryPics);
                 }
 
                 @Override
-                public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-                }
+                public void onChildMoved(DataSnapshot dataSnapshot, String s) {}
 
                 @Override
-                public void onCancelled(DatabaseError databaseError) {
-
-                }
+                public void onCancelled(DatabaseError databaseError) {}
             };
 
             // adding a event listener to sync with the firebase
@@ -164,6 +160,7 @@ public class NetworkUtils {
         }
         return true;
     }
+
 
     //to extract the data from the  firebase
     public  boolean extractHighlights(ContextWrapper contextWrapper, Context context )
