@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
      * The {@link ViewPager} that will host the section contents.
      */
     private ViewPager mViewPager;
+    private Menu menu = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +66,22 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        this.menu = menu;
+        refreshMenu();
         return true;
+    }
+
+    private void refreshMenu(){
+        if(menu != null) {
+            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+            if (!sharedPreferences.getBoolean(getString(R.string.login_status), false)) {
+                menu.findItem(R.id.action_log_out).setVisible(false);
+                menu.findItem(R.id.action_log_in).setVisible(true);
+            } else {
+                menu.findItem(R.id.action_log_in).setVisible(false);
+                menu.findItem(R.id.action_log_out).setVisible(true);
+            }
+        }
     }
 
     @Override
@@ -80,7 +96,14 @@ public class MainActivity extends AppCompatActivity {
             SharedPreferences.Editor sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this).edit();
             sharedPreferences.putBoolean(getString(R.string.login_status) , false);
             sharedPreferences.apply();
+            refreshMenu();
             Toast.makeText(this, "Logged Out Successfully", Toast.LENGTH_SHORT).show();
+        }
+
+        if(id == R.id.action_log_in){
+            Intent intent = new Intent(MainActivity.this , SignInActivity.class);
+            startActivity(intent);
+            refreshMenu();
         }
 
         return super.onOptionsItemSelected(item);
@@ -96,5 +119,13 @@ public class MainActivity extends AppCompatActivity {
     {
         Intent intent = new Intent(this, MyProfile.class);
         startActivity(intent);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(menu != null){
+            refreshMenu();
+        }
     }
 }

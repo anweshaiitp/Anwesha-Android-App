@@ -3,6 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.iitp.mayank.celesta2k17.activities.MainActivity">
     <item
+        android:id="@+id/action_log_in"
+        android:orderInCategory="100"
+        android:title="Log In"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/action_log_out"
         android:orderInCategory="100"
         android:title="Log Out"
