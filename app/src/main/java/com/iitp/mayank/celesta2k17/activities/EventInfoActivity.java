@@ -15,7 +15,8 @@ import com.iitp.mayank.celesta2k17.R;
 public class EventInfoActivity extends AppCompatActivity {
 
     public static final String EXTRA_HEADER = "Header",
-            EXTRA_TEXT = "Text",
+            EXTRA_DESCRIPTION = "Text",
+            EXTRA_RULES = "Rules",
             EXTRA_VENUE = "Venue",
             EXTRA_DATE_TIME = "DateTime",
             EXTRA_IMAGE_ID = "ImageId";
@@ -28,7 +29,8 @@ public class EventInfoActivity extends AppCompatActivity {
         // Get the Intent that started this activity and extract the strings needed
         Intent intent = getIntent();
         final String header = intent.getStringExtra(EXTRA_HEADER);
-        String text = intent.getStringExtra(EXTRA_TEXT);
+        String text = intent.getStringExtra(EXTRA_DESCRIPTION);
+        String rules = intent.getStringExtra(EXTRA_RULES);
         final String dateTime = intent.getStringExtra(EXTRA_DATE_TIME);
         String venue = intent.getStringExtra(EXTRA_VENUE);
         int imageId = intent.getIntExtra(EXTRA_IMAGE_ID, -1);
@@ -36,10 +38,20 @@ public class EventInfoActivity extends AppCompatActivity {
         ((TextView) findViewById(R.id.event_info_name)).setText(header);
         if (imageId != -1)
             ((ImageView) findViewById(R.id.event_info_imageview)).setImageResource(imageId);
-        if (text == "-1")
+        if (text.equals("-1"))
             text = "No Information Available";
         final String finalText = text;
         ((TextView) findViewById(R.id.event_info_textview)).setText(text);
+
+        TextView rulesTextView = (TextView) findViewById(R.id.event_rules_textview);
+        if(rules.equals("-1")) {
+            rulesTextView.setVisibility(View.GONE);
+            (findViewById(R.id.rules_header)).setVisibility(View.GONE);
+        }
+        else {
+            rulesTextView.setText(rules);
+        }
+
         ((TextView) findViewById(R.id.event_date_time)).setText(dateTime);
         ((TextView) findViewById(R.id.event_venue)).setText(venue);
 

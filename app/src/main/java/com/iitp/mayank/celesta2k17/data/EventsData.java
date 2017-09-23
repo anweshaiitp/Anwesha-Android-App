@@ -7,6 +7,7 @@ package com.iitp.mayank.celesta2k17.data;
 public class EventsData {
     private String header;
     private String text;
+    private String rules;
     private String dateTime;
     private String venue;
     private int imageId;
@@ -56,5 +57,13 @@ public class EventsData {
 
     public void setHeader(String header) {
         this.header = header;
+    }
+
+    public void setRules(String rules) {
+        this.rules = rules;
+    }
+
+    public String getRules() {
+        return rules;
     }
 }

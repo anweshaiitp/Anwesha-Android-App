@@ -13,7 +13,6 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.iitp.mayank.celesta2k17.R;
 import com.iitp.mayank.celesta2k17.data.EventsData;
-import com.iitp.mayank.celesta2k17.data.GalleryPics;
 
 import java.util.ArrayList;
 
@@ -23,14 +22,16 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
     ArrayList<EventsData> dataList = new ArrayList<>();
     String eventHeader[];
     String eventText[];
+    String eventRules[];
     String dateTime[];
     String venue[];
     TypedArray images;
     Context context;
 
-    public EventsRecyclerViewAdapter(Context context, ListCardClick listCardClick, String eventHeader[], String eventText[], String dateTime[], String venue[], TypedArray img) {
+    public EventsRecyclerViewAdapter(Context context, ListCardClick listCardClick, String eventHeader[], String eventText[], String eventRules[],String dateTime[], String venue[], TypedArray img) {
         this.eventHeader = eventHeader;
         this.eventText = eventText;
+        this.eventRules = eventRules;
         this.dateTime = dateTime;
         this.venue = venue;
         mOnClickListener = listCardClick;
@@ -53,6 +54,7 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
         EventsData eventsData = new EventsData();
         eventsData.setHeader(eventHeader[position]);
         eventsData.setText(eventText[position]);
+        eventsData.setRules(eventRules[position]);
         eventsData.setDateTime(dateTime[position]);
         eventsData.setVenue(venue[position]);
         eventsData.setImageId(images.getResourceId(position, -1));

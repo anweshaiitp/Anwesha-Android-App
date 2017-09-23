@@ -54,7 +54,7 @@ public class ScheduleDay3 extends android.support.v4.app.Fragment implements Sch
     public void onListClick(EventsData eventsData, View view) throws ClassNotFoundException {
         Intent intentNew = new Intent(getContext(), Class.forName("com.iitp.mayank.celesta2k17.activities.EventInfoActivity"));
         intentNew.putExtra(EventInfoActivity.EXTRA_HEADER, eventsData.getHeader());
-        intentNew.putExtra(EventInfoActivity.EXTRA_TEXT, eventsData.getText());
+        intentNew.putExtra(EventInfoActivity.EXTRA_DESCRIPTION, eventsData.getText());
         intentNew.putExtra(EventInfoActivity.EXTRA_DATE_TIME, eventsData.getDateTime());
         intentNew.putExtra(EventInfoActivity.EXTRA_VENUE, eventsData.getVenue());
         intentNew.putExtra(EventInfoActivity.EXTRA_IMAGE_ID, eventsData.getImageId());

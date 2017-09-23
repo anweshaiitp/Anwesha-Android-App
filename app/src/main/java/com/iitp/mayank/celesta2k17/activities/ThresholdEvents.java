@@ -22,7 +22,8 @@ import com.iitp.mayank.celesta2k17.data.EventsData;
 import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_DATE_TIME;
 import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_HEADER;
 import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_IMAGE_ID;
-import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_TEXT;
+import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_DESCRIPTION;
+import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_RULES;
 import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_VENUE;
 
 public class ThresholdEvents extends AppCompatActivity implements EventsRecyclerViewAdapter.ListCardClick {
@@ -47,6 +48,7 @@ public class ThresholdEvents extends AppCompatActivity implements EventsRecycler
 
         eventsRecyclerViewAdapter = new EventsRecyclerViewAdapter(getApplicationContext(), this, resources.getStringArray(R.array.array_threshold_event_headers),
                 resources.getStringArray(R.array.array_threshold_event_text),
+                resources.getStringArray(R.array.array_threshold_event_rules),
                 resources.getStringArray(R.array.array_threshold_event_date_time),
                 resources.getStringArray(R.array.array_threshold_event_venue),
                 resources.obtainTypedArray(R.array.array_threshold_event_images));
@@ -66,7 +68,8 @@ public class ThresholdEvents extends AppCompatActivity implements EventsRecycler
 
         Intent intentNew = new Intent(this, Class.forName("com.iitp.mayank.celesta2k17.activities.EventInfoActivity"));
         intentNew.putExtra(EXTRA_HEADER, eventsData.getHeader());
-        intentNew.putExtra(EXTRA_TEXT, eventsData.getText());
+        intentNew.putExtra(EXTRA_DESCRIPTION, eventsData.getText());
+        intentNew.putExtra(EXTRA_RULES, eventsData.getRules());
         intentNew.putExtra(EXTRA_DATE_TIME, eventsData.getDateTime());
         intentNew.putExtra(EXTRA_VENUE, eventsData.getVenue());
         intentNew.putExtra(EXTRA_IMAGE_ID, eventsData.getImageId());

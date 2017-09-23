@@ -19,12 +19,6 @@ import com.iitp.mayank.celesta2k17.R;
 import com.iitp.mayank.celesta2k17.adapters.EventsRecyclerViewAdapter;
 import com.iitp.mayank.celesta2k17.data.EventsData;
 
-import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_DATE_TIME;
-import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_HEADER;
-import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_IMAGE_ID;
-import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_TEXT;
-import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_VENUE;
-
 public class NjackEvents extends AppCompatActivity implements EventsRecyclerViewAdapter.ListCardClick {
 
     RecyclerView recyclerView;
@@ -47,6 +41,7 @@ public class NjackEvents extends AppCompatActivity implements EventsRecyclerView
 
         eventsRecyclerViewAdapter = new EventsRecyclerViewAdapter(getApplicationContext(), this, resources.getStringArray(R.array.array_njack_event_headers),
                 resources.getStringArray(R.array.array_njack_event_text) ,
+                resources.getStringArray(R.array.array_njack_event_rules) ,
                 resources.getStringArray(R.array.array_njack_event_date_time),
                 resources.getStringArray(R.array.array_njack_event_venue),
                 resources.obtainTypedArray(R.array.array_njack_event_images));
@@ -66,7 +61,8 @@ public class NjackEvents extends AppCompatActivity implements EventsRecyclerView
 
         Intent intentNew = new Intent(this, Class.forName("com.iitp.mayank.celesta2k17.activities.EventInfoActivity"));
         intentNew.putExtra(EventInfoActivity.EXTRA_HEADER, eventsData.getHeader());
-        intentNew.putExtra(EventInfoActivity.EXTRA_TEXT, eventsData.getText());
+        intentNew.putExtra(EventInfoActivity.EXTRA_DESCRIPTION, eventsData.getText());
+        intentNew.putExtra(EventInfoActivity.EXTRA_RULES, eventsData.getRules());
         intentNew.putExtra(EventInfoActivity.EXTRA_DATE_TIME, eventsData.getDateTime());
         intentNew.putExtra(EventInfoActivity.EXTRA_VENUE, eventsData.getVenue());
         intentNew.putExtra(EventInfoActivity.EXTRA_IMAGE_ID, eventsData.getImageId());

@@ -79,6 +79,27 @@
                         android:textAppearance="@android:style/TextAppearance.Holo.Medium"
                         tools:text="Lorem ipsum dolor sit amet untes gungslla goog oo gaa lossly roemsid dsfaks slal skdlfkan" />
 
+                    <TextView
+                        android:id="@+id/rules_header"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/event_info_textview"
+                        android:layout_marginTop="16dp"
+                        android:textAppearance="@android:style/TextAppearance.Material.Headline"
+                        android:textSize="20sp"
+                        android:transitionName="event_text_header_transition"
+                        android:text="@string/rules_and_regulations" />
+
+                    <TextView
+                        android:id="@+id/event_rules_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/rules_header"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="sans-serif-light"
+                        android:textAppearance="@android:style/TextAppearance.Holo.Medium"
+                        tools:text="Lorem ipsum dolor sit amet untes gungslla goog oo gaa lossly roemsid dsfaks slal skdlfkan" />
+
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
         </ScrollView>
