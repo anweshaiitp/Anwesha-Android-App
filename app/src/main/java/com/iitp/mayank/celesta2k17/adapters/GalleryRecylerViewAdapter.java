@@ -15,6 +15,8 @@ import com.iitp.mayank.celesta2k17.data.GalleryPics;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by manish on 16/8/17.
@@ -22,13 +24,34 @@ import java.util.Arrays;
 
 public class GalleryRecylerViewAdapter extends RecyclerView.Adapter<GalleryRecylerViewAdapter.galleryViewHolder> {
 
-    File images[];
+    List<File> images;
     Context context;
     public GalleryRecylerViewAdapter(Context context , File file[])
     {
         this.context = context;
-        this.images = file;
+        if(file == null)
+            this.images = null;
+        else
+            this.images = new LinkedList<>(Arrays.asList(file));
         Log.v("TAGAGAGAAG" , Arrays.toString(file));
+    }
+
+    public void swap(File file[])
+    {
+        if(images != null){
+            images.clear();
+            if(file == null)
+                images = null;
+            else
+                images.addAll(Arrays.asList(file));
+        }
+        else {
+            if(file == null)
+                images = null;
+            else
+                images = new LinkedList<>(Arrays.asList(file));
+        }
+        notifyDataSetChanged();
     }
 
     @Override
@@ -52,13 +75,13 @@ public class GalleryRecylerViewAdapter extends RecyclerView.Adapter<GalleryRecyl
     public void onBindViewHolder(galleryViewHolder holder, int position) {
         Glide.with(context).clear(holder.imageView);
         Glide.with(context)
-                .load(images[position])
+                .load(images.get(position))
                 .into(holder.imageView);
     }
 
     @Override
     public int getItemCount() {
-        return images.length;
+        return images == null ? 0 : images.size();
     }
 
     // this class is used to cache the view when OncreateView inflates a view and toss this view to this constructor
