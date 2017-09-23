@@ -22,7 +22,7 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:layout_height="wrap_content"
-        android:text="Keep checking for updates."
+        android:text="@string/keep_checking_for_updates"
         android:textColor="@color/colorSignUp"
         android:textSize="16sp"/>
 </RelativeLayout>
