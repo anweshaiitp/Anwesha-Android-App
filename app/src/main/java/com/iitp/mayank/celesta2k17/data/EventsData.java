@@ -10,6 +10,8 @@ public class EventsData {
     private String rules;
     private String dateTime;
     private String venue;
+    private String organizers;
+    private String contacts;
     private int imageId;
 
     public EventsData()
@@ -65,5 +67,21 @@ public class EventsData {
 
     public String getRules() {
         return rules;
+    }
+
+    public String getOrganizers() {
+        return organizers;
+    }
+
+    public void setOrganizers(String organizers) {
+        this.organizers = organizers;
+    }
+
+    public String getContacts() {
+        return contacts;
+    }
+
+    public void setContacts(String contacts) {
+        this.contacts = contacts;
     }
 }

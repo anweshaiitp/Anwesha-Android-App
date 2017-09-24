@@ -57,6 +57,7 @@
     <string name="date_time">Date &amp; Time</string>
     <string name="description">Description</string>
     <string name="rules_and_regulations">Rules &amp; Regulations</string>
+    <string name="event_organizers">Event Organizers</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="keep_checking_for_updates">Keep checking for updates.</string>

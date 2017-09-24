@@ -100,6 +100,39 @@
                         android:textAppearance="@android:style/TextAppearance.Holo.Medium"
                         tools:text="Lorem ipsum dolor sit amet untes gungslla goog oo gaa lossly roemsid dsfaks slal skdlfkan" />
 
+                    <TextView
+                        android:id="@+id/event_organizers_header"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/event_rules_textview"
+                        android:layout_marginTop="16dp"
+                        android:textAppearance="@android:style/TextAppearance.Material.Headline"
+                        android:textSize="20sp"
+                        android:transitionName="event_text_header_transition"
+                        android:text="@string/event_organizers" />
+
+                    <TextView
+                        android:id="@+id/event_organizers"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/event_organizers_header"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="sans-serif-light"
+                        android:textAppearance="@android:style/TextAppearance.Holo.Medium"
+                        tools:text="Mayank Vaidya and Soumya" />
+
+                    <TextView
+                        android:id="@+id/event_contact"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/event_organizers"
+                        android:layout_marginTop="8dp"
+                        android:textSize="20dp"
+                        android:textColor="@color/colorDevelopers"
+                        android:textAppearance="@android:style/TextAppearance.Holo.Medium"
+                        tools:text="9955539372" />
+
+
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
         </ScrollView>

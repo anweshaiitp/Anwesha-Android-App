@@ -2,6 +2,7 @@ package com.iitp.mayank.celesta2k17.activities;
 
 import android.content.Intent;
 import android.content.res.Resources;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -19,7 +20,9 @@ public class EventInfoActivity extends AppCompatActivity {
             EXTRA_RULES = "Rules",
             EXTRA_VENUE = "Venue",
             EXTRA_DATE_TIME = "DateTime",
-            EXTRA_IMAGE_ID = "ImageId";
+            EXTRA_IMAGE_ID = "ImageId",
+            EXTRA_ORGANIZERS = "Organizers",
+            EXTRA_CONTACTS = "Contacts";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +54,19 @@ public class EventInfoActivity extends AppCompatActivity {
         else {
             rulesTextView.setText(rules);
         }
+        String organizers = intent.getStringExtra(EXTRA_ORGANIZERS);
+        final String contacts = intent.getStringExtra(EXTRA_CONTACTS);
+        if (organizers.equals("-1"))
+            organizers = "No information available";
+        ((TextView)findViewById(R.id.event_organizers)).setText(organizers);
+        ((TextView)findViewById(R.id.event_contact)).setText(contacts);
+        (findViewById(R.id.event_contact)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + contacts));
+                startActivity(intent);
+            }
+        });
 
         ((TextView) findViewById(R.id.event_date_time)).setText(dateTime);
         ((TextView) findViewById(R.id.event_venue)).setText(venue);
@@ -60,9 +76,9 @@ public class EventInfoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Resources resources = getResources();
-                String shareString = (String) resources.getText(R.string.share_message) + "\n"
-                        + (String) resources.getText(R.string.name) + ": " + header + "\n"
-                        + (String) resources.getText(R.string.date_time) + ": " + dateTime + "\n"
+                String shareString = resources.getText(R.string.share_message) + "\n"
+                        + resources.getText(R.string.name) + ": " + header + "\n"
+                        + resources.getText(R.string.date_time) + ": " + dateTime + "\n"
                         + finalText;
                 Intent shareIntent = new Intent();
                 shareIntent.setAction(Intent.ACTION_SEND);
@@ -71,7 +87,6 @@ public class EventInfoActivity extends AppCompatActivity {
                 startActivity(Intent.createChooser(shareIntent, resources.getText(R.string.share_to)));
             }
         });
-
 
     }
 

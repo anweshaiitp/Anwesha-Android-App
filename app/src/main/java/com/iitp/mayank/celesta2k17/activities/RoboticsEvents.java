@@ -44,7 +44,9 @@ public class RoboticsEvents extends AppCompatActivity implements EventsRecyclerV
                 resources.getStringArray(R.array.array_njack_event_rules) ,
                 resources.getStringArray(R.array.array_njack_event_date_time),
                 resources.getStringArray(R.array.array_njack_event_venue),
-                resources.obtainTypedArray(R.array.array_njack_event_images));
+                resources.obtainTypedArray(R.array.array_njack_event_images),
+                resources.getStringArray(R.array.array_photography_organizers),
+                resources.getStringArray(R.array.array_photography_contacts));
         recyclerView.setAdapter(eventsRecyclerViewAdapter);
     }
 

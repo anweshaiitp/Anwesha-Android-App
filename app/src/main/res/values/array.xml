@@ -402,11 +402,42 @@
 
     <string-array name="array_ace_event_venue">
         <item>Tutorial Block - Room No. 107</item>
-        <item>Y</item>
-        <item>Y</item>
-        <item>Y</item>
-        <item>Y</item>
-        <item>Y</item>
+    </string-array>
+
+    <!--Photography Events-->
+    <string-array
+        name="array_photography_event_headers">
+        <item>LENSART</item>
+    </string-array>
+
+    <string-array
+        name="array_photography_event_text">
+        <item>Photography is a tool by which we can freeze the time and have a look back in the past. ACE brings you a chance of showing your photography skills! ACE brings you a chance of showing your photography skills!</item>
+    </string-array>
+
+    <string-array
+        name="array_photography_event_rules">
+        <item>Phase 1 :\nHere the paticipant has to click a photo and mail it to ace@iitp.ac.in with the\nsubject “Entry for Lensart” with a description. Also the participant has to\nsend the snapshot of the EXIF data of the picture. The theme and the\ndeadline will be uploaded on the our page weekly. Participants have to\ncheck the page regularly.\nhttps://www.facebook.com/CelestaIITP/\n\nNote : The participant can get the EXIF data of the picture on the following link :\nhttp://exifdata.com/\nPhase 2 :\nIn this phase, photos will be uploaded on the following page weekly.\nhttps://www.facebook.com/CelestaIITP/\nThe participants need to comment a caption for the picture.</item>
+    </string-array>
+
+    <string-array name="array_photography_event_date_time">
+        <item>7th Aug, 10:30 pm</item>
+    </string-array>
+
+    <string-array name="array_photography_event_venue">
+        <item></item>
+    </string-array>
+
+    <integer-array name="array_photography_event_images">
+        <item>@drawable/njack</item>
+    </integer-array>
+
+    <string-array name="array_photography_organizers">
+        <item>Rohit, Abhinav Gyan</item>
+    </string-array>
+
+    <string-array name="array_photography_contacts">
+        <item>8409560519</item>
     </string-array>
 
     <!--Schedule Day 1-->

@@ -51,7 +51,9 @@ public class CodingEvents extends AppCompatActivity implements EventsRecyclerVie
                 resources.getStringArray(R.array.array_sae_event_rules),
                 resources.getStringArray(R.array.array_sae_event_date_time),
                 resources.getStringArray(R.array.array_sae_event_venue),
-                resources.obtainTypedArray(R.array.array_sae_event_images));
+                resources.obtainTypedArray(R.array.array_sae_event_images),
+                resources.getStringArray(R.array.array_photography_organizers),
+                resources.getStringArray(R.array.array_photography_contacts));
         recyclerView.setAdapter(eventsRecyclerViewAdapter);
     }
 

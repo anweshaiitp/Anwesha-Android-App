@@ -51,7 +51,9 @@ public class DesignEvents extends AppCompatActivity implements EventsRecyclerVie
                 resources.getStringArray(R.array.array_threshold_event_rules),
                 resources.getStringArray(R.array.array_threshold_event_date_time),
                 resources.getStringArray(R.array.array_threshold_event_venue),
-                resources.obtainTypedArray(R.array.array_threshold_event_images));
+                resources.obtainTypedArray(R.array.array_threshold_event_images),
+                resources.getStringArray(R.array.array_photography_organizers),
+                resources.getStringArray(R.array.array_photography_contacts));
         recyclerView.setAdapter(eventsRecyclerViewAdapter);
     }
 
