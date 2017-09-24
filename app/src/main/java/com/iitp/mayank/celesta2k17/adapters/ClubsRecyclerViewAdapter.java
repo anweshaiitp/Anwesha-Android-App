@@ -66,6 +66,7 @@ public class ClubsRecyclerViewAdapter extends RecyclerView.Adapter<ClubsRecycler
             holder.textViewData.setVisibility(View.GONE);
             holder.textViewHeader.setTextSize(TypedValue.COMPLEX_UNIT_SP , 16);
         }
+        holder.textViewData.setVisibility(View.GONE);
         Glide.with(context).clear(holder.imageView);
         Glide.with(context).load(clubsData.getImageId()).into(holder.imageView);
     }

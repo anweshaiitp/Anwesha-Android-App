@@ -26,7 +26,7 @@ import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_DES
 import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_RULES;
 import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_VENUE;
 
-public class ScmeEvents extends AppCompatActivity implements EventsRecyclerViewAdapter.ListCardClick {
+public class ExpoEvents extends AppCompatActivity implements EventsRecyclerViewAdapter.ListCardClick {
 
     RecyclerView recyclerView;
     EventsRecyclerViewAdapter eventsRecyclerViewAdapter;
@@ -34,7 +34,7 @@ public class ScmeEvents extends AppCompatActivity implements EventsRecyclerViewA
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
-        setContentView(R.layout.activity_scme_events);
+        setContentView(R.layout.activity_sparkonics_events);
 
         recyclerView = (RecyclerView)findViewById(R.id.rv_events);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this , 2);
@@ -46,12 +46,12 @@ public class ScmeEvents extends AppCompatActivity implements EventsRecyclerViewA
         android.support.v7.app.ActionBar bar = getSupportActionBar();
         bar.setBackgroundDrawable(new ColorDrawable(ContextCompat.getColor(this, R.color.colorEvents)));
 
-        eventsRecyclerViewAdapter = new EventsRecyclerViewAdapter(getApplicationContext(), this, resources.getStringArray(R.array.array_scme_event_headers),
-                resources.getStringArray(R.array.array_scme_event_text),
-                resources.getStringArray(R.array.array_scme_event_rules),
-                resources.getStringArray(R.array.array_scme_event_date_time),
-                resources.getStringArray(R.array.array_scme_event_venue),
-                resources.obtainTypedArray(R.array.array_scme_event_images));
+        eventsRecyclerViewAdapter = new EventsRecyclerViewAdapter(getApplicationContext(), this, resources.getStringArray(R.array.array_sparkonics_event_headers),
+                resources.getStringArray(R.array.array_sparkonics_event_text),
+                resources.getStringArray(R.array.array_sparkonics_event_rules),
+                resources.getStringArray(R.array.array_sparkonics_event_date_time),
+                resources.getStringArray(R.array.array_sparkonics_event_venue),
+                resources.obtainTypedArray(R.array.array_sparkonics_event_images));
         recyclerView.setAdapter(eventsRecyclerViewAdapter);
     }
 

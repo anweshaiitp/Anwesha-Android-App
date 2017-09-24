@@ -3,11 +3,11 @@ package com.iitp.mayank.celesta2k17.activities;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.ColorDrawable;
-import android.os.Bundle;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -20,13 +20,13 @@ import com.iitp.mayank.celesta2k17.adapters.EventsRecyclerViewAdapter;
 import com.iitp.mayank.celesta2k17.data.EventsData;
 
 import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_DATE_TIME;
+import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_DESCRIPTION;
 import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_HEADER;
 import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_IMAGE_ID;
-import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_DESCRIPTION;
 import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_RULES;
 import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_VENUE;
 
-public class AceEvents extends AppCompatActivity implements EventsRecyclerViewAdapter.ListCardClick {
+public class StoryWritingEvents extends AppCompatActivity implements EventsRecyclerViewAdapter.ListCardClick {
 
     RecyclerView recyclerView;
     EventsRecyclerViewAdapter eventsRecyclerViewAdapter;
@@ -34,7 +34,7 @@ public class AceEvents extends AppCompatActivity implements EventsRecyclerViewAd
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
-        setContentView(R.layout.activity_ace_events);
+        setContentView(R.layout.activity_story_writing_events);
 
         recyclerView = (RecyclerView)findViewById(R.id.rv_events);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this , 2);
@@ -46,12 +46,12 @@ public class AceEvents extends AppCompatActivity implements EventsRecyclerViewAd
         android.support.v7.app.ActionBar bar = getSupportActionBar();
         bar.setBackgroundDrawable(new ColorDrawable(ContextCompat.getColor(this, R.color.colorEvents)));
 
-        eventsRecyclerViewAdapter = new EventsRecyclerViewAdapter(getApplicationContext(), this, resources.getStringArray(R.array.array_ace_event_headers),
-                resources.getStringArray(R.array.array_ace_event_text),
-                resources.getStringArray(R.array.array_ace_event_rules),
-                resources.getStringArray(R.array.array_ace_event_date_time),
-                resources.getStringArray(R.array.array_ace_event_venue),
-                resources.obtainTypedArray(R.array.array_ace_event_images));
+        eventsRecyclerViewAdapter = new EventsRecyclerViewAdapter(getApplicationContext(), this, resources.getStringArray(R.array.array_sae_event_headers),
+                resources.getStringArray(R.array.array_sae_event_text),
+                resources.getStringArray(R.array.array_sae_event_rules),
+                resources.getStringArray(R.array.array_sae_event_date_time),
+                resources.getStringArray(R.array.array_sae_event_venue),
+                resources.obtainTypedArray(R.array.array_sae_event_images));
         recyclerView.setAdapter(eventsRecyclerViewAdapter);
     }
 

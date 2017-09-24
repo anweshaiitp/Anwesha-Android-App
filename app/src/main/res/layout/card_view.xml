@@ -39,7 +39,7 @@
                 android:paddingTop="8dp"
                 android:textAlignment="center"
                 android:textColor="@android:color/white"
-                android:textSize="26sp"
+                android:textSize="18sp"
                 tools:text="EventHeader" />
 
             <TextView

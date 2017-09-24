@@ -3,11 +3,11 @@ package com.iitp.mayank.celesta2k17.activities;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.ColorDrawable;
-import android.os.Bundle;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -19,7 +19,14 @@ import com.iitp.mayank.celesta2k17.R;
 import com.iitp.mayank.celesta2k17.adapters.EventsRecyclerViewAdapter;
 import com.iitp.mayank.celesta2k17.data.EventsData;
 
-public class NjackEvents extends AppCompatActivity implements EventsRecyclerViewAdapter.ListCardClick {
+import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_DATE_TIME;
+import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_DESCRIPTION;
+import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_HEADER;
+import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_IMAGE_ID;
+import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_RULES;
+import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_VENUE;
+
+public class TreasureHunt extends AppCompatActivity implements EventsRecyclerViewAdapter.ListCardClick {
 
     RecyclerView recyclerView;
     EventsRecyclerViewAdapter eventsRecyclerViewAdapter;
@@ -27,7 +34,7 @@ public class NjackEvents extends AppCompatActivity implements EventsRecyclerView
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
-        setContentView(R.layout.activity_njack);
+        setContentView(R.layout.activity_treasure_hunt);
 
         recyclerView = (RecyclerView)findViewById(R.id.rv_events);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this , 2);
@@ -39,12 +46,12 @@ public class NjackEvents extends AppCompatActivity implements EventsRecyclerView
         android.support.v7.app.ActionBar bar = getSupportActionBar();
         bar.setBackgroundDrawable(new ColorDrawable(ContextCompat.getColor(this, R.color.colorEvents)));
 
-        eventsRecyclerViewAdapter = new EventsRecyclerViewAdapter(getApplicationContext(), this, resources.getStringArray(R.array.array_njack_event_headers),
-                resources.getStringArray(R.array.array_njack_event_text) ,
-                resources.getStringArray(R.array.array_njack_event_rules) ,
-                resources.getStringArray(R.array.array_njack_event_date_time),
-                resources.getStringArray(R.array.array_njack_event_venue),
-                resources.obtainTypedArray(R.array.array_njack_event_images));
+        eventsRecyclerViewAdapter = new EventsRecyclerViewAdapter(getApplicationContext(), this, resources.getStringArray(R.array.array_sae_event_headers),
+                resources.getStringArray(R.array.array_sae_event_text),
+                resources.getStringArray(R.array.array_sae_event_rules),
+                resources.getStringArray(R.array.array_sae_event_date_time),
+                resources.getStringArray(R.array.array_sae_event_venue),
+                resources.obtainTypedArray(R.array.array_sae_event_images));
         recyclerView.setAdapter(eventsRecyclerViewAdapter);
     }
 
@@ -60,12 +67,13 @@ public class NjackEvents extends AppCompatActivity implements EventsRecyclerView
                 makeSceneTransitionAnimation(this, p1, p2);
 
         Intent intentNew = new Intent(this, Class.forName("com.iitp.mayank.celesta2k17.activities.EventInfoActivity"));
-        intentNew.putExtra(EventInfoActivity.EXTRA_HEADER, eventsData.getHeader());
-        intentNew.putExtra(EventInfoActivity.EXTRA_DESCRIPTION, eventsData.getText());
-        intentNew.putExtra(EventInfoActivity.EXTRA_RULES, eventsData.getRules());
-        intentNew.putExtra(EventInfoActivity.EXTRA_DATE_TIME, eventsData.getDateTime());
-        intentNew.putExtra(EventInfoActivity.EXTRA_VENUE, eventsData.getVenue());
-        intentNew.putExtra(EventInfoActivity.EXTRA_IMAGE_ID, eventsData.getImageId());
+        intentNew.putExtra(EXTRA_HEADER, eventsData.getHeader());
+        intentNew.putExtra(EXTRA_DESCRIPTION, eventsData.getText());
+        intentNew.putExtra(EXTRA_RULES, eventsData.getRules());
+        intentNew.putExtra(EXTRA_DATE_TIME, eventsData.getDateTime());
+        intentNew.putExtra(EXTRA_VENUE, eventsData.getVenue());
+        intentNew.putExtra(EXTRA_IMAGE_ID, eventsData.getImageId());
         startActivity(intentNew, options.toBundle());
     }
 }
+

@@ -2,12 +2,17 @@
 <resources>
     <string-array
         name="array_event_headers">
-        <item>NJACK</item>
-        <item>Sparkonics</item>
-        <item>SAE</item>
-        <item>SCME</item>
-        <item>ACE</item>
-        <item>Threshold</item>
+        <item>Lets Code!!</item>
+        <item>Robotics</item>
+        <item>Expo</item>
+        <item>Build It!!</item>
+        <item>Debate</item>
+        <item>Social</item>
+        <item>Design</item>
+        <item>Photography</item>
+        <item>Treasure Hunt</item>
+        <item>Story Writing</item>
+        <item>Quiz-wiz</item>
     </string-array>
 
     <string-array
@@ -18,16 +23,26 @@
         <item>Student Council of Mechanical Engineers</item>
         <item>Association of Civil Engineers</item>
         <item>The Chemical Engineering Club</item>
+        <item>Not Just Another Computer Klub</item>
+        <item>The Electrical Engineering Club</item>
+        <item>Society of Automobile Engineers</item>
+        <item>Student Council of Mechanical Engineers</item>
+        <item>Association of Civil Engineers</item>
     </string-array>
 
     <string-array
         name="array_event_intent">
-        <item>com.iitp.mayank.celesta2k17.activities.NjackEvents</item>
-        <item>com.iitp.mayank.celesta2k17.activities.SparkonicsEvents</item>
-        <item>com.iitp.mayank.celesta2k17.activities.SaeEvents</item>
-        <item>com.iitp.mayank.celesta2k17.activities.ScmeEvents</item>
-        <item>com.iitp.mayank.celesta2k17.activities.AceEvents</item>
-        <item>com.iitp.mayank.celesta2k17.activities.ThresholdEvents</item>
+        <item>com.iitp.mayank.celesta2k17.activities.CodingEvents</item>
+        <item>com.iitp.mayank.celesta2k17.activities.RoboticsEvents</item>
+        <item>com.iitp.mayank.celesta2k17.activities.ExpoEvents</item>
+        <item>com.iitp.mayank.celesta2k17.activities.BuildItEvents</item>
+        <item>com.iitp.mayank.celesta2k17.activities.DebateEvents</item>
+        <item>com.iitp.mayank.celesta2k17.activities.SocialEvents</item>
+        <item>com.iitp.mayank.celesta2k17.activities.DesignEvents</item>
+        <item>com.iitp.mayank.celesta2k17.activities.PhotographyEvents</item>
+        <item>com.iitp.mayank.celesta2k17.activities.TreasureHunt</item>
+        <item>com.iitp.mayank.celesta2k17.activities.StoryWritingEvents</item>
+        <item>com.iitp.mayank.celesta2k17.activities.QuizWizEvents</item>
     </string-array>
 
     <integer-array name="array_event_images">
@@ -37,6 +52,11 @@
         <item>@drawable/scme</item>
         <item>@drawable/ace</item>
         <item>@drawable/threshold</item>
+        <item>@drawable/njack</item>
+        <item>@drawable/sparkonics</item>
+        <item>@drawable/sae</item>
+        <item>@drawable/scme</item>
+        <item>@drawable/ace</item>
     </integer-array>
 
     <!--NJACK Events-->

@@ -6,6 +6,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Window;
@@ -24,7 +25,7 @@ public class EventsActivity extends AppCompatActivity implements ClubsRecyclerVi
         setContentView(R.layout.activity_events);
 
         recyclerView = (RecyclerView)findViewById(R.id.rv_events);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        GridLayoutManager linearLayoutManager = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(linearLayoutManager);
 
         recyclerView.setHasFixedSize(true);
