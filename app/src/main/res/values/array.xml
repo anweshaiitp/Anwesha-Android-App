@@ -440,6 +440,96 @@
         <item> - 8409560519\n</item>
     </string-array>
 
+    <!--Treasure Hunt Events-->
+    <string-array
+        name="array_treasure_event_headers">
+        <item>Chem-o-quest</item>
+        <item>Spark Fun</item>
+        <item>Static Rush</item>
+    </string-array>
+
+    <string-array
+        name="array_treasure_event_text">
+        <item>"Chemoquest is a theme based treasure hunt. The competition comprises of a multi-level hunt for chemical compounds and then perform a chemical reaction with those compounds. The event will start from the given venue where the first riddle will be given. The contestants must have to solve the riddle to reach the next spot where they will get the next riddle . After collecting all the chemical compounds, the team has to perform the chemical reaction. The team that takes the minimum time to complete the whole task will be declared as winner."</item>
+        <item>This online contest will be a 2 day contest. Each day there will be 10 problems to solve. The questions will be completely IQ- based with a minimal amount of knowledge from science required. </item>
+        <item>The ladders we climb are the Clues we find , spanning the campus is the gamble of dice.\nThis event require participation in teams . It’s is a theme based event which involves reaching various checkpoints with the help of clues they collect and complete the task if alloted.The rush stops after completion of circuit.</item>
+    </string-array>
+
+    <string-array
+        name="array_treasure_event_rules">
+        <item>1. Maximum 3 members in a team.\n2. Members can be of any year and any branch.\n3. Teams have to report to the spot before 15 minutes of the scheduled time.\n4. All team members have to be collectively present at the checkpoint with their previous clue to receive the compounds.\n5. Explanation of the clue may be required.\n*Rules are flexible as per the organizers discretion.</item>
+        <item>1. Student will compete in groups of 2\n2. All the questions on\n1st day = 10 pts\n2nd day = 20 pts\n3. The time frame for answering the questions will be 12pm – 12 am every day. You can start and end during this window time.\n4. Points and end-time of play from each day will be recorded and will cumulated for final tally of points. \n5. Questions will be completely IQ based with some knowledge from Electrical Curriculum as a prerequisite.\n6. You are allowed internet and textual reference for solving the problems but spreading, buying or selling of answers is offence enough to disqualify your team.\n7. You can answer any question infinite number of times.\n8. Answers are case-insensitive.\n9. Winning team will be decided by the highest total tally of points. In case there is a tie, the team answering more questions on 2nd day  will be the winner. If the situation persists, ending time average of 2 days will decide the results.</item>
+        <item>1.After Registration, Every team will be provided with a copy of Snake and ladder and a clue.\n2.The Clue will guide them to the next hotspot where they will be asked regarding a question about the equipment they want.\n3.If wrongly answered, they will suffer from time penalty. They will also throw a dice which will guide their position on the game of Snake and ladders.\n4.In the game of Snake and Ladders, if they encounter a snake they should perform a special task as penalty which will be FORGIVEN if they are able to produce the Appreciation Tokens.\n5.The Appreciation Tokens can either be collected from a Mentioned Spot or they will be awarded one if they had encountered a ladder in the game.\n6.They will have to complete the task correctly at each hotspot to collect all the equipments required for reaching the final hotspot.\n7.At the final hotspot they will be given a Simple Electronic Circuit which they have to build on the spot and Submit.\n8.The team that completes all the tasks in the minimum time, that person will be the winner of Static Rush 2017.\n9.The task at each hotspot along with next clue will be given randomly by checking the number of the people they have already reached by checking their signatures at the backside of the page.\n10.Also their last position in the game of Snakes and Ladders will be written on the backside of the page so that the person on the next hotspot can determine the position.
+</item>
+    </string-array>
+
+    <string-array name="array_treasure_event_date_time">
+        <item>7th Aug, 10:30 pm</item>
+        <item>7th Aug, 10:30 pm</item>
+        <item>7th Aug, 10:30 pm</item>
+    </string-array>
+
+    <string-array name="array_treasure_event_venue">
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+
+    <integer-array name="array_treasure_event_images">
+        <item>@drawable/threshold</item>
+        <item>@drawable/sparkonics</item>
+        <item>@drawable/sparkonics</item>
+    </integer-array>
+
+    <string-array name="array_treasure_organizers">
+        <item>Parth Patel\nNishant Kulshrestha\nDheeraj Kalani</item>
+        <item>Nilendu Shubham\nPratiyush Pushkar\nAman Jha</item>
+        <item>Gaurav Kataria\nPraneet Kumar\nAyush Singh</item>
+    </string-array>
+
+    <string-array name="array_treasure_contacts">
+        <item> - 8140989334\n - 9958724205\n - 8239393924</item>
+        <item> - 8292508959\n - 9801476409\n - 8871999727</item>
+        <item> - 9479965760\n - 8017979133\n - 8586869318</item>
+    </string-array>
+
+    <!-- Story Writing Events -->
+    <string-array
+        name="array_story_writing_event_headers">
+        <item>Tech chronicles</item>
+    </string-array>
+
+    <string-array
+        name="array_story_writing_event_text">
+        <item>This pre-celesta event gives the prolific writer in you a chance, a chance to cross the horizons of imagination, to expand the field of one’s view and plot a sci-fi story. It will be your story so it can be anything, literally anything - Alien invasion to humans going to another planet or time-travelling and what not!\n\nSo just think outside the box, use your imagination, bend the scope of view and write a thriller!\nWhat to do : You are expected to write this story and then share it on facebook with the following hastags -\n#TechChronicles\n#Celesta2k17\nAlso you have to mail the story to us at rtdc@iitp.ac.in with the subject : Entry for TechChronicles</item>
+    </string-array>
+
+    <string-array
+        name="array_story_writing_event_rules">
+        <item>1. Word limit shouldn’t exceed 500 words.\n2. No vulgar content needs to be included.\n3. The story should be sent as a word file (.doc) file as an attachment in the mail along with the link to your post with it in the mail.</item>
+    </string-array>
+
+    <string-array name="array_story_writing_event_date_time">
+        <item>7th Aug, 10:30 pm</item>
+    </string-array>
+
+    <string-array name="array_story_writing_event_venue">
+        <item></item>
+    </string-array>
+
+    <integer-array name="array_story_writing_event_images">
+        <item>@drawable/njack</item>
+    </integer-array>
+
+    <string-array name="array_story_writing_organizers">
+        <item>Abhinav Gyan</item>
+    </string-array>
+
+    <string-array name="array_story_writing_contacts">
+        <item> - 7250925416</item>
+    </string-array>
+
+
     <!--Coding Events-->
     <string-array
         name="array_coding_event_headers">
