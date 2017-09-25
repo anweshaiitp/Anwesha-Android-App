@@ -66,8 +66,7 @@ public class HighlightsPage extends android.support.v4.app.Fragment {
         highlightsRecylerViewAdapter = new HighlightsRecylerViewAdapter(getContext(), header, details);
         highlightsRecylerView.setAdapter(highlightsRecylerViewAdapter);
 
-        checkEmpty();
-//        setData();
+        setData();
         return rootView;
     }
 

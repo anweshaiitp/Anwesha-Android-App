@@ -60,13 +60,6 @@ public class EventInfoActivity extends AppCompatActivity {
             organizers = "No information available";
         ((TextView)findViewById(R.id.event_organizers)).setText(organizers);
         ((TextView)findViewById(R.id.event_contact)).setText(contacts);
-        (findViewById(R.id.event_contact)).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + contacts));
-                startActivity(intent);
-            }
-        });
 
         ((TextView) findViewById(R.id.event_date_time)).setText(dateTime);
         ((TextView) findViewById(R.id.event_venue)).setText(venue);

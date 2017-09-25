@@ -113,7 +113,7 @@
 
                     <TextView
                         android:id="@+id/event_organizers"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/event_organizers_header"
                         android:layout_marginTop="8dp"
@@ -123,11 +123,12 @@
 
                     <TextView
                         android:id="@+id/event_contact"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/event_organizers"
+                        android:layout_below="@id/event_organizers_header"
+                        android:layout_toRightOf="@id/event_organizers"
                         android:layout_marginTop="8dp"
-                        android:textSize="20dp"
+                        android:textIsSelectable="true"
                         android:textColor="@color/colorDevelopers"
                         android:textAppearance="@android:style/TextAppearance.Holo.Medium"
                         tools:text="9955539372" />

@@ -433,12 +433,110 @@
     </integer-array>
 
     <string-array name="array_photography_organizers">
-        <item>Rohit, Abhinav Gyan</item>
+        <item>Rohit\nAbhinav Gyan</item>
     </string-array>
 
     <string-array name="array_photography_contacts">
-        <item>8409560519</item>
+        <item> - 8409560519\n</item>
     </string-array>
+
+    <!--Coding Events-->
+    <string-array
+        name="array_coding_event_headers">
+        <item>CAPTURE THE FLAG</item>
+        <item>BYTE RACE</item>
+    </string-array>
+
+    <string-array
+        name="array_coding_event_text">
+        <item>Capture the Flag is hacking challenge where you can prove your hacking skills. This challenge will test your basic understanding of various fields of Computer Science.</item>
+        <item>ByteRace is a challenge for minds that have honed the art of problem solving. This competition presents challenges for you to solve using code. So if you get the adrenaline rush when you see a difficult problem in front of you then this is definitely for you.</item>
+    </string-array>
+
+    <string-array
+        name="array_coding_event_rules">
+        <item>1.Team can have maximum 3 members.\n2.Participants must bring their own laptops.\n3.Use of Internet is allowed.\n4.Each problem will have different points according to its difficulty level</item>
+        <item>1.This is an Online event, which will be held on HackerRank/Codechef platform.\n2.This is an individual event and any form of violation of platform rules will lead to disqualification.\n3.Competition consists of 5 algorithmic puzzles to quench your thirst for the unsolvable.\n4.The judgement of the organizers will be final.\n5.Participants can participate from their room or from the CC.They need to have a HackerRank/CodeChef handler.</item>
+    </string-array>
+
+    <string-array name="array_coding_event_date_time">
+        <item>7th Aug, 10:30 pm</item>
+        <item>7th Aug, 10:30 pm</item>
+    </string-array>
+
+    <string-array name="array_coding_event_venue">
+        <item></item>
+        <item></item>
+    </string-array>
+
+    <integer-array name="array_coding_event_images">
+        <item>@drawable/njack</item>
+        <item>@drawable/njack</item>
+    </integer-array>
+
+    <string-array name="array_coding_organizers">
+        <item>Tameesh Biswas</item>
+        <item>Fazle\nSaraansh Chopra\nShaurya Gupta</item>
+    </string-array>
+
+    <string-array name="array_coding_contacts">
+        <item> - 9920126830</item>
+        <item> - 7503390245\n - 7678004252\n - 9955530580</item>
+    </string-array>
+
+
+    <!--Expo Events-->
+    <string-array
+        name="array_expo_event_headers">
+        <item>SCHOOL EXHIBITION</item>
+        <item>VIRTUAL AUTO EXPO</item>
+        <item>SAMADHAN</item>
+    </string-array>
+
+    <string-array
+        name="array_expo_event_text">
+        <item>Focussed on ingraining a scientific and creative attitude in our young students to make them comprehend the interdependence of science, technology and society by a hands- on experience. The exhibition seeks to engage children  to synergise experiences and motivate each other to design and develop something novel.\n\nProblem Statement:\nStudents of schools are invited to come up and present a science project/ model &amp; showcase their young ,creative &amp; innovative minds.(*This event creates a culture that promotes the application of theoretical knowledge to the practical obstacles which promotes the implementation of scientific ideas into the routine activities.)\n\n\n-A few exemplar ideas pertaining to  themes for development of exhibits are: Energy,Health,Nutrition &amp; Cleanliness(E.g:Demonstration of models/ projects to create awareness among children about rules of safety inappropriate hazardous situation to avoid accidents and injuries;Demonstration of models/ projects to show the effect of junk food items, adulterated food items on our body and its preventive measures;Model to demonstrate importance of balanced diet and nutritional values of various food items)</item>
+        <item>This is an event for all the automobile enthusiasts.</item>
+        <item>Participants will be organised into groups.One picture will be shown to them and in the picture there will be different conditions/problems that will be shown in that picture.According to the conditions provide they will discuss the picture among themselves and then using their own intellect,they have to make strategy,planning and will show how they will manage in tackling the problem to give the maximum output i.e, the problem is solved with maximum accuracy.This type of event helps in teaching students how they can coordinate with each other when they will need to,also it helps in making quick and effective decisions.</item>
+    </string-array>
+
+    <string-array
+        name="array_expo_event_rules">
+        <item>-Scoring will be done based on participant\'s ability to &quot;working &amp; explanation&quot;, &quot; concept clarity &amp; demonstration&quot; &amp; &quot;creativity &quot;.\n-Participants are allowed to select language for presenting their model/project as per their level of comfort.\n-Certificates for participation will be given to All the participants. \n-Winners will be awarded with exciting  prizes.!\n-In case of any discrepancy, the decision of the organisers will be final.</item>
+        <item>Make a presentation (ppt) on any one of your favorite cars (even an ATV/ formula one) of any company. You have to act as a representative trying to sell your product.\nPresentation must contain the following points:\n1. Car Features (including photos)\n2. Cost\n3. Why people would buy your product?\n4. Any extra thing which you want to add.\nExtra points if you include a small video (1 min max) on that car in the presentation.\nMaximum time for presentation: 6 minutes.\nYou can participate individually or in a team of two.\n\nJudging criteria:\n1. Presentation Skills\n2. Content of the ppt\n3. Are you able to convince the costumer (judges in this case) to buy your product\n4. How much good is your product\n5. How much knowledge you have about your product</item>
+        <item>-1</item>
+    </string-array>
+
+    <string-array name="array_expo_event_date_time">
+        <item>7th Aug, 10:30 pm</item>
+        <item>7th Aug, 10:30 pm</item>
+        <item>7th Aug, 10:30 pm</item>
+    </string-array>
+
+    <string-array name="array_expo_event_venue">
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+
+    <integer-array name="array_expo_event_images">
+        <item>@drawable/njack</item>
+        <item>@drawable/njack</item>
+        <item>@drawable/njack</item>
+    </integer-array>
+
+    <string-array name="array_expo_organizers">
+        <item>Anushree Jain\nSunil Kumar Yadav\nSatyaki Barman</item>
+        <item>Suraj Jha\nSampoorna Kashyap</item>
+        <item>Krishan Kant</item>
+    </string-array>
+
+    <string-array name="array_expo_contacts">
+        <item> - 9955525433\n - 9955542806\n - 9473543503</item>
+        <item> - 7493835335\n - 7541051888</item>
+        <item> - 9468285730</item>
+    </string-array>
+
 
     <!--Schedule Day 1-->
     <!--Event header array-->
