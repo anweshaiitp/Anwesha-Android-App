@@ -628,6 +628,57 @@
     </string-array>
 
 
+    <!--Quiz Wiz events-->
+    <string-array
+        name="array_quizwiz_event_headers">
+        <item>ELECTRO-EXQUIZITE</item>
+        <item>ASTRO-PARTICLE VOYAGE</item>
+        <item>MIND-BENDERS</item>
+    </string-array>
+
+    <string-array
+        name="array_quizwiz_event_text">
+        <item>This is a Celesta Event. In this event there will be three rounds. The participants can either be a single person or a team with members up to 3 at max.</item>
+        <item>Enthusiastic about Astronomy? Passionate about Particle-Physics? Think you know your stuff? Then this is your journey through the realm of the big and the small, on the scales ranging from a quark to the entire observable universe. This is the AstroParticle Voyage, a quiz which tests your knowledge thoroughly, and brings out the best of your abilities.</item>
+        <item>Mind-Benders is a test of wits and logic. The event involves no syllabus or pre-requisite knowledge. The event will solely test the student’s logical reasoning, analytical thinking abilities , problem-solving capabilities and co-ordination skills.\nGet ready to knock your brains and prove the genius in you in this mind bending rendezvous.</item>
+    </string-array>
+
+    <string-array
+        name="array_quizwiz_event_rules">
+        <item>First round is the Preliminary. Where you will be given a questionnaire consisting of questions. The participants have to solve the questions to earn points or SPARKOINS. Either top 25 percentile or Top 10 Contestant teams (Whichever is highest) will be selected for the second round, Qualifiers.\nIn Qualifiers, the contestant teams have to use the Sparkoins to buy electronic components and provide a solution by making a circuit in breadboard by using the components bought components. The problem to be solved will be provided by a lucky draw. The team with the highest Sparkoins will be the first to draw. Here there will be points for the circuit and also for the timings. The counting of the clock begins from the time you get the problem. There will be a COMPO-STORE where you can buy electronic components. 5 teams with a highest score in Qualifiers will be selected for the third round, Finale. The amount of Sparkoins left after the qualifier will be a deciding factor.\nThe third and the final round will be a what happens if type competition which will be a rapid fire round in which a circuit will be shown and asked what will happen if the given thing is altered in the circuit. it will be a one hit answering round with negative marking included(penalty).\nThe one with the maximum number of points in the final round will be declared winner.\n\nImportant declaration : \n1)Please keep checking the Celesta app, website and Celesta, IIT Patna facebook page for any future updates.\n2)The rules can change without prior notification.\n3)In case of any dispute, the decisions made by the organising committee and judges are final and binding.\n</item>
+        <item>1)AstroParticle Voyage is a three levelled competition.\n2)Participants can participate in a team of maximum two.\n3)First level is a paper-pen round consisting of five subcategories: Theoretical Astronomy, Observational Astronomy, Theoretical Particle Physics, Observational Particle Physics and Mathematics. Intermediate level questions regarding each would be asked.\n4)Second Level is a quiz round where questions would be asked in a round table arrangement. \n5)Third level is a simulation round where simulations would be shown of some phenomenon and a problem would be given based on it.\n6)Points would be given for each round and the team with maximum cumulative score in the end wins.\n7)No reference except the ones given by us can be used during the entirety of the competition.\n8)All decisions taken by the organisers would be final in case of any discrepancy or issue.</item>
+        <item>1)This is a team event. Students should participate in teams of two members of same squad.2)Students of different institutions can form a team but of same squad.3)There are two squads\nJUNIOR SQUAD - for students of class 7 to 10.\nSENIOR SQUAD - for student of class 11 and above including college student.\n3)The event will be in form of pen-paper quiz. The question will have various sections like maths, puzzles, reasoning etc. It will consist of single choice correct, multiple choice correct, paragraph and a very few subjective questions.\n4)Each section has its own marking scheme.\n5)Use of any type of electronic gadgets are strictly prohibited during the test.\n\nQUESTIONS - 30\tTIME – 1 HOUR\nImportant declaration :\n1)Please keep checking the Celesta website and Celesta, IIT Patna facebook page for any future updates.\n2)The rules can change without prior notification.\n3)In case of any dispute, the decisions made by the organising committee and judges are final and binding.\n</item>
+    </string-array>
+
+    <string-array name="array_quizwiz_event_date_time">
+        <item>7th Aug, 10:30 pm</item>
+        <item>7th Aug, 10:30 pm</item>
+        <item>7th Aug, 10:30 pm</item>
+    </string-array>
+
+    <string-array name="array_quizwiz_event_venue">
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+
+    <integer-array name="array_quizwiz_event_images">
+        <item>@drawable/njack</item>
+        <item>@drawable/njack</item>
+        <item>@drawable/njack</item>
+    </integer-array>
+
+    <string-array name="array_quizwiz_organizers">
+        <item>Harpreet Kumar\nRahul Kumar\nDhanush S Ravikumar</item>
+        <item>Parth Kulkarni</item>
+        <item>Ritesh Singh Rathour</item>
+    </string-array>
+
+    <string-array name="array_quizwiz_contacts">
+        <item> - 9041083838\n - 7761937143\n - 9955534759</item>
+        <item> - 7303069559</item>
+        <item> - 7023460310</item>
+    </string-array>
     <!--Schedule Day 1-->
     <!--Event header array-->
     <string-array name="array_day1_event_header">
