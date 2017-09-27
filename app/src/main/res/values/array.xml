@@ -628,6 +628,63 @@
     </string-array>
 
 
+    <!--Robotics Events-->
+    <!--TODO: PUT THE RULES AND REGULATION -->
+    <string-array
+        name="array_robotics_event_headers">
+        <item>Aqua Soccer</item>
+        <item>Robowar</item>
+        <item>Maze Solver</item>
+    </string-array>
+
+    <string-array
+        name="array_robotics_event_text">
+        <item>Problem Statement:\nThere will be a tub partially filled with water. \nFew balls of different sizes will be floating and there are two goal posts at two opposite sides.\nTwo teams will simultaneously play against each other through their bot.\n Aim of both is to put the balls inside the respective goal post .\nTeam with maximum score at the end of match will be declared as the winner of that match.</item>
+        <item>THIS IS THE MOST POPULAR EVENT OF IIT PATNA.AFTER FEELING THE ADRENALINE RUSH OF DEATH RACE ITS TIME TO SHOW POWER OF YOUR BOT AND YOUR  STRATEGY IN THE BATTLEFIELD..THIS EVENT WILL TEST THE CO-ORDINATION BETWEEN SPEED ,POWER AND STRATEGY.</item>
+        <item>There will be a maze designed symmetrically for two sides. The maze will have dead-ends, alternate paths etc. Both teams will have a starting point where they will put their bots. The bots have to reach the end point of the maze from the starting point.</item>
+    </string-array>
+
+    <string-array
+        name="array_robotics_event_rules">
+        <item>A team can have a maximum of 4 Members.\nDimension of the tank will be 10 ft. X 6 ft. X 1.5ft. (approx.)\nThe bot may be wired or wireless depending upon your convenience.\nAll the electronic circuits or equipments must be protected from water. Any damage to the bot due to this reason will not be our responsibility.\n Balls will have varying dimensions ranging from table tennis balls to normal size plastic cricket balls.\nDifferent color balls will carry different points.\nPoints corresponding to each ball will be told on the spot.\nSome bonus points will also be awarded during the course of competition if a bot collects more than one ball at a time and make it to the goal post.\nDimension of goal post is 1 ft. X 1 ft. X 1 ft.\nAim of each team is to put the balls in respective goal posts.\nDimension of the bot should not exceed 1.5 ft. X 1 ft., however there is no restriction on minimum size of the bot.\nThere should be no pointed protrusions in the bot like nails which can damage the pool.\nIf a ball anyhow enters the goal post corresponding to Team X (in which Team X is supposed to put the ball) then points corresponding to that ball will be awarded to Team X.\nIf someone is using electric power supply, they must bring your own circuit equipment, adapter etc. Voltage across motors should not exceed 24 V.\nThe final decision will be in the hands of the organizers. No debating is allowed with the organizers.</item>
+        <item>TOURNAMENT WOULD BE IN FORM OF A LEAGUE WHICH WILL LEAD TO SEMI-FINALS AND FINALS.\nEACH MATCH CONSISTS OF 2 ROUNDS\n\n1ST ROUND----DURATION 3 MINUTES\nTHERE WILL BE 4 BALLOONS IN EACH TEAM’S STATE.BOTH TEAMS WILL START FROM THEIR STATE AND WILL ATTACK THE OPPOSITION TEAM’S BALLOONS. BY THE END OF THREE MINUTES IF ANY TEAM GOT SUCCESS IN PRICKING ALL THE 4 BALLOONS OF OPPOSITION AND MANAGES TO SAVE ITS AT LEAST ONE FROM THE OPPOSITION TEAM THEN THAT TEAM WILL BE DECLARED AS WINNER AND MATCH WILL END HERE.FOR PRICKING OPPOSITION TEAM’S BALLOONS 15 POINTS WILL BE PROVIDED.\nIF NONE OF THE TEAM MANAGES TO WIN IN THIS ROUND THEN MATCH WOULD PASS INTO THE SECOND ROUND AND WINNER WILL BE DECIDED ON THE BASIS OF POINTS SCORED.
+\n2ND  ROUND DURATION---- 2 MINUTES\nHERE THE MAIN GOAL OF THE TEAM WOULD BE TO HIT AND DAMAGE THE OPPOSITION TEAM AS MUCH AS POSSIBLE.\nFOR EACH HIT IN THE SECOND ROUND 5 POINTS WOULD BE PROVIDED.\nIF A TEAM MANAGES TO THROW OPPOSITION TEAM’S BOT OUT OF ARENA THAN 30 POINTS WOULD BE PROVIDED TO THAT TEAM.\nAT THE END OF SECOND ROUND TEAM HAVING HIGHER SCORE WILL BE DECLARED AS WINNER.
+</item>
+        <item>The bots should be autonomous.\nThe team which finishes first wins.\nThere will be a maximum time limit of 5 minutes after which the race ends.\nIn case the time exceeds the limit, the team with the highest score wins that particular match.\nThere will be checkpoints and each checkpoint adds a score 50.\nTeams can either use batteries or power chords. One supply point( AC 220V-240V 50 Hz) will be provided per team if required.\nIf their bot goes in the wrong way, they can reposition it to the last checkpoint crossed. But after repositioning it 3 times, there will be a penalty of 25 points.\nThe maximum dimensions of the bot are 15cmX18cm. The height of the wall of the maze is 25cm.\nThis is a knockout event. The winners will proceed to subsequent rounds.\nThe teams can have a maximum of 5 people.</item>
+    </string-array>
+
+    <string-array name="array_robotics_event_date_time">
+        <item>7th Aug, 10:30 pm</item>
+        <item>7th Aug, 10:30 pm</item>
+        <item>7th Aug, 10:30 pm</item>
+    </string-array>
+
+    <string-array name="array_robotics_event_venue">
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+
+    <integer-array name="array_robotics_event_images">
+        <item>@drawable/njack</item>
+        <item>@drawable/njack</item>
+        <item>@drawable/njack</item>
+    </integer-array>
+
+    <string-array name="array_robotics_organizers">
+        <item>Navin Kumar\nAkshat Rahul\nLahu Gujarkar\nSrijan Sumant\nAryan Kumar</item>
+        <item>Rahul Kumar\nVivek Raj\nReddi Sai Vamsi\nVijay Sharma\nSohid Ture</item>
+        <item>Bharat Shah\nKundan Kumar\nMd Hilal Choudhary\nShivesh Yadav\nDeepak Meenab</item>
+    </string-array>
+
+    <string-array name="array_robotics_contacts">
+        <item> - 9955530570\n - 7020906945\n - 829471162\n - 7633058278\n - 8540912206</item>
+        <item> - 9560643680\n - 8329843720\n - 9491916025\n - 9955539108</item>
+        <item> - 9955524114\n - 867498699\n - 9055045351\n - 9531610498\n - 9461541237</item>
+    </string-array>
+<!-- Robotics end -->
+
+
     <!--Schedule Day 1-->
     <!--Event header array-->
     <string-array name="array_day1_event_header">

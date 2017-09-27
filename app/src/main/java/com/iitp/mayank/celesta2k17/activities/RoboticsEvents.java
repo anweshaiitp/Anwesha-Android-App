@@ -19,6 +19,9 @@ import com.iitp.mayank.celesta2k17.R;
 import com.iitp.mayank.celesta2k17.adapters.EventsRecyclerViewAdapter;
 import com.iitp.mayank.celesta2k17.data.EventsData;
 
+import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_CONTACTS;
+import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_ORGANIZERS;
+
 public class RoboticsEvents extends AppCompatActivity implements EventsRecyclerViewAdapter.ListCardClick {
 
     RecyclerView recyclerView;
@@ -27,7 +30,7 @@ public class RoboticsEvents extends AppCompatActivity implements EventsRecyclerV
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
-        setContentView(R.layout.activity_njack);
+        setContentView(R.layout.activity_robotics);
 
         recyclerView = (RecyclerView)findViewById(R.id.rv_events);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this , 2);
@@ -39,14 +42,15 @@ public class RoboticsEvents extends AppCompatActivity implements EventsRecyclerV
         android.support.v7.app.ActionBar bar = getSupportActionBar();
         bar.setBackgroundDrawable(new ColorDrawable(ContextCompat.getColor(this, R.color.colorEvents)));
 
-        eventsRecyclerViewAdapter = new EventsRecyclerViewAdapter(getApplicationContext(), this, resources.getStringArray(R.array.array_njack_event_headers),
-                resources.getStringArray(R.array.array_njack_event_text) ,
-                resources.getStringArray(R.array.array_njack_event_rules) ,
-                resources.getStringArray(R.array.array_njack_event_date_time),
-                resources.getStringArray(R.array.array_njack_event_venue),
-                resources.obtainTypedArray(R.array.array_njack_event_images),
-                resources.getStringArray(R.array.array_photography_organizers),
-                resources.getStringArray(R.array.array_photography_contacts));
+        eventsRecyclerViewAdapter = new EventsRecyclerViewAdapter(getApplicationContext(), this,
+                resources.getStringArray(R.array.array_robotics_event_headers),
+                resources.getStringArray(R.array.array_robotics_event_text) ,
+                resources.getStringArray(R.array.array_robotics_event_rules) ,
+                resources.getStringArray(R.array.array_robotics_event_date_time),
+                resources.getStringArray(R.array.array_robotics_event_venue),
+                resources.obtainTypedArray(R.array.array_robotics_event_images),
+                resources.getStringArray(R.array.array_robotics_organizers),
+                resources.getStringArray(R.array.array_robotics_contacts));
         recyclerView.setAdapter(eventsRecyclerViewAdapter);
     }
 
@@ -68,6 +72,8 @@ public class RoboticsEvents extends AppCompatActivity implements EventsRecyclerV
         intentNew.putExtra(EventInfoActivity.EXTRA_DATE_TIME, eventsData.getDateTime());
         intentNew.putExtra(EventInfoActivity.EXTRA_VENUE, eventsData.getVenue());
         intentNew.putExtra(EventInfoActivity.EXTRA_IMAGE_ID, eventsData.getImageId());
+        intentNew.putExtra(EXTRA_ORGANIZERS, eventsData.getOrganizers());
+        intentNew.putExtra(EXTRA_CONTACTS, eventsData.getContacts());
         startActivity(intentNew, options.toBundle());
     }
 }
