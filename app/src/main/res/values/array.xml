@@ -906,5 +906,43 @@
     <!--Design events end -->
 
 
+    <!--Build it  events-->
+    <string-array name="array_buildit_event_headers">
+        <item>Spagaridge</item>
+        
+    </string-array>
+
+    <string-array name="array_buildit_event_text">
+    <item>Use the power of our global online community to apply thousands of engineering minds to your design problem for less than the price of one.Whether you have a brand new invention on the back of an envelope and you need to turn it into reality, an old part that has stubbornly never worked quite right, an aesthetic challenge you\'d like the design world\'s opinion on, or you\'d just like to inject some fresh ideas into your current in-house design department, a CAD Master Challenge is the most effective way to get the engineering world working on your problem.\nA CAD master challenge is also a great way to let the tech community know about your exciting new designs and your passion for optimum design.
+ </item>
+    </string-array>
+
+    <string-array name="array_buildit_event_rules">
+        <item>1.Make each of the drawings in separate .dwg files.\n2.The units for all the drawings must be set appropriately (Proper scaling factors).\n3.Put all the .dwg files in a .zip file named "\u003CYour Name _ YourInstitution>” and mail it to \n4.ace@iitp.ac.in with the subject “Drawings-Civil Maestro”.\n5.Each drawing must contain a title block containing your name, the question number and Institution Name.\n6.Violation of any of the above rules will lead to deduction of marks.\n7.In case of a tie during evaluation the person who had sent the earliest received mail would be considered the winner.\n8.All mails sent after 3.5hrs of starting will NOT be considered for evaluation.\n9.If any of the submitted drawings are partially complete then partial marks would be awarded.\n10. If any of the dimensions are not specified the participant is expected to use their judgement to use an appropriate dimension as per the drawings given.</item>
+
+    </string-array>
+
+    <string-array name="array_buildit_event_venue">
+        <item></item>
+    </string-array>
+
+    <string-array name="array_buildit_event_date_time">
+
+        <item>7th Aug, 10:30 pm</item>
+    </string-array>
+
+    <string-array name="array_buildit_organizers">
+        <item></item>
+    </string-array>
+
+    <integer-array name="array_buildit_event_images">
+        <item>@drawable/njack</item>
+    </integer-array>
+    <string-array name="array_buildit_contacts">
+        <item> - 7493835335\n - 7541051888</item>
+    </string-array>
+    <!--Build it  events end -->
+
+
 
 </resources>
