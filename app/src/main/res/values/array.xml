@@ -869,23 +869,24 @@
     </string-array>
     <!--Social events end -->
 
-    <!--Social events-->
+    <!--Design events-->
     <string-array name="array_design_event_headers">
-        <item>Adhyayan Video Recording</item>
+        <item>CAD Master</item>
     </string-array>
 
     <string-array name="array_design_event_text">
-        <item>"Future of a nation lies in the hands of its youth" - Asuma Sarutobi ‪Adhyayan: The video lecture making competition.India is one of the top five nations for out-of-school children of primary school age. Mainly due to the lack of teachers or/and lack of quality education. Celesta’17 along with RTDC IIT Patna brings you Adhyayan, an opportunity to share your knowledge and to help the students to rise.The event have been introduced to improve the educational situation in the Rural India and to brighten the future of the nation to its maximum potential.\nOnline Round:\nA team of maximum 2 students have to record a short video  lecture (5-15min)\nYou have to upload this video on your facebook account with #Lets_Teach_India and #Adhyayan\nTeams will be shortlisted depending on facebook likes and judges reviews.\nIt is preferred that you record an interactive video lecture.\nFINAL Round:\nShortlisted teams will be called to record a 30 minute lecture in the IIT Patna’s lecture recording studio or they can send their videos to rtdc.iitp@gmail.com.\nClips of the recorded lectures will be judged to decide the winners.</item>
+    <item>Use the power of our global online community to apply thousands of engineering minds to your design problem for less than the price of one.Whether you have a brand new invention on the back of an envelope and you need to turn it into reality, an old part that has stubbornly never worked quite right, an aesthetic challenge you\'d like the design world\'s opinion on, or you\'d just like to inject some fresh ideas into your current in-house design department, a CAD Master Challenge is the most effective way to get the engineering world working on your problem.\nA CAD master challenge is also a great way to let the tech community know about your exciting new designs and your passion for optimum design.
+ </item>
     </string-array>
 
     <string-array name="array_design_event_rules">
-        <item>Final Round Rules :\nTeam should follow NCERT (English or Hindi medium) while the conversation can be in hindi or/and english.\nTeam limit: A team can have maximum of 2 members.\nVideo should be within 20-30 min duration</item>
+        <item>1.Make each of the drawings in separate .dwg files.\n2.The units for all the drawings must be set appropriately (Proper scaling factors).\n3.Put all the .dwg files in a .zip file named "\u003CYour Name _ YourInstitution>” and mail it to \n4.ace@iitp.ac.in with the subject “Drawings-Civil Maestro”.\n5.Each drawing must contain a title block containing your name, the question number and Institution Name.\n6.Violation of any of the above rules will lead to deduction of marks.\n7.In case of a tie during evaluation the person who had sent the earliest received mail would be considered the winner.\n8.All mails sent after 3.5hrs of starting will NOT be considered for evaluation.\n9.If any of the submitted drawings are partially complete then partial marks would be awarded.\n10. If any of the dimensions are not specified the participant is expected to use their judgement to use an appropriate dimension as per the drawings given.</item>
+
     </string-array>
 
     <string-array name="array_design_event_venue">
-
-        <item></item>
-    </string-array>
+    <item></item>
+      </string-array>
 
     <string-array name="array_design_event_date_time">
 
@@ -893,16 +894,17 @@
     </string-array>
 
     <string-array name="array_design_organizers">
-        <item>Osho Anand \n Raj</item>
+        <item>G Sahi Darsini \n Satyaki</item>
     </string-array>
 
     <integer-array name="array_design_event_images">
         <item>@drawable/njack</item>
     </integer-array>
     <string-array name="array_design_contacts">
-        <item> - 9958549808\n - 7739821813</item>
+        <item> - 9100917428\n - 9051951401</item>
     </string-array>
-    <!--Social events end -->
+    <!--Design events end -->
+
 
 
 </resources>
