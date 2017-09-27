@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array
-        name="array_event_headers">
+    <string-array name="array_event_headers">
         <item>Lets Code!!</item>
         <item>Robotics</item>
         <item>Expo</item>
@@ -15,8 +14,7 @@
         <item>Quiz-wiz</item>
     </string-array>
 
-    <string-array
-        name="array_event_text">
+    <string-array name="array_event_text">
         <item>Not Just Another Computer Klub</item>
         <item>The Electrical Engineering Club</item>
         <item>Society of Automobile Engineers</item>
@@ -30,8 +28,7 @@
         <item>Association of Civil Engineers</item>
     </string-array>
 
-    <string-array
-        name="array_event_intent">
+    <string-array name="array_event_intent">
         <item>com.iitp.mayank.celesta2k17.activities.CodingEvents</item>
         <item>com.iitp.mayank.celesta2k17.activities.RoboticsEvents</item>
         <item>com.iitp.mayank.celesta2k17.activities.ExpoEvents</item>
@@ -60,8 +57,7 @@
     </integer-array>
 
     <!--NJACK Events-->
-    <string-array
-        name="array_njack_event_headers">
+    <string-array name="array_njack_event_headers">
         <item>Event 1</item>
         <item>Event 22222222</item>
         <item>Event 3</item>
@@ -70,8 +66,7 @@
         <item>Event 6</item>
     </string-array>
 
-    <string-array
-        name="array_njack_event_text">
+    <string-array name="array_njack_event_text">
         <item>Lorem ipsum dolor sit amet untes gungslla goog oo gaa lossly roemsid dsfaks slal skdlfkan1</item>
         <item>-1</item>
         <item>-1</item>
@@ -80,8 +75,7 @@
         <item>-1</item>
     </string-array>
 
-    <string-array
-        name="array_njack_event_rules">
+    <string-array name="array_njack_event_rules">
         <item>Lorem ipsum dolor sit amet untes gungslla goog oo gaa lossly roemsid dsfaks slal skdlfkan1</item>
         <item>-1</item>
         <item>-1</item>
@@ -118,8 +112,7 @@
     </integer-array>
 
     <!--Sparkonics Events-->
-    <string-array
-        name="array_sparkonics_event_headers">
+    <string-array name="array_sparkonics_event_headers">
         <item>Event 1</item>
         <item>Event 2</item>
         <item>Event 3</item>
@@ -128,8 +121,7 @@
         <item>Event 6</item>
     </string-array>
 
-    <string-array
-        name="array_sparkonics_event_text">
+    <string-array name="array_sparkonics_event_text">
         <item>-1</item>
         <item>-1</item>
         <item>-1</item>
@@ -138,8 +130,7 @@
         <item>-1</item>
     </string-array>
 
-    <string-array
-        name="array_sparkonics_event_rules">
+    <string-array name="array_sparkonics_event_rules">
         <item>Lorem ipsum dolor sit amet untes gungslla goog oo gaa lossly roemsid dsfaks slal skdlfkan1</item>
         <item>-1</item>
         <item>-1</item>
@@ -177,8 +168,7 @@
 
 
     <!--SAE Events-->
-    <string-array
-        name="array_sae_event_headers">
+    <string-array name="array_sae_event_headers">
         <item>Event 1</item>
         <item>Event 2</item>
         <item>Event 3</item>
@@ -187,8 +177,7 @@
         <item>Event 6</item>
     </string-array>
 
-    <string-array
-        name="array_sae_event_text">
+    <string-array name="array_sae_event_text">
         <item>-1</item>
         <item>-1</item>
         <item>-1</item>
@@ -197,8 +186,7 @@
         <item>-1</item>
     </string-array>
 
-    <string-array
-        name="array_sae_event_rules">
+    <string-array name="array_sae_event_rules">
         <item>Lorem ipsum dolor sit amet untes gungslla goog oo gaa lossly roemsid dsfaks slal skdlfkan1</item>
         <item>-1</item>
         <item>-1</item>
@@ -236,8 +224,7 @@
 
 
     <!--SCME Events-->
-    <string-array
-        name="array_scme_event_headers">
+    <string-array name="array_scme_event_headers">
         <item>Event 1</item>
         <item>Event 2</item>
         <item>Event 3</item>
@@ -246,8 +233,7 @@
         <item>Event 6</item>
     </string-array>
 
-    <string-array
-        name="array_scme_event_text">
+    <string-array name="array_scme_event_text">
         <item>-1</item>
         <item>-1</item>
         <item>-1</item>
@@ -256,8 +242,7 @@
         <item>-1</item>
     </string-array>
 
-    <string-array
-        name="array_scme_event_rules">
+    <string-array name="array_scme_event_rules">
         <item>Lorem ipsum dolor sit amet untes gungslla goog oo gaa lossly roemsid dsfaks slal skdlfkan1</item>
         <item>-1</item>
         <item>-1</item>
@@ -294,8 +279,7 @@
     </string-array>
 
     <!--Threshold Events-->
-    <string-array
-        name="array_threshold_event_headers">
+    <string-array name="array_threshold_event_headers">
         <item>Event 1</item>
         <item>Event 2</item>
         <item>Event 3</item>
@@ -304,8 +288,7 @@
         <item>Event 6</item>
     </string-array>
 
-    <string-array
-        name="array_threshold_event_text">
+    <string-array name="array_threshold_event_text">
         <item>-1</item>
         <item>-1</item>
         <item>-1</item>
@@ -314,8 +297,7 @@
         <item>-1</item>
     </string-array>
 
-    <string-array
-        name="array_threshold_event_rules">
+    <string-array name="array_threshold_event_rules">
         <item>Lorem ipsum dolor sit amet untes gungslla goog oo gaa lossly roemsid dsfaks slal skdlfkan1</item>
         <item>-1</item>
         <item>-1</item>
@@ -352,8 +334,7 @@
     </string-array>
 
     <!--ACE Events-->
-    <string-array
-        name="array_ace_event_headers">
+    <string-array name="array_ace_event_headers">
         <item>Event 1</item>
         <item>Event 2</item>
         <item>Event 3</item>
@@ -362,8 +343,7 @@
         <item>Event 6</item>
     </string-array>
 
-    <string-array
-        name="array_ace_event_text">
+    <string-array name="array_ace_event_text">
         <item>-1</item>
         <item>-1</item>
         <item>-1</item>
@@ -372,8 +352,7 @@
         <item>-1</item>
     </string-array>
 
-    <string-array
-        name="array_ace_event_rules">
+    <string-array name="array_ace_event_rules">
         <item>Lorem ipsum dolor sit amet untes gungslla goog oo gaa lossly roemsid dsfaks slal skdlfkan1</item>
         <item>-1</item>
         <item>-1</item>
@@ -405,18 +384,15 @@
     </string-array>
 
     <!--Photography Events-->
-    <string-array
-        name="array_photography_event_headers">
+    <string-array name="array_photography_event_headers">
         <item>LENSART</item>
     </string-array>
 
-    <string-array
-        name="array_photography_event_text">
+    <string-array name="array_photography_event_text">
         <item>Photography is a tool by which we can freeze the time and have a look back in the past. ACE brings you a chance of showing your photography skills! ACE brings you a chance of showing your photography skills!</item>
     </string-array>
 
-    <string-array
-        name="array_photography_event_rules">
+    <string-array name="array_photography_event_rules">
         <item>Phase 1 :\nHere the paticipant has to click a photo and mail it to ace@iitp.ac.in with the\nsubject “Entry for Lensart” with a description. Also the participant has to\nsend the snapshot of the EXIF data of the picture. The theme and the\ndeadline will be uploaded on the our page weekly. Participants have to\ncheck the page regularly.\nhttps://www.facebook.com/CelestaIITP/\n\nNote : The participant can get the EXIF data of the picture on the following link :\nhttp://exifdata.com/\nPhase 2 :\nIn this phase, photos will be uploaded on the following page weekly.\nhttps://www.facebook.com/CelestaIITP/\nThe participants need to comment a caption for the picture.</item>
     </string-array>
 
@@ -441,22 +417,19 @@
     </string-array>
 
     <!--Treasure Hunt Events-->
-    <string-array
-        name="array_treasure_event_headers">
+    <string-array name="array_treasure_event_headers">
         <item>Chem-o-quest</item>
         <item>Spark Fun</item>
         <item>Static Rush</item>
     </string-array>
 
-    <string-array
-        name="array_treasure_event_text">
+    <string-array name="array_treasure_event_text">
         <item>"Chemoquest is a theme based treasure hunt. The competition comprises of a multi-level hunt for chemical compounds and then perform a chemical reaction with those compounds. The event will start from the given venue where the first riddle will be given. The contestants must have to solve the riddle to reach the next spot where they will get the next riddle . After collecting all the chemical compounds, the team has to perform the chemical reaction. The team that takes the minimum time to complete the whole task will be declared as winner."</item>
         <item>This online contest will be a 2 day contest. Each day there will be 10 problems to solve. The questions will be completely IQ- based with a minimal amount of knowledge from science required. </item>
         <item>The ladders we climb are the Clues we find , spanning the campus is the gamble of dice.\nThis event require participation in teams . It’s is a theme based event which involves reaching various checkpoints with the help of clues they collect and complete the task if alloted.The rush stops after completion of circuit.</item>
     </string-array>
 
-    <string-array
-        name="array_treasure_event_rules">
+    <string-array name="array_treasure_event_rules">
         <item>1. Maximum 3 members in a team.\n2. Members can be of any year and any branch.\n3. Teams have to report to the spot before 15 minutes of the scheduled time.\n4. All team members have to be collectively present at the checkpoint with their previous clue to receive the compounds.\n5. Explanation of the clue may be required.\n*Rules are flexible as per the organizers discretion.</item>
         <item>1. Student will compete in groups of 2\n2. All the questions on\n1st day = 10 pts\n2nd day = 20 pts\n3. The time frame for answering the questions will be 12pm – 12 am every day. You can start and end during this window time.\n4. Points and end-time of play from each day will be recorded and will cumulated for final tally of points. \n5. Questions will be completely IQ based with some knowledge from Electrical Curriculum as a prerequisite.\n6. You are allowed internet and textual reference for solving the problems but spreading, buying or selling of answers is offence enough to disqualify your team.\n7. You can answer any question infinite number of times.\n8. Answers are case-insensitive.\n9. Winning team will be decided by the highest total tally of points. In case there is a tie, the team answering more questions on 2nd day  will be the winner. If the situation persists, ending time average of 2 days will decide the results.</item>
         <item>1.After Registration, Every team will be provided with a copy of Snake and ladder and a clue.\n2.The Clue will guide them to the next hotspot where they will be asked regarding a question about the equipment they want.\n3.If wrongly answered, they will suffer from time penalty. They will also throw a dice which will guide their position on the game of Snake and ladders.\n4.In the game of Snake and Ladders, if they encounter a snake they should perform a special task as penalty which will be FORGIVEN if they are able to produce the Appreciation Tokens.\n5.The Appreciation Tokens can either be collected from a Mentioned Spot or they will be awarded one if they had encountered a ladder in the game.\n6.They will have to complete the task correctly at each hotspot to collect all the equipments required for reaching the final hotspot.\n7.At the final hotspot they will be given a Simple Electronic Circuit which they have to build on the spot and Submit.\n8.The team that completes all the tasks in the minimum time, that person will be the winner of Static Rush 2017.\n9.The task at each hotspot along with next clue will be given randomly by checking the number of the people they have already reached by checking their signatures at the backside of the page.\n10.Also their last position in the game of Snakes and Ladders will be written on the backside of the page so that the person on the next hotspot can determine the position.
@@ -494,18 +467,15 @@
     </string-array>
 
     <!-- Story Writing Events -->
-    <string-array
-        name="array_story_writing_event_headers">
+    <string-array name="array_story_writing_event_headers">
         <item>Tech chronicles</item>
     </string-array>
 
-    <string-array
-        name="array_story_writing_event_text">
+    <string-array name="array_story_writing_event_text">
         <item>This pre-celesta event gives the prolific writer in you a chance, a chance to cross the horizons of imagination, to expand the field of one’s view and plot a sci-fi story. It will be your story so it can be anything, literally anything - Alien invasion to humans going to another planet or time-travelling and what not!\n\nSo just think outside the box, use your imagination, bend the scope of view and write a thriller!\nWhat to do : You are expected to write this story and then share it on facebook with the following hastags -\n#TechChronicles\n#Celesta2k17\nAlso you have to mail the story to us at rtdc@iitp.ac.in with the subject : Entry for TechChronicles</item>
     </string-array>
 
-    <string-array
-        name="array_story_writing_event_rules">
+    <string-array name="array_story_writing_event_rules">
         <item>1. Word limit shouldn’t exceed 500 words.\n2. No vulgar content needs to be included.\n3. The story should be sent as a word file (.doc) file as an attachment in the mail along with the link to your post with it in the mail.</item>
     </string-array>
 
@@ -531,20 +501,17 @@
 
 
     <!--Coding Events-->
-    <string-array
-        name="array_coding_event_headers">
+    <string-array name="array_coding_event_headers">
         <item>CAPTURE THE FLAG</item>
         <item>BYTE RACE</item>
     </string-array>
 
-    <string-array
-        name="array_coding_event_text">
+    <string-array name="array_coding_event_text">
         <item>Capture the Flag is hacking challenge where you can prove your hacking skills. This challenge will test your basic understanding of various fields of Computer Science.</item>
         <item>ByteRace is a challenge for minds that have honed the art of problem solving. This competition presents challenges for you to solve using code. So if you get the adrenaline rush when you see a difficult problem in front of you then this is definitely for you.</item>
     </string-array>
 
-    <string-array
-        name="array_coding_event_rules">
+    <string-array name="array_coding_event_rules">
         <item>1.Team can have maximum 3 members.\n2.Participants must bring their own laptops.\n3.Use of Internet is allowed.\n4.Each problem will have different points according to its difficulty level</item>
         <item>1.This is an Online event, which will be held on HackerRank/Codechef platform.\n2.This is an individual event and any form of violation of platform rules will lead to disqualification.\n3.Competition consists of 5 algorithmic puzzles to quench your thirst for the unsolvable.\n4.The judgement of the organizers will be final.\n5.Participants can participate from their room or from the CC.They need to have a HackerRank/CodeChef handler.</item>
     </string-array>
@@ -576,22 +543,19 @@
 
 
     <!--Expo Events-->
-    <string-array
-        name="array_expo_event_headers">
+    <string-array name="array_expo_event_headers">
         <item>SCHOOL EXHIBITION</item>
         <item>VIRTUAL AUTO EXPO</item>
         <item>SAMADHAN</item>
     </string-array>
 
-    <string-array
-        name="array_expo_event_text">
+    <string-array name="array_expo_event_text">
         <item>Focussed on ingraining a scientific and creative attitude in our young students to make them comprehend the interdependence of science, technology and society by a hands- on experience. The exhibition seeks to engage children  to synergise experiences and motivate each other to design and develop something novel.\n\nProblem Statement:\nStudents of schools are invited to come up and present a science project/ model &amp; showcase their young ,creative &amp; innovative minds.(*This event creates a culture that promotes the application of theoretical knowledge to the practical obstacles which promotes the implementation of scientific ideas into the routine activities.)\n\n\n-A few exemplar ideas pertaining to  themes for development of exhibits are: Energy,Health,Nutrition &amp; Cleanliness(E.g:Demonstration of models/ projects to create awareness among children about rules of safety inappropriate hazardous situation to avoid accidents and injuries;Demonstration of models/ projects to show the effect of junk food items, adulterated food items on our body and its preventive measures;Model to demonstrate importance of balanced diet and nutritional values of various food items)</item>
         <item>This is an event for all the automobile enthusiasts.</item>
         <item>Participants will be organised into groups.One picture will be shown to them and in the picture there will be different conditions/problems that will be shown in that picture.According to the conditions provide they will discuss the picture among themselves and then using their own intellect,they have to make strategy,planning and will show how they will manage in tackling the problem to give the maximum output i.e, the problem is solved with maximum accuracy.This type of event helps in teaching students how they can coordinate with each other when they will need to,also it helps in making quick and effective decisions.</item>
     </string-array>
 
-    <string-array
-        name="array_expo_event_rules">
+    <string-array name="array_expo_event_rules">
         <item>-Scoring will be done based on participant\'s ability to &quot;working &amp; explanation&quot;, &quot; concept clarity &amp; demonstration&quot; &amp; &quot;creativity &quot;.\n-Participants are allowed to select language for presenting their model/project as per their level of comfort.\n-Certificates for participation will be given to All the participants. \n-Winners will be awarded with exciting  prizes.!\n-In case of any discrepancy, the decision of the organisers will be final.</item>
         <item>Make a presentation (ppt) on any one of your favorite cars (even an ATV/ formula one) of any company. You have to act as a representative trying to sell your product.\nPresentation must contain the following points:\n1. Car Features (including photos)\n2. Cost\n3. Why people would buy your product?\n4. Any extra thing which you want to add.\nExtra points if you include a small video (1 min max) on that car in the presentation.\nMaximum time for presentation: 6 minutes.\nYou can participate individually or in a team of two.\n\nJudging criteria:\n1. Presentation Skills\n2. Content of the ppt\n3. Are you able to convince the costumer (judges in this case) to buy your product\n4. How much good is your product\n5. How much knowledge you have about your product</item>
         <item>-1</item>
@@ -629,23 +593,20 @@
 
 
     <!--Robotics Events-->
-    <!--TODO: PUT THE RULES AND REGULATION -->
-    <string-array
-        name="array_robotics_event_headers">
+
+    <string-array name="array_robotics_event_headers">
         <item>Aqua Soccer</item>
         <item>Robowar</item>
         <item>Maze Solver</item>
     </string-array>
 
-    <string-array
-        name="array_robotics_event_text">
+    <string-array name="array_robotics_event_text">
         <item>Problem Statement:\nThere will be a tub partially filled with water. \nFew balls of different sizes will be floating and there are two goal posts at two opposite sides.\nTwo teams will simultaneously play against each other through their bot.\n Aim of both is to put the balls inside the respective goal post .\nTeam with maximum score at the end of match will be declared as the winner of that match.</item>
         <item>THIS IS THE MOST POPULAR EVENT OF IIT PATNA.AFTER FEELING THE ADRENALINE RUSH OF DEATH RACE ITS TIME TO SHOW POWER OF YOUR BOT AND YOUR  STRATEGY IN THE BATTLEFIELD..THIS EVENT WILL TEST THE CO-ORDINATION BETWEEN SPEED ,POWER AND STRATEGY.</item>
         <item>There will be a maze designed symmetrically for two sides. The maze will have dead-ends, alternate paths etc. Both teams will have a starting point where they will put their bots. The bots have to reach the end point of the maze from the starting point.</item>
     </string-array>
 
-    <string-array
-        name="array_robotics_event_rules">
+    <string-array name="array_robotics_event_rules">
         <item>A team can have a maximum of 4 Members.\nDimension of the tank will be 10 ft. X 6 ft. X 1.5ft. (approx.)\nThe bot may be wired or wireless depending upon your convenience.\nAll the electronic circuits or equipments must be protected from water. Any damage to the bot due to this reason will not be our responsibility.\n Balls will have varying dimensions ranging from table tennis balls to normal size plastic cricket balls.\nDifferent color balls will carry different points.\nPoints corresponding to each ball will be told on the spot.\nSome bonus points will also be awarded during the course of competition if a bot collects more than one ball at a time and make it to the goal post.\nDimension of goal post is 1 ft. X 1 ft. X 1 ft.\nAim of each team is to put the balls in respective goal posts.\nDimension of the bot should not exceed 1.5 ft. X 1 ft., however there is no restriction on minimum size of the bot.\nThere should be no pointed protrusions in the bot like nails which can damage the pool.\nIf a ball anyhow enters the goal post corresponding to Team X (in which Team X is supposed to put the ball) then points corresponding to that ball will be awarded to Team X.\nIf someone is using electric power supply, they must bring your own circuit equipment, adapter etc. Voltage across motors should not exceed 24 V.\nThe final decision will be in the hands of the organizers. No debating is allowed with the organizers.</item>
         <item>TOURNAMENT WOULD BE IN FORM OF A LEAGUE WHICH WILL LEAD TO SEMI-FINALS AND FINALS.\nEACH MATCH CONSISTS OF 2 ROUNDS\n\n1ST ROUND----DURATION 3 MINUTES\nTHERE WILL BE 4 BALLOONS IN EACH TEAM’S STATE.BOTH TEAMS WILL START FROM THEIR STATE AND WILL ATTACK THE OPPOSITION TEAM’S BALLOONS. BY THE END OF THREE MINUTES IF ANY TEAM GOT SUCCESS IN PRICKING ALL THE 4 BALLOONS OF OPPOSITION AND MANAGES TO SAVE ITS AT LEAST ONE FROM THE OPPOSITION TEAM THEN THAT TEAM WILL BE DECLARED AS WINNER AND MATCH WILL END HERE.FOR PRICKING OPPOSITION TEAM’S BALLOONS 15 POINTS WILL BE PROVIDED.\nIF NONE OF THE TEAM MANAGES TO WIN IN THIS ROUND THEN MATCH WOULD PASS INTO THE SECOND ROUND AND WINNER WILL BE DECIDED ON THE BASIS OF POINTS SCORED.
 \n2ND  ROUND DURATION---- 2 MINUTES\nHERE THE MAIN GOAL OF THE TEAM WOULD BE TO HIT AND DAMAGE THE OPPOSITION TEAM AS MUCH AS POSSIBLE.\nFOR EACH HIT IN THE SECOND ROUND 5 POINTS WOULD BE PROVIDED.\nIF A TEAM MANAGES TO THROW OPPOSITION TEAM’S BOT OUT OF ARENA THAN 30 POINTS WOULD BE PROVIDED TO THAT TEAM.\nAT THE END OF SECOND ROUND TEAM HAVING HIGHER SCORE WILL BE DECLARED AS WINNER.
@@ -665,7 +626,15 @@
         <item></item>
     </string-array>
 
+
     <integer-array name="array_robotics_event_images">
+        <item>@drawable/njack</item>
+        <item>@drawable/njack</item>
+        <item>@drawable/njack</item>
+    </integer-array>
+
+
+    <integer-array name="array_quizwiz_event_images">
         <item>@drawable/njack</item>
         <item>@drawable/njack</item>
         <item>@drawable/njack</item>
@@ -682,8 +651,53 @@
         <item> - 9560643680\n - 8329843720\n - 9491916025\n - 9955539108</item>
         <item> - 9955524114\n - 867498699\n - 9055045351\n - 9531610498\n - 9461541237</item>
     </string-array>
-<!-- Robotics end -->
+    <!-- Robotics end -->
 
+
+    <!--Quiz Wiz events-->
+    <string-array name="array_quizwiz_event_headers">
+        <item>ELECTRO-EXQUIZITE</item>
+        <item>ASTRO-PARTICLE VOYAGE</item>
+        <item>MIND-BENDERS</item>
+    </string-array>
+
+    <string-array name="array_quizwiz_event_text">
+        <item>This is a Celesta Event. In this event there will be three rounds. The participants can either be a single person or a team with members up to 3 at max.</item>
+        <item>Enthusiastic about Astronomy? Passionate about Particle-Physics? Think you know your stuff? Then this is your journey through the realm of the big and the small, on the scales ranging from a quark to the entire observable universe. This is the AstroParticle Voyage, a quiz which tests your knowledge thoroughly, and brings out the best of your abilities.</item>
+        <item>Mind-Benders is a test of wits and logic. The event involves no syllabus or pre-requisite knowledge. The event will solely test the student’s logical reasoning, analytical thinking abilities , problem-solving capabilities and co-ordination skills.\nGet ready to knock your brains and prove the genius in you in this mind bending rendezvous.</item>
+    </string-array>
+
+    <string-array name="array_quizwiz_event_rules">
+        <item>First round is the Preliminary. Where you will be given a questionnaire consisting of questions. The participants have to solve the questions to earn points or SPARKOINS. Either top 25 percentile or Top 10 Contestant teams (Whichever is highest) will be selected for the second round, Qualifiers.\nIn Qualifiers, the contestant teams have to use the Sparkoins to buy electronic components and provide a solution by making a circuit in breadboard by using the components bought components. The problem to be solved will be provided by a lucky draw. The team with the highest Sparkoins will be the first to draw. Here there will be points for the circuit and also for the timings. The counting of the clock begins from the time you get the problem. There will be a COMPO-STORE where you can buy electronic components. 5 teams with a highest score in Qualifiers will be selected for the third round, Finale. The amount of Sparkoins left after the qualifier will be a deciding factor.\nThe third and the final round will be a what happens if type competition which will be a rapid fire round in which a circuit will be shown and asked what will happen if the given thing is altered in the circuit. it will be a one hit answering round with negative marking included(penalty).\nThe one with the maximum number of points in the final round will be declared winner.\n\nImportant declaration : \n1)Please keep checking the Celesta app, website and Celesta, IIT Patna facebook page for any future updates.\n2)The rules can change without prior notification.\n3)In case of any dispute, the decisions made by the organising committee and judges are final and binding.\n</item>
+        <item>1)AstroParticle Voyage is a three levelled competition.\n2)Participants can participate in a team of maximum two.\n3)First level is a paper-pen round consisting of five subcategories: Theoretical Astronomy, Observational Astronomy, Theoretical Particle Physics, Observational Particle Physics and Mathematics. Intermediate level questions regarding each would be asked.\n4)Second Level is a quiz round where questions would be asked in a round table arrangement. \n5)Third level is a simulation round where simulations would be shown of some phenomenon and a problem would be given based on it.\n6)Points would be given for each round and the team with maximum cumulative score in the end wins.\n7)No reference except the ones given by us can be used during the entirety of the competition.\n8)All decisions taken by the organisers would be final in case of any discrepancy or issue.</item>
+        <item>1)This is a team event. Students should participate in teams of two members of same squad.2)Students of different institutions can form a team but of same squad.3)There are two squads\nJUNIOR SQUAD - for students of class 7 to 10.\nSENIOR SQUAD - for student of class 11 and above including college student.\n3)The event will be in form of pen-paper quiz. The question will have various sections like maths, puzzles, reasoning etc. It will consist of single choice correct, multiple choice correct, paragraph and a very few subjective questions.\n4)Each section has its own marking scheme.\n5)Use of any type of electronic gadgets are strictly prohibited during the test.\n\nQUESTIONS - 30\tTIME – 1 HOUR\nImportant declaration :\n1)Please keep checking the Celesta website and Celesta, IIT Patna facebook page for any future updates.\n2)The rules can change without prior notification.\n3)In case of any dispute, the decisions made by the organising committee and judges are final and binding.\n</item>
+    </string-array>
+
+    <string-array name="array_quizwiz_event_venue">
+
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+
+    <string-array name="array_quizwiz_event_date_time">
+
+        <item>7th Aug, 10:30 pm</item>
+        <item>7th Aug, 10:30 pm</item>
+        <item>7th Aug, 10:30 pm</item>
+    </string-array>
+
+    <string-array name="array_quizwiz_organizers">
+        <item>Harpreet Kumar\nRahul Kumar\nDhanush S Ravikumar</item>
+        <item>Parth Kulkarni</item>
+        <item>Ritesh Singh Rathour</item>
+    </string-array>
+
+    <string-array name="array_quizwiz_contacts">
+        <item> - 9041083838\n - 7761937143\n - 9955534759</item>
+        <item> - 7303069559</item>
+        <item> - 7023460310</item>
+    </string-array>
 
     <!--Schedule Day 1-->
     <!--Event header array-->
