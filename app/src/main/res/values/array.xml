@@ -829,12 +829,80 @@
     <integer-array name="array_debate_event_images">
         <item>@drawable/njack</item>
     </integer-array>
-
-
     <string-array name="array_debate_contacts">
         <item> - 9466273458</item>
     </string-array>
     <!--Debate events end -->
+
+    <!--Social events-->
+    <string-array name="array_social_event_headers">
+        <item>Adhyayan Video Recording</item>
+    </string-array>
+
+    <string-array name="array_social_event_text">
+        <item>"Future of a nation lies in the hands of its youth" - Asuma Sarutobi ‪Adhyayan: The video lecture making competition.India is one of the top five nations for out-of-school children of primary school age. Mainly due to the lack of teachers or/and lack of quality education. Celesta’17 along with RTDC IIT Patna brings you Adhyayan, an opportunity to share your knowledge and to help the students to rise.The event have been introduced to improve the educational situation in the Rural India and to brighten the future of the nation to its maximum potential.\nOnline Round:\nA team of maximum 2 students have to record a short video  lecture (5-15min)\nYou have to upload this video on your facebook account with #Lets_Teach_India and #Adhyayan\nTeams will be shortlisted depending on facebook likes and judges reviews.\nIt is preferred that you record an interactive video lecture.\nFINAL Round:\nShortlisted teams will be called to record a 30 minute lecture in the IIT Patna’s lecture recording studio or they can send their videos to rtdc.iitp@gmail.com.\nClips of the recorded lectures will be judged to decide the winners.</item>
+    </string-array>
+
+    <string-array name="array_social_event_rules">
+       <item>Final Round Rules :\nTeam should follow NCERT (English or Hindi medium) while the conversation can be in hindi or/and english.\nTeam limit: A team can have maximum of 2 members.\nVideo should be within 20-30 min duration</item>
+    </string-array>
+
+    <string-array name="array_social_event_venue">
+
+        <item></item>
+    </string-array>
+
+    <string-array name="array_social_event_date_time">
+
+        <item>7th Aug, 10:30 pm</item>
+    </string-array>
+
+    <string-array name="array_social_organizers">
+        <item>Osho Anand \n Raj</item>
+    </string-array>
+
+    <integer-array name="array_social_event_images">
+        <item>@drawable/njack</item>
+    </integer-array>
+    <string-array name="array_social_contacts">
+        <item> - 9958549808\n - 7739821813</item>
+    </string-array>
+    <!--Social events end -->
+
+    <!--Social events-->
+    <string-array name="array_design_event_headers">
+        <item>Adhyayan Video Recording</item>
+    </string-array>
+
+    <string-array name="array_design_event_text">
+        <item>"Future of a nation lies in the hands of its youth" - Asuma Sarutobi ‪Adhyayan: The video lecture making competition.India is one of the top five nations for out-of-school children of primary school age. Mainly due to the lack of teachers or/and lack of quality education. Celesta’17 along with RTDC IIT Patna brings you Adhyayan, an opportunity to share your knowledge and to help the students to rise.The event have been introduced to improve the educational situation in the Rural India and to brighten the future of the nation to its maximum potential.\nOnline Round:\nA team of maximum 2 students have to record a short video  lecture (5-15min)\nYou have to upload this video on your facebook account with #Lets_Teach_India and #Adhyayan\nTeams will be shortlisted depending on facebook likes and judges reviews.\nIt is preferred that you record an interactive video lecture.\nFINAL Round:\nShortlisted teams will be called to record a 30 minute lecture in the IIT Patna’s lecture recording studio or they can send their videos to rtdc.iitp@gmail.com.\nClips of the recorded lectures will be judged to decide the winners.</item>
+    </string-array>
+
+    <string-array name="array_design_event_rules">
+        <item>Final Round Rules :\nTeam should follow NCERT (English or Hindi medium) while the conversation can be in hindi or/and english.\nTeam limit: A team can have maximum of 2 members.\nVideo should be within 20-30 min duration</item>
+    </string-array>
+
+    <string-array name="array_design_event_venue">
+
+        <item></item>
+    </string-array>
+
+    <string-array name="array_design_event_date_time">
+
+        <item>7th Aug, 10:30 pm</item>
+    </string-array>
+
+    <string-array name="array_design_organizers">
+        <item>Osho Anand \n Raj</item>
+    </string-array>
+
+    <integer-array name="array_design_event_images">
+        <item>@drawable/njack</item>
+    </integer-array>
+    <string-array name="array_design_contacts">
+        <item> - 9958549808\n - 7739821813</item>
+    </string-array>
+    <!--Social events end -->
 
 
 </resources>
