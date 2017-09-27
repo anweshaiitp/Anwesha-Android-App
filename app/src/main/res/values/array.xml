@@ -698,6 +698,11 @@
         <item> - 7303069559</item>
         <item> - 7023460310</item>
     </string-array>
+    <!--Quiz Wiz events end -->
+
+
+
+
 
     <!--Schedule Day 1-->
     <!--Event header array-->
@@ -792,4 +797,44 @@
         <item>10am to 12pm</item>
         <item>10am to 12pm</item>
     </string-array>
+
+    <!--Debate events-->
+    <string-array name="array_debate_event_headers">
+        <item>Parliamentary debate</item>
+        </string-array>
+
+    <string-array name="array_debate_event_text">
+        <item></item>
+    </string-array>
+
+    <string-array name="array_debate_event_rules">
+        <item>A debate round has two teams with two debaters each and a Speaker. The Speaker serves as both the judge and arbiter of the rules during the round. Note here that "Speaker" always refers to the judge from this point forward. One team represents the Government, while the other represents the Opposition.</item>
+
+    </string-array>
+
+    <string-array name="array_debate_event_venue">
+
+        <item></item>
+    </string-array>
+
+    <string-array name="array_debate_event_date_time">
+
+        <item>7th Aug, 10:30 pm</item>
+    </string-array>
+
+    <string-array name="array_debate_organizers">
+        <item>Prakash Kumar \n Akshay Rajput</item>
+    </string-array>
+
+    <integer-array name="array_debate_event_images">
+        <item>@drawable/njack</item>
+    </integer-array>
+
+
+    <string-array name="array_debate_contacts">
+        <item> - 9466273458</item>
+    </string-array>
+    <!--Debate events end -->
+
+
 </resources>
