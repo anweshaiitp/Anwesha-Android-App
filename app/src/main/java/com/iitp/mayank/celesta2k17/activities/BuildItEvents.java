@@ -19,10 +19,12 @@ import com.iitp.mayank.celesta2k17.R;
 import com.iitp.mayank.celesta2k17.adapters.EventsRecyclerViewAdapter;
 import com.iitp.mayank.celesta2k17.data.EventsData;
 
+import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_CONTACTS;
 import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_DATE_TIME;
 import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_HEADER;
 import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_IMAGE_ID;
 import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_DESCRIPTION;
+import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_ORGANIZERS;
 import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_RULES;
 import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_VENUE;
 
@@ -34,7 +36,7 @@ public class BuildItEvents extends AppCompatActivity implements EventsRecyclerVi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
-        setContentView(R.layout.activity_sae_events);
+        setContentView(R.layout.activity_buildit_events);
 
         recyclerView = (RecyclerView)findViewById(R.id.rv_events);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this , 2);
@@ -46,14 +48,15 @@ public class BuildItEvents extends AppCompatActivity implements EventsRecyclerVi
         android.support.v7.app.ActionBar bar = getSupportActionBar();
         bar.setBackgroundDrawable(new ColorDrawable(ContextCompat.getColor(this, R.color.colorEvents)));
 
-        eventsRecyclerViewAdapter = new EventsRecyclerViewAdapter(getApplicationContext(), this, resources.getStringArray(R.array.array_sae_event_headers),
-                resources.getStringArray(R.array.array_sae_event_text),
-                resources.getStringArray(R.array.array_sae_event_rules),
-                resources.getStringArray(R.array.array_sae_event_date_time),
-                resources.getStringArray(R.array.array_sae_event_venue),
-                resources.obtainTypedArray(R.array.array_sae_event_images),
-                resources.getStringArray(R.array.array_photography_organizers),
-                resources.getStringArray(R.array.array_photography_contacts));
+        eventsRecyclerViewAdapter = new EventsRecyclerViewAdapter(getApplicationContext(), this,
+                resources.getStringArray(R.array.array_buildit_event_headers),
+                resources.getStringArray(R.array.array_buildit_event_text),
+                resources.getStringArray(R.array.array_buildit_event_rules),
+                resources.getStringArray(R.array.array_buildit_event_date_time),
+                resources.getStringArray(R.array.array_buildit_event_venue),
+                resources.obtainTypedArray(R.array.array_buildit_event_images),
+                resources.getStringArray(R.array.array_buildit_organizers),
+                resources.getStringArray(R.array.array_buildit_contacts));
         recyclerView.setAdapter(eventsRecyclerViewAdapter);
     }
 
@@ -75,6 +78,8 @@ public class BuildItEvents extends AppCompatActivity implements EventsRecyclerVi
         intentNew.putExtra(EXTRA_DATE_TIME, eventsData.getDateTime());
         intentNew.putExtra(EXTRA_VENUE, eventsData.getVenue());
         intentNew.putExtra(EXTRA_IMAGE_ID, eventsData.getImageId());
+        intentNew.putExtra(EXTRA_ORGANIZERS, eventsData.getOrganizers());
+        intentNew.putExtra(EXTRA_CONTACTS, eventsData.getContacts());
         startActivity(intentNew, options.toBundle());
     }
 }
