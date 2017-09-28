@@ -405,7 +405,7 @@
     </string-array>
 
     <integer-array name="array_photography_event_images">
-        <item>@drawable/njack</item>
+        <item>@drawable/lensart_final</item>
     </integer-array>
 
     <string-array name="array_photography_organizers">
@@ -449,9 +449,9 @@
     </string-array>
 
     <integer-array name="array_treasure_event_images">
-        <item>@drawable/threshold</item>
-        <item>@drawable/sparkonics</item>
-        <item>@drawable/sparkonics</item>
+        <item>@drawable/chemoquest</item>
+        <item>@drawable/sparkfun</item>
+        <item>@drawable/static_rush2</item>
     </integer-array>
 
     <string-array name="array_treasure_organizers">
@@ -527,7 +527,7 @@
     </string-array>
 
     <integer-array name="array_coding_event_images">
-        <item>@drawable/njack</item>
+        <item>@drawable/capture_the_flag</item>
         <item>@drawable/njack</item>
     </integer-array>
 
@@ -574,8 +574,8 @@
     </string-array>
 
     <integer-array name="array_expo_event_images">
-        <item>@drawable/njack</item>
-        <item>@drawable/njack</item>
+        <item>@drawable/tech_exhibition</item>
+        <item>@drawable/vautoexpo</item>
         <item>@drawable/njack</item>
     </integer-array>
 
@@ -596,7 +596,7 @@
 
     <string-array name="array_robotics_event_headers">
         <item>Aqua Soccer</item>
-        <item>Robowar</item>
+        <item>Robowars</item>
         <item>Maze Solver</item>
     </string-array>
 
@@ -628,8 +628,8 @@
 
 
     <integer-array name="array_robotics_event_images">
-        <item>@drawable/njack</item>
-        <item>@drawable/njack</item>
+        <item>@drawable/aqua_soccer</item>
+        <item>@drawable/robowars</item>
         <item>@drawable/njack</item>
     </integer-array>
 
@@ -637,7 +637,7 @@
     <integer-array name="array_quizwiz_event_images">
         <item>@drawable/njack</item>
         <item>@drawable/njack</item>
-        <item>@drawable/njack</item>
+        <item>@drawable/mind_benders</item>
     </integer-array>
 
     <string-array name="array_robotics_organizers">
@@ -824,7 +824,7 @@
     </string-array>
 
     <integer-array name="array_debate_event_images">
-        <item>@drawable/njack</item>
+        <item>@drawable/parliamentary_debatenew</item>
     </integer-array>
     <string-array name="array_debate_contacts">
         <item> - 9466273458</item>
@@ -905,7 +905,7 @@
 
     <!--Build it  events-->
     <string-array name="array_buildit_event_headers">
-        <item>Spagaridge</item>
+        <item>Spageridge</item>
         <item>House of Cards</item>
         <item>Chem-e-switch</item>
     </string-array>
@@ -941,9 +941,9 @@
     </string-array>
 
     <integer-array name="array_buildit_event_images">
-        <item>@drawable/njack</item>
-        <item>@drawable/njack</item>
-        <item>@drawable/njack</item>
+        <item>@drawable/spageridge_final</item>
+        <item>@drawable/the_hoc</item>
+        <item>@drawable/chem_e_switch</item>
     </integer-array>
     <string-array name="array_buildit_contacts">
         <item> - 7493835335\n - 7541051888</item>
