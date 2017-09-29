@@ -76,7 +76,10 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
 //        }
         Glide.with(context).clear(holder.imageView);
 
-        Glide.with(context).load(eventsData.getImageId()).into(holder.imageView);
+        Glide.with(context)
+                .load(eventsData.getImageId())
+                .thumbnail(0.5f)
+                .into(holder.imageView);
     }
 
     @Override
