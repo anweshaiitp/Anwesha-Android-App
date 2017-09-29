@@ -40,7 +40,7 @@ public class HomePage extends android.support.v4.app.Fragment {
     Timer timer ;
     final long DELAY_MS = 500;//delay in milliseconds before task is to be executed
     final long PERIOD_MS = 4000; // time in milliseconds between successive task executions.
-    private int NUM_PAGES=5 ;
+    private int NUM_PAGES=4 ;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -57,7 +57,7 @@ public class HomePage extends android.support.v4.app.Fragment {
         final Handler handler = new Handler();
         final Runnable Update = new Runnable() {
             public void run() {
-                if (currentPage == NUM_PAGES-1) {
+                if (currentPage == NUM_PAGES) {
                     currentPage = 0;
                 }
                 viewPagerCustomDuration.setCurrentItem(currentPage++, true);
