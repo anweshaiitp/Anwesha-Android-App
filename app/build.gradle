@@ -44,8 +44,7 @@ dependencies {
     compile 'com.android.volley:volley:1.0.0'
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0'
-    compile 'com.github.chrisbanes:PhotoView:2.0.0'
-    compile 'com.eftimoff:android-viewpager-transformers:1.0.1@aar'
+   
 
 }
 apply plugin: 'com.google.gms.google-services'
