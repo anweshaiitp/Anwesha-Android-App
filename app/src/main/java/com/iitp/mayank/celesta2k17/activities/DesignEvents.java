@@ -8,7 +8,7 @@ import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.Window;
@@ -20,13 +20,7 @@ import com.iitp.mayank.celesta2k17.adapters.EventsRecyclerViewAdapter;
 import com.iitp.mayank.celesta2k17.data.EventsData;
 
 import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_CONTACTS;
-import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_DATE_TIME;
-import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_HEADER;
-import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_IMAGE_ID;
-import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_DESCRIPTION;
 import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_ORGANIZERS;
-import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_RULES;
-import static com.iitp.mayank.celesta2k17.activities.EventInfoActivity.EXTRA_VENUE;
 
 public class DesignEvents extends AppCompatActivity implements EventsRecyclerViewAdapter.ListCardClick {
 
@@ -39,8 +33,8 @@ public class DesignEvents extends AppCompatActivity implements EventsRecyclerVie
         setContentView(R.layout.activity_design);
 
         recyclerView = (RecyclerView)findViewById(R.id.rv_events);
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(this , 2);
-        recyclerView.setLayoutManager(gridLayoutManager);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(linearLayoutManager);
 
         recyclerView.setHasFixedSize(true);
         Resources resources = getResources();
