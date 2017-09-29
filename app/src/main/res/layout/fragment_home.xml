@@ -14,7 +14,7 @@
             android:background="?attr/colorPrimaryDark"
             android:orientation="vertical">
 
-            <android.support.v4.view.ViewPager
+            <com.iitp.mayank.celesta2k17.listeners.ViewPagerCustomDuration
                 android:id="@+id/events_pager"
                 android:layout_width="match_parent"
                 android:layout_height="170dp"
