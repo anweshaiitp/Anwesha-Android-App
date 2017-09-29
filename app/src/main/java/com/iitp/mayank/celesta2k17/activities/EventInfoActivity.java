@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.iitp.mayank.celesta2k17.R;
 
 public class EventInfoActivity extends AppCompatActivity {
@@ -23,6 +24,14 @@ public class EventInfoActivity extends AppCompatActivity {
             EXTRA_IMAGE_ID = "ImageId",
             EXTRA_ORGANIZERS = "Organizers",
             EXTRA_CONTACTS = "Contacts";
+
+    @Override
+    public void onLowMemory() {
+        super.onLowMemory();
+        Glide.get(getApplicationContext()).clearMemory();
+        Glide.get(getApplicationContext()).trimMemory(TRIM_MEMORY_COMPLETE);
+        System.gc();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +49,10 @@ public class EventInfoActivity extends AppCompatActivity {
 
         ((TextView) findViewById(R.id.event_info_name)).setText(header);
         if (imageId != -1)
-            ((ImageView) findViewById(R.id.event_info_imageview)).setImageResource(imageId);
+            Glide.with(this)
+            .load(imageId)
+            .into((ImageView) findViewById(R.id.event_info_imageview));
+
         if (text.equals("-1"))
             text = "No Information Available";
         final String finalText = text;
