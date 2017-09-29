@@ -8,7 +8,7 @@ import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.Window;
@@ -33,8 +33,8 @@ public class RoboticsEvents extends AppCompatActivity implements EventsRecyclerV
         setContentView(R.layout.activity_robotics);
 
         recyclerView = (RecyclerView)findViewById(R.id.rv_events);
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(this , 2);
-        recyclerView.setLayoutManager(gridLayoutManager);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(linearLayoutManager);
 
         recyclerView.setHasFixedSize(true);
         Resources resources = getResources();
