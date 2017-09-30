@@ -49,7 +49,8 @@ public class HomePage extends android.support.v4.app.Fragment {
 
         final ViewPagerCustomDuration viewPagerCustomDuration=(ViewPagerCustomDuration)rootView.findViewById(R.id.events_pager) ;
         viewPagerCustomDuration.setScrollDuration(900);
-        EventsAdapter eventsAdapter = new EventsAdapter(getContext());
+        EventsAdapter eventsAdapter = new EventsAdapter(getContext(),
+                                            getResources().obtainTypedArray(R.array.array_home_slide_show));
 
         viewPagerCustomDuration.setAdapter(eventsAdapter);
         /*Adding automatic swap to the images
