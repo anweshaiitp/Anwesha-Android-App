@@ -1,6 +1,7 @@
 package com.iitp.mayank.celesta2k17.adapters;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.iitp.mayank.celesta2k17.R;
 
 /**
@@ -19,17 +21,19 @@ public class TeamRecylerViewAdapter extends RecyclerView.Adapter<TeamRecylerView
     private String Committee[];
     private String POR[];
     private String PhoneNumber[];
+    TypedArray images;
     Context context;
     private PhoneCLick phoneCLickListener;
 
     //setting a contructor to set the values of parameters inside the class
-    public TeamRecylerViewAdapter(Context context, PhoneCLick phoneCLickListener, String NameValue[], String PORValue[], String CommitteeValue[], String PhoneNumber[]) {
+    public TeamRecylerViewAdapter(Context context, PhoneCLick phoneCLickListener, String NameValue[], String PORValue[], String CommitteeValue[], String PhoneNumber[],TypedArray images) {
         Name = NameValue;
         Committee = CommitteeValue;
         POR = PORValue;
         this.context = context;
         this.PhoneNumber = PhoneNumber;
         this.phoneCLickListener = phoneCLickListener;
+        this.images = images;
     }
 
     public interface PhoneCLick {
@@ -71,6 +75,12 @@ public class TeamRecylerViewAdapter extends RecyclerView.Adapter<TeamRecylerView
             holder.porTextView.setVisibility(View.GONE);
         }
         holder.committeeTextView.setText(Committee[position]);
+        Glide.with(context).clear(holder.picImageView);
+
+        Glide.with(context)
+                .load(images.getResourceId(position, -1))
+                .thumbnail(0.5f)
+                .into(holder.picImageView);
     }
 
 
