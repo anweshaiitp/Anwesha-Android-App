@@ -13,7 +13,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Window;
 
 import com.iitp.mayank.celesta2k17.R;
-import com.iitp.mayank.celesta2k17.adapters.GalleryRecylerViewAdapter;
 import com.iitp.mayank.celesta2k17.adapters.TeamRecylerViewAdapter;
 
 /**
@@ -45,9 +44,10 @@ public class TeamActivity extends AppCompatActivity implements TeamRecylerViewAd
         //populating the array with the data
         teamRecylerViewAdapter = new TeamRecylerViewAdapter(getApplicationContext(),
                                 this,
-                                resources.getStringArray(R.array.array_name_view),
-                                resources.getStringArray(R.array.array_por_view),
-                                resources.getStringArray(R.array.array_team_number_view));
+                                resources.getStringArray(R.array.array_team_names),
+                                resources.getStringArray(R.array.array_team_pors),
+                                resources.getStringArray(R.array.array_team_committees),
+                                resources.getStringArray(R.array.array_team_number));
 
         //setting adapter on the recyler view
         recyclerView.setAdapter(teamRecylerViewAdapter);
@@ -56,8 +56,10 @@ public class TeamActivity extends AppCompatActivity implements TeamRecylerViewAd
 
     @Override
     public void onPhoneClick(String phone) {
-        Intent intent = new Intent(Intent.ACTION_DIAL);
-        intent.setData(Uri.parse("tel:" + phone));
-        startActivity(intent);
+        if(!phone.equals("-1")) {
+            Intent intent = new Intent(Intent.ACTION_DIAL);
+            intent.setData(Uri.parse("tel:" + phone));
+            startActivity(intent);
+        }
     }
 }

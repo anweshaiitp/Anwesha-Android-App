@@ -711,38 +711,184 @@
         <item>Event 5</item>
         <item>Event 6</item>
     </string-array>
-    <string-array name="array_name_view">
-        <item>Parth</item>
-        <item>Manish</item>
-        <item>Mayank</item>
-        <item>Mukuntha</item>
-        <item>Parth</item>
-        <item>Manish</item>
-        <item>Mayank</item>
-        <item>Mukuntha</item>
-
+    <string-array name="array_team_names">
+        <item>Tarun Garg</item>
+        <item>Rajneesh Singh</item>
+        <item>Piyush Agarwal</item>
+        <item>Parth Kulkarni</item>
+        <item>Abhishek Jaiswal</item>
+        <item>Tarun Garg</item>
+        <item>Parth Kulkarni</item>
+        <item>Anushree Jain</item>
+        <item>Sangeeth Mukundan</item>
+        <item>Arunika Yadav</item>
+        <item>Rohang Narain</item>
+        <item>Milan Jolly</item>
+        <item>Rishab Katiyar</item>
+        <item>Satwik Aggi</item>
+        <item>Navin Kumar</item>
+        <item>Hariraj Meena</item>
+        <item>Ashutosh Singh</item>
+        <item>Mayank Tripathi</item>
+        <item>Harshika</item>
+        <item>Abhirav Sati</item>
+        <item>Aditya Keshari</item>
+        <item>Shagufta Naaz</item>
+        <item>Srijan Sumant</item>
+        <item>Visnu P Kumarr</item>
+        <item>Harsh Raj</item>
+        <item>Satyaki Barman</item>
+        <item>Prajjwal Arya</item>
+        <item>Umesh Sanu</item>
+        <item>Abhishek Kumar Singh</item>
+        <item>Sahaj Kankotiya</item>
+        <item>Raj</item>
+        <item>Tameesh Biswas</item>
+        <item>Manish Kumar</item>
+        <item>Mayank Vaidya</item>
+        <item>Mukuntha N S</item>
+        <item>Manish Kumar</item>
+        <item>Parth Kulkarni</item>
+        <item>Abhishek Maurya</item>
+        <item>Fazle Rahman Ejazi</item>
+        <item>Milan Jolly</item>
+        <item>Nookesh Pilli</item>
+        <item>Yash Choudhary</item>
     </string-array>
 
-    <string-array name="array_team_number_view">
-        <item>3432232323</item>
-        <item>3432232323</item>
-        <item>3432232323</item>
-        <item>3432231113</item>
-        <item>343223232</item>
-        <item>343223232</item>
-        <item>3431232323</item>
-        <item>3432232323</item>
+    <string-array name="array_team_number">
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
     </string-array>
 
-    <string-array name="array_por_view">
-        <item>MediaAndPublicRelation</item>
-        <item>Aidjskjsdms</item>
-        <item>MediaPublicRelation</item>
-        <item>PublicRelation</item>
-        <item>MediaAndPublicRelation</item>
-        <item>Aidjskjsdms</item>
-        <item>MediaPublicRelation</item>
-        <item>PublicRelation</item>
+    <string-array name="array_team_committees">
+        <item>Head Committee</item>
+        <item>Head Committee</item>
+        <item>Head Committee</item>
+        <item>Head Committee</item>
+        <item>Planning Committee</item>
+        <item>Planning Committee</item>
+        <item>Planning Committee</item>
+        <item>Planning Committee</item>
+        <item>Marketing and Sponsorship</item>
+        <item>Marketing and Sponsorship</item>
+        <item>Marketing and Sponsorship</item>
+        <item>Media and Public Relations</item>
+        <item>Media and Public Relations</item>
+        <item>Media and Public Relations</item>
+        <item>Media and Public Relations</item>
+        <item>Registration</item>
+        <item>Registration</item>
+        <item>Registration</item>
+        <item>Registration</item>
+        <item>Registration</item>
+        <item>Registration</item>
+        <item>Registration</item>
+        <item>Event Management</item>
+        <item>Event Management</item>
+        <item>Event Management</item>
+        <item>Event Management</item>
+        <item>Event Management</item>
+        <item>Finance</item>
+        <item>Finance</item>
+        <item>Finance</item>
+        <item>Finance</item>
+        <item>Web Team</item>
+        <item>Web Team</item>
+        <item>App Team</item>
+        <item>App Team</item>
+        <item>App Team</item>
+        <item>App Team</item>
+        <item>Creatives</item>
+        <item>Creatives</item>
+        <item>Creatives</item>
+        <item>Creatives</item>
+        <item>Creatives</item>
+    </string-array>
+
+    <string-array name="array_team_pors">
+        <item>Fest Coordinator</item>
+        <item>Technical Head</item>
+        <item>Management Head</item>
+        <item>Organising Head</item>
+        <item>General Secretary, Technical Affairs</item>
+        <item>Technical Secretary, Junior Year</item>
+        <item>Technical Secretary, Sophomore Year</item>
+        <item>Technical Secretary, UG Girls</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
     </string-array>
 
     <!--Event text array-->
@@ -837,11 +983,11 @@
     </string-array>
 
     <string-array name="array_social_event_text">
-        <item>"Future of a nation lies in the hands of its youth" - Asuma Sarutobi ‪Adhyayan: The video lecture making competition.India is one of the top five nations for out-of-school children of primary school age. Mainly due to the lack of teachers or/and lack of quality education. Celesta’17 along with RTDC IIT Patna brings you Adhyayan, an opportunity to share your knowledge and to help the students to rise.The event have been introduced to improve the educational situation in the Rural India and to brighten the future of the nation to its maximum potential.\nOnline Round:\nA team of maximum 2 students have to record a short video  lecture (5-15min)\nYou have to upload this video on your facebook account with #Lets_Teach_India and #Adhyayan\nTeams will be shortlisted depending on facebook likes and judges reviews.\nIt is preferred that you record an interactive video lecture.\nFINAL Round:\nShortlisted teams will be called to record a 30 minute lecture in the IIT Patna’s lecture recording studio or they can send their videos to rtdc.iitp@gmail.com.\nClips of the recorded lectures will be judged to decide the winners.</item>
+        <item>"Future of a nation lies in the hands of its youth" – Asuma Sarutobi ‪Adhyayan: The video lecture making competition.India is one of the top five nations for out–of–school children of primary school age. Mainly due to the lack of teachers or/and lack of quality education. Celesta’17 along with RTDC IIT Patna brings you Adhyayan, an opportunity to share your knowledge and to help the students to rise.The event have been introduced to improve the educational situation in the Rural India and to brighten the future of the nation to its maximum potential.\nOnline Round:\nA team of maximum 2 students have to record a short video  lecture (5–15min)\nYou have to upload this video on your facebook account with #Lets_Teach_India and #Adhyayan\nTeams will be shortlisted depending on facebook likes and judges reviews.\nIt is preferred that you record an interactive video lecture.\nFINAL Round:\nShortlisted teams will be called to record a 30 minute lecture in the IIT Patna’s lecture recording studio or they can send their videos to rtdc.iitp@gmail.com.\nClips of the recorded lectures will be judged to decide the winners.</item>
     </string-array>
 
     <string-array name="array_social_event_rules">
-        <item>Final Round Rules :\nTeam should follow NCERT (English or Hindi medium) while the conversation can be in hindi or/and english.\nTeam limit: A team can have maximum of 2 members.\nVideo should be within 20-30 min duration</item>
+        <item>Final Round Rules :\nTeam should follow NCERT (English or Hindi medium) while the conversation can be in hindi or/and english.\nTeam limit: A team can have maximum of 2 members.\nVideo should be within 20–30 min duration</item>
     </string-array>
 
     <string-array name="array_social_event_venue">
