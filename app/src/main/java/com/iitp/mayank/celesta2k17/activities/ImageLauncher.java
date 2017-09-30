@@ -5,7 +5,6 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.widget.ImageView;
 
 import com.iitp.mayank.celesta2k17.R;
@@ -18,8 +17,8 @@ import java.io.File;
 
 public class ImageLauncher extends AppCompatActivity {
 
-    private String LOG_TAG = getClass().toString();
     File picture;
+    private String LOG_TAG = getClass().toString();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

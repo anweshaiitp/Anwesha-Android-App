@@ -5,15 +5,14 @@ package com.iitp.mayank.celesta2k17.data;
  */
 
 public class HighlightsData {
-    private String mHighlights ;
+    private String mHighlights;
 
-    public HighlightsData( String mHighlights)
-    {
-        this.mHighlights=mHighlights ;
+    public HighlightsData(String mHighlights) {
+        this.mHighlights = mHighlights;
     }
+
     // empty constructor to add functionality from firebase
-    public HighlightsData()
-    {
+    public HighlightsData() {
 
     }
 

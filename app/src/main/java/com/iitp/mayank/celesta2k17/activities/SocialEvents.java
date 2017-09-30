@@ -26,13 +26,14 @@ public class SocialEvents extends AppCompatActivity implements EventsRecyclerVie
 
     RecyclerView recyclerView;
     EventsRecyclerViewAdapter eventsRecyclerViewAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
         setContentView(R.layout.activity_social);
 
-        recyclerView = (RecyclerView)findViewById(R.id.rv_events);
+        recyclerView = (RecyclerView) findViewById(R.id.rv_events);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
 
@@ -44,8 +45,8 @@ public class SocialEvents extends AppCompatActivity implements EventsRecyclerVie
 
         eventsRecyclerViewAdapter = new EventsRecyclerViewAdapter(getApplicationContext(), this,
                 resources.getStringArray(R.array.array_social_event_headers),
-                resources.getStringArray(R.array.array_social_event_text) ,
-                resources.getStringArray(R.array.array_social_event_rules) ,
+                resources.getStringArray(R.array.array_social_event_text),
+                resources.getStringArray(R.array.array_social_event_rules),
                 resources.getStringArray(R.array.array_social_event_date_time),
                 resources.getStringArray(R.array.array_social_event_venue),
                 resources.obtainTypedArray(R.array.array_social_event_images),

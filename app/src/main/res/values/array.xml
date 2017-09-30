@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <integer-array name="array_home_slide_show">
+        <item>@drawable/capture_the_flag</item>
+        <item>@drawable/robowars</item>
+        <item>@drawable/tech_exhibition</item>
+        <item>@drawable/static_rush2</item>
+        <item>@drawable/sparkfun</item>
+        <item>@drawable/mind_benders</item>
+    </integer-array>
     <string-array name="array_event_headers">
         <item>Lets Code!!</item>
         <item>Robotics</item>
@@ -1102,9 +1110,9 @@
     </string-array>
 
     <string-array name="array_buildit_event_text">
-    <item>Use the power of our global online community to apply thousands of engineering minds to your design problem for less than the price of one.Whether you have a brand new invention on the back of an envelope and you need to turn it into reality, an old part that has stubbornly never worked quite right, an aesthetic challenge you\'d like the design world\'s opinion on, or you\'d just like to inject some fresh ideas into your current in-house design department, a CAD Master Challenge is the most effective way to get the engineering world working on your problem.\nA CAD master challenge is also a great way to let the tech community know about your exciting new designs and your passion for optimum design.</item>
-    <item>Ever wondered what holds up monstrous skyscrapers, beautiful monuments or one’s own house ??\nCONCRETE,PILLARS……\nwell not really, the right answer is PASSION. Passion to create, passion to build, passion to design.If one has the passion then even cards can behold the structures.\nCelesta brings you a chance of showing your engineering skills with cards and passion! So, get innovative and build your own house with CARDS.\n\nEVENT STRUCTURE-\nThe event  comprises of TWO rounds, of varying difficulty levels. Teams shortlisted from round 1 will compete in round 2.\n\nTEAM SIZE-\nEach team should be of 2 members.</item>
-    <item>Are you that budding engineer who gets super-excited while tinkering with chemicals? Are you amazed by the variety and versatility of reactions that happen to matter around us? Then this is the right platform for you to experiment with your ideas. Come and reproduce a mechanism with the help of your knowledge in chemistry and engineering skills in order to automate the switch of an electric circuit we\'ve got ready for you. The aim is to make the mechanism turn off the switch of the circuit within the specified time. So bounce those exemplary ideas off your brain, \'coz the stage is set for Chem-e-switch.</item>
+        <item>Use the power of our global online community to apply thousands of engineering minds to your design problem for less than the price of one.Whether you have a brand new invention on the back of an envelope and you need to turn it into reality, an old part that has stubbornly never worked quite right, an aesthetic challenge you\'d like the design world\'s opinion on, or you\'d just like to inject some fresh ideas into your current in-house design department, a CAD Master Challenge is the most effective way to get the engineering world working on your problem.\nA CAD master challenge is also a great way to let the tech community know about your exciting new designs and your passion for optimum design.</item>
+        <item>Ever wondered what holds up monstrous skyscrapers, beautiful monuments or one’s own house ??\nCONCRETE,PILLARS……\nwell not really, the right answer is PASSION. Passion to create, passion to build, passion to design.If one has the passion then even cards can behold the structures.\nCelesta brings you a chance of showing your engineering skills with cards and passion! So, get innovative and build your own house with CARDS.\n\nEVENT STRUCTURE-\nThe event  comprises of TWO rounds, of varying difficulty levels. Teams shortlisted from round 1 will compete in round 2.\n\nTEAM SIZE-\nEach team should be of 2 members.</item>
+        <item>Are you that budding engineer who gets super-excited while tinkering with chemicals? Are you amazed by the variety and versatility of reactions that happen to matter around us? Then this is the right platform for you to experiment with your ideas. Come and reproduce a mechanism with the help of your knowledge in chemistry and engineering skills in order to automate the switch of an electric circuit we\'ve got ready for you. The aim is to make the mechanism turn off the switch of the circuit within the specified time. So bounce those exemplary ideas off your brain, \'coz the stage is set for Chem-e-switch.</item>
     </string-array>
 
     <string-array name="array_buildit_event_rules">

@@ -6,13 +6,12 @@ package com.iitp.mayank.celesta2k17.data;
 
 public class TeamData {
 
-private String mPor;
-private  String mphoneNumber;
-private int mPhotoId ;
-private  String mName ;
+    private String mPor;
+    private String mphoneNumber;
+    private int mPhotoId;
+    private String mName;
 
-    public TeamData()
-    {
+    public TeamData() {
 
     }
 
@@ -20,31 +19,31 @@ private  String mName ;
         return mName;
     }
 
+    public void setmName(String mName) {
+        this.mName = mName;
+    }
+
     public int getmPhotoId() {
         return mPhotoId;
+    }
+
+    public void setmPhotoId(int mPhotoId) {
+        this.mPhotoId = mPhotoId;
     }
 
     public String getMphoneNumber() {
         return mphoneNumber;
     }
 
-    public String getmPor() {
-        return mPor;
-    }
-
-    public void setmName(String mName) {
-        this.mName = mName;
-    }
-
-    public void setmPor(String mPor) {
-        this.mPor = mPor;
-    }
-
     public void setMphoneNumber(String mphoneNumber) {
         this.mphoneNumber = mphoneNumber;
     }
 
-    public void setmPhotoId(int mPhotoId) {
-        this.mPhotoId = mPhotoId;
+    public String getmPor() {
+        return mPor;
+    }
+
+    public void setmPor(String mPor) {
+        this.mPor = mPor;
     }
 }

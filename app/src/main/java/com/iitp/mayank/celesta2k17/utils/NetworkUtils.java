@@ -21,15 +21,11 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.iitp.mayank.celesta2k17.data.GalleryPics;
 import com.iitp.mayank.celesta2k17.data.HighlightsData;
-import com.iitp.mayank.celesta2k17.fragments.HighlightsPage;
 
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.StringTokenizer;
 
 /**
  * Created by mayank on 26/8/17.
@@ -37,20 +33,20 @@ import java.util.StringTokenizer;
 
 public class NetworkUtils {
 
+    final private String LOG_TAG = getClass().toString();
+    ArrayList<GalleryPics> mpicUrl = new ArrayList<>();
+    int loop = 0;
+    GalleryPics galleryPics;
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference mUrlDatabaseReference;
-    ArrayList<GalleryPics> mpicUrl = new ArrayList<>();
     private ChildEventListener mChildEventListener;
     private FirebaseStorage mStorage;
     private ArrayList<FileDownloadTask> tasks = new ArrayList<FileDownloadTask>();
-    private  ArrayList<HighlightsData> highlightsDatas= new ArrayList<>();
+    private ArrayList<HighlightsData> highlightsDatas = new ArrayList<>();
     private DatabaseReference mhighlightsDatabaseReference;
     private StorageReference mStorageReference;
     private File localFile;
     private StorageReference islandRef;
-    int loop = 0;
-    GalleryPics galleryPics ;
-    final private String LOG_TAG = getClass().toString();
     private ChildEventListener mhighlightsChildeventlistener;
 
     public boolean downloadImages(ContextWrapper c, Context context) {
@@ -90,20 +86,23 @@ public class NetworkUtils {
                 }
 
                 @Override
-                public void onChildChanged(DataSnapshot dataSnapshot, String s) {}
+                public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                }
 
                 @Override
                 public void onChildRemoved(DataSnapshot dataSnapshot) {
                     mpicUrl.clear();
-                     galleryPics=dataSnapshot.getValue(GalleryPics.class);
+                    galleryPics = dataSnapshot.getValue(GalleryPics.class);
                     mpicUrl.add(galleryPics);
                 }
 
                 @Override
-                public void onChildMoved(DataSnapshot dataSnapshot, String s) {}
+                public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+                }
 
                 @Override
-                public void onCancelled(DatabaseError databaseError) {}
+                public void onCancelled(DatabaseError databaseError) {
+                }
             };
 
             // adding a event listener to sync with the firebase
@@ -144,7 +143,7 @@ public class NetworkUtils {
                         tasks.get(loop).addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                Log.e(LOG_TAG,  e.getMessage());
+                                Log.e(LOG_TAG, e.getMessage());
                             }
                         });
                         ++loop;
@@ -163,22 +162,20 @@ public class NetworkUtils {
 
 
     //to extract the data from the  firebase
-    public  boolean extractHighlights(ContextWrapper contextWrapper, Context context )
-    {
-        Log.v("ASASAS","AA");
+    public boolean extractHighlights(ContextWrapper contextWrapper, Context context) {
+        Log.v("ASASAS", "AA");
         // this return false if there is no interet connection
-        if (!hasNetwork(context))
-        {  return false; }
-        else
-        {
+        if (!hasNetwork(context)) {
+            return false;
+        } else {
             final File directory = contextWrapper.getDir("highlights", Context.MODE_PRIVATE);
 
             //opens connection with the database
-            mFirebaseDatabase=FirebaseDatabase.getInstance() ;
+            mFirebaseDatabase = FirebaseDatabase.getInstance();
             //getting reference of the child
-            mhighlightsDatabaseReference=mFirebaseDatabase.getReference().child("Highlights");
+            mhighlightsDatabaseReference = mFirebaseDatabase.getReference().child("Highlights");
 
-            mhighlightsChildeventlistener= new ChildEventListener() {
+            mhighlightsChildeventlistener = new ChildEventListener() {
                 @Override
                 public void onChildAdded(DataSnapshot dataSnapshot, String s) {
 
@@ -216,15 +213,13 @@ public class NetworkUtils {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     ArrayList<String> data = new ArrayList<>();
-                    for(HighlightsData h : highlightsDatas)
-                    {
+                    for (HighlightsData h : highlightsDatas) {
                         data.add(h.getmHighlights());
                     }
-                    File highlightsFile = new File(directory , "highlight.txt");
+                    File highlightsFile = new File(directory, "highlight.txt");
                     try {
                         PrintWriter printWriter = new PrintWriter(highlightsFile);
-                        for(String txt : data)
-                        {
+                        for (String txt : data) {
                             printWriter.println(txt);
                         }
                         printWriter.close();
@@ -240,10 +235,10 @@ public class NetworkUtils {
             });
 
         }
-        return  true;
+        return true;
     }
 
-    private  boolean hasNetwork(Context context) {
+    private boolean hasNetwork(Context context) {
         ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
         return activeNetworkInfo != null && activeNetworkInfo.isConnected();

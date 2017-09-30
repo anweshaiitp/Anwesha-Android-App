@@ -43,12 +43,12 @@ public class TeamActivity extends AppCompatActivity implements TeamRecylerViewAd
         bar.setBackgroundDrawable(new ColorDrawable(ContextCompat.getColor(this, R.color.colorPrimaryDark)));
         //populating the array with the data
         teamRecylerViewAdapter = new TeamRecylerViewAdapter(getApplicationContext(),
-                                this,
-                                resources.getStringArray(R.array.array_team_names),
-                                resources.getStringArray(R.array.array_team_pors),
-                                resources.getStringArray(R.array.array_team_committees),
-                                resources.getStringArray(R.array.array_team_number),
-                                resources.obtainTypedArray(R.array.array_team_images));
+                this,
+                resources.getStringArray(R.array.array_team_names),
+                resources.getStringArray(R.array.array_team_pors),
+                resources.getStringArray(R.array.array_team_committees),
+                resources.getStringArray(R.array.array_team_number),
+                resources.obtainTypedArray(R.array.array_team_images));
 
         //setting adapter on the recyler view
         recyclerView.setAdapter(teamRecylerViewAdapter);
@@ -57,7 +57,7 @@ public class TeamActivity extends AppCompatActivity implements TeamRecylerViewAd
 
     @Override
     public void onPhoneClick(String phone) {
-        if(!phone.equals("-1")) {
+        if (!phone.equals("-1")) {
             Intent intent = new Intent(Intent.ACTION_DIAL);
             intent.setData(Uri.parse("tel:" + phone));
             startActivity(intent);

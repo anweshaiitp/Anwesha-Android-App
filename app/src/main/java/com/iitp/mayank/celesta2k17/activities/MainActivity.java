@@ -54,10 +54,10 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(mViewPager);
 
         int tabIcons[] = {R.drawable.ic_home_white_24dp,
-                                    R.drawable.ic_stars_white_24dp,
-                                    R.drawable.ic_photo_library_white_24dp};
+                R.drawable.ic_stars_white_24dp,
+                R.drawable.ic_photo_library_white_24dp};
 
-        for(int i = 0;i < mPageFragmentAdapter.getCount();i++)
+        for (int i = 0; i < mPageFragmentAdapter.getCount(); i++)
             tabLayout.getTabAt(i).setIcon(tabIcons[i]);
     }
 
@@ -71,8 +71,8 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    private void refreshMenu(){
-        if(menu != null) {
+    private void refreshMenu() {
+        if (menu != null) {
             SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
             if (!sharedPreferences.getBoolean(getString(R.string.login_status), false)) {
                 menu.findItem(R.id.action_log_out).setVisible(false);
@@ -94,14 +94,14 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_log_out) {
             SharedPreferences.Editor sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this).edit();
-            sharedPreferences.putBoolean(getString(R.string.login_status) , false);
+            sharedPreferences.putBoolean(getString(R.string.login_status), false);
             sharedPreferences.apply();
             refreshMenu();
             Toast.makeText(this, "Logged Out Successfully", Toast.LENGTH_SHORT).show();
         }
 
-        if(id == R.id.action_log_in){
-            Intent intent = new Intent(MainActivity.this , SignInActivity.class);
+        if (id == R.id.action_log_in) {
+            Intent intent = new Intent(MainActivity.this, SignInActivity.class);
             startActivity(intent);
             refreshMenu();
         }
@@ -115,8 +115,7 @@ public class MainActivity extends AppCompatActivity {
      */
 
     // Go to myProfile Activity
-    public void toMyProfile(View view)
-    {
+    public void toMyProfile(View view) {
         Intent intent = new Intent(this, MyProfile.class);
         startActivity(intent);
     }
@@ -124,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if(menu != null){
+        if (menu != null) {
             refreshMenu();
         }
     }
