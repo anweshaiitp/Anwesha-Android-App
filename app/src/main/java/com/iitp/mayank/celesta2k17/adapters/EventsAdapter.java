@@ -1,30 +1,29 @@
 package com.iitp.mayank.celesta2k17.adapters;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.iitp.mayank.celesta2k17.R;
 
 
 public class EventsAdapter extends PagerAdapter {
     Context context;
-     int events[] = {R.drawable.ic_home_white_24dp,
-                    R.drawable.ic_poll_white_24dp,
-                    R.drawable.ic_home_white_24dp,
-                    R.drawable.ic_poll_white_24dp
-                        };
+    TypedArray images;
 
-    public EventsAdapter(Context context){
+    public EventsAdapter(Context context, TypedArray images){
         this.context=context;
+        this.images = images;
     }
 
     @Override
     public int getCount() {
-        return events.length;
+        return images.length();
     }
 
     @Override
@@ -36,7 +35,9 @@ public class EventsAdapter extends PagerAdapter {
     public Object instantiateItem(ViewGroup container, int position) {
         ImageView imageView = new ImageView(context);
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        imageView.setImageResource(events[position]);
+        Glide.with(context)
+                .load(images.getResourceId(position, -1))
+                .into(imageView);
         ((ViewPager) container).addView(imageView,0);
         return imageView;
     }
