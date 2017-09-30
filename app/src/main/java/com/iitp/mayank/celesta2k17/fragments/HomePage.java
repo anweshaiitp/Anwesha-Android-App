@@ -7,10 +7,12 @@ import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.iitp.mayank.celesta2k17.R;
 import com.iitp.mayank.celesta2k17.activities.AboutActivity;
@@ -34,8 +36,11 @@ public class HomePage extends android.support.v4.app.Fragment {
 //    LinearLayout galleryLinearLayout;
     LinearLayout aboutFrameLayout;
     LinearLayout scheduleLinearLayout;
+    LinearLayout sponsorsLinearLayout;
     LinearLayout teamLinearLayout ;
     LinearLayout devLinearLayout;
+
+    Toast comingSoonToast;
     private int currentPage=0 ;
     Timer timer ;
     final long DELAY_MS = 500;//delay in milliseconds before task is to be executed
@@ -75,7 +80,7 @@ public class HomePage extends android.support.v4.app.Fragment {
 
 
 
-
+        comingSoonToast = Toast.makeText(getContext(), getResources().getString(R.string.coming_soon), Toast.LENGTH_SHORT);
 
         FloatingActionButton fab = (FloatingActionButton) rootView.findViewById(R.id.fab_maps);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -110,8 +115,7 @@ public class HomePage extends android.support.v4.app.Fragment {
         scheduleLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(rootView.getContext(), ScheduleActivity.class);
-                startActivity(intent);
+                comingSoonToast.show();
             }
         });
 
@@ -121,6 +125,14 @@ public class HomePage extends android.support.v4.app.Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(rootView.getContext(), DevelopersActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        sponsorsLinearLayout = (LinearLayout) rootView.findViewById(R.id.sponsors_menu_item);
+        sponsorsLinearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                comingSoonToast.show();
             }
         });
 

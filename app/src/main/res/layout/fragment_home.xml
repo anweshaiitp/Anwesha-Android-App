@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="wrap_content">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -83,11 +83,11 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/team"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
-                android:background="@color/colorTeam"
-                android:id="@+id/team">
+                android:background="@color/colorTeam">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -105,11 +105,11 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/developers"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
-                android:background="@color/colorDevelopers"
-                android:id="@+id/developers">
+                android:background="@color/colorDevelopers">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -126,6 +126,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/sponsors_menu_item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
@@ -146,11 +147,11 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/about"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
-                android:background="@color/colorAbout"
-                android:id="@+id/about">
+                android:background="@color/colorAbout">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -167,24 +168,24 @@
             </LinearLayout>
 
             <!--<LinearLayout-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_marginTop="2dp"-->
-                <!--android:background="@color/colorGallery"-->
-                <!--android:id="@+id/gallery">-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="2dp"-->
+            <!--android:background="@color/colorGallery"-->
+            <!--android:id="@+id/gallery">-->
 
-                <!--<ImageView-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_gravity="center_vertical"-->
-                    <!--android:layout_marginLeft="8dp"-->
-                    <!--android:src="@drawable/ic_photo_library_white_24dp" />-->
+            <!--<ImageView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center_vertical"-->
+            <!--android:layout_marginLeft="8dp"-->
+            <!--android:src="@drawable/ic_photo_library_white_24dp" />-->
 
-                <!--<TextView-->
-                    <!--style="@style/home_tabs_textview"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="@string/gallery" />-->
+            <!--<TextView-->
+            <!--style="@style/home_tabs_textview"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="@string/gallery" />-->
             <!--</LinearLayout>-->
 
             <LinearLayout
@@ -217,6 +218,6 @@
         android:layout_alignParentRight="true"
         android:layout_gravity="bottom|right"
         android:layout_margin="16dp"
-        app:backgroundTint="@color/fab_background"
-        android:src="@drawable/ic_map_white_24dp" />
+        android:src="@drawable/ic_map_white_24dp"
+        app:backgroundTint="@color/fab_background" />
 </RelativeLayout>
