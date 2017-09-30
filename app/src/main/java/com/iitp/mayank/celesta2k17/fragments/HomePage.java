@@ -40,7 +40,7 @@ public class HomePage extends android.support.v4.app.Fragment {
     Timer timer ;
     final long DELAY_MS = 500;//delay in milliseconds before task is to be executed
     final long PERIOD_MS = 4000; // time in milliseconds between successive task executions.
-    private int NUM_PAGES=4 ;
+    private int NUM_PAGES=6 ;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
