@@ -37,10 +37,11 @@ public class HomePage extends android.support.v4.app.Fragment {
     LinearLayout sponsorsLinearLayout;
     LinearLayout teamLinearLayout;
     LinearLayout devLinearLayout;
+  
     Toast comingSoonToast;
-    Timer timer;
-    private int currentPage = 0;
-    private int NUM_PAGES = 4;
+    private int currentPage=0 ;
+    Timer timer ;
+    private int NUM_PAGES=6 ;
 
     @Nullable
     @Override
