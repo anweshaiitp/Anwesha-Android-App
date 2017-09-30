@@ -85,12 +85,13 @@
 
                     <TextView
                         android:id="@+id/team_por_textview"
+                        android:fontFamily="sans-serif-light"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="16dp"
                         android:layout_marginTop="12dp"
                         android:textColor="@color/colorPrimaryLight"
-                        android:textSize="20sp"
+                        android:textSize="18sp"
                         tools:text="I am ##### " />
 
 
@@ -115,7 +116,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="8dp"
                 android:layout_weight="0.10"
                 android:fontFamily="sans-serif-medium"
                 android:text="Media and Public relations "

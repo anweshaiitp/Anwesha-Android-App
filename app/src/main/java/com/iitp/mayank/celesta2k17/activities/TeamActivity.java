@@ -47,7 +47,8 @@ public class TeamActivity extends AppCompatActivity implements TeamRecylerViewAd
                                 resources.getStringArray(R.array.array_team_names),
                                 resources.getStringArray(R.array.array_team_pors),
                                 resources.getStringArray(R.array.array_team_committees),
-                                resources.getStringArray(R.array.array_team_number));
+                                resources.getStringArray(R.array.array_team_number),
+                                resources.obtainTypedArray(R.array.array_team_images));
 
         //setting adapter on the recyler view
         recyclerView.setAdapter(teamRecylerViewAdapter);
