@@ -32,13 +32,14 @@ public class QuizWizEvents extends AppCompatActivity implements EventsRecyclerVi
 
     RecyclerView recyclerView;
     EventsRecyclerViewAdapter eventsRecyclerViewAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
         setContentView(R.layout.activity_quiz_wiz_events);
 
-        recyclerView = (RecyclerView)findViewById(R.id.rv_events);
+        recyclerView = (RecyclerView) findViewById(R.id.rv_events);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
 

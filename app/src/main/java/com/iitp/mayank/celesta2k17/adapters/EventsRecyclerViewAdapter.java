@@ -30,7 +30,7 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
     TypedArray images;
     Context context;
 
-    public EventsRecyclerViewAdapter(Context context, ListCardClick listCardClick, String eventHeader[], String eventText[], String eventRules[],String dateTime[], String venue[], TypedArray img, String organizers[], String contacts[]) {
+    public EventsRecyclerViewAdapter(Context context, ListCardClick listCardClick, String eventHeader[], String eventText[], String eventRules[], String dateTime[], String venue[], TypedArray img, String organizers[], String contacts[]) {
         this.eventHeader = eventHeader;
         this.eventText = eventText;
         this.eventRules = eventRules;
@@ -71,8 +71,8 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
 //        if (!eventText[position].equals("-1"))
 //            holder.textViewData.setText(eventText[position]);
 //        else {
-            holder.textViewData.setVisibility(View.GONE);
-            holder.textViewHeader.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
+        holder.textViewData.setVisibility(View.GONE);
+        holder.textViewHeader.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
 //        }
         Glide.with(context).clear(holder.imageView);
 

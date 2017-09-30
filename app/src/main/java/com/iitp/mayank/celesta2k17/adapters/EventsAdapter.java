@@ -9,15 +9,14 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.iitp.mayank.celesta2k17.R;
 
 
 public class EventsAdapter extends PagerAdapter {
     Context context;
     TypedArray images;
 
-    public EventsAdapter(Context context, TypedArray images){
-        this.context=context;
+    public EventsAdapter(Context context, TypedArray images) {
+        this.context = context;
         this.images = images;
     }
 
@@ -38,7 +37,7 @@ public class EventsAdapter extends PagerAdapter {
         Glide.with(context)
                 .load(images.getResourceId(position, -1))
                 .into(imageView);
-        ((ViewPager) container).addView(imageView,0);
+        ((ViewPager) container).addView(imageView, 0);
         return imageView;
     }
 

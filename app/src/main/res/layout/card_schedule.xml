@@ -18,12 +18,12 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:padding="8dp"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryDark"
             android:orientation="vertical"
-            android:paddingTop="48dp"
-            android:paddingBottom="60dp">
+            android:padding="8dp"
+            android:paddingBottom="60dp"
+            android:paddingTop="48dp">
 
             <TextView
                 android:id="@+id/schedule_card_header"
@@ -39,12 +39,13 @@
                 android:textColor="@color/colorSignUp"
                 android:textSize="20sp"
                 tools:text="EventHeader" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
-                android:background="@color/colorSignIn"/>
+                android:background="@color/colorSignIn" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -55,9 +56,9 @@
                     android:id="@+id/time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@android:color/background_light"
                     android:fontFamily="sans-serif-light"
                     android:text="Time : "
+                    android:textColor="@android:color/background_light"
                     android:textSize="15sp" />
 
                 <TextView
@@ -65,18 +66,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/time"
-                    android:textColor="@android:color/white"
                     android:fontFamily="sans-serif-light"
+                    android:textColor="@android:color/white"
                     android:textSize="15sp"
                     tools:text="10 am to 12pm" />
 
                 <TextView
                     android:id="@+id/location_text_view"
                     android:layout_width="wrap_content"
-                    android:textColor="@android:color/white"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:fontFamily="sans-serif-light"
+                    android:textColor="@android:color/white"
                     android:textSize="15sp"
                     tools:text="R 107" />
 
@@ -84,12 +85,11 @@
                     android:id="@+id/location"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@android:color/background_light"
                     android:layout_toLeftOf="@id/location_text_view"
                     android:fontFamily="sans-serif-light"
                     android:text="Location : "
-                    android:textSize="15sp"
-                    />
+                    android:textColor="@android:color/background_light"
+                    android:textSize="15sp" />
 
             </RelativeLayout>
         </LinearLayout>

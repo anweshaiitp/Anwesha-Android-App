@@ -85,11 +85,11 @@
 
                     <TextView
                         android:id="@+id/team_por_textview"
-                        android:fontFamily="sans-serif-light"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="16dp"
                         android:layout_marginTop="12dp"
+                        android:fontFamily="sans-serif-light"
                         android:textColor="@color/colorPrimaryLight"
                         android:textSize="18sp"
                         tools:text="I am ##### " />

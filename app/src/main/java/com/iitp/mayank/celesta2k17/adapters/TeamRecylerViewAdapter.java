@@ -17,16 +17,16 @@ import com.iitp.mayank.celesta2k17.R;
  */
 
 public class TeamRecylerViewAdapter extends RecyclerView.Adapter<TeamRecylerViewAdapter.TeamViewHolder> {
+    TypedArray images;
+    Context context;
     private String Name[];
     private String Committee[];
     private String POR[];
     private String PhoneNumber[];
-    TypedArray images;
-    Context context;
     private PhoneCLick phoneCLickListener;
 
     //setting a contructor to set the values of parameters inside the class
-    public TeamRecylerViewAdapter(Context context, PhoneCLick phoneCLickListener, String NameValue[], String PORValue[], String CommitteeValue[], String PhoneNumber[],TypedArray images) {
+    public TeamRecylerViewAdapter(Context context, PhoneCLick phoneCLickListener, String NameValue[], String PORValue[], String CommitteeValue[], String PhoneNumber[], TypedArray images) {
         Name = NameValue;
         Committee = CommitteeValue;
         POR = PORValue;
@@ -34,10 +34,6 @@ public class TeamRecylerViewAdapter extends RecyclerView.Adapter<TeamRecylerView
         this.PhoneNumber = PhoneNumber;
         this.phoneCLickListener = phoneCLickListener;
         this.images = images;
-    }
-
-    public interface PhoneCLick {
-        void onPhoneClick(String phone);
     }
 
     // when a new view is created in the recylerView
@@ -54,12 +50,11 @@ public class TeamRecylerViewAdapter extends RecyclerView.Adapter<TeamRecylerView
         return teamViewHolder;
     }
 
-
     // to attach data to the view
     @Override
     public void onBindViewHolder(TeamViewHolder holder, int position) {
         //binding view with the data
-        if(!PhoneNumber[position].equals("-1")) {
+        if (!PhoneNumber[position].equals("-1")) {
             holder.phoneIcon.setVisibility(View.VISIBLE);
             holder.phoneNumberTextView.setVisibility(View.VISIBLE);
             holder.phoneNumberTextView.setText(PhoneNumber[position]);
@@ -68,7 +63,7 @@ public class TeamRecylerViewAdapter extends RecyclerView.Adapter<TeamRecylerView
             holder.phoneNumberTextView.setVisibility(View.GONE);
         }
         holder.nameTextView.setText(Name[position]);
-        if(!POR[position].equals("-1")) {
+        if (!POR[position].equals("-1")) {
             holder.porTextView.setVisibility(View.VISIBLE);
             holder.porTextView.setText(POR[position]);
         } else {
@@ -83,10 +78,14 @@ public class TeamRecylerViewAdapter extends RecyclerView.Adapter<TeamRecylerView
                 .into(holder.picImageView);
     }
 
-
     @Override
     public int getItemCount() {
         return Name.length;
+    }
+
+
+    public interface PhoneCLick {
+        void onPhoneClick(String phone);
     }
 
     //view holder to cache the Views

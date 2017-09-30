@@ -7,15 +7,17 @@ package com.iitp.mayank.celesta2k17.data;
 public class GalleryPics {
 
     private String mPhotoUrl;
-    private  String mPicName ;
-// making an empty constructor for firebase
+    private String mPicName;
+
+    // making an empty constructor for firebase
     public GalleryPics() {
     }
-// to set the photo url
-    public GalleryPics(String url ,String picName) {
+
+    // to set the photo url
+    public GalleryPics(String url, String picName) {
 
         mPhotoUrl = url;
-        mPicName=picName;
+        mPicName = picName;
     }
 
     //returns the photo url
