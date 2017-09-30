@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#1B202B </color>
-    <color name="colorPrimaryDark">#151519 </color>
+    <color name="colorPrimary">#1B202B</color>
+    <color name="colorPrimaryDark">#151519</color>
 
     <color name="colorSignIn">#00bfa5</color>
     <color name="colorSignUp">#1de9b6</color>

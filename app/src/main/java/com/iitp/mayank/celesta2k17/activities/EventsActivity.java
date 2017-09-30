@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Window;
 
@@ -18,13 +17,14 @@ public class EventsActivity extends AppCompatActivity implements ClubsRecyclerVi
 
     RecyclerView recyclerView;
     ClubsRecyclerViewAdapter clubsRecyclerViewAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
         setContentView(R.layout.activity_events);
 
-        recyclerView = (RecyclerView)findViewById(R.id.rv_events);
+        recyclerView = (RecyclerView) findViewById(R.id.rv_events);
         GridLayoutManager linearLayoutManager = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(linearLayoutManager);
 
@@ -35,15 +35,15 @@ public class EventsActivity extends AppCompatActivity implements ClubsRecyclerVi
         bar.setBackgroundDrawable(new ColorDrawable(ContextCompat.getColor(this, R.color.colorEvents)));
 
         clubsRecyclerViewAdapter = new ClubsRecyclerViewAdapter(getApplicationContext(), this, resources.getStringArray(R.array.array_event_headers),
-                                                                  resources.getStringArray(R.array.array_event_text) ,
-                                                                  resources.getStringArray(R.array.array_event_intent),
-                                                                  resources.obtainTypedArray(R.array.array_event_images));
+                resources.getStringArray(R.array.array_event_text),
+                resources.getStringArray(R.array.array_event_intent),
+                resources.obtainTypedArray(R.array.array_event_images));
         recyclerView.setAdapter(clubsRecyclerViewAdapter);
     }
 
     @Override
     public void onListClick(String intent) throws ClassNotFoundException {
-        Intent intentNew = new Intent(this , Class.forName(intent));
+        Intent intentNew = new Intent(this, Class.forName(intent));
         startActivity(intentNew);
     }
 }

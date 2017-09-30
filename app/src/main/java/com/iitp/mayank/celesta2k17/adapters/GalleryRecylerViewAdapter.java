@@ -10,10 +10,8 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.iitp.mayank.celesta2k17.R;
-import com.iitp.mayank.celesta2k17.data.GalleryPics;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
@@ -26,27 +24,25 @@ public class GalleryRecylerViewAdapter extends RecyclerView.Adapter<GalleryRecyl
 
     List<File> images;
     Context context;
-    public GalleryRecylerViewAdapter(Context context , File file[])
-    {
+
+    public GalleryRecylerViewAdapter(Context context, File file[]) {
         this.context = context;
-        if(file == null)
+        if (file == null)
             this.images = null;
         else
             this.images = new LinkedList<>(Arrays.asList(file));
-        Log.v("TAGAGAGAAG" , Arrays.toString(file));
+        Log.v("TAGAGAGAAG", Arrays.toString(file));
     }
 
-    public void swap(File file[])
-    {
-        if(images != null){
+    public void swap(File file[]) {
+        if (images != null) {
             images.clear();
-            if(file == null)
+            if (file == null)
                 images = null;
             else
                 images.addAll(Arrays.asList(file));
-        }
-        else {
-            if(file == null)
+        } else {
+            if (file == null)
                 images = null;
             else
                 images = new LinkedList<>(Arrays.asList(file));

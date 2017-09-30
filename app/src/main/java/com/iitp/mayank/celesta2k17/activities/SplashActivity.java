@@ -26,10 +26,10 @@ public class SplashActivity extends Activity {
         setContentView(R.layout.splashscreen);
 
         handler = new Handler();
-        action = new Runnable(){
+        action = new Runnable() {
             @Override
-            public void run(){
-                Intent intent = new Intent(SplashActivity.this,MainActivity.class);
+            public void run() {
+                Intent intent = new Intent(SplashActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -38,16 +38,14 @@ public class SplashActivity extends Activity {
         DownloadImagesAysncTask downloadImage = new DownloadImagesAysncTask();
         downloadImage.execute(new ContextWrapper(getApplicationContext()), this);
         fetchHighlihtsAsynctask fetchHighlihtsAsynctaskwork = new fetchHighlihtsAsynctask();
-        fetchHighlihtsAsynctaskwork.execute( new ContextWrapper(getApplicationContext()),this);
+        fetchHighlihtsAsynctaskwork.execute(new ContextWrapper(getApplicationContext()), this);
     }
 
     // to trigger download task in background thread
-    private class DownloadImagesAysncTask extends AsyncTask<Object , Void , Boolean>
-    {
+    private class DownloadImagesAysncTask extends AsyncTask<Object, Void, Boolean> {
         @Override
         protected void onPostExecute(Boolean aBoolean) {
-            if(!aBoolean)
-            {
+            if (!aBoolean) {
                 Toast.makeText(getBaseContext(), "Download failed. Please try again later", Toast.LENGTH_LONG).show();
             }
             handler.postDelayed(action, 1000);
@@ -60,13 +58,12 @@ public class SplashActivity extends Activity {
 
         @Override
         protected Boolean doInBackground(Object... params) {
-            return new NetworkUtils().downloadImages((ContextWrapper) params[0] , (Context)params[1]);
+            return new NetworkUtils().downloadImages((ContextWrapper) params[0], (Context) params[1]);
         }
     }
 
     //to trigger download task for extracting highlights
-    private  class fetchHighlihtsAsynctask extends  AsyncTask< Object , Void , Boolean >
-    {
+    private class fetchHighlihtsAsynctask extends AsyncTask<Object, Void, Boolean> {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
@@ -74,15 +71,14 @@ public class SplashActivity extends Activity {
 
         @Override
         protected Boolean doInBackground(Object... params) {
-            return  new NetworkUtils().extractHighlights((ContextWrapper) params[0] , (Context)params[1]) ;
+            return new NetworkUtils().extractHighlights((ContextWrapper) params[0], (Context) params[1]);
         }
 
         @Override
-        protected void onPostExecute(Boolean value ) {
+        protected void onPostExecute(Boolean value) {
             //if the data is not uploaded
-            if( value ==false )
-            {
-                Log.e(SplashActivity.class.getName(),"Can't fetch the data highlights ");
+            if (value == false) {
+                Log.e(SplashActivity.class.getName(), "Can't fetch the data highlights ");
             }
         }
     }

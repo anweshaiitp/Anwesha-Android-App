@@ -20,7 +20,6 @@ import com.iitp.mayank.celesta2k17.utils.NetworkUtils;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -37,9 +36,9 @@ public class HighlightsPage extends android.support.v4.app.Fragment {
     HighlightsRecylerViewAdapter highlightsRecylerViewAdapter;
     ArrayList<String> header = new ArrayList<>();
     ArrayList<String> details = new ArrayList<>();
-    private String LOG_TAG = getClass().toString();
     File directory;
     SwipeRefreshLayout swipeRefreshLayout;
+    private String LOG_TAG = getClass().toString();
 
     @Nullable
     @Override

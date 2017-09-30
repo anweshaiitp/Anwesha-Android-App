@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/signedIn"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/colorPrimaryDark"
-    android:orientation="vertical"
-    android:id="@+id/signedIn">
+    android:orientation="vertical">
 
     <RelativeLayout
 
@@ -45,10 +45,10 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:paddingTop="35dp"
-                tools:text="MS"
                 android:textAlignment="center"
                 android:textColor="#fff"
-                android:textSize="28sp" />
+                android:textSize="28sp"
+                tools:text="MS" />
         </RelativeLayout>
 
     </RelativeLayout>
@@ -102,6 +102,7 @@
             android:textSize="20sp" />
 
         <TextView
+            android:id="@+id/idValue"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
@@ -112,8 +113,7 @@
             android:text="122443"
             android:textAlignment="textEnd"
             android:textColor="#fff"
-            android:textSize="20sp"
-            android:id="@+id/idValue"/>
+            android:textSize="20sp" />
 
     </LinearLayout>
 
@@ -145,6 +145,7 @@
             android:textSize="20sp" />
 
         <TextView
+            android:id="@+id/collegeNameValue"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
@@ -155,8 +156,7 @@
             android:text="IIT Patna"
             android:textAlignment="textEnd"
             android:textColor="#fff"
-            android:textSize="20sp"
-            android:id="@+id/collegeNameValue"/>
+            android:textSize="20sp" />
 
     </LinearLayout>
 
@@ -187,6 +187,7 @@
             android:textSize="20sp" />
 
         <TextView
+            android:id="@+id/eventsParticipatedValue"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_gravity="end"
@@ -197,8 +198,7 @@
             android:text="NJATH,CPT"
             android:textAlignment="textEnd"
             android:textColor="#fff"
-            android:textSize="20sp"
-            android:id="@+id/eventsParticipatedValue"/>
+            android:textSize="20sp" />
 
     </LinearLayout>
 

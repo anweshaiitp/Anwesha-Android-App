@@ -16,8 +16,8 @@ public class AboutActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-          getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
-            setContentView(R.layout.activity_about);
+        getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
+        setContentView(R.layout.activity_about);
 
     }
 }

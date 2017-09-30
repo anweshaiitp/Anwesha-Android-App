@@ -1,9 +1,8 @@
 package com.iitp.mayank.celesta2k17.activities;
 
-import android.support.annotation.NonNull;
+import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -11,12 +10,10 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
-import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.iitp.mayank.celesta2k17.R;
@@ -31,6 +28,7 @@ import java.util.regex.Pattern;
 
 public class RegisterActivity extends AppCompatActivity {
 
+    private static final String EMAIL_PATTERN = "^[a-zA-Z0-9#_~!$&'()*+,;=:.\"(),:;<>@\\[\\]\\\\]+@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*$";
     Button buttonRegister;
     TextInputLayout firstNameWrapper;
     TextInputLayout lastNameWrapper;
@@ -39,18 +37,14 @@ public class RegisterActivity extends AppCompatActivity {
     TextInputLayout passwordWrapper;
     TextInputLayout confirmPasswordWrapper;
     TextInputLayout mobileNoWrapper;
-
     String mName;
     String mCollege;
     String mEmail;
     String mPassword;
     String mConfirmPassword;
     String mMobile;
-
     RequestQueue mQueue;
     private String mUrl;
-
-    private static final String EMAIL_PATTERN = "^[a-zA-Z0-9#_~!$&'()*+,;=:.\"(),:;<>@\\[\\]\\\\]+@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*$";
     private Pattern pattern = Pattern.compile(EMAIL_PATTERN);
     private Matcher matcher;
 
