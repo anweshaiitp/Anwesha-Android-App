@@ -49,7 +49,5 @@ public class SocialActivity extends AppCompatActivity {
 
             }
         });
-
-
     }
 }
