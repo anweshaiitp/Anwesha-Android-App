@@ -94,7 +94,7 @@ public class SplashActivity extends Activity {
         @Override
         protected void onPostExecute(Boolean value) {
             //if the data is not uploaded
-            if (value == false) {
+            if (!value) {
                 Log.e(SplashActivity.class.getName(), "Can't fetch the data highlights ");
             }
         }
