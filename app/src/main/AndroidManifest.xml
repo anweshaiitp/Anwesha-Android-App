@@ -49,6 +49,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.MainActivity" />
         </activity>
+
+        <activity
+            android:name=".activities.SocialActivity"
+            android:label="@string/social">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.MainActivity" />
+        </activity>
         <!-- <activity -->
         <!-- android:name=".fragments.GalleryFragment" -->
         <!-- android:label="@string/gallery"> -->
@@ -64,6 +72,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.EventsActivity" />
         </activity>
+
 
         <activity
             android:name=".activities.ExpoEvents"
@@ -168,35 +177,40 @@
                 android:value="com.iitp.mayank.celesta2k17.activities.MainActivity" />
         </activity>
 
-        <activity android:name=".activities.CodingEvents"
+        <activity
+            android:name=".activities.CodingEvents"
             android:label="Coding">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.EventsActivity" />
         </activity>
 
-        <activity android:name=".activities.PhotographyEvents"
+        <activity
+            android:name=".activities.PhotographyEvents"
             android:label="Photography Events">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.EventsActivity" />
         </activity>
 
-        <activity android:name=".activities.TreasureHunt"
+        <activity
+            android:name=".activities.TreasureHunt"
             android:label="Treasure Hunt">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.EventsActivity" />
         </activity>
 
-        <activity android:name=".activities.StoryWritingEvents"
+        <activity
+            android:name=".activities.StoryWritingEvents"
             android:label="Story Writing">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.EventsActivity" />
         </activity>
 
-        <activity android:name=".activities.QuizWizEvents"
+        <activity
+            android:name=".activities.QuizWizEvents"
             android:label="Quiz Wiz">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

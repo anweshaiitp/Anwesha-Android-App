@@ -17,6 +17,7 @@ import com.iitp.mayank.celesta2k17.activities.AboutActivity;
 import com.iitp.mayank.celesta2k17.activities.DevelopersActivity;
 import com.iitp.mayank.celesta2k17.activities.EventsActivity;
 import com.iitp.mayank.celesta2k17.activities.ScheduleActivity;
+import com.iitp.mayank.celesta2k17.activities.SocialActivity;
 import com.iitp.mayank.celesta2k17.activities.TeamActivity;
 import com.iitp.mayank.celesta2k17.adapters.EventsAdapter;
 import com.iitp.mayank.celesta2k17.listeners.ViewPagerCustomDuration;
@@ -36,6 +37,7 @@ public class HomePage extends android.support.v4.app.Fragment {
     LinearLayout scheduleLinearLayout;
     LinearLayout teamLinearLayout ;
     LinearLayout devLinearLayout;
+    LinearLayout socialLinearLayout ;
     private int currentPage=0 ;
     Timer timer ;
     final long DELAY_MS = 500;//delay in milliseconds before task is to be executed
@@ -131,6 +133,14 @@ public class HomePage extends android.support.v4.app.Fragment {
                 Intent intent = new Intent( rootView.getContext(), TeamActivity.class) ;
                 startActivity(intent);
 
+            }
+        });
+        socialLinearLayout=(LinearLayout)rootView.findViewById(R.id.social);
+        socialLinearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(rootView.getContext(), SocialActivity.class) ;
+                startActivity(intent);
             }
         });
         return rootView;
