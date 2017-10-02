@@ -25,10 +25,10 @@ import java.io.File;
 
 public class GalleryFragment extends android.support.v4.app.Fragment {
 
+    final private String LOG_TAG = getClass().toString();
     TextView emptyTextView;
     RecyclerView imageRecyclerView;
     SwipeRefreshLayout mSwipeRefreshLayout;
-    final private String LOG_TAG = getClass().toString();
     File images[];
     View view;
     GalleryRecylerViewAdapter galleryRecylerViewAdapter;
@@ -102,8 +102,7 @@ public class GalleryFragment extends android.support.v4.app.Fragment {
         if (images == null || images.length == 0) {
             imageRecyclerView.setVisibility(View.GONE);
             emptyTextView.setVisibility(View.VISIBLE);
-        }
-        else {
+        } else {
             imageRecyclerView.setVisibility(View.VISIBLE);
             emptyTextView.setVisibility(View.GONE);
         }

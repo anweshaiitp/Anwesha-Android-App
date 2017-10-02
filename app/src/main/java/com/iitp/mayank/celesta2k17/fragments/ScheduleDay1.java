@@ -21,11 +21,12 @@ public class ScheduleDay1 extends android.support.v4.app.Fragment implements Sch
 
     RecyclerView recyclerView;
     ScheduleRecyclerViewAdapter scheduleRecyclerView;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        final View rootView =  inflater.inflate(R.layout.fragment_schedule_day1, container, false);
+        final View rootView = inflater.inflate(R.layout.fragment_schedule_day1, container, false);
 
         recyclerView = (RecyclerView) rootView.findViewById(R.id.rv_schedule_day1);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
@@ -35,14 +36,14 @@ public class ScheduleDay1 extends android.support.v4.app.Fragment implements Sch
 
         Resources resources = getResources();
 
-        scheduleRecyclerView = new ScheduleRecyclerViewAdapter(getActivity() ,
-                                                        this,
-                                                        resources.getStringArray(R.array.array_day1_event_header),
-                                                        resources.getStringArray(R.array.array_day1_event_text),
-                                                        resources.getStringArray(R.array.array_day1_event_time),
-                                                        resources.getStringArray(R.array.array_day1_event_dates),
-                                                        resources.getStringArray(R.array.array_day1_event_location),
-                                                        resources.obtainTypedArray(R.array.array_day1_event_image));
+        scheduleRecyclerView = new ScheduleRecyclerViewAdapter(getActivity(),
+                this,
+                resources.getStringArray(R.array.array_day1_event_header),
+                resources.getStringArray(R.array.array_day1_event_text),
+                resources.getStringArray(R.array.array_day1_event_time),
+                resources.getStringArray(R.array.array_day1_event_dates),
+                resources.getStringArray(R.array.array_day1_event_location),
+                resources.obtainTypedArray(R.array.array_day1_event_image));
         recyclerView.setAdapter(scheduleRecyclerView);
         return rootView;
     }

@@ -1,10 +1,10 @@
 package com.iitp.mayank.celesta2k17.activities;
 
 import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -30,19 +30,15 @@ import java.util.regex.Pattern;
 
 public class SignInActivity extends AppCompatActivity {
 
+    private static final String EMAIL_PATTERN = "^[a-zA-Z0-9#_~!$&'()*+,;=:.\"(),:;<>@\\[\\]\\\\]+@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*$";
     Button buttonSignIn;
     TextInputLayout emailIDWrapper;
     TextInputLayout passwordWrapper;
-
     String mEmail;
     String mPassword;
-
     RequestQueue mQueue;
-    private String mUrl;
-
     SharedPreferences.Editor sharedPreferences;
-
-    private static final String EMAIL_PATTERN = "^[a-zA-Z0-9#_~!$&'()*+,;=:.\"(),:;<>@\\[\\]\\\\]+@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*$";
+    private String mUrl;
     private Pattern pattern = Pattern.compile(EMAIL_PATTERN);
     private Matcher matcher;
 
@@ -82,10 +78,10 @@ public class SignInActivity extends AppCompatActivity {
                                                 String name = jsonObject.getString("name");
                                                 String college = jsonObject.getString("college");
                                                 String events = jsonObject.getString("events");
-                                                sharedPreferences.putBoolean(getString(R.string.login_status) , true );
-                                                sharedPreferences.putString(getString(R.string.full_name) , name);
-                                                sharedPreferences.putString(getString(R.string.id) , userID + "");
-                                                sharedPreferences.putString(getString(R.string.college_name) , college);
+                                                sharedPreferences.putBoolean(getString(R.string.login_status), true);
+                                                sharedPreferences.putString(getString(R.string.full_name), name);
+                                                sharedPreferences.putString(getString(R.string.id), userID + "");
+                                                sharedPreferences.putString(getString(R.string.college_name), college);
 //                                                sharedPreferences.putString(getString(R.string.event_participated) , events);
                                                 sharedPreferences.apply();
                                                 finish();
@@ -95,7 +91,7 @@ public class SignInActivity extends AppCompatActivity {
                                                 finish();
                                                 break;
                                             case 403:
-                                                Toast.makeText(getApplicationContext(), "Invalid Login" , Toast.LENGTH_LONG).show();
+                                                Toast.makeText(getApplicationContext(), "Invalid Login", Toast.LENGTH_LONG).show();
                                                 finish();
                                                 break;
                                         }

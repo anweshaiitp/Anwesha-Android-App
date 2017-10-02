@@ -3,7 +3,6 @@ package com.iitp.mayank.celesta2k17.adapters;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,10 +40,6 @@ public class ScheduleRecyclerViewAdapter extends RecyclerView.Adapter<ScheduleRe
         this.images = images;
     }
 
-    public interface ListCardClick {
-        void onListClick(EventsData eventsData, View view) throws ClassNotFoundException;
-    }
-
     @Override
     public ScheduleViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context = parent.getContext();
@@ -65,7 +60,7 @@ public class ScheduleRecyclerViewAdapter extends RecyclerView.Adapter<ScheduleRe
         eventsData.setHeader(eventHeader[position]);
         eventsData.setText(eventText[position]);
         eventsData.setVenue(venue[position]);
-        eventsData.setImageId(images.getResourceId(position , -1));
+        eventsData.setImageId(images.getResourceId(position, -1));
         eventsData.setDateTime(date[position] + " \nTime:" + time[position]);
 
         dataList.add(eventsData);
@@ -74,6 +69,10 @@ public class ScheduleRecyclerViewAdapter extends RecyclerView.Adapter<ScheduleRe
     @Override
     public int getItemCount() {
         return eventHeader.length;
+    }
+
+    public interface ListCardClick {
+        void onListClick(EventsData eventsData, View view) throws ClassNotFoundException;
     }
 
     class ScheduleViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {

@@ -10,20 +10,13 @@ import android.view.View;
  * Created by manish on 4/9/17.
  */
 
-public class RecylerItemListener implements RecyclerView.OnItemTouchListener{
+public class RecylerItemListener implements RecyclerView.OnItemTouchListener {
 
+    GestureDetector mGestureDetector;
     private OnItemClickListener mListener;
 
-    public interface OnItemClickListener {
-        public void onItemClick(View view, int position);
-
-        public void onLongItemClick(View view, int position);
-    }
-
-        GestureDetector mGestureDetector ;
-    public RecylerItemListener(Context context ,final RecyclerView recyclerView ,OnItemClickListener listener)
-    {
-        mListener=listener ;
+    public RecylerItemListener(Context context, final RecyclerView recyclerView, OnItemClickListener listener) {
+        mListener = listener;
         mGestureDetector = new GestureDetector(context, new GestureDetector.SimpleOnGestureListener() {
             @Override
             public boolean onSingleTapUp(MotionEvent e) {
@@ -48,5 +41,12 @@ public class RecylerItemListener implements RecyclerView.OnItemTouchListener{
     }
 
     @Override
-    public void onRequestDisallowInterceptTouchEvent (boolean disallowIntercept){}
+    public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
+    }
+
+    public interface OnItemClickListener {
+        public void onItemClick(View view, int position);
+
+        public void onLongItemClick(View view, int position);
+    }
 }

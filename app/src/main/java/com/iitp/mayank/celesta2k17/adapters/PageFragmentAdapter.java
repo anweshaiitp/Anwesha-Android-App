@@ -13,30 +13,26 @@ import com.iitp.mayank.celesta2k17.fragments.HomePage;
 
 public class PageFragmentAdapter extends FragmentPagerAdapter {
 
-    public PageFragmentAdapter(FragmentManager fm)
-    {
+    public PageFragmentAdapter(FragmentManager fm) {
         super(fm);
     }
 
     @Override
-    public android.support.v4.app.Fragment getItem(int position)
-    {
-      switch (position)
-      {
-          case 0 :
-              return new HomePage();
-          case 1 :
-              return new HighlightsPage();
-          case 2 :
-              return new GalleryFragment();
-          default:
-              return null;
-      }
+    public android.support.v4.app.Fragment getItem(int position) {
+        switch (position) {
+            case 0:
+                return new HomePage();
+            case 1:
+                return new HighlightsPage();
+            case 2:
+                return new GalleryFragment();
+            default:
+                return null;
+        }
     }
 
     @Override
-    public int getCount()
-    {
+    public int getCount() {
         return 3;
     }
 

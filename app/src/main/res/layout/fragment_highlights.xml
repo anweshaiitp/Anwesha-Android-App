@@ -6,9 +6,9 @@
     android:orientation="vertical">
 
     <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swiperefresh_highlights"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/swiperefresh_highlights">
+        android:layout_height="match_parent">
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/highlightsRecylerView"
@@ -16,13 +16,14 @@
             android:layout_height="match_parent"
             android:isScrollContainer="true" />
     </android.support.v4.widget.SwipeRefreshLayout>
+
     <TextView
         android:id="@+id/empty_highlight_text_view"
         android:layout_width="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:text="@string/keep_checking_for_updates"
         android:textColor="@color/colorSignUp"
-        android:textSize="16sp"/>
+        android:textSize="16sp" />
 </RelativeLayout>

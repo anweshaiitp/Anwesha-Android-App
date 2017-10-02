@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <integer-array name="array_home_slide_show">
+        <item>@drawable/capture_the_flag</item>
+        <item>@drawable/robowars</item>
+        <item>@drawable/tech_exhibition</item>
+        <item>@drawable/static_rush2</item>
+        <item>@drawable/sparkfun</item>
+        <item>@drawable/mind_benders</item>
+    </integer-array>
     <string-array name="array_event_headers">
         <item>Lets Code!!</item>
         <item>Robotics</item>
@@ -43,17 +51,17 @@
     </string-array>
 
     <integer-array name="array_event_images">
-        <item>@drawable/njack</item>
-        <item>@drawable/sparkonics</item>
-        <item>@drawable/sae</item>
-        <item>@drawable/scme</item>
-        <item>@drawable/ace</item>
-        <item>@drawable/threshold</item>
-        <item>@drawable/njack</item>
-        <item>@drawable/sparkonics</item>
-        <item>@drawable/sae</item>
-        <item>@drawable/scme</item>
-        <item>@drawable/ace</item>
+        <item>@drawable/lets_code</item>
+        <item>@drawable/robotics</item>
+        <item>@drawable/expo</item>
+        <item>@drawable/build_it</item>
+        <item>@drawable/debate</item>
+        <item>@drawable/social</item>
+        <item>@drawable/design</item>
+        <item>@drawable/photography</item>
+        <item>@drawable/treasure_hunt</item>
+        <item>@drawable/story_writing</item>
+        <item>@drawable/quiz_wiz</item>
     </integer-array>
 
     <!--NJACK Events-->
@@ -426,14 +434,13 @@
     <string-array name="array_treasure_event_text">
         <item>"Chemoquest is a theme based treasure hunt. The competition comprises of a multi-level hunt for chemical compounds and then perform a chemical reaction with those compounds. The event will start from the given venue where the first riddle will be given. The contestants must have to solve the riddle to reach the next spot where they will get the next riddle . After collecting all the chemical compounds, the team has to perform the chemical reaction. The team that takes the minimum time to complete the whole task will be declared as winner."</item>
         <item>This online contest will be a 2 day contest. Each day there will be 10 problems to solve. The questions will be completely IQ- based with a minimal amount of knowledge from science required. </item>
-        <item>The ladders we climb are the Clues we find , spanning the campus is the gamble of dice.\nThis event require participation in teams . It’s is a theme based event which involves reaching various checkpoints with the help of clues they collect and complete the task if alloted.The rush stops after completion of circuit.</item>
+        <item>This event require participation in teams . It’s  a theme based event which involves reaching various checkpoints with the help of clues they collect and complete the task if allotted.The rush stops after completion of circuit.</item>
     </string-array>
 
     <string-array name="array_treasure_event_rules">
         <item>1. Maximum 3 members in a team.\n2. Members can be of any year and any branch.\n3. Teams have to report to the spot before 15 minutes of the scheduled time.\n4. All team members have to be collectively present at the checkpoint with their previous clue to receive the compounds.\n5. Explanation of the clue may be required.\n*Rules are flexible as per the organizers discretion.</item>
         <item>1. Student will compete in groups of 2\n2. All the questions on\n1st day = 10 pts\n2nd day = 20 pts\n3. The time frame for answering the questions will be 12pm – 12 am every day. You can start and end during this window time.\n4. Points and end-time of play from each day will be recorded and will cumulated for final tally of points. \n5. Questions will be completely IQ based with some knowledge from Electrical Curriculum as a prerequisite.\n6. You are allowed internet and textual reference for solving the problems but spreading, buying or selling of answers is offence enough to disqualify your team.\n7. You can answer any question infinite number of times.\n8. Answers are case-insensitive.\n9. Winning team will be decided by the highest total tally of points. In case there is a tie, the team answering more questions on 2nd day  will be the winner. If the situation persists, ending time average of 2 days will decide the results.</item>
-        <item>1.After Registration, Every team will be provided with a copy of Snake and ladder and a clue.\n2.The Clue will guide them to the next hotspot where they will be asked regarding a question about the equipment they want.\n3.If wrongly answered, they will suffer from time penalty. They will also throw a dice which will guide their position on the game of Snake and ladders.\n4.In the game of Snake and Ladders, if they encounter a snake they should perform a special task as penalty which will be FORGIVEN if they are able to produce the Appreciation Tokens.\n5.The Appreciation Tokens can either be collected from a Mentioned Spot or they will be awarded one if they had encountered a ladder in the game.\n6.They will have to complete the task correctly at each hotspot to collect all the equipments required for reaching the final hotspot.\n7.At the final hotspot they will be given a Simple Electronic Circuit which they have to build on the spot and Submit.\n8.The team that completes all the tasks in the minimum time, that person will be the winner of Static Rush 2017.\n9.The task at each hotspot along with next clue will be given randomly by checking the number of the people they have already reached by checking their signatures at the backside of the page.\n10.Also their last position in the game of Snakes and Ladders will be written on the backside of the page so that the person on the next hotspot can determine the position.
-</item>
+        <item>1.After Registration, Every team will be provided with a copy of Snakes and ladders and a clue.\n2.The Clue will guide them to the next hotspot.\n3. There they will  throw a dice which will guide their position on the game of Snakes and ladders.\n4.In the game of Snakes and Ladders, if they encounter a snake they should perform a special task as penalty .\n5.If the team encounter a ladder , a bonus will be awarded which will help in reducing the total time of team in static rush.\n6.They will have to complete the task (if they encounter a snake ) correctly at each hotspot to move further.\n7.At the final hotspot they will be given a Simple Electronic Circuit which they have to build on the spot and Submit.\n8.The team that completes static rush in the minimum time,  will be the winner of Static Rush 2017.\n9.The task at each hotspot along with next clue will be given randomly by checking the number of the people they have already reached by checking their signatures at the backside of the page.\n10.Also their last position in the game of Snakes and Ladders will be written on the backside of the page so that the person on the next hotspot can determine the position.\n11. Total number of members in a team should not exceed 3.\n\nImportant declaration : \n1)Please keep checking the Celesta app, website and Celesta, IIT Patna facebook page for any future updates.\n2)The rules can change without prior notification.\n3)In case of any dispute, the decisions made by the organising committee and judges are final and binding.\n</item>
     </string-array>
 
     <string-array name="array_treasure_event_date_time">
@@ -711,39 +718,230 @@
         <item>Event 5</item>
         <item>Event 6</item>
     </string-array>
-    <string-array name="array_name_view">
-        <item>Parth</item>
-        <item>Manish</item>
-        <item>Mayank</item>
-        <item>Mukuntha</item>
-        <item>Parth</item>
-        <item>Manish</item>
-        <item>Mayank</item>
-        <item>Mukuntha</item>
-
+    <string-array name="array_team_names">
+        <item>Tarun Garg</item>
+        <item>Rajneesh Singh</item>
+        <item>Piyush Agarwal</item>
+        <item>Parth Kulkarni</item>
+        <item>Abhishek Jaiswal</item>
+        <item>Tarun Garg</item>
+        <item>Parth Kulkarni</item>
+        <item>Anushree Jain</item>
+        <item>Sangeeth Mukundan</item>
+        <item>Arunika Yadav</item>
+        <item>Rohang Narain</item>
+        <item>Milan Jolly</item>
+        <item>Rishab Katiyar</item>
+        <item>Satwik Aggi</item>
+        <item>Navin Kumar</item>
+        <item>Hariraj Meena</item>
+        <item>Ashutosh Singh</item>
+        <item>Mayank Tripathi</item>
+        <item>Harshika</item>
+        <item>Abhirav Sati</item>
+        <item>Aditya Keshari</item>
+        <item>Shagufta Naaz</item>
+        <item>Srijan Sumant</item>
+        <item>Visnu P Kumarr</item>
+        <item>Harsh Raj</item>
+        <item>Satyaki Barman</item>
+        <item>Prajjwal Arya</item>
+        <item>Umesh Sanu</item>
+        <item>Abhishek Kumar Singh</item>
+        <item>Sahaj Kankotiya</item>
+        <item>Raj</item>
+        <item>Tameesh Biswas</item>
+        <item>Manish Kumar</item>
+        <item>Mayank Vaidya</item>
+        <item>Mukuntha N S</item>
+        <item>Manish Kumar</item>
+        <item>Parth Kulkarni</item>
+        <item>Abhishek Maurya</item>
+        <item>Fazle Rahman Ejazi</item>
+        <item>Milan Jolly</item>
+        <item>Nookesh Pilli</item>
+        <item>Yash Choudhary</item>
     </string-array>
 
-    <string-array name="array_team_number_view">
-        <item>3432232323</item>
-        <item>3432232323</item>
-        <item>3432232323</item>
-        <item>3432231113</item>
-        <item>343223232</item>
-        <item>343223232</item>
-        <item>3431232323</item>
-        <item>3432232323</item>
+    <string-array name="array_team_number">
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
     </string-array>
 
-    <string-array name="array_por_view">
-        <item>MediaAndPublicRelation</item>
-        <item>Aidjskjsdms</item>
-        <item>MediaPublicRelation</item>
-        <item>PublicRelation</item>
-        <item>MediaAndPublicRelation</item>
-        <item>Aidjskjsdms</item>
-        <item>MediaPublicRelation</item>
-        <item>PublicRelation</item>
+    <string-array name="array_team_committees">
+        <item>Head Committee</item>
+        <item>Head Committee</item>
+        <item>Head Committee</item>
+        <item>Head Committee</item>
+        <item>Planning Committee</item>
+        <item>Planning Committee</item>
+        <item>Planning Committee</item>
+        <item>Planning Committee</item>
+        <item>Marketing and Sponsorship</item>
+        <item>Marketing and Sponsorship</item>
+        <item>Marketing and Sponsorship</item>
+        <item>Media and Public Relations</item>
+        <item>Media and Public Relations</item>
+        <item>Media and Public Relations</item>
+        <item>Media and Public Relations</item>
+        <item>Registration</item>
+        <item>Registration</item>
+        <item>Registration</item>
+        <item>Registration</item>
+        <item>Registration</item>
+        <item>Registration</item>
+        <item>Registration</item>
+        <item>Event Management</item>
+        <item>Event Management</item>
+        <item>Event Management</item>
+        <item>Event Management</item>
+        <item>Event Management</item>
+        <item>Finance</item>
+        <item>Finance</item>
+        <item>Finance</item>
+        <item>Finance</item>
+        <item>Web Team</item>
+        <item>Web Team</item>
+        <item>App Team</item>
+        <item>App Team</item>
+        <item>App Team</item>
+        <item>App Team</item>
+        <item>Creatives</item>
+        <item>Creatives</item>
+        <item>Creatives</item>
+        <item>Creatives</item>
+        <item>Creatives</item>
     </string-array>
+
+    <string-array name="array_team_pors">
+        <item>Fest Coordinator</item>
+        <item>Technical Head</item>
+        <item>Management Head</item>
+        <item>Organising Head</item>
+        <item>General Secretary, Technical Affairs</item>
+        <item>Technical Secretary, Junior Year</item>
+        <item>Technical Secretary, Sophomore Year</item>
+        <item>Technical Secretary, UG Girls</item>
+        <item>Sub-Coordinator</item>
+        <item>Sub-Coordinator</item>
+        <item>Sub-Coordinator</item>
+        <item>Sub-Coordinator</item>
+        <item>Sub-Coordinator</item>
+        <item>Sub-Coordinator</item>
+        <item>Sub-Coordinator</item>
+        <item>Sub-Coordinator</item>
+        <item>Sub-Coordinator</item>
+        <item>Sub-Coordinator</item>
+        <item>Sub-Coordinator</item>
+        <item>Sub-Coordinator</item>
+        <item>Sub-Coordinator</item>
+        <item>Sub-Coordinator</item>
+        <item>Sub-Coordinator</item>
+        <item>Sub-Coordinator</item>
+        <item>Sub-Coordinator</item>
+        <item>Sub-Coordinator</item>
+        <item>Sub-Coordinator</item>
+        <item>Sub-Coordinator</item>
+        <item>Sub-Coordinator</item>
+        <item>Sub-Coordinator</item>
+        <item>Sub-Coordinator</item>
+        <item>Sub-Coordinator</item>
+        <item>Sub-Coordinator</item>
+        <item>Sub-Coordinator</item>
+        <item>Sub-Coordinator</item>
+        <item>Sub-Coordinator</item>
+        <item>Sub-Coordinator</item>
+        <item>Sub-Coordinator</item>
+        <item>Sub-Coordinator</item>
+        <item>Sub-Coordinator</item>
+        <item>Sub-Coordinator</item>
+        <item>Sub-Coordinator</item>
+    </string-array>
+
+    <integer-array name="array_team_images">
+        <item>@drawable/tarungarg</item>
+        <item>@drawable/rajneeshsingh</item>
+        <item>@drawable/piyushagarwal</item>
+        <item>@drawable/parthkulkarni</item>
+        <item>@drawable/abhishekjaiswal</item>
+        <item>@drawable/tarungarg</item>
+        <item>@drawable/parthkulkarni</item>
+        <item>@drawable/anushreejain</item>
+        <item>@drawable/sangeethmukundan</item>
+        <item>@drawable/arunikayadav</item>
+        <item>@drawable/rohangnarain</item>
+        <item>@drawable/milanjolly</item>
+        <item>@drawable/rishabkatiyar</item>
+        <item>@drawable/satwikaggi</item>
+        <item>@drawable/navinkumar</item>
+        <item>@drawable/harirajmeena</item>
+        <item>@drawable/ashutoshsingh</item>
+        <item>@drawable/mayanktripathi</item>
+        <item>@drawable/harshika</item>
+        <item>@drawable/abhiravsati</item>
+        <item>@drawable/adityakeshari</item>
+        <item>@drawable/shaguftanaaz</item>
+        <item>@drawable/srijansumant</item>
+        <item>@drawable/visnupkumarr</item>
+        <item>@drawable/harshraj</item>
+        <item>@drawable/satyakibarman</item>
+        <item>@drawable/prajjwalarya</item>
+        <item>@drawable/umeshsanu</item>
+        <item>@drawable/abhishekkumarsingh</item>
+        <item>@drawable/sahajkankotiya</item>
+        <item>@drawable/raj</item>
+        <item>@drawable/tameeshbiswas</item>
+        <item>@drawable/manishkumar</item>
+        <item>@drawable/mayank</item>
+        <item>@drawable/mukunthans</item>
+        <item>@drawable/manishkumar</item>
+        <item>@drawable/parthkulkarni</item>
+        <item>@drawable/abhishekmaurya</item>
+        <item>@drawable/fazlerahmanejazi</item>
+        <item>@drawable/milanjolly</item>
+        <item>@drawable/nookeshpilli</item>
+        <item>@drawable/yashchoudhary</item>
+    </integer-array>
 
     <!--Event text array-->
     <string-array name="array_day1_event_text">
@@ -837,11 +1035,11 @@
     </string-array>
 
     <string-array name="array_social_event_text">
-        <item>"Future of a nation lies in the hands of its youth" - Asuma Sarutobi ‪Adhyayan: The video lecture making competition.India is one of the top five nations for out-of-school children of primary school age. Mainly due to the lack of teachers or/and lack of quality education. Celesta’17 along with RTDC IIT Patna brings you Adhyayan, an opportunity to share your knowledge and to help the students to rise.The event have been introduced to improve the educational situation in the Rural India and to brighten the future of the nation to its maximum potential.\nOnline Round:\nA team of maximum 2 students have to record a short video  lecture (5-15min)\nYou have to upload this video on your facebook account with #Lets_Teach_India and #Adhyayan\nTeams will be shortlisted depending on facebook likes and judges reviews.\nIt is preferred that you record an interactive video lecture.\nFINAL Round:\nShortlisted teams will be called to record a 30 minute lecture in the IIT Patna’s lecture recording studio or they can send their videos to rtdc.iitp@gmail.com.\nClips of the recorded lectures will be judged to decide the winners.</item>
+        <item>"Future of a nation lies in the hands of its youth" – Asuma Sarutobi ‪Adhyayan: The video lecture making competition.India is one of the top five nations for out–of–school children of primary school age. Mainly due to the lack of teachers or/and lack of quality education. Celesta’17 along with RTDC IIT Patna brings you Adhyayan, an opportunity to share your knowledge and to help the students to rise.The event have been introduced to improve the educational situation in the Rural India and to brighten the future of the nation to its maximum potential.\nOnline Round:\nA team of maximum 2 students have to record a short video  lecture (5–15min)\nYou have to upload this video on your facebook account with #Lets_Teach_India and #Adhyayan\nTeams will be shortlisted depending on facebook likes and judges reviews.\nIt is preferred that you record an interactive video lecture.\nFINAL Round:\nShortlisted teams will be called to record a 30 minute lecture in the IIT Patna’s lecture recording studio or they can send their videos to rtdc.iitp@gmail.com.\nClips of the recorded lectures will be judged to decide the winners.</item>
     </string-array>
 
     <string-array name="array_social_event_rules">
-        <item>Final Round Rules :\nTeam should follow NCERT (English or Hindi medium) while the conversation can be in hindi or/and english.\nTeam limit: A team can have maximum of 2 members.\nVideo should be within 20-30 min duration</item>
+        <item>Final Round Rules :\nTeam should follow NCERT (English or Hindi medium) while the conversation can be in hindi or/and english.\nTeam limit: A team can have maximum of 2 members.\nVideo should be within 20–30 min duration</item>
     </string-array>
 
     <string-array name="array_social_event_venue">
@@ -911,9 +1109,9 @@
     </string-array>
 
     <string-array name="array_buildit_event_text">
-    <item>Use the power of our global online community to apply thousands of engineering minds to your design problem for less than the price of one.Whether you have a brand new invention on the back of an envelope and you need to turn it into reality, an old part that has stubbornly never worked quite right, an aesthetic challenge you\'d like the design world\'s opinion on, or you\'d just like to inject some fresh ideas into your current in-house design department, a CAD Master Challenge is the most effective way to get the engineering world working on your problem.\nA CAD master challenge is also a great way to let the tech community know about your exciting new designs and your passion for optimum design.</item>
-    <item>Ever wondered what holds up monstrous skyscrapers, beautiful monuments or one’s own house ??\nCONCRETE,PILLARS……\nwell not really, the right answer is PASSION. Passion to create, passion to build, passion to design.If one has the passion then even cards can behold the structures.\nCelesta brings you a chance of showing your engineering skills with cards and passion! So, get innovative and build your own house with CARDS.\n\nEVENT STRUCTURE-\nThe event  comprises of TWO rounds, of varying difficulty levels. Teams shortlisted from round 1 will compete in round 2.\n\nTEAM SIZE-\nEach team should be of 2 members.</item>
-    <item>Are you that budding engineer who gets super-excited while tinkering with chemicals? Are you amazed by the variety and versatility of reactions that happen to matter around us? Then this is the right platform for you to experiment with your ideas. Come and reproduce a mechanism with the help of your knowledge in chemistry and engineering skills in order to automate the switch of an electric circuit we\'ve got ready for you. The aim is to make the mechanism turn off the switch of the circuit within the specified time. So bounce those exemplary ideas off your brain, \'coz the stage is set for Chem-e-switch.</item>
+        <item>Use the power of our global online community to apply thousands of engineering minds to your design problem for less than the price of one.Whether you have a brand new invention on the back of an envelope and you need to turn it into reality, an old part that has stubbornly never worked quite right, an aesthetic challenge you\'d like the design world\'s opinion on, or you\'d just like to inject some fresh ideas into your current in-house design department, a CAD Master Challenge is the most effective way to get the engineering world working on your problem.\nA CAD master challenge is also a great way to let the tech community know about your exciting new designs and your passion for optimum design.</item>
+        <item>Ever wondered what holds up monstrous skyscrapers, beautiful monuments or one’s own house ??\nCONCRETE,PILLARS……\nwell not really, the right answer is PASSION. Passion to create, passion to build, passion to design.If one has the passion then even cards can behold the structures.\nCelesta brings you a chance of showing your engineering skills with cards and passion! So, get innovative and build your own house with CARDS.\n\nEVENT STRUCTURE-\nThe event  comprises of TWO rounds, of varying difficulty levels. Teams shortlisted from round 1 will compete in round 2.\n\nTEAM SIZE-\nEach team should be of 2 members.</item>
+        <item>Are you that budding engineer who gets super-excited while tinkering with chemicals? Are you amazed by the variety and versatility of reactions that happen to matter around us? Then this is the right platform for you to experiment with your ideas. Come and reproduce a mechanism with the help of your knowledge in chemistry and engineering skills in order to automate the switch of an electric circuit we\'ve got ready for you. The aim is to make the mechanism turn off the switch of the circuit within the specified time. So bounce those exemplary ideas off your brain, \'coz the stage is set for Chem-e-switch.</item>
     </string-array>
 
     <string-array name="array_buildit_event_rules">

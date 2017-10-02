@@ -6,14 +6,13 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.iitp.mayank.celesta2k17.R;
-import com.iitp.mayank.celesta2k17.activities.AboutActivity;
 import com.iitp.mayank.celesta2k17.activities.DevelopersActivity;
 import com.iitp.mayank.celesta2k17.activities.EventsActivity;
 import com.iitp.mayank.celesta2k17.activities.ScheduleActivity;
@@ -31,27 +30,33 @@ import java.util.TimerTask;
 
 public class HomePage extends android.support.v4.app.Fragment {
 
-    LinearLayout eventsLinearLayout;
-//    LinearLayout galleryLinearLayout;
-    LinearLayout aboutFrameLayout;
-    LinearLayout scheduleLinearLayout;
-    LinearLayout teamLinearLayout ;
-    LinearLayout devLinearLayout;
-    LinearLayout socialLinearLayout ;
-    private int currentPage=0 ;
-    Timer timer ;
     final long DELAY_MS = 500;//delay in milliseconds before task is to be executed
     final long PERIOD_MS = 4000; // time in milliseconds between successive task executions.
-    private int NUM_PAGES=4 ;
+    LinearLayout eventsLinearLayout;
+    //    LinearLayout galleryLinearLayout;
+    LinearLayout aboutFrameLayout;
+    LinearLayout scheduleLinearLayout;
+    LinearLayout sponsorsLinearLayout;
+    LinearLayout teamLinearLayout;
+    LinearLayout devLinearLayout;
+
+    LinearLayout socialLinearLayout ;
+    Toast comingSoonToast;
+
+    private int currentPage=0 ;
+    Timer timer ;
+    private int NUM_PAGES=6 ;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.fragment_home, container, false);
 
 
-        final ViewPagerCustomDuration viewPagerCustomDuration=(ViewPagerCustomDuration)rootView.findViewById(R.id.events_pager) ;
+        final ViewPagerCustomDuration viewPagerCustomDuration = (ViewPagerCustomDuration) rootView.findViewById(R.id.events_pager);
         viewPagerCustomDuration.setScrollDuration(900);
-        EventsAdapter eventsAdapter = new EventsAdapter(getContext());
+        EventsAdapter eventsAdapter = new EventsAdapter(getContext(),
+                getResources().obtainTypedArray(R.array.array_home_slide_show));
 
         viewPagerCustomDuration.setAdapter(eventsAdapter);
         /*Adding automatic swap to the images
@@ -67,7 +72,7 @@ public class HomePage extends android.support.v4.app.Fragment {
         };
 
         timer = new Timer(); // This will create a new Thread
-        timer .schedule(new TimerTask() { // task to be scheduled
+        timer.schedule(new TimerTask() { // task to be scheduled
 
             @Override
             public void run() {
@@ -76,8 +81,7 @@ public class HomePage extends android.support.v4.app.Fragment {
         }, DELAY_MS, PERIOD_MS);
 
 
-
-
+        comingSoonToast = Toast.makeText(getContext(), getResources().getString(R.string.coming_soon), Toast.LENGTH_SHORT);
 
         FloatingActionButton fab = (FloatingActionButton) rootView.findViewById(R.id.fab_maps);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -103,8 +107,9 @@ public class HomePage extends android.support.v4.app.Fragment {
         aboutFrameLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(rootView.getContext(), AboutActivity.class);
-                startActivity(intent);
+//                Intent intent = new Intent(rootView.getContext(), AboutActivity.class);
+//                startActivity(intent);
+                comingSoonToast.show();
             }
         });
 
@@ -112,8 +117,7 @@ public class HomePage extends android.support.v4.app.Fragment {
         scheduleLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(rootView.getContext(), ScheduleActivity.class);
-                startActivity(intent);
+                comingSoonToast.show();
             }
         });
 
@@ -126,11 +130,19 @@ public class HomePage extends android.support.v4.app.Fragment {
             }
         });
 
-        teamLinearLayout=(LinearLayout)rootView.findViewById(R.id.team) ;
+        sponsorsLinearLayout = (LinearLayout) rootView.findViewById(R.id.sponsors_menu_item);
+        sponsorsLinearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                comingSoonToast.show();
+            }
+        });
+
+        teamLinearLayout = (LinearLayout) rootView.findViewById(R.id.team);
         teamLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent( rootView.getContext(), TeamActivity.class) ;
+                Intent intent = new Intent(rootView.getContext(), TeamActivity.class);
                 startActivity(intent);
 
             }

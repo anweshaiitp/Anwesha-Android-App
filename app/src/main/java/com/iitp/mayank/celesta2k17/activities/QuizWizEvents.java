@@ -3,12 +3,12 @@ package com.iitp.mayank.celesta2k17.activities;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Bundle;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.Window;
@@ -32,15 +32,16 @@ public class QuizWizEvents extends AppCompatActivity implements EventsRecyclerVi
 
     RecyclerView recyclerView;
     EventsRecyclerViewAdapter eventsRecyclerViewAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
         setContentView(R.layout.activity_quiz_wiz_events);
 
-        recyclerView = (RecyclerView)findViewById(R.id.rv_events);
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(this , 2);
-        recyclerView.setLayoutManager(gridLayoutManager);
+        recyclerView = (RecyclerView) findViewById(R.id.rv_events);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(linearLayoutManager);
 
         recyclerView.setHasFixedSize(true);
         Resources resources = getResources();
