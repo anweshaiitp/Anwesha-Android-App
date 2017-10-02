@@ -35,7 +35,8 @@
                 android:hint="@string/email_id_hint"
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
-                android:drawablePadding="8dp"/>
+                android:drawablePadding="8dp"
+                android:textColor="@color/colorPrimaryLight"/>
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -54,6 +55,7 @@
                 android:inputType="textPassword"
                 android:maxLines="1"
                 android:drawablePadding="8dp"
+                android:textColor="@color/colorPrimaryLight"
                 />
         </android.support.design.widget.TextInputLayout>
     </LinearLayout>
