@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
+    android:gravity="center_vertical"
     android:orientation="vertical"
     tools:context="in.org.celesta2k17.activities.SignInActivity">
 
@@ -20,31 +22,41 @@
         <android.support.design.widget.TextInputLayout
             android:id="@+id/eamil_id_wrapper_signin"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            >
 
             <EditText
                 android:id="@+id/email_id_signin"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/ic_email_black_24dp"
+                android:drawableTint="@color/colorSignIn"
                 android:hint="@string/email_id_hint"
                 android:inputType="textEmailAddress"
-                android:maxLines="1" />
+                android:maxLines="1"
+                android:drawablePadding="8dp"
+                android:textColor="@color/colorPrimaryLight"/>
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/password_wrapper_signin"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark">
 
             <EditText
                 android:id="@+id/password_signin"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/ic_security_black_24dp"
+                android:drawableTint="@color/colorSignIn"
                 android:hint="@string/password_hint"
                 android:inputType="textPassword"
-                android:maxLines="1" />
+                android:maxLines="1"
+                android:drawablePadding="8dp"
+                android:textColor="@color/colorPrimaryLight"
+                />
         </android.support.design.widget.TextInputLayout>
     </LinearLayout>
 

@@ -7,6 +7,9 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowContentTransitions">true</item>
+        <item name="android:textColorHint">@color/colorPrimaryLight</item>
+        <item name="colorControlActivated">@color/colorSignUp</item>
+        <item name="colorControlNormal">@color/colorPrimaryLight</item>
     </style>
 
     <style name="AppTheme.NoActionBar">

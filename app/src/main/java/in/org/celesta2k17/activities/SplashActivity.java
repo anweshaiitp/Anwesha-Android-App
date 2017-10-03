@@ -13,6 +13,11 @@ import android.widget.Toast;
 import in.org.celesta2k17.R;
 import in.org.celesta2k17.utils.NetworkUtils;
 
+import java.io.IOException;
+
+import pl.droidsonroids.gif.GifDrawable;
+import pl.droidsonroids.gif.GifImageView;
+
 /**
  * Created by manish on 26/8/17.
  */
@@ -20,15 +25,26 @@ import in.org.celesta2k17.utils.NetworkUtils;
 public class SplashActivity extends Activity {
     Handler handler;
     Runnable action;
+    private GifDrawable splashGif;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splashscreen);
 
+        // Splash Image settings
+        GifImageView splashImageView = findViewById(R.id.splash);
+        try {
+            splashGif = new GifDrawable(getResources(),R.drawable.splash2);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        splashImageView.setImageDrawable(splashGif);
+
         handler = new Handler();
         action = new Runnable() {
             @Override
             public void run() {
+//                splashGif.stop();
                 Intent intent = new Intent(SplashActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
@@ -48,7 +64,8 @@ public class SplashActivity extends Activity {
             if (!aBoolean) {
                 Toast.makeText(getBaseContext(), "Download failed. Please try again later", Toast.LENGTH_LONG).show();
             }
-            handler.postDelayed(action, 1000);
+            int time = splashGif.getDuration() - (splashGif.getCurrentPosition())%splashGif.getDuration();
+            handler.postDelayed(action, time);
         }
 
         @Override
@@ -77,7 +94,7 @@ public class SplashActivity extends Activity {
         @Override
         protected void onPostExecute(Boolean value) {
             //if the data is not uploaded
-            if (value == false) {
+            if (!value) {
                 Log.e(SplashActivity.class.getName(), "Can't fetch the data highlights ");
             }
         }

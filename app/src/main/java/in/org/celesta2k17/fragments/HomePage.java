@@ -12,12 +12,15 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import in.org.celesta2k17.activities.SocialActivity;
+
 import in.org.celesta2k17.R;
 import in.org.celesta2k17.activities.DevelopersActivity;
 import in.org.celesta2k17.activities.EventsActivity;
 import in.org.celesta2k17.activities.TeamActivity;
 import in.org.celesta2k17.adapters.EventsAdapter;
 import in.org.celesta2k17.listeners.ViewPagerCustomDuration;
+
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -37,10 +40,13 @@ public class HomePage extends android.support.v4.app.Fragment {
     LinearLayout sponsorsLinearLayout;
     LinearLayout teamLinearLayout;
     LinearLayout devLinearLayout;
+
+    LinearLayout socialLinearLayout ;
     Toast comingSoonToast;
-    Timer timer;
-    private int currentPage = 0;
-    private int NUM_PAGES = 4;
+
+    private int currentPage=0 ;
+    Timer timer ;
+    private int NUM_PAGES=6 ;
 
     @Nullable
     @Override
@@ -140,6 +146,14 @@ public class HomePage extends android.support.v4.app.Fragment {
                 Intent intent = new Intent(rootView.getContext(), TeamActivity.class);
                 startActivity(intent);
 
+            }
+        });
+        socialLinearLayout=(LinearLayout)rootView.findViewById(R.id.social);
+        socialLinearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(rootView.getContext(), SocialActivity.class) ;
+                startActivity(intent);
             }
         });
         return rootView;

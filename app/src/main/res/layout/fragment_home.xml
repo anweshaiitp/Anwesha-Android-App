@@ -192,7 +192,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
-                android:background="@color/colorSocial">
+                android:background="@color/colorSocial"
+                android:id="@+id/social">
 
                 <ImageView
                     android:layout_width="wrap_content"
