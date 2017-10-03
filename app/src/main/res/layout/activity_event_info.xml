@@ -10,7 +10,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:orientation="vertical"
-        tools:context="com.iitp.mayank.celesta2k17.activities.EventInfoActivity">
+        tools:context="in.org.celesta2k17.activities.EventInfoActivity">
 
         <ImageView
             android:id="@+id/event_info_imageview"
