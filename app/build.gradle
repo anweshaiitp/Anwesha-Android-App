@@ -4,7 +4,7 @@ android {
     compileSdkVersion 26
     buildToolsVersion "26.0.2"
     defaultConfig {
-        applicationId "com.iitp.mayank.celesta2k17"
+        applicationId "in.org.celesta2k17"
         minSdkVersion 21
         targetSdkVersion 25
         versionCode 1
