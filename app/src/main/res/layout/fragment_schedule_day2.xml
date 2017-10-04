@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="in.org.celesta2k17.fragments.ScheduleDay2">
+    tools:context="info.anwesha2k18.iitp.fragments.ScheduleDay2">
 
     <!-- TODO: Update blank fragment layout -->
     <android.support.v7.widget.RecyclerView

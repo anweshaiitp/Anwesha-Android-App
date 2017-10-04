@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="in.org.celesta2k17.fragments.ScheduleDay3">
+    tools:context="info.anwesha2k18.iitp.fragments.ScheduleDay3">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_schedule_day3"

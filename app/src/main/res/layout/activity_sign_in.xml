@@ -7,7 +7,7 @@
     android:background="@color/colorPrimaryDark"
     android:gravity="center_vertical"
     android:orientation="vertical"
-    tools:context="in.org.celesta2k17.activities.SignInActivity">
+    tools:context="info.anwesha2k18.iitp.activities.SignInActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

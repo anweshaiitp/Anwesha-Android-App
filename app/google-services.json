@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:626363216910:android:14a0c0a9acdeb491",
         "android_client_info": {
-          "package_name": "in.org.celesta2k17"
+          "package_name": "info.anwesha2k18.iitp"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "626363216910-vm0fdrk24k3q829lrbgaqhi0g9j9gql5.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "in.org.celesta2k17",
+            "package_name": "info.anwesha2k18.iitp",
             "certificate_hash": "abe998ab0a2a7ea81930f3a01400f576dbcd4ea8"
           }
         },

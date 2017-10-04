@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="in.org.celesta2k17">
+    package="info.anwesha2k18.iitp">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name="in.org.celesta2k17.activities.SplashActivity">
+        <activity android:name="info.anwesha2k18.iitp.activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,7 +23,7 @@
         </activity>
 
         <activity
-            android:name="in.org.celesta2k17.activities.MainActivity"
+            android:name="info.anwesha2k18.iitp.activities.MainActivity"
             android:label="@string/app_name"
             android:launchMode="singleTop"
             android:theme="@style/AppTheme.NoActionBar">
@@ -35,27 +35,27 @@
         </activity>
 
         <activity
-            android:name="in.org.celesta2k17.activities.EventsActivity"
+            android:name="info.anwesha2k18.iitp.activities.EventsActivity"
             android:label="@string/events">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="in.org.celesta2k17.activities.MainActivity" />
+                android:value="info.anwesha2k18.iitp.activities.MainActivity" />
         </activity>
 
         <activity
-            android:name="in.org.celesta2k17.activities.MyProfile"
+            android:name="info.anwesha2k18.iitp.activities.MyProfile"
             android:label="@string/my_profile">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="in.org.celesta2k17.activities.MainActivity" />
+                android:value="info.anwesha2k18.iitp.activities.MainActivity" />
         </activity>
 
         <activity
-            android:name=".activities.SocialActivity"
+            android:name="info.anwesha2k18.iitp.activities.SocialActivity"
             android:label="@string/social">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.MainActivity" />
+                android:value="info.anwesha2k18.iitp.activities.MainActivity" />
         </activity>
         <!-- <activity -->
         <!-- android:name=".fragments.GalleryFragment" -->
@@ -66,155 +66,155 @@
         <!-- </activity> -->
 
         <activity
-            android:name="in.org.celesta2k17.activities.RoboticsEvents"
+            android:name="info.anwesha2k18.iitp.activities.RoboticsEvents"
             android:label="Robotics">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="in.org.celesta2k17.activities.EventsActivity" />
+                android:value="info.anwesha2k18.iitp.activities.EventsActivity" />
         </activity>
 
 
         <activity
-            android:name="in.org.celesta2k17.activities.ExpoEvents"
+            android:name="info.anwesha2k18.iitp.activities.ExpoEvents"
             android:label="Expo">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="in.org.celesta2k17.activities.EventsActivity" />
+                android:value="info.anwesha2k18.iitp.activities.EventsActivity" />
         </activity>
 
         <activity
-            android:name="in.org.celesta2k17.activities.DebateEvents"
+            android:name="info.anwesha2k18.iitp.activities.DebateEvents"
             android:label="Debate">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="in.org.celesta2k17.activities.EventsActivity" />
+                android:value="info.anwesha2k18.iitp.activities.EventsActivity" />
         </activity>
 
         <activity
-            android:name="in.org.celesta2k17.activities.BuildItEvents"
+            android:name="info.anwesha2k18.iitp.activities.BuildItEvents"
             android:label="Build It!!">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="in.org.celesta2k17.activities.EventsActivity" />
+                android:value="info.anwesha2k18.iitp.activities.EventsActivity" />
         </activity>
 
         <activity
-            android:name="in.org.celesta2k17.activities.DesignEvents"
+            android:name="info.anwesha2k18.iitp.activities.DesignEvents"
             android:label="Design">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="in.org.celesta2k17.activities.EventsActivity" />
+                android:value="info.anwesha2k18.iitp.activities.EventsActivity" />
         </activity>
 
         <activity
-            android:name="in.org.celesta2k17.activities.SocialEvents"
+            android:name="info.anwesha2k18.iitp.activities.SocialEvents"
             android:label="Social Events">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="in.org.celesta2k17.activities.EventsActivity" />
+                android:value="info.anwesha2k18.iitp.activities.EventsActivity" />
         </activity>
 
         <activity
-            android:name="in.org.celesta2k17.activities.AboutActivity"
+            android:name="info.anwesha2k18.iitp.activities.AboutActivity"
             android:label="@string/about">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="in.org.celesta2k17.activities.EventsActivity" />
+                android:value="info.anwesha2k18.iitp.activities.EventsActivity" />
         </activity>
 
         <activity
-            android:name="in.org.celesta2k17.activities.TeamActivity"
+            android:name="info.anwesha2k18.iitp.activities.TeamActivity"
             android:label="@string/team">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="in.org.celesta2k17.activities.EventsActivity" />
+                android:value="info.anwesha2k18.iitp.activities.EventsActivity" />
         </activity>
 
         <activity
-            android:name="in.org.celesta2k17.activities.SignInActivity"
+            android:name="info.anwesha2k18.iitp.activities.SignInActivity"
             android:label="@string/SignIn">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="in.org.celesta2k17.activities.MyProfile" />
+                android:value="info.anwesha2k18.iitp.activities.MyProfile" />
         </activity>
 
         <activity
-            android:name="in.org.celesta2k17.activities.RegisterActivity"
+            android:name="info.anwesha2k18.iitp.activities.RegisterActivity"
             android:label="@string/SignUp">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="in.org.celesta2k17.activities.MyProfile" />
+                android:value="info.anwesha2k18.iitp.activities.MyProfile" />
         </activity>
 
         <activity
-            android:name="in.org.celesta2k17.activities.ScheduleActivity"
+            android:name="info.anwesha2k18.iitp.activities.ScheduleActivity"
             android:label="@string/title_activity_schedule"
-            android:parentActivityName="in.org.celesta2k17.activities.MainActivity"
+            android:parentActivityName="info.anwesha2k18.iitp.activities.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="in.org.celesta2k17.activities.MainActivity" />
+                android:value="info.anwesha2k18.iitp.activities.MainActivity" />
         </activity>
 
         <activity
-            android:name="in.org.celesta2k17.activities.EventInfoActivity"
+            android:name="info.anwesha2k18.iitp.activities.EventInfoActivity"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
-            android:name="in.org.celesta2k17.activities.DevelopersActivity"
-            android:parentActivityName="in.org.celesta2k17.activities.MainActivity">
+            android:name="info.anwesha2k18.iitp.activities.DevelopersActivity"
+            android:parentActivityName="info.anwesha2k18.iitp.activities.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="in.org.celesta2k17.activities.MainActivity" />
+                android:value="info.anwesha2k18.iitp.activities.MainActivity" />
         </activity>
 
         <activity
-            android:name="in.org.celesta2k17.activities.ImageLauncher"
-            android:parentActivityName="in.org.celesta2k17.activities.MainActivity"
+            android:name="info.anwesha2k18.iitp.activities.ImageLauncher"
+            android:parentActivityName="info.anwesha2k18.iitp.activities.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="in.org.celesta2k17.activities.MainActivity" />
+                android:value="info.anwesha2k18.iitp.activities.MainActivity" />
         </activity>
 
         <activity
-            android:name="in.org.celesta2k17.activities.CodingEvents"
+            android:name="info.anwesha2k18.iitp.activities.CodingEvents"
             android:label="Coding">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="in.org.celesta2k17.activities.EventsActivity" />
+                android:value="info.anwesha2k18.iitp.activities.EventsActivity" />
         </activity>
 
         <activity
-            android:name="in.org.celesta2k17.activities.PhotographyEvents"
+            android:name="info.anwesha2k18.iitp.activities.PhotographyEvents"
             android:label="Photography Events">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="in.org.celesta2k17.activities.EventsActivity" />
+                android:value="info.anwesha2k18.iitp.activities.EventsActivity" />
         </activity>
 
         <activity
-            android:name="in.org.celesta2k17.activities.TreasureHunt"
+            android:name="info.anwesha2k18.iitp.activities.TreasureHunt"
             android:label="Treasure Hunt">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="in.org.celesta2k17.activities.EventsActivity" />
+                android:value="info.anwesha2k18.iitp.activities.EventsActivity" />
         </activity>
 
         <activity
-            android:name="in.org.celesta2k17.activities.StoryWritingEvents"
+            android:name="info.anwesha2k18.iitp.activities.StoryWritingEvents"
             android:label="Story Writing">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="in.org.celesta2k17.activities.EventsActivity" />
+                android:value="info.anwesha2k18.iitp.activities.EventsActivity" />
         </activity>
 
         <activity
-            android:name="in.org.celesta2k17.activities.QuizWizEvents"
+            android:name="info.anwesha2k18.iitp.activities.QuizWizEvents"
             android:label="Quiz Wiz">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="in.org.celesta2k17.activities.EventsActivity" />
+                android:value="info.anwesha2k18.iitp.activities.EventsActivity" />
         </activity>
     </application>
 

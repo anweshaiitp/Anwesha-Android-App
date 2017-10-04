@@ -14,7 +14,7 @@
             android:background="?attr/colorPrimaryDark"
             android:orientation="vertical">
 
-            <in.org.celesta2k17.listeners.ViewPagerCustomDuration
+            <info.anwesha2k18.iitp.listeners.ViewPagerCustomDuration
                 android:id="@+id/events_pager"
                 android:layout_width="match_parent"
                 android:layout_height="230dp"
