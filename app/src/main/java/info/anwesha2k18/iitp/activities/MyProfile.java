@@ -11,8 +11,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
@@ -25,7 +25,6 @@ import com.facebook.login.widget.LoginButton;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.sql.Array;
 import java.util.Arrays;
 
 import info.anwesha2k18.iitp.R;
@@ -67,9 +66,14 @@ public class MyProfile extends AppCompatActivity {
             loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
                 @Override
                 public void onSuccess(LoginResult loginResult) {
-                    Log.v("FACEBOOK : ", "SUCCESS??");
+                    Log.v("FACEBOOK : ", "SUCCESS!!");
                     setFacebookData(loginResult);
-                    checkLoggedIn();
+                    if(checkRegistered()){
+                        Toast.makeText(getApplicationContext(), R.string.log_in_successful, Toast.LENGTH_LONG).show();
+                    } else {
+                        Intent intent = new Intent(MyProfile.this, RegisterActivity.class);
+                        startActivity(intent);
+                    }
                 }
 
                 @Override
@@ -117,7 +121,8 @@ public class MyProfile extends AppCompatActivity {
         }
     }
 
-    private void checkLoggedIn() {
+    private boolean checkRegistered() {
+        return false;
     }
 
     @Override
@@ -138,9 +143,10 @@ public class MyProfile extends AppCompatActivity {
                             Log.i("Response : ",response.toString());
                             JSONObject responseJSON = response.getJSONObject();
 
-                            String name,email,gender,dob;
+                            String firstName, lastName, email, gender, dob;
 
-                            name = filterJSON(responseJSON, "name");
+                            firstName = filterJSON(responseJSON, "first_name");
+                            lastName = filterJSON(responseJSON, "last_name");
                             email = filterJSON(responseJSON, "email");
                             gender = filterJSON(responseJSON, "gender");
                             dob = filterJSON(responseJSON, "birthday");
@@ -150,17 +156,19 @@ public class MyProfile extends AppCompatActivity {
                             String link = profile.getLinkUri().toString();
                             Uri profilePic = profile.getProfilePictureUri(200, 200);
                             Log.i("Link",link);
-                            if (Profile.getCurrentProfile()!=null)
+                            if (Profile.getCurrentProfile() != null)
                             {
                                 Log.i("Login", "ProfilePic" + Profile.getCurrentProfile().getProfilePictureUri(200, 200));
                             }
 
                             Log.v("Login Email: ", email);
-                            Log.i("Login : "+ "Name", name);
-                            Log.i("Login : " + "Gender", gender);
+                            Log.i("Login : "+ "Name ", firstName + " ::: " + lastName);
+                            Log.i("Login : " + "Gender ", gender);
 
                             shareEdit.putString(getString(R.string.facebook_id), id);
-                            shareEdit.putString(getString(R.string.full_name), name);
+                            shareEdit.putString(getString(R.string.first_name), firstName);
+                            shareEdit.putString(getString(R.string.last_name), lastName);
+                            shareEdit.putString(getString(R.string.full_name), firstName + " " + lastName);
                             shareEdit.putString(getString(R.string.email), email);
                             shareEdit.putString(getString(R.string.gender), gender);
                             shareEdit.putString(getString(R.string.dateOfBirth), dob);
@@ -171,7 +179,7 @@ public class MyProfile extends AppCompatActivity {
                     }
                 });
         Bundle parameters = new Bundle();
-        parameters.putString("fields", "id,email,name,gender,birthday");
+        parameters.putString("fields", "id,email,first_name,last_name,gender,birthday");
         request.setParameters(parameters);
         request.executeAsync();
 

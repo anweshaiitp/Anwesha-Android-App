@@ -64,6 +64,7 @@
     <string name="follow_us">Follow us </string>
     <string name="official_website">Our official website</string>
     <string name="coming_soon">Coming Soon</string>
+    <string name="log_in_successful">Log In Successful</string>
 
     <!--FACEBOOK-->
     <string name="facebook_app_id">1088640574599664</string>
@@ -72,4 +73,6 @@
     <string name="gender">gender</string>
     <string name="dateOfBirth">dateOfBirth</string>
     <string name="facebook_id">fb_id</string>
+    <string name="first_name">first_name</string>
+    <string name="last_name">last_name</string>
 </resources>

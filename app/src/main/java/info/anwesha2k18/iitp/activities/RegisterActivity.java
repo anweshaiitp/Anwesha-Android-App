@@ -1,12 +1,17 @@
 package info.anwesha2k18.iitp.activities;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -39,6 +44,7 @@ public class RegisterActivity extends AppCompatActivity {
     TextInputLayout confirmPasswordWrapper;
     TextInputLayout mobileNoWrapper;
     String mName;
+    Spinner genderSpinner;
     String mCollege;
     String mEmail;
     String mPassword;
@@ -48,6 +54,7 @@ public class RegisterActivity extends AppCompatActivity {
     private String mUrl;
     private Pattern pattern = Pattern.compile(EMAIL_PATTERN);
     private Matcher matcher;
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,8 +71,26 @@ public class RegisterActivity extends AppCompatActivity {
         passwordWrapper = (TextInputLayout) findViewById(R.id.password_wrapper);
         confirmPasswordWrapper = (TextInputLayout) findViewById(R.id.confirm_password_wrapper);
         mobileNoWrapper = (TextInputLayout) findViewById(R.id.mobile_no_wrapper);
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 
+        genderSpinner = (Spinner) findViewById(R.id.gender_spinner);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                        R.array.gender_array, R.layout.spinner_item);
+        adapter.setDropDownViewResource(R.layout.spinner_item);
+        genderSpinner.setAdapter(adapter);
+        genderSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+        
         setHints();
+        setFetchedFacebookData();
         buttonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -235,5 +260,13 @@ public class RegisterActivity extends AppCompatActivity {
         passwordWrapper.setHint(getString(R.string.password_hint));
         confirmPasswordWrapper.setHint(getString(R.string.confirm_password_hint));
         mobileNoWrapper.setHint(getString(R.string.mobile_no_hint));
+    }
+
+    private void setFetchedFacebookData() {
+        firstNameWrapper.getEditText().setText(sharedPreferences.getString(getString(R.string.first_name), ""));
+        lastNameWrapper.getEditText().setText(sharedPreferences.getString(getString(R.string.last_name), ""));
+        emailIDWrapper.getEditText().setText(sharedPreferences.getString(getString(R.string.email), ""));
+//        genderWrapper.getEditText().setText(sharedPreferences.getString(getString(R.string.gender), ""));
+//        dateOfBirthWrapper.getEditText().setText(sharedPreferences.getString(getString(R.string.first_name), ""));
     }
 }

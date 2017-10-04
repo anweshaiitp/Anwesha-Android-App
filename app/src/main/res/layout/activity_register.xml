@@ -59,6 +59,13 @@
                     android:textColor="@color/colorPrimaryLight"/>
             </android.support.design.widget.TextInputLayout>
 
+            <Spinner
+                android:id="@+id/gender_spinner"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                tools:text="rbaebe"
+                android:layout_margin="5dp"/>
+
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/college_name_wrapper"
                 android:layout_width="match_parent"
@@ -148,6 +155,7 @@
                     android:drawablePadding="8dp"
                     android:textColor="@color/colorPrimaryLight"/>
             </android.support.design.widget.TextInputLayout>
+
         </LinearLayout>
 
         <Button
