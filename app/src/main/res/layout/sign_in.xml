@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/colorPrimaryDark">
 
     <RelativeLayout
         android:id="@+id/notSignedIn"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
         <Button
             android:id="@+id/button_signup"
-            android:layout_width="150sp"
-            android:layout_height="48sp"
+            android:layout_width="150dp"
+            android:layout_height="48dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="177dp"
             android:background="@color/colorSignUp"
             android:text="@string/SignUp"
             android:textSize="20sp" />
 
         <Button
             android:id="@+id/button_signin"
-            android:layout_width="150sp"
-            android:layout_height="48sp"
+            android:layout_width="150dp"
+            android:layout_height="48dp"
             android:layout_below="@id/button_signup"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="16dp"
@@ -31,6 +31,16 @@
             android:text="@string/SignIn"
             android:textSize="20sp" />
 
+        <com.facebook.login.widget.LoginButton
+            android:id="@+id/login_button"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"
+            android:layout_below="@id/button_signin"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp" />
 
     </RelativeLayout>
-</LinearLayout>
+</RelativeLayout>
