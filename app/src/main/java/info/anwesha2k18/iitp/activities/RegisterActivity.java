@@ -38,13 +38,14 @@ public class RegisterActivity extends AppCompatActivity {
     Button buttonRegister;
     TextInputLayout firstNameWrapper;
     TextInputLayout lastNameWrapper;
+    Spinner genderSpinner;
     TextInputLayout collegeNameWrapper;
     TextInputLayout emailIDWrapper;
     TextInputLayout passwordWrapper;
     TextInputLayout confirmPasswordWrapper;
     TextInputLayout mobileNoWrapper;
     String mName;
-    Spinner genderSpinner;
+    String mGender;
     String mCollege;
     String mEmail;
     String mPassword;
@@ -74,18 +75,17 @@ public class RegisterActivity extends AppCompatActivity {
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 
         genderSpinner = (Spinner) findViewById(R.id.gender_spinner);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+        final ArrayAdapter<CharSequence> genderAdapter = ArrayAdapter.createFromResource(this,
                         R.array.gender_array, R.layout.spinner_item);
-        adapter.setDropDownViewResource(R.layout.spinner_item);
-        genderSpinner.setAdapter(adapter);
+        genderAdapter.setDropDownViewResource(R.layout.spinner_item);
+        genderSpinner.setAdapter(genderAdapter);
         genderSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-
             }
         });
         
@@ -170,6 +170,7 @@ public class RegisterActivity extends AppCompatActivity {
         if (isAnyFieldEmpty())
             return false;
         mName = firstNameWrapper.getEditText().getText().toString() + " " + lastNameWrapper.getEditText().getText().toString();
+        mGender = (genderSpinner.getSelectedItemPosition() == 0)? "M": "F";
         mCollege = collegeNameWrapper.getEditText().getText().toString();
         mEmail = emailIDWrapper.getEditText().getText().toString();
         mPassword = passwordWrapper.getEditText().getText().toString();
@@ -265,6 +266,11 @@ public class RegisterActivity extends AppCompatActivity {
     private void setFetchedFacebookData() {
         firstNameWrapper.getEditText().setText(sharedPreferences.getString(getString(R.string.first_name), ""));
         lastNameWrapper.getEditText().setText(sharedPreferences.getString(getString(R.string.last_name), ""));
+        if(sharedPreferences.getString(getString(R.string.gender),"").equals("female")){
+            genderSpinner.setSelection(1);
+        } else {
+            genderSpinner.setSelection(0);
+        }
         emailIDWrapper.getEditText().setText(sharedPreferences.getString(getString(R.string.email), ""));
 //        genderWrapper.getEditText().setText(sharedPreferences.getString(getString(R.string.gender), ""));
 //        dateOfBirthWrapper.getEditText().setText(sharedPreferences.getString(getString(R.string.first_name), ""));

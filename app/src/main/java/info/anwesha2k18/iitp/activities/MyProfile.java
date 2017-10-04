@@ -25,7 +25,11 @@ import com.facebook.login.widget.LoginButton;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Date;
 
 import info.anwesha2k18.iitp.R;
 
@@ -171,7 +175,7 @@ public class MyProfile extends AppCompatActivity {
                             shareEdit.putString(getString(R.string.full_name), firstName + " " + lastName);
                             shareEdit.putString(getString(R.string.email), email);
                             shareEdit.putString(getString(R.string.gender), gender);
-                            shareEdit.putString(getString(R.string.dateOfBirth), dob);
+                            shareEdit.putString(getString(R.string.dateOfBirth), parseDate(dob));
                             shareEdit.apply();
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -183,6 +187,16 @@ public class MyProfile extends AppCompatActivity {
         request.setParameters(parameters);
         request.executeAsync();
 
+    }
+
+    private String parseDate(String dateStr) {
+        Date date = null;
+        try {
+            date = (Date)(new SimpleDateFormat("MM-dd-yyyy")).parse(dateStr);
+        } catch (ParseException e) {
+            return "";
+        }
+        return (new SimpleDateFormat("yyyy-MM-dd")).format(date);
     }
 
     private String filterJSON(JSONObject responseJSON, String key) throws JSONException {
