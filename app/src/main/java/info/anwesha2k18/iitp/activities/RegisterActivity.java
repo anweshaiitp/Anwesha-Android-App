@@ -1,5 +1,7 @@
 package info.anwesha2k18.iitp.activities;
 
+import android.app.DatePickerDialog;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -11,6 +13,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -25,6 +29,9 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -40,6 +47,7 @@ public class RegisterActivity extends AppCompatActivity {
     TextInputLayout lastNameWrapper;
     Spinner genderSpinner;
     TextInputLayout collegeNameWrapper;
+    TextInputLayout birthdayWrapper;
     TextInputLayout emailIDWrapper;
     TextInputLayout passwordWrapper;
     TextInputLayout confirmPasswordWrapper;
@@ -47,10 +55,13 @@ public class RegisterActivity extends AppCompatActivity {
     String mName;
     String mGender;
     String mCollege;
+    String mDob;
+    String mRefCode;
     String mEmail;
     String mPassword;
     String mConfirmPassword;
     String mMobile;
+    SetDate setDate;
     RequestQueue mQueue;
     private String mUrl;
     private Pattern pattern = Pattern.compile(EMAIL_PATTERN);
@@ -68,6 +79,7 @@ public class RegisterActivity extends AppCompatActivity {
         firstNameWrapper = (TextInputLayout) findViewById(R.id.first_name_wrapper);
         lastNameWrapper = (TextInputLayout) findViewById(R.id.last_name_wrapper);
         collegeNameWrapper = (TextInputLayout) findViewById(R.id.college_name_wrapper);
+        birthdayWrapper = (TextInputLayout) findViewById(R.id.birthday_wrapper);
         emailIDWrapper = (TextInputLayout) findViewById(R.id.email_id_wrapper);
         passwordWrapper = (TextInputLayout) findViewById(R.id.password_wrapper);
         confirmPasswordWrapper = (TextInputLayout) findViewById(R.id.confirm_password_wrapper);
@@ -88,7 +100,7 @@ public class RegisterActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> adapterView) {
             }
         });
-        
+        setDate = new SetDate(birthdayWrapper.getEditText(), this);
         setHints();
         setFetchedFacebookData();
         buttonRegister.setOnClickListener(new View.OnClickListener() {
@@ -138,8 +150,9 @@ public class RegisterActivity extends AppCompatActivity {
                             params.put(getString(R.string.register_param_emailid), mEmail);
                             params.put(getString(R.string.register_param_password), mPassword);
                             params.put(getString(R.string.register_param_mobile), mMobile);
+                            params.put(getString(R.string.register_param_dob), mDob);
+                            params.put(getString(R.string.register_param_ref_code), mRefCode);
                             params.put(getString(R.string.register_param_apiKey), getString(R.string.api_key));
-
                             return params;
                         }
 
@@ -172,6 +185,7 @@ public class RegisterActivity extends AppCompatActivity {
         mName = firstNameWrapper.getEditText().getText().toString() + " " + lastNameWrapper.getEditText().getText().toString();
         mGender = (genderSpinner.getSelectedItemPosition() == 0)? "M": "F";
         mCollege = collegeNameWrapper.getEditText().getText().toString();
+        mDob = setDate.getDateStr();
         mEmail = emailIDWrapper.getEditText().getText().toString();
         mPassword = passwordWrapper.getEditText().getText().toString();
         mConfirmPassword = confirmPasswordWrapper.getEditText().getText().toString();
@@ -257,6 +271,7 @@ public class RegisterActivity extends AppCompatActivity {
         firstNameWrapper.setHint(getString(R.string.first_name_hint));
         lastNameWrapper.setHint(getString(R.string.last_name_hint));
         collegeNameWrapper.setHint(getString(R.string.college_hint));
+        birthdayWrapper.setHint(getString(R.string.Birthday));
         emailIDWrapper.setHint(getString(R.string.email_id_hint));
         passwordWrapper.setHint(getString(R.string.password_hint));
         confirmPasswordWrapper.setHint(getString(R.string.confirm_password_hint));
@@ -275,4 +290,45 @@ public class RegisterActivity extends AppCompatActivity {
 //        genderWrapper.getEditText().setText(sharedPreferences.getString(getString(R.string.gender), ""));
 //        dateOfBirthWrapper.getEditText().setText(sharedPreferences.getString(getString(R.string.first_name), ""));
     }
+}
+
+class SetDate implements View.OnClickListener, DatePickerDialog.OnDateSetListener {
+
+    private EditText editText;
+    private Calendar myCalendar;
+    private Context mContext;
+    private String dateStr;
+
+    public SetDate(EditText editText, Context ctx){
+        this.editText = editText;
+        this.editText.setOnClickListener(this);
+        myCalendar = Calendar.getInstance();
+        mContext = ctx;
+    }
+
+    @Override
+    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth)     {
+        // this.editText.setText();
+
+        SimpleDateFormat sdformat = new SimpleDateFormat("yyyy-MM-dd");
+        myCalendar.set(Calendar.YEAR, year);
+        myCalendar.set(Calendar.MONTH, monthOfYear);
+        myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+
+        dateStr = sdformat.format(myCalendar.getTime());
+        editText.setText(dateStr);
+
+    }
+
+    public String getDateStr() {
+        return dateStr;
+    }
+
+    @Override
+    public void onClick(View view) {
+        new DatePickerDialog(mContext, this, myCalendar
+                .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+    }
+
 }

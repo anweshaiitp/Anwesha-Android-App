@@ -44,6 +44,8 @@
     <string name="register_param_emailid">emailid</string>
     <string name="register_param_password">password</string>
     <string name="register_param_mobile">mobile</string>
+    <string name="register_param_dob">dob</string>
+    <string name="register_param_ref_code">refCode</string>
     <string name="register_param_apiKey">apiKey</string>
     <string name="JSON_status">status</string>
     <string name="message_registration_success">Registration Successful.  Check your Email for the UniqueID!!</string>
@@ -77,4 +79,5 @@
     <string name="last_name">last_name</string>
     <string name="Gender">Gender</string>
     <string name="facebook_logged_in">facebook_logged_in</string>
+    <string name="Birthday">Birthday</string>
 </resources>
