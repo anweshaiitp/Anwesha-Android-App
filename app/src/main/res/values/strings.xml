@@ -80,4 +80,9 @@
     <string name="Gender">Gender</string>
     <string name="facebook_logged_in">facebook_logged_in</string>
     <string name="Birthday">Birthday</string>
+    <string name="register_param_fb_id">fbID</string>
+    <string name="register_param_gender">sex</string>
+    <string name="referral_code_hint">Referral Code, if any</string>
+    <string name="city_hint">City</string>
+    <string name="register_param_city">city</string>
 </resources>

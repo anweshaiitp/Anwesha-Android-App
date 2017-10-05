@@ -47,20 +47,24 @@ public class RegisterActivity extends AppCompatActivity {
     TextInputLayout lastNameWrapper;
     Spinner genderSpinner;
     TextInputLayout collegeNameWrapper;
+    TextInputLayout cityWrapper;
     TextInputLayout birthdayWrapper;
     TextInputLayout emailIDWrapper;
     TextInputLayout passwordWrapper;
     TextInputLayout confirmPasswordWrapper;
     TextInputLayout mobileNoWrapper;
+    TextInputLayout refCodeWrapper;
+    String mFbID;
     String mName;
     String mGender;
     String mCollege;
+    String mCity;
     String mDob;
-    String mRefCode;
     String mEmail;
     String mPassword;
     String mConfirmPassword;
     String mMobile;
+    String mRefCode;
     SetDate setDate;
     RequestQueue mQueue;
     private String mUrl;
@@ -79,11 +83,13 @@ public class RegisterActivity extends AppCompatActivity {
         firstNameWrapper = (TextInputLayout) findViewById(R.id.first_name_wrapper);
         lastNameWrapper = (TextInputLayout) findViewById(R.id.last_name_wrapper);
         collegeNameWrapper = (TextInputLayout) findViewById(R.id.college_name_wrapper);
+        cityWrapper = (TextInputLayout) findViewById(R.id.city_wrapper);
         birthdayWrapper = (TextInputLayout) findViewById(R.id.birthday_wrapper);
         emailIDWrapper = (TextInputLayout) findViewById(R.id.email_id_wrapper);
         passwordWrapper = (TextInputLayout) findViewById(R.id.password_wrapper);
         confirmPasswordWrapper = (TextInputLayout) findViewById(R.id.confirm_password_wrapper);
         mobileNoWrapper = (TextInputLayout) findViewById(R.id.mobile_no_wrapper);
+        refCodeWrapper = (TextInputLayout) findViewById(R.id.ref_code_wrapper);
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 
         genderSpinner = (Spinner) findViewById(R.id.gender_spinner);
@@ -145,12 +151,15 @@ public class RegisterActivity extends AppCompatActivity {
                         @Override
                         protected Map<String, String> getParams() throws AuthFailureError {
                             Map<String, String> params = new HashMap<>();
+                            params.put(getString(R.string.register_param_fb_id), mFbID);
                             params.put(getString(R.string.register_param_name), mName);
+                            params.put(getString(R.string.register_param_gender), mGender);
+                            params.put(getString(R.string.register_param_city), mCity);
                             params.put(getString(R.string.register_param_college), mCollege);
+                            params.put(getString(R.string.register_param_dob), mDob);
                             params.put(getString(R.string.register_param_emailid), mEmail);
                             params.put(getString(R.string.register_param_password), mPassword);
                             params.put(getString(R.string.register_param_mobile), mMobile);
-                            params.put(getString(R.string.register_param_dob), mDob);
                             params.put(getString(R.string.register_param_ref_code), mRefCode);
                             params.put(getString(R.string.register_param_apiKey), getString(R.string.api_key));
                             return params;
@@ -173,10 +182,13 @@ public class RegisterActivity extends AppCompatActivity {
         firstNameWrapper.setErrorEnabled(false);
         lastNameWrapper.setErrorEnabled(false);
         collegeNameWrapper.setErrorEnabled(false);
+        birthdayWrapper.setErrorEnabled(false);
+        cityWrapper.setErrorEnabled(false);
         emailIDWrapper.setErrorEnabled(false);
         passwordWrapper.setErrorEnabled(false);
         confirmPasswordWrapper.setErrorEnabled(false);
         mobileNoWrapper.setErrorEnabled(false);
+        refCodeWrapper.setErrorEnabled(false);
     }
 
     private boolean validateInputs() {
@@ -185,11 +197,13 @@ public class RegisterActivity extends AppCompatActivity {
         mName = firstNameWrapper.getEditText().getText().toString() + " " + lastNameWrapper.getEditText().getText().toString();
         mGender = (genderSpinner.getSelectedItemPosition() == 0)? "M": "F";
         mCollege = collegeNameWrapper.getEditText().getText().toString();
+        mCity = cityWrapper.getEditText().getText().toString();
         mDob = setDate.getDateStr();
         mEmail = emailIDWrapper.getEditText().getText().toString();
         mPassword = passwordWrapper.getEditText().getText().toString();
         mConfirmPassword = confirmPasswordWrapper.getEditText().getText().toString();
         mMobile = mobileNoWrapper.getEditText().getText().toString();
+        mRefCode = refCodeWrapper.getEditText().getText().toString();
 
         if (!validateEmail(mEmail)) {
             emailIDWrapper.setError(getString(R.string.error_invalid_email));
@@ -247,6 +261,14 @@ public class RegisterActivity extends AppCompatActivity {
             flag = true;
             collegeNameWrapper.setError(getString(R.string.error_empty_field));
         }
+        if (TextUtils.isEmpty(birthdayWrapper.getEditText().getText().toString())) {
+            flag = true;
+            birthdayWrapper.setError(getString(R.string.error_empty_field));
+        }
+        if (TextUtils.isEmpty(cityWrapper.getEditText().getText().toString())) {
+            flag = true;
+            cityWrapper.setError(getString(R.string.error_empty_field));
+        }
         if (TextUtils.isEmpty(emailIDWrapper.getEditText().getText().toString())) {
             flag = true;
             emailIDWrapper.setError(getString(R.string.error_empty_field));
@@ -276,9 +298,11 @@ public class RegisterActivity extends AppCompatActivity {
         passwordWrapper.setHint(getString(R.string.password_hint));
         confirmPasswordWrapper.setHint(getString(R.string.confirm_password_hint));
         mobileNoWrapper.setHint(getString(R.string.mobile_no_hint));
+        refCodeWrapper.setHint(getString(R.string.referral_code_hint));
     }
 
     private void setFetchedFacebookData() {
+        mFbID = sharedPreferences.getString(getString(R.string.facebook_id), "0");
         firstNameWrapper.getEditText().setText(sharedPreferences.getString(getString(R.string.first_name), ""));
         lastNameWrapper.getEditText().setText(sharedPreferences.getString(getString(R.string.last_name), ""));
         if(sharedPreferences.getString(getString(R.string.gender),"").equals("female")){
@@ -287,8 +311,7 @@ public class RegisterActivity extends AppCompatActivity {
             genderSpinner.setSelection(0);
         }
         emailIDWrapper.getEditText().setText(sharedPreferences.getString(getString(R.string.email), ""));
-//        genderWrapper.getEditText().setText(sharedPreferences.getString(getString(R.string.gender), ""));
-//        dateOfBirthWrapper.getEditText().setText(sharedPreferences.getString(getString(R.string.first_name), ""));
+        birthdayWrapper.getEditText().setText(sharedPreferences.getString(getString(R.string.dateOfBirth), ""));
     }
 }
 

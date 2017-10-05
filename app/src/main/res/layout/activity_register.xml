@@ -86,6 +86,24 @@
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
+                android:id="@+id/city_wrapper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/city"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_place_black_24dp"
+                    android:drawablePadding="8dp"
+                    android:drawableTint="@color/colorSignIn"
+                    android:hint="@string/city_hint"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:textColor="@color/colorPrimaryLight" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
                 android:id="@+id/birthday_wrapper"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -175,6 +193,24 @@
                     android:drawableTint="@color/colorSignIn"
                     android:hint="@string/confirm_password_hint"
                     android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:textColor="@color/colorPrimaryLight" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/ref_code_wrapper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/ref_code"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_person_black_24dp"
+                    android:drawablePadding="8dp"
+                    android:drawableTint="@color/colorSignIn"
+                    android:hint="@string/referral_code_hint"
+                    android:inputType="text"
                     android:maxLines="1"
                     android:textColor="@color/colorPrimaryLight" />
             </android.support.design.widget.TextInputLayout>
