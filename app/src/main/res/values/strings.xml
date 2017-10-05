@@ -76,4 +76,5 @@
     <string name="first_name">first_name</string>
     <string name="last_name">last_name</string>
     <string name="Gender">Gender</string>
+    <string name="facebook_logged_in">facebook_logged_in</string>
 </resources>

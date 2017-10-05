@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.AccessToken;
+import com.facebook.AccessTokenTracker;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
@@ -25,7 +27,6 @@ import com.facebook.login.widget.LoginButton;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
@@ -43,6 +44,7 @@ import info.anwesha2k18.iitp.R;
 public class MyProfile extends AppCompatActivity {
 
     CallbackManager callbackManager;
+    private AccessTokenTracker fbTracker;
     SharedPreferences.Editor shareEdit;
 
     @Override
@@ -67,6 +69,19 @@ public class MyProfile extends AppCompatActivity {
             callbackManager = CallbackManager.Factory.create();
             LoginButton loginButton = (LoginButton) findViewById(R.id.login_button);
             loginButton.setReadPermissions(Arrays.asList("email"));
+            // TODO: Properly implement this
+            fbTracker = new AccessTokenTracker() {
+                @Override
+                protected void onCurrentAccessTokenChanged(AccessToken accessToken, AccessToken accessToken2) {
+                    if (accessToken2 != null) {
+                        shareEdit.putBoolean(getString(R.string.facebook_logged_in), true);
+                    } else {
+                        shareEdit.putBoolean(getString(R.string.facebook_logged_in), false);
+                        clearSharedPreferences(shareEdit);
+                    }
+                }
+            };
+
             loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
                 @Override
                 public void onSuccess(LoginResult loginResult) {
@@ -124,6 +139,18 @@ public class MyProfile extends AppCompatActivity {
             eventTextView.setText(sharedPreferences.getString(getString(R.string.event_participated), "-"));
         }
     }
+
+    private void clearSharedPreferences(SharedPreferences.Editor shareEdit) {
+        shareEdit.putString(getString(R.string.facebook_id), "");
+        shareEdit.putString(getString(R.string.first_name), "");
+        shareEdit.putString(getString(R.string.last_name), "");
+        shareEdit.putString(getString(R.string.full_name), "");
+        shareEdit.putString(getString(R.string.email), "");
+        shareEdit.putString(getString(R.string.gender), "");
+        shareEdit.putString(getString(R.string.dateOfBirth), "");
+        shareEdit.apply();
+    }
+
 
     private boolean checkRegistered() {
         return false;
