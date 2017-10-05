@@ -69,30 +69,24 @@ public class MyProfile extends AppCompatActivity {
             callbackManager = CallbackManager.Factory.create();
             LoginButton loginButton = (LoginButton) findViewById(R.id.login_button);
             loginButton.setReadPermissions(Arrays.asList("email"));
-            // TODO: Properly implement this
+
             fbTracker = new AccessTokenTracker() {
                 @Override
                 protected void onCurrentAccessTokenChanged(AccessToken accessToken, AccessToken accessToken2) {
                     if (accessToken2 != null) {
-                        shareEdit.putBoolean(getString(R.string.facebook_logged_in), true);
+                        shareEdit.putBoolean(getString(R.string.facebook_logged_in), true).apply();
                     } else {
-                        shareEdit.putBoolean(getString(R.string.facebook_logged_in), false);
+                        shareEdit.putBoolean(getString(R.string.facebook_logged_in), false).apply();
                         clearSharedPreferences(shareEdit);
                     }
                 }
             };
-
+            fbTracker.startTracking();
             loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
                 @Override
                 public void onSuccess(LoginResult loginResult) {
                     Log.v("FACEBOOK : ", "SUCCESS!!");
                     setFacebookData(loginResult);
-                    if(checkRegistered()){
-                        Toast.makeText(getApplicationContext(), R.string.log_in_successful, Toast.LENGTH_LONG).show();
-                    } else {
-                        Intent intent = new Intent(MyProfile.this, RegisterActivity.class);
-                        startActivity(intent);
-                    }
                 }
 
                 @Override
@@ -207,13 +201,19 @@ public class MyProfile extends AppCompatActivity {
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
+
+                        if(checkRegistered()){
+                            Toast.makeText(getApplicationContext(), R.string.log_in_successful, Toast.LENGTH_LONG).show();
+                        } else {
+                            Intent intent = new Intent(MyProfile.this, RegisterActivity.class);
+                            startActivity(intent);
+                        }
                     }
                 });
         Bundle parameters = new Bundle();
         parameters.putString("fields", "id,email,first_name,last_name,gender,birthday");
         request.setParameters(parameters);
         request.executeAsync();
-
     }
 
     private String parseDate(String dateStr) {
