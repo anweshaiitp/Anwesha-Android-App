@@ -156,7 +156,7 @@ public class MyProfile extends AppCompatActivity {
 
     private Bitmap getQRBitmap() {
         ContextWrapper contextWrapper = new ContextWrapper(getApplicationContext());
-        File folder = contextWrapper.getDir("QR", Context.MODE_PRIVATE);
+        File folder = contextWrapper.getDir(getString(R.string.qr_code_folder_name), Context.MODE_PRIVATE);
 
         File image = new File(folder, "qr_code.jpg");
         try {
@@ -319,8 +319,8 @@ public class MyProfile extends AppCompatActivity {
                         @Override
                         public void onResourceReady(Bitmap bitmap, Transition<? super Bitmap> transition) {
                             ContextWrapper contextWrapper = new ContextWrapper(getApplicationContext());
-                            File folder = contextWrapper.getDir("QR", Context.MODE_PRIVATE);
-                            File file = new File(folder, "qr_code.jpg");
+                            File folder = contextWrapper.getDir(getString(R.string.qr_code_folder_name), Context.MODE_PRIVATE);
+                            File file = new File(folder, getString(R.string.qr_code_file_name));
 
                             try {
                                 FileOutputStream fos = new FileOutputStream(file);
