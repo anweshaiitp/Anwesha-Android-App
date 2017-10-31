@@ -79,6 +79,17 @@ public class MyProfile extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         callbackManager.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == 10)
+        {
+            switch (resultCode)
+            {
+                case 200 :
+                    finish();
+                    break;
+                default:
+            }
+        }
     }
 
     private void setView() {
@@ -205,7 +216,8 @@ public class MyProfile extends AppCompatActivity {
                     {
                         checkRegistered = false;
                         Intent intent = new Intent(MyProfile.this, RegisterActivity.class);
-                        startActivity(intent);
+                        startActivityForResult(intent, 10);
+                        finish();
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();

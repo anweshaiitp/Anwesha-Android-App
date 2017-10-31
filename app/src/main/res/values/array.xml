@@ -44,7 +44,7 @@
 
     <string-array name="array_event_intent">
         <item>in.org.celesta2k17.activities.CodingEvents</item>
-        <item>in.org.celesta2k17.activities.RoboticsEvents</item>
+        <item>info.anwesha2k18.iitp.activities.RoboticsEvents</item>
         <item>in.org.celesta2k17.activities.ExpoEvents</item>
         <item>in.org.celesta2k17.activities.BuildItEvents</item>
         <item>in.org.celesta2k17.activities.DebateEvents</item>

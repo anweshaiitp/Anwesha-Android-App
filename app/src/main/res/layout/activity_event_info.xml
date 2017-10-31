@@ -1,152 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar_event_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing_tb_event_info"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                android:id="@+id/event_info_imageview"
+                android:layout_width="match_parent"
+                android:layout_height="225dp"
+                android:scaleType="centerCrop"
+                android:transitionName="event_image_view_transition"
+                app:layout_collapseMode="parallax"
+                tools:src="@drawable/abhiravsati" />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:orientation="vertical"
-        tools:context="info.anwesha2k18.iitp.activities.EventInfoActivity">
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <ImageView
-            android:id="@+id/event_info_imageview"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:scaleType="centerCrop"
-            android:transitionName="event_image_view_transition"
-            tools:src="@drawable/njack" />
+            android:layout_height="wrap_content">
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-
-            <android.support.v7.widget.CardView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:elevation="20dp">
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:context="in.org.celesta2k17.activities.EventInfoActivity">
 
-                <RelativeLayout
+                <android.support.v7.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:padding="20dp">
+                    android:layout_height="wrap_content"
+                    android:elevation="20dp">
 
-                    <TextView
-                        android:id="@+id/event_info_name"
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:textAppearance="@android:style/TextAppearance.Material.Headline"
-                        android:textSize="20sp"
-                        android:transitionName="event_text_header_transition"
-                        tools:text="NJATH" />
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="20dp">
 
-                    <TextView
-                        android:id="@+id/event_date_time"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/event_info_name"
-                        android:fontFamily="sans-serif-light"
-                        android:textAppearance="@android:style/TextAppearance.Material.Headline"
-                        android:textSize="20sp"
-                        tools:text="7th Aug, 10:30 pm" />
+                        <TextView
+                            android:id="@+id/event_info_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:textAppearance="@android:style/TextAppearance.Material.Headline"
+                            android:textSize="20sp"
+                            android:transitionName="event_text_header_transition"
+                            tools:text="NJATH" />
 
-                    <TextView
-                        android:id="@+id/event_venue"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/event_date_time"
-                        android:fontFamily="sans-serif-light"
-                        android:textAppearance="@android:style/TextAppearance.Material.Headline"
-                        android:textSize="20sp"
-                        tools:text="Tutorial Block - Room no. 107" />
+                        <TextView
+                            android:id="@+id/event_date_time"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/event_info_name"
+                            android:fontFamily="sans-serif-light"
+                            android:textAppearance="@android:style/TextAppearance.Material.Headline"
+                            android:textSize="20sp"
+                            tools:text="7th Aug, 10:30 pm" />
 
-                    <TextView
-                        android:id="@+id/event_info_textview"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/event_venue"
-                        android:layout_marginTop="16dp"
-                        android:fontFamily="sans-serif-light"
-                        android:textAppearance="@android:style/TextAppearance.Holo.Medium"
-                        tools:text="Lorem ipsum dolor sit amet untes gungslla goog oo gaa lossly roemsid dsfaks slal skdlfkan" />
+                        <TextView
+                            android:id="@+id/event_venue"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/event_date_time"
+                            android:fontFamily="sans-serif-light"
+                            android:textAppearance="@android:style/TextAppearance.Material.Headline"
+                            android:textSize="20sp"
+                            tools:text="Tutorial Block - Room no. 107" />
 
-                    <TextView
-                        android:id="@+id/rules_header"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/event_info_textview"
-                        android:layout_marginTop="16dp"
-                        android:text="@string/rules_and_regulations"
-                        android:textAppearance="@android:style/TextAppearance.Material.Headline"
-                        android:textSize="20sp"
-                        android:transitionName="event_text_header_transition" />
+                        <TextView
+                            android:id="@+id/event_info_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/event_venue"
+                            android:layout_marginTop="16dp"
+                            android:fontFamily="sans-serif-light"
+                            android:textAppearance="@android:style/TextAppearance.Holo.Medium"
+                            android:textIsSelectable="true"
+                            tools:text="Lorem ipsum dolor sit amet untes gungslla goog oo gaa lossly roemsid dsfaks slal skdlfkan" />
 
-                    <TextView
-                        android:id="@+id/event_rules_textview"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/rules_header"
-                        android:layout_marginTop="8dp"
-                        android:fontFamily="sans-serif-light"
-                        android:textAppearance="@android:style/TextAppearance.Holo.Medium"
-                        tools:text="Lorem ipsum dolor sit amet untes gungslla goog oo gaa lossly roemsid dsfaks slal skdlfkan" />
+                        <TextView
+                            android:id="@+id/rules_header"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/event_info_textview"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/rules_and_regulations"
+                            android:textAppearance="@android:style/TextAppearance.Material.Headline"
+                            android:textSize="20sp"
+                            android:transitionName="event_text_header_transition" />
 
-                    <TextView
-                        android:id="@+id/event_organizers_header"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/event_rules_textview"
-                        android:layout_marginTop="16dp"
-                        android:text="@string/event_organizers"
-                        android:textAppearance="@android:style/TextAppearance.Material.Headline"
-                        android:textSize="20sp"
-                        android:transitionName="event_text_header_transition" />
+                        <TextView
+                            android:id="@+id/event_rules_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/rules_header"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="sans-serif-light"
+                            android:textAppearance="@android:style/TextAppearance.Holo.Medium"
+                            tools:text="Lorem ipsum dolor sit amet untes gungslla goog oo gaa lossly roemsid dsfaks slal skdlfkan" />
 
-                    <TextView
-                        android:id="@+id/event_organizers"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/event_organizers_header"
-                        android:layout_marginTop="8dp"
-                        android:fontFamily="sans-serif-light"
-                        android:textAppearance="@android:style/TextAppearance.Holo.Medium"
-                        tools:text="Mayank Vaidya and Soumya" />
+                        <TextView
+                            android:id="@+id/event_organizers_header"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/event_rules_textview"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/event_organizers"
+                            android:textAppearance="@android:style/TextAppearance.Material.Headline"
+                            android:textSize="20sp"
+                            android:transitionName="event_text_header_transition" />
 
-                    <TextView
-                        android:id="@+id/event_contact"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/event_organizers_header"
-                        android:layout_marginTop="8dp"
-                        android:layout_toRightOf="@id/event_organizers"
-                        android:textAppearance="@android:style/TextAppearance.Holo.Medium"
-                        android:textColor="@color/colorDevelopers"
-                        android:textIsSelectable="true"
-                        tools:text="9955539372" />
+                        <TextView
+                            android:id="@+id/event_organizers"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/event_organizers_header"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="sans-serif-light"
+                            android:textAppearance="@android:style/TextAppearance.Holo.Medium"
+                            tools:text="Mayank Vaidya and Soumya" />
 
-
-                </RelativeLayout>
-            </android.support.v7.widget.CardView>
-        </ScrollView>
-    </LinearLayout>
+                        <TextView
+                            android:id="@+id/event_contact"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/event_organizers_header"
+                            android:layout_marginTop="8dp"
+                            android:layout_toRightOf="@id/event_organizers"
+                            android:textAppearance="@android:style/TextAppearance.Holo.Medium"
+                            android:textColor="@color/colorDevelopers"
+                            android:textIsSelectable="true"
+                            tools:text="9955539372" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+        </FrameLayout>
+    </android.support.v4.widget.NestedScrollView>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab_share_event"
         android:layout_width="wrap_content"
+        android:layout_margin="16dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:layout_gravity="bottom|right"
-        android:layout_margin="016dp"
         android:src="@drawable/ic_share_white_24dp"
-        tools:backgroundTint="@color/colorDevelopers" />
-</RelativeLayout>
+        app:backgroundTint="@android:color/holo_blue_light"
+        app:layout_anchor="@id/appbar_event_info"
+        app:layout_anchorGravity="right|bottom"/>
+</android.support.design.widget.CoordinatorLayout>

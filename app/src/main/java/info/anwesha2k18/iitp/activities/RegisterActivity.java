@@ -2,6 +2,7 @@ package info.anwesha2k18.iitp.activities;
 
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -115,6 +116,8 @@ public class RegisterActivity extends AppCompatActivity {
                 clearErrors();
                 boolean b = validateInputs();
                 if (b) {
+                    Toast.makeText(getApplicationContext(), "Registering..", Toast.LENGTH_SHORT).show();
+                    buttonRegister.setVisibility(View.GONE);
                     //Code for sending the details
                     StringRequest stringRequest = new StringRequest(Request.Method.POST, mUrl,
                             new Response.Listener<String>() {
@@ -124,17 +127,20 @@ public class RegisterActivity extends AppCompatActivity {
                                     try {
                                         JSONObject jsonObject = new JSONObject(response);
                                         int status = Integer.parseInt(jsonObject.getString(getString(R.string.JSON_status)));
-
                                         switch (status) {
                                             case 200:
                                                 Toast.makeText(getApplicationContext(), R.string.message_registration_success, Toast.LENGTH_LONG).show();
-                                                finish();
                                                 break;
                                             case 409:
                                                 Toast.makeText(getApplicationContext(), R.string.message_registration_duplicate, Toast.LENGTH_LONG).show();
-                                                finish();
                                                 break;
+                                            default:
+                                                Toast.makeText(getApplicationContext(), "Error registering. Please try again later.", Toast.LENGTH_SHORT).show();
                                         }
+                                        buttonRegister.setVisibility(View.VISIBLE);
+                                        Intent intent = new Intent();
+                                        setResult(status, intent);
+                                        finish();
                                     } catch (JSONException e) {
                                         e.printStackTrace();
                                     }
@@ -145,6 +151,8 @@ public class RegisterActivity extends AppCompatActivity {
                                 public void onErrorResponse(VolleyError error) {
                                     Log.v("Error : ", error.toString());
                                     error.printStackTrace();
+                                    Toast.makeText(getApplicationContext(), "Error registering. Please try again later", Toast.LENGTH_SHORT).show();
+                                    buttonRegister.setVisibility(View.VISIBLE);
                                 }
                             }
                     ) {
@@ -161,7 +169,7 @@ public class RegisterActivity extends AppCompatActivity {
                             params.put(getString(R.string.register_param_password), mPassword);
                             params.put(getString(R.string.register_param_mobile), mMobile);
                             params.put(getString(R.string.register_param_ref_code), mRefCode);
-                            params.put(getString(R.string.register_param_apiKey), getString(R.string.api_key));
+//                            params.put(getString(R.string.register_param_apiKey), getString(R.string.api_key));
                             return params;
                         }
 

@@ -3,6 +3,8 @@ package info.anwesha2k18.iitp.activities;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
@@ -38,6 +40,8 @@ public class EventInfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_info);
 
+        final CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_tb_event_info);
+
         // Get the Intent that started this activity and extract the strings needed
         Intent intent = getIntent();
         final String header = intent.getStringExtra(EXTRA_HEADER);
@@ -46,6 +50,26 @@ public class EventInfoActivity extends AppCompatActivity {
         final String dateTime = intent.getStringExtra(EXTRA_DATE_TIME);
         String venue = intent.getStringExtra(EXTRA_VENUE);
         int imageId = intent.getIntExtra(EXTRA_IMAGE_ID, -1);
+
+        AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.appbar_event_info);
+        appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+            boolean isShow = false;
+            int scrollRange = -1;
+
+            @Override
+            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+                if (scrollRange == -1) {
+                    scrollRange = appBarLayout.getTotalScrollRange();
+                }
+                if (scrollRange + verticalOffset == 0) {
+                    collapsingToolbarLayout.setTitle(header);
+                    isShow = true;
+                } else if(isShow) {
+                    collapsingToolbarLayout.setTitle(" ");//careful there should a space between double quote otherwise it wont work
+                    isShow = false;
+                }
+            }
+        });
 
         ((TextView) findViewById(R.id.event_info_name)).setText(header);
         if (imageId != -1)
