@@ -1,7 +1,11 @@
 package info.anwesha2k18.iitp.activities;
 
+import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -10,9 +14,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.transition.Transition;
 import com.facebook.AccessToken;
 import com.facebook.AccessTokenTracker;
 import com.facebook.CallbackManager;
@@ -27,6 +41,10 @@ import com.facebook.login.widget.LoginButton;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
@@ -46,10 +64,14 @@ public class MyProfile extends AppCompatActivity {
     CallbackManager callbackManager;
     private AccessTokenTracker fbTracker;
     SharedPreferences.Editor shareEdit;
+    RequestQueue mQueue;
+    private boolean checkRegistered;
+    private JSONObject jsonObject;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mQueue = Volley.newRequestQueue(this);
         setView();
     }
 
@@ -119,19 +141,30 @@ public class MyProfile extends AppCompatActivity {
         } else {
             setContentView(R.layout.activity_register_signup_or_signin);
             TextView fullNameTextView = (TextView) findViewById(R.id.fullName);
-            TextView nameTextView = (TextView) findViewById(R.id.nameTextView);
             TextView idTextView = (TextView) findViewById(R.id.idValue);
             TextView collegeTextView = (TextView) findViewById(R.id.collegeNameValue);
             TextView eventTextView = (TextView) findViewById(R.id.eventsParticipatedValue);
-
-            String full_name = sharedPreferences.getString(getString(R.string.full_name), "Mayank Vaidya");
+            ImageView qrImage = findViewById(R.id.image_view_qr_code);
 
             fullNameTextView.setText(sharedPreferences.getString(getString(R.string.full_name), "Mayank Vaidya"));
-            nameTextView.setText("" + Character.toUpperCase(full_name.charAt(0)) + Character.toUpperCase(full_name.charAt(full_name.indexOf(' ') + 1)));
-            idTextView.setText(sharedPreferences.getString(getString(R.string.id), "12345"));
-            collegeTextView.setText(sharedPreferences.getString(getString(R.string.college_name), "IIT Patna"));
+            idTextView.setText(sharedPreferences.getString(getString(R.string.anwesha_id), "12345"));
+            collegeTextView.setText(sharedPreferences.getString(getString(R.string.college), "IIT Patna"));
             eventTextView.setText(sharedPreferences.getString(getString(R.string.event_participated), "-"));
+            qrImage.setImageBitmap(getQRBitmap());
         }
+    }
+
+    private Bitmap getQRBitmap() {
+        ContextWrapper contextWrapper = new ContextWrapper(getApplicationContext());
+        File folder = contextWrapper.getDir("QR", Context.MODE_PRIVATE);
+
+        File image = new File(folder, "qr_code.jpg");
+        try {
+            return BitmapFactory.decodeStream(new FileInputStream(image));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     private void clearSharedPreferences(SharedPreferences.Editor shareEdit) {
@@ -146,8 +179,49 @@ public class MyProfile extends AppCompatActivity {
     }
 
 
-    private boolean checkRegistered() {
-        return false;
+    private void checkRegistered() {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        String checkUrl = "http://anwesha.info/user/CAcheck/" + sharedPreferences.getString(getString(R.string.facebook_id), "1");
+        Log.v("CHEK URL : ", checkUrl);
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, checkUrl, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Log.v("RESPONSE : ", response);
+                try {
+                    jsonObject = new JSONObject(response);
+                    int status = jsonObject.getInt("0");
+                    Log.v("STATUS : ", String.valueOf(status));
+                    if (status == 1)
+                    {
+                        checkRegistered = true;
+                        shareEdit.putBoolean(getString(R.string.login_status), true);
+                        shareEdit.apply();
+                        clearSharedPreferences(shareEdit);
+                        setData();
+                        Toast.makeText(getApplicationContext(), R.string.log_in_successful, Toast.LENGTH_LONG).show();
+                        finish();
+                    }
+                    else if (status == -1)
+                    {
+                        checkRegistered = false;
+                        Intent intent = new Intent(MyProfile.this, RegisterActivity.class);
+                        startActivity(intent);
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        },
+                new Response.ErrorListener() {
+
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.v("VOLLEY ERROR", error.toString());
+                    }
+
+                });
+
+        mQueue.add(stringRequest);
     }
 
     @Override
@@ -165,7 +239,7 @@ public class MyProfile extends AppCompatActivity {
                     public void onCompleted(JSONObject object, GraphResponse response) {
                         // Application code
                         try {
-                            Log.i("Response : ",response.toString());
+                            Log.i("Response : ", response.toString());
                             JSONObject responseJSON = response.getJSONObject();
 
                             String firstName, lastName, email, gender, dob;
@@ -180,14 +254,13 @@ public class MyProfile extends AppCompatActivity {
                             String id = profile.getId();
                             String link = profile.getLinkUri().toString();
                             Uri profilePic = profile.getProfilePictureUri(200, 200);
-                            Log.i("Link",link);
-                            if (Profile.getCurrentProfile() != null)
-                            {
+                            Log.i("Link", link);
+                            if (Profile.getCurrentProfile() != null) {
                                 Log.i("Login", "ProfilePic" + Profile.getCurrentProfile().getProfilePictureUri(200, 200));
                             }
 
                             Log.v("Login Email: ", email);
-                            Log.i("Login : "+ "Name ", firstName + " ::: " + lastName);
+                            Log.i("Login : " + "Name ", firstName + " ::: " + lastName);
                             Log.i("Login : " + "Gender ", gender);
 
                             shareEdit.putString(getString(R.string.facebook_id), id);
@@ -202,12 +275,7 @@ public class MyProfile extends AppCompatActivity {
                             e.printStackTrace();
                         }
 
-                        if(checkRegistered()){
-                            Toast.makeText(getApplicationContext(), R.string.log_in_successful, Toast.LENGTH_LONG).show();
-                        } else {
-                            Intent intent = new Intent(MyProfile.this, RegisterActivity.class);
-                            startActivity(intent);
-                        }
+                        checkRegistered();
                     }
                 });
         Bundle parameters = new Bundle();
@@ -216,10 +284,60 @@ public class MyProfile extends AppCompatActivity {
         request.executeAsync();
     }
 
+    private void setData() {
+        if(jsonObject != null)
+        {
+            try {
+                JSONObject details = jsonObject.getJSONObject("1");
+                shareEdit.putString(getString(R.string.anwesha_id), details.getString("pId"));
+                shareEdit.putString(getString(R.string.full_name), details.getString("name"));
+                shareEdit.putString(getString(R.string.college), details.getString("college"));
+                shareEdit.putString(getString(R.string.mobile), details.getString("mobile"));
+                shareEdit.putString(getString(R.string.city), details.getString("city"));
+                shareEdit.putString(getString(R.string.ref_code), details.getString("refcode"));
+                shareEdit.putString(getString(R.string.fee_paid), details.getString("feePaid"));
+                shareEdit.putString(getString(R.string.qr_url), details.getString("qrurl"));
+                downloadQR(details.getString("qrurl"));
+                shareEdit.putString(getString(R.string.email), details.getString("email"));
+                shareEdit.putString(getString(R.string.gender), details.getString("sex"));
+                shareEdit.putString(getString(R.string.dateOfBirth), parseDate(details.getString("dob")));
+                shareEdit.apply();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private void downloadQR(String qrurl) {
+        if(qrurl != null)
+        {
+            Glide.with(this)
+                    .asBitmap()
+                    .load(qrurl)
+                    .into(new SimpleTarget<Bitmap>(100, 100) {
+
+                        @Override
+                        public void onResourceReady(Bitmap bitmap, Transition<? super Bitmap> transition) {
+                            ContextWrapper contextWrapper = new ContextWrapper(getApplicationContext());
+                            File folder = contextWrapper.getDir("QR", Context.MODE_PRIVATE);
+                            File file = new File(folder, "qr_code.jpg");
+
+                            try {
+                                FileOutputStream fos = new FileOutputStream(file);
+                                bitmap.compress(Bitmap.CompressFormat.PNG, 100, fos);
+                                Log.v("QR : ", "QR saved successfully");
+                            } catch (FileNotFoundException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    });
+        }
+    }
+
     private String parseDate(String dateStr) {
         Date date = null;
         try {
-            date = (Date)(new SimpleDateFormat("MM-dd-yyyy")).parse(dateStr);
+            date = (Date) (new SimpleDateFormat("MM-dd-yyyy")).parse(dateStr);
         } catch (ParseException e) {
             return "";
         }
@@ -227,7 +345,7 @@ public class MyProfile extends AppCompatActivity {
     }
 
     private String filterJSON(JSONObject responseJSON, String key) throws JSONException {
-        if(responseJSON.has(key))
+        if (responseJSON.has(key))
             return responseJSON.getString(key);
         else
             return "";

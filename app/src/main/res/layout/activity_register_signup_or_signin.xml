@@ -30,25 +30,18 @@
         </RelativeLayout>
         <!--Circle including the initial name -->
         <RelativeLayout
-            android:id="@+id/overlapImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@id/layoutBottom"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="-40dp"
-            android:adjustViewBounds="true"
-            android:background="@drawable/circle"
-            android:gravity="center_vertical">
+            android:layout_centerInParent="true"
+            android:layout_marginTop="16dp">
 
-            <TextView
-                android:id="@+id/nameTextView"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:paddingTop="35dp"
-                android:textAlignment="center"
-                android:textColor="#fff"
-                android:textSize="28sp"
-                tools:text="MS" />
+            <ImageView
+                android:id="@+id/image_view_qr_code"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                tools:src="" />
+
         </RelativeLayout>
 
     </RelativeLayout>
@@ -73,133 +66,137 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <TextView
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16sp"
+                android:fontFamily="sans-serif-light"
+                android:text="My Profile"
+                android:textColor="#fff"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16sp"
-            android:fontFamily="sans-serif-light"
-            android:text="My Profile"
-            android:textColor="#fff"
-            android:textSize="20sp" />
-    </LinearLayout>
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16sp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
+                android:text="Id"
+                android:textColor="#fff"
+                android:textSize="20sp" />
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16sp"
-            android:layout_weight="1"
-            android:fontFamily="sans-serif-medium"
-            android:text="Id"
-            android:textColor="#fff"
-            android:textSize="20sp" />
+            <TextView
+                android:id="@+id/idValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginLeft="16sp"
+                android:layout_marginRight="16sp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:text="122443"
+                android:textAlignment="textEnd"
+                android:textColor="#fff"
+                android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/idValue"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginLeft="16sp"
-            android:layout_marginRight="16sp"
-            android:layout_weight="1"
-            android:fontFamily="sans-serif-light"
-            android:text="122443"
-            android:textAlignment="textEnd"
-            android:textColor="#fff"
-            android:textSize="20sp" />
+        </LinearLayout>
 
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginLeft="16sp"
-        android:layout_marginRight="16sp"
-        android:layout_marginTop="10dp"
-        android:background="#fff">
-
-    </View>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16sp"
-            android:layout_weight="1"
-            android:fontFamily="sans-serif-medium"
-            android:text="College"
-            android:textColor="#fff"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/collegeNameValue"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
             android:layout_marginLeft="16sp"
             android:layout_marginRight="16sp"
-            android:layout_weight="1"
-            android:fontFamily="sans-serif-light"
-            android:text="IIT Patna"
-            android:textAlignment="textEnd"
-            android:textColor="#fff"
-            android:textSize="20sp" />
+            android:layout_marginTop="10dp"
+            android:background="#fff">
 
-    </LinearLayout>
+        </View>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginLeft="16sp"
-        android:layout_marginRight="16sp"
-        android:layout_marginTop="10dp"
-        android:background="#fff">
 
-    </View>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="24dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16sp"
-            android:layout_weight="1"
-            android:fontFamily="sans-serif-medium"
-            android:text="Events"
-            android:textColor="#fff"
-            android:textSize="20sp" />
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/eventsParticipatedValue"
-            android:layout_width="0dp"
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16sp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
+                android:text="College"
+                android:textColor="#fff"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/collegeNameValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginLeft="16sp"
+                android:layout_marginRight="16sp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:text="IIT Patna"
+                android:textAlignment="textEnd"
+                android:textColor="#fff"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="16sp"
+            android:layout_marginRight="16sp"
+            android:layout_marginTop="10dp"
+            android:background="#fff">
+
+        </View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="end"
-            android:layout_marginLeft="16sp"
-            android:layout_marginRight="16sp"
-            android:layout_weight="1"
-            android:fontFamily="sans-serif-light"
-            android:text="NJATH,CPT"
-            android:textAlignment="textEnd"
-            android:textColor="#fff"
-            android:textSize="20sp" />
+            android:orientation="horizontal">
 
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16sp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
+                android:text="Events"
+                android:textColor="#fff"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/eventsParticipatedValue"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:layout_marginLeft="16sp"
+                android:layout_marginRight="16sp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:text="NJATH,CPT"
+                android:textAlignment="textEnd"
+                android:textColor="#fff"
+                android:textSize="20sp" />
+
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>

@@ -85,4 +85,11 @@
     <string name="referral_code_hint">Referral Code, if any</string>
     <string name="city_hint">City</string>
     <string name="register_param_city">city</string>
+    <string name="anwesha_id">AnweshaID</string>
+    <string name="college">college</string>
+    <string name="mobile">mobile</string>
+    <string name="city">city</string>
+    <string name="ref_code">ref_code</string>
+    <string name="fee_paid">feePaid</string>
+    <string name="qr_url">qrurl</string>
 </resources>
