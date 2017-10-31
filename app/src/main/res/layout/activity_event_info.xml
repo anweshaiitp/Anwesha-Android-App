@@ -168,10 +168,10 @@
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab_share_event"
         android:layout_width="wrap_content"
-        android:layout_margin="16dp"
         android:layout_height="wrap_content"
+        android:layout_margin="16dp"
         android:src="@drawable/ic_share_white_24dp"
         app:backgroundTint="@android:color/holo_blue_light"
         app:layout_anchor="@id/appbar_event_info"
-        app:layout_anchorGravity="right|bottom"/>
+        app:layout_anchorGravity="right|bottom" />
 </android.support.design.widget.CoordinatorLayout>
