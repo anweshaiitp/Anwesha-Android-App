@@ -1,35 +1,27 @@
 {
   "project_info": {
-    "project_number": "626363216910",
-    "firebase_url": "https://celesta2k17.firebaseio.com",
-    "project_id": "celesta2k17",
-    "storage_bucket": "celesta2k17.appspot.com"
+    "project_number": "932947867778",
+    "firebase_url": "https://anwesha2k18.firebaseio.com",
+    "project_id": "anwesha2k18",
+    "storage_bucket": "anwesha2k18.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:626363216910:android:14a0c0a9acdeb491",
+        "mobilesdk_app_id": "1:932947867778:android:602701a1aa3e865e",
         "android_client_info": {
           "package_name": "info.anwesha2k18.iitp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "626363216910-vm0fdrk24k3q829lrbgaqhi0g9j9gql5.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "info.anwesha2k18.iitp",
-            "certificate_hash": "abe998ab0a2a7ea81930f3a01400f576dbcd4ea8"
-          }
-        },
-        {
-          "client_id": "626363216910-lrunt96p32eudcbgnbs8rmqf9vqu2ppq.apps.googleusercontent.com",
+          "client_id": "932947867778-r5fksc527p62v6e8lcad80lg1bk25n9u.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB2HxTy0t1qyEWYuPakTRVR9g6By-1fK8k"
+          "current_key": "AIzaSyBgfUW_GCwLJbWIz0LzQJIJUXm2n_UiasI"
         }
       ],
       "services": {
@@ -37,13 +29,8 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "626363216910-lrunt96p32eudcbgnbs8rmqf9vqu2ppq.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "status": 1,
+          "other_platform_oauth_client": []
         },
         "ads_service": {
           "status": 2
