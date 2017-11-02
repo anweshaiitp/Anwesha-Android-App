@@ -9,3 +9,5 @@ Anwesha 2k18 Android App
 - [ ] Remove old Celesta posters and arrays
 - [ ] Remove extra menu entries on home page
 - [ ] Fix qr code loading before getting saved (like immediately after registration)
+- [ ] Reset Password feature
+- [ ] Remove Password option for facebook logged in users, and make everything else uneditable
