@@ -27,8 +27,10 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.JSONStringer;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -124,14 +126,19 @@ public class RegisterActivity extends AppCompatActivity {
                                 public void onResponse(String response) {
                                     Log.v("Response:", response);
                                     try {
-                                        JSONObject jsonObject = new JSONObject(response);
-                                        int status = Integer.parseInt(jsonObject.getString(getString(R.string.JSON_status)));
+//                                        JSONObject jsonObject = new JSONObject(response);
+                                        JSONArray jsonArray = new JSONArray(response);
+                                        int status = (int) jsonArray.get(0);
+
                                         switch (status) {
-                                            case 200:
+                                            case 1:
+                                                JSONObject jsonObject = (JSONObject) jsonArray.get(1);
                                                 Toast.makeText(getApplicationContext(), R.string.message_registration_success, Toast.LENGTH_LONG).show();
+                                                MyProfile.setData(RegisterActivity.this, jsonObject, sharedPreferences.edit());
                                                 break;
-                                            case 409:
-                                                Toast.makeText(getApplicationContext(), R.string.message_registration_duplicate, Toast.LENGTH_LONG).show();
+                                            case -1:
+                                                String errorMessage = (String) jsonArray.get(1);
+                                                Toast.makeText(getApplicationContext(), errorMessage, Toast.LENGTH_LONG).show();
                                                 break;
                                             default:
                                                 Toast.makeText(getApplicationContext(), "Error registering. Please try again later.", Toast.LENGTH_SHORT).show();

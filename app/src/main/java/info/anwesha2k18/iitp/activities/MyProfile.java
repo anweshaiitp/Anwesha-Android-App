@@ -85,9 +85,10 @@ public class MyProfile extends AppCompatActivity {
             switch (resultCode)
             {
                 case 200 :
-                    finish();
+                    setView();
                     break;
                 default:
+                    finish();
             }
         }
     }
@@ -208,7 +209,7 @@ public class MyProfile extends AppCompatActivity {
                         shareEdit.putBoolean(getString(R.string.login_status), true);
                         shareEdit.apply();
                         clearSharedPreferences(shareEdit);
-                        setData();
+                        setData(MyProfile.this, jsonObject, shareEdit);
                         Toast.makeText(getApplicationContext(), R.string.log_in_successful, Toast.LENGTH_LONG).show();
                         finish();
                     }
@@ -296,23 +297,23 @@ public class MyProfile extends AppCompatActivity {
         request.executeAsync();
     }
 
-    private void setData() {
+    public static void setData(Context context, JSONObject jsonObject, SharedPreferences.Editor shareEdit) {
         if(jsonObject != null)
         {
             try {
                 JSONObject details = jsonObject.getJSONObject("1");
-                shareEdit.putString(getString(R.string.anwesha_id), details.getString("pId"));
-                shareEdit.putString(getString(R.string.full_name), details.getString("name"));
-                shareEdit.putString(getString(R.string.college), details.getString("college"));
-                shareEdit.putString(getString(R.string.mobile), details.getString("mobile"));
-                shareEdit.putString(getString(R.string.city), details.getString("city"));
-                shareEdit.putString(getString(R.string.ref_code), details.getString("refcode"));
-                shareEdit.putString(getString(R.string.fee_paid), details.getString("feePaid"));
-                shareEdit.putString(getString(R.string.qr_url), details.getString("qrurl"));
-                downloadQR(details.getString("qrurl"));
-                shareEdit.putString(getString(R.string.email), details.getString("email"));
-                shareEdit.putString(getString(R.string.gender), details.getString("sex"));
-                shareEdit.putString(getString(R.string.dateOfBirth), parseDate(details.getString("dob")));
+                shareEdit.putString(context.getString(R.string.anwesha_id), details.getString("pId"));
+                shareEdit.putString(context.getString(R.string.full_name), details.getString("name"));
+                shareEdit.putString(context.getString(R.string.college), details.getString("college"));
+                shareEdit.putString(context.getString(R.string.mobile), details.getString("mobile"));
+                shareEdit.putString(context.getString(R.string.city), details.getString("city"));
+                shareEdit.putString(context.getString(R.string.ref_code), details.getString("refcode"));
+                shareEdit.putString(context.getString(R.string.fee_paid), details.getString("feePaid"));
+                shareEdit.putString(context.getString(R.string.qr_url), details.getString("qrurl"));
+                downloadQR(context, details.getString("qrurl"));
+                shareEdit.putString(context.getString(R.string.email), details.getString("email"));
+                shareEdit.putString(context.getString(R.string.gender), details.getString("sex"));
+                shareEdit.putString(context.getString(R.string.dateOfBirth), parseDate(details.getString("dob")));
                 shareEdit.apply();
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -320,19 +321,19 @@ public class MyProfile extends AppCompatActivity {
         }
     }
 
-    private void downloadQR(String qrurl) {
+    private static void downloadQR(final Context context, String qrurl) {
         if(qrurl != null)
         {
-            Glide.with(this)
+            Glide.with(context)
                     .asBitmap()
                     .load(qrurl)
-                    .into(new SimpleTarget<Bitmap>(100, 100) {
+                    .into(new SimpleTarget<Bitmap>(500, 500) {
 
                         @Override
                         public void onResourceReady(Bitmap bitmap, Transition<? super Bitmap> transition) {
-                            ContextWrapper contextWrapper = new ContextWrapper(getApplicationContext());
-                            File folder = contextWrapper.getDir(getString(R.string.qr_code_folder_name), Context.MODE_PRIVATE);
-                            File file = new File(folder, getString(R.string.qr_code_file_name));
+                            ContextWrapper contextWrapper = new ContextWrapper(context.getApplicationContext());
+                            File folder = contextWrapper.getDir(context.getString(R.string.qr_code_folder_name), Context.MODE_PRIVATE);
+                            File file = new File(folder, context.getString(R.string.qr_code_file_name));
 
                             try {
                                 FileOutputStream fos = new FileOutputStream(file);
@@ -346,7 +347,7 @@ public class MyProfile extends AppCompatActivity {
         }
     }
 
-    private String parseDate(String dateStr) {
+    static private String parseDate(String dateStr) {
         Date date = null;
         try {
             date = (Date) (new SimpleDateFormat("MM-dd-yyyy")).parse(dateStr);
