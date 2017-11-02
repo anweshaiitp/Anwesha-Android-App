@@ -363,9 +363,16 @@ class SetDate implements View.OnClickListener, DatePickerDialog.OnDateSetListene
 
     @Override
     public void onClick(View view) {
-        new DatePickerDialog(mContext, this, myCalendar
-                .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
-                myCalendar.get(Calendar.DAY_OF_MONTH)).show();
-    }
+        DatePickerDialog datePickerDialog = new DatePickerDialog(mContext,
+                R.style.DatePickerTheme,
+                this,
+                myCalendar.get(Calendar.YEAR),
+                myCalendar.get(Calendar.MONTH),
+                myCalendar.get(Calendar.DAY_OF_MONTH));
 
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.YEAR, -10);
+        datePickerDialog.getDatePicker().setMaxDate(calendar.getTimeInMillis());
+        datePickerDialog.show();
+    }
 }
