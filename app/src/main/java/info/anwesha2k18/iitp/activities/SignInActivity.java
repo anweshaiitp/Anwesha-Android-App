@@ -78,9 +78,9 @@ public class SignInActivity extends AppCompatActivity {
                                                 MyProfile.setData(SignInActivity.this, jsonObject.getJSONArray("user").getJSONObject(0), sharedPreferenceEditor);
                                                 finish();
                                                 break;
+                                            case 400:
                                             case 403:
                                                 Toast.makeText(getApplicationContext(), "Invalid Login", Toast.LENGTH_LONG).show();
-                                                finish();
                                                 break;
                                             default:
                                                 Toast.makeText(getApplicationContext(), R.string.login_error, Toast.LENGTH_LONG).show();
