@@ -92,6 +92,6 @@
     <string name="ref_code">ref_code</string>
     <string name="fee_paid">feePaid</string>
     <string name="qr_url">qrurl</string>
-    <string name="qr_code_file_name">qr_code.jpg</string>
+    <string name="qr_code_file_name">qr_code.png</string>
     <string name="qr_code_folder_name">QR</string>
 </resources>

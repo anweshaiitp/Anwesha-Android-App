@@ -170,7 +170,7 @@ public class MyProfile extends AppCompatActivity {
         ContextWrapper contextWrapper = new ContextWrapper(getApplicationContext());
         File folder = contextWrapper.getDir(getString(R.string.qr_code_folder_name), Context.MODE_PRIVATE);
 
-        File image = new File(folder, "qr_code.jpg");
+        File image = new File(folder, "qr_code.png");
         try {
             return BitmapFactory.decodeStream(new FileInputStream(image));
         } catch (FileNotFoundException e) {
@@ -206,10 +206,8 @@ public class MyProfile extends AppCompatActivity {
                     if (status == 1)
                     {
                         checkRegistered = true;
-                        shareEdit.putBoolean(getString(R.string.login_status), true);
-                        shareEdit.apply();
                         clearSharedPreferences(shareEdit);
-                        setData(MyProfile.this, jsonObject, shareEdit);
+                        setData(MyProfile.this, jsonObject.getJSONObject("1"), shareEdit);
                         Toast.makeText(getApplicationContext(), R.string.log_in_successful, Toast.LENGTH_LONG).show();
                         finish();
                     }
@@ -297,23 +295,23 @@ public class MyProfile extends AppCompatActivity {
         request.executeAsync();
     }
 
-    public static void setData(Context context, JSONObject jsonObject, SharedPreferences.Editor shareEdit) {
-        if(jsonObject != null)
+    public static void setData(Context context, JSONObject userJson, SharedPreferences.Editor shareEdit) {
+        if(userJson != null)
         {
             try {
-                JSONObject details = jsonObject.getJSONObject("1");
-                shareEdit.putString(context.getString(R.string.anwesha_id), details.getString("pId"));
-                shareEdit.putString(context.getString(R.string.full_name), details.getString("name"));
-                shareEdit.putString(context.getString(R.string.college), details.getString("college"));
-                shareEdit.putString(context.getString(R.string.mobile), details.getString("mobile"));
-                shareEdit.putString(context.getString(R.string.city), details.getString("city"));
-                shareEdit.putString(context.getString(R.string.ref_code), details.getString("refcode"));
-                shareEdit.putString(context.getString(R.string.fee_paid), details.getString("feePaid"));
-                shareEdit.putString(context.getString(R.string.qr_url), details.getString("qrurl"));
-                downloadQR(context, details.getString("qrurl"));
-                shareEdit.putString(context.getString(R.string.email), details.getString("email"));
-                shareEdit.putString(context.getString(R.string.gender), details.getString("sex"));
-                shareEdit.putString(context.getString(R.string.dateOfBirth), parseDate(details.getString("dob")));
+                shareEdit.putString(context.getString(R.string.anwesha_id), userJson.getString("pId"));
+                shareEdit.putString(context.getString(R.string.full_name), userJson.getString("name"));
+                shareEdit.putString(context.getString(R.string.college), userJson.getString("college"));
+                shareEdit.putString(context.getString(R.string.mobile), userJson.getString("mobile"));
+                shareEdit.putString(context.getString(R.string.city), userJson.getString("city"));
+                shareEdit.putString(context.getString(R.string.ref_code), userJson.getString("refcode"));
+                shareEdit.putString(context.getString(R.string.fee_paid), userJson.getString("feePaid"));
+                shareEdit.putString(context.getString(R.string.qr_url), userJson.getString("qrurl"));
+                downloadQR(context, userJson.getString("qrurl"));
+                shareEdit.putString(context.getString(R.string.email), userJson.getString("email"));
+                shareEdit.putString(context.getString(R.string.gender), userJson.getString("sex"));
+                shareEdit.putString(context.getString(R.string.dateOfBirth), parseDate(userJson.getString("dob")));
+                shareEdit.putBoolean(context.getString(R.string.login_status), true);
                 shareEdit.apply();
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -322,6 +320,7 @@ public class MyProfile extends AppCompatActivity {
     }
 
     private static void downloadQR(final Context context, String qrurl) {
+        Log.e("muks", "qrurl = " + qrurl);
         if(qrurl != null)
         {
             Glide.with(context)
