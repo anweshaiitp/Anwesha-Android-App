@@ -101,7 +101,7 @@ public class SignInActivity extends AppCompatActivity {
                         @Override
                         protected Map<String, String> getParams() throws AuthFailureError {
                             Map<String, String> params = new HashMap<>();
-                            params.put(getString(R.string.register_param_emailid), mEmail);
+                            params.put(getString(R.string.sign_in_param_username), mEmail);
                             params.put(getString(R.string.register_param_password), mPassword);
                             return params;
                         }

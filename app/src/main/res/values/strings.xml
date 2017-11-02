@@ -41,7 +41,7 @@
     <string name="api_key">99537874e694ecc9323cc986dd452d2502740dcc</string>
     <string name="register_param_name">name</string>
     <string name="register_param_college">college</string>
-    <string name="register_param_emailid">username</string>
+    <string name="register_param_emailid">email</string>
     <string name="register_param_password">password</string>
     <string name="register_param_mobile">mobile</string>
     <string name="register_param_dob">dob</string>
@@ -96,4 +96,5 @@
     <string name="qr_code_folder_name">QR</string>
     <string name="login_api_url">http://anwesha.info/login/</string>
     <string name="login_error">Error logging in! Please try again later.</string>
+    <string name="sign_in_param_username">username</string>
 </resources>
