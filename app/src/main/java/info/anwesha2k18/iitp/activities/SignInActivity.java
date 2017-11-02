@@ -38,7 +38,7 @@ public class SignInActivity extends AppCompatActivity {
     String mEmail;
     String mPassword;
     RequestQueue mQueue;
-    SharedPreferences.Editor sharedPreferences;
+    SharedPreferences.Editor sharedPreferenceEditor;
     private String mUrl;
     private Pattern pattern = Pattern.compile(EMAIL_PATTERN);
     private Matcher matcher;
@@ -49,8 +49,8 @@ public class SignInActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_in);
 
         mQueue = Volley.newRequestQueue(this);
-        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this).edit();
-        mUrl = "https://celesta.tameesh.info/login";
+        sharedPreferenceEditor = PreferenceManager.getDefaultSharedPreferences(this).edit();
+        mUrl = getString(R.string.login_api_url);
         buttonSignIn = (Button) findViewById(R.id.button_signin);
         emailIDWrapper = (TextInputLayout) findViewById(R.id.eamil_id_wrapper_signin);
         passwordWrapper = (TextInputLayout) findViewById(R.id.password_wrapper_signin);
@@ -75,26 +75,15 @@ public class SignInActivity extends AppCompatActivity {
                                         switch (status) {
                                             case 200:
                                                 Toast.makeText(getApplicationContext(), "Log In Successful", Toast.LENGTH_LONG).show();
-                                                int userID = Integer.parseInt(jsonObject.getString("userID"));
-                                                String name = jsonObject.getString("name");
-                                                String college = jsonObject.getString("college");
-                                                String events = jsonObject.getString("events");
-                                                sharedPreferences.putBoolean(getString(R.string.login_status), true);
-                                                sharedPreferences.putString(getString(R.string.full_name), name);
-                                                sharedPreferences.putString(getString(R.string.id), userID + "");
-                                                sharedPreferences.putString(getString(R.string.college_name), college);
-//                                                sharedPreferences.putString(getString(R.string.event_participated) , events);
-                                                sharedPreferences.apply();
-                                                finish();
-                                                break;
-                                            case 409:
-                                                Toast.makeText(getApplicationContext(), R.string.message_registration_duplicate, Toast.LENGTH_LONG).show();
+                                                MyProfile.setData(SignInActivity.this, jsonObject, sharedPreferenceEditor);
                                                 finish();
                                                 break;
                                             case 403:
                                                 Toast.makeText(getApplicationContext(), "Invalid Login", Toast.LENGTH_LONG).show();
                                                 finish();
                                                 break;
+                                            default:
+                                                Toast.makeText(getApplicationContext(), R.string.login_error, Toast.LENGTH_LONG).show();
                                         }
                                     } catch (JSONException e) {
                                         e.printStackTrace();
@@ -114,8 +103,6 @@ public class SignInActivity extends AppCompatActivity {
                             Map<String, String> params = new HashMap<>();
                             params.put(getString(R.string.register_param_emailid), mEmail);
                             params.put(getString(R.string.register_param_password), mPassword);
-                            params.put(getString(R.string.register_param_apiKey), getString(R.string.api_key));
-
                             return params;
                         }
 
