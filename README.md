@@ -11,3 +11,4 @@ Anwesha 2k18 Android App
 - \[x] Fix qr code loading before getting saved (like immediately after registration)
 - [ ] Reset Password feature
 - [ ] Remove Password option for facebook logged in users, and make everything else uneditable
+- [ ] Implement with last year's code for loading events info.
