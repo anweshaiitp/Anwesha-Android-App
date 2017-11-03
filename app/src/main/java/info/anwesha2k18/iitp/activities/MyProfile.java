@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -59,7 +60,7 @@ import info.anwesha2k18.iitp.R;
 
 //https://stackoverflow.com/questions/14542193/how-to-get-facebook-photo-full-name-gender-using-facebook-sdk-android
 
-public class MyProfile extends AppCompatActivity {
+public class MyProfile extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     CallbackManager callbackManager;
     private AccessTokenTracker fbTracker;
@@ -73,6 +74,8 @@ public class MyProfile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         mQueue = Volley.newRequestQueue(this);
         setView();
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        sharedPreferences.registerOnSharedPreferenceChangeListener(this);
     }
 
     @Override
@@ -80,11 +83,9 @@ public class MyProfile extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         callbackManager.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode == 10)
-        {
-            switch (resultCode)
-            {
-                case 200 :
+        if (requestCode == 10) {
+            switch (resultCode) {
+                case 200:
                     setView();
                     break;
                 default:
@@ -93,9 +94,20 @@ public class MyProfile extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        sharedPreferences.unregisterOnSharedPreferenceChangeListener(this);
+    }
+
     private void setView() {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+
         if (!sharedPreferences.getBoolean(getString(R.string.login_status), false)) {
+            SharedPreferences.Editor spEdit = sharedPreferences.edit();
+            spEdit.putBoolean(getString(R.string.is_qr_downloaded), false).apply();
+
             setContentView(R.layout.sign_in);
             shareEdit = sharedPreferences.edit();
             Button buttonSignIn = (Button) findViewById(R.id.button_signin);
@@ -156,14 +168,35 @@ public class MyProfile extends AppCompatActivity {
             TextView idTextView = (TextView) findViewById(R.id.idValue);
             TextView collegeTextView = (TextView) findViewById(R.id.collegeNameValue);
             TextView eventTextView = (TextView) findViewById(R.id.eventsParticipatedValue);
-            ImageView qrImage = findViewById(R.id.image_view_qr_code);
 
             fullNameTextView.setText(sharedPreferences.getString(getString(R.string.full_name), "Mayank Vaidya"));
             idTextView.setText(sharedPreferences.getString(getString(R.string.anwesha_id), "12345"));
             collegeTextView.setText(sharedPreferences.getString(getString(R.string.college), "IIT Patna"));
             eventTextView.setText(sharedPreferences.getString(getString(R.string.event_participated), "-"));
-            qrImage.setImageBitmap(getQRBitmap());
+            if (sharedPreferences.getBoolean(getString(R.string.is_qr_downloaded), false))
+            {
+                showQRCode();
+            }
+            else
+            {
+                hideQRCode();
+            }
         }
+    }
+
+    private void hideQRCode() {
+        ImageView qrImage = findViewById(R.id.image_view_qr_code);
+        ProgressBar progressBar = findViewById(R.id.pb_qr);
+        progressBar.setVisibility(View.VISIBLE);
+        qrImage.setVisibility(View.GONE);
+    }
+
+    private void showQRCode() {
+        ImageView qrImage = findViewById(R.id.image_view_qr_code);
+        ProgressBar progressBar = findViewById(R.id.pb_qr);
+        progressBar.setVisibility(View.GONE);
+        qrImage.setVisibility(View.VISIBLE);
+        qrImage.setImageBitmap(getQRBitmap());
     }
 
     private Bitmap getQRBitmap() {
@@ -203,16 +236,13 @@ public class MyProfile extends AppCompatActivity {
                     jsonObject = new JSONObject(response);
                     int status = jsonObject.getInt("0");
                     Log.v("STATUS : ", String.valueOf(status));
-                    if (status == 1)
-                    {
+                    if (status == 1) {
                         checkRegistered = true;
                         clearSharedPreferences(shareEdit);
                         setData(MyProfile.this, jsonObject.getJSONObject("1"), shareEdit);
                         Toast.makeText(getApplicationContext(), R.string.log_in_successful, Toast.LENGTH_LONG).show();
                         finish();
-                    }
-                    else if (status == -1)
-                    {
+                    } else if (status == -1) {
                         checkRegistered = false;
                         Intent intent = new Intent(MyProfile.this, RegisterActivity.class);
                         startActivityForResult(intent, 10);
@@ -296,8 +326,7 @@ public class MyProfile extends AppCompatActivity {
     }
 
     public static void setData(Context context, JSONObject userJson, SharedPreferences.Editor shareEdit) {
-        if(userJson != null)
-        {
+        if (userJson != null) {
             try {
                 shareEdit.putString(context.getString(R.string.anwesha_id), userJson.getString("pId"));
                 shareEdit.putString(context.getString(R.string.full_name), userJson.getString("name"));
@@ -321,8 +350,7 @@ public class MyProfile extends AppCompatActivity {
 
     private static void downloadQR(final Context context, String qrurl) {
         Log.e("muks", "qrurl = " + qrurl);
-        if(qrurl != null)
-        {
+        if (qrurl != null) {
             Glide.with(context)
                     .asBitmap()
                     .load(qrurl)
@@ -338,6 +366,9 @@ public class MyProfile extends AppCompatActivity {
                                 FileOutputStream fos = new FileOutputStream(file);
                                 bitmap.compress(Bitmap.CompressFormat.PNG, 100, fos);
                                 Log.v("QR : ", "QR saved successfully");
+                                SharedPreferences.Editor spEdit = PreferenceManager.getDefaultSharedPreferences(context).edit();
+                                spEdit.putBoolean(context.getString(R.string.is_qr_downloaded), true);
+                                spEdit.apply();
                             } catch (FileNotFoundException e) {
                                 e.printStackTrace();
                             }
@@ -361,5 +392,16 @@ public class MyProfile extends AppCompatActivity {
             return responseJSON.getString(key);
         else
             return "";
+    }
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+        if(key.equals(getString(R.string.is_qr_downloaded)))
+        {
+            if(sharedPreferences.getBoolean(getString(R.string.is_qr_downloaded), false))
+            {
+                showQRCode();
+            }
+        }
     }
 }
