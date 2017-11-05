@@ -61,26 +61,26 @@
                     android:text="@string/events" />
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/schedule"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:background="@color/colorSchedule">
+            <!--<LinearLayout-->
+                <!--android:id="@+id/schedule"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="2dp"-->
+                <!--android:background="@color/colorSchedule">-->
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="8dp"
-                    android:src="@drawable/ic_event_white_24dp" />
+                <!--<ImageView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="center_vertical"-->
+                    <!--android:layout_marginLeft="8dp"-->
+                    <!--android:src="@drawable/ic_event_white_24dp" />-->
 
-                <TextView
-                    style="@style/home_tabs_textview"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/schedule" />
-            </LinearLayout>
+                <!--<TextView-->
+                    <!--style="@style/home_tabs_textview"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="@string/schedule" />-->
+            <!--</LinearLayout>-->
 
             <LinearLayout
                 android:id="@+id/team"
@@ -125,26 +125,26 @@
                     android:text="@string/developers" />
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/sponsors_menu_item"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:background="@color/colorSponsors">
+            <!--<LinearLayout-->
+                <!--android:id="@+id/sponsors_menu_item"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="2dp"-->
+                <!--android:background="@color/colorSponsors">-->
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="8dp"
-                    android:src="@drawable/ic_monetization_on_white_24dp" />
+                <!--<ImageView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="center_vertical"-->
+                    <!--android:layout_marginLeft="8dp"-->
+                    <!--android:src="@drawable/ic_monetization_on_white_24dp" />-->
 
-                <TextView
-                    style="@style/home_tabs_textview"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/sponsors" />
-            </LinearLayout>
+                <!--<TextView-->
+                    <!--style="@style/home_tabs_textview"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="@string/sponsors" />-->
+            <!--</LinearLayout>-->
 
             <LinearLayout
                 android:id="@+id/about"

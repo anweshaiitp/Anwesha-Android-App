@@ -114,13 +114,13 @@ public class HomePage extends android.support.v4.app.Fragment {
             }
         });
 
-        scheduleLinearLayout = (LinearLayout) rootView.findViewById(R.id.schedule);
-        scheduleLinearLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                comingSoonToast.show();
-            }
-        });
+//        scheduleLinearLayout = (LinearLayout) rootView.findViewById(R.id.schedule);
+//        scheduleLinearLayout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                comingSoonToast.show();
+//            }
+//        });
 
         devLinearLayout = (LinearLayout) rootView.findViewById(R.id.developers);
         devLinearLayout.setOnClickListener(new View.OnClickListener() {
@@ -131,13 +131,13 @@ public class HomePage extends android.support.v4.app.Fragment {
             }
         });
 
-        sponsorsLinearLayout = (LinearLayout) rootView.findViewById(R.id.sponsors_menu_item);
-        sponsorsLinearLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                comingSoonToast.show();
-            }
-        });
+//        sponsorsLinearLayout = (LinearLayout) rootView.findViewById(R.id.sponsors_menu_item);
+//        sponsorsLinearLayout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                comingSoonToast.show();
+//            }
+//        });
 
         teamLinearLayout = (LinearLayout) rootView.findViewById(R.id.team);
         teamLinearLayout.setOnClickListener(new View.OnClickListener() {
