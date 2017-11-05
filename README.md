@@ -12,3 +12,4 @@ Anwesha 2k18 Android App
 - [ ] Reset Password feature
 - [ ] Remove Password option for facebook logged in users, and make everything else uneditable
 - [ ] Implement with last year's code for loading events info.
+- [ ] Comment out schedule and sponsors.
