@@ -141,11 +141,9 @@ public class BackgroundFetch extends Service {
             }
             db.insertEvent(contentValues);
 
-
         } catch (JSONException e) {
             e.printStackTrace();
             Log.e("BackgroundFetch", "Invalid JSON");
-
         }
     }
 }

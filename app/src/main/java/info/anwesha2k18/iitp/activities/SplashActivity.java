@@ -11,6 +11,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import info.anwesha2k18.iitp.R;
+import info.anwesha2k18.iitp.database.BackgroundFetch;
 import info.anwesha2k18.iitp.utils.NetworkUtils;
 
 import java.io.IOException;
@@ -55,6 +56,10 @@ public class SplashActivity extends Activity {
         downloadImage.execute(new ContextWrapper(getApplicationContext()), this);
         fetchHighlihtsAsynctask fetchHighlihtsAsynctaskwork = new fetchHighlihtsAsynctask();
         fetchHighlihtsAsynctaskwork.execute(new ContextWrapper(getApplicationContext()), this);
+
+        // Update Events database
+        Intent eventData = new Intent(this, BackgroundFetch.class);
+        startService(eventData);
     }
 
     // to trigger download task info background thread
