@@ -7,7 +7,7 @@ Anwesha 2k18 Android App
 - [ ] Make 'Sign Out' sign you out of fb too
 - \[x] Limit Datepicker date range, and change color
 - [ ] Remove old Celesta posters and arrays
-- [ ] Remove extra menu entries on home page
+- \[x] Remove extra menu entries on home page
 - \[x] Fix qr code loading before getting saved (like immediately after registration)
 - [ ] Reset Password feature
 - [ ] Remove Password option for facebook logged in users, and make everything else uneditable
