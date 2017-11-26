@@ -14,3 +14,4 @@ Anwesha 2k18 Android App
 - [ ] Implement with last year's code for loading events info.
 - [ ] Change FB login as JSON response changed.
 - \[x] Comment out schedule and sponsors.
+- [ ] Add section Pronites (Very Important).
