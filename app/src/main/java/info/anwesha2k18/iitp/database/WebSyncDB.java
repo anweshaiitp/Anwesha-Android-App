@@ -27,7 +27,7 @@ public class WebSyncDB extends SQLiteOpenHelper {
     static final String EVENT_long_desc = "long_desc";
     private static final String TABLE_EVENT = "Event";
     private static String DBNAME = "websyncdb";
-    private static int VERSION = 2;
+    private static int VERSION = 1;
     private SQLiteDatabase mDB;
 
     public WebSyncDB(Context context) {
