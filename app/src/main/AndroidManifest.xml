@@ -232,6 +232,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="info.anwesha2k18.iitp.activities.EventsActivity" />
         </activity>
+
+        <service android:name=".database.BackgroundFetch" />
     </application>
 
 </manifest>
