@@ -15,3 +15,4 @@ Anwesha 2k18 Android App
 - [ ] Change FB login as JSON response changed.
 - \[x] Comment out schedule and sponsors.
 - [ ] Add section Pronites (Very Important).
+- [ ] Create `TEAM` Page.
