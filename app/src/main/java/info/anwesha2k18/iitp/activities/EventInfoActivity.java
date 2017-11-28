@@ -19,13 +19,19 @@ import info.anwesha2k18.iitp.R;
 public class EventInfoActivity extends AppCompatActivity {
 
     public static final String EXTRA_HEADER = "Header",
-            EXTRA_DESCRIPTION = "Text",
+            EXTRA_LONG_DESCRIPTION = "LongDescription",
             EXTRA_RULES = "Rules",
             EXTRA_VENUE = "Venue",
-            EXTRA_DATE_TIME = "DateTime",
+            EXTRA_TIME = "Time",
             EXTRA_IMAGE_ID = "ImageId",
             EXTRA_ORGANIZERS = "Organizers",
-            EXTRA_CONTACTS = "Contacts";
+            EXTRA_CONTACTS = "Contacts",
+            EXTRA_ID = "ID",
+            EXTRA_CODE = "Code",
+            EXTRA_DAY = "Day",
+            EXTRA_SIZE = "Size",
+            EXTRA_FEE = "Fee",
+            EXTRA_DATE = "Date";
 
     @Override
     public void onLowMemory() {
@@ -45,9 +51,9 @@ public class EventInfoActivity extends AppCompatActivity {
         // Get the Intent that started this activity and extract the strings needed
         Intent intent = getIntent();
         final String header = intent.getStringExtra(EXTRA_HEADER);
-        String text = intent.getStringExtra(EXTRA_DESCRIPTION);
+        String text = intent.getStringExtra(EXTRA_LONG_DESCRIPTION);
         String rules = intent.getStringExtra(EXTRA_RULES);
-        final String dateTime = intent.getStringExtra(EXTRA_DATE_TIME);
+        final String dateTime = intent.getStringExtra(EXTRA_TIME);
         String venue = intent.getStringExtra(EXTRA_VENUE);
         int imageId = intent.getIntExtra(EXTRA_IMAGE_ID, -1);
 
@@ -64,7 +70,7 @@ public class EventInfoActivity extends AppCompatActivity {
                 if (scrollRange + verticalOffset == 0) {
                     collapsingToolbarLayout.setTitle(header);
                     isShow = true;
-                } else if(isShow) {
+                } else if (isShow) {
                     collapsingToolbarLayout.setTitle(" ");//careful there should a space between double quote otherwise it wont work
                     isShow = false;
                 }

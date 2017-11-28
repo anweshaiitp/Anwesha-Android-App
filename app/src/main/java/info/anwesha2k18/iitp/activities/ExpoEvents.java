@@ -20,8 +20,8 @@ import info.anwesha2k18.iitp.adapters.EventsRecyclerViewAdapter;
 import info.anwesha2k18.iitp.data.EventsData;
 
 import static info.anwesha2k18.iitp.activities.EventInfoActivity.EXTRA_CONTACTS;
-import static info.anwesha2k18.iitp.activities.EventInfoActivity.EXTRA_DATE_TIME;
-import static info.anwesha2k18.iitp.activities.EventInfoActivity.EXTRA_DESCRIPTION;
+import static info.anwesha2k18.iitp.activities.EventInfoActivity.EXTRA_TIME;
+import static info.anwesha2k18.iitp.activities.EventInfoActivity.EXTRA_LONG_DESCRIPTION;
 import static info.anwesha2k18.iitp.activities.EventInfoActivity.EXTRA_HEADER;
 import static info.anwesha2k18.iitp.activities.EventInfoActivity.EXTRA_IMAGE_ID;
 import static info.anwesha2k18.iitp.activities.EventInfoActivity.EXTRA_ORGANIZERS;
@@ -74,9 +74,9 @@ public class ExpoEvents extends AppCompatActivity implements EventsRecyclerViewA
 
         Intent intentNew = new Intent(this, Class.forName("info.anwesha2k18.iitp.activities.EventInfoActivity"));
         intentNew.putExtra(EXTRA_HEADER, eventsData.getHeader());
-        intentNew.putExtra(EXTRA_DESCRIPTION, eventsData.getText());
+        intentNew.putExtra(EXTRA_LONG_DESCRIPTION, eventsData.getText());
         intentNew.putExtra(EXTRA_RULES, eventsData.getRules());
-        intentNew.putExtra(EXTRA_DATE_TIME, eventsData.getDateTime());
+        intentNew.putExtra(EXTRA_TIME, eventsData.getDateTime());
         intentNew.putExtra(EXTRA_VENUE, eventsData.getVenue());
         intentNew.putExtra(EXTRA_IMAGE_ID, eventsData.getImageId());
         intentNew.putExtra(EXTRA_ORGANIZERS, eventsData.getOrganizers());
