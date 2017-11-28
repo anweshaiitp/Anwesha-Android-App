@@ -13,33 +13,35 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
 
-        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
-        <activity android:name="com.facebook.FacebookActivity"
-            android:configChanges=
-                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name" />
         <activity
             android:name="com.facebook.CustomTabActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
+
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
-
-        <activity android:name="info.anwesha2k18.iitp.activities.SplashActivity">
+        <activity android:name=".activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
-            android:name="info.anwesha2k18.iitp.activities.MainActivity"
+            android:name=".activities.MainActivity"
             android:label="@string/app_name"
             android:launchMode="singleTop"
             android:theme="@style/AppTheme.NoActionBar">
@@ -49,25 +51,22 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity
-            android:name="info.anwesha2k18.iitp.activities.EventsActivity"
+            android:name=".activities.EventsActivity"
             android:label="@string/events">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="info.anwesha2k18.iitp.activities.MainActivity" />
         </activity>
-
         <activity
-            android:name="info.anwesha2k18.iitp.activities.MyProfile"
+            android:name=".activities.MyProfile"
             android:label="@string/my_profile">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="info.anwesha2k18.iitp.activities.MainActivity" />
         </activity>
-
         <activity
-            android:name="info.anwesha2k18.iitp.activities.SocialActivity"
+            android:name=".activities.SocialActivity"
             android:label="@string/social">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -82,151 +81,132 @@
         <!-- </activity> -->
 
         <activity
-            android:name="info.anwesha2k18.iitp.activities.RoboticsEvents"
+            android:name=".activities.RoboticsEvents"
             android:label="Robotics">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="info.anwesha2k18.iitp.activities.EventsActivity" />
         </activity>
-
-
         <activity
-            android:name="info.anwesha2k18.iitp.activities.ExpoEvents"
+            android:name=".activities.ExpoEvents"
             android:label="Expo">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="info.anwesha2k18.iitp.activities.EventsActivity" />
         </activity>
-
         <activity
-            android:name="info.anwesha2k18.iitp.activities.DebateEvents"
+            android:name=".activities.DebateEvents"
             android:label="Debate">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="info.anwesha2k18.iitp.activities.EventsActivity" />
         </activity>
-
         <activity
-            android:name="info.anwesha2k18.iitp.activities.BuildItEvents"
+            android:name=".activities.BuildItEvents"
             android:label="Build It!!">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="info.anwesha2k18.iitp.activities.EventsActivity" />
         </activity>
-
         <activity
-            android:name="info.anwesha2k18.iitp.activities.DesignEvents"
+            android:name=".activities.DesignEvents"
             android:label="Design">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="info.anwesha2k18.iitp.activities.EventsActivity" />
         </activity>
-
         <activity
-            android:name="info.anwesha2k18.iitp.activities.SocialEvents"
+            android:name=".activities.SocialEvents"
             android:label="Social Events">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="info.anwesha2k18.iitp.activities.EventsActivity" />
         </activity>
-
         <activity
-            android:name="info.anwesha2k18.iitp.activities.AboutActivity"
+            android:name=".activities.AboutActivity"
             android:label="@string/about">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="info.anwesha2k18.iitp.activities.EventsActivity" />
         </activity>
-
         <activity
-            android:name="info.anwesha2k18.iitp.activities.TeamActivity"
+            android:name=".activities.TeamActivity"
             android:label="@string/team">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="info.anwesha2k18.iitp.activities.EventsActivity" />
         </activity>
-
         <activity
-            android:name="info.anwesha2k18.iitp.activities.SignInActivity"
+            android:name=".activities.SignInActivity"
             android:label="@string/SignIn">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="info.anwesha2k18.iitp.activities.MyProfile" />
         </activity>
-
         <activity
-            android:name="info.anwesha2k18.iitp.activities.RegisterActivity"
+            android:name=".activities.RegisterActivity"
             android:label="@string/SignUp">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="info.anwesha2k18.iitp.activities.MyProfile" />
         </activity>
-
         <activity
-            android:name="info.anwesha2k18.iitp.activities.ScheduleActivity"
+            android:name=".activities.ScheduleActivity"
             android:label="@string/title_activity_schedule"
-            android:parentActivityName="info.anwesha2k18.iitp.activities.MainActivity"
+            android:parentActivityName=".activities.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="info.anwesha2k18.iitp.activities.MainActivity" />
         </activity>
-
         <activity
-            android:name="info.anwesha2k18.iitp.activities.EventInfoActivity"
+            android:name=".activities.EventInfoActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
-            android:name="info.anwesha2k18.iitp.activities.DevelopersActivity"
-            android:parentActivityName="info.anwesha2k18.iitp.activities.MainActivity">
+            android:name=".activities.DevelopersActivity"
+            android:parentActivityName=".activities.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="info.anwesha2k18.iitp.activities.MainActivity" />
         </activity>
-
         <activity
-            android:name="info.anwesha2k18.iitp.activities.ImageLauncher"
-            android:parentActivityName="info.anwesha2k18.iitp.activities.MainActivity"
+            android:name=".activities.ImageLauncher"
+            android:parentActivityName=".activities.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="info.anwesha2k18.iitp.activities.MainActivity" />
         </activity>
-
         <activity
-            android:name="info.anwesha2k18.iitp.activities.CodingEvents"
+            android:name=".activities.CodingEvents"
             android:label="Coding">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="info.anwesha2k18.iitp.activities.EventsActivity" />
         </activity>
-
         <activity
-            android:name="info.anwesha2k18.iitp.activities.PhotographyEvents"
+            android:name=".activities.PhotographyEvents"
             android:label="Photography Events">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="info.anwesha2k18.iitp.activities.EventsActivity" />
         </activity>
-
         <activity
-            android:name="info.anwesha2k18.iitp.activities.TreasureHunt"
+            android:name=".activities.TreasureHunt"
             android:label="Treasure Hunt">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="info.anwesha2k18.iitp.activities.EventsActivity" />
         </activity>
-
         <activity
-            android:name="info.anwesha2k18.iitp.activities.StoryWritingEvents"
+            android:name=".activities.StoryWritingEvents"
             android:label="Story Writing">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="info.anwesha2k18.iitp.activities.EventsActivity" />
         </activity>
-
         <activity
-            android:name="info.anwesha2k18.iitp.activities.QuizWizEvents"
+            android:name=".activities.QuizWizEvents"
             android:label="Quiz Wiz">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -234,6 +214,15 @@
         </activity>
 
         <service android:name=".database.BackgroundFetch" />
+
+        <activity
+            android:name=".activities.EventsActivityNew"
+            android:label="Events"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="info.anwesha2k18.iitp.activities.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

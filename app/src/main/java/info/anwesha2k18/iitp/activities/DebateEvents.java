@@ -69,9 +69,9 @@ public class DebateEvents extends AppCompatActivity implements EventsRecyclerVie
 
         Intent intentNew = new Intent(this, Class.forName("info.anwesha2k18.iitp.activities.EventInfoActivity"));
         intentNew.putExtra(EventInfoActivity.EXTRA_HEADER, eventsData.getHeader());
-        intentNew.putExtra(EventInfoActivity.EXTRA_DESCRIPTION, eventsData.getText());
+        intentNew.putExtra(EventInfoActivity.EXTRA_LONG_DESCRIPTION, eventsData.getText());
         intentNew.putExtra(EventInfoActivity.EXTRA_RULES, eventsData.getRules());
-        intentNew.putExtra(EventInfoActivity.EXTRA_DATE_TIME, eventsData.getDateTime());
+        intentNew.putExtra(EventInfoActivity.EXTRA_TIME, eventsData.getDateTime());
         intentNew.putExtra(EventInfoActivity.EXTRA_VENUE, eventsData.getVenue());
         intentNew.putExtra(EventInfoActivity.EXTRA_IMAGE_ID, eventsData.getImageId());
         intentNew.putExtra(EXTRA_ORGANIZERS, eventsData.getOrganizers());

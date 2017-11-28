@@ -5,11 +5,22 @@ package info.anwesha2k18.iitp.data;
  */
 
 public class EventData {
-    int fee, day, size, id, code;
-    String name, tagline, date, time, venue, organisers, short_desc, long_desc;
+    public int fee;
+    public int day;
+    public int size;
+    public int id;
+    public int code;
+    public String name;
+    public String tagline;
+    public String date;
+    public String time;
+    public String venue;
+    public String organisers;
+    public String short_desc;
+    public String long_desc;
     String toDisplay_short, toDisplay_long;
 
-    EventData(int id, String name, int fee, int day, int size, int code, String tagline, String date, String time, String venue, String organisers, String short_desc, String long_desc ) {
+    public EventData(int id, String name, int fee, int day, int size, int code, String tagline, String date, String time, String venue, String organisers, String short_desc, String long_desc) {
         this.id = id;
         this.name = name;
         this.short_desc = short_desc;
