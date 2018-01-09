@@ -7,12 +7,9 @@
     </string-array>
 
     <integer-array name="array_home_slide_show">
-        <item>@drawable/capture_the_flag</item>
-        <item>@drawable/robowars</item>
-        <item>@drawable/tech_exhibition</item>
-        <item>@drawable/static_rush2</item>
-        <item>@drawable/sparkfun</item>
-        <item>@drawable/mind_benders</item>
+        <item>@drawable/anwesha_cover</item>
+        <item>@drawable/anwesha_clix</item>
+        <item>@drawable/anwesha_telegraph</item>
     </integer-array>
     <string-array name="array_event_headers">
         <item>Lets Code!!</item>

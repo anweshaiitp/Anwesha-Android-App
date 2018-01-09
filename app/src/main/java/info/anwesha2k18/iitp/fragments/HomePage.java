@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import info.anwesha2k18.iitp.activities.AboutActivity;
 import info.anwesha2k18.iitp.activities.EventsActivityNew;
+import info.anwesha2k18.iitp.activities.MyProfile;
 import info.anwesha2k18.iitp.activities.SocialActivity;
 
 import info.anwesha2k18.iitp.R;
@@ -42,19 +43,20 @@ public class HomePage extends android.support.v4.app.Fragment {
     LinearLayout sponsorsLinearLayout;
     LinearLayout teamLinearLayout;
     LinearLayout devLinearLayout;
+    LinearLayout mapLinearLayout;
 
     LinearLayout socialLinearLayout ;
     Toast comingSoonToast;
 
-    private int currentPage=0 ;
+    private int currentPage = 0;
     Timer timer ;
-    private int NUM_PAGES=6 ;
+    private int NUM_PAGES;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.fragment_home, container, false);
-
+        NUM_PAGES = getResources().obtainTypedArray(R.array.array_home_slide_show).length();
 
         final ViewPagerCustomDuration viewPagerCustomDuration = (ViewPagerCustomDuration) rootView.findViewById(R.id.events_pager);
         viewPagerCustomDuration.setScrollDuration(900);
@@ -90,9 +92,11 @@ public class HomePage extends android.support.v4.app.Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String uri = "https://www.google.com/maps/@?api=1&map_action=map&center=25.535752,84.851065&zoom=16&basemap=satellite";
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
-                getContext().startActivity(intent);
+//                String uri = "https://www.google.com/maps/@?api=1&map_action=map&center=25.535752,84.851065&zoom=16&basemap=satellite";
+//                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+//                getContext().startActivity(intent);
+                Intent intent = new Intent(rootView.getContext(), MyProfile.class);
+                startActivity(intent);
             }
         });
 
@@ -114,6 +118,16 @@ public class HomePage extends android.support.v4.app.Fragment {
                 Intent intent = new Intent(rootView.getContext(), AboutActivity.class);
                 startActivity(intent);
 //                comingSoonToast.show();
+            }
+        });
+
+        mapLinearLayout = (LinearLayout) rootView.findViewById(R.id.map);
+        mapLinearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String uri = "https://www.google.com/maps/@?api=1&map_action=map&center=25.535752,84.851065&zoom=16&basemap=satellite";
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+                getContext().startActivity(intent);
             }
         });
 
@@ -151,14 +165,14 @@ public class HomePage extends android.support.v4.app.Fragment {
 
             }
         });
-        socialLinearLayout=(LinearLayout)rootView.findViewById(R.id.social);
-        socialLinearLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent= new Intent(rootView.getContext(), SocialActivity.class) ;
-                startActivity(intent);
-            }
-        });
+//        socialLinearLayout=(LinearLayout)rootView.findViewById(R.id.social);
+//        socialLinearLayout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent= new Intent(rootView.getContext(), SocialActivity.class) ;
+//                startActivity(intent);
+//            }
+//        });
         return rootView;
     }
 }
