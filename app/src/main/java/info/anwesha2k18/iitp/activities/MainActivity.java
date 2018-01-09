@@ -14,6 +14,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.facebook.login.LoginManager;
+
 import info.anwesha2k18.iitp.R;
 import info.anwesha2k18.iitp.adapters.PageFragmentAdapter;
 
@@ -97,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
             sharedPreferences.putBoolean(getString(R.string.login_status), false);
             sharedPreferences.apply();
             refreshMenu();
+            LoginManager.getInstance().logOut();
             Toast.makeText(this, "Logged Out Successfully", Toast.LENGTH_SHORT).show();
         }
 
