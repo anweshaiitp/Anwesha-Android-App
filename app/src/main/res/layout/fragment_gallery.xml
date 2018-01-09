@@ -25,4 +25,9 @@
         android:text="@string/keep_checking_for_updates"
         android:textColor="@color/colorSignUp"
         android:textSize="16sp" />
+
+    <!--<WebView-->
+        <!--android:id="@+id/webview"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent" />-->
 </RelativeLayout>
