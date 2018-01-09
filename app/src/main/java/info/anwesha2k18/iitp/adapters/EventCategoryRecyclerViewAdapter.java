@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.util.Pair;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,9 +55,12 @@ public class EventCategoryRecyclerViewAdapter extends RecyclerView.Adapter<Event
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
         holder.header.setText(mValues.get(position).name);
-        if(mValues.get(position).tagline == null || mValues.get(position).tagline.equals(" ") || mValues.get(position).tagline.equals("null") || mValues.get(position).tagline.equals(""))
-            holder.tvdesc.setText(mValues.get(position).short_desc);
-        else
+        if (mValues.get(position).tagline == null || mValues.get(position).tagline.equals(" ") || mValues.get(position).tagline.equals("null") || mValues.get(position).tagline.equals("")) {
+            if (!TextUtils.isEmpty(mValues.get(position).short_desc) || mValues.get(position).short_desc.equals("null"))
+                holder.tvdesc.setText(mValues.get(position).short_desc);
+            else
+                holder.tvdesc.setText("");
+        } else
             holder.tvdesc.setText(mValues.get(position).tagline);
 
         Glide.with(context)

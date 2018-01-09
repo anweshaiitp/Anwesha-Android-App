@@ -62,7 +62,7 @@ public class EventsActivityNew extends AppCompatActivity {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
 
         for(int i=0;i<AllEvents.size();i++) {
-            if(AllEvents.get(i).code == -1)
+            if(AllEvents.get(i).code == 0 && !AllEvents.get(i).name.equals("superAdmin"))
                 adapter.addFrag(EventCategoryFragment.newInstance(AllEvents.get(i).id), AllEvents.get(i).name);
         }
         viewPager.setAdapter(adapter);
