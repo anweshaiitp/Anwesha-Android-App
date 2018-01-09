@@ -31,28 +31,6 @@ public class TeamActivity extends AppCompatActivity implements TeamRecylerViewAd
 
         getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
         setContentView(R.layout.activity_team);
-
-        recyclerView = (RecyclerView) findViewById(R.id.teamRecylerView);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(linearLayoutManager);
-
-        recyclerView.setHasFixedSize(true);
-        Resources resources = getResources();
-
-        android.support.v7.app.ActionBar bar = getSupportActionBar();
-        bar.setBackgroundDrawable(new ColorDrawable(ContextCompat.getColor(this, R.color.colorPrimaryDark)));
-        //populating the array with the data
-        teamRecylerViewAdapter = new TeamRecylerViewAdapter(getApplicationContext(),
-                this,
-                resources.getStringArray(R.array.array_team_names),
-                resources.getStringArray(R.array.array_team_pors),
-                resources.getStringArray(R.array.array_team_committees),
-                resources.getStringArray(R.array.array_team_number),
-                resources.obtainTypedArray(R.array.array_team_images));
-
-        //setting adapter on the recyler view
-        recyclerView.setAdapter(teamRecylerViewAdapter);
-
     }
 
     @Override
