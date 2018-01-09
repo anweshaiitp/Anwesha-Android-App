@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import info.anwesha2k18.iitp.activities.AboutActivity;
 import info.anwesha2k18.iitp.activities.EventsActivityNew;
 import info.anwesha2k18.iitp.activities.SocialActivity;
 
@@ -110,9 +111,9 @@ public class HomePage extends android.support.v4.app.Fragment {
         aboutFrameLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent = new Intent(rootView.getContext(), AboutActivity.class);
-//                startActivity(intent);
-                comingSoonToast.show();
+                Intent intent = new Intent(rootView.getContext(), AboutActivity.class);
+                startActivity(intent);
+//                comingSoonToast.show();
             }
         });
 
