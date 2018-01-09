@@ -5,11 +5,16 @@
     <item
         android:id="@+id/action_log_in"
         android:orderInCategory="100"
-        android:title="Log In"
+        android:title="Log In/Register"
         app:showAsAction="never" />
     <item
         android:id="@+id/action_log_out"
         android:orderInCategory="100"
         android:title="Log Out"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_register"
+        android:orderInCategory="100"
+        android:title="Register"
         app:showAsAction="never" />
 </menu>

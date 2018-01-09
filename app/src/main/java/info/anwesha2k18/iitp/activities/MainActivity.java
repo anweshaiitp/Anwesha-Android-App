@@ -79,9 +79,11 @@ public class MainActivity extends AppCompatActivity {
             if (!sharedPreferences.getBoolean(getString(R.string.login_status), false)) {
                 menu.findItem(R.id.action_log_out).setVisible(false);
                 menu.findItem(R.id.action_log_in).setVisible(true);
+                menu.findItem(R.id.action_register).setVisible(false);
             } else {
                 menu.findItem(R.id.action_log_in).setVisible(false);
                 menu.findItem(R.id.action_log_out).setVisible(true);
+                menu.findItem(R.id.action_register).setVisible(false);
             }
         }
     }
@@ -108,6 +110,12 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             refreshMenu();
         }
+
+//        if (id == R.id.action_register) {
+//            Intent intent = new Intent(MainActivity.this, MyProfile.class);
+//            startActivity(intent);
+//            refreshMenu();
+//        }
 
         return super.onOptionsItemSelected(item);
     }
