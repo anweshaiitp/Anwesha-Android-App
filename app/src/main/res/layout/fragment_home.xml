@@ -21,6 +21,27 @@
                 android:layout_marginBottom="8dp" />
 
             <LinearLayout
+                android:id="@+id/about"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:background="@color/colorAbout">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="8dp"
+                    android:src="@drawable/ic_info_white_24dp" />
+
+                <TextView
+                    style="@style/home_tabs_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/about" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/colorMyProfile"
@@ -62,24 +83,24 @@
             </LinearLayout>
 
             <!--<LinearLayout-->
-                <!--android:id="@+id/schedule"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_marginTop="2dp"-->
-                <!--android:background="@color/colorSchedule">-->
+            <!--android:id="@+id/schedule"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="2dp"-->
+            <!--android:background="@color/colorSchedule">-->
 
-                <!--<ImageView-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_gravity="center_vertical"-->
-                    <!--android:layout_marginLeft="8dp"-->
-                    <!--android:src="@drawable/ic_event_white_24dp" />-->
+            <!--<ImageView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center_vertical"-->
+            <!--android:layout_marginLeft="8dp"-->
+            <!--android:src="@drawable/ic_event_white_24dp" />-->
 
-                <!--<TextView-->
-                    <!--style="@style/home_tabs_textview"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="@string/schedule" />-->
+            <!--<TextView-->
+            <!--style="@style/home_tabs_textview"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="@string/schedule" />-->
             <!--</LinearLayout>-->
 
             <LinearLayout
@@ -126,46 +147,26 @@
             </LinearLayout>
 
             <!--<LinearLayout-->
-                <!--android:id="@+id/sponsors_menu_item"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_marginTop="2dp"-->
-                <!--android:background="@color/colorSponsors">-->
+            <!--android:id="@+id/sponsors_menu_item"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="2dp"-->
+            <!--android:background="@color/colorSponsors">-->
 
-                <!--<ImageView-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_gravity="center_vertical"-->
-                    <!--android:layout_marginLeft="8dp"-->
-                    <!--android:src="@drawable/ic_monetization_on_white_24dp" />-->
+            <!--<ImageView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center_vertical"-->
+            <!--android:layout_marginLeft="8dp"-->
+            <!--android:src="@drawable/ic_monetization_on_white_24dp" />-->
 
-                <!--<TextView-->
-                    <!--style="@style/home_tabs_textview"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="@string/sponsors" />-->
+            <!--<TextView-->
+            <!--style="@style/home_tabs_textview"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="@string/sponsors" />-->
             <!--</LinearLayout>-->
 
-            <LinearLayout
-                android:id="@+id/about"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:background="@color/colorAbout">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="8dp"
-                    android:src="@drawable/ic_info_white_24dp" />
-
-                <TextView
-                    style="@style/home_tabs_textview"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/about" />
-            </LinearLayout>
 
             <!--<LinearLayout-->
             <!--android:layout_width="match_parent"-->
@@ -188,25 +189,46 @@
             <!--android:text="@string/gallery" />-->
             <!--</LinearLayout>-->
 
+            <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="2dp"-->
+            <!--android:background="@color/colorSocial"-->
+            <!--android:id="@+id/social">-->
+
+            <!--<ImageView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center_vertical"-->
+            <!--android:layout_marginLeft="8dp"-->
+            <!--android:src="@drawable/ic_public_white_24dp" />-->
+
+            <!--<TextView-->
+            <!--style="@style/home_tabs_textview"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="@string/social" />-->
+            <!--</LinearLayout>-->
+
             <LinearLayout
+                android:id="@+id/map"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
-                android:background="@color/colorSocial"
-                android:id="@+id/social">
+                android:background="@color/colorMyProfile">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="8dp"
-                    android:src="@drawable/ic_public_white_24dp" />
+                    android:src="@drawable/ic_map_white_24dp" />
 
                 <TextView
                     style="@style/home_tabs_textview"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/social" />
+                    android:text="Map" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
@@ -219,6 +241,6 @@
         android:layout_alignParentRight="true"
         android:layout_gravity="bottom|right"
         android:layout_margin="16dp"
-        android:src="@drawable/ic_map_white_24dp"
+        android:src="@drawable/qrcode_scan"
         app:backgroundTint="@color/fab_background" />
 </RelativeLayout>

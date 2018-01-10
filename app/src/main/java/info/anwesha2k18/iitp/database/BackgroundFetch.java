@@ -23,7 +23,7 @@ import org.json.JSONObject;
 
 public class BackgroundFetch extends Service {
 
-    final static String BASE_URL = "http://2017.anwesha.info";
+    final static String BASE_URL = "http://anwesha.info";
     RequestQueue queue;
     WebSyncDB db;
 

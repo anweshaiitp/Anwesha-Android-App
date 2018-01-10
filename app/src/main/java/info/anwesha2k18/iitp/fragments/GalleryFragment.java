@@ -12,6 +12,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -79,6 +80,11 @@ public class GalleryFragment extends android.support.v4.app.Fragment {
 
         //loading the previous data from the file
         setImages();
+//        WebView webView = rootView.findViewById(R.id.webview);
+//        webView.getSettings().setLoadsImagesAutomatically(true);
+//        webView.getSettings().setJavaScriptEnabled(true);
+//        webView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
+//        webView.loadUrl("http://anwesha.info/gallery/");
         return rootView;
     }
 

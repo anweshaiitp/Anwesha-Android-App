@@ -173,13 +173,11 @@ public class MyProfile extends AppCompatActivity implements SharedPreferences.On
             idTextView.setText(sharedPreferences.getString(getString(R.string.anwesha_id), "12345"));
             collegeTextView.setText(sharedPreferences.getString(getString(R.string.college), "IIT Patna"));
             eventTextView.setText(sharedPreferences.getString(getString(R.string.event_participated), "-"));
-            if (sharedPreferences.getBoolean(getString(R.string.is_qr_downloaded), false))
-            {
+            if (sharedPreferences.getBoolean(getString(R.string.is_qr_downloaded), false)) {
                 showQRCode();
-            }
-            else
-            {
+            } else {
                 hideQRCode();
+                downloadQR(this, sharedPreferences.getString(getApplicationContext().getString(R.string.qr_url), ""));
             }
         }
     }
@@ -194,7 +192,8 @@ public class MyProfile extends AppCompatActivity implements SharedPreferences.On
     private void showQRCode() {
         ImageView qrImage = findViewById(R.id.image_view_qr_code);
         ProgressBar progressBar = findViewById(R.id.pb_qr);
-        progressBar.setVisibility(View.GONE);
+        if (progressBar != null)
+            progressBar.setVisibility(View.GONE);
         qrImage.setVisibility(View.VISIBLE);
         qrImage.setImageBitmap(getQRBitmap());
     }
@@ -241,7 +240,7 @@ public class MyProfile extends AppCompatActivity implements SharedPreferences.On
                         clearSharedPreferences(shareEdit);
                         setData(MyProfile.this, jsonObject.getJSONObject("1"), shareEdit);
                         Toast.makeText(getApplicationContext(), R.string.log_in_successful, Toast.LENGTH_LONG).show();
-                        finish();
+//                        finish();
                     } else if (status == -1) {
                         checkRegistered = false;
                         Intent intent = new Intent(MyProfile.this, RegisterActivity.class);
@@ -396,11 +395,9 @@ public class MyProfile extends AppCompatActivity implements SharedPreferences.On
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-        if(key.equals(getString(R.string.is_qr_downloaded)))
-        {
-            if(sharedPreferences.getBoolean(getString(R.string.is_qr_downloaded), false))
-            {
-                showQRCode();
+        if (key.equals(getString(R.string.is_qr_downloaded))) {
+            if (sharedPreferences.getBoolean(getString(R.string.is_qr_downloaded), false)) {
+                setView();
             }
         }
     }
