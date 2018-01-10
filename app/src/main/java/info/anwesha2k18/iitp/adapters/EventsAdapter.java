@@ -33,7 +33,7 @@ public class EventsAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
         ImageView imageView = new ImageView(context);
-        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
         Glide.with(context)
                 .load(images.getResourceId(position, -1))
                 .into(imageView);
