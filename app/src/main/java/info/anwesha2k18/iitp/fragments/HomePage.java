@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import info.anwesha2k18.iitp.activities.AboutActivity;
 import info.anwesha2k18.iitp.activities.EventsActivityNew;
+import info.anwesha2k18.iitp.activities.MapActivity;
 import info.anwesha2k18.iitp.activities.MyProfile;
 import info.anwesha2k18.iitp.activities.SocialActivity;
 
@@ -125,9 +126,11 @@ public class HomePage extends android.support.v4.app.Fragment {
         mapLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String uri = "https://www.google.com/maps/@?api=1&map_action=map&center=25.535752,84.851065&zoom=16&basemap=satellite";
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
-                getContext().startActivity(intent);
+//                String uri = "https://www.google.com/maps/@?api=1&map_action=map&center=25.535752,84.851065&zoom=16&basemap=satellite";
+//                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+//                startActivity(intent);
+                Intent intent = new Intent(rootView.getContext(), MapActivity.class);
+                startActivity(intent);
             }
         });
 
