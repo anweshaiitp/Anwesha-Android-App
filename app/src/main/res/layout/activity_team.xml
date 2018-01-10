@@ -93,7 +93,7 @@
 
                             <TextView
                                 style="@style/ContactEmail"
-                                android:text="" />
+                                android:text="rahul.ce15@iitp.ac.in" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -165,11 +165,11 @@
 
                             <TextView
                                 style="@style/ContactNo"
-                                android:text="" />
+                                android:text="+91 7980183647" />
 
                             <TextView
                                 style="@style/ContactEmail"
-                                android:text="" />
+                                android:text="piyush.ee15@iitp.ac.in" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -246,7 +246,7 @@
 
                             <TextView
                                 style="@style/ContactEmail"
-                                android:text="" />
+                                android:text="hariraj.me15@iitp.ac.in" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -328,7 +328,7 @@
 
                             <TextView
                                 style="@style/ContactEmail"
-                                android:text="" />
+                                android:text="ayushsharma.cs15@iitp.ac.in" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -591,7 +591,7 @@
 
                             <TextView
                                 style="@style/ContactEmail"
-                                android:text="" />
+                                android:text="abhishek.ee15@iitp.ac.in" />
 
                         </LinearLayout>
                     </LinearLayout>
