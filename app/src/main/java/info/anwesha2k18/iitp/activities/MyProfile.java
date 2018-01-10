@@ -177,6 +177,7 @@ public class MyProfile extends AppCompatActivity implements SharedPreferences.On
                 showQRCode();
             } else {
                 hideQRCode();
+                downloadQR(this, sharedPreferences.getString(getApplicationContext().getString(R.string.qr_url), ""));
             }
         }
     }
