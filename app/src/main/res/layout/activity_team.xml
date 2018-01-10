@@ -410,6 +410,9 @@
 
                         </LinearLayout>
 
+                    </LinearLayout>
+                    <LinearLayout style="@style/ContactRow">
+
                         <ImageView
                             style="@style/ContactDP"
                             android:src="@drawable/debdeep" />
