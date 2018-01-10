@@ -2,8 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="info.anwesha2k18.iitp">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <permission
+        android:name="info.anwesha2k18.iitp.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="info.anwesha2k18.iitp.permission.MAPS_RECEIVE" />
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -16,6 +26,11 @@
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
+
+        <provider
+            android:name=".database.LocationsContentProvider"
+            android:authorities="in.ac.iitp.anwesha2k17.locations"
+            android:exported="false" />
 
         <activity
             android:name="com.facebook.FacebookActivity"
@@ -223,6 +238,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="info.anwesha2k18.iitp.activities.MainActivity" />
         </activity>
+        <activity android:name=".activities.MapActivity" />
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyCFIHJ8vv41j95CROkdFIemDMMW7JuMPKY" />
     </application>
 
 </manifest>
