@@ -73,11 +73,25 @@
         <!--<item name="android:textColor">#3f3f9f</item> -->
         <item name="android:textColor">@color/colorSignUp</item>
         <item name="android:textSize">14sp</item>
-        <item name="android:onClick">call</item>
+        <!--<item name="android:onClick">call</item>-->
         <item name="android:clickable">true</item>
         <item name="android:focusable">true</item>
         <item name="android:layout_gravity">center_horizontal</item>
         <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="ContactEmail">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <!--<item name="android:textColor">#3f3f9f</item> -->
+        <item name="android:textColor">@color/colorSignIn</item>
+        <item name="android:textSize">14sp</item>
+        <!--<item name="android:onClick">email</item>-->
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:paddingBottom">2dp</item>
     </style>
 
     <style name="ContactHeader">
