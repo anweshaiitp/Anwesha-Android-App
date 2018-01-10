@@ -41,25 +41,25 @@
                     android:text="@string/about" />
             </LinearLayout>
 
-            <!--<LinearLayout-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="match_parent"-->
-                <!--android:background="@color/colorMyProfile"-->
-                <!--android:onClick="toMyProfile">-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorMyProfile"
+                android:onClick="toMyProfile">
 
-                <!--<ImageView-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_gravity="center_vertical"-->
-                    <!--android:layout_marginLeft="8dp"-->
-                    <!--android:src="@drawable/ic_person_pin_white_24dp" />-->
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="8dp"
+                    android:src="@drawable/ic_person_pin_white_24dp" />
 
-                <!--<TextView-->
-                    <!--style="@style/home_tabs_textview"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="@string/my_profile" />-->
-            <!--</LinearLayout>-->
+                <TextView
+                    style="@style/home_tabs_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/my_profile" />
+            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/events"
