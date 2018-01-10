@@ -75,7 +75,7 @@ public class SignInActivity extends AppCompatActivity {
                                         switch (status) {
                                             case 200:
                                                 Toast.makeText(getApplicationContext(), "Log In Successful", Toast.LENGTH_LONG).show();
-                                                MyProfile.setData(SignInActivity.this, jsonObject.getJSONArray("user").getJSONObject(0), sharedPreferenceEditor);
+                                                MyProfile.setData(SignInActivity.this, jsonObject.getJSONObject("user"), sharedPreferenceEditor);
                                                 finish();
                                                 break;
                                             case 400:
