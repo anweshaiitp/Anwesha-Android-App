@@ -66,7 +66,7 @@
 
                             <TextView
                                 style="@style/ContactNo"
-                                android:text="+91 9709309693" />
+                                android:text="+91 8269502154" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -85,7 +85,7 @@
 
                             <TextView
                                 style="@style/ContactNo"
-                                android:text="+91 9006703052" />
+                                android:text="+91 7292986255" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -104,7 +104,7 @@
 
                             <TextView
                                 style="@style/ContactNo"
-                                android:text="+91 9631089163" />
+                                android:text="+91 9431222254" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -130,7 +130,7 @@
 
                             <TextView
                                 style="@style/ContactNo"
-                                android:text="+91 9006743067" />
+                                android:text="" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -149,7 +149,7 @@
 
                             <TextView
                                 style="@style/ContactNo"
-                                android:text="+91 9709318262" />
+                                android:text="" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -168,7 +168,7 @@
 
                             <TextView
                                 style="@style/ContactNo"
-                                android:text="+91 9631099947" />
+                                android:text="" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -195,7 +195,7 @@
 
                             <TextView
                                 style="@style/ContactNo"
-                                android:text="+91 9006703087" />
+                                android:text="9555516461" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -214,7 +214,7 @@
 
                             <TextView
                                 style="@style/ContactNo"
-                                android:text="+91 9631112451" />
+                                android:text="+91 9166510630" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -236,7 +236,7 @@
 
                             <TextView
                                 style="@style/ContactNo"
-                                android:text="+91 9470731600" />
+                                android:text="" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -255,7 +255,7 @@
 
                             <TextView
                                 style="@style/ContactNo"
-                                android:text="+91 9869438819" />
+                                android:text="" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -274,17 +274,17 @@
                         <ImageView
                             android:id="@+id/imageView"
                             style="@style/ContactDP"
-                            android:src="@drawable/solomon" />
+                            android:src="@drawable/ayush" />
 
                         <LinearLayout style="@style/ContactCol">
 
                             <TextView
                                 style="@style/ContactName"
-                                android:text="Solomon Joy" />
+                                android:text="Ayush Sharma" />
 
                             <TextView
                                 style="@style/ContactNo"
-                                android:text="+91 9006743067" />
+                                android:text="+91 9661176887" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -293,17 +293,17 @@
 
                         <ImageView
                             style="@style/ContactDP"
-                            android:src="@drawable/piyush" />
+                            android:src="@drawable/himanshu" />
 
                         <LinearLayout style="@style/ContactCol">
 
                             <TextView
                                 style="@style/ContactName"
-                                android:text="Piyush Agarwal" />
+                                android:text="Himanshu Barua" />
 
                             <TextView
                                 style="@style/ContactNo"
-                                android:text="+91 9709318262" />
+                                android:text="+91 8516969037" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -311,18 +311,19 @@
                     <LinearLayout style="@style/ContactRow">
 
                         <ImageView
+                            android:id="@+id/imageView2"
                             style="@style/ContactDP"
-                            android:src="@drawable/ashish" />
+                            android:src="@drawable/pranav" />
 
                         <LinearLayout style="@style/ContactCol">
 
                             <TextView
                                 style="@style/ContactName"
-                                android:text="Ashish Raj" />
+                                android:text="Pranav Mutharia" />
 
                             <TextView
                                 style="@style/ContactNo"
-                                android:text="+91 9631099947" />
+                                android:text="+91 9899802982" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -344,13 +345,28 @@
                         <LinearLayout style="@style/ContactCol">
 
                             <TextView
-                                android:id="@+id/textView5"
                                 style="@style/ContactName"
                                 android:text="Tarun Garg" />
 
                             <TextView
                                 style="@style/ContactNo"
-                                android:text="+91 9401982501" />
+                                android:text="+91 7597694454" />
+
+                        </LinearLayout>
+
+                        <ImageView
+                            style="@style/ContactDP"
+                            android:src="@drawable/debdeep" />
+                        
+                        <LinearLayout style="@style/ContactCol">
+
+                            <TextView
+                                style="@style/ContactName"
+                                android:text="Debdeep Paul" />
+
+                            <TextView
+                                style="@style/ContactNo"
+                                android:text="+91 9523865409" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -379,7 +395,7 @@
 
                             <TextView
                                 style="@style/ContactNo"
-                                android:text="+91 8571831933" />
+                                android:text="7042712975" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -398,7 +414,7 @@
 
                             <TextView
                                 style="@style/ContactNo"
-                                android:text="+91 9631112601" />
+                                android:text="+91 9455061806" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -424,7 +440,7 @@
 
                             <TextView
                                 style="@style/ContactNo"
-                                android:text="+91 9523544530" />
+                                android:text="" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -443,7 +459,7 @@
 
                             <TextView
                                 style="@style/ContactNo"
-                                android:text="+91 7783078560" />
+                                android:text="7294000948" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -462,7 +478,7 @@
 
                             <TextView
                                 style="@style/ContactNo"
-                                android:text="+91 9494946566" />
+                                android:text="" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -488,7 +504,7 @@
 
                             <TextView
                                 style="@style/ContactNo"
-                                android:text="+91 8987040707" />
+                                android:text="+91 7261869560" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -507,7 +523,7 @@
 
                             <TextView
                                 style="@style/ContactNo"
-                                android:text="+91 8969303835" />
+                                android:text="" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -526,7 +542,7 @@
 
                             <TextView
                                 style="@style/ContactNo"
-                                android:text="+91 8889558326" />
+                                android:text="" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -555,7 +571,7 @@
 
                             <TextView
                                 style="@style/ContactNo"
-                                android:text="+91 9473480014" />
+                                android:text="+91 9971281365" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -574,7 +590,7 @@
 
                             <TextView
                                 style="@style/ContactNo"
-                                android:text="+91 9631089106" />
+                                android:text="+91 7770878087" />
 
                         </LinearLayout>
                     </LinearLayout>
