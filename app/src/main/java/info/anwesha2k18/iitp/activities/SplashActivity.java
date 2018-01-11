@@ -33,13 +33,13 @@ public class SplashActivity extends Activity {
         setContentView(R.layout.splashscreen);
 
         // Splash Image settings
-        GifImageView splashImageView = findViewById(R.id.splash);
-        try {
-            splashGif = new GifDrawable(getResources(),R.drawable.splash2);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        splashImageView.setImageDrawable(splashGif);
+//        GifImageView splashImageView = findViewById(R.id.splash);
+//        try {
+//            splashGif = new GifDrawable(getResources(),R.drawable.splash2);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        splashImageView.setImageDrawable(splashGif);
 
         handler = new Handler();
         action = new Runnable() {
@@ -69,8 +69,8 @@ public class SplashActivity extends Activity {
             if (!aBoolean) {
                 Toast.makeText(getBaseContext(), "Download failed. Please try again later", Toast.LENGTH_LONG).show();
             }
-            int time = splashGif.getDuration() - (splashGif.getCurrentPosition())%splashGif.getDuration();
-            handler.postDelayed(action, time);
+
+            handler.postDelayed(action,1000);
         }
 
         @Override
