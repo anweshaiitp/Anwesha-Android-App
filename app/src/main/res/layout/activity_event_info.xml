@@ -96,10 +96,21 @@
                             tools:text="Tutorial Block - Room no. 107" />
 
                         <TextView
-                            android:id="@+id/event_info_textview"
+                            android:id="@+id/event_reg_link"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/event_venue"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="sans-serif-light"
+                            android:textAppearance="@android:style/TextAppearance.Material.Headline"
+                            android:textSize="16sp"
+                            tools:text="Registration Link" />
+
+                        <TextView
+                            android:id="@+id/event_info_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/event_reg_link"
                             android:layout_marginTop="16dp"
                             android:fontFamily="sans-serif-light"
                             android:textAppearance="@android:style/TextAppearance.Holo.Medium"
