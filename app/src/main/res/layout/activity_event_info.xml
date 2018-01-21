@@ -126,8 +126,7 @@
                             android:layout_marginTop="16dp"
                             android:text="@string/rules_and_regulations"
                             android:textAppearance="@android:style/TextAppearance.Material.Headline"
-                            android:textSize="20sp"
-                            android:transitionName="event_text_header_transition" />
+                            android:textSize="20sp"/>
 
                         <TextView
                             android:id="@+id/event_rules_textview"
@@ -148,8 +147,7 @@
                             android:layout_marginTop="16dp"
                             android:text="@string/event_organizers"
                             android:textAppearance="@android:style/TextAppearance.Material.Headline"
-                            android:textSize="20sp"
-                            android:transitionName="event_text_header_transition" />
+                            android:textSize="20sp"/>
 
                         <TextView
                             android:id="@+id/event_organizers"

@@ -107,7 +107,7 @@ public class EventInfoActivity extends AppCompatActivity {
         final String finalText = text;
         ((TextView) findViewById(R.id.event_info_textview)).setText(text);
 
-        Log.e("muks", "rules = " + rules);
+//        Log.e("muks", "rules = " + rules);
         if (!rules.equals("To be updated soon.") && !rules.equals("") && !rules.equals("null")) {
             TextView rulesTextView = findViewById(R.id.event_rules_textview);
             rulesTextView.setText(Html.fromHtml("<a href=\"" + rules + "\">Find the rules here.</a>"));
