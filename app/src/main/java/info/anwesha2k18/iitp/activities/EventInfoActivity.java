@@ -9,6 +9,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -18,6 +19,8 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
 import info.anwesha2k18.iitp.R;
+
+import static info.anwesha2k18.iitp.R.id.textView;
 
 public class EventInfoActivity extends AppCompatActivity {
 
@@ -62,11 +65,15 @@ public class EventInfoActivity extends AppCompatActivity {
         String imageURL = intent.getStringExtra(EXTRA_IMAGE_ID);
         String regURL = intent.getStringExtra(EXTRA_REG_URL);
 
-        if (!regURL.equals("To be updated soon.")) {
+        if (!regURL.equals("To be updated soon.") && !regURL.equals("") && !regURL.equals("null")) {
             ((TextView) findViewById(R.id.event_reg_link)).setText(
                     Html.fromHtml("<a href=\"" + regURL + "\">Register here!!</a>")
             );
             ((TextView) findViewById(R.id.event_reg_link)).setMovementMethod(LinkMovementMethod.getInstance());
+//            Log.e("muks", "RegURL: <a href=\"" + regURL + "\">Register here!!</a>");
+        } else {
+            ((TextView) findViewById(R.id.event_reg_link)).setText(getString(R.string.will_be_updated_soon));
+//            Log.e("muks", "else here");
         }
 
         AppBarLayout appBarLayout = findViewById(R.id.appbar_event_info);
@@ -100,9 +107,11 @@ public class EventInfoActivity extends AppCompatActivity {
         final String finalText = text;
         ((TextView) findViewById(R.id.event_info_textview)).setText(text);
 
-        if (!rules.equals("To be updated soon.")) {
+        Log.e("muks", "rules = " + rules);
+        if (!rules.equals("To be updated soon.") && !rules.equals("") && !rules.equals("null")) {
             TextView rulesTextView = findViewById(R.id.event_rules_textview);
-            rulesTextView.setText(Html.fromHtml("<a href=\"" + rules + "\">Find the rules here.</a"));
+            rulesTextView.setText(Html.fromHtml("<a href=\"" + rules + "\">Find the rules here.</a>"));
+            Log.e("muks", "Rules: <a href=\"" + rules + "\">Find the rules here.</a>");
             rulesTextView.setMovementMethod(LinkMovementMethod.getInstance());
         }
 

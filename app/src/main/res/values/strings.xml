@@ -98,4 +98,5 @@
     <string name="login_error">Error logging in! Please try again later.</string>
     <string name="sign_in_param_username">username</string>
     <string name="is_qr_downloaded">isQRDownloaded</string>
+    <string name="will_be_updated_soon">Will be updated soon.</string>
 </resources>

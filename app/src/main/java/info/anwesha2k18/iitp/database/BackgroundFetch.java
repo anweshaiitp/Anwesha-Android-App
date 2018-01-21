@@ -141,7 +141,7 @@ public class BackgroundFetch extends Service {
                     cv.put(WebSyncDB.EVENT_image_url, " ");
                 }
                 try {
-                    cv.put(WebSyncDB.EVENT_rules_url, row.getString("rules  _url"));
+                    cv.put(WebSyncDB.EVENT_rules_url, row.getString("rules_url"));
                 } catch (JSONException e) {
                     cv.put(WebSyncDB.EVENT_rules_url, "To be updated soon.");
                 }
