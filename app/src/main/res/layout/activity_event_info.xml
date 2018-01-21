@@ -102,9 +102,9 @@
                             android:layout_below="@id/event_venue"
                             android:layout_marginTop="8dp"
                             android:fontFamily="sans-serif-light"
+                            android:text="Will be updated soon."
                             android:textAppearance="@android:style/TextAppearance.Material.Headline"
-                            android:textSize="16sp"
-                            tools:text="Registration Link" />
+                            android:textSize="18sp" />
 
                         <TextView
                             android:id="@+id/event_info_textview"
@@ -135,8 +135,8 @@
                             android:layout_below="@id/rules_header"
                             android:layout_marginTop="8dp"
                             android:fontFamily="sans-serif-light"
-                            android:textAppearance="@android:style/TextAppearance.Holo.Medium"
-                            tools:text="Lorem ipsum dolor sit amet untes gungslla goog oo gaa lossly roemsid dsfaks slal skdlfkan" />
+                            android:text="Will be updated soon."
+                            android:textAppearance="@android:style/TextAppearance.Holo.Medium" />
 
                         <TextView
                             android:id="@+id/event_organizers_header"
@@ -155,6 +155,7 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@id/event_organizers_header"
                             android:layout_marginTop="8dp"
+                            android:autoLink="phone"
                             android:fontFamily="sans-serif-light"
                             android:textAppearance="@android:style/TextAppearance.Holo.Medium"
                             tools:text="Mayank Vaidya" />

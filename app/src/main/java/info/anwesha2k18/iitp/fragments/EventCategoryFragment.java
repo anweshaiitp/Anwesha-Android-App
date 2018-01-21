@@ -123,6 +123,8 @@ public class EventCategoryFragment extends Fragment implements EventCategoryRecy
         intentNew.putExtra(EventInfoActivity.EXTRA_DATE, eventData.date);
         intentNew.putExtra(EventInfoActivity.EXTRA_RULES, eventData.rules);
         intentNew.putExtra(EventInfoActivity.EXTRA_REG_URL, eventData.regURL);
+        intentNew.putExtra(EventInfoActivity.EXTRA_IMAGE_ID, eventData.imageURL);
+        intentNew.putExtra(EventInfoActivity.EXTRA_DATE, eventData.date);
         startActivity(intentNew, options.toBundle());
     }
 }

@@ -7,12 +7,15 @@ import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 
 import info.anwesha2k18.iitp.R;
 
@@ -54,11 +57,19 @@ public class EventInfoActivity extends AppCompatActivity {
         final String header = intent.getStringExtra(EXTRA_HEADER);
         String text = intent.getStringExtra(EXTRA_LONG_DESCRIPTION);
         String rules = intent.getStringExtra(EXTRA_RULES);
-        final String dateTime = intent.getStringExtra(EXTRA_TIME);
+        final String dateTime = intent.getStringExtra(EXTRA_DATE) + ", " + intent.getStringExtra(EXTRA_TIME);
         String venue = intent.getStringExtra(EXTRA_VENUE);
-        int imageId = intent.getIntExtra(EXTRA_IMAGE_ID, -1);
+        String imageURL = intent.getStringExtra(EXTRA_IMAGE_ID);
+        String regURL = intent.getStringExtra(EXTRA_REG_URL);
 
-        AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.appbar_event_info);
+        if (!regURL.equals("To be updated soon.")) {
+            ((TextView) findViewById(R.id.event_reg_link)).setText(
+                    Html.fromHtml("<a href=\"" + regURL + "\">Register here!!</a>")
+            );
+            ((TextView) findViewById(R.id.event_reg_link)).setMovementMethod(LinkMovementMethod.getInstance());
+        }
+
+        AppBarLayout appBarLayout = findViewById(R.id.appbar_event_info);
         appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
             boolean isShow = false;
             int scrollRange = -1;
@@ -79,29 +90,28 @@ public class EventInfoActivity extends AppCompatActivity {
         });
 
         ((TextView) findViewById(R.id.event_info_name)).setText(header);
-        if (imageId != -1)
-            Glide.with(this)
-                    .load(imageId)
-                    .into((ImageView) findViewById(R.id.event_info_imageview));
+        Glide.with(this)
+                .load(imageURL)
+                .apply(new RequestOptions().error(R.drawable.anwesha_placeholder))
+                .into((ImageView) findViewById(R.id.event_info_imageview));
 
         if (text.equals("-1"))
             text = "No Information Available";
         final String finalText = text;
         ((TextView) findViewById(R.id.event_info_textview)).setText(text);
 
-        TextView rulesTextView = (TextView) findViewById(R.id.event_rules_textview);
-        if (rules.equals("-1")) {
-            rulesTextView.setVisibility(View.GONE);
-            (findViewById(R.id.rules_header)).setVisibility(View.GONE);
-        } else {
-            rulesTextView.setText(rules);
+        if (!rules.equals("To be updated soon.")) {
+            TextView rulesTextView = findViewById(R.id.event_rules_textview);
+            rulesTextView.setText(Html.fromHtml("<a href=\"" + rules + "\">Find the rules here.</a"));
+            rulesTextView.setMovementMethod(LinkMovementMethod.getInstance());
         }
+
         String organizers = intent.getStringExtra(EXTRA_ORGANIZERS);
-        final String contacts = intent.getStringExtra(EXTRA_CONTACTS);
-        if (organizers.equals("-1"))
-            organizers = "No information available";
+//        final String contacts = intent.getStringExtra(EXTRA_CONTACTS);
+//        if (organizers.equals("-1"))
+//            organizers = "No information available";
         ((TextView) findViewById(R.id.event_organizers)).setText(organizers);
-        ((TextView) findViewById(R.id.event_contact)).setText(contacts);
+//        ((TextView) findViewById(R.id.event_contact)).setText(contacts);
 
         ((TextView) findViewById(R.id.event_date_time)).setText(dateTime);
         ((TextView) findViewById(R.id.event_venue)).setText(venue);
