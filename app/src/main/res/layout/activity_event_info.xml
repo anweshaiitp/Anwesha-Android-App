@@ -104,6 +104,7 @@
                             android:fontFamily="sans-serif-light"
                             android:text="@string/will_be_updated_soon"
                             android:textAppearance="@android:style/TextAppearance.Material.Headline"
+                            android:textColorLink="@color/colorSignIn"
                             android:textSize="18sp" />
 
                         <TextView
@@ -136,7 +137,8 @@
                             android:layout_marginTop="8dp"
                             android:fontFamily="sans-serif-light"
                             android:text="Will be updated soon."
-                            android:textAppearance="@android:style/TextAppearance.Holo.Medium" />
+                            android:textAppearance="@android:style/TextAppearance.Holo.Medium"
+                            android:textColorLink="@color/colorSignIn" />
 
                         <TextView
                             android:id="@+id/event_organizers_header"
@@ -156,6 +158,7 @@
                             android:layout_below="@id/event_organizers_header"
                             android:layout_marginTop="8dp"
                             android:autoLink="phone"
+                            android:textColorLink="@color/colorSignIn"
                             android:fontFamily="sans-serif-light"
                             android:textAppearance="@android:style/TextAppearance.Holo.Medium"
                             tools:text="Mayank Vaidya" />
