@@ -31,7 +31,8 @@ public class EventInfoActivity extends AppCompatActivity {
             EXTRA_DAY = "Day",
             EXTRA_SIZE = "Size",
             EXTRA_FEE = "Fee",
-            EXTRA_DATE = "Date";
+            EXTRA_DATE = "Date",
+            EXTRA_REG_URL = "RegURL";
 
     @Override
     public void onLowMemory() {

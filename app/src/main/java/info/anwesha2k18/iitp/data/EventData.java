@@ -18,9 +18,12 @@ public class EventData {
     public String organisers;
     public String short_desc;
     public String long_desc;
-    String toDisplay_short, toDisplay_long;
+    public String toDisplay_short, toDisplay_long;
+    public String imageURL;
+    public String rules;
+    public String regURL;
 
-    public EventData(int id, String name, int fee, int day, int size, int code, String tagline, String date, String time, String venue, String organisers, String short_desc, String long_desc) {
+    public EventData(int id, String name, int fee, int day, int size, int code, String tagline, String date, String time, String venue, String organisers, String short_desc, String long_desc, String imageURL, String ruleURL, String regURL) {
         this.id = id;
         this.name = name;
         this.short_desc = short_desc;
@@ -36,6 +39,9 @@ public class EventData {
         this.long_desc = long_desc;
         toDisplay_short = filterLongDesc((short_desc));
         toDisplay_long = filterLongDesc((long_desc));
+        this.imageURL = imageURL;
+        this.rules = ruleURL;
+        this.regURL = regURL;
     }
 
     public String filterLongDesc(String longdesc) {

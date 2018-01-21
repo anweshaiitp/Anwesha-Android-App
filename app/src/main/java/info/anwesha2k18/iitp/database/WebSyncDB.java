@@ -25,9 +25,12 @@ public class WebSyncDB extends SQLiteOpenHelper {
     static final String EVENT_organisers = "organisers";
     static final String EVENT_short_desc = "short_desc";
     static final String EVENT_long_desc = "long_desc";
+    static final String EVENT_image_url = "cover_url";
+    static final String EVENT_rules_url = "rules_url";
+    static final String EVENT_reg_url = "reg_url";
     private static final String TABLE_EVENT = "Event";
     private static String DBNAME = "websyncdb";
-    private static int VERSION = 1;
+    private static int VERSION = 4;
     private SQLiteDatabase mDB;
 
     public WebSyncDB(Context context) {
@@ -50,7 +53,10 @@ public class WebSyncDB extends SQLiteOpenHelper {
                 EVENT_venue + " varchar(30), "+
                 EVENT_organisers + " varchar(100), "+
                 EVENT_short_desc + " varchar(1000), "+
-                EVENT_long_desc + " varchar(1000) " +
+                EVENT_long_desc + " varchar(1000), " +
+                EVENT_image_url + " varchar(1000), " +
+                EVENT_rules_url + " varchar(1000), " +
+                EVENT_reg_url + " varchar(1000) " +
                 ")";
         db.execSQL(sql);
 
@@ -68,7 +74,7 @@ public class WebSyncDB extends SQLiteOpenHelper {
     }
 
     public Cursor getAllEvents() {
-        return mDB.query(TABLE_EVENT, new String[]{EVENT_ID, EVENT_NAME, EVENT_fee, EVENT_day, EVENT_size, EVENT_code, EVENT_tagline, EVENT_date, EVENT_time, EVENT_venue, EVENT_organisers, EVENT_short_desc, EVENT_long_desc}, null, null, null, null, null);
+        return mDB.query(TABLE_EVENT, new String[]{EVENT_ID, EVENT_NAME, EVENT_fee, EVENT_day, EVENT_size, EVENT_code, EVENT_tagline, EVENT_date, EVENT_time, EVENT_venue, EVENT_organisers, EVENT_short_desc, EVENT_long_desc, EVENT_image_url, EVENT_rules_url, EVENT_reg_url}, null, null, null, null, null);
     }
 
     @Override

@@ -53,7 +53,7 @@ public class EventCategoryFragment extends Fragment implements EventCategoryRecy
         int c = 0;
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-            AllEvents.add(new EventData(cursor.getInt(0), cursor.getString(1), cursor.getInt(2), cursor.getInt(3), cursor.getInt(4), cursor.getInt(5), cursor.getString(6), cursor.getString(7), cursor.getString(8), cursor.getString(9), cursor.getString(10), cursor.getString(11), cursor.getString(12)));
+            AllEvents.add(new EventData(cursor.getInt(0), cursor.getString(1), cursor.getInt(2), cursor.getInt(3), cursor.getInt(4), cursor.getInt(5), cursor.getString(6), cursor.getString(7), cursor.getString(8), cursor.getString(9), cursor.getString(10), cursor.getString(11), cursor.getString(12), cursor.getString(13), cursor.getString(14), cursor.getString(15)));
             cursor.moveToNext();
             c++;
             if (c > 200) break;
@@ -108,7 +108,7 @@ public class EventCategoryFragment extends Fragment implements EventCategoryRecy
 
         Intent intentNew = new Intent(this.getContext(), EventInfoActivity.class);
         intentNew.putExtra(EventInfoActivity.EXTRA_HEADER, eventData.name);
-        intentNew.putExtra(EventInfoActivity.EXTRA_LONG_DESCRIPTION, eventData.long_desc);
+        intentNew.putExtra(EventInfoActivity.EXTRA_LONG_DESCRIPTION, eventData.toDisplay_short + eventData.toDisplay_long);
 //        intentNew.putExtra(EventInfoActivity.EXTRA_RULES, eventsData.getRules());
         intentNew.putExtra(EventInfoActivity.EXTRA_TIME, eventData.time);
         intentNew.putExtra(EventInfoActivity.EXTRA_VENUE, eventData.venue);
@@ -121,6 +121,8 @@ public class EventCategoryFragment extends Fragment implements EventCategoryRecy
         intentNew.putExtra(EventInfoActivity.EXTRA_SIZE, eventData.size);
         intentNew.putExtra(EventInfoActivity.EXTRA_FEE, eventData.fee);
         intentNew.putExtra(EventInfoActivity.EXTRA_DATE, eventData.date);
+        intentNew.putExtra(EventInfoActivity.EXTRA_RULES, eventData.rules);
+        intentNew.putExtra(EventInfoActivity.EXTRA_REG_URL, eventData.regURL);
         startActivity(intentNew, options.toBundle());
     }
 }

@@ -22,18 +22,18 @@
 
             <ImageView
                 android:id="@+id/card_cardimage"
-                android:layout_gravity="center_vertical"
                 android:layout_width="0dp"
                 android:layout_height="150dp"
-                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="2"
                 android:scaleType="centerCrop"
                 tools:src="@drawable/threshold" />
 
             <LinearLayout
                 android:layout_width="0dp"
-                android:orientation="vertical"
                 android:layout_height="wrap_content"
-                android:layout_weight="3">
+                android:layout_weight="3"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/card_header"
@@ -54,12 +54,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/cardview_light_background"
+                    android:ellipsize="end"
                     android:fontFamily="sans-serif-light"
+                    android:maxLines="7"
                     android:paddingBottom="16dp"
                     android:paddingLeft="16dp"
                     android:paddingRight="8dp"
-                    android:textSize="16sp"
                     android:textColor="@android:color/black"
+                    android:textSize="16sp"
                     tools:text="Blah" />
             </LinearLayout>
         </LinearLayout>

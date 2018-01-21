@@ -101,18 +101,18 @@ public class HomePage extends android.support.v4.app.Fragment {
             }
         });
 
-        eventsLinearLayout = (LinearLayout) rootView.findViewById(R.id.events);
+        eventsLinearLayout = rootView.findViewById(R.id.events);
         eventsLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent = new Intent(rootView.getContext(), EventsActivityNew.class);
-//                startActivity(intent);
-                comingSoonToast.show();
+                Intent intent = new Intent(rootView.getContext(), EventsActivityNew.class);
+                startActivity(intent);
+//                comingSoonToast.show();
 
             }
         });
 
-        aboutFrameLayout = (LinearLayout) rootView.findViewById(R.id.about);
+        aboutFrameLayout = rootView.findViewById(R.id.about);
         aboutFrameLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

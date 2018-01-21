@@ -146,7 +146,7 @@
                             android:layout_marginTop="8dp"
                             android:fontFamily="sans-serif-light"
                             android:textAppearance="@android:style/TextAppearance.Holo.Medium"
-                            tools:text="Mayank Vaidya and Soumya" />
+                            tools:text="Mayank Vaidya" />
 
                         <TextView
                             android:id="@+id/event_contact"

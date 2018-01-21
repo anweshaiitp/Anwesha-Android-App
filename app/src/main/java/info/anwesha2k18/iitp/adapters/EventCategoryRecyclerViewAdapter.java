@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 
 import java.util.List;
 
@@ -57,15 +58,18 @@ public class EventCategoryRecyclerViewAdapter extends RecyclerView.Adapter<Event
         holder.header.setText(mValues.get(position).name);
         if (mValues.get(position).tagline == null || mValues.get(position).tagline.equals(" ") || mValues.get(position).tagline.equals("null") || mValues.get(position).tagline.equals("")) {
             if (!TextUtils.isEmpty(mValues.get(position).short_desc) || mValues.get(position).short_desc.equals("null"))
-                holder.tvdesc.setText(mValues.get(position).short_desc);
+                holder.tvdesc.setText(mValues.get(position).toDisplay_short);
             else
                 holder.tvdesc.setText("");
         } else
-            holder.tvdesc.setText(mValues.get(position).tagline);
+            holder.tvdesc.setText(mValues.get(position).toDisplay_long);
+
+        RequestOptions options = new RequestOptions()
+                .error(R.drawable.anwesha_placeholder);
 
         Glide.with(context)
-                .load(R.drawable.ace)
-                .thumbnail(0.5f)
+                .load(holder.mItem.imageURL)
+                .apply(options)
                 .into(holder.imageView);
     }
 
