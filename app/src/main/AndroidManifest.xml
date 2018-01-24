@@ -94,14 +94,14 @@
             android:label="@string/about">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="info.anwesha2k18.iitp.activities.EventsActivity" />
+                android:value="info.anwesha2k18.iitp.activities.MainActivity" />
         </activity>
         <activity
             android:name=".activities.TeamActivity"
             android:label="@string/team">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="info.anwesha2k18.iitp.activities.EventsActivity" />
+                android:value="info.anwesha2k18.iitp.activities.MainActivity" />
         </activity>
         <activity
             android:name=".activities.SignInActivity"
