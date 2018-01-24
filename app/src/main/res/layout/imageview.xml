@@ -10,5 +10,5 @@
         android:id="@+id/launcher"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/scme" />
+        android:src="@drawable/anwesha_clix" />
 </LinearLayout>

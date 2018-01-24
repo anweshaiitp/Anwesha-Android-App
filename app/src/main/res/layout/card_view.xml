@@ -28,7 +28,7 @@
                 android:layout_weight="2"
                 android:scaleType="centerCrop"
                 android:visibility="gone"
-                tools:src="@drawable/threshold" />
+                tools:src="@drawable/anwesha_clix" />
 
             <LinearLayout
                 android:layout_width="0dp"

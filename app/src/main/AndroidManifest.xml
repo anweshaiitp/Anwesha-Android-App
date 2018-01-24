@@ -68,13 +68,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.EventsActivity"
-            android:label="@string/events">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="info.anwesha2k18.iitp.activities.MainActivity" />
-        </activity>
-        <activity
             android:name=".activities.MyProfile"
             android:label="@string/my_profile">
             <meta-data
@@ -96,48 +89,6 @@
         <!-- android:value=".activities.MainActivity" /> -->
         <!-- </activity> -->
 
-        <activity
-            android:name=".activities.RoboticsEvents"
-            android:label="Robotics">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="info.anwesha2k18.iitp.activities.EventsActivity" />
-        </activity>
-        <activity
-            android:name=".activities.ExpoEvents"
-            android:label="Expo">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="info.anwesha2k18.iitp.activities.EventsActivity" />
-        </activity>
-        <activity
-            android:name=".activities.DebateEvents"
-            android:label="Debate">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="info.anwesha2k18.iitp.activities.EventsActivity" />
-        </activity>
-        <activity
-            android:name=".activities.BuildItEvents"
-            android:label="Build It!!">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="info.anwesha2k18.iitp.activities.EventsActivity" />
-        </activity>
-        <activity
-            android:name=".activities.DesignEvents"
-            android:label="Design">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="info.anwesha2k18.iitp.activities.EventsActivity" />
-        </activity>
-        <activity
-            android:name=".activities.SocialEvents"
-            android:label="Social Events">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="info.anwesha2k18.iitp.activities.EventsActivity" />
-        </activity>
         <activity
             android:name=".activities.AboutActivity"
             android:label="@string/about">
@@ -192,41 +143,6 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="info.anwesha2k18.iitp.activities.MainActivity" />
-        </activity>
-        <activity
-            android:name=".activities.CodingEvents"
-            android:label="Coding">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="info.anwesha2k18.iitp.activities.EventsActivity" />
-        </activity>
-        <activity
-            android:name=".activities.PhotographyEvents"
-            android:label="Photography Events">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="info.anwesha2k18.iitp.activities.EventsActivity" />
-        </activity>
-        <activity
-            android:name=".activities.TreasureHunt"
-            android:label="Treasure Hunt">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="info.anwesha2k18.iitp.activities.EventsActivity" />
-        </activity>
-        <activity
-            android:name=".activities.StoryWritingEvents"
-            android:label="Story Writing">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="info.anwesha2k18.iitp.activities.EventsActivity" />
-        </activity>
-        <activity
-            android:name=".activities.QuizWizEvents"
-            android:label="Quiz Wiz">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="info.anwesha2k18.iitp.activities.EventsActivity" />
         </activity>
 
         <service android:name=".database.BackgroundFetch" />

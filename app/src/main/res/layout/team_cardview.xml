@@ -41,7 +41,7 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="16dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/ace" />
+                    android:src="@drawable/anwesha_clix" />
 
                 <LinearLayout
                     android:layout_width="match_parent"

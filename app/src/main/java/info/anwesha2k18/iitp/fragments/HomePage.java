@@ -1,7 +1,6 @@
 package info.anwesha2k18.iitp.fragments;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -16,11 +15,9 @@ import info.anwesha2k18.iitp.activities.AboutActivity;
 import info.anwesha2k18.iitp.activities.EventsActivityNew;
 import info.anwesha2k18.iitp.activities.MapActivity;
 import info.anwesha2k18.iitp.activities.MyProfile;
-import info.anwesha2k18.iitp.activities.SocialActivity;
 
 import info.anwesha2k18.iitp.R;
 import info.anwesha2k18.iitp.activities.DevelopersActivity;
-import info.anwesha2k18.iitp.activities.EventsActivity;
 import info.anwesha2k18.iitp.activities.TeamActivity;
 import info.anwesha2k18.iitp.adapters.EventsAdapter;
 import info.anwesha2k18.iitp.listeners.ViewPagerCustomDuration;
