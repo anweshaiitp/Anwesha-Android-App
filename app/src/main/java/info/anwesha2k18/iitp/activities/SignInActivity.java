@@ -51,9 +51,9 @@ public class SignInActivity extends AppCompatActivity {
         mQueue = Volley.newRequestQueue(this);
         sharedPreferenceEditor = PreferenceManager.getDefaultSharedPreferences(this).edit();
         mUrl = getString(R.string.login_api_url);
-        buttonSignIn = (Button) findViewById(R.id.button_signin);
-        emailIDWrapper = (TextInputLayout) findViewById(R.id.eamil_id_wrapper_signin);
-        passwordWrapper = (TextInputLayout) findViewById(R.id.password_wrapper_signin);
+        buttonSignIn = findViewById(R.id.button_signin);
+        emailIDWrapper = findViewById(R.id.eamil_id_wrapper_signin);
+        passwordWrapper = findViewById(R.id.password_wrapper_signin);
 
         setHints();
         buttonSignIn.setOnClickListener(new View.OnClickListener() {

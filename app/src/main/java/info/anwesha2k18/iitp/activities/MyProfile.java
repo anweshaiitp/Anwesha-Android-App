@@ -39,6 +39,7 @@ import com.facebook.Profile;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -50,6 +51,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import info.anwesha2k18.iitp.R;
 
@@ -172,7 +175,15 @@ public class MyProfile extends AppCompatActivity implements SharedPreferences.On
             fullNameTextView.setText(sharedPreferences.getString(getString(R.string.full_name), "Mayank Vaidya"));
             idTextView.setText(sharedPreferences.getString(getString(R.string.anwesha_id), "12345"));
             collegeTextView.setText(sharedPreferences.getString(getString(R.string.college), "IIT Patna"));
-            eventTextView.setText(sharedPreferences.getString(getString(R.string.event_participated), "-"));
+            StringBuilder stringBuilder = new StringBuilder();
+            Set<String> eventsP = sharedPreferences.getStringSet(getString(R.string.events_list), null);
+            if (eventsP == null)
+                stringBuilder.append("-");
+            else
+                for(String s : eventsP) {
+                stringBuilder.append(s + ", ");
+                }
+            eventTextView.setText(stringBuilder);
             if (sharedPreferences.getBoolean(getString(R.string.is_qr_downloaded), false)) {
                 showQRCode();
             } else {
@@ -340,6 +351,13 @@ public class MyProfile extends AppCompatActivity implements SharedPreferences.On
                 shareEdit.putString(context.getString(R.string.gender), userJson.getString("sex"));
                 shareEdit.putString(context.getString(R.string.dateOfBirth), parseDate(userJson.getString("dob")));
                 shareEdit.putBoolean(context.getString(R.string.login_status), true);
+                JSONArray jsonArray = userJson.getJSONArray("event");
+                Set<String> eventSet = new HashSet<>();
+                for(int i = 0;i < jsonArray.length();i++) {
+                    eventSet.add(jsonArray.getString(i));
+                }
+                shareEdit.putStringSet(context.getString(R.string.events_list), eventSet);
+                shareEdit.putString(context.getString(R.string.key), userJson.getString("key"));
                 shareEdit.apply();
             } catch (JSONException e) {
                 e.printStackTrace();

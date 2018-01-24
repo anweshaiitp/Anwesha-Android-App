@@ -81,20 +81,20 @@ public class RegisterActivity extends AppCompatActivity {
 
         mUrl = getString(R.string.register_url);
         mQueue = Volley.newRequestQueue(this);
-        buttonRegister = (Button) findViewById(R.id.button_register);
-        firstNameWrapper = (TextInputLayout) findViewById(R.id.first_name_wrapper);
-        lastNameWrapper = (TextInputLayout) findViewById(R.id.last_name_wrapper);
-        collegeNameWrapper = (TextInputLayout) findViewById(R.id.college_name_wrapper);
-        cityWrapper = (TextInputLayout) findViewById(R.id.city_wrapper);
-        birthdayWrapper = (TextInputLayout) findViewById(R.id.birthday_wrapper);
-        emailIDWrapper = (TextInputLayout) findViewById(R.id.email_id_wrapper);
-        passwordWrapper = (TextInputLayout) findViewById(R.id.password_wrapper);
-        confirmPasswordWrapper = (TextInputLayout) findViewById(R.id.confirm_password_wrapper);
-        mobileNoWrapper = (TextInputLayout) findViewById(R.id.mobile_no_wrapper);
-        refCodeWrapper = (TextInputLayout) findViewById(R.id.ref_code_wrapper);
+        buttonRegister = findViewById(R.id.button_register);
+        firstNameWrapper = findViewById(R.id.first_name_wrapper);
+        lastNameWrapper = findViewById(R.id.last_name_wrapper);
+        collegeNameWrapper = findViewById(R.id.college_name_wrapper);
+        cityWrapper = findViewById(R.id.city_wrapper);
+        birthdayWrapper = findViewById(R.id.birthday_wrapper);
+        emailIDWrapper = findViewById(R.id.email_id_wrapper);
+        passwordWrapper = findViewById(R.id.password_wrapper);
+        confirmPasswordWrapper = findViewById(R.id.confirm_password_wrapper);
+        mobileNoWrapper = findViewById(R.id.mobile_no_wrapper);
+        refCodeWrapper = findViewById(R.id.ref_code_wrapper);
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 
-        genderSpinner = (Spinner) findViewById(R.id.gender_spinner);
+        genderSpinner = findViewById(R.id.gender_spinner);
         final ArrayAdapter<CharSequence> genderAdapter = ArrayAdapter.createFromResource(this,
                         R.array.gender_array, R.layout.spinner_item);
         genderAdapter.setDropDownViewResource(R.layout.spinner_item);

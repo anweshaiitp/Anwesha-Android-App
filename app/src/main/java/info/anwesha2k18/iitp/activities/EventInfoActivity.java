@@ -1,8 +1,10 @@
 package info.anwesha2k18.iitp.activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -12,14 +14,32 @@ import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
 import info.anwesha2k18.iitp.R;
 
+import static android.provider.CalendarContract.Instances.EVENT_ID;
 import static info.anwesha2k18.iitp.R.id.textView;
 
 public class EventInfoActivity extends AppCompatActivity {
@@ -39,6 +59,8 @@ public class EventInfoActivity extends AppCompatActivity {
             EXTRA_FEE = "Fee",
             EXTRA_DATE = "Date",
             EXTRA_REG_URL = "RegURL";
+    RequestQueue mQueue;
+    Set<String> eventsReg;
 
     @Override
     public void onLowMemory() {
@@ -53,10 +75,11 @@ public class EventInfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_info);
 
+        mQueue = Volley.newRequestQueue(this);
         final CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_tb_event_info);
-
+        final SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         // Get the Intent that started this activity and extract the strings needed
-        Intent intent = getIntent();
+        final Intent intent = getIntent();
         final String header = intent.getStringExtra(EXTRA_HEADER);
         String text = intent.getStringExtra(EXTRA_LONG_DESCRIPTION);
         String rules = intent.getStringExtra(EXTRA_RULES);
@@ -142,8 +165,81 @@ public class EventInfoActivity extends AppCompatActivity {
             }
         });
 
+        final Button button = findViewById(R.id.btn_register);
+        final TextView alreadyReg = findViewById(R.id.event_already_registered);
+        eventsReg = sharedPreferences.getStringSet(getString(R.string.events_list), null);
+
+
         if (!header.equals("MR. AND MS. ANWESHA"))
             findViewById(R.id.event_reg_link).setVisibility(View.GONE);
+        else
+            button.setVisibility(View.INVISIBLE);
+
+        if (!header.equals("MR. AND MS. ANWESHA") && eventsReg != null && eventsReg.contains(header)) {
+            button.setVisibility(View.INVISIBLE);
+            alreadyReg.setVisibility(View.VISIBLE);
+        } else {
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (!sharedPreferences.getBoolean(getString(R.string.login_status), false))
+                        Toast.makeText(getApplicationContext(), "Please sign in/register first", Toast.LENGTH_LONG).show();
+                    else {
+                        button.setVisibility(View.INVISIBLE);
+                        StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://anwesha.info/register/" + intent.getIntExtra(EXTRA_ID, -1),
+                                new Response.Listener<String>() {
+                                    @Override
+                                    public void onResponse(String response) {
+                                        Log.v("Response:", response);
+                                        try {
+                                            JSONObject jsonObject = new JSONObject(response);
+                                            boolean status = jsonObject.getBoolean(getString(R.string.JSON_status));
+
+                                            if (status) {
+                                                alreadyReg.setVisibility(View.VISIBLE);
+                                                eventsReg.add(header);
+                                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                                editor.putStringSet(getString(R.string.events_list), eventsReg);
+                                                editor.apply();
+                                            }
+
+                                            Toast.makeText(getApplicationContext(), jsonObject.getString("msg"), Toast.LENGTH_LONG).show();
+                                        } catch (JSONException e) {
+                                            e.printStackTrace();
+                                            button.setVisibility(View.VISIBLE);
+                                        }
+                                    }
+                                },
+                                new Response.ErrorListener() {
+                                    @Override
+                                    public void onErrorResponse(VolleyError error) {
+                                        Log.v("Error : ", error.toString());
+                                        error.printStackTrace();
+                                        button.setVisibility(View.VISIBLE);
+                                        Toast.makeText(getApplicationContext(), "Please ensure that you have an active internet conection", Toast.LENGTH_LONG).show();
+                                    }
+                                }
+                        ) {
+                            @Override
+                            protected Map<String, String> getParams() throws AuthFailureError {
+                                Map<String, String> params = new HashMap<>();
+                                params.put("userID", sharedPreferences.getString(getString(R.string.anwesha_id), ""));
+                                params.put("authKey", sharedPreferences.getString(getString(R.string.key), ""));
+                                return params;
+                            }
+
+                            @Override
+                            public Map<String, String> getHeaders() throws AuthFailureError {
+                                Map<String, String> headers = new HashMap<>();
+                                headers.put("Accept", "application/json");
+                                return headers;
+                            }
+                        };
+                        mQueue.add(stringRequest);
+                    }
+                }
+            });
+        }
     }
 
     @Override
@@ -156,5 +252,4 @@ public class EventInfoActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
 }

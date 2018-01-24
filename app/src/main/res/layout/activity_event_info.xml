@@ -95,6 +95,17 @@
                             android:textSize="20sp"
                             tools:text="Tutorial Block - Room no. 107" />
 
+                        <Button
+                            android:id="@+id/btn_register"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/event_venue"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@color/colorDevelopers"
+                            android:text="Register"
+                            android:textColor="@android:color/white" />
+
                         <TextView
                             android:id="@+id/event_reg_link"
                             android:layout_width="match_parent"
@@ -108,11 +119,23 @@
                             android:textSize="18sp" />
 
                         <TextView
+                            android:id="@+id/event_already_registered"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/event_venue"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="sans-serif-light"
+                            android:text="Already registered!!"
+                            android:textAppearance="@android:style/TextAppearance.Material.Headline"
+                            android:textColor="@android:color/holo_green_dark"
+                            android:textSize="18sp"
+                            android:visibility="invisible" />
+
+                        <TextView
                             android:id="@+id/event_info_textview"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_below="@id/event_reg_link"
-                            android:layout_marginTop="16dp"
+                            android:layout_below="@id/btn_register"
                             android:fontFamily="sans-serif-light"
                             android:textAppearance="@android:style/TextAppearance.Holo.Medium"
                             android:textIsSelectable="true"
@@ -126,7 +149,7 @@
                             android:layout_marginTop="16dp"
                             android:text="@string/rules_and_regulations"
                             android:textAppearance="@android:style/TextAppearance.Material.Headline"
-                            android:textSize="20sp"/>
+                            android:textSize="20sp" />
 
                         <TextView
                             android:id="@+id/event_rules_textview"
@@ -147,7 +170,7 @@
                             android:layout_marginTop="16dp"
                             android:text="@string/event_organizers"
                             android:textAppearance="@android:style/TextAppearance.Material.Headline"
-                            android:textSize="20sp"/>
+                            android:textSize="20sp" />
 
                         <TextView
                             android:id="@+id/event_organizers"
@@ -156,9 +179,9 @@
                             android:layout_below="@id/event_organizers_header"
                             android:layout_marginTop="8dp"
                             android:autoLink="phone"
-                            android:textColorLink="@color/colorSignIn"
                             android:fontFamily="sans-serif-light"
                             android:textAppearance="@android:style/TextAppearance.Holo.Medium"
+                            android:textColorLink="@color/colorSignIn"
                             tools:text="Mayank Vaidya" />
 
                         <TextView

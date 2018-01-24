@@ -99,4 +99,6 @@
     <string name="sign_in_param_username">username</string>
     <string name="is_qr_downloaded">isQRDownloaded</string>
     <string name="will_be_updated_soon">Registration Link will be updated soon.</string>
+    <string name="events_list">events_list</string>
+    <string name="key">key</string>
 </resources>
