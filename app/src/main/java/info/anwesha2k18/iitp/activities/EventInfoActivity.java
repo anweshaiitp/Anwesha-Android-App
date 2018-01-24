@@ -125,7 +125,7 @@ public class EventInfoActivity extends AppCompatActivity {
         ((TextView) findViewById(R.id.event_date_time)).setText(dateTime);
         ((TextView) findViewById(R.id.event_venue)).setText(venue);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab_share_event);
+        FloatingActionButton fab = findViewById(R.id.fab_share_event);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -142,6 +142,8 @@ public class EventInfoActivity extends AppCompatActivity {
             }
         });
 
+        if (!header.equals("MR. AND MS. ANWESHA"))
+            findViewById(R.id.event_reg_link).setVisibility(View.GONE);
     }
 
     @Override

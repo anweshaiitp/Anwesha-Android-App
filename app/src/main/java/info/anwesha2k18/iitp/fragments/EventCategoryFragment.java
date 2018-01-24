@@ -103,8 +103,8 @@ public class EventCategoryFragment extends Fragment implements EventCategoryRecy
         Pair<View, String> p1 = Pair.create((View) imageView, "event_image_view_transition");
         Pair<View, String> p2 = Pair.create((View) textViewHeader, "event_text_header_transition");
 
-        ActivityOptionsCompat options = ActivityOptionsCompat.
-                makeSceneTransitionAnimation(this.getActivity(), p1, p2);
+//        ActivityOptionsCompat options = ActivityOptionsCompat.
+//                makeSceneTransitionAnimation(this.getActivity(), p1, p2);
 
         Intent intentNew = new Intent(this.getContext(), EventInfoActivity.class);
         intentNew.putExtra(EventInfoActivity.EXTRA_HEADER, eventData.name);
@@ -125,6 +125,6 @@ public class EventCategoryFragment extends Fragment implements EventCategoryRecy
         intentNew.putExtra(EventInfoActivity.EXTRA_REG_URL, eventData.regURL);
         intentNew.putExtra(EventInfoActivity.EXTRA_IMAGE_ID, eventData.imageURL);
         intentNew.putExtra(EventInfoActivity.EXTRA_DATE, eventData.date);
-        startActivity(intentNew, options.toBundle());
+        startActivity(intentNew);
     }
 }

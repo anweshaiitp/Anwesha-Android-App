@@ -71,6 +71,7 @@ public class EventCategoryRecyclerViewAdapter extends RecyclerView.Adapter<Event
                 .load(holder.mItem.imageURL)
                 .apply(options)
                 .into(holder.imageView);
+        holder.imageView.setVisibility(View.GONE);
     }
 
     @Override
