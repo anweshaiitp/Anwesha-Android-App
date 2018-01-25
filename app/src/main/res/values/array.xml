@@ -7,9 +7,15 @@
     </string-array>
 
     <integer-array name="array_home_slide_show">
-        <item>@drawable/anwesha_cover</item>
-        <item>@drawable/anwesha_clix</item>
-        <item>@drawable/anwesha_telegraph</item>
+        <!--<item>@drawable/anwesha_cover</item>-->
+        <item>@drawable/slide_main</item>
+        <item>@drawable/slide_edm</item>
+        <!--<item>@drawable/slide_mun</item>-->
+        <item>@drawable/slide_verve</item>
+        <item>@drawable/slide_tantrum</item>
+        <item>@drawable/slide_heel</item>
+        <item>@drawable/slide_ebid</item>
+        <item>@drawable/slide_smile</item>
     </integer-array>
 
     <!--Schedule Day 1-->
