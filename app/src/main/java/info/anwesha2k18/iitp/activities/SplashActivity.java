@@ -10,6 +10,8 @@ import android.os.Handler;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.squareup.leakcanary.LeakCanary;
+
 import info.anwesha2k18.iitp.R;
 import info.anwesha2k18.iitp.database.BackgroundFetch;
 import info.anwesha2k18.iitp.utils.NetworkUtils;
@@ -28,8 +30,15 @@ public class SplashActivity extends Activity {
     Runnable action;
     private GifDrawable splashGif;
 
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (LeakCanary.isInAnalyzerProcess(this)) {
+            // This process is dedicated to LeakCanary for heap analysis.
+            // You should not init your app in this process.
+            return;
+        }
+        LeakCanary.install(getApplication());
         setContentView(R.layout.splashscreen);
 
         // Splash Image settings

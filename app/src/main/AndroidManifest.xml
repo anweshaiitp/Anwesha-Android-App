@@ -10,13 +10,16 @@
     <permission
         android:name="info.anwesha2k18.iitp.permission.MAPS_RECEIVE"
         android:protectionLevel="signature" />
+
     <uses-permission android:name="info.anwesha2k18.iitp.permission.MAPS_RECEIVE" />
+
     <uses-feature
         android:glEsVersion="0x00020000"
         android:required="true" />
 
     <application
         android:allowBackup="true"
+        android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:largeHeap="true"
@@ -48,7 +51,8 @@
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.SplashActivity"
+        <activity
+            android:name=".activities.SplashActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -61,11 +65,11 @@
             android:label="@string/app_name"
             android:launchMode="singleTop"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
+                <!--<category android:name="android.intent.category.DEFAULT" />-->
+            <!--</intent-filter>-->
         </activity>
         <activity
             android:name=".activities.MyProfile"
@@ -156,9 +160,18 @@
                 android:value="info.anwesha2k18.iitp.activities.MainActivity" />
         </activity>
         <activity android:name=".activities.MapActivity" />
+
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyCFIHJ8vv41j95CROkdFIemDMMW7JuMPKY" />
+
+        <activity
+            android:name=".activities.SponsorsActivity"
+            android:label="Sponsors">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="info.anwesha2k18.iitp.activities.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

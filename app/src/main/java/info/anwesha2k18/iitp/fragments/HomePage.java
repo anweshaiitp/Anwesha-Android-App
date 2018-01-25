@@ -18,6 +18,7 @@ import info.anwesha2k18.iitp.activities.MyProfile;
 
 import info.anwesha2k18.iitp.R;
 import info.anwesha2k18.iitp.activities.DevelopersActivity;
+import info.anwesha2k18.iitp.activities.SponsorsActivity;
 import info.anwesha2k18.iitp.activities.TeamActivity;
 import info.anwesha2k18.iitp.adapters.EventsAdapter;
 import info.anwesha2k18.iitp.listeners.ViewPagerCustomDuration;
@@ -86,7 +87,7 @@ public class HomePage extends android.support.v4.app.Fragment {
 
         comingSoonToast = Toast.makeText(getContext(), getResources().getString(R.string.coming_soon), Toast.LENGTH_SHORT);
 
-        FloatingActionButton fab = (FloatingActionButton) rootView.findViewById(R.id.fab_maps);
+        FloatingActionButton fab = rootView.findViewById(R.id.fab_maps);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -119,7 +120,7 @@ public class HomePage extends android.support.v4.app.Fragment {
             }
         });
 
-        mapLinearLayout = (LinearLayout) rootView.findViewById(R.id.map);
+        mapLinearLayout = rootView.findViewById(R.id.map);
         mapLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -139,7 +140,7 @@ public class HomePage extends android.support.v4.app.Fragment {
 //            }
 //        });
 
-        devLinearLayout = (LinearLayout) rootView.findViewById(R.id.developers);
+        devLinearLayout = rootView.findViewById(R.id.developers);
         devLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -148,15 +149,16 @@ public class HomePage extends android.support.v4.app.Fragment {
             }
         });
 
-//        sponsorsLinearLayout = (LinearLayout) rootView.findViewById(R.id.sponsors_menu_item);
-//        sponsorsLinearLayout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                comingSoonToast.show();
-//            }
-//        });
+        sponsorsLinearLayout = rootView.findViewById(R.id.sponsors_menu_item);
+        sponsorsLinearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(rootView.getContext(), SponsorsActivity.class);
+                startActivity(intent);
+            }
+        });
 
-        teamLinearLayout = (LinearLayout) rootView.findViewById(R.id.team);
+        teamLinearLayout = rootView.findViewById(R.id.team);
         teamLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
