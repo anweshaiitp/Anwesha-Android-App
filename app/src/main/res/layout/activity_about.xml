@@ -1,118 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/about_background"
-    android:fillViewport="true">
+    android:fitsSystemWindows="true"
+    tools:context="info.anwesha2k18.iitp.activities.MainActivity">
 
-    <FrameLayout
-        android:id="@+id/aboutlayout"
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
 
-        <LinearLayout
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabs"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimaryDark"
 
+            android:paddingTop="4dp" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="16dp"
-                android:fontFamily="sans-serif-medium"
-                android:text="@string/about"
-                android:textColor="@color/colorPrimaryLight"
-                android:textSize="26sp"
-                android:textStyle="bold" />
+    </android.support.design.widget.AppBarLayout>
 
-            <View
-                android:layout_width="95dp"
-                android:layout_height="1dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="6dp"
-                android:background="@color/colorPrimaryLight">
+    <android.support.v4.view.ViewPager
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-            </View>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginTop="16dp"
-                android:fontFamily="sans-serif"
-                android:lineSpacingExtra="4sp"
-                android:text="@string/LoremIpsum"
-                android:textColor="@color/colorPrimaryLight"
-                android:textSize="18sp" />
-
-            <!--<TextView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginLeft="16sp"-->
-            <!--android:layout_marginTop="16sp"-->
-            <!--android:fontFamily="sans-serif-medium"-->
-            <!--android:text="@string/Clubs"-->
-            <!--android:textColor="@color/colorPrimaryLight"-->
-            <!--android:textSize="26sp" />-->
-
-            <!--<View-->
-            <!--android:layout_width="85dp"-->
-            <!--android:layout_height="1dp"-->
-            <!--android:layout_marginLeft="16sp"-->
-            <!--android:layout_marginTop="6sp"-->
-            <!--android:background="@color/colorPrimaryLight">-->
-
-            <!--</View>-->
-
-            <!--<TextView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginLeft="16sp"-->
-            <!--android:layout_marginRight="16sp"-->
-            <!--android:layout_marginTop="16sp"-->
-            <!--android:fontFamily="sans-serif"-->
-            <!--android:lineSpacingExtra="4sp"-->
-            <!--android:text="@string/LoremIpsum"-->
-            <!--android:textColor="@color/colorPrimaryLight"-->
-            <!--android:textSize="18sp" />-->
-
-            <!--<TextView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginLeft="16sp"-->
-            <!--android:layout_marginTop="16sp"-->
-            <!--android:fontFamily="sans-serif-medium"-->
-            <!--android:text="@string/Clubs"-->
-            <!--android:textColor="@color/colorPrimaryLight"-->
-            <!--android:textSize="26sp" />-->
-
-            <!--<View-->
-            <!--android:layout_width="85dp"-->
-            <!--android:layout_height="1dp"-->
-            <!--android:layout_marginLeft="16sp"-->
-            <!--android:layout_marginTop="6sp"-->
-            <!--android:background="@color/colorPrimaryLight">-->
-
-            <!--</View>-->
-
-            <!--<TextView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginBottom="16sp"-->
-            <!--android:layout_marginLeft="16sp"-->
-            <!--android:layout_marginRight="16sp"-->
-            <!--android:layout_marginTop="16sp"-->
-            <!--android:fontFamily="sans-serif"-->
-            <!--android:lineSpacingExtra="4sp"-->
-            <!--android:text="@string/LoremIpsum"-->
-            <!--android:textColor="@color/colorPrimaryLight"-->
-            <!--android:textSize="18sp" />-->
-
-
-        </LinearLayout>
-
-    </FrameLayout>
-</ScrollView>
+</android.support.design.widget.CoordinatorLayout>

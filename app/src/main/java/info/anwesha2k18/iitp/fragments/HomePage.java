@@ -11,21 +11,18 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
+import info.anwesha2k18.iitp.R;
 import info.anwesha2k18.iitp.activities.AboutActivity;
 import info.anwesha2k18.iitp.activities.EventsActivityNew;
 import info.anwesha2k18.iitp.activities.MapActivity;
 import info.anwesha2k18.iitp.activities.MyProfile;
-
-import info.anwesha2k18.iitp.R;
-import info.anwesha2k18.iitp.activities.DevelopersActivity;
 import info.anwesha2k18.iitp.activities.SponsorsActivity;
 import info.anwesha2k18.iitp.activities.TeamActivity;
 import info.anwesha2k18.iitp.adapters.EventsAdapter;
 import info.anwesha2k18.iitp.listeners.ViewPagerCustomDuration;
-
-
-import java.util.Timer;
-import java.util.TimerTask;
 
 /**
  * Created by mayank on 26/5/17.
@@ -41,14 +38,13 @@ public class HomePage extends android.support.v4.app.Fragment {
     LinearLayout scheduleLinearLayout;
     LinearLayout sponsorsLinearLayout;
     LinearLayout teamLinearLayout;
-    LinearLayout devLinearLayout;
+    //    LinearLayout devLinearLayout;
     LinearLayout mapLinearLayout;
 
     LinearLayout socialLinearLayout ;
     Toast comingSoonToast;
-
-    private int currentPage = 0;
     Timer timer ;
+    private int currentPage = 0;
     private int NUM_PAGES;
 
     @Nullable
@@ -140,14 +136,14 @@ public class HomePage extends android.support.v4.app.Fragment {
 //            }
 //        });
 
-        devLinearLayout = rootView.findViewById(R.id.developers);
-        devLinearLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(rootView.getContext(), DevelopersActivity.class);
-                startActivity(intent);
-            }
-        });
+//        devLinearLayout = rootView.findViewById(R.id.developers);
+//        devLinearLayout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(rootView.getContext(), DevelopersActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
         sponsorsLinearLayout = rootView.findViewById(R.id.sponsors_menu_item);
         sponsorsLinearLayout.setOnClickListener(new View.OnClickListener() {

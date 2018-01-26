@@ -14,7 +14,7 @@ public class DevelopersActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_developers);
+        setContentView(R.layout.fragment_developers);
 
         ImageView github_muks = (ImageView) findViewById(R.id.github_muks);
         ImageView github_mayank = (ImageView) findViewById(R.id.github_mayank);
