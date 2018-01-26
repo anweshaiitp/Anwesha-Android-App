@@ -60,7 +60,7 @@ public class EventCategoryRecyclerViewAdapter extends RecyclerView.Adapter<Event
             if (!TextUtils.isEmpty(mValues.get(position).short_desc) || mValues.get(position).short_desc.equals("null"))
                 holder.tvdesc.setText(mValues.get(position).toDisplay_short);
             else
-                holder.tvdesc.setText("");
+                holder.tvdesc.setText(mValues.get(position).toDisplay_long);
         } else
             holder.tvdesc.setText(mValues.get(position).toDisplay_long);
 

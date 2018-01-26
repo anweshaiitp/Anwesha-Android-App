@@ -96,7 +96,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         genderSpinner = findViewById(R.id.gender_spinner);
         final ArrayAdapter<CharSequence> genderAdapter = ArrayAdapter.createFromResource(this,
-                        R.array.gender_array, R.layout.spinner_item);
+                R.array.gender_array, R.layout.spinner_item);
         genderAdapter.setDropDownViewResource(R.layout.spinner_item);
         genderSpinner.setAdapter(genderAdapter);
         genderSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -209,7 +209,7 @@ public class RegisterActivity extends AppCompatActivity {
         if (isAnyFieldEmpty())
             return false;
         mName = firstNameWrapper.getEditText().getText().toString() + " " + lastNameWrapper.getEditText().getText().toString();
-        mGender = (genderSpinner.getSelectedItemPosition() == 0)? "M": "F";
+        mGender = (genderSpinner.getSelectedItemPosition() == 0) ? "M" : "F";
         mCollege = collegeNameWrapper.getEditText().getText().toString();
         mCity = cityWrapper.getEditText().getText().toString();
         mDob = setDate.getDateStr();
@@ -236,20 +236,24 @@ public class RegisterActivity extends AppCompatActivity {
             confirmPasswordWrapper.setError(getString(R.string.error_password_match));
             return false;
         }
+        if (!validRefCode(mRefCode)) {
+            refCodeWrapper.setError("ID has to be 4 digits long.");
+            return false;
+        }
+
         return true;
+    }
+
+    private boolean validRefCode(String mRefCode) {
+        return !(!TextUtils.isEmpty(mRefCode) && mRefCode.length() != 4);
     }
 
     private boolean validMobile(String mMobile) {
-        if (mMobile.length() != 10)
-            return false;
-        return true;
+        return mMobile.length() == 10;
     }
 
     private boolean validPassword(String password) {
-        if (password.length() > 5)
-            return true;
-        else
-            return false;
+        return password.length() > 5;
     }
 
     private boolean matchingPassword(String password, String confirmPassword) {
@@ -319,7 +323,7 @@ public class RegisterActivity extends AppCompatActivity {
         mFbID = sharedPreferences.getString(getString(R.string.facebook_id), "0");
         firstNameWrapper.getEditText().setText(sharedPreferences.getString(getString(R.string.first_name), ""));
         lastNameWrapper.getEditText().setText(sharedPreferences.getString(getString(R.string.last_name), ""));
-        if(sharedPreferences.getString(getString(R.string.gender),"").equals("female")){
+        if (sharedPreferences.getString(getString(R.string.gender), "").equals("female")) {
             genderSpinner.setSelection(1);
         } else {
             genderSpinner.setSelection(0);
@@ -336,7 +340,7 @@ class SetDate implements View.OnClickListener, DatePickerDialog.OnDateSetListene
     private Context mContext;
     private String dateStr;
 
-    public SetDate(EditText editText, Context ctx){
+    public SetDate(EditText editText, Context ctx) {
         this.editText = editText;
         this.editText.setOnClickListener(this);
         myCalendar = Calendar.getInstance();
@@ -344,7 +348,7 @@ class SetDate implements View.OnClickListener, DatePickerDialog.OnDateSetListene
     }
 
     @Override
-    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth)     {
+    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
         // this.editText.setText();
 
         SimpleDateFormat sdformat = new SimpleDateFormat("yyyy-MM-dd");

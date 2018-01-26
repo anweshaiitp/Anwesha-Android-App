@@ -116,9 +116,9 @@
                     android:drawableLeft="@drawable/ic_date_range_black_24dp"
                     android:drawablePadding="8dp"
                     android:drawableTint="@color/colorSignIn"
+                    android:focusable="false"
                     android:hint="@string/Birthday"
                     android:inputType="date"
-                    android:focusable="false"
                     android:maxLines="1"
                     android:textColor="@color/colorPrimaryLight" />
 
@@ -210,7 +210,7 @@
                     android:drawablePadding="8dp"
                     android:drawableTint="@color/colorSignIn"
                     android:hint="@string/referral_code_hint"
-                    android:inputType="text"
+                    android:inputType="number"
                     android:maxLines="1"
                     android:textColor="@color/colorPrimaryLight" />
             </android.support.design.widget.TextInputLayout>
