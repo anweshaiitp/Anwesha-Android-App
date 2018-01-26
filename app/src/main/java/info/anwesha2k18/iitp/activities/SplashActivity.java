@@ -10,8 +10,6 @@ import android.os.Handler;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.squareup.leakcanary.LeakCanary;
-
 import info.anwesha2k18.iitp.R;
 import info.anwesha2k18.iitp.database.BackgroundFetch;
 import info.anwesha2k18.iitp.utils.NetworkUtils;
