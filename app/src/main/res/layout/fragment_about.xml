@@ -15,25 +15,25 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="16dp"
-                android:fontFamily="sans-serif-medium"
-                android:text="@string/anwesha"
-                android:textColor="@color/colorPrimaryLight"
-                android:textSize="26sp"
-                android:textStyle="bold" />
+            <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="16dp"-->
+            <!--android:layout_marginTop="16dp"-->
+            <!--android:fontFamily="sans-serif-medium"-->
+            <!--android:text="@string/anwesha"-->
+            <!--android:textColor="@color/colorPrimaryLight"-->
+            <!--android:textSize="26sp"-->
+            <!--android:textStyle="bold" />-->
 
-            <View
-                android:layout_width="115dp"
-                android:layout_height="1dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="6dp"
-                android:background="@color/colorPrimaryLight">
+            <!--<View-->
+            <!--android:layout_width="115dp"-->
+            <!--android:layout_height="1dp"-->
+            <!--android:layout_marginLeft="16dp"-->
+            <!--android:layout_marginTop="6dp"-->
+            <!--android:background="@color/colorPrimaryLight">-->
 
-            </View>
+            <!--</View>-->
 
             <TextView
                 android:layout_width="match_parent"

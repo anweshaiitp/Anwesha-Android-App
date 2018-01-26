@@ -49,11 +49,11 @@ public class AboutActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
-        int tabIcons[] = {R.drawable.ic_info_white_24dp,
-                R.drawable.ic_group_white_24dp};
+//        int tabIcons[] = {R.drawable.ic_info_white_24dp,
+//                R.drawable.ic_group_white_24dp};
 
-        for (int i = 0; i < aboutPageFragmentAdapter.getCount(); i++) {
-            tabLayout.getTabAt(i).setIcon(tabIcons[i]);
-        }
+//        for (int i = 0; i < aboutPageFragmentAdapter.getCount(); i++) {
+//            tabLayout.getTabAt(i).setIcon(tabIcons[i]);
+//        }
     }
 }

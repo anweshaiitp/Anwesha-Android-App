@@ -35,11 +35,11 @@ public class AboutPageFragmentAdapter extends FragmentPagerAdapter {
     @Override
     public CharSequence getPageTitle(int position) {
         String title = null;
-//        if (position == 0) {
-//            title = "Anwesha";
-//        } else if (position == 1) {
-//            title = "App Developers";
-//        }
+        if (position == 0) {
+            title = "Anwesha";
+        } else if (position == 1) {
+            title = "App Developers";
+        }
         return title;
     }
 }
