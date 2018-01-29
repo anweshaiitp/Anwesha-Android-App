@@ -19,11 +19,14 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -58,11 +61,12 @@ public class SignInActivity extends AppCompatActivity {
         setHints();
         buttonSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(final View v) {
                 clearErrors();
                 boolean b = validateInputs();
                 if (b) {
                     //Code for sending the details
+                    buttonSignIn.setVisibility(View.GONE);
                     StringRequest stringRequest = new StringRequest(Request.Method.POST, mUrl,
                             new Response.Listener<String>() {
                                 @Override
@@ -75,6 +79,14 @@ public class SignInActivity extends AppCompatActivity {
                                         switch (status) {
                                             case 200:
                                                 Toast.makeText(getApplicationContext(), "Log In Successful", Toast.LENGTH_LONG).show();
+                                                JSONArray jsonArray = jsonObject.getJSONArray("event");
+                                                Set<String> eventSet = new HashSet<>();
+                                                for (int i = 0; i < jsonArray.length(); i++) {
+                                                    eventSet.add(jsonArray.getString(i));
+                                                }
+                                                sharedPreferenceEditor.putStringSet(getString(R.string.events_list), eventSet);
+                                                sharedPreferenceEditor.putString(getString(R.string.key), jsonObject.getString("key"));
+                                                sharedPreferenceEditor.apply();
                                                 MyProfile.setData(SignInActivity.this, jsonObject.getJSONObject("user"), sharedPreferenceEditor);
                                                 finish();
                                                 break;
@@ -85,8 +97,10 @@ public class SignInActivity extends AppCompatActivity {
                                             default:
                                                 Toast.makeText(getApplicationContext(), R.string.login_error, Toast.LENGTH_LONG).show();
                                         }
+                                        buttonSignIn.setVisibility(View.VISIBLE);
                                     } catch (JSONException e) {
                                         e.printStackTrace();
+                                        buttonSignIn.setVisibility(View.VISIBLE);
                                     }
                                 }
                             },
@@ -95,6 +109,7 @@ public class SignInActivity extends AppCompatActivity {
                                 public void onErrorResponse(VolleyError error) {
                                     Log.v("Error : ", error.toString());
                                     error.printStackTrace();
+                                    buttonSignIn.setVisibility(View.VISIBLE);
                                 }
                             }
                     ) {
@@ -148,7 +163,7 @@ public class SignInActivity extends AppCompatActivity {
     }
 
     private void setHints() {
-        emailIDWrapper.setHint(getString(R.string.email_id_hint));
+        emailIDWrapper.setHint("Anwesha ID (ANWXXXX)");
         passwordWrapper.setHint(getString(R.string.password_hint));
     }
 }

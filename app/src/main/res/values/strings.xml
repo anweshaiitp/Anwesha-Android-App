@@ -37,7 +37,7 @@
     <string name="error_empty_field">Empty Field</string>
     <string name="mobile_no_hint">Mobile No.</string>
     <string name="error_invalid_mobile_no">Invalid Mobile No.</string>
-    <string name="register_url">http://anwesha.info/user/register/User/</string>
+    <string name="register_url">https://anwesha.info/user/register/User/</string>
     <string name="api_key">99537874e694ecc9323cc986dd452d2502740dcc</string>
     <string name="register_param_name">name</string>
     <string name="register_param_college">college</string>
@@ -94,7 +94,7 @@
     <string name="qr_url">qrurl</string>
     <string name="qr_code_file_name">qr_code.png</string>
     <string name="qr_code_folder_name">QR</string>
-    <string name="login_api_url">http://anwesha.info/login/</string>
+    <string name="login_api_url">https://anwesha.info/login/</string>
     <string name="login_error">Error logging in! Please try again later.</string>
     <string name="sign_in_param_username">username</string>
     <string name="is_qr_downloaded">isQRDownloaded</string>

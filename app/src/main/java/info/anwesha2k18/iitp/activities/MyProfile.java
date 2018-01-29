@@ -180,8 +180,8 @@ public class MyProfile extends AppCompatActivity implements SharedPreferences.On
             if (eventsP == null)
                 stringBuilder.append("-");
             else
-                for(String s : eventsP) {
-                stringBuilder.append(s + ", ");
+                for (String s : eventsP) {
+                    stringBuilder.append(s + ", ");
                 }
             eventTextView.setText(stringBuilder);
             if (sharedPreferences.getBoolean(getString(R.string.is_qr_downloaded), false)) {
@@ -236,7 +236,7 @@ public class MyProfile extends AppCompatActivity implements SharedPreferences.On
 
     private void checkRegistered() {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        String checkUrl = "http://anwesha.info/user/CAcheck/" + sharedPreferences.getString(getString(R.string.facebook_id), "1");
+        String checkUrl = "https://anwesha.info/user/CAcheck/" + sharedPreferences.getString(getString(R.string.facebook_id), "1");
         Log.v("CHEK URL : ", checkUrl);
         StringRequest stringRequest = new StringRequest(Request.Method.GET, checkUrl, new Response.Listener<String>() {
             @Override
@@ -351,13 +351,17 @@ public class MyProfile extends AppCompatActivity implements SharedPreferences.On
                 shareEdit.putString(context.getString(R.string.gender), userJson.getString("sex"));
                 shareEdit.putString(context.getString(R.string.dateOfBirth), parseDate(userJson.getString("dob")));
                 shareEdit.putBoolean(context.getString(R.string.login_status), true);
-                JSONArray jsonArray = userJson.getJSONArray("event");
-                Set<String> eventSet = new HashSet<>();
-                for(int i = 0;i < jsonArray.length();i++) {
-                    eventSet.add(jsonArray.getString(i));
+                try {
+                    JSONArray jsonArray = userJson.getJSONArray("event");
+                    Set<String> eventSet = new HashSet<>();
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        eventSet.add(jsonArray.getString(i));
+                    }
+                    shareEdit.putStringSet(context.getString(R.string.events_list), eventSet);
+                    shareEdit.putString(context.getString(R.string.key), userJson.getString("key"));
+                } catch (Exception ignored) {
+
                 }
-                shareEdit.putStringSet(context.getString(R.string.events_list), eventSet);
-                shareEdit.putString(context.getString(R.string.key), userJson.getString("key"));
                 shareEdit.apply();
             } catch (JSONException e) {
                 e.printStackTrace();

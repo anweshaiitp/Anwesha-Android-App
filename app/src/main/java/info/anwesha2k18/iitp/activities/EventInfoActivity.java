@@ -186,7 +186,7 @@ public class EventInfoActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Please sign in/register first", Toast.LENGTH_LONG).show();
                     else {
                         button.setVisibility(View.INVISIBLE);
-                        StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://anwesha.info/register/" + intent.getIntExtra(EXTRA_ID, -1),
+                        StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://anwesha.info/register/" + intent.getIntExtra(EXTRA_ID, -1),
                                 new Response.Listener<String>() {
                                     @Override
                                     public void onResponse(String response) {
