@@ -33,14 +33,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
 import info.anwesha2k18.iitp.R;
-
-import static android.provider.CalendarContract.Instances.EVENT_ID;
-import static info.anwesha2k18.iitp.R.id.textView;
 
 public class EventInfoActivity extends AppCompatActivity {
 
@@ -76,7 +72,7 @@ public class EventInfoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_event_info);
 
         mQueue = Volley.newRequestQueue(this);
-        final CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_tb_event_info);
+        final CollapsingToolbarLayout collapsingToolbarLayout = findViewById(R.id.collapsing_tb_event_info);
         final SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         // Get the Intent that started this activity and extract the strings needed
         final Intent intent = getIntent();
@@ -183,7 +179,7 @@ public class EventInfoActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     if (!sharedPreferences.getBoolean(getString(R.string.login_status), false))
-                        Toast.makeText(getApplicationContext(), "Please sign in/register first", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), R.string.sign_in_first, Toast.LENGTH_LONG).show();
                     else {
                         button.setVisibility(View.INVISIBLE);
                         StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://anwesha.info/register/" + intent.getIntExtra(EXTRA_ID, -1),

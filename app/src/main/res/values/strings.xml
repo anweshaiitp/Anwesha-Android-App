@@ -103,4 +103,6 @@
     <string name="key">key</string>
     <string name="anwesha">Anwesha</string>
     <string name="tap_for_more_info">Tap for more information!</string>
+    <string name="sign_in_first">Please sign in/register first</string>
+    <string name="already_registered">You\'re registered!!</string>
 </resources>

@@ -125,7 +125,7 @@
                             android:layout_below="@id/event_venue"
                             android:layout_marginTop="8dp"
                             android:fontFamily="sans-serif-light"
-                            android:text="Already registered!!"
+                            android:text="@string/already_registered"
                             android:textAppearance="@android:style/TextAppearance.Material.Headline"
                             android:textColor="@android:color/holo_green_dark"
                             android:textSize="18sp"
