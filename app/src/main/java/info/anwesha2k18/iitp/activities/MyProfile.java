@@ -113,10 +113,10 @@ public class MyProfile extends AppCompatActivity implements SharedPreferences.On
 
             setContentView(R.layout.sign_in);
             shareEdit = sharedPreferences.edit();
-            Button buttonSignIn = (Button) findViewById(R.id.button_signin);
-            Button buttonSignUp = (Button) findViewById(R.id.button_signup);
+            Button buttonSignIn = findViewById(R.id.button_signin);
+            Button buttonSignUp = findViewById(R.id.button_signup);
             callbackManager = CallbackManager.Factory.create();
-            LoginButton loginButton = (LoginButton) findViewById(R.id.login_button);
+            LoginButton loginButton = findViewById(R.id.login_button);
             loginButton.setReadPermissions(Arrays.asList("email"));
 
             fbTracker = new AccessTokenTracker() {
