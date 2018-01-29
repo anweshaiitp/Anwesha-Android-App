@@ -1,9 +1,6 @@
 package info.anwesha2k18.iitp.adapters;
 
 import android.content.Context;
-import android.content.Intent;
-import android.support.v4.app.ActivityOptionsCompat;
-import android.support.v4.util.Pair;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -18,12 +15,7 @@ import com.bumptech.glide.request.RequestOptions;
 import java.util.List;
 
 import info.anwesha2k18.iitp.R;
-import info.anwesha2k18.iitp.activities.EventInfoActivity;
 import info.anwesha2k18.iitp.data.EventData;
-import info.anwesha2k18.iitp.data.EventsData;
-
-import static info.anwesha2k18.iitp.activities.EventInfoActivity.EXTRA_CONTACTS;
-import static info.anwesha2k18.iitp.activities.EventInfoActivity.EXTRA_ORGANIZERS;
 
 /**
  * Created by mayank on 28/11/17.
@@ -34,10 +26,6 @@ public class EventCategoryRecyclerViewAdapter extends RecyclerView.Adapter<Event
     private final CardClick mOnClickListener;
     private final List<EventData> mValues;
     private Context context;
-
-    public interface CardClick {
-        void onListClick(EventData eventData, View view) throws ClassNotFoundException;
-    }
 
     public EventCategoryRecyclerViewAdapter(List<EventData> eventData, Context context, CardClick click) {
         mValues = eventData;
@@ -56,13 +44,16 @@ public class EventCategoryRecyclerViewAdapter extends RecyclerView.Adapter<Event
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
         holder.header.setText(mValues.get(position).name);
-        if (mValues.get(position).tagline == null || mValues.get(position).tagline.equals(" ") || mValues.get(position).tagline.equals("null") || mValues.get(position).tagline.equals("")) {
-            if (!TextUtils.isEmpty(mValues.get(position).short_desc) || mValues.get(position).short_desc.equals("null"))
-                holder.tvdesc.setText(mValues.get(position).toDisplay_short);
-            else
-                holder.tvdesc.setText(mValues.get(position).toDisplay_long);
-        } else
+//        if (mValues.get(position).tagline == null || mValues.get(position).tagline.equals(" ") || mValues.get(position).tagline.equals("null") || mValues.get(position).tagline.equals("")) {
+//        Log.v("muks2", mValues.get(position).name + " " + Boolean.toString(!TextUtils.isEmpty(mValues.get(position).short_desc)) + Boolean.toString(!mValues.get(position).short_desc.equals("null")));
+        if (!TextUtils.isEmpty(mValues.get(position).short_desc) && !mValues.get(position).short_desc.equals("null"))
+            holder.tvdesc.setText(mValues.get(position).toDisplay_short);
+        else if (!TextUtils.isEmpty(mValues.get(position).long_desc) && !mValues.get(position).long_desc.equals("null"))
             holder.tvdesc.setText(mValues.get(position).toDisplay_long);
+        else
+            holder.tvdesc.setText(context.getString(R.string.tap_for_more_info));
+//        } else
+//            holder.tvdesc.setText(mValues.get(position).toDisplay_long);
 
         RequestOptions options = new RequestOptions()
                 .error(R.drawable.anwesha_placeholder);
@@ -79,13 +70,17 @@ public class EventCategoryRecyclerViewAdapter extends RecyclerView.Adapter<Event
         return mValues.size();
     }
 
+    public interface CardClick {
+        void onListClick(EventData eventData, View view) throws ClassNotFoundException;
+    }
+
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
+        public EventData mItem;
         View v;
         TextView header;
         TextView tvdesc;
         ImageView imageView;
-        public EventData mItem;
 
         public ViewHolder(View view) {
             super(view);
