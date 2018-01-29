@@ -67,6 +67,7 @@ public class SignInActivity extends AppCompatActivity {
                 if (b) {
                     //Code for sending the details
                     buttonSignIn.setVisibility(View.GONE);
+                    Toast.makeText(getApplicationContext(), "Signing In...", Toast.LENGTH_SHORT).show();
                     StringRequest stringRequest = new StringRequest(Request.Method.POST, mUrl,
                             new Response.Listener<String>() {
                                 @Override
