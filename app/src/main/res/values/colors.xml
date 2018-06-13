@@ -8,8 +8,7 @@
 
     <color name="colorPrimaryLight">#eeeeee</color>
     <color name="colorAccent">#9E9E9E</color>
-
-
+    <color name="white">#ffffff</color>
     <color name="colorMyProfile">#673AB7</color>
     <color name="colorEvents">#3F51B5</color>
     <color name="colorSchedule">#E91E63</color>
@@ -18,7 +17,7 @@
     <color name="colorSponsors">#03A9F4</color>
     <color name="colorAbout">#33691E</color>
     <color name="colorGallery">#FFC107</color>
-    <color name="colorSocial">#F44336</color>
+    <color name="colorSocial">#ff5e00</color>
     <color name="cardHeaderBackgroundEvents">#bdbdbd</color>
     <color name="cardBackgroundEvents">#000000</color>
     <color name="fab_background">#212121</color>

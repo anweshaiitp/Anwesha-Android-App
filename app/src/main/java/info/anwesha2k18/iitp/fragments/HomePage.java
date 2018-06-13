@@ -212,11 +212,11 @@ HomePage extends android.support.v4.app.Fragment {
 
         SlideShowEvents = (ImageView) rootView.findViewById(R.id.slideShowEvents);
         int imagesToShowEvents[] = { R.drawable.anwesha_clix, R.drawable.anwesha_cover,R.drawable.anwesha_telegraph };
-        animate(SlideShowEvents, imagesToShowEvents, 0,true,800);
+        animate(SlideShowEvents, imagesToShowEvents, 0,true,1500);
 
         SlideShowGallery = (ImageView) rootView.findViewById(R.id.slideShowGallery);
-        int imagesToShow[] = { R.drawable.temp1, R.drawable.temp2,R.drawable.anwesha_telegraph };
-        animate(SlideShowGallery, imagesToShow, 0,true,1200);
+        int imagesToShowGallery[] = { R.drawable.temp1, R.drawable.temp2,R.drawable.temp3,R.drawable.temp4};
+        animate(SlideShowGallery, imagesToShowGallery, 0,true,1200);
 
         View view=(View)rootView.findViewById(R.id.flipCard);
         ObjectAnimator animation = ObjectAnimator.ofFloat(view, "rotationY", -90f, 90f);
