@@ -1,6 +1,11 @@
 package info.anwesha2k18.iitp.fragments;
 
+import android.animation.Animator;
+import android.animation.AnimatorInflater;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -8,17 +13,29 @@ import android.support.design.widget.FloatingActionButton;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
+import android.view.animation.DecelerateInterpolator;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Timer;
 import java.util.TimerTask;
 
 import info.anwesha2k18.iitp.R;
+
 import info.anwesha2k18.iitp.activities.AboutActivity;
 import info.anwesha2k18.iitp.activities.EventsActivityNew;
 import info.anwesha2k18.iitp.activities.MapActivity;
 import info.anwesha2k18.iitp.activities.MyProfile;
+import info.anwesha2k18.iitp.activities.SocialActivity;
 import info.anwesha2k18.iitp.activities.SponsorsActivity;
 import info.anwesha2k18.iitp.activities.TeamActivity;
 import info.anwesha2k18.iitp.adapters.EventsAdapter;
@@ -28,25 +45,107 @@ import info.anwesha2k18.iitp.listeners.ViewPagerCustomDuration;
  * Created by mayank on 26/5/17.
  */
 
-public class HomePage extends android.support.v4.app.Fragment {
+public class
+HomePage extends android.support.v4.app.Fragment {
 
     final long DELAY_MS = 500;//delay info milliseconds before task is to be executed
     final long PERIOD_MS = 4000; // time info milliseconds between successive task executions.
+    ImageView SlideShowGallery;
+    ImageView SlideShowEvents;
+    int toggle;
     LinearLayout eventsLinearLayout;
-    //    LinearLayout galleryLinearLayout;
+    LinearLayout galleryLinearLayout;
     LinearLayout aboutFrameLayout;
     LinearLayout scheduleLinearLayout;
     LinearLayout sponsorsLinearLayout;
     LinearLayout teamLinearLayout;
-    //    LinearLayout devLinearLayout;
+    View CardFrontView;
+    View CardBackView;
+    LinearLayout devLinearLayout;
     LinearLayout mapLinearLayout;
-
     LinearLayout socialLinearLayout ;
     Toast comingSoonToast;
     Timer timer ;
     private int currentPage = 0;
     private int NUM_PAGES;
+    private void SetDaysToAnwesha(final TextView view,final TextView view1,final TextView view2)
+    {
+        Calendar c = new GregorianCalendar();
+        c.set(Calendar.YEAR, 2019);
+        c.set(Calendar.MONTH, 1); // 11 = december
+        c.set(Calendar.DAY_OF_MONTH, 2);
 
+        Date xmas = c.getTime();
+        Date today = new Date();
+        long diff = xmas.getTime() - today.getTime();
+        diff = diff / (1000L*60L*60L*24L);
+        if(diff>0) {
+            view.setText("" + diff);
+            view2.setText("Days left");
+            view2.setTextSize(20);
+        }
+        else
+        {
+            if(diff<=0 && diff>-3)
+            {
+                diff=diff*-1+1;
+                view.setText("" +diff);
+                view1.setText("Day");
+                view1.setTextSize(20);
+            }
+            else
+            {
+                view.setText("Coming soon");
+            }
+        }
+    }
+    private void animate(final ImageView imageView, final int images[], final int imageIndex, final boolean forever, final int timeBetween) {
+
+        //imageView <-- The View which displays the images for the anim
+        //images[] <-- Holds R references to the images to display
+        //imageIndex <-- index of the first image to show in images[]
+        //frever <-- If equals true then after the last image it starts all over again with the first image resulting in an infinite loop. You have been warned.
+
+        int fadeInDuration = 500; // Configure time values here
+        int fadeOutDuration = 500;
+
+        imageView.setVisibility(View.INVISIBLE);    //Visible or invisible by default - this will apply when the animation ends
+        imageView.setImageResource(images[imageIndex]);
+
+        Animation fadeIn = new AlphaAnimation(0, 1);
+        fadeIn.setInterpolator(new DecelerateInterpolator()); // add this
+        fadeIn.setDuration(fadeInDuration);
+
+        Animation fadeOut = new AlphaAnimation(1, 0);
+        fadeOut.setInterpolator(new AccelerateInterpolator()); // and this
+        fadeOut.setStartOffset(fadeInDuration + timeBetween);
+        fadeOut.setDuration(fadeOutDuration);
+
+        AnimationSet animation = new AnimationSet(false); // change to false when i need
+        animation.addAnimation(fadeIn);
+        animation.addAnimation(fadeOut);
+        animation.setRepeatCount(1);
+        imageView.setAnimation(animation);
+
+        animation.setAnimationListener(new Animation.AnimationListener() {
+            public void onAnimationEnd(Animation animation) {
+                if (images.length - 1 > imageIndex) {
+                    animate(imageView, images, imageIndex + 1,forever,timeBetween); //Calls itself until it gets to the end of the array
+                }
+                else {
+                    if (forever){
+                        animate(imageView, images, 0,forever,timeBetween);  //Calls itself to start the animation all over again in a loop if forever = true
+                    }
+                }
+            }
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+            public void onAnimationStart(Animation animation) {
+
+            }
+        });
+    }
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -83,36 +182,91 @@ public class HomePage extends android.support.v4.app.Fragment {
 
         comingSoonToast = Toast.makeText(getContext(), getResources().getString(R.string.coming_soon), Toast.LENGTH_SHORT);
 
-        FloatingActionButton fab = rootView.findViewById(R.id.fab_maps);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        TextView textView = (TextView)rootView.findViewById(R.id.DaysLeft);
+        TextView textViewAbove = (TextView)rootView.findViewById(R.id.otherTextAbove);
+        TextView textViewBelow = (TextView)rootView.findViewById(R.id.otherTextBelow);
+        SetDaysToAnwesha(textView,textViewAbove,textViewBelow);
+
+//        FloatingActionButton fab = rootView.findViewById(R.id.fab_maps);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
 //                String uri = "https://www.google.com/maps/@?api=1&map_action=map&center=25.535752,84.851065&zoom=16&basemap=satellite";
 //                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
 //                getContext().startActivity(intent);
-                Intent intent = new Intent(rootView.getContext(), MyProfile.class);
-                startActivity(intent);
-            }
-        });
-
+////                Intent intent = new Intent(rootView.getContext(), MyProfile.class);
+////                startActivity(intent);
+//            }
+//        });
+//
         eventsLinearLayout = rootView.findViewById(R.id.events);
         eventsLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(rootView.getContext(), EventsActivityNew.class);
                 startActivity(intent);
-//                comingSoonToast.show();
+                comingSoonToast.show();
 
+            }
+        });
+
+        SlideShowEvents = (ImageView) rootView.findViewById(R.id.slideShowEvents);
+        int imagesToShowEvents[] = { R.drawable.anwesha_clix, R.drawable.anwesha_cover,R.drawable.anwesha_telegraph };
+        animate(SlideShowEvents, imagesToShowEvents, 0,true,800);
+
+        SlideShowGallery = (ImageView) rootView.findViewById(R.id.slideShowGallery);
+        int imagesToShow[] = { R.drawable.temp1, R.drawable.temp2,R.drawable.anwesha_telegraph };
+        animate(SlideShowGallery, imagesToShow, 0,true,1200);
+
+        View view=(View)rootView.findViewById(R.id.flipCard);
+        ObjectAnimator animation = ObjectAnimator.ofFloat(view, "rotationY", -90f, 90f);
+        CardFrontView = rootView.findViewById(R.id.CardFront);
+        CardBackView = rootView.findViewById(R.id.CardBack);
+        animation.setDuration(6000);
+        animation.setRepeatCount(ObjectAnimator.INFINITE);
+        animation.setInterpolator(new DecelerateInterpolator());
+        toggle=1;
+        animation.start();
+        animation.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                CardBackView.setVisibility(View.INVISIBLE);
+                CardFrontView.setVisibility(View.VISIBLE);
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+                if (toggle == 1)
+                {
+                    CardFrontView.setVisibility(View.INVISIBLE);
+                    CardBackView.setVisibility(View.VISIBLE);
+                }
+                else
+                {
+                    CardBackView.setVisibility(View.INVISIBLE);
+                    CardFrontView.setVisibility(View.VISIBLE);
+                }
+                toggle*=-1;
             }
         });
 
         aboutFrameLayout = rootView.findViewById(R.id.about);
         aboutFrameLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
+              @Override
             public void onClick(View v) {
                 Intent intent = new Intent(rootView.getContext(), AboutActivity.class);
                 startActivity(intent);
-//                comingSoonToast.show();
+                comingSoonToast.show();
             }
         });
 
@@ -128,13 +282,13 @@ public class HomePage extends android.support.v4.app.Fragment {
             }
         });
 
-//        scheduleLinearLayout = (LinearLayout) rootView.findViewById(R.id.schedule);
-//        scheduleLinearLayout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                comingSoonToast.show();
-//            }
-//        });
+        scheduleLinearLayout = (LinearLayout) rootView.findViewById(R.id.schedule);
+        scheduleLinearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                comingSoonToast.show();
+            }
+        });
 
 //        devLinearLayout = rootView.findViewById(R.id.developers);
 //        devLinearLayout.setOnClickListener(new View.OnClickListener() {
@@ -144,15 +298,15 @@ public class HomePage extends android.support.v4.app.Fragment {
 //                startActivity(intent);
 //            }
 //        });
-
-        sponsorsLinearLayout = rootView.findViewById(R.id.sponsors_menu_item);
-        sponsorsLinearLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(rootView.getContext(), SponsorsActivity.class);
-                startActivity(intent);
-            }
-        });
+//
+//        sponsorsLinearLayout = rootView.findViewById(R.id.sponsors_menu_item);
+//        sponsorsLinearLayout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(rootView.getContext(), SponsorsActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
         teamLinearLayout = rootView.findViewById(R.id.team);
         teamLinearLayout.setOnClickListener(new View.OnClickListener() {
@@ -163,14 +317,15 @@ public class HomePage extends android.support.v4.app.Fragment {
 
             }
         });
-//        socialLinearLayout=(LinearLayout)rootView.findViewById(R.id.social);
-//        socialLinearLayout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent= new Intent(rootView.getContext(), SocialActivity.class) ;
-//                startActivity(intent);
-//            }
-//        });
+
+        socialLinearLayout=(LinearLayout)rootView.findViewById(R.id.social);
+        socialLinearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(rootView.getContext(), SocialActivity.class) ;
+                startActivity(intent);
+            }
+        });
         return rootView;
     }
 }
