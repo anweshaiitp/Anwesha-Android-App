@@ -85,6 +85,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="info.anwesha2k18.iitp.activities.MainActivity" />
         </activity>
+        <activity
+            android:name=".activities.LoginActivity"
+
+            android:label="Login">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="info.anwesha2k18.iitp.activities.MainActivity" />
+        </activity>
         <!-- <activity -->
         <!-- android:name=".fragments.GalleryFragment" -->
         <!-- android:label="@string/gallery"> -->

@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if (id == R.id.action_log_in) {
-            Intent intent = new Intent(MainActivity.this, MyProfile.class);
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(intent);
             refreshMenu();
         }

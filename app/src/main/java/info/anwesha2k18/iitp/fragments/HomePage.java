@@ -29,6 +29,7 @@ import java.util.GregorianCalendar;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import info.anwesha2k18.iitp.activities.LoginActivity;
 import info.anwesha2k18.iitp.R;
 
 import info.anwesha2k18.iitp.activities.AboutActivity;
@@ -52,7 +53,6 @@ HomePage extends android.support.v4.app.Fragment {
     final long PERIOD_MS = 4000; // time info milliseconds between successive task executions.
     ImageView SlideShowGallery;
     ImageView SlideShowEvents;
-    int toggle;
     LinearLayout eventsLinearLayout;
     LinearLayout galleryLinearLayout;
     LinearLayout aboutFrameLayout;
@@ -68,6 +68,7 @@ HomePage extends android.support.v4.app.Fragment {
     Timer timer ;
     private int currentPage = 0;
     private int NUM_PAGES;
+    private int toggle;
     private void SetDaysToAnwesha(final TextView view,final TextView view1,final TextView view2)
     {
         Calendar c = new GregorianCalendar();
@@ -314,6 +315,7 @@ HomePage extends android.support.v4.app.Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(rootView.getContext(), TeamActivity.class);
                 startActivity(intent);
+
 
             }
         });
