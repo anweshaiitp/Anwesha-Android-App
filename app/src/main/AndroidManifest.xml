@@ -47,7 +47,6 @@
 
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
@@ -91,6 +90,7 @@
             android:label="Login">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
+                android:screenOrientation="portrait"
                 android:value="info.anwesha2k18.iitp.activities.MainActivity" />
         </activity>
         <!-- <activity -->

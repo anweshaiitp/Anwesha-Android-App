@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:card_view="http://schemas.android.com/tools"
     android:background="?attr/colorPrimaryDark"
     android:orientation="vertical">
 
@@ -15,20 +16,29 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
+            android:orientation="vertical"
+            >
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardElevation="4dp">
             <info.anwesha2k18.iitp.listeners.ViewPagerCustomDuration
                 android:id="@+id/events_pager"
                 android:layout_width="match_parent"
                 android:layout_height="230dp"
-                android:layout_marginTop="8dp"
                 android:background="#000000" />
-
+            </android.support.v7.widget.CardView>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
+                <android.support.v7.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    card_view:cardElevation="4dp"
+                    app:cardBackgroundColor="@color/cardview_shadow_start_color"
+                    >
                 <RelativeLayout
                     android:id="@+id/flipCard"
                     android:layout_width="120dp"
@@ -44,7 +54,7 @@
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@drawable/anwesha_logo_edit_white_card"
+                             android:src="@drawable/anwesha_logo_edit_white_card"
                             android:scaleType="centerInside"
                             />
                     </LinearLayout>
@@ -83,10 +93,16 @@
                             android:textStyle="bold" />
                     </LinearLayout>
                 </RelativeLayout>
-
+                </android.support.v7.widget.CardView>
+                <android.support.v7.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    card_view:cardElevation="4dp"
+                    >
                 <LinearLayout
                     android:id="@+id/schedule"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="120dp"
                     android:layout_weight="7"
                     android:background="@color/colorEvents"
@@ -107,6 +123,7 @@
                         android:textStyle="bold"
                         android:textColor="@color/white"/>
                 </LinearLayout>
+                </android.support.v7.widget.CardView>
             </LinearLayout>
 
             <LinearLayout
@@ -114,13 +131,17 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="0dp"
                 android:orientation="horizontal">
-
+                <android.support.v7.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/cardview_shadow_end_color"
+                    card_view:cardElevation="4dp"
+                    >
                 <LinearLayout
                     android:id="@+id/events"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="240dp"
-                    android:layout_weight="7"
-                    android:background="@color/cardview_shadow_start_color"
                     android:orientation="vertical">
                     <ImageView
                         android:id="@+id/slideShowEvents"
@@ -138,17 +159,21 @@
                         android:textStyle="bold"
                         android:textColor="@color/white"/>
                 </LinearLayout>
-
+                </android.support.v7.widget.CardView>
                 <LinearLayout
                     android:layout_width="120dp"
                     android:layout_height="240dp"
                     android:orientation="vertical">
-
+                    <android.support.v7.widget.CardView
+                        android:layout_width="120dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        card_view:cardElevation="4dp"
+                        >
                     <LinearLayout
                         android:id="@+id/myProfile"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
+                        android:layout_height="match_parent"
                         android:background="@color/colorMyProfile"
                         android:orientation="vertical"
                         android:padding="16dp">
@@ -168,12 +193,17 @@
                             android:textSize="18dp"
                             android:textStyle="bold" />
                     </LinearLayout>
-
+                    </android.support.v7.widget.CardView>
+                    <android.support.v7.widget.CardView
+                        android:layout_width="120dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        card_view:cardElevation="4dp"
+                        >
                     <LinearLayout
                         android:id="@+id/about"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
+                        android:layout_height="match_parent"
                         android:background="@color/colorGallery"
                         android:orientation="vertical"
                         android:padding="16dp">
@@ -193,6 +223,7 @@
                             android:textSize="18dp"
                             android:textStyle="bold" />
                     </LinearLayout>
+                    </android.support.v7.widget.CardView>
                 </LinearLayout>
             </LinearLayout>
 
@@ -206,11 +237,16 @@
                     android:layout_width="120dp"
                     android:layout_height="240dp"
                     android:orientation="vertical">
-
+                    <android.support.v7.widget.CardView
+                        android:layout_width="120dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        card_view:cardElevation="4dp"
+                        >
                     <LinearLayout
                         android:id="@+id/map"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:background="@color/colorSchedule"
                         android:orientation="vertical"
@@ -229,12 +265,18 @@
                             android:textSize="18dp"
                             android:textStyle="bold" />
                     </LinearLayout>
-
+                    </android.support.v7.widget.CardView>
+                    <android.support.v7.widget.CardView
+                        android:layout_width="120dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        card_view:cardElevation="4dp"
+                        >
                     <LinearLayout
                         android:id="@+id/sponsors"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                          android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
                         android:background="@color/colorSponsors"
                         android:orientation="vertical"
                         android:padding="16dp">
@@ -252,14 +294,19 @@
                             android:textSize="18dp"
                             android:textStyle="bold" />
                     </LinearLayout>
-
+                    </android.support.v7.widget.CardView>
                 </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/gallery"
+                <android.support.v7.widget.CardView
                     android:layout_width="0dp"
                     android:layout_height="240dp"
-                    android:layout_weight="7"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/cardview_shadow_end_color"
+                    card_view:cardElevation="4dp"
+                    >
+                <LinearLayout
+                    android:id="@+id/gallery"
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp"
                     android:background="@color/cardview_shadow_end_color"
                     android:orientation="vertical">
                     <TextView
@@ -278,17 +325,21 @@
                         android:scaleType="fitXY"
                         />
                 </LinearLayout>
-
+                </android.support.v7.widget.CardView>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-
+                <android.support.v7.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:elevation="4dp">
                 <LinearLayout
                     android:id="@+id/social"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="120dp"
                     android:layout_weight="1"
                     android:background="@color/colorSocial"
@@ -309,6 +360,11 @@
                         android:textStyle="bold"
                         android:textColor="@color/white"/>
                     </LinearLayout>
+                </android.support.v7.widget.CardView>
+               <android.support.v7.widget.CardView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:elevation="4dp">
                 <LinearLayout
                     android:id="@+id/team"
                     android:layout_width="120dp"
@@ -332,6 +388,7 @@
                         android:textSize="18dp"
                         android:textStyle="bold" />
                 </LinearLayout>
+               </android.support.v7.widget.CardView>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

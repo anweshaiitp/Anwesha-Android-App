@@ -28,7 +28,6 @@ public class LoginActivity extends AppCompatActivity {
 
     @BindViews(value = {R.id.logo,R.id.first,R.id.second,R.id.last})
     protected List<ImageView> sharedElements;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
