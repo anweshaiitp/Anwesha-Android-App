@@ -5,6 +5,11 @@
     <string name="my_profile">My Profile</string>
     <string name="events">Events</string>
     <string name="schedule">Schedule</string>
+    <string name="sign_up_label">Sign Up</string>
+    <string name="log_in_label">Log In</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="email_hint">Email</string>
+    <string name="confirm_hint">Confirm Password</string>
     <string name="team">Team</string>
     <string name="developers">App Developers</string>
     <string name="sponsors">Sponsors</string>
@@ -102,6 +107,7 @@
     <string name="events_list">events_list</string>
     <string name="key">key</string>
     <string name="anwesha">Anwesha</string>
+    <string name="map">Map</string>
     <string name="tap_for_more_info">Tap for more information!</string>
     <string name="sign_in_first">Please sign in/register first</string>
     <string name="already_registered">You\'re registered!!</string>

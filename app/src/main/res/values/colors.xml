@@ -6,10 +6,22 @@
     <color name="colorSignIn">#00bfa5</color>
     <color name="colorSignUp">#1de9b6</color>
 
+    <color name="color_log_in">#94019c8f</color>
+    <color name="color_sign_up">#93303f9f</color>
+
+
+    <color name="color_logo_log_in">#b4faf5</color>
+    <color name="color_logo_sign_up">#bbc4fd</color>
+
+    <color name="color_label">#ededed</color>
+    <color name="white_transparent">#fafafa</color>
+
+    <color name="color_input_hint">#FFF</color>
+    <color name="color_text_highlight">#fafafa</color>
+    <color name="color_text">#FFF</color>
     <color name="colorPrimaryLight">#eeeeee</color>
     <color name="colorAccent">#9E9E9E</color>
-
-
+    <color name="white">#ffffff</color>
     <color name="colorMyProfile">#673AB7</color>
     <color name="colorEvents">#3F51B5</color>
     <color name="colorSchedule">#E91E63</color>
@@ -18,7 +30,7 @@
     <color name="colorSponsors">#03A9F4</color>
     <color name="colorAbout">#33691E</color>
     <color name="colorGallery">#FFC107</color>
-    <color name="colorSocial">#F44336</color>
+    <color name="colorSocial">#ff5e00</color>
     <color name="cardHeaderBackgroundEvents">#bdbdbd</color>
     <color name="cardBackgroundEvents">#000000</color>
     <color name="fab_background">#212121</color>
