@@ -53,17 +53,17 @@ HomePage extends android.support.v4.app.Fragment {
     final long PERIOD_MS = 4000; // time info milliseconds between successive task executions.
     ImageView SlideShowGallery;
     ImageView SlideShowEvents;
-    LinearLayout eventsLinearLayout;
-    LinearLayout galleryLinearLayout;
-    LinearLayout aboutFrameLayout;
-    LinearLayout scheduleLinearLayout;
-    LinearLayout sponsorsLinearLayout;
-    LinearLayout teamLinearLayout;
+    View eventsLinearLayout;
+    View galleryLinearLayout;
+    View aboutFrameLayout;
+    View scheduleLinearLayout;
+    View sponsorsLinearLayout;
+    View teamLinearLayout;
     View CardFrontView;
     View CardBackView;
-    LinearLayout devLinearLayout;
-    LinearLayout mapLinearLayout;
-    LinearLayout socialLinearLayout ;
+    View devLinearLayout;
+    View mapLinearLayout;
+    View socialLinearLayout ;
     Toast comingSoonToast;
     Timer timer ;
     private int currentPage = 0;
@@ -283,7 +283,7 @@ HomePage extends android.support.v4.app.Fragment {
             }
         });
 
-        scheduleLinearLayout = (LinearLayout) rootView.findViewById(R.id.schedule);
+        scheduleLinearLayout =  rootView.findViewById(R.id.schedule);
         scheduleLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -320,7 +320,7 @@ HomePage extends android.support.v4.app.Fragment {
             }
         });
 
-        socialLinearLayout=(LinearLayout)rootView.findViewById(R.id.social);
+        socialLinearLayout=rootView.findViewById(R.id.social);
         socialLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
