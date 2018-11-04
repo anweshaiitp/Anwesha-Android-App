@@ -49,6 +49,7 @@
             android:orientation="horizontal">
 
             <ImageView
+                android:id="@+id/airtel"
                 android:layout_width="wrap_content"
                 android:layout_height="150dp"
                 android:layout_gravity="center"
@@ -104,6 +105,7 @@
             android:orientation="horizontal">
 
             <ImageView
+                android:id="@+id/ascspons1"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_weight="1"
@@ -112,6 +114,7 @@
                 android:src="@drawable/ascspons1" />
 
             <ImageView
+                android:id="@+id/sbi"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_weight="1"
@@ -120,6 +123,7 @@
                 android:src="@drawable/sbi" />
 
             <ImageView
+                android:id="@+id/ntpc"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_weight="1"
@@ -135,6 +139,7 @@
             android:orientation="horizontal">
 
             <ImageView
+                android:id="@+id/ruban"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_weight="1"
