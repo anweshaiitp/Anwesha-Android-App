@@ -36,5 +36,6 @@
     <color name="cardHeaderBackgroundEvents">#bdbdbd</color>
     <color name="cardBackgroundEvents">#000000</color>
     <color name="fab_background">#212121</color>
+    <color name="statusColor">#bf360c</color>
 </resources>
 

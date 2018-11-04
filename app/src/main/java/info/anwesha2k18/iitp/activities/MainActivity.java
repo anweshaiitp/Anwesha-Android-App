@@ -60,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
         Window window = getWindow();
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        window.setStatusBarColor(ContextCompat.getColor(MainActivity.this,R.color.cardview_dark_background));
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         navigationView.setNavigationItemSelectedListener(item -> {
 
