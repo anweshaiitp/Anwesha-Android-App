@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_red_yellow2"
+    android:background="@drawable/bg_circus"
     tools:context=".MainActivity">
     <ScrollView
         android:layout_width="wrap_content"
@@ -64,7 +64,8 @@
 Venue:-IIT Patna
 Organised by
 Technophilia"
-                                android:textColor="#1A237E"
+                                android:textColor="#ffff"
+                                android:background="#40FF0000"
                                 android:textStyle="bold"
                                 android:textSize="17dp"
                                 android:paddingLeft="5dp"/>
@@ -125,7 +126,8 @@ Technophilia"
                                 android:text="Date:- 3rd-4th November
 Venue:-IIT Patna
 Organised by
-Techtron Technologies"                                android:textColor="#1A237E"
+Techtron Technologies"                                android:textColor="#ffff"
+                                android:background="#40FF0000"
                                 android:textStyle="bold"
                                 android:textSize="17dp"
                                 android:paddingLeft="5dp"/>
@@ -186,7 +188,8 @@ Techtron Technologies"                                android:textColor="#1A237E
 Venue:-IIT Patna
 Organised by
 Technophilia"
-                                android:textColor="#1A237E"
+                                android:textColor="#ffff"
+                                android:background="#40FF0000"
                                 android:textStyle="bold"
                                 android:textSize="17dp"
                                 android:id="@+id/text2"
@@ -248,7 +251,8 @@ Technophilia"
 Venue:-IIT Patna
 Organised by
 Technophilia"
-                                android:textColor="#1A237E"
+                                android:textColor="#ffff"
+                                android:background="#40FF0000"
                                 android:textStyle="bold"
                                 android:textSize="17dp"
                                 android:paddingLeft="5dp"/>
