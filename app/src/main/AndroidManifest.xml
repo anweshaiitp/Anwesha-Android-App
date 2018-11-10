@@ -36,7 +36,7 @@
             android:exported="false" />
 
         <activity
-            android:name="com.facebook.FacebookActivity"
+            android:name    ="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name" />
         <activity
@@ -55,7 +55,6 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -85,6 +84,20 @@
                 android:value="info.anwesha2k18.iitp.activities.MainActivity" />
         </activity>
         <activity
+            android:name=".activities.multiCityActivity"
+            android:label="@string/multicity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="info.anwesha2k18.iitp.activities.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activities.webActivity"
+            android:label="@string/app_name">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="info.anwesha2k18.iitp.activities.MainActivity" />
+        </activity>
+        <activity
             android:name=".activities.LoginActivity"
 
             android:label="Login">
@@ -104,6 +117,13 @@
         <activity
             android:name=".activities.AboutActivity"
             android:label="@string/about">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="info.anwesha2k18.iitp.activities.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activities.multiCityInfo"
+            android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="info.anwesha2k18.iitp.activities.MainActivity" />
@@ -181,5 +201,4 @@
                 android:value="info.anwesha2k18.iitp.activities.MainActivity" />
         </activity>
     </application>
-
 </manifest>

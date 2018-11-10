@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:card_view="http://schemas.android.com/tools"
-    android:background="?attr/colorPrimaryDark"
-    android:orientation="vertical">
+    android:background="?attr/colorPrimaryDark">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -16,18 +15,20 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
+
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:cardElevation="4dp">
-            <info.anwesha2k18.iitp.listeners.ViewPagerCustomDuration
-                android:id="@+id/events_pager"
-                android:layout_width="match_parent"
-                android:layout_height="230dp"
-                android:background="#000000" />
+
+                <info.anwesha2k18.iitp.listeners.ViewPagerCustomDuration
+                    android:id="@+id/events_pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="230dp"
+                    android:background="#000000" />
             </android.support.v7.widget.CardView>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -37,26 +38,26 @@
                     android:id="@+id/flipCard"
                     android:layout_width="120dp"
                     android:layout_height="120dp"
-                    card_view:cardElevation="20dp"
                     app:cardBackgroundColor="@color/cardview_shadow_start_color"
-                    >
+                    card_view:cardElevation="20dp">
+
                     <android.support.v7.widget.CardView
                         android:id="@+id/CardBack"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical">
+
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@drawable/about_background"
                             android:scaleType="fitXY"
-                            />
+                            android:src="@drawable/about_background" />
+
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                             android:src="@drawable/anwesha_logo_edit_white_card"
                             android:scaleType="centerInside"
-                            />
+                            android:src="@drawable/anwesha_logo_edit_white_card" />
                     </android.support.v7.widget.CardView>
 
                     <android.support.v7.widget.CardView
@@ -66,12 +67,13 @@
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
                         android:padding="16dp">
+
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@drawable/about_background"
                             android:scaleType="fitXY"
-                            />
+                            android:src="@drawable/about_background" />
+
                         <TextView
                             android:id="@+id/otherTextAbove"
                             android:layout_width="wrap_content"
@@ -87,8 +89,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:textColor="@color/white"
                             android:text=""
+                            android:textColor="@color/white"
                             android:textSize="40sp"
                             android:textStyle="bold" />
 
@@ -97,35 +99,37 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal|bottom"
+                            android:paddingBottom="15dp"
                             android:textColor="@color/white"
                             android:textSize="0sp"
-                            android:textStyle="bold"
-                            android:paddingBottom="15dp"/>
+                            android:textStyle="bold" />
                     </android.support.v7.widget.CardView>
                 </android.support.v7.widget.CardView>
+
                 <android.support.v7.widget.CardView
                     android:id="@+id/schedule"
                     android:layout_width="0dp"
                     android:layout_height="120dp"
                     android:layout_weight="7"
                     app:cardBackgroundColor="@color/colorEvents"
-                    app:cardElevation="18dp"
-                    >
+                    app:cardElevation="18dp">
+
                     <ImageView
                         android:layout_width="60dp"
                         android:layout_height="match_parent"
-                        android:src="@drawable/ic_event_note_white_24dp"
+                        android:layout_gravity="center_vertical"
                         android:layout_marginLeft="25dp"
-                        android:layout_gravity="center_vertical"/>
+                        android:src="@drawable/ic_event_note_white_24dp" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/schedule"
-                        android:layout_margin="8dp"
                         android:layout_gravity="center"
+                        android:layout_margin="8dp"
+                        android:text="@string/schedule"
+                        android:textColor="@color/white"
                         android:textSize="22dp"
-                        android:textStyle="bold"
-                        android:textColor="@color/white"/>
+                        android:textStyle="bold" />
                 </android.support.v7.widget.CardView>
             </LinearLayout>
 
@@ -134,48 +138,63 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="0dp"
                 android:orientation="horizontal">
+
                 <android.support.v7.widget.CardView
                     android:id="@+id/events"
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="240dp"
-                    app:cardBackgroundColor="@color/cardview_shadow_end_color"
-                    card_view:cardElevation="18dp"
-                    >
-                    <ImageView
-                        android:id="@+id/slideShowEvents"
+                    android:layout_weight="1"
+                    card_view:cardElevation="18dp">
+
+
+                    <!--<info.anwesha2k18.iitp.utils.GifImageView-->
+                    <!--android:id="@+id/gifview"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="0dp"-->
+                    <!--android:layout_weight="1"-->
+                    <!--/>-->
+                    <pl.droidsonroids.gif.GifImageView
+                        android:id="@+id/gifview"
                         android:layout_width="match_parent"
-                        android:layout_height="214dp"
+                        android:layout_height="210dp"
+                        android:layout_gravity="top"
                         android:scaleType="fitXY"
-                        />
+                        android:src="@drawable/eventslide" />
+
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/events"
-                        android:layout_gravity="center_horizontal|bottom"
+                        android:layout_height="30dp"
+                        android:layout_gravity="bottom"
+                        android:background="@color/colorPrimaryDark"
                         android:gravity="center_horizontal"
-                        android:layout_marginBottom="8dp"
+                        android:paddingTop="4dp"
+                        android:text="@string/events"
+                        android:textColor="@color/white"
                         android:textSize="18dp"
-                        android:textStyle="bold"
-                        android:textColor="@color/white"/>
+                        android:textStyle="bold" />
+
+
                 </android.support.v7.widget.CardView>
+
                 <LinearLayout
                     android:layout_width="120dp"
                     android:layout_height="240dp"
                     android:orientation="vertical">
+
                     <android.support.v7.widget.CardView
                         android:id="@+id/myProfile"
                         android:layout_width="120dp"
                         android:layout_height="120dp"
-                        card_view:cardElevation="20dp"
                         app:cardBackgroundColor="@color/colorMyProfile"
-                        >
+                        card_view:cardElevation="20dp">
+
                         <ImageView
                             android:layout_width="60dp"
                             android:layout_height="60dp"
                             android:layout_gravity="center_horizontal|top"
                             android:layout_marginTop="16dp"
                             android:src="@drawable/ic_person_pin_white_24dp" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -186,19 +205,21 @@
                             android:textSize="18dp"
                             android:textStyle="bold" />
                     </android.support.v7.widget.CardView>
+
                     <android.support.v7.widget.CardView
                         android:id="@+id/about"
                         android:layout_width="120dp"
                         android:layout_height="120dp"
-                        card_view:cardElevation="20dp"
                         app:cardBackgroundColor="@color/colorGallery"
-                        >
+                        card_view:cardElevation="20dp">
+
                         <ImageView
                             android:layout_width="60dp"
                             android:layout_height="60dp"
                             android:layout_gravity="center_horizontal|top"
                             android:layout_marginTop="16dp"
                             android:src="@drawable/ic_info_white_24dp" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -222,19 +243,21 @@
                     android:layout_width="120dp"
                     android:layout_height="240dp"
                     android:orientation="vertical">
+
                     <android.support.v7.widget.CardView
                         android:id="@+id/map"
                         android:layout_width="120dp"
                         android:layout_height="120dp"
-                        card_view:cardElevation="20dp"
                         app:cardBackgroundColor="@color/colorSchedule"
-                        >
+                        card_view:cardElevation="20dp">
+
                         <ImageView
                             android:layout_width="60dp"
                             android:layout_height="60dp"
                             android:layout_gravity="center_horizontal|top"
                             android:layout_marginTop="16dp"
                             android:src="@drawable/ic_map_white_24dp" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -245,20 +268,22 @@
                             android:textSize="18dp"
                             android:textStyle="bold" />
                     </android.support.v7.widget.CardView>
+
                     <android.support.v7.widget.CardView
+                        android:id="@+id/sponsors"
                         android:layout_width="120dp"
                         android:layout_height="0dp"
                         android:layout_weight="1"
-                        card_view:cardElevation="20dp"
-                        android:id="@+id/sponsors"
                         app:cardBackgroundColor="@color/colorSponsors"
-                        >
+                        card_view:cardElevation="20dp">
+
                         <ImageView
                             android:layout_width="60dp"
                             android:layout_height="60dp"
                             android:layout_gravity="center_horizontal"
                             android:layout_marginTop="16dp"
                             android:src="@drawable/ic_monetization_on_white_24dp" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -270,30 +295,33 @@
                             android:textStyle="bold" />
                     </android.support.v7.widget.CardView>
                 </LinearLayout>
+
                 <android.support.v7.widget.CardView
                     android:id="@+id/gallery"
                     android:layout_width="0dp"
                     android:layout_height="240dp"
                     android:layout_weight="1"
-                    app:cardBackgroundColor="@color/cardview_shadow_end_color"
-                    card_view:cardElevation="18dp"
-                    >
+                    app:cardBackgroundColor="@color/colorPrimaryDark"
+                    card_view:cardElevation="18dp">
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/gallery"
-                        android:gravity="center"
                         android:layout_gravity="top"
+                        android:gravity="center"
+                        android:text="@string/gallery"
+                        android:textColor="@color/white"
                         android:textSize="18dp"
-                        android:textStyle="bold"
-                        android:textColor="@color/white"/>
-                    <ImageView
+                        android:textStyle="bold" />
+
+                    <pl.droidsonroids.gif.GifImageView
                         android:id="@+id/slideShowGallery"
                         android:layout_width="match_parent"
-                        android:layout_gravity="bottom"
                         android:layout_height="214dp"
+                        android:layout_gravity="bottom"
                         android:scaleType="fitXY"
-                        />
+                        android:src="@drawable/eventslide"/>
+
                 </android.support.v7.widget.CardView>
             </LinearLayout>
 
@@ -301,41 +329,47 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
                 <android.support.v7.widget.CardView
                     android:id="@+id/social"
                     android:layout_width="0dp"
                     android:layout_height="120dp"
-                    app:cardBackgroundColor="@color/colorSocial"
                     android:layout_weight="1"
+                    app:cardBackgroundColor="@color/colorSocial"
                     app:cardElevation="18dp">
+
                     <ImageView
                         android:layout_width="60dp"
                         android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
                         android:layout_marginLeft="30dp"
-                        android:src="@drawable/ic_social_2"
-                        android:layout_gravity="center_vertical"/>
+                        android:src="@drawable/ic_social_2" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/social"
-                        android:layout_margin="8dp"
                         android:layout_gravity="center"
+                        android:layout_margin="8dp"
+                        android:text="@string/social"
+                        android:textColor="@color/white"
                         android:textSize="20dp"
-                        android:textStyle="bold"
-                        android:textColor="@color/white"/>
+                        android:textStyle="bold" />
                 </android.support.v7.widget.CardView>
-               <android.support.v7.widget.CardView
-                   android:layout_width="120dp"
-                   android:layout_height="120dp"
-                   android:id="@+id/team"
-                   app:cardBackgroundColor="@color/colorTeam"
-                   android:elevation="20dp">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/team"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:elevation="20dp"
+                    app:cardBackgroundColor="@color/colorTeam">
+
                     <ImageView
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_gravity="center_horizontal|top"
                         android:layout_marginTop="16dp"
                         android:src="@drawable/ic_team" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -345,18 +379,18 @@
                         android:textColor="@color/white"
                         android:textSize="18dp"
                         android:textStyle="bold" />
-               </android.support.v7.widget.CardView>
+                </android.support.v7.widget.CardView>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
     <!--<android.support.design.widget.FloatingActionButton-->
-        <!--android:id="@+id/fab_maps"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignParentBottom="true"-->
-        <!--android:layout_alignParentRight="true"-->
-        <!--android:layout_gravity="bottom|right"-->
-        <!--android:layout_margin="16dp"-->
-        <!--android:src="@drawable/qrcode_scan"-->
-        <!--app:backgroundint="@color/fab_background" />&ndash;&gt;-->
+    <!--android:id="@+id/fab_maps"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_alignParentRight="true"-->
+    <!--android:layout_gravity="bottom|right"-->
+    <!--android:layout_margin="16dp"-->
+    <!--android:src="@drawable/qrcode_scan"-->
+    <!--app:backgroundint="@color/fab_background" />&ndash;&gt;-->
 </LinearLayout>

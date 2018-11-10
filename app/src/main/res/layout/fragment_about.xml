@@ -44,7 +44,7 @@
                 android:fontFamily="sans-serif"
                 android:lineSpacingExtra="4sp"
                 android:text="@string/LoremIpsum"
-                android:textColor="@color/colorPrimaryLight"
+                android:textColor="@color/white"
                 android:textSize="18sp" />
 
             <!--<TextView-->
