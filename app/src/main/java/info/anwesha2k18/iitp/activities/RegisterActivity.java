@@ -36,13 +36,13 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import info.anwesha2k18.iitp.R;
 
 public class RegisterActivity extends AppCompatActivity {
-
     private static final String EMAIL_PATTERN = "^[a-zA-Z0-9#_~!$&'()*+,;=:.\"(),:;<>@\\[\\]\\\\]+@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*$";
     Button buttonRegister;
     TextInputLayout firstNameWrapper;
@@ -78,7 +78,11 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
+        Bundle bundle;
+        Intent intent = getIntent();
+        bundle = intent.getExtras();
+        mEmail = bundle.getString("email");
+        mPassword = bundle.getString("password");
         mUrl = getString(R.string.register_url);
         mQueue = Volley.newRequestQueue(this);
         buttonRegister = findViewById(R.id.button_register);
@@ -93,11 +97,15 @@ public class RegisterActivity extends AppCompatActivity {
         mobileNoWrapper = findViewById(R.id.mobile_no_wrapper);
         refCodeWrapper = findViewById(R.id.ref_code_wrapper);
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-
+        Objects.requireNonNull(emailIDWrapper.getEditText()).setText(mEmail);
+        Objects.requireNonNull(passwordWrapper.getEditText()).setText(mPassword);
+        Objects.requireNonNull(confirmPasswordWrapper.getEditText()).setText(mPassword);
+        Objects.requireNonNull(confirmPasswordWrapper.getEditText()).setText(mPassword);
         genderSpinner = findViewById(R.id.gender_spinner);
         final ArrayAdapter<CharSequence> genderAdapter = ArrayAdapter.createFromResource(this,
                 R.array.gender_array, R.layout.spinner_item);
         genderAdapter.setDropDownViewResource(R.layout.spinner_item);
+        genderSpinner.setAdapter(genderAdapter);
         genderSpinner.setAdapter(genderAdapter);
         genderSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -128,7 +136,7 @@ public class RegisterActivity extends AppCompatActivity {
                                     try {
 //                                        JSONObject jsonObject = new JSONObject(response);
                                         JSONArray jsonArray = new JSONArray(response);
-                                        int status = (int) jsonArray.get(0);
+                                        int status = (int) jsonArray.getInt(0);
 
                                         switch (status) {
                                             case 1:
