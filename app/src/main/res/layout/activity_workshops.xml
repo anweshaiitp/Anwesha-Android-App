@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_circus"
+    tools:context=".MainActivity">
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:id="@+id/card1"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:cardCornerRadius="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="160dp"
+                        android:src="@drawable/wac"
+                        android:padding="23dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="5dp"
+                            android:background="@drawable/customborder">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="0dp"
+                                android:text="Robotics and IoT"
+                                android:textStyle="bold"
+                                android:textColor="#000"
+                                android:textSize="25dp"
+                                android:gravity="center"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Date:- 3rd-4th November
+Venue:-IIT Patna
+Organised by
+Technophilia"
+                                android:textColor="#ffff"
+                                android:background="#40FF0000"
+                                android:textStyle="bold"
+                                android:textSize="17dp"
+                                android:paddingLeft="5dp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:id="@+id/card2"
+                android:layout_below="@+id/card1"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="3dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignParentTop="true"
+                    android:orientation="vertical"
+                    android:layout_marginTop="0dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="160dp"
+                        android:src="@drawable/wac"
+                        android:padding="23dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="5dp"
+                            android:background="@drawable/customborder">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="0dp"
+                                android:text="Automobiles and IC Engines."
+                                android:textStyle="bold"
+                                android:textColor="#000"
+                                android:textSize="25dp"
+                                android:gravity="center"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Date:- 3rd-4th November
+Venue:-IIT Patna
+Organised by
+Techtron Technologies"                                android:textColor="#ffff"
+                                android:background="#40FF0000"
+                                android:textStyle="bold"
+                                android:textSize="17dp"
+                                android:paddingLeft="5dp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:id="@+id/card3"
+                android:layout_below="@+id/card2"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="3dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/img3"
+                    android:layout_alignParentTop="true"
+                    android:orientation="vertical"
+                    android:background="@android:color/transparent"
+                    android:layout_marginTop="0dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="160dp"
+                        android:src="@drawable/wac"
+                        android:padding="23dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="5dp"
+                            android:background="@drawable/customborder">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="0dp"
+                                android:text="Robotics and IoT"
+                                android:textStyle="bold"
+                                android:textColor="#000"
+                                android:textSize="25dp"
+                                android:gravity="center"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Date:- 3rd-4th November
+Venue:-IIT Patna
+Organised by
+Technophilia"
+                                android:textColor="#ffff"
+                                android:background="#40FF0000"
+                                android:textStyle="bold"
+                                android:textSize="17dp"
+                                android:id="@+id/text2"
+                                android:paddingLeft="5dp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:id="@+id/card4"
+                android:layout_below="@+id/card3"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="3dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignParentTop="true"
+                    android:orientation="vertical"
+                    android:background="@android:color/transparent"
+                    android:layout_marginTop="0dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="160dp"
+                        android:src="@drawable/wac"
+                        android:padding="23dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="5dp"
+                            android:background="@drawable/customborder">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="0dp"
+                                android:text="Automobiles and IC Engines."
+                                android:textStyle="bold"
+                                android:textColor="#000"
+                                android:textSize="25dp"
+                                android:gravity="center" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Date:- 3rd-4th November
+Venue:-IIT Patna
+Organised by
+Technophilia"
+                                android:textColor="#ffff"
+                                android:background="#40FF0000"
+                                android:textStyle="bold"
+                                android:textSize="17dp"
+                                android:paddingLeft="5dp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+        </RelativeLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>
