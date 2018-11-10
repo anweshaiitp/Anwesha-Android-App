@@ -36,5 +36,11 @@
     <color name="cardHeaderBackgroundEvents">#bdbdbd</color>
     <color name="cardBackgroundEvents">#000000</color>
     <color name="fab_background">#212121</color>
+    <color name="red">#FF0800</color>
+    <color name="secondPage">#00838F</color>
+    <color name="colorAccent">#ba68c8</color>
+    <color name="text">#ffffff</color>
+    <color name="text_two">#94ffffff</color>
+    <color name="green">#940ce61f</color>
 </resources>
 
