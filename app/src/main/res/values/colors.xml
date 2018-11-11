@@ -38,5 +38,6 @@
     <color name="fab_background">#212121</color>
     <color name="faq_color">#BBDEFB</color>
     <color name="olive">#D4E157</color>
+    <color name="statusColor">#bf360c</color>
 </resources>
 
