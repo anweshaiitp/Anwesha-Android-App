@@ -13,6 +13,7 @@
         <item name="colorControlNormal">@color/colorPrimaryLight</item>
     </style>
 
+
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -68,6 +69,7 @@
         <item name="android:clickable">true</item>
         <item name="android:focusable">true</item>
     </style>
+
     <style name="ContactNo">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">match_parent</item>
@@ -121,7 +123,8 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_marginTop">15dp</item>
     </style>
-    <style name="Widget"/>
+
+    <style name="Widget" />
 
     <style name="Widget.TextInputLayout">
         <item name="android:layout_height">@dimen/wrap_content</item>
