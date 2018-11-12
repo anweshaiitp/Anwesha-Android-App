@@ -39,5 +39,7 @@
     <color name="text">#ffffff</color>
     <color name="text_two">#94ffffff</color>
     <color name="green">#940ce61f</color>
+    <color name="signUpColor">#FDD835</color>
+    <color name="loginColor">#D50000</color>
 </resources>
 

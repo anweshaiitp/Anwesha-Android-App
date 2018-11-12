@@ -86,7 +86,7 @@
         </activity>
         <activity
             android:name=".activities.LoginActivity"
-
+            android:theme="@style/Theme.AppCompat.NoActionBar"
             android:label="Login">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
