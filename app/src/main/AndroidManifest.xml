@@ -91,6 +91,20 @@
                 android:value="info.anwesha2k18.iitp.activities.MainActivity" />
         </activity>
         <activity
+            android:name=".activities.lectureActivity"
+            android:label="@string/app_name">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="info.anwesha2k18.iitp.activities.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activities.workshopActivity"
+            android:label="@string/app_name">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="info.anwesha2k18.iitp.activities.MainActivity" />
+        </activity>
+        <activity
             android:name=".activities.webActivity"
             android:label="@string/app_name">
             <meta-data

@@ -22,7 +22,7 @@
     <color name="color_text_highlight">#fafafa</color>
     <color name="color_text">#FFF</color>
     <color name="colorPrimaryLight">#f9683a</color>
-    <color name="colorAccent">#9E9E9E</color>
+    <!--<color name="colorAccent">#9E9E9E</color>-->
     <color name="white">#ffffff</color>
     <color name="colorMyProfile">#673AB7</color>
     <color name="colorEvents">#3F51B5</color>
