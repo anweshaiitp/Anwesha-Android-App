@@ -1,5 +1,5 @@
 # Anwesha-Android-App
-Anwesha 2k18 Android App
+Anwesha 2k19 Android App. Anwesha is the annual techno-cultural fest of IIT Patna. 
 
 ## TODO
 - [ ] Put in a loader for Sign In/Out

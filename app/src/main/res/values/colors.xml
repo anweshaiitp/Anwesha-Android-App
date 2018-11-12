@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#bf360c</color>
     <color name="colorPrimaryDark">#870000</color>
-
+    <color name="colorAccent">#ba68c8</color>
     <color name="colorSignIn">#00bfa5</color>
     <color name="colorSignUp">#1de9b6</color>
 
@@ -22,7 +22,10 @@
     <color name="color_text_highlight">#fafafa</color>
     <color name="color_text">#FFF</color>
     <color name="colorPrimaryLight">#f9683a</color>
+<<<<<<< HEAD
     <!--<color name="colorAccent">#9E9E9E</color>-->
+=======
+>>>>>>> origin/master
     <color name="white">#ffffff</color>
     <color name="colorMyProfile">#673AB7</color>
     <color name="colorEvents">#3F51B5</color>
@@ -36,9 +39,13 @@
     <color name="cardHeaderBackgroundEvents">#bdbdbd</color>
     <color name="cardBackgroundEvents">#000000</color>
     <color name="fab_background">#212121</color>
+
+    <color name="faq_color">#BBDEFB</color>
+    <color name="olive">#D4E157</color>
+    <color name="statusColor">#bf360c</color>
     <color name="red">#FF0800</color>
     <color name="secondPage">#00838F</color>
-    <color name="colorAccent">#ba68c8</color>
+
     <color name="text">#ffffff</color>
     <color name="text_two">#94ffffff</color>
     <color name="green">#940ce61f</color>

@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -49,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
     private Menu menu = null;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,18 +62,20 @@ public class MainActivity extends AppCompatActivity {
         Window window = getWindow();
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        window.setStatusBarColor(ContextCompat.getColor(MainActivity.this,R.color.colorPrimaryDark));
+
+        window.setStatusBarColor(ContextCompat.getColor(MainActivity.this, R.color.colorPrimaryDark));
+
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         navigationView.setNavigationItemSelectedListener(item -> {
 
             switch (item.getItemId()) {
                 case R.id.menu_item_sponsors:
-                    Intent intent = new Intent(MainActivity.this,SponsorsActivity.class);
+                    Intent intent = new Intent(MainActivity.this, SponsorsActivity.class);
                     startActivity(intent);
                     break;
                 case R.id.menu_item_faq:
-//                    startActivity(new Intent(MainActivity.this, FaqActivity.class));
-                    Toast.makeText(MainActivity.this, "Coming Soon!", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(MainActivity.this, FaqActivity.class));
+//                    Toast.makeText(MainActivity.this, "Coming Soon!", Toast.LENGTH_SHORT).show();
                     break;
                 case R.id.menu_item_about:
                     startActivity(new Intent(MainActivity.this, AboutActivity.class));
@@ -108,8 +112,8 @@ public class MainActivity extends AppCompatActivity {
 //                    startActivity(new Intent(MainActivity.this, ExpoEvents.class));
                     break;
                 case R.id.menu_item_ca:
-                    Intent intentweb = new Intent(MainActivity.this,webActivity.class);
-                    intentweb.putExtra("link","https://beta.anwesha.info");
+                    Intent intentweb = new Intent(MainActivity.this, webActivity.class);
+                    intentweb.putExtra("link", "https://beta.anwesha.info");
                     startActivity(intentweb);
                     break;
                 case R.id.menu_item_multicity:
@@ -241,5 +245,11 @@ public class MainActivity extends AppCompatActivity {
         if (menu != null) {
             refreshMenu();
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent i = new Intent(MainActivity.this, thankyou.class);
+        startActivity(i);
     }
 }
