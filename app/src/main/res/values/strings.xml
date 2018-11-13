@@ -16,16 +16,21 @@
     <string name="sign_up_label">Sign Up</string>
     <string name="multicity">Multicity Auditions</string>
     <string name="log_in_label">Log In</string>
-    <string name="forgot_password">Forgot Password?</string>
     <string name="email_hint">Email</string>
     <string name="confirm_hint">Confirm Password</string>
     <string name="team">Team</string>
+    <string name="forgot_password">Forgot Password?</string>
     <string name="developers">App Developers</string>
     <string name="sponsors">Sponsors</string>
     <string name="about">About</string>
     <string name="gallery">Gallery</string>
     <string name="social">Social</string>
     <string name="SignUp">Sign Up</string>
+
+    <string name="login">Login</string>
+    <string name="sign_up">Sign up</string>
+    <string name="or">or</string>
+
     <string name="SignIn">Sign In</string>
     <string name="NJACK_Events">NJACK Events</string>
     <string name="ACE_Events">ACE Events</string>
@@ -85,7 +90,7 @@
     <!--FACEBOOK-->
     <string name="facebook_app_id">1088640574599664</string>
     <string name="fb_login_protocol_scheme">fb1088640574599664</string>
-    <string name="email">email</string>
+    <string name="email">Email</string>
     <string name="gender">gender</string>
     <string name="dateOfBirth">dateOfBirth</string>
     <string name="facebook_id">fb_id</string>
@@ -120,4 +125,7 @@
     <string name="tap_for_more_info">Tap for more information!</string>
     <string name="sign_in_first">Please sign in/register first</string>
     <string name="already_registered">You\'re registered!!</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+
 </resources>
