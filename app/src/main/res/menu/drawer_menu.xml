@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:checkableBehavior="single"
+        android:id="@+id/group01">
+        <item
+            android:id="@+id/menu_item_schedule"
+            android:icon="@drawable/ic_event_note_white_24dp"
+            android:title="@string/schedule"
+            />
+        <item
+            android:id="@+id/menu_item_events"
+            android:icon="@drawable/ic_event_white_24dp"
+            android:title="@string/events" />
+        <item
+            android:id="@+id/menu_item_about"
+            android:icon="@drawable/ic_info_white_24dp"
+            android:title="@string/about" />
+        <item
+            android:id="@+id/menu_item_profile"
+            android:icon="@drawable/ic_person_pin_white_24dp"
+            android:title="@string/profile" />
+    </group>
+
+    <group
+        android:id="@+id/group02"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/menu_item_lectures"
+            android:icon="@drawable/lectures"
+            android:title="@string/lectures" />
+        <item
+            android:id="@+id/menu_item_workshops"
+            android:icon="@drawable/workshops"
+            android:title="@string/workshops" />
+        <item
+            android:id="@+id/menu_item_exhibitions"
+            android:icon="@drawable/exhibition"
+            android:title="@string/exhibitions" />
+        <item
+            android:id="@+id/menu_item_multicity"
+            android:icon="@drawable/ic_map_white_24dp"
+            android:title="@string/multicity" />
+        <item
+            android:id="@+id/menu_item_ca"
+            android:icon="@drawable/ic_public_white_24dp"
+            android:title="@string/campusambassador" />
+    </group>
+    <group
+        android:id="@+id/group03"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/menu_item_sponsors"
+            android:icon="@drawable/ic_monetization_on_white_24dp"
+            android:title="@string/sponsors" />
+        <item
+            android:id="@+id/menu_item_map"
+            android:icon="@drawable/ic_map_white_24dp"
+            android:title="@string/map" />
+        <item
+            android:id="@+id/menu_item_team"
+            android:icon="@drawable/ic_group_white_24dp"
+            android:title="@string/team" />
+        <item
+            android:id="@+id/menu_item_faq"
+            android:icon="@drawable/ic_check_faq"
+            android:title="@string/faq" />
+        <item
+            android:id="@+id/menu_item_movie"
+            android:icon="@drawable/ic_videocam_white_24dp"
+            android:title="@string/aftermovie" />
+    </group>
+
+</menu>

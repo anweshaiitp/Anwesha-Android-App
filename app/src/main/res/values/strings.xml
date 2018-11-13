@@ -1,11 +1,20 @@
 <resources>
-    <string name="app_name">Anwesha 2k18</string>
+    <string name="lectures">Lectures</string>
+    <string name="workshops">Workshops</string>
+    <string name="exhibitions">Expo</string>
+    <string name="profile">Profile</string>
+    <string name="faq">FAQ</string>
+    <string name="logout">Logout</string>
+    <string name="app_name">Anwesha 2k19</string>
     <string name="action_settings">Settings</string>
+    <string name="aftermovie">Aftermovie 2K18</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="my_profile">My Profile</string>
     <string name="events">Events</string>
+    <string name="campusambassador">Campus Ambassador</string>
     <string name="schedule">Schedule</string>
     <string name="sign_up_label">Sign Up</string>
+    <string name="multicity">Multicity Auditions</string>
     <string name="log_in_label">Log In</string>
     <string name="email_hint">Email</string>
     <string name="confirm_hint">Confirm Password</string>
