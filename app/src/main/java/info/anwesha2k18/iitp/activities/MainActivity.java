@@ -97,7 +97,8 @@ public class MainActivity extends AppCompatActivity {
 //                    Toast.makeText(this, "Logged Out Successfully", Toast.LENGTH_SHORT).show();
 //                    break;
                 case R.id.menu_item_schedule:
-                    Toast.makeText(MainActivity.this, "Coming Soon!", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(MainActivity.this, TimelineActivity.class));
+//                    Toast.makeText(MainActivity.this, "Coming Soon!", Toast.LENGTH_SHORT).show();
                     break;
                 case R.id.menu_item_lectures:
                     Toast.makeText(MainActivity.this, "Coming Soon!", Toast.LENGTH_SHORT).show();

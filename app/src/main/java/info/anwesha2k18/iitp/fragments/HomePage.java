@@ -39,6 +39,7 @@ import info.anwesha2k18.iitp.activities.MyProfile;
 import info.anwesha2k18.iitp.activities.SocialActivity;
 import info.anwesha2k18.iitp.activities.SponsorsActivity;
 import info.anwesha2k18.iitp.activities.TeamActivity;
+import info.anwesha2k18.iitp.activities.TimelineActivity;
 import info.anwesha2k18.iitp.adapters.EventsAdapter;
 import info.anwesha2k18.iitp.listeners.ViewPagerCustomDuration;
 
@@ -285,7 +286,7 @@ HomePage extends android.support.v4.app.Fragment {
         scheduleLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                comingSoonToast.show();
+                startActivity(new Intent(rootView.getContext(), TimelineActivity.class));
             }
         });
 
