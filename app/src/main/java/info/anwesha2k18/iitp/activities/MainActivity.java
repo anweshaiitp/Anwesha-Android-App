@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
 
-        window.setStatusBarColor(ContextCompat.getColor(MainActivity.this, R.color.colorPrimaryDark));
+        window.setStatusBarColor(ContextCompat.getColor(MainActivity.this, R.color.statusColor));
 
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         navigationView.setNavigationItemSelectedListener(item -> {
@@ -97,7 +97,8 @@ public class MainActivity extends AppCompatActivity {
 //                    Toast.makeText(this, "Logged Out Successfully", Toast.LENGTH_SHORT).show();
 //                    break;
                 case R.id.menu_item_schedule:
-                    Toast.makeText(MainActivity.this, "Coming Soon!", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(MainActivity.this, TimelineActivity.class));
+//                    Toast.makeText(MainActivity.this, "Coming Soon!", Toast.LENGTH_SHORT).show();
                     break;
                 case R.id.menu_item_lectures:
                     Toast.makeText(MainActivity.this, "Coming Soon!", Toast.LENGTH_SHORT).show();
