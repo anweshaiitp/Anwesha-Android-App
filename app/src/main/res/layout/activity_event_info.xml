@@ -235,7 +235,7 @@
             >
 
             <ImageView
-                android:id="@+id/main.imageview.placeholder"
+                android:id="@+id/event_info_imageview"
                 android:layout_width="match_parent"
                 android:layout_height="420dp"
                 android:scaleType="centerCrop"

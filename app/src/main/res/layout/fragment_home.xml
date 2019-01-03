@@ -159,7 +159,7 @@
                         android:layout_height="210dp"
                         android:layout_gravity="top"
                         android:scaleType="fitXY"
-                        android:src="@drawable/eventslide" />
+                        android:src="@drawable/sliderevent" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -320,7 +320,7 @@
                         android:layout_height="214dp"
                         android:layout_gravity="bottom"
                         android:scaleType="fitXY"
-                        android:src="@drawable/eventslide"/>
+                        android:src="@drawable/slidegallery"/>
 
                 </android.support.v7.widget.CardView>
             </LinearLayout>

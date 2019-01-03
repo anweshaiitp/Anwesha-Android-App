@@ -334,10 +334,10 @@ public class EventInfoActivity extends AppCompatActivity
         }
         ((TextView) findViewById(R.id.event_info_name)).setText(header);
         ((TextView) findViewById(R.id.main_textview_title)).setText(header);
-//        Glide.with(this)
-//                .load(imageURL)
-//                .apply(new RequestOptions().error(R.drawable.anwesha_placeholder))
-//                .into((ImageView) findViewById(R.id.event_info_imageview));
+        Glide.with(this)
+                .load("http://beta.anwesha.info/assets/img/3.png")
+                .apply(new RequestOptions().error(R.drawable.anwesha_placeholder))
+                .into((ImageView) findViewById(R.id.event_info_imageview));
 
         if (text.equals("-1"))
             text = "No Information Available";
