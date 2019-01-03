@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.mxn.soul.flowingdrawer_core.FlowingDrawer
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/home"
+    android:id="@+id/drawerlayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    app:edPosition="1"
+    app:edMenuSize="260dp"
+    app:edMenuBackground="#dddddd"
+    android:layout_height="match_parent">
+
     <LinearLayout
         android:id = "@+id/main_layout"
         android:layout_width = "match_parent"
@@ -44,7 +50,20 @@
         android:layout_height="wrap_content"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
     </LinearLayout>
-    <android.support.design.widget.NavigationView
+
+    <com.mxn.soul.flowingdrawer_core.FlowingMenuLayout
+        android:id="@+id/menulayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/id_container_menu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimaryLight"/>
+
+    </com.mxn.soul.flowingdrawer_core.FlowingMenuLayout>
+ <!--   <android.support.design.widget.NavigationView
         android:id="@+id/navigation_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
@@ -54,5 +73,5 @@
         app:itemIconTint="@color/white"
         android:background="@color/colorPrimaryLight"
         app:headerLayout="@layout/drawer_header_layout"
-        app:menu="@menu/drawer_menu" />
-</android.support.v4.widget.DrawerLayout>
+        app:menu="@menu/drawer_menu" />   -->
+</com.mxn.soul.flowingdrawer_core.FlowingDrawer>
