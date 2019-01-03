@@ -10,16 +10,15 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
-import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -28,11 +27,14 @@ import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.facebook.login.LoginManager;
+import com.mxn.soul.flowingdrawer_core.ElasticDrawer;
+import com.mxn.soul.flowingdrawer_core.FlowingDrawer;
 
 import java.util.Objects;
 
 import info.anwesha2k18.iitp.R;
 import info.anwesha2k18.iitp.adapters.PageFragmentAdapter;
+import info.anwesha2k18.iitp.fragments.MenuListFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -51,15 +53,12 @@ public class MainActivity extends AppCompatActivity {
      */
     private ViewPager mViewPager;
     private Menu menu = null;
-    DrawerLayout drawerLayout;
-    NavigationView navigationView;
+    private FlowingDrawer mDrawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        drawerLayout = findViewById(R.id.home);
-        navigationView = findViewById(R.id.navigation_view);
 
         createNotificationChannel();
 
@@ -70,85 +69,9 @@ public class MainActivity extends AppCompatActivity {
 
         window.setStatusBarColor(ContextCompat.getColor(MainActivity.this, R.color.statusColor));
 
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        navigationView.setNavigationItemSelectedListener(item -> {
+        setupMenu();
 
-            switch (item.getItemId()) {
-                case R.id.menu_item_sponsors:
-                    Intent intent = new Intent(MainActivity.this, SponsorsActivity.class);
-                    startActivity(intent);
-                    break;
-                case R.id.menu_item_faq:
-                    startActivity(new Intent(MainActivity.this, FaqActivity.class));
-//                    Toast.makeText(MainActivity.this, "Coming Soon!", Toast.LENGTH_SHORT).show();
-                    break;
-                case R.id.menu_item_about:
-                    startActivity(new Intent(MainActivity.this, AboutActivity.class));
-                    break;
-                case R.id.menu_item_profile:
-                    if (!sharedPreferences.getBoolean(getString(R.string.login_status), false)) {
-                        Intent intentLogin = new Intent(this, LoginActivity.class);
-                        startActivity(intentLogin);
-                    } else {
-                        Intent intentLogin = new Intent(this, MyProfile.class);
-                        startActivity(intentLogin);
-                    }
-                    break;
-//                case R.id.menu_item_logout:
-//                    SharedPreferences.Editor sharedPreferencesLogout = PreferenceManager.getDefaultSharedPreferences(this).edit();
-//                    sharedPreferencesLogout.putBoolean(getString(R.string.login_status), false);
-//                    sharedPreferencesLogout.apply();
-//                    refreshMenu();
-//                    Toast.makeText(this, "Logged Out Successfully", Toast.LENGTH_SHORT).show();
-//                    break;
-                case R.id.menu_item_schedule:
-                    startActivity(new Intent(MainActivity.this, TimelineActivity.class));
-//                    Toast.makeText(MainActivity.this, "Coming Soon!", Toast.LENGTH_SHORT).show();
-                    break;
-                case R.id.menu_item_lectures:
-                    Toast.makeText(MainActivity.this, "Coming Soon!", Toast.LENGTH_SHORT).show();
-//                    startActivity(new Intent(MainActivity.this, LecturesActivity.class));
-                    break;
-                case R.id.menu_item_workshops:
-                    Toast.makeText(MainActivity.this, "Coming Soon!", Toast.LENGTH_SHORT).show();
-//                    startActivity(new Intent(MainActivity.this, WorkshopsActivity.class));
-                    break;
-                case R.id.menu_item_exhibitions:
-                    Toast.makeText(MainActivity.this, "Coming Soon!", Toast.LENGTH_SHORT).show();
-//                    startActivity(new Intent(MainActivity.this, ExpoEvents.class));
-                    break;
-                case R.id.menu_item_ca:
-                    Intent intentweb = new Intent(MainActivity.this, webActivity.class);
-                    intentweb.putExtra("link", "https://beta.anwesha.info");
-                    startActivity(intentweb);
-                    break;
-                case R.id.menu_item_multicity:
-                    startActivity(new Intent(MainActivity.this, multiCityActivity.class));
-                    break;
-                case R.id.menu_item_movie:
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=tare6Drw0Ng&t=91s")));
-                    break;
-                case R.id.menu_item_team:
-                    Toast.makeText(MainActivity.this, "Coming Soon!", Toast.LENGTH_SHORT).show();
-//                    startActivity(new Intent(MainActivity.this, TeamActivity.class));
-//                  startActivity(new Intent(MainActivity.this, TeamActivity.class));
-                    break;
-                case R.id.menu_item_events:
-                    startActivity(new Intent(MainActivity.this, EventsActivityNew.class));
-                    break;
-                case R.id.menu_item_map:
-                    String uri = "https://www.google.com/maps/d/viewer?mid=1Tub6_KM_0Tv8UHkh97SP9Tehv78HBv1e&usp=sharingax&basemap=satellite";
-                    Intent intentMap = new Intent(Intent.ACTION_VIEW, android.net.Uri.parse(uri));
-                    Objects.requireNonNull(MainActivity.this).startActivity(intentMap);
-                    break;
-            }
-            item.setChecked(true);
-            drawerLayout.closeDrawers();
 
-            return true;
-        });
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mPageFragmentAdapter = new PageFragmentAdapter(getSupportFragmentManager());
@@ -167,11 +90,6 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < mPageFragmentAdapter.getCount(); i++)
             tabLayout.getTabAt(i).setIcon(tabIcons[i]);
 
-        setSupportActionBar(toolbar);
-        ActionBar actionBar = getSupportActionBar();
-        assert actionBar != null;
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeAsUpIndicator(R.drawable.ic_menu);
     }
 
 
@@ -206,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity info AndroidManifest.xml.
         int id = item.getItemId();
         if (id == android.R.id.home) {
-            drawerLayout.openDrawer(GravityCompat.START);
+ //           drawerLayout.openDrawer(GravityCompat.START);
             return true;
         }
         //noinspection SimplifiableIfStatement
@@ -255,8 +173,12 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent i = new Intent(MainActivity.this, thankyou.class);
-        startActivity(i);
+        if (mDrawer.isMenuVisible()) {
+            mDrawer.closeMenu();
+        } else {
+            Intent i = new Intent(MainActivity.this, thankyou.class);
+            startActivity(i);
+        }
     }
 
     private void createNotificationChannel() {
@@ -270,6 +192,34 @@ public class MainActivity extends AppCompatActivity {
             // or other notification behaviors after this
             NotificationManager notificationManager = getSystemService(NotificationManager.class);
             notificationManager.createNotificationChannel(channel);
+        }
+    }
+
+    private void setupMenu() {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setHomeAsUpIndicator(R.drawable.ic_menu);
+
+        mDrawer = (FlowingDrawer) findViewById(R.id.drawerlayout);
+        mDrawer.setTouchMode(ElasticDrawer.TOUCH_MODE_BEZEL);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mDrawer.openMenu();
+            }
+        });
+
+        FragmentManager fm = getSupportFragmentManager();
+        MenuListFragment mMenuFragment = (MenuListFragment) fm.findFragmentById(R.id.id_container_menu);
+        if (mMenuFragment == null) {
+            mMenuFragment = new MenuListFragment();
+            fm.beginTransaction().add(R.id.id_container_menu, mMenuFragment).commit();
         }
     }
 
