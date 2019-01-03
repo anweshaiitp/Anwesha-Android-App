@@ -63,6 +63,11 @@
         <activity
             android:name=".activities.FaqActivity"
             android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="info.anwesha2k18.iitp.activities.MainActivity" />
@@ -70,7 +75,10 @@
         <activity
             android:name=".activities.thankyou"
             android:screenOrientation="portrait">
+    <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+    </intent-filter>
         </activity>
         <activity
             android:name=".activities.MainActivity"
@@ -78,12 +86,6 @@
             android:launchMode="singleTop"
             android:theme="@style/AppTheme.NoActionBar">
 
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.DEFAULT" /> -->
-            <!-- </intent-filter> -->
         </activity>
         <activity
             android:name=".activities.MyProfile"
@@ -102,6 +104,20 @@
         <activity
             android:name=".activities.multiCityActivity"
             android:label="@string/multicity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="info.anwesha2k18.iitp.activities.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activities.lectureActivity"
+            android:label="@string/app_name">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="info.anwesha2k18.iitp.activities.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activities.workshopActivity"
+            android:label="@string/app_name">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="info.anwesha2k18.iitp.activities.MainActivity" />
