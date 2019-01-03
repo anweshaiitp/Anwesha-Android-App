@@ -76,7 +76,7 @@
                             android:layout_marginTop="32sp"
                             android:fontFamily="sans-serif"
                             android:text="Mayank Vaidya"
-                            android:textColor="@color/colorPrimaryLight"
+                            android:textColor="@color/white"
                             android:textSize="22sp" />
 
                         <TextView
@@ -170,7 +170,7 @@
                             android:layout_marginTop="32sp"
                             android:fontFamily="sans-serif"
                             android:text="Mukuntha N S"
-                            android:textColor="@color/colorPrimaryLight"
+                            android:textColor="@color/white"
                             android:textSize="22sp" />
 
                         <TextView
@@ -264,7 +264,7 @@
                             android:layout_marginTop="32sp"
                             android:fontFamily="sans-serif"
                             android:text="Manish Kumar"
-                            android:textColor="@color/colorPrimaryLight"
+                            android:textColor="@color/white"
                             android:textSize="22sp" />
 
                         <TextView
