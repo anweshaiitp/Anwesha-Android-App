@@ -71,6 +71,9 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0'
     implementation 'com.facebook.android:facebook-android-sdk:[4,5)'
 
+    implementation 'com.mxn.soul:flowingdrawer-core:2.0.0'
+    implementation 'com.nineoldandroids:library:2.4.0'
+
     implementation 'com.google.firebase:firebase-messaging:17.3.4'
 
 }

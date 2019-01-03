@@ -10,16 +10,15 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
-import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -28,11 +27,14 @@ import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.facebook.login.LoginManager;
+import com.mxn.soul.flowingdrawer_core.ElasticDrawer;
+import com.mxn.soul.flowingdrawer_core.FlowingDrawer;
 
 import java.util.Objects;
 
 import info.anwesha2k18.iitp.R;
 import info.anwesha2k18.iitp.adapters.PageFragmentAdapter;
+import info.anwesha2k18.iitp.fragments.MenuListFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -51,15 +53,12 @@ public class MainActivity extends AppCompatActivity {
      */
     private ViewPager mViewPager;
     private Menu menu = null;
-    DrawerLayout drawerLayout;
-    NavigationView navigationView;
+    private FlowingDrawer mDrawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        drawerLayout = findViewById(R.id.home);
-        navigationView = findViewById(R.id.navigation_view);
 
         createNotificationChannel();
 
@@ -69,6 +68,8 @@ public class MainActivity extends AppCompatActivity {
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
 
         window.setStatusBarColor(ContextCompat.getColor(MainActivity.this, R.color.statusColor));
+
+        setupMenu();
 
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         navigationView.setNavigationItemSelectedListener(item -> {
@@ -145,10 +146,6 @@ public class MainActivity extends AppCompatActivity {
             item.setChecked(true);
             drawerLayout.closeDrawers();
 
-            return true;
-        });
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mPageFragmentAdapter = new PageFragmentAdapter(getSupportFragmentManager());
@@ -167,11 +164,6 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < mPageFragmentAdapter.getCount(); i++)
             tabLayout.getTabAt(i).setIcon(tabIcons[i]);
 
-        setSupportActionBar(toolbar);
-        ActionBar actionBar = getSupportActionBar();
-        assert actionBar != null;
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeAsUpIndicator(R.drawable.ic_menu);
     }
 
 
@@ -206,7 +198,7 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity info AndroidManifest.xml.
         int id = item.getItemId();
         if (id == android.R.id.home) {
-            drawerLayout.openDrawer(GravityCompat.START);
+ //           drawerLayout.openDrawer(GravityCompat.START);
             return true;
         }
         //noinspection SimplifiableIfStatement
@@ -255,8 +247,12 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent i = new Intent(MainActivity.this, thankyou.class);
-        startActivity(i);
+        if (mDrawer.isMenuVisible()) {
+            mDrawer.closeMenu();
+        } else {
+            Intent i = new Intent(MainActivity.this, thankyou.class);
+            startActivity(i);
+        }
     }
 
     private void createNotificationChannel() {
@@ -270,6 +266,34 @@ public class MainActivity extends AppCompatActivity {
             // or other notification behaviors after this
             NotificationManager notificationManager = getSystemService(NotificationManager.class);
             notificationManager.createNotificationChannel(channel);
+        }
+    }
+
+    private void setupMenu() {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setHomeAsUpIndicator(R.drawable.ic_menu);
+
+        mDrawer = (FlowingDrawer) findViewById(R.id.drawerlayout);
+        mDrawer.setTouchMode(ElasticDrawer.TOUCH_MODE_BEZEL);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mDrawer.openMenu();
+            }
+        });
+
+        FragmentManager fm = getSupportFragmentManager();
+        MenuListFragment mMenuFragment = (MenuListFragment) fm.findFragmentById(R.id.id_container_menu);
+        if (mMenuFragment == null) {
+            mMenuFragment = new MenuListFragment();
+            fm.beginTransaction().add(R.id.id_container_menu, mMenuFragment).commit();
         }
     }
 
