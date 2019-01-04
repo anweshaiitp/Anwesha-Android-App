@@ -57,6 +57,7 @@ HomePage extends android.support.v4.app.Fragment {
     View eventsLinearLayout;
     View galleryLinearLayout;
     View aboutFrameLayout;
+    View profileFrameLayout;
     View scheduleLinearLayout;
     View sponsorsLinearLayout;
     View teamLinearLayout;
@@ -265,6 +266,17 @@ HomePage extends android.support.v4.app.Fragment {
               @Override
             public void onClick(View v) {
                 Intent intent = new Intent(rootView.getContext(), AboutActivity.class);
+                startActivity(intent);
+                comingSoonToast.show();
+            }
+        });
+
+        //Profile layout
+        profileFrameLayout = rootView.findViewById(R.id.myProfile);
+        profileFrameLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(rootView.getContext(), LoginActivity.class);
                 startActivity(intent);
                 comingSoonToast.show();
             }
