@@ -156,10 +156,10 @@ HomePage extends android.support.v4.app.Fragment {
 
         final ViewPagerCustomDuration viewPagerCustomDuration = (ViewPagerCustomDuration) rootView.findViewById(R.id.events_pager);
         viewPagerCustomDuration.setScrollDuration(900);
-        EventsAdapter eventsAdapter = new EventsAdapter(getContext(),
-                getResources().obtainTypedArray(R.array.array_home_slide_show));
+ //       EventsAdapter eventsAdapter = new EventsAdapter(getContext(),
+   //             getResources().obtainTypedArray(R.array.array_home_slide_show));
 
-        viewPagerCustomDuration.setAdapter(eventsAdapter);
+  //      viewPagerCustomDuration.setAdapter(eventsAdapter);
         /*Adding automatic swap to the images
         * */
         final Handler handler = new Handler();
@@ -208,8 +208,6 @@ HomePage extends android.support.v4.app.Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(rootView.getContext(), EventsActivityNew.class);
                 startActivity(intent);
-                comingSoonToast.show();
-
             }
         });
 
