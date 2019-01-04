@@ -31,6 +31,7 @@ import info.anwesha2k18.iitp.activities.SponsorsActivity;
 import info.anwesha2k18.iitp.activities.TimelineActivity;
 import info.anwesha2k18.iitp.activities.multiCityActivity;
 import info.anwesha2k18.iitp.activities.webActivity;
+import info.anwesha2k18.iitp.activities.workshopActivity;
 
 /**
  * Created by mxn on 2016/12/13.
@@ -91,8 +92,7 @@ public class MenuListFragment extends Fragment {
 //                    startActivity(new Intent(MainActivity.this, LecturesActivity.class));
                     break;
                 case R.id.menu_item_workshops:
-                    Toast.makeText(getContext(), "Coming Soon!", Toast.LENGTH_SHORT).show();
-//                    startActivity(new Intent(MainActivity.this, WorkshopsActivity.class));
+                    startActivity(new Intent(getContext(), workshopActivity.class));
                     break;
                 case R.id.menu_item_exhibitions:
                     Toast.makeText(getContext(), "Coming Soon!", Toast.LENGTH_SHORT).show();
