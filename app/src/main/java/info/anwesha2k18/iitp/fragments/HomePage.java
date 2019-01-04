@@ -39,6 +39,7 @@ import info.anwesha2k18.iitp.activities.MyProfile;
 import info.anwesha2k18.iitp.activities.SocialActivity;
 import info.anwesha2k18.iitp.activities.SponsorsActivity;
 import info.anwesha2k18.iitp.activities.TeamActivity;
+import info.anwesha2k18.iitp.activities.TimelineActivity;
 import info.anwesha2k18.iitp.adapters.EventsAdapter;
 import info.anwesha2k18.iitp.listeners.ViewPagerCustomDuration;
 
@@ -53,17 +54,17 @@ HomePage extends android.support.v4.app.Fragment {
     final long PERIOD_MS = 4000; // time info milliseconds between successive task executions.
     ImageView SlideShowGallery;
     ImageView SlideShowEvents;
-    LinearLayout eventsLinearLayout;
-    LinearLayout galleryLinearLayout;
-    LinearLayout aboutFrameLayout;
-    LinearLayout scheduleLinearLayout;
-    LinearLayout sponsorsLinearLayout;
-    LinearLayout teamLinearLayout;
+    View eventsLinearLayout;
+    View galleryLinearLayout;
+    View aboutFrameLayout;
+    View scheduleLinearLayout;
+    View sponsorsLinearLayout;
+    View teamLinearLayout;
     View CardFrontView;
     View CardBackView;
-    LinearLayout devLinearLayout;
-    LinearLayout mapLinearLayout;
-    LinearLayout socialLinearLayout ;
+    View devLinearLayout;
+    View mapLinearLayout;
+    View socialLinearLayout ;
     Toast comingSoonToast;
     Timer timer ;
     private int currentPage = 0;
@@ -164,7 +165,8 @@ HomePage extends android.support.v4.app.Fragment {
         final Handler handler = new Handler();
         final Runnable Update = new Runnable() {
             public void run() {
-                if (currentPage == NUM_PAGES) {
+                if (currentPage == NUM_PAGES)
+                {
                     currentPage = 0;
                 }
                 viewPagerCustomDuration.setCurrentItem(currentPage++, true);
@@ -211,13 +213,13 @@ HomePage extends android.support.v4.app.Fragment {
             }
         });
 
-        SlideShowEvents = (ImageView) rootView.findViewById(R.id.slideShowEvents);
-        int imagesToShowEvents[] = { R.drawable.anwesha_clix, R.drawable.anwesha_cover,R.drawable.anwesha_telegraph };
-        animate(SlideShowEvents, imagesToShowEvents, 0,true,1500);
+//        SlideShowEvents = (ImageView) rootView.findViewById(R.id.slideShowEvents);
+//        int imagesToShowEvents[] = { R.drawable.anwesha_clix, R.drawable.anwesha_cover,R.drawable.anwesha_telegraph };
+//        animate(SlideShowEvents, imagesToShowEvents, 0,true,1500);
 
-        SlideShowGallery = (ImageView) rootView.findViewById(R.id.slideShowGallery);
-        int imagesToShowGallery[] = { R.drawable.temp1, R.drawable.temp2,R.drawable.temp3,R.drawable.temp4};
-        animate(SlideShowGallery, imagesToShowGallery, 0,true,1200);
+//        SlideShowGallery = (ImageView) rootView.findViewById(R.id.slideShowGallery);
+//        int imagesToShowGallery[] = { R.drawable.temp1, R.drawable.temp2,R.drawable.temp3,R.drawable.temp4};
+//        animate(SlideShowGallery, imagesToShowGallery, 0,true,1200);
 
         View view=(View)rootView.findViewById(R.id.flipCard);
         ObjectAnimator animation = ObjectAnimator.ofFloat(view, "rotationY", -90f, 90f);
@@ -233,18 +235,15 @@ HomePage extends android.support.v4.app.Fragment {
             public void onAnimationStart(Animator animation) {
 
             }
-
             @Override
             public void onAnimationEnd(Animator animation) {
                 CardBackView.setVisibility(View.INVISIBLE);
                 CardFrontView.setVisibility(View.VISIBLE);
             }
-
             @Override
             public void onAnimationCancel(Animator animation) {
 
             }
-
             @Override
             public void onAnimationRepeat(Animator animation) {
                 if (toggle == 1)
@@ -283,11 +282,11 @@ HomePage extends android.support.v4.app.Fragment {
             }
         });
 
-        scheduleLinearLayout = (LinearLayout) rootView.findViewById(R.id.schedule);
+        scheduleLinearLayout =  rootView.findViewById(R.id.schedule);
         scheduleLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                comingSoonToast.show();
+                startActivity(new Intent(rootView.getContext(), TimelineActivity.class));
             }
         });
 
@@ -320,7 +319,7 @@ HomePage extends android.support.v4.app.Fragment {
             }
         });
 
-        socialLinearLayout=(LinearLayout)rootView.findViewById(R.id.social);
+        socialLinearLayout=rootView.findViewById(R.id.social);
         socialLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

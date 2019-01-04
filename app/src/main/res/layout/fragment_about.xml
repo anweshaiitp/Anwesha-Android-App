@@ -2,13 +2,14 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/about_background"
+    android:background="@color/colorPrimaryDark"
     android:fillViewport="true">
 
     <FrameLayout
         android:id="@+id/aboutlayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -44,7 +45,7 @@
                 android:fontFamily="sans-serif"
                 android:lineSpacingExtra="4sp"
                 android:text="@string/LoremIpsum"
-                android:textColor="@color/colorPrimaryLight"
+                android:textColor="@color/white"
                 android:textSize="18sp" />
 
             <!--<TextView-->
