@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "563694199600-ej33e9ifctm5d9poljmr3q6h7ko32dtn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "info.anwesha2k18.iitp",
+            "certificate_hash": "a4e596ad083ab0612562d7c919334540da64ab7c"
+          }
+        },
+        {
           "client_id": "563694199600-5s2v2hug4lgoaal869hdnil623nqpo8h.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "563694199600-5s2v2hug4lgoaal869hdnil623nqpo8h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2
