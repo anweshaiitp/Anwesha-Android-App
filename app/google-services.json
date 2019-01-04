@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "932947867778",
-    "firebase_url": "https://anwesha2k18.firebaseio.com",
-    "project_id": "anwesha2k18",
-    "storage_bucket": "anwesha2k18.appspot.com"
+    "project_number": "563694199600",
+    "firebase_url": "https://anwesha-2k19.firebaseio.com",
+    "project_id": "anwesha-2k19",
+    "storage_bucket": "anwesha-2k19.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:932947867778:android:602701a1aa3e865e",
+        "mobilesdk_app_id": "1:563694199600:android:602701a1aa3e865e",
         "android_client_info": {
           "package_name": "info.anwesha2k18.iitp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "932947867778-r5fksc527p62v6e8lcad80lg1bk25n9u.apps.googleusercontent.com",
+          "client_id": "563694199600-5s2v2hug4lgoaal869hdnil623nqpo8h.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBgfUW_GCwLJbWIz0LzQJIJUXm2n_UiasI"
+          "current_key": "AIzaSyDLin1qz48MFN-IzyjRpa6kLmh4CPkJTpw"
         }
       ],
       "services": {
