@@ -45,8 +45,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:padding="5dp"
-                            android:background="@drawable/customborder">
+                            android:padding="5dp">
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -107,8 +106,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:padding="5dp"
-                            android:background="@drawable/customborder">
+                            android:padding="5dp">
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -167,8 +165,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:padding="5dp"
-                            android:background="@drawable/customborder">
+                            android:padding="5dp">
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -229,8 +226,7 @@ Ashish and the LVPEI innovation team is currently involved in creating disruptiv
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:padding="5dp"
-                            android:background="@drawable/customborder">
+                            android:padding="5dp">
 
                             <TextView
                                 android:layout_width="match_parent"
