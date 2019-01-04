@@ -37,7 +37,7 @@ public class EventsAdapter extends PagerAdapter {
                 .load(images.getResourceId(position, -1))
                 .into(imageView);
         ((ViewPager) container).addView(imageView, 0);
-        return imageView;
+        return   imageView;
     }
 
     @Override
