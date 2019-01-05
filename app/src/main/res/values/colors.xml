@@ -40,4 +40,5 @@
     <color name="green">#940ce61f</color>
     <color name="signUpColor">#FDD835</color>
     <color name="loginColor">#D50000</color>
+    <color name="grey">@android:color/darker_gray</color>
 </resources>
