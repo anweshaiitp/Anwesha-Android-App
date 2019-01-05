@@ -1,12 +1,16 @@
 package info.anwesha2k18.iitp.fragments;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 
@@ -20,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import info.anwesha2k18.iitp.R;
+import info.anwesha2k18.iitp.activities.EventInfoActivityNew;
 import info.anwesha2k18.iitp.adapters.EventsAdapter;
 import info.anwesha2k18.iitp.data.EventListData;
 
@@ -32,6 +37,7 @@ public class EventCategoryFragment extends Fragment{
     private DatabaseReference eventsDatabaseReference;
     private ChildEventListener mChildEventListener;
     ProgressBar eventListProgress;
+    Intent eventIntent;
 
     public static EventCategoryFragment newInstance(int page){
         Bundle args = new Bundle();
@@ -82,6 +88,30 @@ public class EventCategoryFragment extends Fragment{
         eventListView.setAdapter(eventListAdapter);
 
         attachDatabaseReadListener(eventCode);
+
+        eventListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                eventIntent = new Intent(((Activity) getContext()), EventInfoActivityNew.class);
+
+                Bundle bundle = new Bundle();
+                bundle.putString("eveName", eventListAdapter.getItem(i).geteveName());
+                bundle.putString("date", eventListAdapter.getItem(i).getdate());
+                bundle.putString("long_desc", eventListAdapter.getItem(i).getlong_desc());
+                bundle.putString("short_desc", eventListAdapter.getItem(i).getshort_desc());
+                bundle.putString("organisers", eventListAdapter.getItem(i).getorganisers());
+                bundle.putString("reg_url", eventListAdapter.getItem(i).getreg_url());
+                bundle.putString("rules_url", eventListAdapter.getItem(i).rules_url());
+                bundle.putString("time", eventListAdapter.getItem(i).gettime());
+                bundle.putString("venue", eventListAdapter.getItem(i).getvenue());
+                bundle.putString("cover_url", eventListAdapter.getItem(i).getcover_url());
+
+                eventIntent.putExtras(bundle);
+
+                startActivity(eventIntent);
+            }
+        });
 
         return rootView;
     }
