@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity info AndroidManifest.xml.
         int id = item.getItemId();
         if (id == android.R.id.home) {
- //           drawerLayout.openDrawer(GravityCompat.START);
+            //           drawerLayout.openDrawer(GravityCompat.START);
             return true;
         }
         //noinspection SimplifiableIfStatement
@@ -143,6 +143,10 @@ public class MainActivity extends AppCompatActivity {
 //            startActivity(intent);
 //            refreshMenu();
 //        }
+        if (id == R.id.exit_app) {
+            Intent intent = new Intent(MainActivity.this, thankyou.class);
+            startActivity(intent);
+        }
 
         return super.onOptionsItemSelected(item);
     }
