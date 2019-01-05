@@ -11,10 +11,8 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-
-import android.util.Log;
-
 import android.widget.ListView;
+import android.widget.ProgressBar;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -22,78 +20,34 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
 import info.anwesha2k18.iitp.R;
+import info.anwesha2k18.iitp.adapters.EventFragmentAdapter;
 import info.anwesha2k18.iitp.adapters.EventsAdapter;
 import info.anwesha2k18.iitp.data.EventData;
-
-import info.anwesha2k18.iitp.database.BackgroundFetch;
-
 import info.anwesha2k18.iitp.data.EventListData;
-
 import info.anwesha2k18.iitp.database.WebSyncDB;
 import info.anwesha2k18.iitp.fragments.EventCategoryFragment;
 
 public class EventsActivityNew extends AppCompatActivity {
 
-    private FirebaseDatabase mfirebase;
-    private DatabaseReference eventsDatabaseReference;
-    private ChildEventListener mChildEventListener;
-    private List<EventData> AllEvents = new ArrayList<>();
-    private EventsAdapter mEventsAdapter;
-
-    /** Tag for the log messages */
-    private static final String LOG_TAG = EventsActivityNew.class.getSimpleName();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_events_tabs);
-        mfirebase = FirebaseDatabase.getInstance();
-        eventsDatabaseReference = mfirebase.getReference().child("events");
-        ListView eventListView =(ListView) findViewById(R.id.eventListView);
 
-        List<EventListData> mEventListData= new ArrayList<>();
-        mEventsAdapter= new EventsAdapter(this,R.layout.card_view,mEventListData);
-        eventListView.setAdapter(mEventsAdapter);
-        attachDatabaseReadListener();
-    }
+        getSupportActionBar().setElevation(0);
 
-    private void attachDatabaseReadListener(){
-        if (mChildEventListener == null) {
-            mChildEventListener = new ChildEventListener() {
-                @Override
-                public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                    EventListData eventListData = dataSnapshot.getValue(EventListData.class);
-                    mEventsAdapter.add(eventListData);
-                }
+        ViewPager viewPager = (ViewPager) findViewById(R.id.event_viewpager);
+        EventFragmentAdapter pagerAdapter = new EventFragmentAdapter(this, getSupportFragmentManager());
 
+        viewPager.setAdapter(pagerAdapter);
 
-                @Override
-                public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.event_tabs);
+        tabLayout.setupWithViewPager(viewPager);
 
-                }
-
-                @Override
-                public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-
-                }
-
-                @Override
-                public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                }
-            };
-            eventsDatabaseReference.addChildEventListener(mChildEventListener);
-        }
     }
 
 }

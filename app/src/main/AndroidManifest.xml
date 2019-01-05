@@ -208,8 +208,7 @@
 
         <activity
             android:name=".activities.EventsActivityNew"
-            android:label="Events"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:label="Events">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="info.anwesha2k18.iitp.activities.MainActivity" />
