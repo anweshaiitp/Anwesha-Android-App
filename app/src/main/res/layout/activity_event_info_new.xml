@@ -168,9 +168,13 @@
                     android:layout_below="@id/rules_header"
                     android:layout_marginTop="8dp"
                     android:fontFamily="sans-serif-light"
-                    android:text="Will be updated soon."
                     android:textAppearance="@android:style/TextAppearance.Holo.Medium"
-                    android:textColorLink="@color/colorSignIn" />
+                    android:textColorLink="@color/colorSignIn"
+                    android:textColor="#00bfa5"
+                    android:autoLink="web"
+                    />
+
+
 
                 <TextView
                     android:id="@+id/event_organizers_header"

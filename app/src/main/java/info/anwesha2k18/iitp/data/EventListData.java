@@ -52,9 +52,7 @@ public class EventListData {
         return date;
     }
 
-    public String getlong_desc() {
-        return long_desc;
-    }
+    public String getlong_desc() { return long_desc; }
 
     public String getorganisers() {
         return organisers;
@@ -64,7 +62,7 @@ public class EventListData {
         return reg_url;
     }
 
-    public String rules_url() {
+    public String getrules_url() {
         return rules_url;
     }
 
