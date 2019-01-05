@@ -18,7 +18,7 @@ import info.anwesha2k18.iitp.adapters.WorkshopAdapter;
 import info.anwesha2k18.iitp.data.LecturesData;
 import info.anwesha2k18.iitp.data.WorkshopData;
 
-public class LectureActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<LecturesData>>{
+public class LectureActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<WorkshopData>>{
 
     private ListView lecturesListView;
     private LectureAdapter mAdapter;
@@ -31,8 +31,8 @@ public class LectureActivity extends AppCompatActivity implements LoaderManager.
 
         lecturesListView = findViewById(R.id.workshop_list_view);
 
-        List<LecturesData> lecturesDataList = new ArrayList<LecturesData>();
-        mAdapter = new LectureAdapter(LectureActivity.this, R.layout.card_lectures, lecturesDataList);
+        List<WorkshopData> lecturesDataList = new ArrayList<WorkshopData>();
+        mAdapter = new LectureAdapter(LectureActivity.this, R.layout.card_workshop, lecturesDataList);
 
         lecturesListView.setAdapter(mAdapter);
 
@@ -46,12 +46,12 @@ public class LectureActivity extends AppCompatActivity implements LoaderManager.
     }
 
     @Override
-    public Loader<List<LecturesData>> onCreateLoader(int i, Bundle bundle) {
+    public Loader<List<WorkshopData>> onCreateLoader(int i, Bundle bundle) {
         return new LectureLoader(this, LECTURES_URL);
     }
 
     @Override
-    public void onLoadFinished(Loader<List<LecturesData>> loader, List<LecturesData> lecturesData) {
+    public void onLoadFinished(Loader<List<WorkshopData>> loader, List<WorkshopData> lecturesData) {
         mAdapter.clear();
         if (lecturesData != null && !lecturesData.isEmpty()){
             mAdapter.addAll(lecturesData);
@@ -59,7 +59,7 @@ public class LectureActivity extends AppCompatActivity implements LoaderManager.
     }
 
     @Override
-    public void onLoaderReset(Loader<List<LecturesData>> loader) {
+    public void onLoaderReset(Loader<List<WorkshopData>> loader) {
 
     }
 }
