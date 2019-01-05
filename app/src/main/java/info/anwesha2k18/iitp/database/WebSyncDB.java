@@ -36,6 +36,7 @@ public class WebSyncDB extends SQLiteOpenHelper {
     public WebSyncDB(Context context) {
         super(context, DBNAME, null, VERSION);
         this.mDB = getWritableDatabase();
+
     }
 
     @Override
@@ -59,6 +60,8 @@ public class WebSyncDB extends SQLiteOpenHelper {
                 EVENT_reg_url + " varchar(1000) " +
                 ")";
         db.execSQL(sql);
+
+
 
     }
 
