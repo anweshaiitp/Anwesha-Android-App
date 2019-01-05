@@ -14,6 +14,7 @@ public class EventsData {
     private String contacts;
     private int imageId;
 
+
     public EventsData()
 
     {

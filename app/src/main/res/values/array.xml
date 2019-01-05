@@ -8,14 +8,15 @@
 
     <integer-array name="array_home_slide_show">
         <!--<item>@drawable/anwesha_cover</item>-->
-        <item>@drawable/slide_main</item>
-        <item>@drawable/slide_edm</item>
+        <item>@drawable/atm_ambassador</item>
+        <item>@drawable/atm_aqua_soccer</item>
         <!--<item>@drawable/slide_mun</item>-->
-        <item>@drawable/slide_verve</item>
-        <item>@drawable/slide_tantrum</item>
-        <item>@drawable/slide_heel</item>
-        <item>@drawable/slide_ebid</item>
-        <item>@drawable/slide_smile</item>
+        <item>@drawable/atm_clixx</item>
+        <item>@drawable/atm_robowar</item>
+        <item>@drawable/atm_workshop1</item>
+        <item>@drawable/atm_workshop2</item>
+        <item>@drawable/atm_workshop4</item>
+        <item>@drawable/atm_workshop5</item>
     </integer-array>
 
     <!--Schedule Day 1-->
