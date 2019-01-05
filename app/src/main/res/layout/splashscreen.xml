@@ -12,6 +12,7 @@
         android:background="#000"
         android:src="@drawable/answesha_gif_slow_comp"
         android:adjustViewBounds="true"
-        android:scaleY="1.8"/>
+        android:scaleType="fitXY"
+        />
 
 </RelativeLayout>

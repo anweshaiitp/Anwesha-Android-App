@@ -22,7 +22,7 @@ import pl.droidsonroids.gif.GifImageView;
 
 
 public class SplashActivity extends Activity {
-    int time=5000;
+    int time=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

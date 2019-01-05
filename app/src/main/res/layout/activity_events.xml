@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    tools:context="info.anwesha2k18.iitp.activities.EventsActivity">
+    tools:context="info.anwesha2k18.iitp.activities.EventsActivityNew">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_events"

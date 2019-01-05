@@ -8,13 +8,19 @@ import android.support.v7.app.AppCompatActivity;
 import info.anwesha2k18.iitp.R;
 
 public class thankyou extends AppCompatActivity {
+
+    @Override
+    public void onBackPressed() {
+        // Do Here what ever you want do on back press;
+    }
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.thankyou);
-        getWindow().setStatusBarColor(getResources().getColor(R.color.olive));
+        getWindow().setStatusBarColor(getResources().getColor(R.color.cardBackgroundEvents));
         getSupportActionBar().hide();
-        int t = 2000;
+        int t = 1000;
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override

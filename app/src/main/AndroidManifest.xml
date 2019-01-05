@@ -36,7 +36,7 @@
             android:exported="false" />
 
         <activity
-            android:name    ="com.facebook.FacebookActivity"
+            android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name" />
         <activity
@@ -47,6 +47,7 @@
 
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
+
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
@@ -55,37 +56,31 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".activities.FaqActivity"
             android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="info.anwesha2k18.iitp.activities.MainActivity" />
         </activity>
-
         <activity
             android:name=".activities.thankyou"
             android:screenOrientation="portrait">
-            <intent-filter>
+    <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
 
+    </intent-filter>
+        </activity>
         <activity
             android:name=".activities.MainActivity"
             android:label="@string/app_name"
             android:launchMode="singleTop"
             android:theme="@style/AppTheme.NoActionBar">
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
 
-                <!--<category android:name="android.intent.category.DEFAULT" />-->
-            <!--</intent-filter>-->
         </activity>
         <activity
             android:name=".activities.MyProfile"
@@ -109,6 +104,20 @@
                 android:value="info.anwesha2k18.iitp.activities.MainActivity" />
         </activity>
         <activity
+            android:name=".activities.LectureActivity"
+            android:label="@string/app_name">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="info.anwesha2k18.iitp.activities.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activities.WorkshopActivity"
+            android:label="Workshops">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="info.anwesha2k18.iitp.activities.MainActivity" />
+        </activity>
+        <activity
             android:name=".activities.webActivity"
             android:label="@string/app_name">
             <meta-data
@@ -117,8 +126,8 @@
         </activity>
         <activity
             android:name=".activities.LoginActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
-            android:label="Login">
+            android:label="Login"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:screenOrientation="portrait"
@@ -179,13 +188,13 @@
         <activity
             android:name=".activities.EventInfoActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <!--<activity-->
-        <!--android:name=".activities.DevelopersActivity"-->
-        <!--android:parentActivityName=".activities.MainActivity">-->
-        <!--<meta-data-->
-        <!--android:name="android.support.PARENT_ACTIVITY"-->
-        <!--android:value="info.anwesha2k18.iitp.activities.MainActivity" />-->
-        <!--</activity>-->
+        <!-- <activity -->
+        <!-- android:name=".activities.DevelopersActivity" -->
+        <!-- android:parentActivityName=".activities.MainActivity"> -->
+        <!-- <meta-data -->
+        <!-- android:name="android.support.PARENT_ACTIVITY" -->
+        <!-- android:value="info.anwesha2k18.iitp.activities.MainActivity" /> -->
+        <!-- </activity> -->
         <activity
             android:name=".activities.ImageLauncher"
             android:parentActivityName=".activities.MainActivity"
@@ -218,5 +227,25 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="info.anwesha2k18.iitp.activities.MainActivity" />
         </activity>
+        <activity android:name=".activities.TimelineActivity"
+            android:label="@string/schedule">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="info.anwesha2k18.iitp.activities.MainActivity" />
+        </activity>
+
+        <service android:name=".FcmService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+            <meta-data
+                android:name="com.google.firebase.messaging.default_notification_color"
+                android:resource="@color/statusColor" />
+            <meta-data
+                android:name="com.google.firebase.messaging.default_notification_channel_id"
+                android:value="@string/default_notification_channel_id" />
+
+        </service>
     </application>
+
 </manifest>

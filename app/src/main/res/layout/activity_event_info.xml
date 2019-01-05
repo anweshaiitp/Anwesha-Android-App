@@ -1,249 +1,79 @@
-<!--<?xml version="1.0" encoding="utf-8"?>-->
-<!--<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
-    <!--xmlns:tools="http://schemas.android.com/tools"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent">-->
+<!--<?xml version="1.0" encoding="utf-8"?>--><!--<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"--><!--xmlns:app="http://schemas.android.com/apk/res-auto"--><!--xmlns:tools="http://schemas.android.com/tools"--><!--android:layout_width="match_parent"--><!--android:layout_height="match_parent">-->
 
-    <!--<android.support.design.widget.AppBarLayout-->
-        <!--android:id="@+id/appbar_event_info"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:fitsSystemWindows="true"-->
-        <!--android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">-->
+<!--<android.support.design.widget.AppBarLayout--><!--android:id="@+id/appbar_event_info"--><!--android:layout_width="match_parent"--><!--android:layout_height="wrap_content"--><!--android:fitsSystemWindows="true"--><!--android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">-->
 
-        <!--<android.support.design.widget.CollapsingToolbarLayout-->
-            <!--android:id="@+id/collapsing_tb_event_info"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:fitsSystemWindows="true"-->
-            <!--app:contentScrim="@color/colorPrimary"-->
-            <!--app:layout_scrollFlags="scroll|exitUntilCollapsed">-->
+<!--<android.support.design.widget.CollapsingToolbarLayout--><!--android:id="@+id/collapsing_tb_event_info"--><!--android:layout_width="match_parent"--><!--android:layout_height="match_parent"--><!--android:fitsSystemWindows="true"--><!--app:contentScrim="@color/colorPrimary"--><!--app:layout_scrollFlags="scroll|exitUntilCollapsed">-->
 
-            <!--<ImageView-->
-                <!--android:id="@+id/event_info_imageview"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="225dp"-->
-                <!--android:scaleType="centerCrop"-->
-                <!--android:transitionName="event_image_view_transition"-->
-                <!--app:layout_collapseMode="parallax"-->
-                <!--tools:src="@drawable/anwesha_placeholder" />-->
+<!--<ImageView--><!--android:id="@+id/event_info_imageview"--><!--android:layout_width="match_parent"--><!--android:layout_height="225dp"--><!--android:scaleType="centerCrop"--><!--android:transitionName="event_image_view_transition"--><!--app:layout_collapseMode="parallax"--><!--tools:src="@drawable/anwesha_placeholder" />-->
 
-            <!--<android.support.v7.widget.Toolbar-->
-                <!--android:id="@+id/toolbar"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="?attr/actionBarSize"-->
-                <!--app:layout_collapseMode="pin"-->
-                <!--app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />-->
-        <!--</android.support.design.widget.CollapsingToolbarLayout>-->
-    <!--</android.support.design.widget.AppBarLayout>-->
+<!--<android.support.v7.widget.Toolbar--><!--android:id="@+id/toolbar"--><!--android:layout_width="match_parent"--><!--android:layout_height="?attr/actionBarSize"--><!--app:layout_collapseMode="pin"--><!--app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />--><!--</android.support.design.widget.CollapsingToolbarLayout>--><!--</android.support.design.widget.AppBarLayout>-->
 
 
-    <!--<android.support.v4.widget.NestedScrollView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--app:layout_behavior="@string/appbar_scrolling_view_behavior">-->
+<!--<android.support.v4.widget.NestedScrollView--><!--android:layout_width="match_parent"--><!--android:layout_height="match_parent"--><!--app:layout_behavior="@string/appbar_scrolling_view_behavior">-->
 
-        <!--<FrameLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content">-->
+<!--<FrameLayout--><!--android:layout_width="match_parent"--><!--android:layout_height="wrap_content">-->
 
-            <!--<LinearLayout-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="match_parent"-->
-                <!--android:orientation="vertical"-->
-                <!--tools:context="in.org.celesta2k17.activities.EventInfoActivity">-->
+<!--<LinearLayout--><!--android:layout_width="match_parent"--><!--android:layout_height="match_parent"--><!--android:orientation="vertical"--><!--tools:context="in.org.celesta2k17.activities.EventInfoActivity">-->
 
-                <!--<android.support.v7.widget.CardView-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:elevation="20dp">-->
+<!--<android.support.v7.widget.CardView--><!--android:layout_width="match_parent"--><!--android:layout_height="wrap_content"--><!--android:elevation="20dp">-->
 
-                    <!--<RelativeLayout-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="match_parent"-->
-                        <!--android:orientation="vertical"-->
-                        <!--android:padding="20dp">-->
+<!--<RelativeLayout--><!--android:layout_width="match_parent"--><!--android:layout_height="match_parent"--><!--android:orientation="vertical"--><!--android:padding="20dp">-->
 
-                        <!--<TextView-->
-                            <!--android:id="@+id/event_info_name"-->
-                            <!--android:layout_width="match_parent"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_alignParentStart="true"-->
-                            <!--android:textAppearance="@android:style/TextAppearance.Material.Headline"-->
-                            <!--android:textSize="20sp"-->
-                            <!--android:transitionName="event_text_header_transition"-->
-                            <!--tools:text="NJATH" />-->
+<!--<TextView--><!--android:id="@+id/event_info_name"--><!--android:layout_width="match_parent"--><!--android:layout_height="wrap_content"--><!--android:layout_alignParentStart="true"--><!--android:textAppearance="@android:style/TextAppearance.Material.Headline"--><!--android:textSize="20sp"--><!--android:transitionName="event_text_header_transition"--><!--tools:text="NJATH" />-->
 
-                        <!--<TextView-->
-                            <!--android:id="@+id/event_date_time"-->
-                            <!--android:layout_width="match_parent"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_below="@id/event_info_name"-->
-                            <!--android:fontFamily="sans-serif-light"-->
-                            <!--android:textAppearance="@android:style/TextAppearance.Material.Headline"-->
-                            <!--android:textSize="20sp"-->
-                            <!--tools:text="7th Aug, 10:30 pm" />-->
+<!--<TextView--><!--android:id="@+id/event_date_time"--><!--android:layout_width="match_parent"--><!--android:layout_height="wrap_content"--><!--android:layout_below="@id/event_info_name"--><!--android:fontFamily="sans-serif-light"--><!--android:textAppearance="@android:style/TextAppearance.Material.Headline"--><!--android:textSize="20sp"--><!--tools:text="7th Aug, 10:30 pm" />-->
 
-                        <!--<TextView-->
-                            <!--android:id="@+id/event_venue"-->
-                            <!--android:layout_width="match_parent"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_below="@id/event_date_time"-->
-                            <!--android:fontFamily="sans-serif-light"-->
-                            <!--android:textAppearance="@android:style/TextAppearance.Material.Headline"-->
-                            <!--android:textSize="20sp"-->
-                            <!--tools:text="Tutorial Block - Room no. 107" />-->
+<!--<TextView--><!--android:id="@+id/event_venue"--><!--android:layout_width="match_parent"--><!--android:layout_height="wrap_content"--><!--android:layout_below="@id/event_date_time"--><!--android:fontFamily="sans-serif-light"--><!--android:textAppearance="@android:style/TextAppearance.Material.Headline"--><!--android:textSize="20sp"--><!--tools:text="Tutorial Block - Room no. 107" />-->
 
-                        <!--<Button-->
-                            <!--android:id="@+id/btn_register"-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_below="@id/event_venue"-->
-                            <!--android:layout_marginBottom="8dp"-->
-                            <!--android:layout_marginTop="8dp"-->
-                            <!--android:background="@color/colorDevelopers"-->
-                            <!--android:text="Register"-->
-                            <!--android:textColor="@android:color/white" />-->
+<!--<Button--><!--android:id="@+id/btn_register"--><!--android:layout_width="wrap_content"--><!--android:layout_height="wrap_content"--><!--android:layout_below="@id/event_venue"--><!--android:layout_marginBottom="8dp"--><!--android:layout_marginTop="8dp"--><!--android:background="@color/colorDevelopers"--><!--android:text="Register"--><!--android:textColor="@android:color/white" />-->
 
-                        <!--<TextView-->
-                            <!--android:id="@+id/event_reg_link"-->
-                            <!--android:layout_width="match_parent"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_below="@id/event_venue"-->
-                            <!--android:layout_marginTop="8dp"-->
-                            <!--android:fontFamily="sans-serif-light"-->
-                            <!--android:text="@string/will_be_updated_soon"-->
-                            <!--android:textAppearance="@android:style/TextAppearance.Material.Headline"-->
-                            <!--android:textColorLink="@color/colorSignIn"-->
-                            <!--android:textSize="18sp" />-->
+<!--<TextView--><!--android:id="@+id/event_reg_link"--><!--android:layout_width="match_parent"--><!--android:layout_height="wrap_content"--><!--android:layout_below="@id/event_venue"--><!--android:layout_marginTop="8dp"--><!--android:fontFamily="sans-serif-light"--><!--android:text="@string/will_be_updated_soon"--><!--android:textAppearance="@android:style/TextAppearance.Material.Headline"--><!--android:textColorLink="@color/colorSignIn"--><!--android:textSize="18sp" />-->
 
-                        <!--<TextView-->
-                            <!--android:id="@+id/event_already_registered"-->
-                            <!--android:layout_width="match_parent"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_below="@id/event_venue"-->
-                            <!--android:layout_marginTop="8dp"-->
-                            <!--android:fontFamily="sans-serif-light"-->
-                            <!--android:text="@string/already_registered"-->
-                            <!--android:textAppearance="@android:style/TextAppearance.Material.Headline"-->
-                            <!--android:textColor="@android:color/holo_green_dark"-->
-                            <!--android:textSize="18sp"-->
-                            <!--android:visibility="invisible" />-->
+<!--<TextView--><!--android:id="@+id/event_already_registered"--><!--android:layout_width="match_parent"--><!--android:layout_height="wrap_content"--><!--android:layout_below="@id/event_venue"--><!--android:layout_marginTop="8dp"--><!--android:fontFamily="sans-serif-light"--><!--android:text="@string/already_registered"--><!--android:textAppearance="@android:style/TextAppearance.Material.Headline"--><!--android:textColor="@android:color/holo_green_dark"--><!--android:textSize="18sp"--><!--android:visibility="invisible" />-->
 
-                        <!--<TextView-->
-                            <!--android:id="@+id/event_info_textview"-->
-                            <!--android:layout_width="match_parent"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_below="@id/btn_register"-->
-                            <!--android:fontFamily="sans-serif-light"-->
-                            <!--android:textAppearance="@android:style/TextAppearance.Holo.Medium"-->
-                            <!--android:textIsSelectable="true"-->
-                            <!--tools:text="Lorem ipsum dolor sit amet untes gungslla goog oo gaa lossly roemsid dsfaks slal skdlfkan" />-->
+<!--<TextView--><!--android:id="@+id/event_info_textview"--><!--android:layout_width="match_parent"--><!--android:layout_height="wrap_content"--><!--android:layout_below="@id/btn_register"--><!--android:fontFamily="sans-serif-light"--><!--android:textAppearance="@android:style/TextAppearance.Holo.Medium"--><!--android:textIsSelectable="true"--><!--tools:text="Lorem ipsum dolor sit amet untes gungslla goog oo gaa lossly roemsid dsfaks slal skdlfkan" />-->
 
-                        <!--<TextView-->
-                            <!--android:id="@+id/rules_header"-->
-                            <!--android:layout_width="match_parent"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_below="@id/event_info_textview"-->
-                            <!--android:layout_marginTop="16dp"-->
-                            <!--android:text="@string/rules_and_regulations"-->
-                            <!--android:textAppearance="@android:style/TextAppearance.Material.Headline"-->
-                            <!--android:textSize="20sp" />-->
+<!--<TextView--><!--android:id="@+id/rules_header"--><!--android:layout_width="match_parent"--><!--android:layout_height="wrap_content"--><!--android:layout_below="@id/event_info_textview"--><!--android:layout_marginTop="16dp"--><!--android:text="@string/rules_and_regulations"--><!--android:textAppearance="@android:style/TextAppearance.Material.Headline"--><!--android:textSize="20sp" />-->
 
-                        <!--<TextView-->
-                            <!--android:id="@+id/event_rules_textview"-->
-                            <!--android:layout_width="match_parent"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_below="@id/rules_header"-->
-                            <!--android:layout_marginTop="8dp"-->
-                            <!--android:fontFamily="sans-serif-light"-->
-                            <!--android:text="Will be updated soon."-->
-                            <!--android:textAppearance="@android:style/TextAppearance.Holo.Medium"-->
-                            <!--android:textColorLink="@color/colorSignIn" />-->
+<!--<TextView--><!--android:id="@+id/event_rules_textview"--><!--android:layout_width="match_parent"--><!--android:layout_height="wrap_content"--><!--android:layout_below="@id/rules_header"--><!--android:layout_marginTop="8dp"--><!--android:fontFamily="sans-serif-light"--><!--android:text="Will be updated soon."--><!--android:textAppearance="@android:style/TextAppearance.Holo.Medium"--><!--android:textColorLink="@color/colorSignIn" />-->
 
-                        <!--<TextView-->
-                            <!--android:id="@+id/event_organizers_header"-->
-                            <!--android:layout_width="match_parent"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_below="@id/event_rules_textview"-->
-                            <!--android:layout_marginTop="16dp"-->
-                            <!--android:text="@string/event_organizers"-->
-                            <!--android:textAppearance="@android:style/TextAppearance.Material.Headline"-->
-                            <!--android:textSize="20sp" />-->
+<!--<TextView--><!--android:id="@+id/event_organizers_header"--><!--android:layout_width="match_parent"--><!--android:layout_height="wrap_content"--><!--android:layout_below="@id/event_rules_textview"--><!--android:layout_marginTop="16dp"--><!--android:text="@string/event_organizers"--><!--android:textAppearance="@android:style/TextAppearance.Material.Headline"--><!--android:textSize="20sp" />-->
 
-                        <!--<TextView-->
-                            <!--android:id="@+id/event_organizers"-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_below="@id/event_organizers_header"-->
-                            <!--android:layout_marginTop="8dp"-->
-                            <!--android:autoLink="phone"-->
-                            <!--android:fontFamily="sans-serif-light"-->
-                            <!--android:textAppearance="@android:style/TextAppearance.Holo.Medium"-->
-                            <!--android:textColorLink="@color/colorSignIn"-->
-                            <!--tools:text="Mayank Vaidya" />-->
+<!--<TextView--><!--android:id="@+id/event_organizers"--><!--android:layout_width="wrap_content"--><!--android:layout_height="wrap_content"--><!--android:layout_below="@id/event_organizers_header"--><!--android:layout_marginTop="8dp"--><!--android:autoLink="phone"--><!--android:fontFamily="sans-serif-light"--><!--android:textAppearance="@android:style/TextAppearance.Holo.Medium"--><!--android:textColorLink="@color/colorSignIn"--><!--tools:text="Mayank Vaidya" />-->
 
-                        <!--<TextView-->
-                            <!--android:id="@+id/event_contact"-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_below="@id/event_organizers_header"-->
-                            <!--android:layout_marginTop="8dp"-->
-                            <!--android:layout_toRightOf="@id/event_organizers"-->
-                            <!--android:textAppearance="@android:style/TextAppearance.Holo.Medium"-->
-                            <!--android:textColor="@color/colorDevelopers"-->
-                            <!--android:textIsSelectable="true"-->
-                            <!--tools:text="9955539372" />-->
-                    <!--</RelativeLayout>-->
-                <!--</android.support.v7.widget.CardView>-->
-            <!--</LinearLayout>-->
-        <!--</FrameLayout>-->
-    <!--</android.support.v4.widget.NestedScrollView>-->
+<!--<TextView--><!--android:id="@+id/event_contact"--><!--android:layout_width="wrap_content"--><!--android:layout_height="wrap_content"--><!--android:layout_below="@id/event_organizers_header"--><!--android:layout_marginTop="8dp"--><!--android:layout_toRightOf="@id/event_organizers"--><!--android:textAppearance="@android:style/TextAppearance.Holo.Medium"--><!--android:textColor="@color/colorDevelopers"--><!--android:textIsSelectable="true"--><!--tools:text="9955539372" />--><!--</RelativeLayout>--><!--</android.support.v7.widget.CardView>--><!--</LinearLayout>--><!--</FrameLayout>--><!--</android.support.v4.widget.NestedScrollView>-->
 
-    <!--<android.support.design.widget.FloatingActionButton-->
-        <!--android:id="@+id/fab_share_event"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_margin="16dp"-->
-        <!--android:src="@drawable/ic_share_white_24dp"-->
-        <!--app:backgroundTint="@android:color/holo_blue_light"-->
-        <!--app:layout_anchor="@id/appbar_event_info"-->
-        <!--app:layout_anchorGravity="right|bottom" />-->
-<!--</android.support.design.widget.CoordinatorLayout>-->
-<android.support.design.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<!--<android.support.design.widget.FloatingActionButton--><!--android:id="@+id/fab_share_event"--><!--android:layout_width="wrap_content"--><!--android:layout_height="wrap_content"--><!--android:layout_margin="16dp"--><!--android:src="@drawable/ic_share_white_24dp"--><!--app:backgroundTint="@android:color/holo_blue_light"--><!--app:layout_anchor="@id/appbar_event_info"--><!--app:layout_anchorGravity="right|bottom" />--><!--</android.support.design.widget.CoordinatorLayout>-->
+
+
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:ignore="RtlHardcoded"
-    >
+    tools:ignore="RtlHardcoded">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/main.appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        >
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/main.collapsing"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
-            >
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
 
             <ImageView
-                android:id="@+id/main.imageview.placeholder"
+                android:id="@+id/event_info_imageview"
                 android:layout_width="match_parent"
-                android:layout_height="420dp"
+                android:layout_height="300dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/slide_main"
                 android:tint="#11000000"
                 app:layout_collapseMode="parallax"
-                app:layout_collapseParallaxMultiplier="0.9"
-                />
+                app:layout_collapseParallaxMultiplier="0.9" />
 
             <FrameLayout
                 android:id="@+id/main.framelayout.title"
@@ -253,16 +83,14 @@
                 android:background="@color/primary"
                 android:orientation="vertical"
                 app:layout_collapseMode="parallax"
-                app:layout_collapseParallaxMultiplier="0.3"
-                >
+                app:layout_collapseParallaxMultiplier="0.3">
 
                 <LinearLayout
                     android:id="@+id/main.linearlayout.title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:orientation="vertical"
-                    >
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/event_info_name"
@@ -272,7 +100,8 @@
                         android:textAppearance="@android:style/TextAppearance.Material.Headline"
                         android:textSize="25sp"
                         android:transitionName="event_text_header_transition"
-                         />
+                        tools:text="Event Name"
+                        android:textColor="@color/white"/>
 
                 </LinearLayout>
             </FrameLayout>
@@ -291,167 +120,146 @@
 
         <android.support.v7.widget.CardView
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginTop="28dp"
-            android:layout_marginLeft="28dp"
-            android:layout_marginRight="28dp"
-            app:cardElevation="18dp"
-            app:contentPaddingLeft="16dp"
-            app:contentPaddingTop="16dp"
-            app:contentPaddingRight="16dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:cardElevation="8dp"
+            app:contentPadding="16dp"
             >
-            <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            tools:context="in.org.celesta2k17.activities.EventInfoActivity">
-
-            <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:elevation="20dp">
-
             <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-                android:background="@color/com_facebook_blue"
-            android:orientation="vertical"
-            android:padding="20dp">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:padding="20dp">
 
 
+                <TextView
+                    android:id="@+id/event_date_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:textAppearance="@android:style/TextAppearance.Material.Headline"
+                    android:textSize="20sp"
+                    tools:text="7th Aug, 10:30 pm" />
 
-            <TextView
-            android:id="@+id/event_date_time"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-light"
-            android:textAppearance="@android:style/TextAppearance.Material.Headline"
-            android:textSize="20sp"
-            tools:text="7th Aug, 10:30 pm" />
+                <TextView
+                    android:id="@+id/event_venue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/event_date_time"
+                    android:fontFamily="sans-serif-light"
+                    android:textAppearance="@android:style/TextAppearance.Material.Headline"
+                    android:textSize="20sp"
+                    tools:text="Tutorial Block - Room no. 107" />
 
-            <TextView
-            android:id="@+id/event_venue"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/event_date_time"
-            android:fontFamily="sans-serif-light"
-            android:textAppearance="@android:style/TextAppearance.Material.Headline"
-            android:textSize="20sp"
-            tools:text="Tutorial Block - Room no. 107" />
+                <Button
+                    android:id="@+id/btn_register"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/event_venue"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@color/colorDevelopers"
+                    android:text="Register"
+                    android:textColor="@android:color/white" />
 
-            <Button
-            android:id="@+id/btn_register"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/event_venue"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="8dp"
-            android:background="@color/colorDevelopers"
-            android:text="Register"
-            android:textColor="@android:color/white" />
+                <TextView
+                    android:id="@+id/event_reg_link"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/event_venue"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="@string/will_be_updated_soon"
+                    android:textAppearance="@android:style/TextAppearance.Material.Headline"
+                    android:textColorLink="@color/colorSignIn"
+                    android:textSize="18sp" />
 
-            <TextView
-            android:id="@+id/event_reg_link"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/event_venue"
-            android:layout_marginTop="8dp"
-            android:fontFamily="sans-serif-light"
-            android:text="@string/will_be_updated_soon"
-            android:textAppearance="@android:style/TextAppearance.Material.Headline"
-            android:textColorLink="@color/colorSignIn"
-            android:textSize="18sp" />
+                <TextView
+                    android:id="@+id/event_already_registered"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/event_venue"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="@string/already_registered"
+                    android:textAppearance="@android:style/TextAppearance.Material.Headline"
+                    android:textColor="@android:color/holo_green_dark"
+                    android:textSize="18sp"
+                    android:visibility="invisible" />
 
-            <TextView
-            android:id="@+id/event_already_registered"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/event_venue"
-            android:layout_marginTop="8dp"
-            android:fontFamily="sans-serif-light"
-            android:text="@string/already_registered"
-            android:textAppearance="@android:style/TextAppearance.Material.Headline"
-            android:textColor="@android:color/holo_green_dark"
-            android:textSize="18sp"
-            android:visibility="invisible" />
+                <TextView
+                    android:id="@+id/event_info_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/btn_register"
+                    android:fontFamily="sans-serif-light"
+                    android:textAppearance="@android:style/TextAppearance.Holo.Medium"
+                    android:textIsSelectable="true"
+                    tools:text="Lorem ipsum dolor sit amet untes gungslla goog oo gaa lossly roemsid dsfaks slal skdlfkan" />
 
-            <TextView
-            android:id="@+id/event_info_textview"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/btn_register"
-            android:fontFamily="sans-serif-light"
-            android:textAppearance="@android:style/TextAppearance.Holo.Medium"
-            android:textIsSelectable="true"
-            tools:text="Lorem ipsum dolor sit amet untes gungslla goog oo gaa lossly roemsid dsfaks slal skdlfkan" />
+                <TextView
+                    android:id="@+id/rules_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/event_info_textview"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/rules_and_regulations"
+                    android:textAppearance="@android:style/TextAppearance.Material.Headline"
+                    android:textSize="20sp" />
 
-            <TextView
-            android:id="@+id/rules_header"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/event_info_textview"
-            android:layout_marginTop="16dp"
-            android:text="@string/rules_and_regulations"
-            android:textAppearance="@android:style/TextAppearance.Material.Headline"
-            android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/event_rules_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rules_header"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="Will be updated soon."
+                    android:textAppearance="@android:style/TextAppearance.Holo.Medium"
+                    android:textColorLink="@color/colorSignIn" />
 
-            <TextView
-            android:id="@+id/event_rules_textview"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/rules_header"
-            android:layout_marginTop="8dp"
-            android:fontFamily="sans-serif-light"
-            android:text="Will be updated soon."
-            android:textAppearance="@android:style/TextAppearance.Holo.Medium"
-            android:textColorLink="@color/colorSignIn" />
+                <TextView
+                    android:id="@+id/event_organizers_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/event_rules_textview"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/event_organizers"
+                    android:textAppearance="@android:style/TextAppearance.Material.Headline"
+                    android:textSize="20sp" />
 
-            <TextView
-            android:id="@+id/event_organizers_header"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/event_rules_textview"
-            android:layout_marginTop="16dp"
-            android:text="@string/event_organizers"
-            android:textAppearance="@android:style/TextAppearance.Material.Headline"
-            android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/event_organizers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/event_organizers_header"
+                    android:layout_marginTop="8dp"
+                    android:autoLink="phone"
+                    android:fontFamily="sans-serif-light"
+                    android:textAppearance="@android:style/TextAppearance.Holo.Medium"
+                    android:textColorLink="@color/colorSignIn"
+                    tools:text="Mayank Vaidya" />
 
-            <TextView
-            android:id="@+id/event_organizers"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/event_organizers_header"
-            android:layout_marginTop="8dp"
-            android:autoLink="phone"
-            android:fontFamily="sans-serif-light"
-            android:textAppearance="@android:style/TextAppearance.Holo.Medium"
-            android:textColorLink="@color/colorSignIn"
-            tools:text="Mayank Vaidya" />
-
-            <TextView
-            android:id="@+id/event_contact"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/event_organizers_header"
-            android:layout_marginTop="8dp"
-            android:layout_toRightOf="@id/event_organizers"
-            android:textAppearance="@android:style/TextAppearance.Holo.Medium"
-            android:textColor="@color/colorDevelopers"
-            android:textIsSelectable="true"
-            tools:text="9955539372" />
+                <TextView
+                    android:id="@+id/event_contact"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/event_organizers_header"
+                    android:layout_marginTop="8dp"
+                    android:layout_toRightOf="@id/event_organizers"
+                    android:textAppearance="@android:style/TextAppearance.Holo.Medium"
+                    android:textColor="@color/colorDevelopers"
+                    android:textIsSelectable="true"
+                    tools:text="9955539372" />
             </RelativeLayout>
-            </android.support.v7.widget.CardView>
-            </LinearLayout>
-            </FrameLayout>
-
         </android.support.v7.widget.CardView>
 
 
     </android.support.v4.widget.NestedScrollView>
+
+
+
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/main.toolbar"
@@ -460,19 +268,16 @@
         android:background="@color/primary"
         app:layout_anchor="@id/main.framelayout.title"
         app:theme="@style/ThemeOverlay.AppCompat.Dark"
-        app:title=""
-        >
+        app:title="">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
-            >
+            android:orientation="horizontal">
 
             <Space
                 android:layout_width="@dimen/image_final_width"
-                android:layout_height="@dimen/image_final_width"
-                />
+                android:layout_height="@dimen/image_final_width" />
 
             <TextView
                 android:id="@+id/main.textview.title"
@@ -481,8 +286,7 @@
                 android:layout_marginLeft="8dp"
                 android:gravity="center_vertical"
                 android:textColor="@android:color/white"
-                android:textSize="20sp"
-                />
+                android:textSize="20sp" />
 
         </LinearLayout>
     </android.support.v7.widget.Toolbar>
@@ -491,14 +295,12 @@
         android:layout_width="@dimen/image_width"
         android:layout_height="@dimen/image_width"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/slide_ebid"
-        app:border_color="@android:color/white"
-        app:border_width="2dp"
+        android:src="@drawable/anwesha_banner"
         app:finalHeight="@dimen/image_final_width"
         app:finalYPosition="2dp"
         app:layout_behavior="info.anwesha2k18.iitp.utils.AvatarImageBehavior"
         app:startHeight="2dp"
         app:startToolbarPosition="2dp"
-        app:startXPosition="2dp"
-        />
+        app:startXPosition="2dp" />
+
 </android.support.design.widget.CoordinatorLayout>
