@@ -70,18 +70,15 @@
         <activity
             android:name=".activities.thankyou"
             android:screenOrientation="portrait">
-    <intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-    </intent-filter>
+            </intent-filter>
         </activity>
         <activity
             android:name=".activities.MainActivity"
             android:label="@string/app_name"
             android:launchMode="singleTop"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".activities.MyProfile"
             android:label="@string/my_profile">
@@ -185,9 +182,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="info.anwesha2k18.iitp.activities.MainActivity" />
         </activity>
-        <activity
-            android:name=".activities.EventInfoActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
         <!-- <activity -->
         <!-- android:name=".activities.DevelopersActivity" -->
         <!-- android:parentActivityName=".activities.MainActivity"> -->
@@ -226,7 +220,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="info.anwesha2k18.iitp.activities.MainActivity" />
         </activity>
-        <activity android:name=".activities.TimelineActivity"
+        <activity
+            android:name=".activities.TimelineActivity"
             android:label="@string/schedule">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -237,14 +232,16 @@
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
+
             <meta-data
                 android:name="com.google.firebase.messaging.default_notification_color"
                 android:resource="@color/statusColor" />
             <meta-data
                 android:name="com.google.firebase.messaging.default_notification_channel_id"
                 android:value="@string/default_notification_channel_id" />
-
         </service>
+
+        <activity android:name=".activities.EventInfoActivityNew"></activity>
     </application>
 
 </manifest>
