@@ -18,6 +18,7 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
+import info.anwesha2k18.iitp.data.LecturesData;
 import info.anwesha2k18.iitp.data.WorkshopData;
 
 
@@ -138,6 +139,52 @@ public final class ExtractWorkshop {
             }
         }
         return outputJson.toString();
+    }
+
+    public static List<LecturesData> extLectures(String requestUrl){
+        URL url = createUrl(requestUrl);
+
+        String jsonResponse = null;
+
+        try {
+            jsonResponse = makeHttpRequest(url);
+        }
+        catch (IOException e){
+            Log.e(LOG_TAG, "Problem making the HTTP request.", e);
+        }
+
+        List<LecturesData> lecturesDataList = extractLectures(jsonResponse);
+        return lecturesDataList;
+    }
+
+    public static List<LecturesData> extractLectures(String jsonResponse) {
+
+        if (TextUtils.isEmpty(jsonResponse)) {
+            return null;
+        }
+
+        List<LecturesData> lecturesDataList = new ArrayList<>();
+        try {
+
+            JSONObject jsonObject = new JSONObject(jsonResponse);
+            JSONArray lecturesArray = jsonObject.getJSONArray("lectures");
+
+            for (int j = 0; j < lecturesArray.length(); j++) {
+
+                JSONObject currentLecture = lecturesArray.getJSONObject(j);
+
+                String name = currentLecture.getString("name");
+                String description = currentLecture.getString("description");
+                String imageUrl = currentLecture.getString("imageurl");
+
+                lecturesDataList.add(new LecturesData(name, description, imageUrl));
+            }
+
+        } catch (JSONException e) {
+            Log.e("QueryUtils", "Problem parsing the earthquake JSON results", e);
+        }
+
+        return lecturesDataList;
     }
 
 }
