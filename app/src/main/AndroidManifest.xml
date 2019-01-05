@@ -104,7 +104,7 @@
                 android:value="info.anwesha2k18.iitp.activities.MainActivity" />
         </activity>
         <activity
-            android:name=".activities.lectureActivity"
+            android:name=".activities.LectureActivity"
             android:label="@string/app_name">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
