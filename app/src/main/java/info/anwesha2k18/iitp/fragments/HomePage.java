@@ -275,7 +275,6 @@ HomePage extends android.support.v4.app.Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(rootView.getContext(), AboutActivity.class);
                 startActivity(intent);
-                comingSoonToast.show();
             }
         });
 
