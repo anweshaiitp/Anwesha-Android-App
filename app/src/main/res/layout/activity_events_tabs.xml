@@ -1,61 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+    android:orientation="vertical"
     tools:context="info.anwesha2k18.iitp.activities.EventsActivityNew">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
 
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/appbar"
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/event_tabs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            android:paddingBottom="9dp"
-            android:paddingTop="9dp"
-            app:layout_scrollFlags="enterAlwaysCollapsed"
-            app:popupTheme="@style/AppTheme.PopupOverlay"
-            app:title="Events">
-
-        </android.support.v7.widget.Toolbar>
-    </android.support.design.widget.AppBarLayout>
-
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/eventListView">
-
-    </ListView>
-    </LinearLayout>
-     <!--   <android.support.design.widget.TabLayout
-            android:id="@+id/tabs"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?attr/colorPrimaryDark"
-            app:tabMode="scrollable"
-            app:tabGravity="fill"
-            android:paddingTop="4dp" />
--->
-
-
-   <!--
+        android:background="?attr/colorPrimaryDark"
+        android:paddingTop="4dp"
+        app:tabSelectedTextColor="@android:color/white"
+        app:tabTextColor="@color/grey"
+        app:tabGravity="fill"
+        app:tabMode="scrollable" />
 
     <android.support.v4.view.ViewPager
-        android:id="@+id/viewpager"
+        android:id="@+id/event_viewpager"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />   -->
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-</android.support.design.widget.CoordinatorLayout>
+
+</LinearLayout>
