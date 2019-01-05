@@ -18,7 +18,6 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
-import info.anwesha2k18.iitp.data.LecturesData;
 import info.anwesha2k18.iitp.data.WorkshopData;
 
 
@@ -141,7 +140,7 @@ public final class ExtractWorkshop {
         return outputJson.toString();
     }
 
-    public static List<LecturesData> extLectures(String requestUrl){
+    public static List<WorkshopData> extLectures(String requestUrl){
         URL url = createUrl(requestUrl);
 
         String jsonResponse = null;
@@ -153,17 +152,17 @@ public final class ExtractWorkshop {
             Log.e(LOG_TAG, "Problem making the HTTP request.", e);
         }
 
-        List<LecturesData> lecturesDataList = extractLectures(jsonResponse);
+        List<WorkshopData> lecturesDataList = extractLectures(jsonResponse);
         return lecturesDataList;
     }
 
-    public static List<LecturesData> extractLectures(String jsonResponse) {
+    public static List<WorkshopData> extractLectures(String jsonResponse) {
 
         if (TextUtils.isEmpty(jsonResponse)) {
             return null;
         }
 
-        List<LecturesData> lecturesDataList = new ArrayList<>();
+        List<WorkshopData> lecturesDataList = new ArrayList<>();
         try {
 
             JSONObject jsonObject = new JSONObject(jsonResponse);
@@ -175,9 +174,12 @@ public final class ExtractWorkshop {
 
                 String name = currentLecture.getString("name");
                 String description = currentLecture.getString("description");
+                String date = currentLecture.getString("date");
+                String time = currentLecture.getString("time");
+                String venue = currentLecture.getString("venue");
                 String imageUrl = currentLecture.getString("imageurl");
 
-                lecturesDataList.add(new LecturesData(name, description, imageUrl));
+                lecturesDataList.add(new WorkshopData(name, description, date, time, venue, imageUrl));
             }
 
         } catch (JSONException e) {
