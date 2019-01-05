@@ -19,7 +19,7 @@
         app:cardElevation="4dp">
 
         <TextView
-            android:id="@+id/info_text"
+            android:id="@+id/event_text_display"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center|bottom"
@@ -36,7 +36,7 @@
             app:srcCompat="@drawable/slide_ebid" />
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/event_image_display"
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_gravity="center|bottom"
