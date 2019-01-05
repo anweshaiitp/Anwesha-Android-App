@@ -56,7 +56,7 @@
                         android:layout_marginTop="32dp"
                         android:fontFamily="sans-serif"
                         android:text="@string/ACE_Events"
-                        android:textColor="@color/colorPrimaryLight"
+                        android:textColor="#F9E521"
                         android:textSize="20sp" />
 
                     <LinearLayout
@@ -90,7 +90,7 @@
                         android:layout_marginLeft="16dp"
                         android:layout_marginTop="12dp"
                         android:fontFamily="sans-serif-light"
-                        android:textColor="@color/colorPrimaryLight"
+                        android:textColor="#F9E521"
                         android:textSize="18sp"
                         tools:text="I am ##### " />
 
@@ -121,7 +121,7 @@
                 android:fontFamily="sans-serif-medium"
                 android:text="Media and Public relations "
                 android:textAlignment="center"
-                android:textColor="@color/colorPrimaryLight"
+                android:textColor="#F9E521"
                 android:textSize="18sp" />
 
         </LinearLayout>
