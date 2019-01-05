@@ -24,6 +24,7 @@ public class WorkshopAdapter extends ArrayAdapter<WorkshopData> {
 
     public WorkshopAdapter(@NonNull Context context, int resource, List<WorkshopData> objects) {
         super(context, resource, objects);
+        mContext = context;
     }
 
     @NonNull

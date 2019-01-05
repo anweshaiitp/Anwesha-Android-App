@@ -1,34 +1,47 @@
 package info.anwesha2k18.iitp.adapters;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import com.bumptech.glide.Glide;
 
+import java.util.List;
 
-public class EventsAdapter extends PagerAdapter {
+import info.anwesha2k18.iitp.R;
+import info.anwesha2k18.iitp.data.EventListData;
+
+
+public class EventsAdapter extends ArrayAdapter<EventListData> {
     Context context;
     TypedArray images;
 
-    public EventsAdapter(Context context, TypedArray images) {
-        this.context = context;
-        this.images = images;
-    }
+ public EventsAdapter(Context context, int resource, List<EventListData> objects){
+     super(context,resource,objects);
+
+ }
 
     @Override
-    public int getCount() {
-        return images.length();
-    }
+    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+        if (convertView==null){
+            convertView=((Activity) getContext()).getLayoutInflater().inflate(R.layout.card_view,parent,false);
+        }
+        EventListData currentEvent=getItem(position);
+        
+        TextView eventDescDisplay=(TextView) convertView.findViewById(R.id.card_text);
+        TextView eventTextDisplay=(TextView) convertView.findViewById(R.id.card_header);
 
-    @Override
-    public boolean isViewFromObject(View view, Object object) {
-        return view == ((ImageView) object);
-    }
-
+<<<<<<< HEAD
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
         ImageView imageView = new ImageView(context);
@@ -39,9 +52,15 @@ public class EventsAdapter extends PagerAdapter {
         ((ViewPager) container).addView(imageView, 0);
         return   imageView;
     }
+=======
+>>>>>>> origin/5jan_noon
 
-    @Override
-    public void destroyItem(ViewGroup container, int position, Object object) {
-        ((ViewPager) container).removeView((ImageView) object);
+        eventTextDisplay.setText(currentEvent.geteveName());
+
+        eventDescDisplay.setText(currentEvent.getshort_desc());
+
+
+
+        return  convertView;
     }
 }

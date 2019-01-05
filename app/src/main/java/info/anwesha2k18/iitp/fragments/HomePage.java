@@ -5,9 +5,11 @@ import android.animation.AnimatorInflater;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.view.LayoutInflater;
@@ -49,6 +51,7 @@ import info.anwesha2k18.iitp.listeners.ViewPagerCustomDuration;
 
 public class
 HomePage extends android.support.v4.app.Fragment {
+    SharedPreferences sharedPreferences;
 
     final long DELAY_MS = 500;//delay info milliseconds before task is to be executed
     final long PERIOD_MS = 4000; // time info milliseconds between successive task executions.
@@ -57,6 +60,7 @@ HomePage extends android.support.v4.app.Fragment {
     View eventsLinearLayout;
     View galleryLinearLayout;
     View aboutFrameLayout;
+    View profileFrameLayout;
     View scheduleLinearLayout;
     View sponsorsLinearLayout;
     View teamLinearLayout;
@@ -70,6 +74,15 @@ HomePage extends android.support.v4.app.Fragment {
     private int currentPage = 0;
     private int NUM_PAGES;
     private int toggle;
+
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+        super.onCreate(savedInstanceState);
+    }
+
+
     private void SetDaysToAnwesha(final TextView view,final TextView view1,final TextView view2)
     {
         Calendar c = new GregorianCalendar();
@@ -156,10 +169,10 @@ HomePage extends android.support.v4.app.Fragment {
 
         final ViewPagerCustomDuration viewPagerCustomDuration = (ViewPagerCustomDuration) rootView.findViewById(R.id.events_pager);
         viewPagerCustomDuration.setScrollDuration(900);
-        EventsAdapter eventsAdapter = new EventsAdapter(getContext(),
-                getResources().obtainTypedArray(R.array.array_home_slide_show));
+ //       EventsAdapter eventsAdapter = new EventsAdapter(getContext(),
+   //             getResources().obtainTypedArray(R.array.array_home_slide_show));
 
-        viewPagerCustomDuration.setAdapter(eventsAdapter);
+  //      viewPagerCustomDuration.setAdapter(eventsAdapter);
         /*Adding automatic swap to the images
         * */
         final Handler handler = new Handler();
@@ -208,8 +221,6 @@ HomePage extends android.support.v4.app.Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(rootView.getContext(), EventsActivityNew.class);
                 startActivity(intent);
-                comingSoonToast.show();
-
             }
         });
 
@@ -269,6 +280,33 @@ HomePage extends android.support.v4.app.Fragment {
                 comingSoonToast.show();
             }
         });
+
+        //Profile layout
+        profileFrameLayout = rootView.findViewById(R.id.myProfile);
+        profileFrameLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (!sharedPreferences.getBoolean(getString(R.string.login_status), false)) {
+                    Intent intentLogin = new Intent(getContext(), LoginActivity.class);
+                    startActivity(intentLogin);
+                } else {
+                    Intent intentLogin = new Intent(getContext(), MyProfile.class);
+                    startActivity(intentLogin);
+                }
+            }
+        });
+
+        //Sponsors layout
+        sponsorsLinearLayout = rootView.findViewById(R.id.sponsors);
+        sponsorsLinearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), SponsorsActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
         mapLinearLayout = rootView.findViewById(R.id.map);
         mapLinearLayout.setOnClickListener(new View.OnClickListener() {

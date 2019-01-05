@@ -19,7 +19,7 @@ public class WorkshopActivity extends AppCompatActivity implements LoaderManager
 
     private ListView workshopListView;
     private WorkshopAdapter mAdapter;
-    private final String WORKSHOP_URL = "https://firebasestorage.googleapis.com/v0/b/anwesha2k19-grobo.appspot.com/o/workshop.json?alt=media";
+    private final String WORKSHOP_URL = "https://firebasestorage.googleapis.com/v0/b/anwesha-2k19.appspot.com/o/workshop.json?alt=media";
 
 
     @Override
