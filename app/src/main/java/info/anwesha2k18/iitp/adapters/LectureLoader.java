@@ -5,7 +5,6 @@ import android.content.Context;
 
 import java.util.List;
 
-import info.anwesha2k18.iitp.data.LecturesData;
 import info.anwesha2k18.iitp.data.WorkshopData;
 import info.anwesha2k18.iitp.utils.ExtractWorkshop;
 

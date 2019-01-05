@@ -16,7 +16,6 @@ import com.bumptech.glide.request.RequestOptions;
 import java.util.List;
 
 import info.anwesha2k18.iitp.R;
-import info.anwesha2k18.iitp.data.LecturesData;
 import info.anwesha2k18.iitp.data.WorkshopData;
 
 public class LectureAdapter extends ArrayAdapter<WorkshopData> {

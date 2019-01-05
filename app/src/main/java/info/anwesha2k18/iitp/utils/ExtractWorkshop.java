@@ -18,7 +18,6 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
-import info.anwesha2k18.iitp.data.LecturesData;
 import info.anwesha2k18.iitp.data.WorkshopData;
 
 
