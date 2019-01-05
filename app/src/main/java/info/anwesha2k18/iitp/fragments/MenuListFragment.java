@@ -30,6 +30,8 @@ import info.anwesha2k18.iitp.activities.SponsorsActivity;
 import info.anwesha2k18.iitp.activities.TimelineActivity;
 import info.anwesha2k18.iitp.activities.multiCityActivity;
 import info.anwesha2k18.iitp.activities.webActivity;
+
+import info.anwesha2k18.iitp.activities.workshopActivity;
 import info.anwesha2k18.iitp.activities.WorkshopActivity;
 
 /**
@@ -91,8 +93,9 @@ public class MenuListFragment extends Fragment {
                     startActivity(new Intent(getContext(), LectureActivity.class));
                     break;
                 case R.id.menu_item_workshops:
-                    //Toast.makeText(getContext(), "Coming Soon!", Toast.LENGTH_SHORT).show();
+
                     startActivity(new Intent(getContext(), WorkshopActivity.class));
+
                     break;
                 case R.id.menu_item_exhibitions:
                     Toast.makeText(getContext(), "Coming Soon!", Toast.LENGTH_SHORT).show();
