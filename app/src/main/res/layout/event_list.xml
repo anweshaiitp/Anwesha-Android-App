@@ -7,6 +7,7 @@
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/spons_back_mob"
         android:padding="8dp"
         android:scrollbars="none"
         android:id="@+id/event_list_view">
