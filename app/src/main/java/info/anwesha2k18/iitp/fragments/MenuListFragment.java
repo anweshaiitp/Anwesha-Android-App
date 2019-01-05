@@ -31,7 +31,6 @@ import info.anwesha2k18.iitp.activities.TimelineActivity;
 import info.anwesha2k18.iitp.activities.multiCityActivity;
 import info.anwesha2k18.iitp.activities.webActivity;
 
-
 import info.anwesha2k18.iitp.activities.WorkshopActivity;
 
 /**
