@@ -102,7 +102,7 @@ public class EventCategoryFragment extends Fragment{
                 bundle.putString("short_desc", eventListAdapter.getItem(i).getshort_desc());
                 bundle.putString("organisers", eventListAdapter.getItem(i).getorganisers());
                 bundle.putString("reg_url", eventListAdapter.getItem(i).getreg_url());
-                bundle.putString("rules_url", eventListAdapter.getItem(i).rules_url());
+                bundle.putString("rules_url", eventListAdapter.getItem(i).getrules_url());
                 bundle.putString("time", eventListAdapter.getItem(i).gettime());
                 bundle.putString("venue", eventListAdapter.getItem(i).getvenue());
                 bundle.putString("cover_url", eventListAdapter.getItem(i).getcover_url());
