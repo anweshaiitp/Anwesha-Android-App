@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,6 +51,9 @@ public class HighlightsPage extends android.support.v4.app.Fragment {
         emptyTextView = (TextView) rootView.findViewById(R.id.empty_highlight_text_view);
 
         swipeRefreshLayout = (SwipeRefreshLayout) rootView.findViewById(R.id.swiperefresh_highlights);
+
+        new UpdateHighlightsAsyncTask().execute(new ContextWrapper(getContext()), getContext());
+
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -86,7 +90,6 @@ public class HighlightsPage extends android.support.v4.app.Fragment {
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             String x;
             while ((x = bufferedReader.readLine()) != null) {
-                System.out.println(x);
                 StringTokenizer stringTokenizer = new StringTokenizer(x, ":-");
                 header.add(stringTokenizer.nextToken());
                 details.add(stringTokenizer.nextToken());
