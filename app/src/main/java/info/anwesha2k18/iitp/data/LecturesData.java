@@ -1,29 +1,31 @@
 package info.anwesha2k18.iitp.data;
 
-public class WorkshopData {
+public class LecturesData {
 
     private String workshopName;
-    private String workshopInfoUrl;
+    private String workshopDescription;
     private String workshopDate;
+    private String workshopTime;
     private String workshopVenue;
     private String workshopImageUrl;
 
-    public WorkshopData(){}
+    public LecturesData(){}
 
-    public WorkshopData(String workshopName, String workshopInfoUrl, String workshopDate, String workshopVenue, String workshopImageUrl){
+    public LecturesData(String workshopName, String workshopDescription, String workshopDate, String workshopTime, String workshopVenue, String workshopImageUrl){
         this.workshopDate = workshopDate;
         this.workshopVenue = workshopVenue;
+        this.workshopTime = workshopTime;
         this.workshopName = workshopName;
         this.workshopImageUrl = workshopImageUrl;
-        this.workshopInfoUrl = workshopInfoUrl;
+        this.workshopDescription = workshopDescription;
     }
 
     public String getWorkshopDate() {
         return workshopDate;
     }
 
-    public String getWorkshopInfoUrl() {
-        return workshopInfoUrl;
+    public String getWorkshopDescription() {
+        return workshopDescription;
     }
 
     public String getWorkshopImageUrl() {
@@ -34,6 +36,10 @@ public class WorkshopData {
         return workshopName;
     }
 
+    public String getWorkshopTime() {
+        return workshopTime;
+    }
+
     public String getWorkshopVenue() {
         return workshopVenue;
     }
@@ -42,8 +48,8 @@ public class WorkshopData {
         this.workshopDate = workshopDate;
     }
 
-    public void setWorkshopInfoUrl(String workshopInfoUrl) {
-        this.workshopInfoUrl = workshopInfoUrl;
+    public void setWorkshopDescription(String workshopDescription) {
+        this.workshopDescription = workshopDescription;
     }
 
     public void setWorkshopImageUrl(String workshopImageUrl) {
@@ -52,6 +58,10 @@ public class WorkshopData {
 
     public void setWorkshopName(String workshopName) {
         this.workshopName = workshopName;
+    }
+
+    public void setWorkshopTime(String workshopTime) {
+        this.workshopTime = workshopTime;
     }
 
     public void setWorkshopVenue(String workshopVenue) {
