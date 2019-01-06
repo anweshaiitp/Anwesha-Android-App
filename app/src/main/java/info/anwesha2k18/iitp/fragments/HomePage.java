@@ -2,12 +2,19 @@ package info.anwesha2k18.iitp.fragments;
 
 import android.animation.Animator;
 import android.animation.ObjectAnimator;
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,6 +38,7 @@ import info.anwesha2k18.iitp.R;
 
 import info.anwesha2k18.iitp.activities.AboutActivity;
 import info.anwesha2k18.iitp.activities.EventsActivityNew;
+import info.anwesha2k18.iitp.activities.MainActivity;
 import info.anwesha2k18.iitp.activities.MapActivity;
 import info.anwesha2k18.iitp.activities.MyProfile;
 import info.anwesha2k18.iitp.activities.SocialActivity;
@@ -294,6 +302,15 @@ HomePage extends android.support.v4.app.Fragment {
             }
         });
 
+        //gallery layout
+        galleryLinearLayout = rootView.findViewById(R.id.gallery);
+        galleryLinearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
         //Sponsors layout
         sponsorsLinearLayout = rootView.findViewById(R.id.sponsors);
         sponsorsLinearLayout.setOnClickListener(new View.OnClickListener() {
@@ -364,4 +381,5 @@ HomePage extends android.support.v4.app.Fragment {
         });
         return rootView;
     }
+
 }

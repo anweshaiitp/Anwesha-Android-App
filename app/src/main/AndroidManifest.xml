@@ -78,7 +78,7 @@
             android:name=".activities.MainActivity"
             android:label="@string/app_name"
             android:launchMode="singleTop"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activities.MyProfile"
             android:label="@string/my_profile">
@@ -241,7 +241,7 @@
                 android:value="@string/default_notification_channel_id" />
         </service>
 
-        <activity android:name=".activities.EventInfoActivityNew"></activity>
+        <activity android:name=".activities.EventInfoActivityNew" />
     </application>
 
 </manifest>

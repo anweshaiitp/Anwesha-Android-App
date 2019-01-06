@@ -46,6 +46,9 @@ public class GalleryFragment extends android.support.v4.app.Fragment {
 
         //adding swipe refresh layout info the gallery fragment
         mSwipeRefreshLayout = (SwipeRefreshLayout) rootView.findViewById(R.id.swiperefresh_gallery);
+
+        new ReloadImagesAysncTask().execute(new ContextWrapper(getContext()), getContext());
+
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -122,7 +125,7 @@ public class GalleryFragment extends android.support.v4.app.Fragment {
 
 
     // to trigger download task info background thread on swipe refresh
-    private class ReloadImagesAysncTask extends AsyncTask<Object, Void, Boolean> {
+    public class ReloadImagesAysncTask extends AsyncTask<Object, Void, Boolean> {
         @Override
         protected void onPostExecute(Boolean aBoolean) {
             if (aBoolean) {

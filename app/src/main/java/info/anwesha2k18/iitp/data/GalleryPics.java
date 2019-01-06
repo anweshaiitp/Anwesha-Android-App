@@ -6,8 +6,8 @@ package info.anwesha2k18.iitp.data;
 
 public class GalleryPics {
 
-    private String mPhotoUrl;
-    private String mPicName;
+    private String url;
+    private String picName;
 
     // making an empty constructor for firebase
     public GalleryPics() {
@@ -16,18 +16,25 @@ public class GalleryPics {
     // to set the photo url
     public GalleryPics(String url, String picName) {
 
-        mPhotoUrl = url;
-        mPicName = picName;
+        this.url = url;
+        this.picName = picName;
     }
 
     //returns the photo url
-    public String getmPhotoUrl() {
-        return mPhotoUrl;
+    public String geturl() {
+        return url;
     }
 
     // returns the pic name
-    public String getmPicName() {
-        return mPicName;
+    public String getpicName() {
+        return picName;
     }
 
+    public void seturl(String url) {
+        this.url = url;
+    }
+
+    public void setpicName(String picName) {
+        this.picName = picName;
+    }
 }
