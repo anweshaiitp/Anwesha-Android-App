@@ -21,4 +21,14 @@
         android:layout_centerInParent="true"
         android:id="@+id/workshop_progress"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:layout_alignParentBottom="true"
+        android:text="REGISTER"
+        android:id="@+id/workshop_register_button"
+        android:textColor="@color/white"
+        android:textSize="20sp"/>
+
 </RelativeLayout>
