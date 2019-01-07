@@ -5,10 +5,11 @@ import android.content.Context;
 
 import java.util.List;
 
+import info.anwesha2k18.iitp.data.LecturesData;
 import info.anwesha2k18.iitp.data.WorkshopData;
 import info.anwesha2k18.iitp.utils.ExtractWorkshop;
 
-public class LectureLoader extends AsyncTaskLoader<List<WorkshopData>> {
+public class LectureLoader extends AsyncTaskLoader<List<LecturesData>> {
 
     private String mUrl;
 
@@ -23,11 +24,11 @@ public class LectureLoader extends AsyncTaskLoader<List<WorkshopData>> {
     }
 
     @Override
-    public List<WorkshopData> loadInBackground() {
+    public List<LecturesData> loadInBackground() {
         if (mUrl == null) {
             return null;
         }
-        List<WorkshopData> lecturesDataList = ExtractWorkshop.extLectures(mUrl);
+        List<LecturesData> lecturesDataList = ExtractWorkshop.extLectures(mUrl);
         return  lecturesDataList;
     }
 

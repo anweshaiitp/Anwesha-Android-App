@@ -39,7 +39,7 @@
                 app:layout_collapseParallaxMultiplier="0.3">
 
                 <LinearLayout
-                    android:id="@+id/main.linearlayout.title"
+                    android:id="@+id/main_linearlayout_hide_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -229,7 +229,7 @@
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <Space
@@ -237,11 +237,12 @@
                 android:layout_height="@dimen/image_final_width" />
 
             <TextView
-                android:id="@+id/main.textview.title"
+                android:id="@+id/main_hiding_textview_title"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="8dp"
                 android:gravity="center_vertical"
+                android:text="test"
                 android:textColor="@android:color/white"
                 android:textSize="20sp" />
 

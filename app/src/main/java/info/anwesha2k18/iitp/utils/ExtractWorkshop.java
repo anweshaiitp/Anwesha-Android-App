@@ -18,6 +18,7 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
+import info.anwesha2k18.iitp.data.LecturesData;
 import info.anwesha2k18.iitp.data.WorkshopData;
 
 
@@ -62,13 +63,12 @@ public final class ExtractWorkshop {
                 JSONObject currentWorkshop = workshopArray.getJSONObject(j);
 
                 String name = currentWorkshop.getString("name");
-                String description = currentWorkshop.getString("description");
+                String infourl = currentWorkshop.getString("infourl");
                 String date = currentWorkshop.getString("date");
-                String time = currentWorkshop.getString("time");
                 String venue = currentWorkshop.getString("venue");
                 String imageUrl = currentWorkshop.getString("imageurl");
 
-                workshopDataList.add(new WorkshopData(name, description, date, time, venue, imageUrl));
+                workshopDataList.add(new WorkshopData(name, infourl, date, venue, imageUrl));
             }
 
         } catch (JSONException e) {
@@ -140,7 +140,7 @@ public final class ExtractWorkshop {
         return outputJson.toString();
     }
 
-    public static List<WorkshopData> extLectures(String requestUrl){
+    public static List<LecturesData> extLectures(String requestUrl){
         URL url = createUrl(requestUrl);
 
         String jsonResponse = null;
@@ -152,17 +152,17 @@ public final class ExtractWorkshop {
             Log.e(LOG_TAG, "Problem making the HTTP request.", e);
         }
 
-        List<WorkshopData> lecturesDataList = extractLectures(jsonResponse);
+        List<LecturesData> lecturesDataList = extractLectures(jsonResponse);
         return lecturesDataList;
     }
 
-    public static List<WorkshopData> extractLectures(String jsonResponse) {
+    public static List<LecturesData> extractLectures(String jsonResponse) {
 
         if (TextUtils.isEmpty(jsonResponse)) {
             return null;
         }
 
-        List<WorkshopData> lecturesDataList = new ArrayList<>();
+        List<LecturesData> lecturesDataList = new ArrayList<>();
         try {
 
             JSONObject jsonObject = new JSONObject(jsonResponse);
@@ -179,7 +179,7 @@ public final class ExtractWorkshop {
                 String venue = currentLecture.getString("venue");
                 String imageUrl = currentLecture.getString("imageurl");
 
-                lecturesDataList.add(new WorkshopData(name, description, date, time, venue, imageUrl));
+                lecturesDataList.add(new LecturesData(name, description, date, time, venue, imageUrl));
             }
 
         } catch (JSONException e) {
