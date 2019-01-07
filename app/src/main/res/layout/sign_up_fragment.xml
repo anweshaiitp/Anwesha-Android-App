@@ -17,11 +17,12 @@
             android:background="@drawable/bubble"
             android:gravity="center_vertical"
             android:hint="@string/email"
-            android:inputType="text"
+            android:inputType="textEmailAddress"
             android:paddingStart="32dp"
             android:paddingEnd="32dp"
             android:textColor="#000"
-            android:textColorHint="#000" />
+            android:textColorHint="#000"
+            android:id="@+id/sign_up_email"/>
 
         <EditText
             android:layout_width="300dp"
@@ -35,7 +36,8 @@
             android:paddingStart="32dp"
             android:textColor="#000"
             android:paddingEnd="32dp"
-            android:textColorHint="#000" />
+            android:textColorHint="#000"
+            android:id="@+id/sign_up_password"/>
 
         <EditText
             android:layout_width="300dp"
@@ -49,6 +51,7 @@
             android:paddingEnd="32dp"
             android:paddingStart="32dp"
             android:textColor="#000"
-            android:textColorHint="#000" />
+            android:textColorHint="#000"
+            android:id="@+id/sign_up_password_re"/>
     </LinearLayout>
 </FrameLayout>

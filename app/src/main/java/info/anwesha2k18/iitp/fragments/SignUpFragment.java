@@ -1,5 +1,6 @@
 package info.anwesha2k18.iitp.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 
 import info.anwesha2k18.iitp.OnSignUpListener;
 import info.anwesha2k18.iitp.R;
+import info.anwesha2k18.iitp.activities.RegisterActivity;
 // import info.anwesha2k18.iitp.activities.RegisterActivity;
 // import info.anwesha2k18.iitp.utils.Rotate;
 // import info.anwesha2k18.iitp.utils.TextSizeTransition;
@@ -91,8 +93,10 @@ import info.anwesha2k18.iitp.R;
 //     }
 
 
+
 public class SignUpFragment extends Fragment implements OnSignUpListener {
     private static final String TAG = "SignUpFragment";
+    private View root_view ;
     public SignUpFragment() {
         // Required empty public constructor
     }
@@ -100,14 +104,19 @@ public class SignUpFragment extends Fragment implements OnSignUpListener {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View inflate = inflater.inflate(R.layout.sign_up_fragment, container, false);
-
-
-        return inflate;
+        root_view = inflater.inflate(R.layout.sign_up_fragment, container, false);
+        return root_view;
     }
 
     @Override
     public void signUp() {
-        Toast.makeText(getContext(), "Sign up", Toast.LENGTH_SHORT).show();
+        EditText email_view = root_view.findViewById(R.id.sign_up_email) ;
+        EditText password = root_view.findViewById(R.id.sign_up_password);
+        EditText re_password = root_view.findViewById(R.id.sign_up_password_re);
+        Intent intent = new Intent(getContext(), RegisterActivity.class);
+        intent.putExtra("user_email", email_view.getText().toString().trim());
+        intent.putExtra("user_pass", password.getText().toString().trim());
+        intent.putExtra("user_pass_re", re_password.getText().toString().trim());
+        startActivity(intent);
     }
 }

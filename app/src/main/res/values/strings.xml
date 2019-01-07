@@ -56,7 +56,7 @@
     <string name="error_empty_field">Empty Field</string>
     <string name="mobile_no_hint">Mobile No.</string>
     <string name="error_invalid_mobile_no">Invalid Mobile No.</string>
-    <string name="register_url">https://anwesha.info/user/register/User/</string>
+    <string name="register_url">https://www.anwesha.info/user/register/User/</string>
     <string name="api_key">99537874e694ecc9323cc986dd452d2502740dcc</string>
     <string name="register_param_name">name</string>
     <string name="register_param_college">college</string>

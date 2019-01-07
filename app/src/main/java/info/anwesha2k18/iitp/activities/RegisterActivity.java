@@ -81,8 +81,9 @@ public class RegisterActivity extends AppCompatActivity {
         Bundle bundle;
         Intent intent = getIntent();
         bundle = intent.getExtras();
-        mEmail = bundle.getString("email");
-        mPassword = bundle.getString("password");
+        mEmail = bundle.getString("user_email","");
+        mPassword = bundle.getString("user_pass", "");
+        mConfirmPassword = bundle.getString("user_pass_re","");
         mUrl = getString(R.string.register_url);
         mQueue = Volley.newRequestQueue(this);
         buttonRegister = findViewById(R.id.button_register);
@@ -97,10 +98,10 @@ public class RegisterActivity extends AppCompatActivity {
         mobileNoWrapper = findViewById(R.id.mobile_no_wrapper);
         refCodeWrapper = findViewById(R.id.ref_code_wrapper);
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+
         Objects.requireNonNull(emailIDWrapper.getEditText()).setText(mEmail);
         Objects.requireNonNull(passwordWrapper.getEditText()).setText(mPassword);
-        Objects.requireNonNull(confirmPasswordWrapper.getEditText()).setText(mPassword);
-        Objects.requireNonNull(confirmPasswordWrapper.getEditText()).setText(mPassword);
+        Objects.requireNonNull(confirmPasswordWrapper.getEditText()).setText(mConfirmPassword);
         genderSpinner = findViewById(R.id.gender_spinner);
         final ArrayAdapter<CharSequence> genderAdapter = ArrayAdapter.createFromResource(this,
                 R.array.gender_array, R.layout.spinner_item);
@@ -122,6 +123,7 @@ public class RegisterActivity extends AppCompatActivity {
         buttonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.e("TAG", "this was triggered");
                 clearErrors();
                 boolean b = validateInputs();
                 if (b) {
