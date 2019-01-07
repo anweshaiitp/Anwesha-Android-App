@@ -10,10 +10,8 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.mxn.soul.flowingdrawer_core.FlowingDrawer;
@@ -24,6 +22,7 @@ import info.anwesha2k18.iitp.R;
 import info.anwesha2k18.iitp.activities.AboutActivity;
 import info.anwesha2k18.iitp.activities.EventsActivityNew;
 import info.anwesha2k18.iitp.activities.FaqActivity;
+import info.anwesha2k18.iitp.activities.LectureActivity;
 import info.anwesha2k18.iitp.activities.LoginActivity;
 import info.anwesha2k18.iitp.activities.MainActivity;
 import info.anwesha2k18.iitp.activities.MyProfile;
@@ -31,7 +30,9 @@ import info.anwesha2k18.iitp.activities.SponsorsActivity;
 import info.anwesha2k18.iitp.activities.TimelineActivity;
 import info.anwesha2k18.iitp.activities.multiCityActivity;
 import info.anwesha2k18.iitp.activities.webActivity;
+
 import info.anwesha2k18.iitp.activities.workshopActivity;
+import info.anwesha2k18.iitp.activities.WorkshopActivity;
 
 /**
  * Created by mxn on 2016/12/13.
@@ -88,12 +89,13 @@ public class MenuListFragment extends Fragment {
 //                    Toast.makeText(MainActivity.this, "Coming Soon!", Toast.LENGTH_SHORT).show();
                     break;
                 case R.id.menu_item_lectures:
-                    Toast.makeText(getContext(), "Coming Soon!", Toast.LENGTH_SHORT).show();
-//                    startActivity(new Intent(MainActivity.this, LecturesActivity.class));
+//                    Toast.makeText(getContext(), "Coming Soon!", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(getContext(), LectureActivity.class));
                     break;
                 case R.id.menu_item_workshops:
-                    //Toast.makeText(getContext(), "Coming Soon!", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(getContext(), workshopActivity.class));
+
+                    startActivity(new Intent(getContext(), WorkshopActivity.class));
+
                     break;
                 case R.id.menu_item_exhibitions:
                     Toast.makeText(getContext(), "Coming Soon!", Toast.LENGTH_SHORT).show();
