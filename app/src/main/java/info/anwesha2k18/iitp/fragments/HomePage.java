@@ -92,7 +92,7 @@ HomePage extends android.support.v4.app.Fragment {
         Calendar c = new GregorianCalendar();
         c.set(Calendar.YEAR, 2019);
         c.set(Calendar.MONTH, 1); // 11 = december
-        c.set(Calendar.DAY_OF_MONTH, 2);
+        c.set(Calendar.DAY_OF_MONTH, 1);
 
         Date xmas = c.getTime();
         Date today = new Date();
