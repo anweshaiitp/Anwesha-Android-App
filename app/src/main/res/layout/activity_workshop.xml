@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@drawable/bg_circus">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
     <ListView
         android:layout_width="match_parent"
@@ -21,14 +27,22 @@
         android:layout_centerInParent="true"
         android:id="@+id/workshop_progress"/>
 
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
-        android:layout_alignParentBottom="true"
         android:text="REGISTER"
         android:id="@+id/workshop_register_button"
         android:textColor="@color/white"
         android:textSize="20sp"/>
 
-</RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>
