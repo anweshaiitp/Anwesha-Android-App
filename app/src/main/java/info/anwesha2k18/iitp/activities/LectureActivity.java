@@ -17,14 +17,15 @@ import info.anwesha2k18.iitp.R;
 import info.anwesha2k18.iitp.adapters.LectureAdapter;
 import info.anwesha2k18.iitp.adapters.LectureLoader;
 import info.anwesha2k18.iitp.adapters.WorkshopAdapter;
+import info.anwesha2k18.iitp.data.LecturesData;
 import info.anwesha2k18.iitp.data.WorkshopData;
 
-public class LectureActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<WorkshopData>>{
+public class LectureActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<LecturesData>>{
 
     private ListView lecturesListView;
     private LectureAdapter mAdapter;
     private ProgressBar mProgressBar;
-    private final String LECTURES_URL = "https://firebasestorage.googleapis.com/v0/b/anwesha-2k19.appspot.com/o/workshop.json?alt=media";
+    private final String LECTURES_URL = "https://firebasestorage.googleapis.com/v0/b/anwesha-2k19.appspot.com/o/lectures%2Flectures.json?alt=media";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -34,8 +35,8 @@ public class LectureActivity extends AppCompatActivity implements LoaderManager.
         mProgressBar = findViewById(R.id.workshop_progress);
         lecturesListView = findViewById(R.id.workshop_list_view);
 
-        List<WorkshopData> lecturesDataList = new ArrayList<WorkshopData>();
-        mAdapter = new LectureAdapter(LectureActivity.this, R.layout.card_workshop, lecturesDataList);
+        List<LecturesData> lecturesDataList = new ArrayList<LecturesData>();
+        mAdapter = new LectureAdapter(LectureActivity.this, R.layout.card_lectures, lecturesDataList);
 
         lecturesListView.setAdapter(mAdapter);
 
@@ -49,12 +50,12 @@ public class LectureActivity extends AppCompatActivity implements LoaderManager.
     }
 
     @Override
-    public Loader<List<WorkshopData>> onCreateLoader(int i, Bundle bundle) {
+    public Loader<List<LecturesData>> onCreateLoader(int i, Bundle bundle) {
         return new LectureLoader(this, LECTURES_URL);
     }
 
     @Override
-    public void onLoadFinished(Loader<List<WorkshopData>> loader, List<WorkshopData> lecturesData) {
+    public void onLoadFinished(Loader<List<LecturesData>> loader, List<LecturesData> lecturesData) {
         mAdapter.clear();
         mProgressBar.setVisibility(View.GONE);
         if (lecturesData != null && !lecturesData.isEmpty()){
@@ -63,7 +64,7 @@ public class LectureActivity extends AppCompatActivity implements LoaderManager.
     }
 
     @Override
-    public void onLoaderReset(Loader<List<WorkshopData>> loader) {
+    public void onLoaderReset(Loader<List<LecturesData>> loader) {
 
     }
 }

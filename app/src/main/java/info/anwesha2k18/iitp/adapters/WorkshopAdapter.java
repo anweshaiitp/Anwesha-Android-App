@@ -36,18 +36,16 @@ public class WorkshopAdapter extends ArrayAdapter<WorkshopData> {
 
         TextView workshopName = (TextView) convertView.findViewById(R.id.workshop_name_display);
         TextView workshopDate = (TextView) convertView.findViewById(R.id.workshop_date_display);
-        TextView workshopTime = (TextView) convertView.findViewById(R.id.workshop_time_display);
         TextView workshopVenue = (TextView) convertView.findViewById(R.id.workshop_venue_display);
-        TextView workshopDescription = (TextView) convertView.findViewById(R.id.workshop_description_display);
+        TextView workshopInfoDisplay = (TextView) convertView.findViewById(R.id.workshop_info_link_display);
         ImageView workshopImage = (ImageView) convertView.findViewById(R.id.workshop_image_display);
 
         WorkshopData currentWorkshop = getItem(position);
 
         workshopName.setText(currentWorkshop.getWorkshopName());
         workshopDate.setText(currentWorkshop.getWorkshopDate());
-        workshopTime.setText(currentWorkshop.getWorkshopTime());
         workshopVenue.setText(currentWorkshop.getWorkshopVenue());
-        workshopDescription.setText(currentWorkshop.getWorkshopDescription());
+        workshopInfoDisplay.setText(currentWorkshop.getWorkshopInfoUrl());
 
         Glide.with(getContext())
                 .load(currentWorkshop.getWorkshopImageUrl())

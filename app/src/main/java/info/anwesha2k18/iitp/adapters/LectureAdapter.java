@@ -16,13 +16,14 @@ import com.bumptech.glide.request.RequestOptions;
 import java.util.List;
 
 import info.anwesha2k18.iitp.R;
+import info.anwesha2k18.iitp.data.LecturesData;
 import info.anwesha2k18.iitp.data.WorkshopData;
 
-public class LectureAdapter extends ArrayAdapter<WorkshopData> {
+public class LectureAdapter extends ArrayAdapter<LecturesData> {
 
     Context mContext;
 
-    public LectureAdapter(@NonNull Context context, int resource, List<WorkshopData> objects) {
+    public LectureAdapter(@NonNull Context context, int resource, List<LecturesData> objects) {
         super(context, resource, objects);
         mContext = context;
     }
@@ -31,28 +32,28 @@ public class LectureAdapter extends ArrayAdapter<WorkshopData> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         if (convertView == null) {
-            convertView = ((Activity) getContext()).getLayoutInflater().inflate(R.layout.card_workshop, parent, false);
+            convertView = ((Activity) getContext()).getLayoutInflater().inflate(R.layout.card_lectures, parent, false);
         }
 
-        TextView workshopName = (TextView) convertView.findViewById(R.id.workshop_name_display);
-        TextView workshopDate = (TextView) convertView.findViewById(R.id.workshop_date_display);
-        TextView workshopTime = (TextView) convertView.findViewById(R.id.workshop_time_display);
-        TextView workshopVenue = (TextView) convertView.findViewById(R.id.workshop_venue_display);
-        TextView workshopDescription = (TextView) convertView.findViewById(R.id.workshop_description_display);
-        ImageView workshopImage = (ImageView) convertView.findViewById(R.id.workshop_image_display);
+        TextView lectureName = (TextView) convertView.findViewById(R.id.lecture_name_display);
+        TextView lectureDate = (TextView) convertView.findViewById(R.id.lecture_date_display);
+        TextView lectureTime = (TextView) convertView.findViewById(R.id.lecture_time_display);
+        TextView lectureVenue = (TextView) convertView.findViewById(R.id.lecture_venue_display);
+        TextView lectureDescription = (TextView) convertView.findViewById(R.id.lecture_description_display);
+        ImageView lectureImage = (ImageView) convertView.findViewById(R.id.lecture_image_display);
 
-        WorkshopData currentWorkshop = getItem(position);
+        LecturesData currentLecture = getItem(position);
 
-        workshopName.setText(currentWorkshop.getWorkshopName());
-        workshopDate.setText(currentWorkshop.getWorkshopDate());
-        workshopTime.setText(currentWorkshop.getWorkshopTime());
-        workshopVenue.setText(currentWorkshop.getWorkshopVenue());
-        workshopDescription.setText(currentWorkshop.getWorkshopDescription());
+        lectureName.setText(currentLecture.getWorkshopName());
+        lectureDate.setText(currentLecture.getWorkshopDate());
+        lectureTime.setText(currentLecture.getWorkshopTime());
+        lectureVenue.setText(currentLecture.getWorkshopVenue());
+        lectureDescription.setText(currentLecture.getWorkshopDescription());
 
         Glide.with(getContext())
-                .load(currentWorkshop.getWorkshopImageUrl())
+                .load(currentLecture.getWorkshopImageUrl())
                 .apply(new RequestOptions().error(R.drawable.anwesha_placeholder))
-                .into(workshopImage);
+                .into(lectureImage);
 
 
         return convertView;

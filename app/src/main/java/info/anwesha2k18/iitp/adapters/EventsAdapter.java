@@ -25,6 +25,7 @@ public class EventsAdapter extends ArrayAdapter<EventListData> {
 
     }
 
+
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         if (convertView==null){

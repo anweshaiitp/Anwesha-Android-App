@@ -1,12 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:ignore="RtlHardcoded"
-    >
+    tools:ignore="RtlHardcoded">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/main.appbar"
@@ -19,20 +16,18 @@
             android:id="@+id/main.collapsing"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
-            >
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
 
             <ImageView
-                android:id="@+id/event_info_imageview"
+                android:id="@+id/event_cover_display"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
-                android:scaleType="fitXY"
+                android:scaleType="centerCrop"
                 android:src="@drawable/slide_main"
                 android:tint="#11000000"
                 app:layout_collapseMode="parallax"
-                app:layout_collapseParallaxMultiplier="0.9"
-                tools:src="@drawable/slide_main"
-                />
+                app:layout_collapseParallaxMultiplier="0.9" />
+
             <FrameLayout
                 android:id="@+id/main.framelayout.title"
                 android:layout_width="match_parent"
@@ -41,27 +36,26 @@
                 android:background="@color/primary"
                 android:orientation="vertical"
                 app:layout_collapseMode="parallax"
-                app:layout_collapseParallaxMultiplier="0.3"
-                >
+                app:layout_collapseParallaxMultiplier="0.3">
 
                 <LinearLayout
-                    android:id="@+id/main.linearlayout.title"
+                    android:id="@+id/main_linearlayout_hide_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:orientation="vertical"
-                    >
+                    android:orientation="vertical">
+
                     <TextView
                         android:id="@+id/event_info_name"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:gravity="bottom|center"
+                        android:layout_alignParentStart="true"
                         android:textAppearance="@android:style/TextAppearance.Material.Headline"
-                        android:textColor="@android:color/white"
-                        android:textSize="30sp"
-                        tools:text="NJATH"
-                        />
+                        android:textSize="25sp"
+                        android:transitionName="event_text_header_transition"
+                        tools:text="Event Name"
+                        android:textColor="@color/white"/>
+
                 </LinearLayout>
             </FrameLayout>
         </android.support.design.widget.CollapsingToolbarLayout>
@@ -87,14 +81,16 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/white"
                 android:orientation="vertical"
                 android:padding="20dp">
+
+
                 <TextView
                     android:id="@+id/event_date_time"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:layout_alignParentTop="true"
                     android:textAppearance="@android:style/TextAppearance.Material.Headline"
                     android:textSize="20sp"
                     tools:text="7th Aug, 10:30 pm" />
@@ -109,64 +105,146 @@
                     android:textSize="20sp"
                     tools:text="Tutorial Block - Room no. 107" />
 
+                <Button
+                    android:id="@+id/btn_register"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/event_venue"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@color/colorDevelopers"
+                    android:text="Register"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:id="@+id/event_reg_link"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/event_venue"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="@string/will_be_updated_soon"
+                    android:textAppearance="@android:style/TextAppearance.Material.Headline"
+                    android:textColorLink="@color/colorSignIn"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/event_already_registered"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/event_venue"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="@string/already_registered"
+                    android:textAppearance="@android:style/TextAppearance.Material.Headline"
+                    android:textColor="@android:color/holo_green_dark"
+                    android:textSize="18sp"
+                    android:visibility="invisible" />
+
                 <TextView
                     android:id="@+id/event_info_textview"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/event_venue"
-                    android:layout_marginTop="16dp"
+                    android:layout_below="@id/btn_register"
                     android:fontFamily="sans-serif-light"
                     android:textAppearance="@android:style/TextAppearance.Holo.Medium"
                     android:textIsSelectable="true"
-                    android:text="The events we will be conducting the auditions for, are:-" />
+                    tools:text="Lorem ipsum dolor sit amet untes gungslla goog oo gaa lossly roemsid dsfaks slal skdlfkan" />
+
+                <TextView
+                    android:id="@+id/rules_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/event_info_textview"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/rules_and_regulations"
+                    android:textAppearance="@android:style/TextAppearance.Material.Headline"
+                    android:textSize="20sp" />
+
                 <TextView
                     android:id="@+id/event_rules_textview"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/event_info_textview"
+                    android:layout_below="@id/rules_header"
                     android:layout_marginTop="8dp"
                     android:fontFamily="sans-serif-light"
                     android:textAppearance="@android:style/TextAppearance.Holo.Medium"
-                    tools:text="Lorem ipsum dolor sit amet untes gungslla goog oo gaa lossly roemsid dsfaks slal skdlfkan" />
+                    android:textColorLink="@color/colorSignIn"
+                    android:textColor="#00bfa5"
+                    android:autoLink="web"
+                    />
 
 
+
+                <TextView
+                    android:id="@+id/event_organizers_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/event_rules_textview"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/event_organizers"
+                    android:textAppearance="@android:style/TextAppearance.Material.Headline"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/event_organizers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/event_organizers_header"
+                    android:layout_marginTop="8dp"
+                    android:autoLink="phone"
+                    android:fontFamily="sans-serif-light"
+                    android:textAppearance="@android:style/TextAppearance.Holo.Medium"
+                    android:textColorLink="@color/colorSignIn"
+                    tools:text="Mayank Vaidya" />
+
+                <TextView
+                    android:id="@+id/event_contact"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/event_organizers_header"
+                    android:layout_marginTop="8dp"
+                    android:layout_toRightOf="@id/event_organizers"
+                    android:textAppearance="@android:style/TextAppearance.Holo.Medium"
+                    android:textColor="@color/colorDevelopers"
+                    android:textIsSelectable="true"
+                    tools:text="9955539372" />
             </RelativeLayout>
         </android.support.v7.widget.CardView>
 
 
     </android.support.v4.widget.NestedScrollView>
 
+
+
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/main.toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="?attr/actionBarSize"
         android:background="@color/primary"
         app:layout_anchor="@id/main.framelayout.title"
         app:theme="@style/ThemeOverlay.AppCompat.Dark"
-        app:title=""
-        >
+        app:title="">
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            >
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <Space
                 android:layout_width="@dimen/image_final_width"
-                android:layout_height="@dimen/image_final_width"
-                />
+                android:layout_height="@dimen/image_final_width" />
 
             <TextView
-                android:id="@+id/main.textview.title"
+                android:id="@+id/main_hiding_textview_title"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="8dp"
                 android:gravity="center_vertical"
                 android:text="test"
                 android:textColor="@android:color/white"
-                android:textSize="20sp"
-                />
+                android:textSize="20sp" />
 
         </LinearLayout>
     </android.support.v7.widget.Toolbar>
@@ -176,14 +254,11 @@
         android:layout_height="@dimen/image_width"
         android:layout_gravity="center_horizontal"
         android:src="@drawable/anwesha_banner"
-        app:border_color="@android:color/white"
-        app:border_width="0dp"
         app:finalHeight="@dimen/image_final_width"
         app:finalYPosition="2dp"
         app:layout_behavior="info.anwesha2k18.iitp.utils.AvatarImageBehavior"
         app:startHeight="2dp"
         app:startToolbarPosition="2dp"
-        app:startXPosition="2dp"
-        />
+        app:startXPosition="2dp" />
 
 </android.support.design.widget.CoordinatorLayout>

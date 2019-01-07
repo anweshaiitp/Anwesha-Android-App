@@ -17,4 +17,9 @@
         android:orderInCategory="100"
         android:title="Register"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/exit_app"
+        android:orderInCategory="100"
+        android:title="Exit App"
+        app:showAsAction="never" />
 </menu>

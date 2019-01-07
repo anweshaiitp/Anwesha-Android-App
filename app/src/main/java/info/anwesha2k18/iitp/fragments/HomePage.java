@@ -1,17 +1,20 @@
 package info.anwesha2k18.iitp.fragments;
 
 import android.animation.Animator;
-import android.animation.AnimatorInflater;
-import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,7 +24,6 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,6 +38,7 @@ import info.anwesha2k18.iitp.R;
 
 import info.anwesha2k18.iitp.activities.AboutActivity;
 import info.anwesha2k18.iitp.activities.EventsActivityNew;
+import info.anwesha2k18.iitp.activities.MainActivity;
 import info.anwesha2k18.iitp.activities.MapActivity;
 import info.anwesha2k18.iitp.activities.MyProfile;
 import info.anwesha2k18.iitp.activities.SocialActivity;
@@ -43,6 +46,7 @@ import info.anwesha2k18.iitp.activities.SponsorsActivity;
 import info.anwesha2k18.iitp.activities.TeamActivity;
 import info.anwesha2k18.iitp.activities.TimelineActivity;
 import info.anwesha2k18.iitp.adapters.EventsAdapter;
+import info.anwesha2k18.iitp.adapters.SliderAdapter;
 import info.anwesha2k18.iitp.listeners.ViewPagerCustomDuration;
 
 /**
@@ -169,12 +173,14 @@ HomePage extends android.support.v4.app.Fragment {
 
         final ViewPagerCustomDuration viewPagerCustomDuration = (ViewPagerCustomDuration) rootView.findViewById(R.id.events_pager);
         viewPagerCustomDuration.setScrollDuration(900);
- //       EventsAdapter eventsAdapter = new EventsAdapter(getContext(),
-   //             getResources().obtainTypedArray(R.array.array_home_slide_show));
+       // EventsAdapter eventsAdapter = new EventsAdapter(getContext(), getResources().obtainTypedArray(R.array.array_home_slide_show));
 
-  //      viewPagerCustomDuration.setAdapter(eventsAdapter);
+        //viewPagerCustomDuration.setAdapter(eventsAdapter);
         /*Adding automatic swap to the images
         * */
+
+        SliderAdapter sliderAdapter=new SliderAdapter(getContext(),getResources().obtainTypedArray(R.array.array_home_slide_show));
+        viewPagerCustomDuration.setAdapter(sliderAdapter);
         final Handler handler = new Handler();
         final Runnable Update = new Runnable() {
             public void run() {
@@ -277,7 +283,6 @@ HomePage extends android.support.v4.app.Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(rootView.getContext(), AboutActivity.class);
                 startActivity(intent);
-                comingSoonToast.show();
             }
         });
 
@@ -294,6 +299,15 @@ HomePage extends android.support.v4.app.Fragment {
                     Intent intentLogin = new Intent(getContext(), MyProfile.class);
                     startActivity(intentLogin);
                 }
+            }
+        });
+
+        //gallery layout
+        galleryLinearLayout = rootView.findViewById(R.id.gallery);
+        galleryLinearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
             }
         });
 
@@ -367,4 +381,5 @@ HomePage extends android.support.v4.app.Fragment {
         });
         return rootView;
     }
+
 }
