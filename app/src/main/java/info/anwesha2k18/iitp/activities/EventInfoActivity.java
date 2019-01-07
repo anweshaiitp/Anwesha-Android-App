@@ -335,7 +335,7 @@ public class EventInfoActivity extends AppCompatActivity
         ((TextView) findViewById(R.id.event_info_name)).setText(header);
         ((TextView) findViewById(R.id.main_textview_title)).setText(header);
         Glide.with(this)
-                .load("http://beta.anwesha.info/assets/img/3.png")
+                .load("https://firebasestorage.googleapis.com/v0/b/timetable-grobo.appspot.com/o/Black%20v2%5B536%5D.jpg?alt=media&token=f55229c3-d3ff-4f5b-b3db-68808947f8e7")
                 .apply(new RequestOptions().error(R.drawable.anwesha_placeholder))
                 .into((ImageView) findViewById(R.id.event_info_imageview));
 

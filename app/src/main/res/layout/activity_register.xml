@@ -120,7 +120,7 @@
                     android:hint="@string/Birthday"
                     android:inputType="date"
                     android:maxLines="1"
-                    android:textColor="@color/colorPrimaryLight" />
+                    android:textColor="@color/white" />
 
             </android.support.design.widget.TextInputLayout>
 

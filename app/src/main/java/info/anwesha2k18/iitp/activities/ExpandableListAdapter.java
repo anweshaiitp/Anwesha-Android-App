@@ -13,7 +13,8 @@ import java.util.List;
 
 import info.anwesha2k18.iitp.R;
 
-public class ExpandableListAdapter extends BaseExpandableListAdapter {
+public class
+ExpandableListAdapter extends BaseExpandableListAdapter {
 
     private Context mContext;
     private List<String> mListDataHeader;

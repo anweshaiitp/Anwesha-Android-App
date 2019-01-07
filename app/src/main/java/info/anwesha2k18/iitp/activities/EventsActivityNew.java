@@ -32,7 +32,6 @@ import info.anwesha2k18.iitp.database.WebSyncDB;
 import info.anwesha2k18.iitp.fragments.EventCategoryFragment;
 
 public class EventsActivityNew extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +46,5 @@ public class EventsActivityNew extends AppCompatActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.event_tabs);
         tabLayout.setupWithViewPager(viewPager);
-
     }
-
 }

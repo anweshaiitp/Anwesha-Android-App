@@ -120,7 +120,6 @@ public class HighlightsPage extends android.support.v4.app.Fragment {
             } else
                 Toast.makeText(getContext(), "No network connection. Please try again later.", Toast.LENGTH_SHORT).show();
         }
-
         @Override
         protected Boolean doInBackground(Object... params) {
             return new NetworkUtils().extractHighlights((ContextWrapper) params[0], (Context) params[1]);

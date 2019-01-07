@@ -82,37 +82,27 @@
     <!--multicity start-->
     <string-array name="array_multicity_event_headers">
         <item>Dhanbad, Jharkhand</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
+        <item>Kanpur, Uttar Pradesh</item>
         <item>-1</item>
     </string-array>
     <string-array name="array_multicity_event_images">
         <item>@drawable/dhanbad</item>
-        <item>@drawable/soon</item>
-        <item>@drawable/soon</item>
-        <item>@drawable/soon</item>
+        <item>@drawable/kanpur</item>
         <item>@drawable/soon</item>
     </string-array>
     <string-array name="array_multicity_event_rules">
         <item>1. Syngphony: for all the music enthusiasts out there, this is just what you need to come out of your coccoon and show the world the magic your voice and your instrument possess.\n2. Heel Turn: Do your legs fail to control themselves whenever you hear some catchy tune? This is for all the dancers who wish to prove themselves in the field.\n3. Maidaan-e-jung: Has acting always amused you? Have an absolute knack for acting? Here we are with our event that lets you unleash the actor hidden within.\n4. Mr. And Miss. Anwesha: Think you have the wits and the looks to take away the much coveted title? In the quest for the best, here we present to you the perfect platform to bring out the model inside you.\n5. Fashion Walk: It is the path that leads you to Mr. and Miss Anwesha.</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
+        <item>1. Syngphony: for all the music enthusiasts out there, this is just what you need to come out of your coccoon and show the world the magic your voice and your instrument possess.\n2. Heel Turn: Do your legs fail to control themselves whenever you hear some catchy tune? This is for all the dancers who wish to prove themselves in the field.\n3. Maidaan-e-jung: Has acting always amused you? Have an absolute knack for acting? Here we are with our event that lets you unleash the actor hidden within.\n4. Mr. And Miss. Anwesha: Think you have the wits and the looks to take away the much coveted title? In the quest for the best, here we present to you the perfect platform to bring out the model inside you.\n5. Fashion Walk: It is the path that leads you to Mr. and Miss Anwesha. </item>
         <item>-1</item>
     </string-array>
     <string-array name="array_multicity_event_date_time">
         <item>28th Oct, 9:00 AM</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
+        <item>3rd Nov, 10:00 AM</item>
         <item>-1</item>
     </string-array>
     <string-array name="array_multicity_event_venue">
         <item>KK College of Engineering and Management</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
+        <item>HBTU Auditorium, Nawabganj, Kanpur</item>
         <item>-1</item>
     </string-array>
     <!--multicity ends-->
