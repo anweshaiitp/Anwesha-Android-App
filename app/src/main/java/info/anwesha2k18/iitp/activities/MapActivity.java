@@ -94,8 +94,6 @@ public class MapActivity extends FragmentActivity implements LoaderManager.Loade
             }
         }
     }
-
-
     public void initialise() {
         LatLng iit = new LatLng(25.535721, 84.851003);
         MarkerOptions op1 = new MarkerOptions();

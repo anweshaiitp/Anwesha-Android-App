@@ -62,10 +62,6 @@
             android:icon="@drawable/ic_group_white_24dp"
             android:title="@string/team" />
         <item
-            android:id="@+id/menu_item_faq"
-            android:icon="@drawable/ic_check_faq"
-            android:title="@string/faq" />
-        <item
             android:id="@+id/menu_item_movie"
             android:icon="@drawable/ic_videocam_white_24dp"
             android:title="@string/aftermovie" />

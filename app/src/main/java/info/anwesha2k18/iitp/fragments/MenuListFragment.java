@@ -13,18 +13,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
-
 import com.mxn.soul.flowingdrawer_core.FlowingDrawer;
-
-import java.util.Objects;
-
 import info.anwesha2k18.iitp.R;
 import info.anwesha2k18.iitp.activities.AboutActivity;
 import info.anwesha2k18.iitp.activities.EventsActivityNew;
-import info.anwesha2k18.iitp.activities.FaqActivity;
 import info.anwesha2k18.iitp.activities.LectureActivity;
 import info.anwesha2k18.iitp.activities.LoginActivity;
 import info.anwesha2k18.iitp.activities.MainActivity;
+import info.anwesha2k18.iitp.activities.MapActivity;
 import info.anwesha2k18.iitp.activities.MyProfile;
 import info.anwesha2k18.iitp.activities.SponsorsActivity;
 import info.anwesha2k18.iitp.activities.TeamActivity;
@@ -33,23 +29,13 @@ import info.anwesha2k18.iitp.activities.multiCityActivity;
 import info.anwesha2k18.iitp.activities.webActivity;
 
 import info.anwesha2k18.iitp.activities.WorkshopActivity;
-
-/**
- * Created by mxn on 2016/12/13.
- * MenuListFragment
- */
-
 public class MenuListFragment extends Fragment {
-
     SharedPreferences sharedPreferences;
-
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
         super.onCreate(savedInstanceState);
     }
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_floating_menu, container,
@@ -60,10 +46,6 @@ public class MenuListFragment extends Fragment {
                 case R.id.menu_item_sponsors:
                     Intent intent = new Intent(getContext(), SponsorsActivity.class);
                     startActivity(intent);
-                    break;
-                case R.id.menu_item_faq:
-                    startActivity(new Intent(getContext(), FaqActivity.class));
-//                    Toast.makeText(MainActivity.this, "Coming Soon!", Toast.LENGTH_SHORT).show();
                     break;
                 case R.id.menu_item_about:
                     startActivity(new Intent(getContext(), AboutActivity.class));
@@ -86,10 +68,9 @@ public class MenuListFragment extends Fragment {
 //                    break;
                 case R.id.menu_item_schedule:
                     startActivity(new Intent(getContext(), TimelineActivity.class));
-//                    Toast.makeText(MainActivity.this, "Coming Soon!", Toast.LENGTH_SHORT).show();
                     break;
                 case R.id.menu_item_lectures:
-//                    Toast.makeText(getContext(), "Coming Soon!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Coming Soon!", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getContext(), LectureActivity.class));
                     break;
                 case R.id.menu_item_workshops:
@@ -99,7 +80,6 @@ public class MenuListFragment extends Fragment {
                     break;
                 case R.id.menu_item_exhibitions:
                     Toast.makeText(getContext(), "Coming Soon!", Toast.LENGTH_SHORT).show();
-//                    startActivity(new Intent(MainActivity.this, ExpoEvents.class));
                     break;
                 case R.id.menu_item_ca:
                     Intent intentweb = new Intent(getContext(), webActivity.class);
@@ -119,13 +99,11 @@ public class MenuListFragment extends Fragment {
                     startActivity(new Intent(getContext(), EventsActivityNew.class));
                     break;
                 case R.id.menu_item_map:
-                    String uri = "https://www.google.com/maps/d/viewer?mid=1Tub6_KM_0Tv8UHkh97SP9Tehv78HBv1e&usp=sharingax&basemap=satellite";
-                    Intent intentMap = new Intent(Intent.ACTION_VIEW, android.net.Uri.parse(uri));
-                    Objects.requireNonNull(getContext()).startActivity(intentMap);
+                    Intent intent1 = new Intent(getContext(), MapActivity.class);
+                    startActivity(intent1);
                     break;
             }
             item.setChecked(true);
-
             FlowingDrawer drawer = (FlowingDrawer) getActivity().findViewById(R.id.drawerlayout);
             drawer.closeMenu();
             if(!getActivity().getClass().equals(MainActivity.class)) {
