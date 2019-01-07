@@ -1,11 +1,14 @@
 package info.anwesha2k18.iitp.activities;
 
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.app.LoaderManager;
 import android.content.Loader;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 
@@ -22,7 +25,9 @@ public class WorkshopActivity extends AppCompatActivity implements LoaderManager
     private ListView workshopListView;
     private WorkshopAdapter mAdapter;
     private ProgressBar mProgressBar;
-    private final String WORKSHOP_URL = "https://firebasestorage.googleapis.com/v0/b/anwesha-2k19.appspot.com/o/workshop.json?alt=media";
+    private Button registerButton;
+
+    private final String WORKSHOP_URL = "https://firebasestorage.googleapis.com/v0/b/anwesha-2k19.appspot.com/o/workshop%2Fworkshop.json?alt=media";
 
 
     @Override
@@ -34,10 +39,22 @@ public class WorkshopActivity extends AppCompatActivity implements LoaderManager
 
         workshopListView = findViewById(R.id.workshop_list_view);
 
+        registerButton =(Button) findViewById(R.id.workshop_register_button);
+
         List<WorkshopData> workshopDataList = new ArrayList<WorkshopData>();
         mAdapter = new WorkshopAdapter(WorkshopActivity.this, R.layout.card_workshop, workshopDataList);
 
         workshopListView.setAdapter(mAdapter);
+
+        registerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String url = "https://www.instamojo.com/techo/anwesha19-iit-patna-techno-workshop-series/";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+            }
+        });
 
         loadWorkshop();
 
