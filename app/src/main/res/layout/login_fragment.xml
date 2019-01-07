@@ -14,8 +14,8 @@
         android:background="@drawable/bubble"
         android:gravity="center_vertical"
         android:paddingStart="32dp"
-        android:hint="@string/email"
-        android:textColor="#000" />
+        android:textColor="#000"
+        android:id="@+id/email_id_signin"/>
 
     <EditText
         android:layout_width="300dp"
@@ -27,8 +27,9 @@
         android:textColorHint="#000"
         android:gravity="center_vertical"
         android:paddingStart="32dp"
-        android:hint="@string/password"
-        android:textColor="#000" />
+        android:textColor="#000"
+        android:inputType="textPassword"
+        android:id="@+id/password_signin"/>
 
     <TextView
         android:layout_width="wrap_content"

@@ -113,7 +113,7 @@
     <string name="qr_url">qrurl</string>
     <string name="qr_code_file_name">qr_code.png</string>
     <string name="qr_code_folder_name">QR</string>
-    <string name="login_api_url">https://anwesha.info/login/</string>
+    <string name="login_api_url">https://www.anwesha.info/login/</string>
     <string name="login_error">Error logging in! Please try again later.</string>
     <string name="sign_in_param_username">username</string>
     <string name="is_qr_downloaded">isQRDownloaded</string>
