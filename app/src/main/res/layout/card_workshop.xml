@@ -24,7 +24,7 @@
                 android:layout_height="160dp"
                 android:id="@+id/workshop_image_display"
                 android:padding="8dp"
-                android:src="@drawable/wac" />
+                 />
 
 
             <LinearLayout

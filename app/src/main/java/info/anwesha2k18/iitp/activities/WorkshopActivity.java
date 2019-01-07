@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.app.LoaderManager;
 import android.content.Loader;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +21,7 @@ public class WorkshopActivity extends AppCompatActivity implements LoaderManager
 
     private ListView workshopListView;
     private WorkshopAdapter mAdapter;
+    private ProgressBar mProgressBar;
     private final String WORKSHOP_URL = "https://firebasestorage.googleapis.com/v0/b/anwesha-2k19.appspot.com/o/workshop.json?alt=media";
 
 
@@ -26,6 +29,8 @@ public class WorkshopActivity extends AppCompatActivity implements LoaderManager
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_workshop);
+
+        mProgressBar = findViewById(R.id.workshop_progress);
 
         workshopListView = findViewById(R.id.workshop_list_view);
 
@@ -52,6 +57,7 @@ public class WorkshopActivity extends AppCompatActivity implements LoaderManager
     public void onLoadFinished(Loader<List<WorkshopData>> loader, List<WorkshopData> data) {
 
         mAdapter.clear();
+        mProgressBar.setVisibility(View.GONE);
         if (data != null && !data.isEmpty()){
             mAdapter.addAll(data);
         }

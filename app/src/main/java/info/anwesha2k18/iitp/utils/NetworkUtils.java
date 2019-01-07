@@ -58,7 +58,7 @@ public class NetworkUtils {
             mFirebaseDatabase = FirebaseDatabase.getInstance();
 
             //getting reference to message part of the app
-            mUrlDatabaseReference = mFirebaseDatabase.getReference().child("Url");
+            mUrlDatabaseReference = mFirebaseDatabase.getReference().child("imageurl");
 
             //creating an instance of Firebase storage
             mStorage = FirebaseStorage.getInstance();
@@ -124,13 +124,13 @@ public class NetworkUtils {
 
                         //try creating a local file with the image name
                         try {
-                            localFile = new File(directory, galleryPics.getmPicName());
+                            localFile = new File(directory, galleryPics.getpicName());
 //                            Toast.makeText(getApplicationContext(), localFile.getAbsolutePath(), Toast.LENGTH_SHORT).show();
                         } catch (Exception e) {
 
                             Log.e(LOG_TAG, e.getMessage());
                         }
-                        islandRef = mStorageReference.child(galleryPics.getmPhotoUrl());
+                        islandRef = mStorageReference.child(galleryPics.geturl());
 
                         tasks.add(islandRef.getFile(localFile));
                         tasks.get(loop).addOnCompleteListener(new OnCompleteListener<FileDownloadTask.TaskSnapshot>() {
@@ -173,7 +173,7 @@ public class NetworkUtils {
             //opens connection with the database
             mFirebaseDatabase = FirebaseDatabase.getInstance();
             //getting reference of the child
-            mhighlightsDatabaseReference = mFirebaseDatabase.getReference().child("Highlights");
+            mhighlightsDatabaseReference = mFirebaseDatabase.getReference().child("highlights");
 
             mhighlightsChildeventlistener = new ChildEventListener() {
                 @Override
