@@ -241,7 +241,12 @@
                 android:value="@string/default_notification_channel_id" />
         </service>
 
-        <activity android:name=".activities.EventInfoActivityNew" />
+        <activity android:name=".activities.EventInfoActivityNew"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="info.anwesha2k18.iitp.activities.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

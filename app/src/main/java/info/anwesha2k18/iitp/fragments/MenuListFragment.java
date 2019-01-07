@@ -27,6 +27,7 @@ import info.anwesha2k18.iitp.activities.LoginActivity;
 import info.anwesha2k18.iitp.activities.MainActivity;
 import info.anwesha2k18.iitp.activities.MyProfile;
 import info.anwesha2k18.iitp.activities.SponsorsActivity;
+import info.anwesha2k18.iitp.activities.TeamActivity;
 import info.anwesha2k18.iitp.activities.TimelineActivity;
 import info.anwesha2k18.iitp.activities.multiCityActivity;
 import info.anwesha2k18.iitp.activities.webActivity;
@@ -112,9 +113,7 @@ public class MenuListFragment extends Fragment {
                     startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=tare6Drw0Ng&t=91s")));
                     break;
                 case R.id.menu_item_team:
-                    Toast.makeText(getContext(), "Coming Soon!", Toast.LENGTH_SHORT).show();
-//                    startActivity(new Intent(MainActivity.this, TeamActivity.class));
-//                  startActivity(new Intent(MainActivity.this, TeamActivity.class));
+                    startActivity(new Intent(getContext(), TeamActivity.class));
                     break;
                 case R.id.menu_item_events:
                     startActivity(new Intent(getContext(), EventsActivityNew.class));
