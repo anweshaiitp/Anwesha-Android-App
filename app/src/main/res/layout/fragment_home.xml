@@ -150,6 +150,7 @@
                     android:layout_height="240dp"
                     android:layout_weight="1"
                     card_view:cardElevation="18dp"
+                    android:background="@drawable/aftermovie"
                     >
 
 
@@ -161,7 +162,7 @@
 
                     <!--/>-->
                     <LinearLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:orientation="horizontal"
                         android:id="@+id/after_movie"
@@ -179,9 +180,8 @@
                             android:layout_weight="1"
                             android:layout_height="240sp"
                            android:textStyle="bold"
-                            android:layout_gravity="right"
-                            android:gravity="right"
                             android:textSize="17sp"
+                            android:text=" A\n F\n T \n E\n R \n M \n O\n V \n I \n E "
                             android:background="#000"
                             android:textColor="#fff"/>
 
