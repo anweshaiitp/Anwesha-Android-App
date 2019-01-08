@@ -1,14 +1,19 @@
 package info.anwesha2k18.iitp.activities;
 
+import android.Manifest;
+import android.app.ActivityManager;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.content.ContextCompat;
@@ -51,12 +56,20 @@ public class MainActivity extends AppCompatActivity {
     private Menu menu = null;
     private FlowingDrawer mDrawer;
     private FirebaseDatabase mfirebase;
+    private boolean permission;
+    private static final int CAMERA_REQUEST = 50;
+
+    Intent mServiceIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        permission = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED;
+        if (!permission) {
+            ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.CAMERA}, CAMERA_REQUEST);
+        }
         createNotificationChannel();
         getDatabase();
 
