@@ -53,6 +53,8 @@ public class EventCategoryFragment extends Fragment{
 
         mfirebase = FirebaseDatabase.getInstance();
         eventsDatabaseReference = mfirebase.getReference().child("events");
+        eventsDatabaseReference.keepSynced(true);
+
 
         switch (getArguments().getInt("eventCategoryNumber")){
 

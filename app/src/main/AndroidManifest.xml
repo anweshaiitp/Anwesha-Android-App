@@ -173,15 +173,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="info.anwesha2k18.iitp.activities.MyProfile" />
         </activity>
-        <activity
-            android:name=".activities.ScheduleActivity"
-            android:label="@string/title_activity_schedule"
-            android:parentActivityName=".activities.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="info.anwesha2k18.iitp.activities.MainActivity" />
-        </activity>
         <!-- <activity -->
         <!-- android:name=".activities.DevelopersActivity" -->
         <!-- android:parentActivityName=".activities.MainActivity"> -->
