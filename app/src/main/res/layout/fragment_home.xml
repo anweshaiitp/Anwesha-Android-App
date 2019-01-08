@@ -212,29 +212,31 @@
                     </android.support.v7.widget.CardView>
 
                     <android.support.v7.widget.CardView
-                        android:id="@+id/about"
+                        android:id="@+id/sponsors"
                         android:layout_width="120dp"
-                        android:layout_height="120dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
                         app:cardBackgroundColor="@color/colorGallery"
                         card_view:cardElevation="20dp">
 
                         <ImageView
                             android:layout_width="60dp"
                             android:layout_height="60dp"
-                            android:layout_gravity="center_horizontal|top"
+                            android:layout_gravity="center_horizontal"
                             android:layout_marginTop="16dp"
-                            android:src="@drawable/ic_info_white_24dp" />
+                            android:src="@drawable/ic_monetization_on_white_24dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal|bottom"
                             android:layout_marginBottom="16dp"
-                            android:text="@string/about"
+                            android:text="@string/sponsors"
                             android:textColor="@color/white"
                             android:textSize="18dp"
                             android:textStyle="bold" />
                     </android.support.v7.widget.CardView>
+
                 </LinearLayout>
             </LinearLayout>
 
@@ -275,30 +277,30 @@
                     </android.support.v7.widget.CardView>
 
                     <android.support.v7.widget.CardView
-                        android:id="@+id/sponsors"
+                        android:id="@+id/about"
                         android:layout_width="120dp"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
+                        android:layout_height="120dp"
                         app:cardBackgroundColor="@color/colorSponsors"
                         card_view:cardElevation="20dp">
 
                         <ImageView
                             android:layout_width="60dp"
                             android:layout_height="60dp"
-                            android:layout_gravity="center_horizontal"
+                            android:layout_gravity="center_horizontal|top"
                             android:layout_marginTop="16dp"
-                            android:src="@drawable/ic_monetization_on_white_24dp" />
+                            android:src="@drawable/ic_info_white_24dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal|bottom"
                             android:layout_marginBottom="16dp"
-                            android:text="@string/sponsors"
+                            android:text="@string/about"
                             android:textColor="@color/white"
                             android:textSize="18dp"
                             android:textStyle="bold" />
                     </android.support.v7.widget.CardView>
+
                 </LinearLayout>
 
                 <android.support.v7.widget.CardView
@@ -316,7 +318,7 @@
                         android:layout_height="240dp"
                         android:layout_gravity="bottom"
                         android:scaleType="fitXY"
-                        android:src="@drawable/giphy_final"/>
+                        android:src="@drawable/giphy_final" />
 
                 </android.support.v7.widget.CardView>
             </LinearLayout>
