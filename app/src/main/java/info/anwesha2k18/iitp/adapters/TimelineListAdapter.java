@@ -45,7 +45,7 @@ public class TimelineListAdapter extends ArrayAdapter<TimelineData> {
             linearLayoutRight.setVisibility(View.GONE);
             timelineEventName.setText(currentEvent.geteveName());
             timelineTime.setText(currentEvent.gettime());
-            //  timelineVenue.setText(currentEvent.getvenue());
+            timelineVenue.setText(currentEvent.getvenue());
        /* Glide.with(getContext())
                 .load(currentEvent.getcover_url())
                 .apply(new RequestOptions().error(R.drawable.anwesha_placeholder))
@@ -59,6 +59,7 @@ public class TimelineListAdapter extends ArrayAdapter<TimelineData> {
             TextView timelineVenue = (TextView) convertView.findViewById(R.id.timeline_venue_right);
             ImageView timelineImageView = (ImageView) convertView.findViewById(R.id.timeline_image_view_right);
 
+            timelineVenue.setText(currentEvent.getvenue());
             linearLayoutRight.setVisibility(View.VISIBLE);
             linearLayoutLeft.setVisibility(View.GONE);
             timelineEventName.setText(currentEvent.geteveName());
