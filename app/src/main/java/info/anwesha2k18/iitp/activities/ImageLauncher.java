@@ -11,11 +11,6 @@ import android.widget.ImageView;
 import java.io.File;
 
 import info.anwesha2k18.iitp.R;
-
-/**
- * Created by manish on 6/9/17.
- */
-
 public class ImageLauncher extends AppCompatActivity {
 
     File picture;
