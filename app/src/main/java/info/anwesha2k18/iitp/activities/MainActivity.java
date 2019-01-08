@@ -24,6 +24,7 @@ import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.facebook.login.LoginManager;
+import com.google.firebase.database.FirebaseDatabase;
 import com.mxn.soul.flowingdrawer_core.ElasticDrawer;
 import com.mxn.soul.flowingdrawer_core.FlowingDrawer;
 
@@ -49,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager mViewPager;
     private Menu menu = null;
     private FlowingDrawer mDrawer;
+    private FirebaseDatabase mfirebase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         createNotificationChannel();
+        getDatabase();
 
         MainActivity.this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         Window window = getWindow();
@@ -85,6 +88,15 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < mPageFragmentAdapter.getCount(); i++)
             tabLayout.getTabAt(i).setIcon(tabIcons[i]);
 
+    }
+
+    private void getDatabase() {
+        if (mfirebase == null) {
+            FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+        }
+        mfirebase = FirebaseDatabase.getInstance();
+
+        mfirebase.setPersistenceCacheSizeBytes(25000000);
     }
 
 
