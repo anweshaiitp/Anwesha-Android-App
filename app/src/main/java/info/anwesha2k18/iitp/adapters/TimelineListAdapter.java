@@ -38,7 +38,7 @@ public class TimelineListAdapter extends ArrayAdapter<TimelineData> {
             LinearLayout linearLayoutRight = (LinearLayout) convertView.findViewById(R.id.timeline_linear_layout_right);
             TextView timelineEventName = (TextView) convertView.findViewById(R.id.timeline_eveName_left);
             TextView timelineTime = (TextView) convertView.findViewById(R.id.timeline_time_left);
-            //  TextView timelineVenue = (TextView) convertView.findViewById(R.id.timeline_venue);
+            TextView timelineVenue = (TextView) convertView.findViewById(R.id.timeline_venue_left);
             ImageView timelineImageView = (ImageView) convertView.findViewById(R.id.timeline_image_view_left);
 
             linearLayoutLeft.setVisibility(View.VISIBLE);
@@ -56,7 +56,7 @@ public class TimelineListAdapter extends ArrayAdapter<TimelineData> {
             LinearLayout linearLayoutRight = (LinearLayout) convertView.findViewById(R.id.timeline_linear_layout_right);
             TextView timelineEventName = (TextView) convertView.findViewById(R.id.timeline_eveName_right);
             TextView timelineTime = (TextView) convertView.findViewById(R.id.timeline_time_right);
-            //  TextView timelineVenue = (TextView) convertView.findViewById(R.id.timeline_venue);
+            TextView timelineVenue = (TextView) convertView.findViewById(R.id.timeline_venue_right);
             ImageView timelineImageView = (ImageView) convertView.findViewById(R.id.timeline_image_view_right);
 
             linearLayoutRight.setVisibility(View.VISIBLE);

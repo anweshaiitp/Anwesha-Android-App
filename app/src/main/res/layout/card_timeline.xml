@@ -8,7 +8,7 @@
     <View
         android:id="@+id/vertical_line"
         android:layout_width="2dp"
-        android:layout_height="120dp"
+        android:layout_height="130dp"
         android:layout_centerInParent="true"
         android:background="@color/colorPrimary" />
 
@@ -45,6 +45,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="10th march , 14:00"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/timeline_venue_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="senate hall"
                 android:textColor="@android:color/white" />
 
         </LinearLayout>
@@ -98,6 +105,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="10th March , 10:00"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/timeline_venue_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="senate hall"
                 android:textColor="@android:color/white" />
 
         </LinearLayout>

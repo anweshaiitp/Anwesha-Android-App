@@ -46,9 +46,9 @@ public class TimelineFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         mfirebase = FirebaseDatabase.getInstance();
-        eventsDatabaseReference = mfirebase.getReference().child("events");
+        eventsDatabaseReference = mfirebase.getReference().child("schedule");
         eventsDatabaseReference.keepSynced(true);
-        eventsDatabaseReference.orderByChild("time");
+       // eventsDatabaseReference.orderByChild("time");
 
         switch (getArguments().getInt("day")){
 
@@ -91,12 +91,12 @@ public class TimelineFragment extends Fragment {
                 @Override
                 public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                     int dayInt = 0;
-                    int getEventCode = Integer.parseInt(dataSnapshot.child("code").getValue().toString());
+                   // int getEventCode = Integer.parseInt(dataSnapshot.child("code").getValue().toString());
                     if (dataSnapshot.child("day").getValue() != null) {
                         dayInt = Integer.parseInt(dataSnapshot.child("day").getValue().toString());
                     }
 
-                    if (dayInt != 0 && dayInt == day && getEventCode !=0){
+                    if (dayInt != 0 && dayInt == day){
                         TimelineData eventListData = dataSnapshot.getValue(TimelineData.class);
                         timelineListAdapter.add(eventListData);
                     }
