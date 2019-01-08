@@ -1,71 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/black"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-<android.support.v7.widget.CardView
-    android:layout_width="match_parent"
-    android:layout_height="120dp"
-    android:layout_margin="8dp"
-    card_view:cardCornerRadius="5dp"
-    card_view:cardElevation="4dp">
+    <View
+        android:id="@+id/vertical_line"
+        android:layout_width="2dp"
+        android:layout_height="130dp"
+        android:layout_centerInParent="true"
+        android:background="@color/colorPrimary" />
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:id="@+id/timeline_linear_layout_right"
+        style="@style/timeline_event_right"
+        android:visibility="gone">
 
-        <ImageView
-            android:layout_width="150dp"
-            android:layout_height="match_parent"
-            android:scaleType="fitXY"
-            android:background="@color/colorPrimaryLight"
-            android:id="@+id/timeline_image_view"
-            android:src="@drawable/social_circus" />
 
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:paddingLeft="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/black"
             android:gravity="center"
-            android:background="@color/colorPrimaryLight"
-            android:orientation="vertical"
-            android:layout_weight="1">
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/timeline_image_view_right"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:paddingBottom="5dp"
+                android:background="@drawable/circle2"
+                android:src="@drawable/slide_ebid" />
 
             <TextView
-                android:layout_width="match_parent"
+                android:id="@+id/timeline_eveName_right"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#fff"
-                android:textAlignment="center"
-                tools:text="Electrobid"
-                android:id="@+id/timeline_eveName"
-                android:textSize="20sp"/>
+                android:text="Robo Showcase"
+                android:textColor="@color/colorPrimary" />
 
             <TextView
-                android:layout_width="match_parent"
+                android:id="@+id/timeline_time_right"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#fff"
-                android:layout_marginTop="5dp"
-                android:textAlignment="center"
-                tools:text="9:00 AM"
-                android:id="@+id/timeline_time"
-                android:textSize="18sp"/>
+                android:text="10th march , 14:00"
+                android:textColor="@android:color/white" />
 
             <TextView
-                android:layout_width="match_parent"
+                android:id="@+id/timeline_venue_right"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#fff"
-                android:id="@+id/timeline_venue"
-                android:layout_marginTop="5dp"
-                tools:text="Senate Hall"
-                android:textAlignment="center"
-                android:textSize="18sp"/>
+                android:text="senate hall"
+                android:textColor="@android:color/white" />
 
         </LinearLayout>
+
+        <View style="@style/timeline_circle_style" />
+
+        <View
+            android:id="@+id/horizontal_line1"
+            android:layout_width="50dp"
+            android:layout_height="2dp"
+            android:background="@color/colorPrimary" />
+
     </LinearLayout>
 
-</android.support.v7.widget.CardView>
+    <LinearLayout
+        android:id="@+id/timeline_linear_layout_left"
+        style="@style/timeline_event_left"
+        android:visibility="gone">
+
+        <View
+            android:id="@+id/horizontal_line2"
+            android:layout_width="50dp"
+            android:layout_height="2dp"
+            android:background="@color/colorPrimary" />
+
+        <View style="@style/timeline_circle_style" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/timeline_image_view_left"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:background="@drawable/circle2"
+                android:paddingBottom="3dp"
+                android:src="@drawable/slide_ebid" />
+
+            <TextView
+                android:id="@+id/timeline_eveName_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rubik's Cube"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/timeline_time_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10th March , 10:00"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/timeline_venue_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="senate hall"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
 </RelativeLayout>
