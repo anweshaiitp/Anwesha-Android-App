@@ -4,7 +4,7 @@
     xmlns:card_view="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="?attr/colorPrimaryDark">
+    android:background="#000000">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -145,11 +145,13 @@
                 android:orientation="horizontal">
 
                 <android.support.v7.widget.CardView
-                    android:id="@+id/events"
+                    android:id="@+id/gallery"
                     android:layout_width="0dp"
                     android:layout_height="240dp"
                     android:layout_weight="1"
-                    card_view:cardElevation="18dp">
+                    card_view:cardElevation="18dp"
+                    android:background="@drawable/aftermovie"
+                    >
 
 
                     <!--<info.anwesha2k18.iitp.utils.GifImageView-->
@@ -157,26 +159,34 @@
                     <!--android:layout_width="match_parent"-->
                     <!--android:layout_height="0dp"-->
                     <!--android:layout_weight="1"-->
-                    <!--/>-->
-                    <pl.droidsonroids.gif.GifImageView
-                        android:id="@+id/gifview"
-                        android:layout_width="match_parent"
-                        android:layout_height="210dp"
-                        android:layout_gravity="top"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/sliderevent" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:layout_gravity="bottom"
-                        android:background="@color/colorPrimaryDark"
-                        android:gravity="center_horizontal"
-                        android:paddingTop="4dp"
-                        android:text="@string/events"
-                        android:textColor="@color/white"
-                        android:textSize="18dp"
-                        android:textStyle="bold" />
+                    <!--/>-->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:id="@+id/after_movie"
+                        android:background="@drawable/aftermovie"
+                        >
+                        <VideoView
+                        android:id="@+id/slideShowGallery"
+                        android:layout_width="0dp"
+                            android:layout_weight="8"
+                        android:layout_height="240dp"
+                        android:layout_gravity="center"
+                        />
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="240sp"
+                           android:textStyle="bold"
+                            android:textSize="17sp"
+                            android:text=" A\n F\n T \n E\n R \n M \n O\n V \n I \n E "
+                            android:background="#000"
+                            android:textColor="#fff"/>
+
+                    </LinearLayout>
+
 
 
                 </android.support.v7.widget.CardView>
@@ -304,7 +314,7 @@
                 </LinearLayout>
 
                 <android.support.v7.widget.CardView
-                    android:id="@+id/gallery"
+                    android:id="@+id/events"
                     android:layout_width="0dp"
                     android:layout_height="240dp"
                     android:layout_weight="1"
@@ -312,13 +322,27 @@
                     card_view:cardElevation="18dp">
 
 
+
                     <pl.droidsonroids.gif.GifImageView
-                        android:id="@+id/slideShowGallery"
+                        android:id="@+id/gifview"
                         android:layout_width="match_parent"
-                        android:layout_height="240dp"
-                        android:layout_gravity="bottom"
+                        android:layout_height="210dp"
+                        android:layout_gravity="top"
                         android:scaleType="fitXY"
-                        android:src="@drawable/giphy_final" />
+                        android:src="@drawable/sliderevent" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_gravity="bottom"
+                        android:background="@color/colorPrimaryDark"
+                        android:gravity="center_horizontal"
+                        android:paddingTop="4dp"
+                        android:text="@string/events"
+                        android:textColor="@color/white"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
 
                 </android.support.v7.widget.CardView>
             </LinearLayout>

@@ -3,9 +3,11 @@ package info.anwesha2k18.iitp.fragments;
 import android.animation.Animator;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -26,6 +28,7 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -67,9 +70,11 @@ HomePage extends android.support.v4.app.Fragment {
     View profileFrameLayout;
     View scheduleLinearLayout;
     View sponsorsLinearLayout;
+    VideoView videoview;
     View teamLinearLayout;
     View CardFrontView;
     View CardBackView;
+    View youtubelauncher;
     View devLinearLayout;
     View mapLinearLayout;
     View socialLinearLayout ;
@@ -220,6 +225,27 @@ HomePage extends android.support.v4.app.Fragment {
 ////                startActivity(intent);
 //            }
 //        });
+        //Video view
+
+        Uri uri = Uri.parse("https://firebasestorage.googleapis.com/v0/b/anwesha-2k19.appspot.com/o/atm_after_movie.mp4?alt=media&token=4ee9cf8a-63fa-4759-a0c0-9b1cfebd3a18");
+        videoview = rootView.findViewById(R.id.slideShowGallery);
+        videoview.setVideoURI(uri);
+        videoview.start();
+
+        //Youtube intent
+        youtubelauncher = rootView.findViewById(R.id.slideShowGallery);
+        youtubelauncher.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.e("hellomessage", "hi man");
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("https://www.youtube.com/watch?v=tare6Drw0Ng"));
+                intent.setPackage("com.google.android.youtube");
+                startActivity(intent);
+                Log.e("hellomessage", "hi man 2");
+
+            }
+        });
 //
         eventsLinearLayout = rootView.findViewById(R.id.events);
         eventsLinearLayout.setOnClickListener(new View.OnClickListener() {
@@ -227,6 +253,7 @@ HomePage extends android.support.v4.app.Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(rootView.getContext(), EventsActivityNew.class);
                 startActivity(intent);
+
             }
         });
 
@@ -310,6 +337,8 @@ HomePage extends android.support.v4.app.Fragment {
 
             }
         });
+
+
 
         //Sponsors layout
         sponsorsLinearLayout = rootView.findViewById(R.id.sponsors);

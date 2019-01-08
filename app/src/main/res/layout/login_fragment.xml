@@ -2,7 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/home_ibg">
 
     <EditText
         android:layout_width="300dp"
@@ -31,13 +32,4 @@
         android:inputType="textPassword"
         android:id="@+id/password_signin"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/forgot_password"
-        android:layout_marginTop="64dp"
-        android:gravity="center"
-        android:text="@string/forgot_password"
-        android:textColor="#ffffff" />
 </LinearLayout>
