@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -32,19 +33,37 @@ public class TimelineListAdapter extends ArrayAdapter<TimelineData> {
         }
         TimelineData currentEvent=getItem(position);
 
-        TextView timelineEventName=(TextView) convertView.findViewById(R.id.timeline_eveName);
-        TextView timelineTime=(TextView) convertView.findViewById(R.id.timeline_time);
-        TextView timelineVenue = (TextView) convertView.findViewById(R.id.timeline_venue);
-        ImageView timelineImageView = (ImageView) convertView.findViewById(R.id.timeline_image_view);
+        if(position %2 == 1) {
+            LinearLayout linearLayoutLeft = (LinearLayout) convertView.findViewById(R.id.timeline_linear_layout_left);
+            LinearLayout linearLayoutRight = (LinearLayout) convertView.findViewById(R.id.timeline_linear_layout_right);
+            TextView timelineEventName = (TextView) convertView.findViewById(R.id.timeline_eveName_left);
+            TextView timelineTime = (TextView) convertView.findViewById(R.id.timeline_time_left);
+            //  TextView timelineVenue = (TextView) convertView.findViewById(R.id.timeline_venue);
+            ImageView timelineImageView = (ImageView) convertView.findViewById(R.id.timeline_image_view_left);
 
-
-        timelineEventName.setText(currentEvent.geteveName());
-        timelineTime.setText(currentEvent.gettime());
-        timelineVenue.setText(currentEvent.getvenue());
-        Glide.with(getContext())
+            linearLayoutLeft.setVisibility(View.VISIBLE);
+            linearLayoutRight.setVisibility(View.GONE);
+            timelineEventName.setText(currentEvent.geteveName());
+            timelineTime.setText(currentEvent.gettime());
+            //  timelineVenue.setText(currentEvent.getvenue());
+       /* Glide.with(getContext())
                 .load(currentEvent.getcover_url())
                 .apply(new RequestOptions().error(R.drawable.anwesha_placeholder))
                 .into(timelineImageView);
+                */
+        } else {
+            LinearLayout linearLayoutLeft = (LinearLayout) convertView.findViewById(R.id.timeline_linear_layout_left);
+            LinearLayout linearLayoutRight = (LinearLayout) convertView.findViewById(R.id.timeline_linear_layout_right);
+            TextView timelineEventName = (TextView) convertView.findViewById(R.id.timeline_eveName_right);
+            TextView timelineTime = (TextView) convertView.findViewById(R.id.timeline_time_right);
+            //  TextView timelineVenue = (TextView) convertView.findViewById(R.id.timeline_venue);
+            ImageView timelineImageView = (ImageView) convertView.findViewById(R.id.timeline_image_view_right);
+
+            linearLayoutRight.setVisibility(View.VISIBLE);
+            linearLayoutLeft.setVisibility(View.GONE);
+            timelineEventName.setText(currentEvent.geteveName());
+            timelineTime.setText(currentEvent.gettime());
+        }
 
 
         return  convertView;
