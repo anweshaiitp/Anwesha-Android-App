@@ -38,7 +38,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Robo Showcase"
-                android:textColor="@color/colorPrimary" />
+                android:gravity="center"
+                android:textSize="16sp"
+                android:textColor="@color/colorPrimaryLight"
+                android:textAllCaps="true"/>
 
             <TextView
                 android:id="@+id/timeline_time_right"
@@ -98,7 +101,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Rubik's Cube"
-                android:textColor="@color/colorPrimary" />
+                android:textAllCaps="true"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:textColor="@color/colorPrimaryLight" />
 
             <TextView
                 android:id="@+id/timeline_time_left"
