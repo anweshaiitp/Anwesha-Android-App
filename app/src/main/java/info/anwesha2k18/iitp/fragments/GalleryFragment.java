@@ -72,7 +72,7 @@ public class GalleryFragment extends android.support.v4.app.Fragment {
                     }
                 }
         ));
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(rootView.getContext(), 2);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(rootView.getContext(), 1);
         imageRecyclerView.setLayoutManager(gridLayoutManager);
 
 
@@ -131,7 +131,6 @@ public class GalleryFragment extends android.support.v4.app.Fragment {
             if (aBoolean) {
                 clearImages();
                 setImages();
-                Toast.makeText(getContext(), "Gallery Updated", Toast.LENGTH_LONG).show();
             } else {
                 Toast.makeText(getContext(), "Download failed. Please try again later", Toast.LENGTH_LONG).show();
             }
