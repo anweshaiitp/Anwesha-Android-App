@@ -167,6 +167,18 @@
                         android:scaleType="fitXY"
                         android:src="@drawable/aftermovie_gif" />
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_gravity="bottom"
+                        android:background="@color/colorPrimary"
+                        android:fadingEdge="horizontal|vertical"
+                        android:gravity="center"
+                        android:text="AFTERMOVIE 2k18"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
 
                 </android.support.v7.widget.CardView>
 
@@ -297,30 +309,27 @@
                     android:layout_width="0dp"
                     android:layout_height="240dp"
                     android:layout_weight="1"
-                    app:cardBackgroundColor="@color/colorPrimaryDark"
                     card_view:cardElevation="18dp">
-
-
-
-                    <pl.droidsonroids.gif.GifImageView
-                        android:id="@+id/gifview"
-                        android:layout_width="match_parent"
-                        android:layout_height="210dp"
-                        android:layout_gravity="top"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/sliderevent" />
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:layout_gravity="bottom"
-                        android:background="@color/colorPrimaryDark"
-                        android:gravity="center_horizontal"
-                        android:paddingTop="4dp"
-                        android:text="@string/events"
+                        android:layout_height="25dp"
+                        android:layout_gravity="top"
+                        android:gravity="center"
+                        android:background="@color/colorPrimary"
+                        android:fadingEdge="vertical|horizontal"
+                        android:text="EVENTS"
                         android:textColor="@color/white"
-                        android:textSize="18dp"
+                        android:textSize="20sp"
                         android:textStyle="bold" />
+
+                    <pl.droidsonroids.gif.GifImageView
+                        android:id="@+id/gifview"
+                        android:layout_gravity="bottom"
+                        android:layout_width="match_parent"
+                        android:layout_height="215dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/sliderevent" />
 
 
                 </android.support.v7.widget.CardView>
