@@ -68,6 +68,10 @@ public class MainActivity extends AppCompatActivity {
         window.setStatusBarColor(ContextCompat.getColor(MainActivity.this, R.color.statusColor));
 
         setupMenu();
+        //Prevent from taking screenshot
+        if(android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.HONEYCOMB) {
+            getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
+        }
 
 
         // Create the adapter that will return a fragment for each of the three
