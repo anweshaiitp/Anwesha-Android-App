@@ -7,13 +7,13 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
+    android:background="@color/colorPrimary"
     tools:context="info.anwesha2k18.iitp.activities.TimelineActivity">
 
     <android.support.design.widget.TabLayout
         android:id="@+id/timeline_tabs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimaryDark"
         android:paddingTop="4dp"
         app:tabSelectedTextColor="@android:color/white"
         app:tabTextColor="@color/grey"
