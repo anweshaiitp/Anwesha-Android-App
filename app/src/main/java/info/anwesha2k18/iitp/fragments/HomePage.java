@@ -214,39 +214,20 @@ HomePage extends android.support.v4.app.Fragment {
         TextView textViewBelow = (TextView)rootView.findViewById(R.id.otherTextBelow);
         SetDaysToAnwesha(textView,textViewAbove,textViewBelow);
 
-//        FloatingActionButton fab = rootView.findViewById(R.id.fab_maps);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                String uri = "https://www.google.com/maps/@?api=1&map_action=map&center=25.535752,84.851065&zoom=16&basemap=satellite";
-//                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
-//                getContext().startActivity(intent);
-////                Intent intent = new Intent(rootView.getContext(), MyProfile.class);
-////                startActivity(intent);
-//            }
-//        });
-        //Video view
-
-        Uri uri = Uri.parse("https://firebasestorage.googleapis.com/v0/b/anwesha-2k19.appspot.com/o/atm_after_movie.mp4?alt=media&token=4ee9cf8a-63fa-4759-a0c0-9b1cfebd3a18");
-        videoview = rootView.findViewById(R.id.slideShowGallery);
-        videoview.setVideoURI(uri);
-        videoview.start();
 
         //Youtube intent
         youtubelauncher = rootView.findViewById(R.id.slideShowGallery);
         youtubelauncher.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.e("hellomessage", "hi man");
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse("https://www.youtube.com/watch?v=tare6Drw0Ng"));
                 intent.setPackage("com.google.android.youtube");
                 startActivity(intent);
-                Log.e("hellomessage", "hi man 2");
 
             }
         });
-//
+
         eventsLinearLayout = rootView.findViewById(R.id.events);
         eventsLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override

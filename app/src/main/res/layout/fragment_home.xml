@@ -150,7 +150,6 @@
                     android:layout_height="240dp"
                     android:layout_weight="1"
                     card_view:cardElevation="18dp"
-                    android:background="@drawable/aftermovie"
                     >
 
 
@@ -160,33 +159,13 @@
                     <!--android:layout_height="0dp"-->
                     <!--android:layout_weight="1"-->
 
-                    <!--/>-->
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal"
-                        android:id="@+id/after_movie"
-                        android:background="@drawable/aftermovie"
-                        >
-                        <VideoView
+                    <pl.droidsonroids.gif.GifImageView
                         android:id="@+id/slideShowGallery"
-                        android:layout_width="0dp"
-                            android:layout_weight="8"
+                        android:layout_width="match_parent"
                         android:layout_height="240dp"
-                        android:layout_gravity="center"
-                        />
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="240sp"
-                           android:textStyle="bold"
-                            android:textSize="17sp"
-                            android:text=" A\n F\n T \n E\n R \n M \n O\n V \n I \n E "
-                            android:background="#000"
-                            android:textColor="#fff"/>
-
-                    </LinearLayout>
-
+                        android:layout_gravity="top"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/aftermovie_gif" />
 
 
                 </android.support.v7.widget.CardView>
