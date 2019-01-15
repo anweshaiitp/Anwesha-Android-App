@@ -54,7 +54,9 @@
                 android:padding="4dp"
                 android:text="This was a whole new level of race foe jkdjfd dfjdidfd fdf dd fdkfdjfkdjfdfdfd fdfd fdfdfdfldfjdlfjdldjfdlfdjdljdldjdlfjddldjf "
                 android:textColor="@android:color/background_light"
-                android:textSize="17sp" />
+                android:textSize="17sp"
+                android:textColorLink="@color/colorSignIn"
+                android:autoLink="web"/>
         </LinearLayout>
 
     </android.support.v7.widget.CardView>

@@ -3,9 +3,11 @@ package info.anwesha2k18.iitp.fragments;
 import android.animation.Animator;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -26,6 +28,7 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -67,9 +70,11 @@ HomePage extends android.support.v4.app.Fragment {
     View profileFrameLayout;
     View scheduleLinearLayout;
     View sponsorsLinearLayout;
+    VideoView videoview;
     View teamLinearLayout;
     View CardFrontView;
     View CardBackView;
+    View youtubelauncher;
     View devLinearLayout;
     View mapLinearLayout;
     View socialLinearLayout ;
@@ -92,7 +97,7 @@ HomePage extends android.support.v4.app.Fragment {
         Calendar c = new GregorianCalendar();
         c.set(Calendar.YEAR, 2019);
         c.set(Calendar.MONTH, 1); // 11 = december
-        c.set(Calendar.DAY_OF_MONTH, 2);
+        c.set(Calendar.DAY_OF_MONTH, 1);
 
         Date xmas = c.getTime();
         Date today = new Date();
@@ -209,24 +214,27 @@ HomePage extends android.support.v4.app.Fragment {
         TextView textViewBelow = (TextView)rootView.findViewById(R.id.otherTextBelow);
         SetDaysToAnwesha(textView,textViewAbove,textViewBelow);
 
-//        FloatingActionButton fab = rootView.findViewById(R.id.fab_maps);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                String uri = "https://www.google.com/maps/@?api=1&map_action=map&center=25.535752,84.851065&zoom=16&basemap=satellite";
-//                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
-//                getContext().startActivity(intent);
-////                Intent intent = new Intent(rootView.getContext(), MyProfile.class);
-////                startActivity(intent);
-//            }
-//        });
-//
+
+        //Youtube intent
+        youtubelauncher = rootView.findViewById(R.id.slideShowGallery);
+        youtubelauncher.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("https://www.youtube.com/watch?v=tare6Drw0Ng"));
+                intent.setPackage("com.google.android.youtube");
+                startActivity(intent);
+
+            }
+        });
+
         eventsLinearLayout = rootView.findViewById(R.id.events);
         eventsLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(rootView.getContext(), EventsActivityNew.class);
                 startActivity(intent);
+
             }
         });
 
@@ -310,6 +318,8 @@ HomePage extends android.support.v4.app.Fragment {
 
             }
         });
+
+
 
         //Sponsors layout
         sponsorsLinearLayout = rootView.findViewById(R.id.sponsors);

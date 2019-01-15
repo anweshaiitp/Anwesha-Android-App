@@ -63,8 +63,6 @@ public class LogInFragment extends Fragment implements OnLoginListener {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         root_view = inflater.inflate(R.layout.login_fragment, container, false);
-        root_view.findViewById(R.id.forgot_password).setOnClickListener(v ->
-                Toast.makeText(getContext(), "Forgot password clicked", Toast.LENGTH_SHORT).show());
         mUrl = getString(R.string.login_api_url);
         emailIDWrapper = root_view.findViewById(R.id.email_id_signin);
         passwordWrapper = root_view.findViewById(R.id.password_signin);

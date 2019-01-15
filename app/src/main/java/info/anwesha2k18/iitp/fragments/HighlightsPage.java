@@ -90,7 +90,7 @@ public class HighlightsPage extends android.support.v4.app.Fragment {
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             String x;
             while ((x = bufferedReader.readLine()) != null) {
-                StringTokenizer stringTokenizer = new StringTokenizer(x, ":-");
+                StringTokenizer stringTokenizer = new StringTokenizer(x, "--");
                 header.add(stringTokenizer.nextToken());
                 details.add(stringTokenizer.nextToken());
             }
