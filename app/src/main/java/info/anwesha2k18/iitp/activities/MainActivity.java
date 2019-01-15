@@ -1,14 +1,19 @@
 package info.anwesha2k18.iitp.activities;
 
+import android.Manifest;
+import android.app.ActivityManager;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.content.ContextCompat;
@@ -24,6 +29,7 @@ import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.facebook.login.LoginManager;
+import com.google.firebase.database.FirebaseDatabase;
 import com.mxn.soul.flowingdrawer_core.ElasticDrawer;
 import com.mxn.soul.flowingdrawer_core.FlowingDrawer;
 
@@ -49,13 +55,23 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager mViewPager;
     private Menu menu = null;
     private FlowingDrawer mDrawer;
+    private FirebaseDatabase mfirebase;
+    private boolean permission;
+    private static final int CAMERA_REQUEST = 50;
+
+    Intent mServiceIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        permission = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED;
+        if (!permission) {
+            ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.CAMERA}, CAMERA_REQUEST);
+        }
         createNotificationChannel();
+        getDatabase();
 
         MainActivity.this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         Window window = getWindow();
@@ -65,6 +81,10 @@ public class MainActivity extends AppCompatActivity {
         window.setStatusBarColor(ContextCompat.getColor(MainActivity.this, R.color.statusColor));
 
         setupMenu();
+        //Prevent from taking screenshot
+        if(android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.HONEYCOMB) {
+            getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
+        }
 
 
         // Create the adapter that will return a fragment for each of the three
@@ -85,6 +105,15 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < mPageFragmentAdapter.getCount(); i++)
             tabLayout.getTabAt(i).setIcon(tabIcons[i]);
 
+    }
+
+    private void getDatabase() {
+        if (mfirebase == null) {
+            FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+        }
+        mfirebase = FirebaseDatabase.getInstance();
+
+        mfirebase.setPersistenceCacheSizeBytes(25000000);
     }
 
 

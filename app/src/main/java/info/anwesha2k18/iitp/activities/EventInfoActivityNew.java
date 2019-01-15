@@ -32,7 +32,8 @@ public class EventInfoActivityNew extends AppCompatActivity implements AppBarLay
     private String cover_url;
 
     TextView eventNameDisplay;
-    TextView eventDate_TimeDisplay;
+    TextView eventDateDisplay;
+    TextView eventTimeDisplay;
     TextView eventVenueDisplay;
     TextView eventRegLinkDisplay;
     TextView eventInfoDisplay;
@@ -72,8 +73,9 @@ public class EventInfoActivityNew extends AppCompatActivity implements AppBarLay
         short_desc = bundle.getString("short_desc");
 
         eventNameDisplay=(TextView) findViewById(R.id.event_info_name);
-        eventDate_TimeDisplay=(TextView) findViewById(R.id.event_date_time);
-        eventVenueDisplay=(TextView) findViewById(R.id.event_venue);
+        eventDateDisplay=(TextView) findViewById(R.id.event_info_date);
+        eventTimeDisplay = (TextView) findViewById(R.id.event_info_time);
+        eventVenueDisplay=(TextView) findViewById(R.id.event_info_venue);
         eventRegLinkDisplay=(TextView) findViewById(R.id.event_reg_link);
         eventInfoDisplay=(TextView) findViewById(R.id.event_info_textview);
         eventRulesDisplay=(TextView) findViewById(R.id.event_rules_textview);
@@ -96,7 +98,8 @@ public class EventInfoActivityNew extends AppCompatActivity implements AppBarLay
 
     private void displayData(){
         eventNameDisplay.setText(eveName);
-        eventDate_TimeDisplay.setText(date+" "+time);
+        eventDateDisplay.setText(date);
+        eventTimeDisplay.setText(time);
         eventVenueDisplay.setText(venue);
         eventRegLinkDisplay.setText(reg_url);
         eventInfoDisplay.setText(long_desc);
