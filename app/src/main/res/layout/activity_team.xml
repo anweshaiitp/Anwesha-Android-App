@@ -34,7 +34,7 @@
 
                         <ImageView
                             style="@style/ContactDP"
-                            android:src="@drawable/himanshu" />
+                            android:src="@drawable/p1" />
 
                         <LinearLayout style="@style/ContactCol">
 
@@ -56,7 +56,8 @@
 
                         <ImageView
                             style="@style/ContactDP"
-                            android:src="@drawable/shiv" />
+                            android:layout_width="81dp"
+                            android:src="@drawable/p2__1547648819_71737" />
 
                         <LinearLayout style="@style/ContactCol">
 
@@ -79,14 +80,14 @@
 
                         <ImageView
                             style="@style/ContactDP"
-                            android:src="@drawable/rahul" />
+                            android:src="@drawable/p3__1547648847_13066" />
 
                         <LinearLayout style="@style/ContactCol">
 
                             <TextView
                                 style="@style/ContactName"
-                                android:text="Ayush Irani" />
-
+                                android:text="Ayush Inani" />
+s
                             <TextView
                                 style="@style/ContactNo"
                                 android:text="+91 7292986255" />
@@ -102,7 +103,7 @@
 
                         <ImageView
                             style="@style/ContactDP"
-                            android:src="@drawable/arin" />
+                            android:src="@drawable/p4__1547649023_96829" />
 
                         <LinearLayout style="@style/ContactCol">
 
@@ -132,7 +133,7 @@
 
                         <ImageView
                             style="@style/ContactDP"
-                            android:src="@drawable/solomon" />
+                            android:src="@drawable/p5__1547649046_21342" />
 
                         <LinearLayout style="@style/ContactCol">
 
@@ -155,7 +156,7 @@
 
                         <ImageView
                             style="@style/ContactDP"
-                            android:src="@drawable/piyush" />
+                            android:src="@drawable/p6" />
 
                         <LinearLayout style="@style/ContactCol">
 
@@ -178,7 +179,7 @@
 
                         <ImageView
                             style="@style/ContactDP"
-                            android:src="@drawable/ashish" />
+                            android:src="@drawable/p7__1547649080_45080" />
 
                         <LinearLayout style="@style/ContactCol">
 
@@ -208,7 +209,7 @@
 
                         <ImageView
                             style="@style/ContactDP"
-                            android:src="@drawable/niru" />
+                            android:src="@drawable/p8__1547649107_47963" />
 
                         <LinearLayout style="@style/ContactCol">
 
@@ -232,7 +233,7 @@
 
                         <ImageView
                             style="@style/ContactDP"
-                            android:src="@drawable/hariraj" />
+                            android:src="@drawable/p9__1547649140_13334" />
 
                         <LinearLayout style="@style/ContactCol">
 
@@ -255,7 +256,7 @@
 
                         <ImageView
                             style="@style/ContactDP"
-                            android:src="@drawable/sahil" />
+                            android:src="@drawable/p10__1547649162_75528" />
 
                         <LinearLayout style="@style/ContactCol">
 
@@ -288,7 +289,7 @@
                         <ImageView
                             android:id="@+id/imageView"
                             style="@style/ContactDP"
-                            android:src="@drawable/ayush" />
+                            android:src="@drawable/p1" />
 
                         <LinearLayout style="@style/ContactCol">
 
@@ -311,7 +312,7 @@
 
                         <ImageView
                             style="@style/ContactDP"
-                            android:src="@drawable/himanshu" />
+                            android:src="@drawable/p11__1547649326_34735" />
 
                         <LinearLayout style="@style/ContactCol">
 
@@ -335,7 +336,7 @@
                         <ImageView
                             android:id="@+id/imageView2"
                             style="@style/ContactDP"
-                            android:src="@drawable/pranav" />
+                            android:src="@drawable/p12__1547649354_70288" />
 
                         <LinearLayout style="@style/ContactCol">
 
@@ -372,7 +373,7 @@
                             <ImageView
                                 android:id="@+id/imageViewsss"
                                 style="@style/ContactDP"
-                                android:src="@drawable/ayush" />
+                                android:src="@drawable/p13__1547649378_41839" />
 
                             <LinearLayout style="@style/ContactCol">
 
@@ -395,7 +396,7 @@
 
                             <ImageView
                                 style="@style/ContactDP"
-                                android:src="@drawable/himanshu" />
+                                android:src="@drawable/p14__1547649490_12016" />
 
                             <LinearLayout style="@style/ContactCol">
 
@@ -419,7 +420,7 @@
                             <ImageView
                                 android:id="@+id/imageViews"
                                 style="@style/ContactDP"
-                                android:src="@drawable/pranav" />
+                                android:src="@drawable/p15__1547649430_46030" />
 
                             <LinearLayout style="@style/ContactCol">
 
@@ -446,7 +447,7 @@
                             <ImageView
                                 android:id="@+id/imageViewsss2"
                                 style="@style/ContactDP"
-                                android:src="@drawable/ayush" />
+                                android:src="@drawable/p16__1547649452_95607" />
 
                             <LinearLayout style="@style/ContactCol">
 
@@ -469,7 +470,7 @@
 
                             <ImageView
                                 style="@style/ContactDP"
-                                android:src="@drawable/himanshu" />
+                                android:src="@drawable/p17__1547649634_24355" />
 
                             <LinearLayout style="@style/ContactCol">
 
@@ -688,7 +689,7 @@
 
                         <ImageView
                             style="@style/ContactDP"
-                            android:src="@drawable/abh_b" />
+                            android:src="@drawable/p18__1547649654_33157" />
 
                         <LinearLayout style="@style/ContactCol">
 
@@ -711,7 +712,7 @@
 
                         <ImageView
                             style="@style/ContactDP"
-                            android:src="@drawable/nitesh" />
+                            android:src="@drawable/p19__1547649672_85101" />
 
                         <LinearLayout style="@style/ContactCol">
 
@@ -734,7 +735,7 @@
 
                         <ImageView
                             style="@style/ContactDP"
-                            android:src="@drawable/shashwat" />
+                            android:src="@drawable/p20__1547649697_67471" />
 
                         <LinearLayout style="@style/ContactCol">
 
@@ -767,7 +768,7 @@
 
                         <ImageView
                             style="@style/ContactDP"
-                            android:src="@drawable/chirag" />
+                            android:src="@drawable/p21__1547649717_50773" />
 
                         <LinearLayout style="@style/ContactCol">
 
@@ -790,7 +791,7 @@
 
                         <ImageView
                             style="@style/ContactDP"
-                            android:src="@drawable/yogi" />
+                            android:src="@drawable/p22__1547649745_97996" />
 
                         <LinearLayout style="@style/ContactCol">
 
