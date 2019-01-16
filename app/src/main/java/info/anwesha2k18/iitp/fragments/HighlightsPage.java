@@ -116,7 +116,6 @@ public class HighlightsPage extends android.support.v4.app.Fragment {
             if (aBoolean) {
                 clearData();
                 setData();
-                Toast.makeText(getContext(), "Highlights updated successfully", Toast.LENGTH_SHORT).show();
             } else
                 Toast.makeText(getContext(), "No network connection. Please try again later.", Toast.LENGTH_SHORT).show();
         }

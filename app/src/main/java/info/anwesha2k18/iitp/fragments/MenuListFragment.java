@@ -59,13 +59,7 @@ public class MenuListFragment extends Fragment {
                         startActivity(intentLogin);
                     }
                     break;
-//                case R.id.menu_item_logout:
-//                    SharedPreferences.Editor sharedPreferencesLogout = PreferenceManager.getDefaultSharedPreferences(this).edit();
-//                    sharedPreferencesLogout.putBoolean(getString(R.string.login_status), false);
-//                    sharedPreferencesLogout.apply();
-//                    refreshMenu();
-//                    Toast.makeText(this, "Logged Out Successfully", Toast.LENGTH_SHORT).show();
-//                    break;
+
                 case R.id.menu_item_schedule:
                     startActivity(new Intent(getContext(), TimelineActivity.class));
                     break;
