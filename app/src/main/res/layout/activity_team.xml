@@ -34,12 +34,14 @@
 
                         <ImageView
                             style="@style/ContactDP"
+                            android:onClick="mayank_wadhwani"
                             android:src="@drawable/p1" />
 
                         <LinearLayout style="@style/ContactCol">
 
                             <TextView
                                 style="@style/ContactName"
+                                android:onClick="mayank_wadhwani"
                                 android:text="Mayank Wadhwani" />
 
                         </LinearLayout>
@@ -57,12 +59,14 @@
                         <ImageView
                             style="@style/ContactDP"
                             android:layout_width="81dp"
+                            android:onClick="yash"
                             android:src="@drawable/p2__1547648819_71737" />
 
                         <LinearLayout style="@style/ContactCol">
 
                             <TextView
                                 style="@style/ContactName"
+                                android:onClick="yash"
                                 android:text="Yash Choudhary" />
 
                             <TextView
@@ -80,14 +84,17 @@
 
                         <ImageView
                             style="@style/ContactDP"
+                            android:onClick="ayush"
                             android:src="@drawable/p3__1547648847_13066" />
 
                         <LinearLayout style="@style/ContactCol">
 
                             <TextView
                                 style="@style/ContactName"
+                                android:onClick="ayush"
                                 android:text="Ayush Inani" />
-s
+                            s
+
                             <TextView
                                 style="@style/ContactNo"
                                 android:text="+91 7292986255" />
@@ -103,12 +110,14 @@ s
 
                         <ImageView
                             style="@style/ContactDP"
+                            android:onClick="milan"
                             android:src="@drawable/p4__1547649023_96829" />
 
                         <LinearLayout style="@style/ContactCol">
 
                             <TextView
                                 style="@style/ContactName"
+                                android:onClick="milan"
                                 android:text="Milan Jolly" />
 
                             <TextView
@@ -133,12 +142,14 @@ s
 
                         <ImageView
                             style="@style/ContactDP"
+                            android:onClick="mayank_tripathi"
                             android:src="@drawable/p5__1547649046_21342" />
 
                         <LinearLayout style="@style/ContactCol">
 
                             <TextView
                                 style="@style/ContactName"
+                                android:onClick="mayank_tripathi"
                                 android:text="Mayank Tripathi" />
 
                             <TextView
@@ -156,12 +167,14 @@ s
 
                         <ImageView
                             style="@style/ContactDP"
+                            android:onClick="balija"
                             android:src="@drawable/p6" />
 
                         <LinearLayout style="@style/ContactCol">
 
                             <TextView
                                 style="@style/ContactName"
+                                android:onClick="balija"
                                 android:text="Shashank Balija" />
 
                             <TextView
@@ -179,12 +192,14 @@ s
 
                         <ImageView
                             style="@style/ContactDP"
+                            android:onClick="naveen"
                             android:src="@drawable/p7__1547649080_45080" />
 
                         <LinearLayout style="@style/ContactCol">
 
                             <TextView
                                 style="@style/ContactName"
+                                android:onClick="naveen"
                                 android:text="Naveen T." />
 
                             <TextView
@@ -209,6 +224,7 @@ s
 
                         <ImageView
                             style="@style/ContactDP"
+                            android:onClick="krishan"
                             android:src="@drawable/p8__1547649107_47963" />
 
                         <LinearLayout style="@style/ContactCol">
@@ -216,6 +232,7 @@ s
                             <TextView
                                 android:id="@+id/textView2"
                                 style="@style/ContactName"
+                                android:onClick="krishan"
                                 android:text="Krishan Kaushik" />
 
                             <TextView
@@ -233,12 +250,14 @@ s
 
                         <ImageView
                             style="@style/ContactDP"
+                            android:onClick="sandeep"
                             android:src="@drawable/p9__1547649140_13334" />
 
                         <LinearLayout style="@style/ContactCol">
 
                             <TextView
                                 style="@style/ContactName"
+                                android:onClick="sandeep"
                                 android:text="Sandeep Tripathy" />
 
                             <TextView
@@ -256,12 +275,14 @@ s
 
                         <ImageView
                             style="@style/ContactDP"
+                            android:onClick="shashank_singh"
                             android:src="@drawable/p10__1547649162_75528" />
 
                         <LinearLayout style="@style/ContactCol">
 
                             <TextView
                                 style="@style/ContactName"
+                                android:onClick="shashank_singh"
                                 android:text="Shashank Singh" />
 
                             <TextView
@@ -289,12 +310,14 @@ s
                         <ImageView
                             android:id="@+id/imageView"
                             style="@style/ContactDP"
+                            android:onClick="mayank_wadhwani"
                             android:src="@drawable/p1" />
 
                         <LinearLayout style="@style/ContactCol">
 
                             <TextView
                                 style="@style/ContactName"
+                                android:onClick="mayank_wadhwani"
                                 android:text="Mayank Wadhwani" />
 
                             <TextView
@@ -312,12 +335,14 @@ s
 
                         <ImageView
                             style="@style/ContactDP"
+                            android:onClick="darsini"
                             android:src="@drawable/p11__1547649326_34735" />
 
                         <LinearLayout style="@style/ContactCol">
 
                             <TextView
                                 style="@style/ContactName"
+                                android:onClick="darsini"
                                 android:text="G Sahi Darshini" />
 
                             <TextView
@@ -336,12 +361,14 @@ s
                         <ImageView
                             android:id="@+id/imageView2"
                             style="@style/ContactDP"
+                            android:onClick="dhanush"
                             android:src="@drawable/p12__1547649354_70288" />
 
                         <LinearLayout style="@style/ContactCol">
 
                             <TextView
                                 style="@style/ContactName"
+                                android:onClick="dhanush"
                                 android:text="Dhanush Ravikumar" />
 
                             <TextView
@@ -373,12 +400,14 @@ s
                             <ImageView
                                 android:id="@+id/imageViewsss"
                                 style="@style/ContactDP"
+                                android:onClick="abhinav_gyan"
                                 android:src="@drawable/p13__1547649378_41839" />
 
                             <LinearLayout style="@style/ContactCol">
 
                                 <TextView
                                     style="@style/ContactName"
+                                    android:onClick="abhinav_gyan"
                                     android:text="Abhinav Gyan" />
 
                                 <TextView
@@ -396,12 +425,14 @@ s
 
                             <ImageView
                                 style="@style/ContactDP"
+                                android:onClick="parth"
                                 android:src="@drawable/p14__1547649490_12016" />
 
                             <LinearLayout style="@style/ContactCol">
 
                                 <TextView
                                     style="@style/ContactName"
+                                    android:onClick="parth"
                                     android:text="Parth Patel" />
 
                                 <TextView
@@ -420,12 +451,14 @@ s
                             <ImageView
                                 android:id="@+id/imageViews"
                                 style="@style/ContactDP"
+                                android:onClick="abhinav_sharma"
                                 android:src="@drawable/p15__1547649430_46030" />
 
                             <LinearLayout style="@style/ContactCol">
 
                                 <TextView
                                     style="@style/ContactName"
+                                    android:onClick="abhinav_sharma"
                                     android:text="Abhinav Sharma" />
 
                                 <TextView
@@ -447,12 +480,14 @@ s
                             <ImageView
                                 android:id="@+id/imageViewsss2"
                                 style="@style/ContactDP"
+                                android:onClick="kundan"
                                 android:src="@drawable/p16__1547649452_95607" />
 
                             <LinearLayout style="@style/ContactCol">
 
                                 <TextView
                                     style="@style/ContactName"
+                                    android:onClick="kundan"
                                     android:text="Kundan Singh" />
 
                                 <TextView
@@ -470,12 +505,14 @@ s
 
                             <ImageView
                                 style="@style/ContactDP"
+                                android:onClick="nilendu"
                                 android:src="@drawable/p17__1547649634_24355" />
 
                             <LinearLayout style="@style/ContactCol">
 
                                 <TextView
                                     style="@style/ContactName"
+                                    android:onClick="nilendu"
                                     android:text="Nilendu Shubham" />
 
                                 <TextView
@@ -689,12 +726,14 @@ s
 
                         <ImageView
                             style="@style/ContactDP"
+                            android:onClick="abhishek"
                             android:src="@drawable/p18__1547649654_33157" />
 
                         <LinearLayout style="@style/ContactCol">
 
                             <TextView
                                 style="@style/ContactName"
+                                android:onClick="abhishek"
                                 android:text="Abhishek Maurya" />
 
                             <TextView
@@ -712,12 +751,14 @@ s
 
                         <ImageView
                             style="@style/ContactDP"
+                            android:onClick="nookesh"
                             android:src="@drawable/p19__1547649672_85101" />
 
                         <LinearLayout style="@style/ContactCol">
 
                             <TextView
                                 style="@style/ContactName"
+                                android:onClick="nookesh"
                                 android:text="Nookesh Pill" />
 
                             <TextView
@@ -735,12 +776,14 @@ s
 
                         <ImageView
                             style="@style/ContactDP"
+                            android:onClick="fazle"
                             android:src="@drawable/p20__1547649697_67471" />
 
                         <LinearLayout style="@style/ContactCol">
 
                             <TextView
                                 style="@style/ContactName"
+                                android:onClick="fazle"
                                 android:text="Fazle Rahman Ejazi" />
 
                             <TextView
@@ -768,12 +811,14 @@ s
 
                         <ImageView
                             style="@style/ContactDP"
+                            android:onClick="tameesh"
                             android:src="@drawable/p21__1547649717_50773" />
 
                         <LinearLayout style="@style/ContactCol">
 
                             <TextView
                                 style="@style/ContactName"
+                                android:onClick="tameesh"
                                 android:text="Tameesh Biswas" />
 
                             <TextView
@@ -791,12 +836,14 @@ s
 
                         <ImageView
                             style="@style/ContactDP"
+                            android:onClick="manish"
                             android:src="@drawable/p22__1547649745_97996" />
 
                         <LinearLayout style="@style/ContactCol">
 
                             <TextView
                                 style="@style/ContactName"
+                                android:onClick="manish"
                                 android:text="Manish Kumar" />
 
                             <TextView
