@@ -17,8 +17,20 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import info.anwesha2k18.iitp.R;
 
@@ -35,6 +47,8 @@ public class EventInfoActivityNew extends AppCompatActivity implements AppBarLay
     private String venue;
     private String cover_url;
     private String eveId;
+
+    String reg_event_url="https://www.anwesha.info/register/";
 
     TextView eventNameDisplay;
     TextView eventDateDisplay;
@@ -86,6 +100,7 @@ public class EventInfoActivityNew extends AppCompatActivity implements AppBarLay
         eventInfoDisplay=(TextView) findViewById(R.id.event_info_textview);
         eventRulesDisplay=(TextView) findViewById(R.id.event_rules_textview);
         eventOrganizersDisplay=(TextView) findViewById(R.id.event_organizers);
+        RequestQueue MyRequestQueue = Volley.newRequestQueue(this);
 
         mAppBarLayout = (AppBarLayout) findViewById(R.id.main_appbar);
         mAppBarLayout.addOnOffsetChangedListener(this);
@@ -110,7 +125,29 @@ public class EventInfoActivityNew extends AppCompatActivity implements AppBarLay
                 }
                 else {
 
+                    Toast.makeText(getApplicationContext(), "Registering..", Toast.LENGTH_SHORT).show();
+                    StringRequest MyStringRequest = new StringRequest(Request.Method.POST, reg_event_url+eveId, new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            //This code is executed if the server responds, whether or not the response contains data.
+                            //The String 'response' contains the server's response.
+                            Toast.makeText(getApplicationContext(), "Getting response ", Toast.LENGTH_LONG).show();
 
+                        }
+                    }, new Response.ErrorListener() { //Create an error listener to handle errors appropriately.
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            //This code is executed if there is an error.
+                            Toast.makeText(getApplicationContext(), "Found error ", Toast.LENGTH_LONG).show();
+                        }
+                    }) {
+                        protected Map<String, String> getParams() {
+                            Map<String, String> MyData = new HashMap<String, String>();
+                            MyData.put("eveglid",eveId); //Add the data you'd like to send to the server.
+                            return MyData;
+                        }
+                    };
+                    MyRequestQueue.add(MyStringRequest);
                 }
             }
         });
