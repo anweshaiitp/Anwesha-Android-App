@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryLight"
@@ -10,7 +10,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/spons_back_mob"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:context=".activities.TeamActivity"
         tools:showIn="@layout/activity_team">
@@ -40,7 +40,7 @@
 
                             <TextView
                                 style="@style/ContactName"
-                                android:text="Himanshu Barua" />
+                                android:text="Mayank Wadhwani" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -62,7 +62,7 @@
 
                             <TextView
                                 style="@style/ContactName"
-                                android:text="Shivpreet Sharma" />
+                                android:text="Yash Choudhary" />
 
                             <TextView
                                 style="@style/ContactNo"
@@ -85,7 +85,7 @@
 
                             <TextView
                                 style="@style/ContactName"
-                                android:text="Rahul Jain" />
+                                android:text="Ayush Irani" />
 
                             <TextView
                                 style="@style/ContactNo"
@@ -108,7 +108,7 @@
 
                             <TextView
                                 style="@style/ContactName"
-                                android:text="Arinjaya Khare" />
+                                android:text="Milan Jolly" />
 
                             <TextView
                                 style="@style/ContactNo"
@@ -138,7 +138,7 @@
 
                             <TextView
                                 style="@style/ContactName"
-                                android:text="Solomon Joy" />
+                                android:text="Mayank Tripathi" />
 
                             <TextView
                                 style="@style/ContactNo"
@@ -161,7 +161,7 @@
 
                             <TextView
                                 style="@style/ContactName"
-                                android:text="Piyush Agarwal" />
+                                android:text="Shashank Balija" />
 
                             <TextView
                                 style="@style/ContactNo"
@@ -184,7 +184,7 @@
 
                             <TextView
                                 style="@style/ContactName"
-                                android:text="Ashish Raj" />
+                                android:text="Naveen T." />
 
                             <TextView
                                 style="@style/ContactNo"
@@ -215,7 +215,7 @@
                             <TextView
                                 android:id="@+id/textView2"
                                 style="@style/ContactName"
-                                android:text="Niranjan Meena" />
+                                android:text="Krishan Kaushik" />
 
                             <TextView
                                 style="@style/ContactNo"
@@ -238,7 +238,7 @@
 
                             <TextView
                                 style="@style/ContactName"
-                                android:text="Hariraj Meena" />
+                                android:text="Sandeep Tripathy" />
 
                             <TextView
                                 style="@style/ContactNo"
@@ -250,9 +250,6 @@
 
                         </LinearLayout>
                     </LinearLayout>
-                </LinearLayout>
-
-                <LinearLayout style="@style/ContactCategory">
 
                     <LinearLayout style="@style/ContactRow">
 
@@ -264,7 +261,7 @@
 
                             <TextView
                                 style="@style/ContactName"
-                                android:text="Sahil Sharma" />
+                                android:text="Shashank Singh" />
 
                             <TextView
                                 style="@style/ContactNo"
@@ -277,30 +274,7 @@
                         </LinearLayout>
                     </LinearLayout>
 
-                    <LinearLayout style="@style/ContactRow">
-
-                        <ImageView
-                            style="@style/ContactDP"
-                            android:src="@drawable/abh_yd" />
-
-                        <LinearLayout style="@style/ContactCol">
-
-                            <TextView
-                                style="@style/ContactName"
-                                android:text="Abhishek Yadav" />
-
-                            <TextView
-                                style="@style/ContactNo"
-                                android:text="+91 7879761602" />
-
-                            <TextView
-                                style="@style/ContactEmail"
-                                android:text="" />
-
-                        </LinearLayout>
-                    </LinearLayout>
                 </LinearLayout>
-
 
                 <TextView
                     android:id="@+id/textView3"
@@ -320,7 +294,7 @@
 
                             <TextView
                                 style="@style/ContactName"
-                                android:text="Ayush Sharma" />
+                                android:text="Mayank Wadhwani" />
 
                             <TextView
                                 style="@style/ContactNo"
@@ -343,7 +317,7 @@
 
                             <TextView
                                 style="@style/ContactName"
-                                android:text="Himanshu Barua" />
+                                android:text="G Sahi Darshini" />
 
                             <TextView
                                 style="@style/ContactNo"
@@ -367,7 +341,7 @@
 
                             <TextView
                                 style="@style/ContactName"
-                                android:text="Pranav Mutharia" />
+                                android:text="Dhanush Ravikumar" />
 
                             <TextView
                                 style="@style/ContactNo"
@@ -381,191 +355,328 @@
                     </LinearLayout>
                 </LinearLayout>
 
-
                 <TextView
+                    android:id="@+id/textViewss"
                     style="@style/ContactHeader"
-                    android:text="Technical" />
+                    android:text="Events" />
 
-                <LinearLayout style="@style/ContactCategory">
+                <LinearLayout
+                    style="@style/ContactHeader"
+                    android:background="@null"
+                    android:orientation="vertical">
 
-                    <LinearLayout style="@style/ContactRow">
+                    <LinearLayout style="@style/ContactCategory">
 
-                        <ImageView
-                            style="@style/ContactDP"
-                            android:src="@drawable/tarun" />
+                        <LinearLayout style="@style/ContactRow">
 
-                        <LinearLayout style="@style/ContactCol">
+                            <ImageView
+                                android:id="@+id/imageViewsss"
+                                style="@style/ContactDP"
+                                android:src="@drawable/ayush" />
 
-                            <TextView
-                                style="@style/ContactName"
-                                android:text="Tarun Garg" />
+                            <LinearLayout style="@style/ContactCol">
 
-                            <TextView
-                                style="@style/ContactNo"
-                                android:text="+91 7597694454" />
+                                <TextView
+                                    style="@style/ContactName"
+                                    android:text="Abhinav Gyan" />
 
-                            <TextView
-                                style="@style/ContactEmail"
-                                android:text="tarungarg.cs15@iitp.ac.in" />
+                                <TextView
+                                    style="@style/ContactNo"
+                                    android:text="+91 9661176887" />
 
+                                <TextView
+                                    style="@style/ContactEmail"
+                                    android:text="ayushsharma.cs15@iitp.ac.in" />
+
+                            </LinearLayout>
                         </LinearLayout>
 
+                        <LinearLayout style="@style/ContactRow">
+
+                            <ImageView
+                                style="@style/ContactDP"
+                                android:src="@drawable/himanshu" />
+
+                            <LinearLayout style="@style/ContactCol">
+
+                                <TextView
+                                    style="@style/ContactName"
+                                    android:text="Parth Patel" />
+
+                                <TextView
+                                    style="@style/ContactNo"
+                                    android:text="" />
+
+                                <TextView
+                                    style="@style/ContactEmail"
+                                    android:text="himanshu.cs15@iitp.ac.in" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout style="@style/ContactRow">
+
+                            <ImageView
+                                android:id="@+id/imageViews"
+                                style="@style/ContactDP"
+                                android:src="@drawable/pranav" />
+
+                            <LinearLayout style="@style/ContactCol">
+
+                                <TextView
+                                    style="@style/ContactName"
+                                    android:text="Abhinav Sharma" />
+
+                                <TextView
+                                    style="@style/ContactNo"
+                                    android:text="+91 9899802982" />
+
+                                <TextView
+                                    style="@style/ContactEmail"
+                                    android:text="pranav.cs15@iitp.ac.in" />
+
+                            </LinearLayout>
+                        </LinearLayout>
                     </LinearLayout>
-                    <LinearLayout style="@style/ContactRow">
 
-                        <ImageView
-                            style="@style/ContactDP"
-                            android:src="@drawable/debdeep" />
+                    <LinearLayout style="@style/ContactCategory">
 
-                        <LinearLayout style="@style/ContactCol">
+                        <LinearLayout style="@style/ContactRow">
 
-                            <TextView
-                                style="@style/ContactName"
-                                android:text="Debdeep Paul" />
+                            <ImageView
+                                android:id="@+id/imageViewsss2"
+                                style="@style/ContactDP"
+                                android:src="@drawable/ayush" />
 
-                            <TextView
-                                style="@style/ContactNo"
-                                android:text="+91 9523865409" />
+                            <LinearLayout style="@style/ContactCol">
 
-                            <TextView
-                                style="@style/ContactEmail"
-                                android:text="debdeep.ee15@iitp.ac.in" />
+                                <TextView
+                                    style="@style/ContactName"
+                                    android:text="Kundan Singh" />
 
+                                <TextView
+                                    style="@style/ContactNo"
+                                    android:text="+91 9661176887" />
+
+                                <TextView
+                                    style="@style/ContactEmail"
+                                    android:text="ayushsharma.cs15@iitp.ac.in" />
+
+                            </LinearLayout>
                         </LinearLayout>
+
+                        <LinearLayout style="@style/ContactRow">
+
+                            <ImageView
+                                style="@style/ContactDP"
+                                android:src="@drawable/himanshu" />
+
+                            <LinearLayout style="@style/ContactCol">
+
+                                <TextView
+                                    style="@style/ContactName"
+                                    android:text="Nilendu Shubham" />
+
+                                <TextView
+                                    style="@style/ContactNo"
+                                    android:text="" />
+
+                                <TextView
+                                    style="@style/ContactEmail"
+                                    android:text="himanshu.cs15@iitp.ac.in" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
                     </LinearLayout>
 
                 </LinearLayout>
 
-                <TextView
-                    android:id="@+id/textView4"
-                    style="@style/ContactHeader"
-                    android:text="Cultural" />
 
-                <LinearLayout style="@style/ContactCategory">
+                <!--   <TextView
+                       style="@style/ContactHeader"
+                       android:text="Technical" />
 
-                    <LinearLayout style="@style/ContactRow">
+                   <LinearLayout style="@style/ContactCategory">
 
-                        <ImageView
-                            style="@style/ContactDP"
-                            android:src="@drawable/rohit" />
+                       <LinearLayout style="@style/ContactRow">
 
-                        <LinearLayout style="@style/ContactCol">
+                           <ImageView
+                               style="@style/ContactDP"
+                               android:src="@drawable/tarun" />
 
-                            <TextView
-                                android:id="@+id/textView6"
-                                style="@style/ContactName"
-                                android:text="Rohit Gupta" />
+                           <LinearLayout style="@style/ContactCol">
 
-                            <TextView
-                                style="@style/ContactNo"
-                                android:text="7042712975" />
+                               <TextView
+                                   style="@style/ContactName"
+                                   android:text="Tarun Garg" />
 
-                            <TextView
-                                style="@style/ContactEmail"
-                                android:text="rohit.me15@iitp.ac.in" />
+                               <TextView
+                                   style="@style/ContactNo"
+                                   android:text="+91 7597694454" />
 
-                        </LinearLayout>
-                    </LinearLayout>
+                               <TextView
+                                   style="@style/ContactEmail"
+                                   android:text="tarungarg.cs15@iitp.ac.in" />
 
-                    <LinearLayout style="@style/ContactRow">
+                           </LinearLayout>
 
-                        <ImageView
-                            style="@style/ContactDP"
-                            android:src="@drawable/vijay" />
+                       </LinearLayout>
+                       <LinearLayout style="@style/ContactRow">
 
-                        <LinearLayout style="@style/ContactCol">
+                           <ImageView
+                               style="@style/ContactDP"
+                               android:src="@drawable/debdeep" />
 
-                            <TextView
-                                style="@style/ContactName"
-                                android:text="Vijay Yadav" />
+                           <LinearLayout style="@style/ContactCol">
 
-                            <TextView
-                                style="@style/ContactNo"
-                                android:text="+91 9455061806" />
+                               <TextView
+                                   style="@style/ContactName"
+                                   android:text="Debdeep Paul" />
 
-                            <TextView
-                                style="@style/ContactEmail"
-                                android:text="vijay.ch15@iitp.ac.in" />
+                               <TextView
+                                   style="@style/ContactNo"
+                                   android:text="+91 9523865409" />
 
-                        </LinearLayout>
-                    </LinearLayout>
-                </LinearLayout>
+                               <TextView
+                                   style="@style/ContactEmail"
+                                   android:text="debdeep.ee15@iitp.ac.in" />
 
-                <TextView
-                    style="@style/ContactHeader"
-                    android:text="Arts &amp; Welfare" />
+                           </LinearLayout>
+                       </LinearLayout>
 
-                <LinearLayout style="@style/ContactCategory">
+                   </LinearLayout>
 
-                    <LinearLayout style="@style/ContactRow">
+                   <TextView
+                       android:id="@+id/textView4"
+                       style="@style/ContactHeader"
+                       android:text="Cultural" />
 
-                        <ImageView
-                            style="@style/ContactDP"
-                            android:src="@drawable/rajneesh" />
+                   <LinearLayout style="@style/ContactCategory">
 
-                        <LinearLayout style="@style/ContactCol">
+                       <LinearLayout style="@style/ContactRow">
 
-                            <TextView
-                                style="@style/ContactName"
-                                android:text="Rajneesh Singh" />
+                           <ImageView
+                               style="@style/ContactDP"
+                               android:src="@drawable/rohit" />
 
-                            <TextView
-                                style="@style/ContactNo"
-                                android:text="+91 8950426336" />
+                           <LinearLayout style="@style/ContactCol">
 
-                            <TextView
-                                style="@style/ContactEmail"
-                                android:text="" />
+                               <TextView
+                                   android:id="@+id/textView6"
+                                   style="@style/ContactName"
+                                   android:text="Rohit Gupta" />
 
-                        </LinearLayout>
-                    </LinearLayout>
+                               <TextView
+                                   style="@style/ContactNo"
+                                   android:text="7042712975" />
 
-                    <LinearLayout style="@style/ContactRow">
+                               <TextView
+                                   style="@style/ContactEmail"
+                                   android:text="rohit.me15@iitp.ac.in" />
 
-                        <ImageView
-                            style="@style/ContactDP"
-                            android:src="@drawable/com_facebook_profile_picture_blank_square" />
+                           </LinearLayout>
+                       </LinearLayout>
 
-                        <LinearLayout style="@style/ContactCol">
+                       <LinearLayout style="@style/ContactRow">
 
-                            <TextView
-                                style="@style/ContactName"
-                                android:text="Rajeev Verma" />
+                           <ImageView
+                               style="@style/ContactDP"
+                               android:src="@drawable/vijay" />
 
-                            <TextView
-                                style="@style/ContactNo"
-                                android:text="7294000948" />
+                           <LinearLayout style="@style/ContactCol">
 
-                            <TextView
-                                style="@style/ContactEmail"
-                                android:text="rajeev.ee15@iitp.ac.in" />
+                               <TextView
+                                   style="@style/ContactName"
+                                   android:text="Vijay Yadav" />
 
-                        </LinearLayout>
-                    </LinearLayout>
+                               <TextView
+                                   style="@style/ContactNo"
+                                   android:text="+91 9455061806" />
 
-                    <LinearLayout style="@style/ContactRow">
+                               <TextView
+                                   style="@style/ContactEmail"
+                                   android:text="vijay.ch15@iitp.ac.in" />
 
-                        <ImageView
-                            style="@style/ContactDP"
-                            android:src="@drawable/manohar" />
+                           </LinearLayout>
+                       </LinearLayout>
+                   </LinearLayout>
 
-                        <LinearLayout style="@style/ContactCol">
+                   <TextView
+                       style="@style/ContactHeader"
+                       android:text="Arts &amp; Welfare" />
 
-                            <TextView
-                                style="@style/ContactName"
-                                android:text="Manohar Palavalasa" />
+                   <LinearLayout style="@style/ContactCategory">
 
-                            <TextView
-                                style="@style/ContactNo"
-                                android:text="+91 9133147663" />
+                       <LinearLayout style="@style/ContactRow">
 
-                            <TextView
-                                style="@style/ContactEmail"
-                                android:text="" />
+                           <ImageView
+                               style="@style/ContactDP"
+                               android:src="@drawable/rajneesh" />
 
-                        </LinearLayout>
-                    </LinearLayout>
-                </LinearLayout>
+                           <LinearLayout style="@style/ContactCol">
+
+                               <TextView
+                                   style="@style/ContactName"
+                                   android:text="Rajneesh Singh" />
+
+                               <TextView
+                                   style="@style/ContactNo"
+                                   android:text="+91 8950426336" />
+
+                               <TextView
+                                   style="@style/ContactEmail"
+                                   android:text="" />
+
+                           </LinearLayout>
+                       </LinearLayout>
+
+                       <LinearLayout style="@style/ContactRow">
+
+                           <ImageView
+                               style="@style/ContactDP"
+                               android:src="@drawable/com_facebook_profile_picture_blank_square" />
+
+                           <LinearLayout style="@style/ContactCol">
+
+                               <TextView
+                                   style="@style/ContactName"
+                                   android:text="Rajeev Verma" />
+
+                               <TextView
+                                   style="@style/ContactNo"
+                                   android:text="7294000948" />
+
+                               <TextView
+                                   style="@style/ContactEmail"
+                                   android:text="rajeev.ee15@iitp.ac.in" />
+
+                           </LinearLayout>
+                       </LinearLayout>
+
+                       <LinearLayout style="@style/ContactRow">
+
+                           <ImageView
+                               style="@style/ContactDP"
+                               android:src="@drawable/manohar" />
+
+                           <LinearLayout style="@style/ContactCol">
+
+                               <TextView
+                                   style="@style/ContactName"
+                                   android:text="Manohar Palavalasa" />
+
+                               <TextView
+                                   style="@style/ContactNo"
+                                   android:text="+91 9133147663" />
+
+                               <TextView
+                                   style="@style/ContactEmail"
+                                   android:text="" />
+
+                           </LinearLayout>
+                       </LinearLayout>
+                   </LinearLayout> -->
 
                 <TextView
                     style="@style/ContactHeader"
@@ -583,7 +694,7 @@
 
                             <TextView
                                 style="@style/ContactName"
-                                android:text="Abhishek Kumar" />
+                                android:text="Abhishek Maurya" />
 
                             <TextView
                                 style="@style/ContactNo"
@@ -606,7 +717,7 @@
 
                             <TextView
                                 style="@style/ContactName"
-                                android:text="Nitesh Dwivedi" />
+                                android:text="Nookesh Pill" />
 
                             <TextView
                                 style="@style/ContactNo"
@@ -629,7 +740,7 @@
 
                             <TextView
                                 style="@style/ContactName"
-                                android:text="Shashwat Gupta" />
+                                android:text="Fazle Rahman Ejazi" />
 
                             <TextView
                                 style="@style/ContactNo"
@@ -662,7 +773,7 @@
 
                             <TextView
                                 style="@style/ContactName"
-                                android:text="Chirag Wadhera" />
+                                android:text="Tameesh Biswas" />
 
                             <TextView
                                 style="@style/ContactNo"
@@ -685,7 +796,7 @@
 
                             <TextView
                                 style="@style/ContactName"
-                                android:text="Yogendra Singh" />
+                                android:text="Manish Kumar" />
 
                             <TextView
                                 style="@style/ContactNo"
