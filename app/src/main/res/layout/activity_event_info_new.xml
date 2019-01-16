@@ -172,7 +172,8 @@
                     android:layout_marginBottom="8dp"
                     android:background="@color/colorDevelopers"
                     android:text="Register"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/white"
+                    android:visibility="invisible"/>
 
                 <TextView
                     android:id="@+id/event_reg_link"

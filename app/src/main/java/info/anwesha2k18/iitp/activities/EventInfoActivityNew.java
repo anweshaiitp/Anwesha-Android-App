@@ -2,6 +2,7 @@ package info.anwesha2k18.iitp.activities;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.PersistableBundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
@@ -48,7 +49,6 @@ public class EventInfoActivityNew extends AppCompatActivity implements AppBarLay
     private String cover_url;
     private String eveId;
 
-    String reg_event_url="https://www.anwesha.info/register/";
 
     TextView eventNameDisplay;
     TextView eventDateDisplay;
@@ -112,49 +112,7 @@ public class EventInfoActivityNew extends AppCompatActivity implements AppBarLay
 
 
         eventCoverDisplay=(ImageView) findViewById(R.id.event_cover_display) ;
-
-
-        Button reg_butt=findViewById(R.id.btn_register);
-        reg_butt.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-                if (!sharedPreferences.getBoolean(getString(R.string.login_status), false)) {
-                    Toast.makeText(getBaseContext(), "You have not yet logged in. Please Login to continue.", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(EventInfoActivityNew.this, LoginActivity.class);
-                    startActivity(intent);
-                }
-                else {
-
-                    Toast.makeText(getApplicationContext(), "Registering..", Toast.LENGTH_SHORT).show();
-                    StringRequest MyStringRequest = new StringRequest(Request.Method.POST, reg_event_url+eveId, new Response.Listener<String>() {
-                        @Override
-                        public void onResponse(String response) {
-                            //This code is executed if the server responds, whether or not the response contains data.
-                            //The String 'response' contains the server's response.
-                            Toast.makeText(getApplicationContext(), "Getting response ", Toast.LENGTH_LONG).show();
-
-                        }
-                    }, new Response.ErrorListener() { //Create an error listener to handle errors appropriately.
-                        @Override
-                        public void onErrorResponse(VolleyError error) {
-                            //This code is executed if there is an error.
-                            Toast.makeText(getApplicationContext(), "Found error ", Toast.LENGTH_LONG).show();
-                        }
-                    }) {
-                        protected Map<String, String> getParams() {
-                            Map<String, String> MyData = new HashMap<String, String>();
-                            MyData.put("eveglid",eveId); //Add the data you'd like to send to the server.
-                            return MyData;
-                        }
-                    };
-                    MyRequestQueue.add(MyStringRequest);
-                }
-            }
-        });
-
-
-
-
+        
         displayData();
 
     }
