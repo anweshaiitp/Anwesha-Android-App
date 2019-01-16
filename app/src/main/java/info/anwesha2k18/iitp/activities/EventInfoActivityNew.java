@@ -1,7 +1,9 @@
 package info.anwesha2k18.iitp.activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.PersistableBundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -9,9 +11,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
@@ -30,6 +34,7 @@ public class EventInfoActivityNew extends AppCompatActivity implements AppBarLay
     private String time;
     private String venue;
     private String cover_url;
+    private String eveId;
 
     TextView eventNameDisplay;
     TextView eventDateDisplay;
@@ -71,6 +76,7 @@ public class EventInfoActivityNew extends AppCompatActivity implements AppBarLay
         rules_url = bundle.getString("rules_url");
         cover_url = bundle.getString("cover_url");
         short_desc = bundle.getString("short_desc");
+        eveId=bundle.getString("eveId");
 
         eventNameDisplay=(TextView) findViewById(R.id.event_info_name);
         eventDateDisplay=(TextView) findViewById(R.id.event_info_date);
@@ -91,6 +97,26 @@ public class EventInfoActivityNew extends AppCompatActivity implements AppBarLay
 
 
         eventCoverDisplay=(ImageView) findViewById(R.id.event_cover_display) ;
+
+
+        Button reg_butt=findViewById(R.id.btn_register);
+        reg_butt.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+                if (!sharedPreferences.getBoolean(getString(R.string.login_status), false)) {
+                    Toast.makeText(getBaseContext(), "You have not yet logged in. Please Login to continue.", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(EventInfoActivityNew.this, LoginActivity.class);
+                    startActivity(intent);
+                }
+                else {
+
+
+                }
+            }
+        });
+
+
+
 
         displayData();
 
@@ -176,4 +202,5 @@ public class EventInfoActivityNew extends AppCompatActivity implements AppBarLay
     }
 
 }
+
 
