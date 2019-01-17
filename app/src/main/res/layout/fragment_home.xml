@@ -165,7 +165,7 @@
                         android:layout_height="240dp"
                         android:layout_gravity="top"
                         android:scaleType="fitXY"
-                        android:src="@drawable/aftermovie_gif" />
+                        android:src="@drawable/aftermovie" />
 
                     <TextView
                         android:layout_width="match_parent"
