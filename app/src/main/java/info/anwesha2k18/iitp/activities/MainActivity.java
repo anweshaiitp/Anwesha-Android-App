@@ -24,6 +24,7 @@ import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.facebook.login.LoginManager;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.FirebaseDatabase;
 import com.mxn.soul.flowingdrawer_core.ElasticDrawer;
 import com.mxn.soul.flowingdrawer_core.FlowingDrawer;
@@ -50,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager mViewPager;
     private Menu menu = null;
     private FlowingDrawer mDrawer;
-    private FirebaseDatabase mfirebase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,12 +95,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getDatabase() {
-        if (mfirebase == null) {
+        if (FirebaseApp.getApps(this).size() == 0) {
             FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+            FirebaseDatabase.getInstance().setPersistenceCacheSizeBytes(25000000);
         }
-        mfirebase = FirebaseDatabase.getInstance();
-
-        mfirebase.setPersistenceCacheSizeBytes(25000000);
     }
 
 

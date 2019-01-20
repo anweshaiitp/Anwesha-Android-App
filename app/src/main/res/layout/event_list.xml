@@ -10,6 +10,7 @@
         android:background="@drawable/spons_back_mob"
         android:padding="8dp"
         android:scrollbars="none"
+        android:animateLayoutChanges="true"
         android:id="@+id/event_list_view">
 
     </ListView>
