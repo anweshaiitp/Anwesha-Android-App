@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/yellow_background"
     tools:context=".activities.SplashActivity">
 
     <!--<pl.droidsonroids.gif.GifImageView-->
@@ -14,5 +15,11 @@
         <!--android:adjustViewBounds="true"-->
         <!--android:scaleType="fitXY"-->
         <!--/>-->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/home_img"
+        android:layout_margin="40dp"
+        android:id="@+id/logo"/>
 
 </RelativeLayout>

@@ -22,8 +22,7 @@
                 android:id="@+id/event_cover_display"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/slide_main"
+                android:scaleType="fitXY"
                 android:tint="#11000000"
                 app:layout_collapseMode="parallax"
                 app:layout_collapseParallaxMultiplier="0.9" />
@@ -155,7 +154,7 @@
                         android:id="@+id/event_info_venue"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/event_info_time"
+                        android:autoLink="web"
                         android:fontFamily="sans-serif-light"
                         android:textAppearance="@android:style/TextAppearance.Material.Headline"
                         android:textSize="20sp"

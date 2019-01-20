@@ -1,15 +1,17 @@
 package info.anwesha2k18.iitp.activities;
 
 import android.content.Intent;
+
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.PersistableBundle;
 import android.preference.PreferenceManager;
+
+
 import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.widget.Button;
@@ -112,7 +114,21 @@ public class EventInfoActivityNew extends AppCompatActivity implements AppBarLay
 
 
         eventCoverDisplay=(ImageView) findViewById(R.id.event_cover_display) ;
-        
+
+
+
+        eventCoverDisplay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(cover_url != null) {
+                    Intent intent = new Intent(EventInfoActivityNew.this, ImageLauncher.class);
+                    intent.putExtra("image_url", cover_url);
+                    startActivity(intent);
+                }
+            }
+        });
+
+
         displayData();
 
     }
