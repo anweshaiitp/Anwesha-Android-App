@@ -74,5 +74,43 @@ public class EventListData {
         return venue;
     }
 
+    public void setvenue(String venue) {
+        this.venue = venue;
+    }
 
+    public void seteveName(String eveName) {
+        this.eveName = eveName;
+    }
+
+    public void setdate(String date) {
+        this.date = date;
+    }
+
+    public void setcover_url(String cover_url) {
+        this.cover_url = cover_url;
+    }
+
+    public void settime(String time) {
+        this.time = time;
+    }
+
+    public void setlong_desc(String long_desc) {
+        this.long_desc = long_desc;
+    }
+
+    public void setorganisers(String organisers) {
+        this.organisers = organisers;
+    }
+
+    public void setrules_url(String rules_url) {
+        this.rules_url = rules_url;
+    }
+
+    public void setreg_url(String reg_url) {
+        this.reg_url = reg_url;
+    }
+
+    public void setshort_desc(String short_desc) {
+        this.short_desc = short_desc;
+    }
 }
