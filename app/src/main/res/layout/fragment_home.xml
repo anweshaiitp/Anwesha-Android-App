@@ -396,5 +396,5 @@
         android:layout_gravity="bottom|right"
         android:layout_margin="8dp"
         android:background="#000000"
-        android:src="@drawable/qrcode_scan" />
+        android:src="@drawable/ic_map_white_24dp" />
 </RelativeLayout>
