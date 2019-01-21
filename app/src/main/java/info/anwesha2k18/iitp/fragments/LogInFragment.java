@@ -152,7 +152,6 @@ public class LogInFragment extends Fragment implements OnLoginListener {
         emailIDWrapper.setError("");
         passwordWrapper.setError("");
     }
-
     private boolean validateInputs() {
         if (isAnyFieldEmpty())
             return false;
@@ -162,7 +161,6 @@ public class LogInFragment extends Fragment implements OnLoginListener {
 
         return true;
     }
-
     private boolean isAnyFieldEmpty() {
         boolean flag = false;
         if (TextUtils.isEmpty(emailIDWrapper.getText().toString())) {
@@ -175,5 +173,4 @@ public class LogInFragment extends Fragment implements OnLoginListener {
         }
         return flag;
     }
-
 }
