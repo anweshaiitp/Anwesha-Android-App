@@ -40,7 +40,7 @@
                     android:id="@+id/card_header"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#0d47a1"
+                    android:background="@color/colorPrimaryDark"
                     android:fontFamily="sans-serif-light"
                     android:paddingBottom="8dp"
                     android:paddingLeft="16dp"
