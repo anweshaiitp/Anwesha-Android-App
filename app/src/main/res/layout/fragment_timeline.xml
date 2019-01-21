@@ -2,17 +2,17 @@
 
 <RelativeLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#000000"
     xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <ListView
         android:layout_width="match_parent"
+        android:layout_marginTop="8dp"
         android:layout_height="match_parent"
         android:dividerHeight="0.0sp"
         android:divider="@null"
         android:scrollbars="none"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
-        android:background="@drawable/social_circus"
+        android:padding="8dp"
         android:id="@+id/timeline_list_view">
 
     </ListView>

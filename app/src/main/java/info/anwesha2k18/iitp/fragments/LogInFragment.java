@@ -140,7 +140,7 @@ public class LogInFragment extends Fragment implements OnLoginListener {
             };
             mQueue.add(stringRequest);
         }
-        Toast.makeText(getContext(), "Login", Toast.LENGTH_SHORT).show();
+
     }
 
     private void setHints() {

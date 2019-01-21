@@ -152,47 +152,13 @@
                     android:textSize="20sp"
                     tools:text="Tutorial Block - Room no. 107" />
 
-                <Button
-                    android:id="@+id/btn_register"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/event_venue"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:background="@color/colorDevelopers"
-                    android:text="Register"
-                    android:textColor="@android:color/white" />
-
-                <TextView
-                    android:id="@+id/event_reg_link"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/event_venue"
-                    android:layout_marginTop="8dp"
-                    android:fontFamily="sans-serif-light"
-                    android:text="@string/will_be_updated_soon"
-                    android:textAppearance="@android:style/TextAppearance.Material.Headline"
-                    android:textColorLink="@color/colorSignIn"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:id="@+id/event_already_registered"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/event_venue"
-                    android:layout_marginTop="8dp"
-                    android:fontFamily="sans-serif-light"
-                    android:text="@string/already_registered"
-                    android:textAppearance="@android:style/TextAppearance.Material.Headline"
-                    android:textColor="@android:color/holo_green_dark"
-                    android:textSize="18sp"
-                    android:visibility="invisible" />
+  
 
                 <TextView
                     android:id="@+id/event_info_textview"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/btn_register"
+                    android:layout_below="@id/event_venue"
                     android:fontFamily="sans-serif-light"
                     android:textAppearance="@android:style/TextAppearance.Holo.Medium"
                     android:textIsSelectable="true"
