@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -331,18 +332,23 @@ HomePage extends android.support.v4.app.Fragment {
             }
         });
 
-
-        mapLinearLayout = rootView.findViewById(R.id.map);
-        mapLinearLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                String uri = "https://www.google.com/maps/@?api=1&map_action=map&center=25.535752,84.851065&zoom=16&basemap=satellite";
-//                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
-//                startActivity(intent);
-                Intent intent = new Intent(rootView.getContext(), MapActivity.class);
-                startActivity(intent);
-            }
+        FloatingActionButton fab = rootView.findViewById(R.id.maps);
+        fab.setOnClickListener(view1 -> {
+            // String uri = "https://www.google.com/maps/@?api=1&map_action=map&center=25.535752,84.851065&zoom=16&basemap=satellite";
+            Intent intent = new Intent(rootView.getContext(), MapActivity.class);
+            startActivity(intent);
         });
+//        mapLinearLayout = rootView.findViewById(R.id.map);
+//        mapLinearLayout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+////                String uri = "https://www.google.com/maps/@?api=1&map_action=map&center=25.535752,84.851065&zoom=16&basemap=satellite";
+////                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+////                startActivity(intent);
+//                Intent intent = new Intent(rootView.getContext(), MapActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
         scheduleLinearLayout =  rootView.findViewById(R.id.schedule);
         scheduleLinearLayout.setOnClickListener(new View.OnClickListener() {

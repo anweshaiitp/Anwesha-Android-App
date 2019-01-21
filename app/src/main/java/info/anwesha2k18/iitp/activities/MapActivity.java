@@ -116,7 +116,7 @@ public class MapActivity extends FragmentActivity implements LoaderManager.Loade
         Marker m3 = googleMap.addMarker(op3);
         m3.showInfoWindow();
 
-        LatLng gh = new LatLng(25.548344, 84.858127);
+        LatLng gh = new LatLng(25.5376910, 84.8490230);
         MarkerOptions op4 = new MarkerOptions();
         op4.position(gh).title("Girl's hostel")
                 .draggable(false)
@@ -131,6 +131,23 @@ public class MapActivity extends FragmentActivity implements LoaderManager.Loade
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE));
         Marker m5 = googleMap.addMarker(op5);
         m5.showInfoWindow();
+
+        LatLng ar = new LatLng(25.5341190, 84.8531960);
+        MarkerOptions op8 = new MarkerOptions();
+        op8.position(ar).title("Anwesha Main Arena")
+                .draggable(false)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE));
+        Marker m8 = googleMap.addMarker(op8);
+        m8.showInfoWindow();
+
+        LatLng tb = new LatLng(25.5325160, 84.8515800);
+        MarkerOptions op9 = new MarkerOptions();
+        op9.position(tb).title("Tutorial Block")
+                .draggable(false)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE));
+        Marker m9 = googleMap.addMarker(op9);
+        m9.showInfoWindow();
+
 
         LatLng g1 = new LatLng(25.533538, 84.855608);
         MarkerOptions op6 = new MarkerOptions();
@@ -292,8 +309,6 @@ public class MapActivity extends FragmentActivity implements LoaderManager.Loade
 
                 // Storing the latitude, longitude and zoom level to SQLite database
                 insertTask.execute(contentValues);
-
-
             }
         });
         alert2.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel", new DialogInterface.OnClickListener() {
