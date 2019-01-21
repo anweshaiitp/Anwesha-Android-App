@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -143,6 +143,149 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="0dp"
                 android:orientation="horizontal">
+                <android.support.v7.widget.CardView
+                    android:id="@+id/events"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="7"
+                    app:cardBackgroundColor="@color/colorSocial"
+                    app:cardElevation="18dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="25dp"
+                            android:src="@drawable/ic_event_note_white_24dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="8dp"
+                            android:text="@string/events"
+                            android:textColor="@color/white"
+                            android:textSize="22dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+                <android.support.v7.widget.CardView
+                    android:id="@+id/myProfile"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    app:cardBackgroundColor="@color/colorMyProfile"
+                    card_view:cardElevation="20dp">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center_horizontal|top"
+                        android:layout_marginTop="16dp"
+                        android:src="@drawable/ic_person_pin_white_24dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|bottom"
+                        android:layout_marginBottom="16dp"
+                        android:text="@string/my_profile"
+                        android:textColor="@color/white"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="120dp"
+                    android:layout_height="240dp"
+                    android:orientation="vertical">
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/sponsors"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        app:cardBackgroundColor="@color/colorSchedule"
+                        card_view:cardElevation="20dp">
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="16dp"
+                            android:src="@drawable/ic_monetization_on_white_24dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|bottom"
+                            android:layout_marginBottom="16dp"
+                            android:text="@string/sponsors"
+                            android:textColor="@color/white"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+                    </android.support.v7.widget.CardView>
+
+                    <!--<android.support.v7.widget.CardView-->
+                        <!--android:id="@+id/map"-->
+                        <!--android:layout_width="120dp"-->
+                        <!--android:layout_height="120dp"-->
+                        <!--app:cardBackgroundColor="@color/colorSchedule"-->
+                        <!--card_view:cardElevation="20dp">-->
+
+                        <!--<ImageView-->
+                            <!--android:layout_width="60dp"-->
+                            <!--android:layout_height="60dp"-->
+                            <!--android:layout_gravity="center_horizontal|top"-->
+                            <!--android:layout_marginTop="16dp"-->
+                            <!--android:src="@drawable/ic_map_white_24dp" />-->
+
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_gravity="center_horizontal|bottom"-->
+                            <!--android:layout_marginBottom="16dp"-->
+                            <!--android:text="@string/map"-->
+                            <!--android:textColor="@color/white"-->
+                            <!--android:textSize="18dp"-->
+                            <!--android:textStyle="bold" />-->
+                    <!--</android.support.v7.widget.CardView>-->
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/about"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        app:cardBackgroundColor="@color/colorSponsors"
+                        card_view:cardElevation="20dp">
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center_horizontal|top"
+                            android:layout_marginTop="16dp"
+                            android:src="@drawable/ic_info_white_24dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|bottom"
+                            android:layout_marginBottom="16dp"
+                            android:text="@string/about"
+                            android:textColor="@color/white"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+                    </android.support.v7.widget.CardView>
+
+                </LinearLayout>
 
                 <android.support.v7.widget.CardView
                     android:id="@+id/gallery"
@@ -182,157 +325,6 @@
 
                 </android.support.v7.widget.CardView>
 
-                <LinearLayout
-                    android:layout_width="120dp"
-                    android:layout_height="240dp"
-                    android:orientation="vertical">
-
-                    <android.support.v7.widget.CardView
-                        android:id="@+id/myProfile"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
-                        app:cardBackgroundColor="@color/colorMyProfile"
-                        card_view:cardElevation="20dp">
-
-                        <ImageView
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:layout_gravity="center_horizontal|top"
-                            android:layout_marginTop="16dp"
-                            android:src="@drawable/ic_person_pin_white_24dp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal|bottom"
-                            android:layout_marginBottom="16dp"
-                            android:text="@string/my_profile"
-                            android:textColor="@color/white"
-                            android:textSize="18dp"
-                            android:textStyle="bold" />
-                    </android.support.v7.widget.CardView>
-
-                    <android.support.v7.widget.CardView
-                        android:id="@+id/sponsors"
-                        android:layout_width="120dp"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        app:cardBackgroundColor="@color/colorGallery"
-                        card_view:cardElevation="20dp">
-
-                        <ImageView
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="16dp"
-                            android:src="@drawable/ic_monetization_on_white_24dp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal|bottom"
-                            android:layout_marginBottom="16dp"
-                            android:text="@string/sponsors"
-                            android:textColor="@color/white"
-                            android:textSize="18dp"
-                            android:textStyle="bold" />
-                    </android.support.v7.widget.CardView>
-
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="120dp"
-                    android:layout_height="240dp"
-                    android:orientation="vertical">
-
-                    <android.support.v7.widget.CardView
-                        android:id="@+id/map"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
-                        app:cardBackgroundColor="@color/colorSchedule"
-                        card_view:cardElevation="20dp">
-
-                        <ImageView
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:layout_gravity="center_horizontal|top"
-                            android:layout_marginTop="16dp"
-                            android:src="@drawable/ic_map_white_24dp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal|bottom"
-                            android:layout_marginBottom="16dp"
-                            android:text="@string/map"
-                            android:textColor="@color/white"
-                            android:textSize="18dp"
-                            android:textStyle="bold" />
-                    </android.support.v7.widget.CardView>
-
-                    <android.support.v7.widget.CardView
-                        android:id="@+id/about"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
-                        app:cardBackgroundColor="@color/colorSponsors"
-                        card_view:cardElevation="20dp">
-
-                        <ImageView
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:layout_gravity="center_horizontal|top"
-                            android:layout_marginTop="16dp"
-                            android:src="@drawable/ic_info_white_24dp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal|bottom"
-                            android:layout_marginBottom="16dp"
-                            android:text="@string/about"
-                            android:textColor="@color/white"
-                            android:textSize="18dp"
-                            android:textStyle="bold" />
-                    </android.support.v7.widget.CardView>
-
-                </LinearLayout>
-
-                <android.support.v7.widget.CardView
-                    android:id="@+id/events"
-                    android:layout_width="0dp"
-                    android:layout_height="240dp"
-                    android:layout_weight="1"
-                    card_view:cardElevation="18dp">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="25dp"
-                        android:layout_gravity="top"
-                        android:gravity="center"
-                        android:background="@color/colorPrimary"
-                        android:fadingEdge="vertical|horizontal"
-                        android:text="EVENTS"
-                        android:textColor="@color/white"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-
-                    <pl.droidsonroids.gif.GifImageView
-                        android:id="@+id/gifview"
-                        android:layout_gravity="bottom"
-                        android:layout_width="match_parent"
-                        android:layout_height="215dp"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/sliderevent" />
-
-
-                </android.support.v7.widget.CardView>
             </LinearLayout>
 
             <LinearLayout
@@ -345,7 +337,7 @@
                     android:layout_width="0dp"
                     android:layout_height="120dp"
                     android:layout_weight="1"
-                    app:cardBackgroundColor="@color/colorSocial"
+                    app:cardBackgroundColor="@color/colorGallery"
                     app:cardElevation="18dp">
 
                     <ImageView
@@ -391,16 +383,18 @@
                         android:textStyle="bold" />
                 </android.support.v7.widget.CardView>
             </LinearLayout>
+
         </LinearLayout>
+
     </ScrollView>
-    <!--<android.support.design.widget.FloatingActionButton-->
-    <!--android:id="@+id/fab_maps"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_alignParentBottom="true"-->
-    <!--android:layout_alignParentRight="true"-->
-    <!--android:layout_gravity="bottom|right"-->
-    <!--android:layout_margin="16dp"-->
-    <!--android:src="@drawable/qrcode_scan"-->
-    <!--app:backgroundint="@color/fab_background" />&ndash;&gt;-->
-</LinearLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/maps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="8dp"
+        android:background="#000000"
+        android:src="@drawable/qrcode_scan" />
+</RelativeLayout>
