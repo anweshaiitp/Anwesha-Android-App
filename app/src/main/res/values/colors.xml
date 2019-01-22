@@ -3,9 +3,9 @@
     <color name="colorPrimary">#890000</color>
     <color name="colorPrimaryDark">#870000</color>
     <color name="colorAccent">#ba68c8</color>
-    <color name="colorSignIn">#00bfa5</color>
-    <color name="colorSignUp">#1de9b6</color>
-    <color name="color_log_in">#94019c8f</color>
+    <color name="colorSignIn">#000000</color>
+    <color name="colorSignUp">#000000</color>
+    <color name="color_log_in">#000000</color>
     <color name="color_sign_up">#93303f9f</color>
     <color name="primary">#bf360c</color>
     <color name="primaryDark">#870000</color>
