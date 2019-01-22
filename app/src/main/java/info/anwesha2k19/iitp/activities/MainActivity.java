@@ -107,10 +107,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getDatabase() {
-        if (FirebaseApp.getApps(this).size() == 0) {
+        if (mfirebase == null) {
             FirebaseDatabase.getInstance().setPersistenceEnabled(true);
-            FirebaseDatabase.getInstance().setPersistenceCacheSizeBytes(25000000);
         }
+        mfirebase = FirebaseDatabase.getInstance();
+        mfirebase.setPersistenceCacheSizeBytes(25000000);
     }
 
 
