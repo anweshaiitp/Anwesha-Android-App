@@ -36,7 +36,7 @@
                     android:hint="@string/first_name_hint"
                     android:inputType="textPersonName"
                     android:maxLines="1"
-                    android:textColor="@color/colorPrimaryLight" />
+                    android:textColor="#000000" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -54,7 +54,7 @@
                     android:hint="@string/last_name_hint"
                     android:inputType="textPersonName"
                     android:maxLines="1"
-                    android:textColor="@color/colorPrimaryLight" />
+                    android:textColor="#000000" />
             </android.support.design.widget.TextInputLayout>
 
             <Spinner
@@ -80,7 +80,7 @@
                     android:hint="@string/college_hint"
                     android:inputType="textPersonName"
                     android:maxLines="1"
-                    android:textColor="@color/colorPrimaryLight" />
+                    android:textColor="#000000" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -98,7 +98,7 @@
                     android:hint="@string/city_hint"
                     android:inputType="text"
                     android:maxLines="1"
-                    android:textColor="@color/colorPrimaryLight" />
+                    android:textColor="#000000" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -138,7 +138,7 @@
                     android:hint="@string/email_id_hint"
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
-                    android:textColor="@color/colorPrimaryLight" />
+                    android:textColor="#000000" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -156,7 +156,7 @@
                     android:hint="@string/mobile_no_hint"
                     android:inputType="number"
                     android:maxLines="1"
-                    android:textColor="@color/colorPrimaryLight" />
+                    android:textColor="#000000" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -174,7 +174,7 @@
                     android:hint="@string/password_hint"
                     android:inputType="textPassword"
                     android:maxLines="1"
-                    android:textColor="@color/colorPrimaryLight" />
+                    android:textColor="#000000" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -192,7 +192,7 @@
                     android:hint="@string/confirm_password_hint"
                     android:inputType="textPassword"
                     android:maxLines="1"
-                    android:textColor="@color/colorPrimaryLight" />
+                    android:textColor="#000000" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -210,7 +210,7 @@
                     android:hint="@string/referral_code_hint"
                     android:inputType="number"
                     android:maxLines="1"
-                    android:textColor="@color/colorPrimaryLight" />
+                    android:textColor="#000000" />
             </android.support.design.widget.TextInputLayout>
 
         </LinearLayout>

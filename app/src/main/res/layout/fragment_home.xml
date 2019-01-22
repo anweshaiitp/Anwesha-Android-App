@@ -240,7 +240,7 @@
                         <!--android:layout_width="120dp"-->
                         <!--android:layout_height="120dp"-->
                         <!--app:cardBackgroundColor="@color/colorSchedule"-->
-                        <!--card_view:cardElevation="20dp">-->
+                        <!--card_viewvat  danvjln avadan ccv :cardElevation="20dp">-->
 
                         <!--<ImageView-->
                             <!--android:layout_width="60dp"-->
