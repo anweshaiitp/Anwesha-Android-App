@@ -32,11 +32,11 @@
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/ic_person_outline_black_24dp"
                     android:drawablePadding="8dp"
-                    android:drawableTint="@color/colorSignIn"
+                    android:drawableTint="#000000"
                     android:hint="@string/first_name_hint"
                     android:inputType="textPersonName"
                     android:maxLines="1"
-                    android:textColor="@color/colorPrimaryLight" />
+                    android:textColor="#000000" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -50,11 +50,11 @@
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/ic_last_page_black_24dp"
                     android:drawablePadding="8dp"
-                    android:drawableTint="@color/colorSignIn"
+                    android:drawableTint="#000000"
                     android:hint="@string/last_name_hint"
                     android:inputType="textPersonName"
                     android:maxLines="1"
-                    android:textColor="@color/colorPrimaryLight" />
+                    android:textColor="#000000" />
             </android.support.design.widget.TextInputLayout>
 
             <Spinner
@@ -76,11 +76,11 @@
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/ic_school_black_24dp"
                     android:drawablePadding="8dp"
-                    android:drawableTint="@color/colorSignIn"
+                    android:drawableTint="#000000"
                     android:hint="@string/college_hint"
                     android:inputType="textPersonName"
                     android:maxLines="1"
-                    android:textColor="@color/colorPrimaryLight" />
+                    android:textColor="#000000" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -94,11 +94,11 @@
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/ic_place_black_24dp"
                     android:drawablePadding="8dp"
-                    android:drawableTint="@color/colorSignIn"
+                    android:drawableTint="#000000"
                     android:hint="@string/city_hint"
                     android:inputType="text"
                     android:maxLines="1"
-                    android:textColor="@color/colorPrimaryLight" />
+                    android:textColor="#000000" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -113,7 +113,7 @@
                     android:clickable="true"
                     android:drawableLeft="@drawable/ic_date_range_black_24dp"
                     android:drawablePadding="8dp"
-                    android:drawableTint="@color/colorSignIn"
+                    android:drawableTint="#000000"
                     android:focusable="false"
                     android:hint="@string/Birthday"
                     android:inputType="date"
@@ -134,11 +134,11 @@
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/ic_email_black_24dp"
                     android:drawablePadding="8dp"
-                    android:drawableTint="@color/colorSignIn"
+                    android:drawableTint="#000000"
                     android:hint="@string/email_id_hint"
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
-                    android:textColor="@color/colorPrimaryLight" />
+                    android:textColor="#000000" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -152,11 +152,11 @@
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/ic_phone_android_black_24dp"
                     android:drawablePadding="8dp"
-                    android:drawableTint="@color/colorSignIn"
+                    android:drawableTint="#000000"
                     android:hint="@string/mobile_no_hint"
                     android:inputType="number"
                     android:maxLines="1"
-                    android:textColor="@color/colorPrimaryLight" />
+                    android:textColor="#000000" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -170,11 +170,11 @@
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/ic_security_black_24dp"
                     android:drawablePadding="8dp"
-                    android:drawableTint="@color/colorSignIn"
+                    android:drawableTint="#000000"
                     android:hint="@string/password_hint"
                     android:inputType="textPassword"
                     android:maxLines="1"
-                    android:textColor="@color/colorPrimaryLight" />
+                    android:textColor="#000000" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -188,11 +188,11 @@
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/ic_security_black_24dp"
                     android:drawablePadding="8dp"
-                    android:drawableTint="@color/colorSignIn"
+                    android:drawableTint="#000000"
                     android:hint="@string/confirm_password_hint"
                     android:inputType="textPassword"
                     android:maxLines="1"
-                    android:textColor="@color/colorPrimaryLight" />
+                    android:textColor="#000000" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -206,11 +206,11 @@
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/ic_person_black_24dp"
                     android:drawablePadding="8dp"
-                    android:drawableTint="@color/colorSignIn"
+                    android:drawableTint="#000000"
                     android:hint="@string/referral_code_hint"
                     android:inputType="number"
                     android:maxLines="1"
-                    android:textColor="@color/colorPrimaryLight" />
+                    android:textColor="#000000" />
             </android.support.design.widget.TextInputLayout>
 
         </LinearLayout>
