@@ -49,6 +49,37 @@
           "status": 2
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:563694199600:android:b80b8dd1a32eb828",
+        "android_client_info": {
+          "package_name": "info.anwesha2k19.iitp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "563694199600-5s2v2hug4lgoaal869hdnil623nqpo8h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLin1qz48MFN-IzyjRpa6kLmh4CPkJTpw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
     }
   ],
   "configuration_version": "1"

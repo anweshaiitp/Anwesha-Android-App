@@ -180,7 +180,7 @@
         app:border_width="0dp"
         app:finalHeight="@dimen/image_final_width"
         app:finalYPosition="2dp"
-        app:layout_behavior="info.anwesha2k18.iitp.utils.AvatarImageBehavior"
+        app:layout_behavior="info.anwesha2k19.iitp.utils.AvatarImageBehavior"
         app:startHeight="2dp"
         app:startToolbarPosition="2dp"
         app:startXPosition="2dp"

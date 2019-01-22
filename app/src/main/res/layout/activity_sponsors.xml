@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/spons_back_mob"
-    tools:context="info.anwesha2k18.iitp.activities.SponsorsActivity">
+    tools:context="info.anwesha2k19.iitp.activities.SponsorsActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -9,7 +9,7 @@
         android:background="@drawable/anwesha_logo_2"
         android:fitsSystemWindows="true">
 
-        <info.anwesha2k18.iitp.FlexibleFrameLayout
+        <info.anwesha2k19.iitp.FlexibleFrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/wrapper"
@@ -20,7 +20,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
-            <info.anwesha2k18.iitp.LoginButton
+            <info.anwesha2k19.iitp.LoginButton
                 android:id="@+id/button"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -30,7 +30,7 @@
                 android:id="@+id/login_fragment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
-        </info.anwesha2k18.iitp.FlexibleFrameLayout>
+        </info.anwesha2k19.iitp.FlexibleFrameLayout>
 
     </android.support.design.widget.CoordinatorLayout>
 </layout>

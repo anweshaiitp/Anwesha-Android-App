@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="info.anwesha2k18.iitp.activities.RegisterActivity">
+    tools:context="info.anwesha2k19.iitp.activities.RegisterActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

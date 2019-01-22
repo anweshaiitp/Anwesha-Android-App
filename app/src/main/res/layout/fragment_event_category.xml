@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="info.anwesha2k18.iitp.fragments.EventCategoryFragment"
+    tools:context="info.anwesha2k19.iitp.fragments.EventCategoryFragment"
     android:background="@drawable/spons_back_mob">
 
     <android.support.v7.widget.RecyclerView

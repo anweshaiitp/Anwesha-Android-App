@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryLight"
-    tools:context="info.anwesha2k18.iitp.activities.EventsActivity">
+    tools:context="info.anwesha2k19.iitp.activities.EventsActivity">
 
     <FrameLayout
         android:layout_width="match_parent"

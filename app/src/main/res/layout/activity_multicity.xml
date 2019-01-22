@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/multiback"
-    tools:context="info.anwesha2k18.iitp.activities.multiCityActivity">
+    tools:context="info.anwesha2k19.iitp.activities.multiCityActivity">
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_mul"
         android:layout_width="match_parent"

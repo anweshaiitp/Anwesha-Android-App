@@ -8,7 +8,7 @@
     android:fitsSystemWindows="true"
     android:orientation="vertical"
     android:background="@color/colorPrimary"
-    tools:context="info.anwesha2k18.iitp.activities.TimelineActivity">
+    tools:context="info.anwesha2k19.iitp.activities.TimelineActivity">
 
     <android.support.design.widget.TabLayout
         android:id="@+id/timeline_tabs"

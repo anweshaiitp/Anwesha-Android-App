@@ -4,11 +4,11 @@ android {
     compileSdkVersion 26
     buildToolsVersion '28.0.3'
     defaultConfig {
-        applicationId "info.anwesha2k18.iitp"
+        applicationId "info.anwesha2k19.iitp"
         minSdkVersion 23
         targetSdkVersion 26
-        versionCode 3
-        versionName "1.2"
+        versionCode 1
+        versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
     }

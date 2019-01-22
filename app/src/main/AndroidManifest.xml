@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="info.anwesha2k18.iitp">
+    package="info.anwesha2k19.iitp">
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -11,7 +11,7 @@
     <uses-feature android:name="android.hardware.camera" />
 
     <permission
-        android:name="info.anwesha2k18.iitp.permission.MAPS_RECEIVE"
+        android:name="info.anwesha2k19.iitp.permission.MAPS_RECEIVE"
         android:protectionLevel="signature" />
 
     <uses-permission android:name="info.anwesha2k18.iitp.permission.MAPS_RECEIVE" />
@@ -68,7 +68,7 @@
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="info.anwesha2k18.iitp.activities.MainActivity" />
+                android:value="info.anwesha2k19.iitp.activities.MainActivity" />
         </activity>
         <activity
             android:name=".activities.thankyou"
@@ -87,42 +87,42 @@
             android:label="@string/my_profile">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="info.anwesha2k18.iitp.activities.MainActivity" />
+                android:value="info.anwesha2k19.iitp.activities.MainActivity" />
         </activity>
         <activity
             android:name=".activities.SocialActivity"
             android:label="@string/social">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="info.anwesha2k18.iitp.activities.MainActivity" />
+                android:value="info.anwesha2k19.iitp.activities.MainActivity" />
         </activity>
         <activity
             android:name=".activities.multiCityActivity"
             android:label="@string/multicity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="info.anwesha2k18.iitp.activities.MainActivity" />
+                android:value="info.anwesha2k19.iitp.activities.MainActivity" />
         </activity>
         <activity
             android:name=".activities.LectureActivity"
             android:label="@string/app_name">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="info.anwesha2k18.iitp.activities.MainActivity" />
+                android:value="info.anwesha2k19.iitp.activities.MainActivity" />
         </activity>
         <activity
             android:name=".activities.WorkshopActivity"
             android:label="Workshops">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="info.anwesha2k18.iitp.activities.MainActivity" />
+                android:value="info.anwesha2k19.iitp.activities.MainActivity" />
         </activity>
         <activity
             android:name=".activities.webActivity"
             android:label="@string/app_name">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="info.anwesha2k18.iitp.activities.MainActivity" />
+                android:value="info.anwesha2k19.iitp.activities.MainActivity" />
         </activity>
         <activity
             android:name=".activities.LoginActivity"
@@ -131,7 +131,7 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:screenOrientation="portrait"
-                android:value="info.anwesha2k18.iitp.activities.MainActivity" />
+                android:value="info.anwesha2k19.iitp.activities.MainActivity" />
         </activity>
         <!-- <activity -->
         <!-- android:name=".fragments.GalleryFragment" -->
@@ -146,35 +146,35 @@
             android:label="@string/about">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="info.anwesha2k18.iitp.activities.MainActivity" />
+                android:value="info.anwesha2k19.iitp.activities.MainActivity" />
         </activity>
         <activity
             android:name=".activities.multiCityInfo"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="info.anwesha2k18.iitp.activities.MainActivity" />
+                android:value="info.anwesha2k19.iitp.activities.MainActivity" />
         </activity>
         <activity
             android:name=".activities.TeamActivity"
             android:label="@string/team">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="info.anwesha2k18.iitp.activities.MainActivity" />
+                android:value="info.anwesha2k19.iitp.activities.MainActivity" />
         </activity>
         <activity
             android:name=".activities.SignInActivity"
             android:label="@string/SignIn">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="info.anwesha2k18.iitp.activities.MyProfile" />
+                android:value="info.anwesha2k19.iitp.activities.MyProfile" />
         </activity>
         <activity
             android:name=".activities.RegisterActivity"
             android:label="@string/SignUp">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="info.anwesha2k18.iitp.activities.MyProfile" />
+                android:value="info.anwesha2k19.iitp.activities.MyProfile" />
         </activity>
         <!-- <activity -->
         <!-- android:name=".activities.DevelopersActivity" -->
@@ -189,7 +189,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="info.anwesha2k18.iitp.activities.MainActivity" />
+                android:value="info.anwesha2k19.iitp.activities.MainActivity" />
         </activity>
 
         <service android:name=".database.BackgroundFetch" />
@@ -199,7 +199,7 @@
             android:label="Events">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="info.anwesha2k18.iitp.activities.MainActivity" />
+                android:value="info.anwesha2k19.iitp.activities.MainActivity" />
         </activity>
         <activity android:name=".activities.MapActivity" />
 
@@ -212,14 +212,14 @@
             android:label="Sponsors">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="info.anwesha2k18.iitp.activities.MainActivity" />
+                android:value="info.anwesha2k19.iitp.activities.MainActivity" />
         </activity>
         <activity
             android:name=".activities.TimelineActivity"
             android:label="@string/schedule">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="info.anwesha2k18.iitp.activities.MainActivity" />
+                android:value="info.anwesha2k19.iitp.activities.MainActivity" />
         </activity>
 
         <service android:name=".FcmService">
@@ -239,7 +239,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="info.anwesha2k18.iitp.activities.MainActivity" />
+                android:value="info.anwesha2k19.iitp.activities.MainActivity" />
         </activity>
 
     </application>

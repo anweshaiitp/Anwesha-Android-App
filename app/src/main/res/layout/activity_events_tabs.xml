@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context="info.anwesha2k18.iitp.activities.EventsActivityNew">
+    tools:context="info.anwesha2k19.iitp.activities.EventsActivityNew">
 
 
     <android.support.design.widget.TabLayout
