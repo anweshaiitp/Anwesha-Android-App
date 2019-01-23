@@ -7,9 +7,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-feature android:name="android.hardware.camera" />
-
     <permission
         android:name="info.anwesha2k19.iitp.permission.MAPS_RECEIVE"
         android:protectionLevel="signature" />
@@ -126,14 +123,6 @@
                 android:screenOrientation="portrait"
                 android:value="info.anwesha2k19.iitp.activities.MainActivity" />
         </activity>
-        <!-- <activity -->
-        <!-- android:name=".fragments.GalleryFragment" -->
-        <!-- android:label="@string/gallery"> -->
-        <!-- <meta-data -->
-        <!-- android:name="android.support.PARENT_ACTIVITY" -->
-        <!-- android:value=".activities.MainActivity" /> -->
-        <!-- </activity> -->
-
         <activity
             android:name=".activities.AboutActivity"
             android:label="@string/about">
@@ -169,13 +158,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="info.anwesha2k19.iitp.activities.MyProfile" />
         </activity>
-        <!-- <activity -->
-        <!-- android:name=".activities.DevelopersActivity" -->
-        <!-- android:parentActivityName=".activities.MainActivity"> -->
-        <!-- <meta-data -->
-        <!-- android:name="android.support.PARENT_ACTIVITY" -->
-        <!-- android:value="info.anwesha2k18.iitp.activities.MainActivity" /> -->
-        <!-- </activity> -->
         <activity
             android:name=".activities.ImageLauncher"
             android:parentActivityName=".activities.MainActivity"

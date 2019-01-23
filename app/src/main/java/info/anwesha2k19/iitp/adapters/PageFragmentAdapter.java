@@ -3,7 +3,7 @@ package info.anwesha2k19.iitp.adapters;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import info.anwesha2k19.iitp.fragments.GalleryFragment;
+import info.anwesha2k19.iitp.fragments.GalleryFragmentNew;
 import info.anwesha2k19.iitp.fragments.HighlightsPage;
 import info.anwesha2k19.iitp.fragments.HomePage;
 
@@ -25,7 +25,7 @@ public class PageFragmentAdapter extends FragmentPagerAdapter {
             case 1:
                 return new HighlightsPage();
             case 2:
-                return new GalleryFragment();
+                return new GalleryFragmentNew();
             default:
                 return null;
         }

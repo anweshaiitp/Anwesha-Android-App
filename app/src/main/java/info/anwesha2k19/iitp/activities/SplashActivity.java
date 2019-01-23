@@ -34,7 +34,7 @@ import pl.droidsonroids.gif.GifImageView;
 
 
 public class SplashActivity extends Activity {
-    int time = 4000;
+    int time = 2000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +43,7 @@ public class SplashActivity extends Activity {
         View view = (ImageView) findViewById( R.id.logo );
         final ObjectAnimator animation = ObjectAnimator.ofFloat( view, "rotationY", 0.0f, 360f );
         animation.setDuration( 2000 );
-        animation.setRepeatCount( ObjectAnimator.INFINITE );
+   //     animation.setRepeatCount( ObjectAnimator.INFINITE );
         animation.setInterpolator( new AccelerateDecelerateInterpolator() );
         animation.start();
         new Handler().postDelayed( new Runnable() {
