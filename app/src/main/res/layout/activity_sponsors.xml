@@ -11,6 +11,16 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <ImageView
+            android:layout_width="400dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:padding="5dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/name" />
+
+
         <!--<TextView-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="wrap_content"-->
@@ -29,7 +39,7 @@
         <!--android:layout_gravity="center"-->
         <!--android:layout_margin="10dp"-->
         <!--android:layout_marginTop="5dp"-->
-        <!--android:scaleType="centerInside"-->
+        <!--android:scaleType="fitCenter"-->
         <!--android:src="@drawable/anshulhomes" />-->
 
         <TextView
@@ -56,7 +66,7 @@
                 android:layout_margin="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
-                android:scaleType="centerInside"
+                android:scaleType="fitCenter"
                 android:src="@drawable/airtel" />
 
         </LinearLayout>
@@ -79,11 +89,11 @@
         <!--android:orientation="horizontal">-->
 
         <!--<ImageView-->
-        <!--android:layout_width="150dp"-->
+        <!--android:layout_width="0dp"-->
         <!--android:layout_height="150dp"-->
         <!--android:layout_weight="1"-->
         <!--android:padding="5dp"-->
-        <!--android:scaleType="centerInside"-->
+        <!--android:scaleType="fitCenter"-->
         <!--android:src="@drawable/s_incubation" />-->
 
         <!--</LinearLayout>-->
@@ -105,31 +115,32 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/ascspons1"
-                android:layout_width="150dp"
+                android:id="@+id/yac"
+                android:layout_width="0dp"
                 android:layout_height="150dp"
                 android:layout_weight="1"
                 android:padding="5dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/ascspons1" />
-
-            <ImageView
-                android:id="@+id/sbi"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_weight="1"
-                android:padding="5dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/sbi" />
+                android:scaleType="fitCenter"
+                android:src="@drawable/yac" />
 
             <ImageView
                 android:id="@+id/ntpc"
-                android:layout_width="150dp"
+                android:layout_width="0dp"
                 android:layout_height="150dp"
                 android:layout_weight="1"
                 android:padding="5dp"
-                android:scaleType="centerInside"
+                android:scaleType="fitCenter"
                 android:src="@drawable/ntpc" />
+
+
+            <ImageView
+                android:id="@+id/ruban"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ruban" />
 
         </LinearLayout>
 
@@ -139,13 +150,13 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/ruban"
-                android:layout_width="150dp"
+                android:id="@+id/beltron"
+                android:layout_width="0dp"
                 android:layout_height="150dp"
                 android:layout_weight="1"
                 android:padding="5dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/ruban" />
+                android:scaleType="fitCenter"
+                android:src="@drawable/beltron" />
 
         </LinearLayout>
 
@@ -153,11 +164,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
             android:background="#4646F5"
             android:gravity="center"
             android:text="Strategic Partners"
             android:textColor="@android:color/white"
-
             android:textSize="20dp" />
 
         <LinearLayout
@@ -167,43 +178,42 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="150dp"
+                android:id="@+id/canara"
+                android:layout_width="0dp"
                 android:layout_height="150dp"
                 android:layout_weight="1"
                 android:padding="5dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/bihar_tour" />
-
-            <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_weight="1"
-                android:padding="5dp"
-                android:scaleType="centerInside"
+                android:scaleType="fitCenter"
                 android:src="@drawable/canara" />
 
-            <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_weight="1"
-                android:padding="5dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/beltron" />
-
         </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:background="#4646F5"
+            android:gravity="center"
+            android:text="Key Sponsors"
+            android:textColor="@android:color/white"
+            android:textSize="20dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="150dp"
+                android:id="@+id/ktm_key"
+                android:layout_width="0dp"
                 android:layout_height="150dp"
                 android:layout_weight="1"
                 android:padding="5dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/stdcrt" />
+                android:scaleType="fitCenter"
+                android:src="@drawable/ktm" />
+
 
         </LinearLayout>
 
@@ -225,45 +235,23 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="150dp"
+                android:id="@+id/incubation"
+                android:layout_width="0dp"
                 android:layout_height="150dp"
                 android:layout_weight="1"
                 android:padding="5dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/spykar" />
-
-            <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_weight="1"
-                android:padding="5dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/boi" />
-
-            <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_weight="1"
-                android:padding="5dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/axis" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_weight="1"
-                android:padding="5dp"
-                android:scaleType="centerInside"
+                android:scaleType="fitCenter"
                 android:src="@drawable/ic" />
 
+            <ImageView
+                android:id="@+id/godrej"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/godrej" />
+
         </LinearLayout>
 
         <TextView
@@ -273,7 +261,7 @@
             android:layout_marginTop="10dp"
             android:background="#4646F5"
             android:gravity="center"
-            android:text="Beverage Partners"
+            android:text="Hospitality Partner"
             android:textColor="@android:color/white"
             android:textSize="20dp" />
 
@@ -284,39 +272,113 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="150dp"
+                android:id="@+id/panache"
+                android:layout_width="0dp"
                 android:layout_height="150dp"
                 android:layout_weight="1"
                 android:padding="5dp"
-                android:scaleType="centerInside"
+                android:scaleType="fitCenter"
+                android:src="@drawable/panache" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:background="#4646F5"
+            android:gravity="center"
+            android:text="Food Partners"
+            android:textColor="@android:color/white"
+            android:textSize="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/summer"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/summer" />
+
+            <ImageView
+                android:id="@+id/empire"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/empire" />
+
+            <ImageView
+                android:id="@+id/angeethi"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/angeethi" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/bhukkad"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/bhukkad" />
+
+            <ImageView
+                android:id="@+id/pizza"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/pizza" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:background="#4646F5"
+            android:gravity="center"
+            android:text="Beverage Partner"
+            android:textColor="@android:color/white"
+            android:textSize="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/coke"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
                 android:src="@drawable/coke" />
-
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:layout_marginTop="10dp"
-            android:background="#4646F5"
-            android:gravity="center"
-            android:text="Pizza Partner"
-            android:textColor="@android:color/white"
-            android:textSize="20dp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_weight="1"
-                android:padding="5dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/domino" />
 
         </LinearLayout>
 
@@ -338,12 +400,41 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="150dp"
+                android:id="@+id/amul"
+                android:layout_width="0dp"
                 android:layout_height="150dp"
                 android:layout_weight="1"
                 android:padding="5dp"
-                android:scaleType="centerInside"
+                android:scaleType="fitCenter"
                 android:src="@drawable/amul" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:background="#4646F5"
+            android:gravity="center"
+            android:text="Chocolate Partners"
+            android:textColor="@android:color/white"
+            android:textSize="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/choco"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/choco" />
 
         </LinearLayout>
 
@@ -365,12 +456,209 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="150dp"
+                android:id="@+id/web"
+                android:layout_width="0dp"
                 android:layout_height="150dp"
                 android:layout_weight="1"
                 android:padding="5dp"
-                android:scaleType="centerInside"
+                android:scaleType="fitCenter"
                 android:src="@drawable/web" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:background="#4646F5"
+            android:gravity="center"
+            android:text="Radio Partner"
+            android:textColor="@android:color/white"
+            android:textSize="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/radio"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/radio" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:background="#4646F5"
+            android:gravity="center"
+            android:text="Travel Partner"
+            android:textColor="@android:color/white"
+            android:textSize="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/forex"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/forex" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:background="#4646F5"
+            android:gravity="center"
+            android:text="Security Partners"
+            android:textColor="@android:color/white"
+            android:textSize="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/bvg"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/bvg" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:background="#4646F5"
+            android:gravity="center"
+            android:text="Surveillance Partner"
+            android:textColor="@android:color/white"
+            android:textSize="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/pge"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/pge" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:background="#4646F5"
+            android:gravity="center"
+            android:text="Makeup Partner"
+            android:textColor="@android:color/white"
+            android:textSize="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/bss"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/bss" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:background="#4646F5"
+            android:gravity="center"
+            android:text="Grooming Partners"
+            android:textColor="@android:color/white"
+            android:textSize="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/vlcc"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/vlcc" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:background="#4646F5"
+            android:gravity="center"
+            android:text="Housekeeping Partner"
+            android:textColor="@android:color/white"
+            android:textSize="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/chs"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/chs" />
 
         </LinearLayout>
 
@@ -390,12 +678,87 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="150dp"
+                android:id="@+id/can"
+                android:layout_width="0dp"
                 android:layout_height="150dp"
                 android:layout_weight="1"
                 android:padding="5dp"
-                android:scaleType="centerInside"
+                android:scaleType="fitCenter"
                 android:src="@drawable/can" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:background="#4646F5"
+            android:gravity="center"
+            android:text="Education Partners"
+            android:textColor="@android:color/white"
+            android:textSize="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/toppr"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/toppr" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:background="#4646F5"
+            android:gravity="center"
+            android:text="Promotional Partners"
+            android:textColor="@android:color/white"
+            android:textSize="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/pbeats"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/pbeats" />
+
+            <ImageView
+                android:id="@+id/plikes"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/plikes" />
+
+            <ImageView
+                android:id="@+id/patnabr"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/patnabr" />
 
         </LinearLayout>
 
@@ -415,12 +778,69 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="150dp"
+                android:id="@+id/eye"
+                android:layout_width="0dp"
                 android:layout_height="150dp"
                 android:layout_weight="1"
                 android:padding="5dp"
-                android:scaleType="centerInside"
+                android:scaleType="fitCenter"
                 android:src="@drawable/eye" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:background="#4646F5"
+            android:gravity="center"
+            android:text="Technology Partners"
+            android:textColor="@android:color/white"
+            android:textSize="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/zeb"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/zeb" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:background="#4646F5"
+            android:gravity="center"
+            android:text="Racing Partners"
+            android:textColor="@android:color/white"
+            android:textSize="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/ktm_race"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ktm" />
 
         </LinearLayout>
     </LinearLayout>
