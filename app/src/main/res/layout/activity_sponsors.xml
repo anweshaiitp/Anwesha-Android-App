@@ -317,14 +317,30 @@
                 android:scaleType="fitCenter"
                 android:src="@drawable/empire" />
 
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="150dp">
+
             <ImageView
                 android:id="@+id/angeethi"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:layout_weight="1"
                 android:padding="5dp"
                 android:scaleType="fitCenter"
                 android:src="@drawable/angeethi" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Angeethi"
+                    android:layout_alignBaseline="@id/angeethi"
+                    android:textColor="@color/white"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="20sp"/>
+
+            </RelativeLayout>
 
         </LinearLayout>
 
