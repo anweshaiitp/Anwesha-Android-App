@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
+import android.support.customtabs.CustomTabsIntent;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -26,8 +27,6 @@ import info.anwesha2k19.iitp.activities.SponsorsActivity;
 import info.anwesha2k19.iitp.activities.TeamActivity;
 import info.anwesha2k19.iitp.activities.TimelineActivity;
 import info.anwesha2k19.iitp.activities.multiCityActivity;
-import info.anwesha2k19.iitp.activities.webActivity;
-
 import info.anwesha2k19.iitp.activities.WorkshopActivity;
 public class MenuListFragment extends Fragment {
     SharedPreferences sharedPreferences;
@@ -76,9 +75,11 @@ public class MenuListFragment extends Fragment {
                     Toast.makeText(getContext(), "Coming Soon!", Toast.LENGTH_SHORT).show();
                     break;
                 case R.id.menu_item_ca:
-                    Intent intentweb = new Intent(getContext(), webActivity.class);
-                    intentweb.putExtra("link", "https://www.anwesha.info/ca");
-                    startActivity(intentweb);
+                    CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
+                    builder.setToolbarColor(getResources().getColor(R.color.colorPrimary));
+
+                    CustomTabsIntent customTabsIntent = builder.build();
+                    customTabsIntent.launchUrl(getContext(), Uri.parse("https://www.anwesha.info/ca"));
                     break;
                 case R.id.menu_item_multicity:
                     startActivity(new Intent(getContext(), multiCityActivity.class));

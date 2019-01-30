@@ -34,156 +34,26 @@ import java.util.ArrayList;
 public class NetworkUtils {
 
     final private String LOG_TAG = getClass().toString();
-    ArrayList<GalleryPics> mpicUrl = new ArrayList<>();
-    int loop = 0;
-    GalleryPics galleryPics;
     private FirebaseDatabase mFirebaseDatabase;
-    private DatabaseReference mUrlDatabaseReference;
-    private ChildEventListener mChildEventListener;
-    private FirebaseStorage mStorage;
-    private ArrayList<FileDownloadTask> tasks = new ArrayList<FileDownloadTask>();
     private ArrayList<HighlightsData> highlightsDatas = new ArrayList<>();
     private DatabaseReference mhighlightsDatabaseReference;
-    private StorageReference mStorageReference;
-    private File localFile;
-    private StorageReference islandRef;
     private ChildEventListener mhighlightsChildeventlistener;
 
-    public boolean downloadImages(ContextWrapper c, Context context) {
-        if (!hasNetwork(context))
-            return false;
-
-        else {
-            // this is the main accessing point of the data base
-            mFirebaseDatabase = FirebaseDatabase.getInstance();
-
-            //getting reference to message part of the app
-            mUrlDatabaseReference = mFirebaseDatabase.getReference().child("imageurl");
-
-            //creating an instance of Firebase storage
-            mStorage = FirebaseStorage.getInstance();
-
-            // Create a storage reference from our app
-            mStorageReference = mStorage.getReference();
-
-
-            //get the context where app data is saved
-            ContextWrapper contextWrapper = new ContextWrapper(c);
-
-            //creates  if needed, a new directory info which the application can place custom images data  files
-            final File directory = contextWrapper.getDir("images_thumbnails", Context.MODE_PRIVATE);
-
-
-            // adding a listener attached to the firebase to sync with any changes made with the firebase
-
-            mChildEventListener = new ChildEventListener() {
-                @Override
-                public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                    galleryPics = dataSnapshot.getValue(GalleryPics.class);
-                    // adding the url to data list
-                    mpicUrl.add(galleryPics);
-
-                }
-
-                @Override
-                public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-                }
-
-                @Override
-                public void onChildRemoved(DataSnapshot dataSnapshot) {
-                    mpicUrl.clear();
-                    galleryPics = dataSnapshot.getValue(GalleryPics.class);
-                    mpicUrl.add(galleryPics);
-                }
-
-                @Override
-                public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-                }
-
-                @Override
-                public void onCancelled(DatabaseError databaseError) {
-                }
-            };
-
-            // adding a event listener to sync with the firebase
-            mUrlDatabaseReference.addChildEventListener(mChildEventListener);
-
-            //to notify when all the previous dataSnapshot is downloaded
-            mUrlDatabaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
-
-                    // iterate on the array list
-                    // create a new file info that directory with this name
-                    /**
-                     * @param directory accepts the directory where you want to save the file
-                     * @param #name accepts the name of the file
-                     * */
-
-                    for (GalleryPics galleryPics : mpicUrl) {
-
-                        //try creating a local file with the image name
-                        try {
-                            localFile = new File(directory, galleryPics.getpicName());
-//                            Toast.makeText(getApplicationContext(), localFile.getAbsolutePath(), Toast.LENGTH_SHORT).show();
-                        } catch (Exception e) {
-
-                            Log.e(LOG_TAG, e.getMessage());
-                        }
-                        islandRef = mStorageReference.child(galleryPics.geturl());
-
-                        tasks.add(islandRef.getFile(localFile));
-                        tasks.get(loop).addOnCompleteListener(new OnCompleteListener<FileDownloadTask.TaskSnapshot>() {
-                            @Override
-                            public void onComplete(@NonNull Task<FileDownloadTask.TaskSnapshot> task) {
-//                                Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
-
-                            }
-                        });
-                        tasks.get(loop).addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Log.e(LOG_TAG, e.getMessage());
-                            }
-                        });
-                        ++loop;
-                    }
-                }
-
-                @Override
-                public void onCancelled(DatabaseError databaseError) {
-                    Log.e(LOG_TAG, databaseError.toString());
-                }
-            });
-
-        }
-        return true;
-    }
-
-
-    //to extract the data from the  firebase
     public boolean extractHighlights(ContextWrapper contextWrapper, Context context) {
-        Log.v("ASASAS", "AA");
-        // this return false if there is no interet connection
         if (!hasNetwork(context)) {
             return false;
         } else {
             final File directory = contextWrapper.getDir("highlights", Context.MODE_PRIVATE);
 
-            //opens connection with the database
             mFirebaseDatabase = FirebaseDatabase.getInstance();
-            //getting reference of the child
             mhighlightsDatabaseReference = mFirebaseDatabase.getReference().child("highlights");
 
             mhighlightsChildeventlistener = new ChildEventListener() {
                 @Override
                 public void onChildAdded(DataSnapshot dataSnapshot, String s) {
 
-                    // reference to the object of the class where we should add the data
                     HighlightsData highlightsData = dataSnapshot.getValue(HighlightsData.class);
-                    //adding the data to the array list
                     highlightsDatas.add(highlightsData);
-//                    Log.e(LOG_TAG,"this is addddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd");
                 }
 
                 @Override
@@ -208,7 +78,6 @@ public class NetworkUtils {
             };
             mhighlightsDatabaseReference.addChildEventListener(mhighlightsChildeventlistener);
 
-            //to download the previously added data info the string
             mhighlightsDatabaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {

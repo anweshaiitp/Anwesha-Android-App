@@ -31,7 +31,7 @@
                 android:layout_height="52dp"
                 android:paddingBottom="5dp"
                 android:background="@drawable/circle2"
-                android:src="@drawable/slide_ebid" />
+                android:src="@drawable/anwesha_banner" />
 
             <TextView
                 android:id="@+id/timeline_eveName_right"
@@ -94,7 +94,7 @@
                 android:layout_height="52dp"
                 android:background="@drawable/circle2"
                 android:paddingBottom="3dp"
-                android:src="@drawable/slide_ebid" />
+                android:src="@drawable/anwesha_banner" />
 
             <TextView
                 android:id="@+id/timeline_eveName_left"

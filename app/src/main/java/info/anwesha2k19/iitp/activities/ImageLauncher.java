@@ -36,14 +36,7 @@ public class ImageLauncher extends AppCompatActivity {
         myImage = (ImageView) findViewById(R.id.launcher);
         mScaleGestureDetector = new ScaleGestureDetector(this, new ScaleListener());
 
-        if (intent.getExtras().get("imageV") != null) {
-            picture = (File) getIntent().getExtras().get("imageV");
-
-            if (picture.exists()) {
-                Bitmap myBitmap = BitmapFactory.decodeFile(picture.getAbsolutePath());
-                myImage.setImageBitmap(myBitmap);
-            }
-        } else if (intent.getExtras().get("image_url") != null){
+        if (intent.getExtras().get("image_url") != null){
             Glide.with(this)
                     .load(intent.getExtras().get("image_url"))
                     .apply(new RequestOptions().error(R.drawable.anwesha_placeholder))
