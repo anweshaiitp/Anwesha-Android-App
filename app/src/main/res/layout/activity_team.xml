@@ -858,6 +858,39 @@
                     </LinearLayout>
 
                 </LinearLayout>
+
+                <TextView
+                    style="@style/ContactHeader"
+                    android:text="Proshow Coordinator" />
+
+                <LinearLayout style="@style/ContactCategory">
+
+                    <LinearLayout style="@style/ContactRow">
+
+                        <ImageView
+                            style="@style/ContactDP"
+                            android:onClick="mayank_tripathi"
+                            android:src="@drawable/p5__1547649046_21342" />
+
+                        <LinearLayout style="@style/ContactCol">
+
+                            <TextView
+                                style="@style/ContactName"
+                                android:onClick="mayank_tripathi"
+                                android:text="Mayank Tripathi" />
+
+                            <TextView
+                                style="@style/ContactNo"
+                                android:text="+91 7093329167" />
+
+                            <TextView
+                                style="@style/ContactEmail"
+                                android:text="" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
             </LinearLayout>
 
         </ScrollView>

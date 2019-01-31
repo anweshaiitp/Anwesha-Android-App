@@ -74,7 +74,6 @@ public class LogInFragment extends Fragment implements OnLoginListener {
 
     @Override
     public void login() {
-        clearErrors();
         boolean b = validateInputs();
         if (b) {
             Toast.makeText(getContext(), "Signing In...", Toast.LENGTH_SHORT).show();
@@ -148,10 +147,6 @@ public class LogInFragment extends Fragment implements OnLoginListener {
         passwordWrapper.setHint(getString(R.string.password_hint));
     }
 
-    private void clearErrors() {
-        emailIDWrapper.setError("");
-        passwordWrapper.setError("");
-    }
     private boolean validateInputs() {
         if (isAnyFieldEmpty())
             return false;

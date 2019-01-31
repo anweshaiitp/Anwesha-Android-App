@@ -57,10 +57,7 @@ public class MainActivity extends AppCompatActivity {
     private Menu menu = null;
     private FlowingDrawer mDrawer;
 
-
     private FirebaseDatabase mfirebase;
-    private boolean permission;
-    private static final int CAMERA_REQUEST = 50;
 
     Intent mServiceIntent;
 
@@ -70,10 +67,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        permission = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED;
-        if (!permission) {
-            ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.CAMERA}, CAMERA_REQUEST);
-        }
         createNotificationChannel();
         getDatabase();
 
@@ -107,10 +100,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getDatabase() {
-        if (FirebaseApp.getApps(this).size() == 0) {
+        if (mfirebase == null) {
             FirebaseDatabase.getInstance().setPersistenceEnabled(true);
-            FirebaseDatabase.getInstance().setPersistenceCacheSizeBytes(25000000);
         }
+        mfirebase = FirebaseDatabase.getInstance();
     }
 
 
